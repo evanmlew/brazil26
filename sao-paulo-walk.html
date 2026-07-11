@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our São Paulo Afternoon Walk · Brazil 2026</title>
+<meta name="description" content="A simple, easy-to-follow afternoon walking loop from the Renaissance São Paulo — MASP, Trianon Park and Rua Oscar Freire in about 48 minutes. With a one-tap Google Maps route.">
+<meta property="og:title" content="Our São Paulo Afternoon Walk 🚶">
+<meta property="og:description" content="Sat 7/11 — one easy loop from the hotel: the red MASP museum, a rainforest park, and gelato on Rua Oscar Freire. Tap for the Google Maps route.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/sp-masp.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚶</text></svg>">
+<style>
+:root{
+  --cream:#faf6ee; --cream2:#f3ecdd; --ink:#1c2a22; --ink-soft:#48584e;
+  --green:#1e5c3a; --green-deep:#0d2b1c; --gold:#c9a227; --terra:#b45309; --sp:#d97706;
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;
+  padding:.7rem 1.2rem;background:rgba(13,43,28,.92);backdrop-filter:blur(10px);color:#f5efdf}
+.topbar a{text-decoration:none;font-size:.8rem;font-weight:600;letter-spacing:.04em;opacity:.9}
+.topbar a:hover{opacity:1}
+.topbar .brand{font-family:var(--serif);letter-spacing:.05em}
+
+/* hero */
+header{position:relative;min-height:64svh;display:flex;align-items:flex-end;overflow:hidden;color:#fbf7ea}
+header .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05)}
+header .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,20,14,.15) 0%,rgba(120,60,10,.35) 55%,rgba(8,18,12,.9) 100%)}
+header .inner{position:relative;z-index:2;padding:2.6rem 1.4rem;max-width:1000px;margin:0 auto;width:100%}
+.kicker{font-size:.76rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.8rem}
+header h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.5rem,8vw,5rem);line-height:1;letter-spacing:.01em;
+  background:linear-gradient(180deg,#fdf8ea 40%,#e7cf94 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+header .sub{margin-top:1rem;font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(1.05rem,3vw,1.4rem);color:#f0e7cf;max-width:40ch}
+
+/* layout */
+main{max-width:1000px;margin:0 auto;padding:2.6rem 1.4rem 1rem}
+.intro{background:#fff;border:1px solid #ece4d2;border-radius:20px;padding:1.6rem 1.7rem;
+  box-shadow:0 12px 34px -20px rgba(28,42,34,.35)}
+.intro .when{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:#fff;background:var(--sp);padding:.35rem .85rem;border-radius:999px;margin-bottom:.9rem}
+.intro h2{font-family:var(--serif);font-weight:600;font-size:1.5rem;line-height:1.2;margin-bottom:.5rem}
+.intro p{color:var(--ink-soft);font-size:1rem}
+.facts{display:flex;flex-wrap:wrap;gap:1.6rem;margin-top:1.3rem;padding-top:1.2rem;border-top:1px dashed #e2d8c0}
+.fact b{display:block;font-family:var(--serif);font-size:1.5rem;color:var(--green);line-height:1.1}
+.fact span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* big CTA */
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;justify-content:center;text-align:center;
+  margin:1.6rem auto 0;background:linear-gradient(90deg,#0d2b1c,#17472e);color:#f4eed8;
+  border-radius:18px;padding:1.5rem 1.4rem}
+.cta .lead{width:100%;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:#bcd3c0;font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:.55rem;text-decoration:none;font-weight:700;font-size:1rem;
+  padding:.85rem 1.5rem;border-radius:999px;background:var(--gold);color:#20180a;transition:.2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -12px rgba(201,162,39,.7)}
+.btn.ghost{background:transparent;color:#f0e9d4;border:1px solid rgba(240,233,212,.4)}
+.btn.ghost:hover{background:rgba(201,162,39,.2);box-shadow:none}
+
+/* stop cards */
+.stops{margin-top:2.6rem;display:grid;gap:1.6rem}
+.stop{display:grid;grid-template-columns:1.1fr 1fr;gap:0;background:#fff;border:1px solid #ece4d2;border-radius:22px;overflow:hidden;
+  box-shadow:0 1px 2px rgba(28,42,34,.06),0 14px 36px -22px rgba(28,42,34,.3)}
+.stop:nth-child(even){grid-template-columns:1fr 1.1fr}
+.stop:nth-child(even) .shot{order:2}
+@media(max-width:760px){.stop,.stop:nth-child(even){grid-template-columns:1fr}.stop:nth-child(even) .shot{order:0}}
+.shot{position:relative;min-height:230px;background:#e7dfcb}
+.shot img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.num-badge{position:absolute;top:1rem;left:1rem;width:2.4rem;height:2.4rem;border-radius:50%;
+  background:var(--sp);color:#fff;font-family:var(--serif);font-weight:600;font-size:1.3rem;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.stop .txt{padding:1.6rem 1.7rem;display:flex;flex-direction:column;justify-content:center}
+.stop .emoji{font-size:1.5rem}
+.stop h3{font-family:var(--serif);font-weight:600;font-size:1.45rem;line-height:1.15;margin:.3rem 0 .2rem}
+.stop .meta{display:inline-flex;flex-wrap:wrap;gap:.4rem .7rem;font-size:.74rem;font-weight:700;letter-spacing:.04em;color:var(--terra);
+  text-transform:uppercase;margin-bottom:.7rem}
+.stop .meta span{background:#fdf1e2;border:1px solid #f0dcc2;padding:.2rem .55rem;border-radius:999px}
+.stop p{color:#3d4c42;font-size:.96rem}
+.stop p b{color:var(--ink)}
+
+/* note boxes */
+.note{margin-top:1.8rem;border-radius:14px;padding:1rem 1.15rem;font-size:.95rem;line-height:1.6}
+.note.short{background:#fff8e4;border:1px solid #ecdfb4;border-left:4px solid var(--gold);color:#5c4d20}
+.note.sun{background:#eef6ef;border:1px solid #cfe6d4;border-left:4px solid var(--green);color:#274b35}
+.note b{letter-spacing:.03em}
+
+/* track section */
+.track{margin-top:2.6rem;background:var(--cream2);border:1px solid #e7dcc2;border-radius:22px;padding:1.7rem 1.7rem}
+.track h2{font-family:var(--serif);font-weight:600;font-size:1.5rem;margin-bottom:.3rem}
+.track .sub{color:var(--ink-soft);font-size:.95rem;margin-bottom:1.1rem}
+.steps{list-style:none;display:grid;gap:.9rem;counter-reset:s}
+.steps li{position:relative;padding-left:2.5rem;font-size:.96rem;color:#33443a}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:-.1rem;
+  width:1.7rem;height:1.7rem;border-radius:50%;background:var(--green);color:#fdf7e6;font-weight:700;font-size:.85rem;
+  display:flex;align-items:center;justify-content:center}
+.steps li b{color:var(--ink)}
+.pins{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:.6rem}
+.pins a{text-decoration:none;font-size:.82rem;font-weight:600;padding:.4rem .85rem;border-radius:999px;
+  background:#fff;border:1px solid #e2d5ba;color:var(--green);transition:.2s}
+.pins a:hover{border-color:var(--gold);color:var(--terra)}
+
+/* turn by turn */
+.turns{margin-top:2rem;background:#fff;border:1px solid #ece4d2;border-radius:18px;padding:1.4rem 1.6rem}
+.turns h3{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);font-weight:700;margin-bottom:.7rem}
+.turns .row{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;font-family:var(--serif);font-size:1.05rem;color:var(--ink)}
+.turns .row .arrow{color:var(--gold);font-weight:700}
+.turns small{display:block;margin-top:.7rem;color:var(--ink-soft);font-size:.85rem;font-family:var(--sans)}
+
+/* footer */
+footer{margin-top:3.4rem;background:var(--green-deep);color:#cfc7ac;padding:2.8rem 1.4rem 2.4rem;text-align:center}
+footer .sig{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:#f0e9d4}
+footer .back{display:inline-block;margin-top:1rem;font-size:.82rem;font-weight:600;color:#d9c88f;text-decoration:none}
+footer .credits{max-width:70ch;margin:1.3rem auto 0;font-size:.72rem;line-height:1.7;color:#8fa894}
+footer a{color:#d9c88f}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="index.html">← Brazil 2026</a>
+  <a href="#route">Open the map ↓</a>
+</div>
+
+<header>
+  <img class="bg" src="assets/sao-paulo-skyline.jpg" alt="São Paulo skyline">
+  <div class="shade"></div>
+  <div class="inner">
+    <div class="kicker">Saturday · July 11 · Our one afternoon</div>
+    <h1>The São Paulo Walk</h1>
+    <p class="sub">One easy loop from the hotel — a famous red museum, a hidden rainforest, and the best gelato in town. About 48 minutes of strolling.</p>
+  </div>
+</header>
+
+<main>
+
+  <div class="intro">
+    <span class="when">Our only São Paulo window</span>
+    <h2>After check-in, before our 7pm dinner</h2>
+    <p>This is the one chance we'll have to see the city — so we're keeping it simple. A flat, easy loop straight out the front door of the Renaissance. Wear comfy shoes, bring a phone and a camera, and take your time. If anyone gets tired, we grab an Uber back.</p>
+    <div class="facts">
+      <div class="fact"><b>~48 min</b><span>Walking total</span></div>
+      <div class="fact"><b>3 stops</b><span>Museum · Park · Street</span></div>
+      <div class="fact"><b>Flat &amp; easy</b><span>No hills</span></div>
+      <div class="fact"><b>Free</b><span>All outdoors</span></div>
+    </div>
+  </div>
+
+  <div class="cta" id="route">
+    <div class="lead">📍 Tap to follow along on your phone</div>
+    <a class="btn" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=-23.5588193,-46.6620406&destination=-23.5588193,-46.6620406&waypoints=-23.561414,-46.6558819%7C-23.5615399,-46.657111%7C-23.5686704,-46.6626754" target="_blank" rel="noopener">🗺️ Open the walking route in Google Maps</a>
+    <a class="btn ghost" href="#stops">See the 3 stops ↓</a>
+  </div>
+
+  <div class="stops" id="stops">
+
+    <div class="stop">
+      <div class="shot"><span class="num-badge">1</span><img src="assets/sp-masp.jpg" alt="The red MASP museum on Avenida Paulista"></div>
+      <div class="txt">
+        <div class="emoji">🎨</div>
+        <h3>MASP — the red museum on stilts</h3>
+        <div class="meta"><span>Av. Paulista 1578</span><span>12 min · 0.8 km from hotel</span></div>
+        <p>São Paulo's most famous building: a glass box hanging under two giant <b>red concrete beams</b>. Walk into the open plaza underneath and look straight up — that's the photo everyone takes. The outside is the highlight and it's free; we'll skip going inside to save time.</p>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="shot"><span class="num-badge">2</span><img src="assets/sp-trianon.jpg" alt="Trianon Park rainforest"></div>
+      <div class="txt">
+        <div class="emoji">🌳</div>
+        <h3>Trianon Park — a rainforest across the street</h3>
+        <div class="meta"><span>Across Av. Paulista</span><span>2 min walk</span></div>
+        <p>Right across the avenue from MASP: a surviving pocket of original <b>Atlantic rainforest</b> tucked between the skyscrapers — huge old trees, shady paths, and birdsong. We'll do a quick 10-minute loop. Open daily until 6pm.</p>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="shot"><span class="num-badge">3</span><img src="assets/sp-oscar-freire.jpg" alt="Rua Oscar Freire shopping street"></div>
+      <div class="txt">
+        <div class="emoji">🍦</div>
+        <h3>Rua Oscar Freire — style &amp; gelato</h3>
+        <div class="meta"><span>15 min · 1.2 km from MASP</span><span>~20 min back to hotel</span></div>
+        <p>Brazil's most stylish street: the <b>Havaianas flagship</b>, Brazilian designers, cafés, and excellent <b>gelato</b> — this is the reward stop, so grab a scoop. From here it's a short walk (or quick Uber) back to the Renaissance.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note short"><b>⏱️ Short on time?</b> Just do stops <b>1 + 2</b> — Hotel → MASP → Trianon Park → back is only about <b>25 minutes</b> of walking, and it's the must-see part. Add Oscar Freire only if everyone's still got energy.</div>
+
+  <div class="track">
+    <h2>📍 How to follow it on your phone</h2>
+    <p class="sub">Three easy ways to keep from getting lost:</p>
+    <ol class="steps">
+      <li><b>Tap the big green button above</b> — it opens the whole loop in the Google Maps app in walking mode. Hit <b>Start</b> for turn-by-turn directions the whole way.</li>
+      <li><b>Or save each stop as a pin</b> so they all show on your map — open each and tap <b>Save</b> into a list called "SP walk":
+        <div class="pins">
+          <a href="https://www.google.com/maps/search/?api=1&query=MASP&query_place_id=ChIJH3frsc5ZzpQRoU10aab2BOk" target="_blank" rel="noopener">📌 MASP</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Parque%20Trianon&query_place_id=ChIJ7yWJXc5ZzpQRxLROjU3O7cs" target="_blank" rel="noopener">📌 Trianon Park</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Rua%20Oscar%20Freire%2C%20Jardins%2C%20S%C3%A3o%20Paulo" target="_blank" rel="noopener">📌 Rua Oscar Freire</a>
+        </div>
+      </li>
+      <li><b>Before we head out,</b> download the area for offline use: in Google Maps tap your profile photo → <b>Offline maps</b> → <b>Select your own map</b>, and save the Avenida Paulista area — in case the signal is spotty.</li>
+    </ol>
+  </div>
+
+  <div class="turns">
+    <h3>Turn-by-turn from the front door</h3>
+    <div class="row">🏨 Hotel <span class="arrow">→</span> right on <b>Alameda Santos</b> <span class="arrow">→</span> left up <b>R. Padre João Manuel</b> <span class="arrow">→</span> right onto <b>Avenida Paulista</b> <span class="arrow">→</span> 🎨 MASP is ~4 blocks up on your right</div>
+    <small>Distances from Google Maps (walking): Hotel→MASP 0.8 km · MASP↔Trianon 2 min · MASP→Oscar Freire 1.2 km · Oscar Freire→Hotel 1.6 km.</small>
+  </div>
+
+  <div class="note sun"><b>🌅 Bonus — Sunday send-off (8–9 AM).</b> Avenida Paulista closes to cars every Sunday from 8am, filling with musicians and street-food carts. If anyone's up before our 9:30 pickup, a quick 20-minute stroll out to the avenue and back is a lovely goodbye to the city.</div>
+
+</main>
+
+<footer>
+  <div class="sig">Vamos passear! — see you on Paulista 🇧🇷</div>
+  <a class="back" href="index.html">← Back to the full Brazil 2026 trip site</a>
+  <div class="credits">
+    Photos via Wikimedia Commons: MASP © Boaventuravinicius (CC BY-SA 4.0) · Trianon Park © Eugenio Hansen, OFS (CC BY-SA 4.0) · Rua Oscar Freire © Pēteris (CC BY 2.0). Walking distances from Google Maps. Made for the Lew family.
+  </div>
+</footer>
+
+</body>
+</html>
