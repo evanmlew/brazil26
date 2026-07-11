@@ -577,22 +577,35 @@ footer a{color:#d9c88f}
   const R=2.15;
   const world=new THREE.Group(); scene.add(world);
 
-  /* graticule sphere */
-  const wire=new THREE.Mesh(new THREE.SphereGeometry(R,40,28),
-    new THREE.MeshBasicMaterial({color:0x2e6b47,wireframe:true,transparent:true,opacity:.16}));
-  world.add(wire);
-  /* soft inner sphere to occlude back lines */
-  world.add(new THREE.Mesh(new THREE.SphereGeometry(R*.985,40,28),
-    new THREE.MeshBasicMaterial({color:0x0d2b1c,transparent:true,opacity:.9})));
-  /* dotted surface */
+  /* occlusion sphere (hides back-side dots) */
+  world.add(new THREE.Mesh(new THREE.SphereGeometry(R*.982,48,32),
+    new THREE.MeshBasicMaterial({color:0x0d2b1c})));
+
+  /* dotted continents — 180x90 land mask (RLE, derived from NASA Blue Marble) */
+  const RLE="0.815.1.2.1.4.16.147.10.4.28.5.4.95.3.26.56.93.12.18.54.48.1.2.2.4.1.39.11.17.38.1.7.1.5.50.10.1.14.1.1.2.1.13.1.9.10.15.37.2.6.2.1.54.7.13.1.17.2.8.2.5.8.12.22.11.10.65.5.40.4.6.4.10.24.13.2.14.1.53.2.2.3.42.2.6.7.6.9.4.13.5.1.5.3.70.8.36.3.2.2.1.2.3.8.4.25.5.2.78.8.36.8.4.12.1.25.6.2.4.1.62.3.5.13.4.8.22.8.4.2.1.35.6.3.59.5.1.3.2.31.22.7.7.28.2.5.1.1.2.3.59.8.3.34.24.2.10.25.3.5.1.5.58.10.3.34.24.1.12.23.2.1.2.2.69.7.2.36.36.26.74.46.30.3.2.25.72.48.17.3.10.31.70.49.20.1.9.31.16.4.5.2.42.50.27.31.6.3.2.1.6.6.4.2.41.3.2.46.26.31.6.5.3.1.9.1.5.2.38.53.25.32.5.7.1.2.2.1.12.2.33.2.2.6.1.48.23.34.3.2.4.6.1.2.12.1.34.2.2.3.3.48.23.35.9.12.42.3.1.2.4.51.19.35.13.2.2.5.44.4.1.56.17.36.66.61.11.1.1.3.2.34.30.1.36.62.8.8.1.33.32.1.34.64.1.1.5.41.34.1.2.4.27.67.4.41.26.1.11.4.24.2.1.66.5.3.1.4.2.30.38.5.9.2.10.72.5.1.2.5.1.1.3.26.27.1.9.7.7.4.6.1.1.75.6.36.28.1.7.9.4.6.7.6.1.72.5.33.35.11.4.8.6.5.1.75.2.34.31.14.3.9.6.5.1.76.1.5.3.26.34.12.2.12.3.6.2.75.2.1.9.23.33.12.2.9.1.11.2.78.10.23.31.15.1.9.1.11.1.78.13.21.5.3.21.24.1.1.2.6.1.82.14.30.19.25.3.4.3.81.15.30.17.27.3.3.4.1.1.79.17.27.17.29.2.3.4.7.1.73.21.24.15.31.2.2.3.1.2.5.6.67.23.24.14.32.1.15.5.2.1.64.23.23.14.33.3.13.5.67.22.24.13.51.1.1.1.67.21.25.13.122.19.25.14.4.1.40.3.3.1.70.19.25.14.3.2.37.6.3.2.71.17.25.14.2.3.36.12.72.15.26.12.4.3.35.14.71.15.27.11.4.2.34.17.70.14.28.11.4.2.33.19.69.11.31.10.5.2.33.19.68.12.31.10.40.20.67.11.33.8.41.20.67.11.34.6.43.19.67.10.35.5.44.5.4.9.68.8.97.6.68.9.98.5.68.7.117.2.54.5.176.4.105.1.11.2.56.4.117.2.57.4.176.3.177.3.178.2.179.1.606.1.57.3.1.1.7.1.29.1.3.3.14.14.6.2.31.1.5.5.1.3.2.2.22.4.1.2.12.3.1.2340";
   (function(){
-    const N=900, pos=new Float32Array(N*3);
-    for(let i=0;i<N;i++){
-      const y=1-(i/(N-1))*2, r=Math.sqrt(1-y*y), th=i*2.399963;
-      pos[i*3]=Math.cos(th)*r*R; pos[i*3+1]=y*R; pos[i*3+2]=Math.sin(th)*r*R;
+    const W=180,H=90, runs=RLE.split('.').map(Number);
+    const mask=new Uint8Array(W*H); let idx=0,v=0;
+    for(const r of runs){ if(v)mask.fill(1,idx,idx+r); idx+=r; v^=1; }
+    const land=[], gold=[];
+    const hash=i=>{const s=Math.sin(i*127.1)*43758.5453;return s-Math.floor(s);};
+    for(let y=0;y<H;y++)for(let x=0;x<W;x++){
+      const i=y*W+x; if(!mask[i])continue;
+      const lat=90-(y+.5)*2, lon=-180+(x+.5)*2;
+      /* thin dots toward poles so density looks even on the sphere */
+      if(hash(i)>Math.cos(lat*Math.PI/180)+.08)continue;
+      const jla=lat+(hash(i*3+1)-.5)*.9, jlo=lon+(hash(i*7+2)-.5)*.9;
+      const p=ll(jla,jlo,R);
+      const isBrazil = lat>-34&&lat<6&&lon>-74.5&&lon<-34;
+      (isBrazil?gold:land).push(p.x,p.y,p.z);
     }
-    const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.BufferAttribute(pos,3));
-    world.add(new THREE.Points(g,new THREE.PointsMaterial({color:0x4d8f68,size:.028,transparent:true,opacity:.55})));
+    function pts(arr,color,size,op){
+      const g=new THREE.BufferGeometry();
+      g.setAttribute('position',new THREE.BufferAttribute(new Float32Array(arr),3));
+      return new THREE.Points(g,new THREE.PointsMaterial({color,size,transparent:true,opacity:op}));
+    }
+    world.add(pts(land,0x5fae7f,.046,.85));
+    world.add(pts(gold,0xe3b64f,.055,.95));
   })();
 
   /* atmosphere glow */
@@ -651,7 +664,8 @@ footer a{color:#d9c88f}
   })();
 
   /* face Brazil toward camera */
-  world.rotation.y=-Math.PI*0.28;
+  const BASE_Y=-Math.PI*0.28;
+  world.rotation.y=BASE_Y;
 
   /* mouse parallax */
   let mx=0,my=0,tx=0,ty=0;
@@ -668,9 +682,10 @@ footer a{color:#d9c88f}
   const clock=new THREE.Clock();
   (function tick(){
     const t=clock.getElapsedTime();
-    world.rotation.y+= .0012;
+    /* gentle sway keeps Brazil centered instead of spinning away */
     mx+=(tx-mx)*.04; my+=(ty-my)*.04;
-    world.rotation.x=my*.6+0.18; camera.position.x=mx*1.2; camera.lookAt(0,0,0);
+    world.rotation.y=BASE_Y+Math.sin(t*.12)*.34+mx*.3;
+    world.rotation.x=0.14+my*.25; camera.position.x=mx*.8; camera.lookAt(0,0,0);
     rings.forEach(r=>{const s=1+Math.sin(t*2.2+r.userData.base)*.25; r.scale.set(s,s,s);
       r.material.opacity=.45+Math.sin(t*2.2+r.userData.base)*.3;});
     comets.forEach(c=>{const u=(t*.09+c.off)%1; c.comet.position.copy(c.curve.getPoint(u));});
