@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brazil 2026 — The Lew Family Adventure</title>
+<meta name="description" content="12 days across São Paulo, the Amazon, the Pantanal and Rio de Janeiro — the Lew family's Brazil adventure, July 10–22, 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌴</text></svg>">
+<style>
+:root{
+  --cream:#faf6ee; --cream2:#f3ecdd; --ink:#1c2a22; --ink-soft:#48584e;
+  --green:#1e5c3a; --green-deep:#0d2b1c; --gold:#c9a227; --terra:#b45309;
+  --sp:#d97706; --amz:#2f7d4f; --pan:#b45309; --rio:#0e7490;
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+/* ---------- NAV ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:.7rem 1.4rem;background:rgba(13,43,28,.88);backdrop-filter:blur(10px);color:#f5efdf;
+  transform:translateY(-100%);transition:transform .4s ease}
+nav.show{transform:translateY(0)}
+nav .brand{font-family:var(--serif);font-weight:600;font-size:1.05rem;letter-spacing:.06em}
+nav .links{display:flex;gap:1.1rem;font-size:.82rem;font-weight:500;letter-spacing:.04em}
+nav .links a{text-decoration:none;opacity:.85;padding:.2rem 0;border-bottom:2px solid transparent}
+nav .links a:hover{opacity:1;border-bottom-color:var(--gold)}
+@media(max-width:640px){nav .links{gap:.7rem;font-size:.72rem}}
+
+/* ---------- HERO ---------- */
+header{position:relative;height:100svh;min-height:560px;overflow:hidden;
+  background:radial-gradient(120% 90% at 50% 10%,#123524 0%,#0d2b1c 45%,#071a10 100%);color:#f7f2e4}
+#globe{position:absolute;inset:0;width:100%;height:100%}
+.hero-inner{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 1.2rem;pointer-events:none}
+.hero-kicker{font-size:.8rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem;font-weight:600}
+h1.hero-title{font-family:var(--serif);font-weight:600;font-size:clamp(3.4rem,12vw,8.5rem);line-height:.95;letter-spacing:.02em;
+  background:linear-gradient(180deg,#fdf8ea 30%,#d9c88f 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{margin-top:1.2rem;font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(1.05rem,2.6vw,1.5rem);color:#e8dfc6}
+.hero-dates{margin-top:.7rem;font-size:.85rem;letter-spacing:.28em;text-transform:uppercase;color:#bcd3c0}
+.hero-chips{display:flex;gap:.55rem;margin-top:2rem;flex-wrap:wrap;justify-content:center;pointer-events:auto}
+.hero-chips a{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;text-decoration:none;
+  padding:.5rem 1rem;border:1px solid rgba(247,242,228,.35);border-radius:999px;color:#f0e9d4;transition:.25s}
+.hero-chips a:hover{background:rgba(201,162,39,.25);border-color:var(--gold)}
+.scroll-cue{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:#9fb8a4;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+/* ---------- SECTION SHARED ---------- */
+section{max-width:1180px;margin:0 auto;padding:4.5rem 1.4rem 2rem}
+.eyebrow{font-size:.75rem;letter-spacing:.38em;text-transform:uppercase;color:var(--terra);font-weight:700}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.12;margin:.5rem 0 1rem}
+.lede{max-width:60ch;color:var(--ink-soft);font-size:1.04rem}
+
+/* stats */
+.stats{display:flex;flex-wrap:wrap;gap:2.2rem;margin-top:2.4rem;padding:1.6rem 1.8rem;background:var(--green-deep);color:#efe8d2;border-radius:18px}
+.stat b{display:block;font-family:var(--serif);font-size:2rem;color:var(--gold);line-height:1.1}
+.stat span{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#b9cbb9}
+
+/* phase banner */
+.phase{position:relative;margin:4.2rem auto 0;max-width:1380px;border-radius:26px;overflow:hidden;color:#fbf7ea;min-height:390px;display:flex;align-items:flex-end}
+.phase .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05)}
+.phase .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,20,14,.18) 0%,rgba(8,18,12,.82) 88%)}
+.phase .inner{position:relative;z-index:2;padding:2.4rem;max-width:760px}
+.phase .tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;padding:.38rem .9rem;border-radius:999px;margin-bottom:.9rem}
+.phase h3{font-family:var(--serif);font-size:clamp(1.9rem,4.5vw,3.1rem);font-weight:600;line-height:1.05}
+.phase p{margin-top:.7rem;color:#e4dcc4;max-width:58ch;font-size:.99rem}
+.phase .dates{font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-top:.8rem;font-weight:600}
+
+/* wildlife strip */
+.fauna{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.8rem;margin:1.6rem auto 0;max-width:1380px;padding:0 .2rem}
+.fauna figure{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:#dcd4c0}
+.fauna img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.fauna figure:hover img{transform:scale(1.06)}
+.fauna figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.3rem .7rem .5rem;font-size:.74rem;font-weight:600;color:#fff;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.72));letter-spacing:.03em}
+
+/* ---------- DAY CARDS ---------- */
+.day{display:grid;grid-template-columns:120px 1fr 1.05fr;gap:1.6rem;margin-top:2.6rem;padding:1.9rem;border-radius:22px;background:#fff;
+  box-shadow:0 1px 2px rgba(28,42,34,.06),0 12px 34px -18px rgba(28,42,34,.25);border:1px solid #ece4d2;
+  opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+.day.visible{opacity:1;transform:none}
+.day.flip{grid-template-columns:120px 1.05fr 1fr}
+.day.flip .photos{order:2}.day.flip .body{order:3}
+@media(max-width:900px){.day,.day.flip{grid-template-columns:1fr}.day .photos,.day.flip .photos{order:0}.datecol{display:flex;align-items:baseline;gap:.6rem}}
+.datecol{text-align:left}
+.datecol .dow{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);font-weight:700}
+.datecol .num{font-family:var(--serif);font-size:3.2rem;font-weight:600;line-height:1;color:var(--green)}
+.datecol .mon{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.datecol .dayno{margin-top:.7rem;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:#b3a888;font-weight:700}
+@media(max-width:900px){.datecol .num{font-size:2.2rem}.datecol .dayno{margin:0 0 0 auto}}
+.body h4{font-family:var(--serif);font-size:1.55rem;font-weight:600;line-height:1.2}
+.area{display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  padding:.3rem .75rem;border-radius:999px;margin:.6rem 0 .9rem;color:#fff}
+.body ul{list-style:none;margin:.2rem 0 0}
+.body li{padding:.42rem 0 .42rem 1.5rem;position:relative;font-size:.95rem;color:#33443a;border-bottom:1px dashed #ece3cf}
+.body li:last-child{border-bottom:none}
+.body li::before{content:'';position:absolute;left:.15rem;top:.95rem;width:.55rem;height:.55rem;border-radius:50%;background:var(--gold)}
+.body li b{color:var(--ink)}
+.body li .t{font-weight:700;font-variant-numeric:tabular-nums;color:var(--green)}
+.dinner{margin-top:1.1rem;display:flex;gap:.8rem;align-items:flex-start;background:var(--cream2);border:1px solid #e7dcc2;border-radius:14px;padding:.9rem 1rem}
+.dinner .ic{font-size:1.3rem;line-height:1.2}
+.dinner b{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);display:block;margin-bottom:.15rem}
+.dinner p{font-size:.92rem;color:#3d4c42}
+.photos{display:grid;gap:.8rem;align-content:start}
+.photos.two{grid-template-columns:1fr;}
+.photos.trio{grid-template-columns:1fr 1fr}
+.photos.trio .ph:first-child{grid-column:1/-1}
+.ph{position:relative;border-radius:16px;overflow:hidden;background:#e7dfcb}
+.ph img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/10;transition:transform .6s}
+.photos.trio .ph:not(:first-child) img{aspect-ratio:4/3}
+.ph:hover img{transform:scale(1.045)}
+.ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.6rem .8rem .55rem;font-size:.74rem;color:#fff;font-weight:500;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.7));letter-spacing:.02em}
+
+/* flight strip (boarding-pass style) */
+.flights{margin:.9rem 0 0;display:grid;gap:.5rem}
+.fl{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .9rem;background:linear-gradient(90deg,#0d2b1c,#17472e);color:#eee7cf;border-radius:12px;padding:.62rem .95rem;font-size:.83rem}
+.fl .no{font-weight:700;letter-spacing:.05em;color:#d9c88f;min-width:98px}
+.fl .rt{font-weight:600;font-variant-numeric:tabular-nums}
+.fl .rt i{font-style:normal;opacity:.55;padding:0 .2rem}
+.fl .seats{margin-left:auto;font-size:.72rem;color:#a9c3ab;letter-spacing:.04em}
+@media(max-width:640px){.fl .seats{margin-left:0;width:100%}}
+
+/* fun fact callout */
+.funfact{margin-top:1rem;background:#fff8e4;border:1px solid #ecdfb4;border-left:4px solid var(--gold);border-radius:10px;padding:.72rem .95rem;font-size:.87rem;color:#5c4d20;line-height:1.55}
+.funfact b{color:#8a6d14;letter-spacing:.05em}
+
+/* accent per phase */
+.p-sp .area{background:var(--sp)} .p-amz .area{background:var(--amz)} .p-pan .area{background:var(--pan)} .p-rio .area{background:var(--rio)}
+.p-sp .datecol .num{color:var(--sp)} .p-amz .datecol .num{color:var(--amz)} .p-pan .datecol .num{color:var(--pan)} .p-rio .datecol .num{color:var(--rio)}
+.tag-sp{background:var(--sp)} .tag-amz{background:var(--amz)} .tag-pan{background:var(--pan)} .tag-rio{background:var(--rio)}
+
+/* travelers + footer */
+.travelers{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+.tv{background:#fff;border:1px solid #ece4d2;border-radius:999px;padding:.55rem 1.2rem;font-weight:600;font-size:.92rem;display:flex;gap:.5rem;align-items:center}
+.tv span{font-size:1.1rem}
+footer{margin-top:5rem;background:var(--green-deep);color:#cfc7ac;padding:3.2rem 1.4rem 2.6rem;text-align:center}
+footer .sig{font-family:var(--serif);font-style:italic;font-size:1.35rem;color:#f0e9d4}
+footer .credits{max-width:72ch;margin:1.4rem auto 0;font-size:.74rem;line-height:1.7;color:#9fb8a4}
+footer a{color:#d9c88f}
+.finale{position:relative;max-width:1380px;margin:4.5rem auto 0;border-radius:26px;overflow:hidden;min-height:420px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
+.finale img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.finale .shade{position:absolute;inset:0;background:rgba(9,20,14,.45)}
+.finale .inner{position:relative;z-index:2;padding:2rem}
+.finale h3{font-family:var(--serif);font-size:clamp(2rem,5vw,3.4rem);font-weight:600}
+.finale p{font-family:var(--serif);font-style:italic;font-size:1.15rem;margin-top:.6rem;color:#efe6cf}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="brand">BRAZIL 2026 · Lew Family</div>
+  <div class="links">
+    <a href="#sao-paulo">São Paulo</a><a href="#amazon">Amazon</a><a href="#pantanal">Pantanal</a><a href="#rio">Rio</a>
+  </div>
+</nav>
+
+<header id="top">
+  <canvas id="globe"></canvas>
+  <div class="hero-inner">
+    <div class="hero-kicker">The Lew Family Adventure</div>
+    <h1 class="hero-title">BRAZIL</h1>
+    <div class="hero-sub">São Paulo · the Amazon · the Pantanal · Rio de Janeiro</div>
+    <div class="hero-dates">July 10 – 22, 2026</div>
+    <div class="hero-chips">
+      <a href="#sao-paulo">01 · São Paulo</a><a href="#amazon">02 · Amazon</a><a href="#pantanal">03 · Pantanal</a><a href="#rio">04 · Rio</a>
+    </div>
+  </div>
+  <div class="scroll-cue">Scroll to explore ↓</div>
+</header>
+
+<section id="overview">
+  <div class="eyebrow">The Journey</div>
+  <h2>Three biomes, one unforgettable July.</h2>
+  <p class="lede">From the skyline of South America's largest city, deep into the clear-water Amazon of the Rio Cristalino, out across the wildlife-packed wetlands of the southern Pantanal, and finally to the beaches and peaks of the Cidade Maravilhosa — the Wonderful City — Rio de Janeiro.</p>
+  <div class="travelers">
+    <div class="tv"><span>🧭</span> Evan</div>
+    <div class="tv"><span>🌺</span> Jane</div>
+    <div class="tv"><span>📷</span> Ian</div>
+    <div class="tv"><span>🦜</span> Zachary</div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>13</b><span>Days</span></div>
+    <div class="stat"><b>10</b><span>Flights</span></div>
+    <div class="stat"><b>3</b><span>Biomes</span></div>
+    <div class="stat"><b>5</b><span>Stays</span></div>
+    <div class="stat"><b>1</b><span>Jaguar quest</span></div>
+  </div>
+</section>
+
+<!-- ============ PHASE 1 : SÃO PAULO ============ -->
+<div class="phase" id="sao-paulo">
+  <img class="bg" src="assets/sao-paulo-bridge.jpg" alt="Octávio Frias de Oliveira bridge, São Paulo">
+  <div class="shade"></div>
+  <div class="inner">
+    <span class="tag tag-sp">Chapter One</span>
+    <h3>São Paulo</h3>
+    <p>A nation-size city of 20 million and the self-appointed heart of modern Brazilian culture — the best in cutting-edge music, fashion, restaurants and nightlife are all found here. We land, we nap, we eat spectacularly.</p>
+    <div class="dates">Jul 10 – 11 · Renaissance São Paulo Hotel</div>
+  </div>
+</div>
+
+<section>
+  <div class="day p-sp" >
+    <div class="datecol"><div class="dow">Friday</div><div class="num">10</div><div class="mon">July</div><div class="dayno">Day 01</div></div>
+    <div class="body">
+      <h4>Wheels up ✈️</h4>
+      <span class="area">In transit · SEA → DFW → São Paulo</span>
+      <ul>
+        <li>Two flights, one very long night — land in São Paulo tomorrow at 9:00 AM</li>
+        <li>~2.5-hour layover at DFW for dinner and a leg-stretch before the overnight haul</li>
+      </ul>
+      <div class="flights">
+        <div class="fl"><span class="no">AS 549</span><span class="rt">SEA 12:13 PM <i>→</i> DFW 6:21 PM</span><span class="seats">Seats 17B–E · exit row · op. Alaska</span></div>
+        <div class="fl"><span class="no">AA 963</span><span class="rt">DFW 9:00 PM <i>→</i> GRU 9:00 AM (+1)</span><span class="seats">Seats 13A–C, 14A · overnight</span></div>
+      </div>
+      <div class="dinner"><div class="ic">🍽️</div><div><b>Dinner</b><p>Layover dinner at DFW — last American meal for two weeks.</p></div></div>
+      <div class="funfact"><b>✈️ FUN FACT</b> — The DFW→São Paulo leg is ~10.5 hours, but only a 2-hour time change: Brazil doesn't observe daylight saving, so São Paulo is just 4 hours ahead of Seattle in July. Jet lag should be gentle.</div>
+    </div>
+    <div class="photos two">
+      <figure class="ph"><img src="assets/amazon-river-aerial-2.jpg" alt="Flying south over the rainforest"><figcaption>Next stop: the Southern Hemisphere</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="day p-sp flip">
+    <div class="datecol"><div class="dow">Saturday</div><div class="num">11</div><div class="mon">July</div><div class="dayno">Day 02</div></div>
+    <div class="body">
+      <h4>Bom dia, São Paulo</h4>
+      <span class="area">São Paulo · Jardins</span>
+      <ul>
+        <li><span class="t">9:00 AM</span> — Land at Guarulhos; our driver meets us just past customs with a <b>Jacada sign</b></li>
+        <li>Early check-in at the <b>Renaissance São Paulo</b> (Alameda Santos, Jardins) — showers, naps, and a slow afternoon</li>
+        <li><b>Walkable from the hotel:</b> <b>Avenida Paulista</b> is 2 minutes away — on Sundays it closes to cars and fills with musicians and street food</li>
+        <li><b>MASP</b> (~15 min) — Lina Bo Bardi's glass art museum floating on red concrete stilts, São Paulo's most famous building; <b>Trianon Park</b> just across the avenue is a surviving pocket of original Atlantic rainforest mid-skyline</li>
+        <li><b>Rua Oscar Freire</b> (~10 min) — Brazil's most stylish shopping street: the Havaianas flagship, Brazilian designers, and excellent gelato</li>
+      </ul>
+      <div class="dinner"><div class="ic">🥩</div><div><b>Dinner · 7:00 PM</b><p><b>Figueira Rubaiyat</b> (Rua Haddock Lobo — a short walk from the hotel) — São Paulo's famous grill, built around a magnificent century-old Bengal fig tree; one Tripadvisor reviewer calls it "a dining experience like no other." <b>Order:</b> the legendary couvert platter to start, bife de chorizo with soufflé potatoes or the baby beef (raised on Rubaiyat's own ranch) for Evan &amp; Ian, grilled fish "ribs" and hearts of palm for Jane &amp; Zach. Mil-folhas for dessert.</p></div></div>
+      <div class="funfact"><b>🌳 FUN FACT</b> — Figueira's dining room is genuinely wrapped around the living fig tree — you eat under its canopy beneath a glass roof. The Rubaiyat group raises its own cattle, so the beef goes ranch-to-table.</div>
+    </div>
+    <div class="photos trio">
+      <figure class="ph"><img src="assets/sao-paulo-bridge.jpg" alt="São Paulo's Octávio Frias de Oliveira bridge"><figcaption>The Ponte Estaiada — São Paulo's modern icon</figcaption></figure>
+      <figure class="ph"><img src="assets/sao-paulo-towers.jpg" alt="São Paulo skyscrapers"><figcaption>Downtown towers</figcaption></figure>
+      <figure class="ph"><img src="assets/caipirinha.jpg" alt="Caipirinhas"><figcaption>First caipirinhas of the trip</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHASE 2 : AMAZON ============ -->
+<div class="phase" id="amazon">
+  <img class="bg" src="assets/amazon-river-aerial.jpg" alt="Aerial view of the Cristalino River, southern Amazon">
+  <div class="shade"></div>
+  <div class="inner">
+    <span class="tag tag-amz">Chapter Two</span>
+    <h3>The Amazon — Rio Cristalino</h3>
+    <p>The last great natural wilderness. Deep in the southern Amazon, the clear-water Cristalino River winds through a private rainforest reserve — reachable only by boat, home to canopy towers, macaws, monkeys and more butterflies than we can count.</p>
+    <div class="dates">Jul 12 – 15 · Cristalino Jungle Lodge · 3 nights, all meals</div>
+  </div>
+</div>
+<div class="fauna">
+  <figure><img src="assets/wildlife-red-green-macaw.jpg" alt="Red-and-green macaw"><figcaption>Red-and-green macaw</figcaption></figure>
+  <figure><img src="assets/toucans-pair.jpg" alt="Toco toucans"><figcaption>Toucans</figcaption></figure>
+  <figure><img src="assets/wildlife-giant-otter.jpg" alt="Giant river otter"><figcaption>Giant river otter</figcaption></figure>
+  <figure><img src="assets/amazon-reflection.jpg" alt="Rio Cristalino"><figcaption>The clear-water Cristalino</figcaption></figure>
+</div>
+
+<section>
+  <div class="day p-amz">
+    <div class="datecol"><div class="dow">Sunday</div><div class="num">12</div><div class="mon">July</div><div class="dayno">Day 03</div></div>
+    <div class="body">
+      <h4>Into the rainforest</h4>
+      <span class="area">São Paulo → Alta Floresta → Cristalino</span>
+      <ul>
+        <li><span class="t">9:30 AM</span> — Pick-up from the Renaissance lobby — private transfer to Viracopos airport (~1.5 hrs)</li>
+        <li>Fly to <b>Alta Floresta</b>, gateway to the southern Amazon</li>
+        <li>45 minutes by road, then <b>30 minutes by boat</b> up the Cristalino River as the sun drops — the lodge is reachable only by water</li>
+      </ul>
+      <div class="flights">
+        <div class="fl"><span class="no">Azul AD4216</span><span class="rt">VCP 2:10 PM <i>→</i> AFL 4:00 PM</span><span class="seats">Seats 3A–D · 23kg checked + 10kg carry-on</span></div>
+      </div>
+      <div class="funfact"><b>💧 FUN FACT</b> — The Cristalino is a rare <i>clear-water</i> river. Unlike the silty brown Amazon mainstem, it runs glassy and dark — which is why the wildlife viewing (and the swimming) is so good. No cell service for 3 days. You're welcome.</div>
+      <div class="dinner"><div class="ic">🌙</div><div><b>Dinner</b><p>First dinner at <b>Cristalino Jungle Lodge</b> to a soundtrack of night frogs and howler monkeys.</p></div></div>
+    </div>
+    <div class="photos two">
+      <figure class="ph"><img src="assets/amazon-river-aerial.jpg" alt="The Cristalino river from above"><figcaption>The Cristalino winds through untouched forest</figcaption></figure>
+      <figure class="ph"><img src="assets/amazon-reflection.jpg" alt="Mirror-still water on the Rio Cristalino"><figcaption>Mirror-still water at dusk</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="day p-amz flip">
+    <div class="datecol"><div class="dow">Monday</div><div class="num">13</div><div class="mon">July</div><div class="dayno">Day 04</div></div>
+    <div class="body">
+      <h4>Canopy towers &amp; piranhas</h4>
+      <span class="area">Cristalino Jungle Lodge</span>
+      <ul>
+        <li><b>Dawn at the canopy tower</b> — 50 metres above the forest floor as macaws and toucans commute past at eye level</li>
+        <li>Two guided excursions daily (max 8 per guide): <b>canoeing, rainforest trails, piranha fishing</b>, wildlife boat safaris</li>
+        <li>On the watch list: five species of monkey, giant otters, tapirs — and the electric-blue flash of <b>morpho butterflies</b></li>
+        <li>Camera day one: Evan &amp; Zach on the long lenses (Tamron 50-400 &amp; 150-500), Ian spotting</li>
+      </ul>
+      <div class="dinner"><div class="ic">🍛</div><div><b>Dinner</b><p>At the lodge — regional Amazonian cuisine, fresh river fish and tropical fruit we can't pronounce yet.</p></div></div>
+      <div class="funfact"><b>🦋 FUN FACT</b> — The blue morpho's wings aren't actually blue: microscopic scales bend the light. And piranha means "tooth fish" in Tupi — there are ~60 species, and yes, we're fishing for them before we swim.</div>
+    </div>
+    <div class="photos two">
+      <figure class="ph"><img src="assets/toucans-pair.jpg" alt="Toucans in the canopy"><figcaption>Eye-level with the canopy commuters</figcaption></figure>
+      <figure class="ph"><img src="assets/wildlife-red-green-macaw.jpg" alt="Red-and-green macaw"><figcaption>Red-and-green macaw, Ara chloropterus</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="day p-amz">
+    <div class="datecol"><div class="dow">Tuesday</div><div class="num">14</div><div class="mon">July</div><div class="dayno">Day 05</div></div>
+    <div class="body">
+      <h4>Amazon grand finale</h4>
+      <span class="area">Cristalino Jungle Lodge</span>
+      <ul>
+        <li>Morning &amp; afternoon excursions — deeper trails, secret river bends, monkeys overhead</li>
+        <li><b>Private sunset boat tour</b> 🥂 — a swim in the Cristalino, riverside picnic and sparkling wine as the forest turns gold (our Jacada treat)</li>
+      </ul>
+      <div class="dinner"><div class="ic">✨</div><div><b>Dinner</b><p>Farewell dinner at the lodge — one last night under the Amazon stars.</p></div></div>
+    </div>
+    <div class="photos two">
+      <figure class="ph"><img src="assets/amazon-canopy.jpg" alt="The rainforest canopy"><figcaption>An ocean of green in every direction</figcaption></figure>
+      <figure class="ph"><img src="assets/wildlife-giant-otter.jpg" alt="Giant river otter"><figcaption>Giant otters patrol the river</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="day p-amz flip">
+    <div class="datecol"><div class="dow">Wednesday</div><div class="num">15</div><div class="mon">July</div><div class="dayno">Day 06</div></div>
+    <div class="body">
+      <h4>Across Brazil in a day</h4>
+      <span class="area">Cristalino → Cuiabá → São Paulo</span>
+      <ul>
+        <li>One last dawn chorus, then boat + road back to Alta Floresta</li>
+        <li>Two Azul hops: <b>Cuiabá</b>, then on to Viracopos/Campinas</li>
+        <li>Overnight at the <b>Marriott Airport Hotel São Paulo</b> — hot showers and real Wi-Fi again</li>
+      </ul>
+      <div class="flights">
+        <div class="fl"><span class="no">Azul AD2633</span><span class="rt">AFL 1:00 PM <i>→</i> CGB 2:05 PM</span><span class="seats">Seats 2A–D</span></div>
+        <div class="fl"><span class="no">Azul AD4339</span><span class="rt">CGB 4:40 PM <i>→</i> VCP 7:45 PM</span><span class="seats">23kg checked + 10kg carry-on</span></div>
+      </div>
+      <div class="dinner"><div class="ic">🛎️</div><div><b>Dinner</b><p>Easy dinner at the hotel — early night before the Pantanal.</p></div></div>
+    </div>
+    <div class="photos two">
+      <figure class="ph"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sunset_in_Alta_Floresta-MT%2C_Brazil.jpg?width=1400" onerror="this.onerror=null;this.src='assets/amazon-reflection.jpg'" alt="Sunset in Alta Floresta"><figcaption>Sunset over Alta Floresta, Mato Grosso</figcaption></figure>
+    </div>
+  </div>
+</section>
+<!-- ============ PHASE 3 : PANTANAL ============ -->
+<div class="phase" id="pantanal">
+  <img class="bg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Pantanal%2C_Mato_Grosso%2C_Brasil.jpg?width=1800" onerror="this.onerror=null;this.src='assets/wildlife-jabiru.jpg'" alt="The Pantanal wetlands">
+  <div class="shade"></div>
+  <div class="inner">
+    <span class="tag tag-pan">Chapter Three</span>
+    <h3>The Pantanal — Caiman Lodge</h3>
+    <p>The world's largest tropical wetland, and the best place on Earth to see a wild jaguar. Our base: Caiman Ecological Refuge, a 53,000-hectare working ranch and conservation pioneer in the southern Pantanal.</p>
+    <div class="dates">Jul 16 – 18 · Caiman Lodge · 3 nights, all-inclusive</div>
+  </div>
+</div>
+<div class="fauna">
+  <figure><img src="assets/wildlife-jaguar.jpg" alt="Jaguar"><figcaption>Jaguar — onça-pintada</figcaption></figure>
+  <figure><img src="assets/wildlife-hyacinth-macaw.jpg" alt="Hyacinth macaw"><figcaption>Hyacinth macaw</figcaption></figure>
+  <figure><img src="assets/wildlife-capybara.jpg" alt="Capybara"><figcaption>Capybara (+ passenger)</figcaption></figure>
+  <figure><img src="assets/wildlife-yacare-caiman.jpg" alt="Yacare caiman"><figcaption>Yacare caiman</figcaption></figure>
+  <figure><img src="assets/wildlife-jabiru.jpg" alt="Jabiru stork"><figcaption>Jabiru stork</figcaption></figure>
+</div>
+
+<section>
+  <div class="day p-pan">
+    <div class="datecol"><div class="dow">Thursday</div><div class="num">16</div><div class="mon">July</div><div class="dayno">Day 07</div></div>
+    <div class="body">
+      <h4>Onward to the wetlands</h4>
+      <span class="area">São Paulo → Campo Grande → Caiman</span>
+      <ul>
+        <li><span class="t">8:40 AM</span> — Transfer to Guarulhos for the LATAM flight to <b>Campo Grande</b></li>
+        <li><span class="t">1:00 PM</span> — Four-hour drive into the southern Pantanal — the landscape opens up, and the wildlife count begins</li>
+        <li>Evening: settle into our suites at <b>Caiman Lodge</b> — a 53,000-hectare working cattle ranch turned ecological refuge</li>
+        <li>After dark: the first <b>nocturnal safari</b> — spotlights sweeping for eyeshine: caimans, capybaras, crab-eating foxes… maybe more</li>
+      </ul>
+      <div class="flights">
+        <div class="fl"><span class="no">LATAM LA 3886</span><span class="rt">GRU 12:10 PM <i>→</i> CGR 1:00 PM</span><span class="seats">Premium Economy · Seats 2A, 2C, 2D, 2F</span></div>
+      </div>
+      <div class="dinner"><div class="ic">🔦</div><div><b>Dinner</b><p>At <b>Caiman Lodge</b> — ranch-style Pantanal cooking, then out into the dark.</p></div></div>
+      <div class="funfact"><b>🌎 FUN FACT</b> — The Pantanal is the world's largest tropical wetland — roughly the size of Washington State — and hosts the densest wildlife concentrations in the Americas. Pack layers: July cold fronts can drop nights toward freezing.</div>
+    </div>
+    <div class="photos two">
+      <figure class="ph"><img src="assets/wildlife-yacare-caiman.jpg" alt="Yacare caiman"><figcaption>The lodge's namesake, sunbathing</figcaption></figure>
+      <figure class="ph"><img src="assets/wildlife-jabiru.jpg" alt="Jabiru in flight"><figcaption>Jabiru — the Pantanal's giant stork</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="day p-pan flip">
+    <div class="datecol"><div class="dow">Friday</div><div class="num">17</div><div class="mon">July</div><div class="dayno">Day 08</div></div>
+    <div class="body">
+      <h4>Safari, canoe, repeat</h4>
+      <span class="area">Caiman Ecological Refuge</span>
+      <ul>
+        <li>Morning walk on forest trails to <b>Paizinho's bridge</b> — a front-row seat to gathering spectacled caimans</li>
+        <li><b>Photographic safari</b> in open vehicles — giant anteaters, capybaras, marsh deer across the floodplain</li>
+        <li><b>Canoe the floodplains</b> — the Pantanal at its stillest; then another nocturnal safari after dark</li>
+      </ul>
+      <div class="dinner"><div class="ic">🥘</div><div><b>Dinner</b><p>At the lodge — swapping first-day photo bragging rights over dessert.</p></div></div>
+      <div class="funfact"><b>🐊 FUN FACT</b> — The Pantanal holds an estimated 10 million yacare caimans — the largest concentration of crocodilians on Earth. At Paizinho's bridge you'll see (and hear) dozens at once.</div>
+    </div>
+    <div class="photos two">
+      <figure class="ph"><img src="assets/wildlife-capybara.jpg" alt="Capybara with a yellow-headed caracara"><figcaption>Capybara, chauffeur to a caracara</figcaption></figure>
+      <figure class="ph"><img src="assets/wildlife-toco-toucan.jpg" alt="Toco toucan"><figcaption>Toco toucan — the Pantanal's showstopper</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="day p-pan">
+    <div class="datecol"><div class="dow">Saturday</div><div class="num">18</div><div class="mon">July</div><div class="dayno">Day 09</div></div>
+    <div class="body">
+      <h4>The jaguar quest 🐆</h4>
+      <span class="area">Onçafari Jaguar Project</span>
+      <ul>
+        <li>Full day &amp; evening embedded with the <b>Onçafari jaguar habituation team</b> (exact day confirmed at the lodge)</li>
+        <li>Base-station briefing, then fieldwork: <b>camera traps, tracks and prints, VHF collar telemetry</b> — maybe tracking on foot with the experts</li>
+        <li>If the team pins a location by day, we head out at <b>sunset or after dinner</b> for the real thing: a wild jaguar in the dark</li>
+      </ul>
+      <div class="dinner"><div class="ic">🐾</div><div><b>Dinner</b><p>At the lodge — possibly interrupted by a jaguar. We're okay with that.</p></div></div>
+      <div class="funfact"><b>🐆 FUN FACT</b> — Onçafari was founded in 2011 by Mário Haberfeld, a Brazilian ex-Formula 1 test driver who traded racing for rewilding — it was the first project in the world to return captive-born jaguars to the wild. Some 60–80 jaguars roam the refuge, and in recent seasons nearly every guest staying 3–4 days has seen one. Our odds are good.</div>
+    </div>
+    <div class="photos two">
+      <figure class="ph"><img src="assets/wildlife-jaguar.jpg" alt="Jaguar on a river bank"><figcaption>The one we came for — onça-pintada</figcaption></figure>
+      <figure class="ph"><img src="assets/wildlife-hyacinth-macaw.jpg" alt="Hyacinth macaw"><figcaption>Hyacinth macaw — the world's largest parrot</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHASE 4 : RIO ============ -->
+<div class="phase" id="rio">
+  <img class="bg" src="assets/rio-sugarloaf-bay.jpg" alt="Sugarloaf Mountain and Guanabara Bay, Rio de Janeiro">
+  <div class="shade"></div>
+  <div class="inner">
+    <span class="tag tag-rio">Chapter Four</span>
+    <h3>Rio de Janeiro</h3>
+    <p>The Cidade Maravilhosa. Beaches, granite peaks and rainforest tumbling into the sea — plus samba, street food, and three days of pure Carioca energy from our ocean-view base on Copacabana.</p>
+    <div class="dates">Jul 19 – 22 · Fairmont Rio de Janeiro, Copacabana · 3 nights</div>
+  </div>
+</div>
+
+<section>
+  <div class="day p-rio">
+    <div class="datecol"><div class="dow">Sunday</div><div class="num">19</div><div class="mon">July</div><div class="dayno">Day 10</div></div>
+    <div class="body">
+      <h4>Hello, Rio</h4>
+      <span class="area">Pantanal → São Paulo → Rio</span>
+      <ul>
+        <li><span class="t">9:30 AM</span> — Four-hour drive back to Campo Grande, wildlife-spotting one last time</li>
+        <li>Gol flights via São Paulo–Congonhas to <b>Santos Dumont</b> — the city-center runway with the famous approach over Guanabara Bay</li>
+        <li>Private transfer along the coast to the <b>Fairmont Rio</b>, Copacabana — deluxe ocean-view rooms</li>
+      </ul>
+      <div class="flights">
+        <div class="fl"><span class="no">Gol G3 1427</span><span class="rt">CGR 3:25 PM <i>→</i> CGH 6:05 PM</span><span class="seats">Seats 2A, 2B, 2E, 2F</span></div>
+        <div class="fl"><span class="no">Gol G3 1042</span><span class="rt">CGH 7:05 PM <i>→</i> SDU 8:05 PM</span><span class="seats">Same-terminal connection</span></div>
+      </div>
+      <div class="dinner"><div class="ic">🦞</div><div><b>Dinner · 9:30 PM</b><p><b>Marine Restô</b>, the Fairmont's 6th-floor restaurant — a Michelin Guide selection ranked in Tripadvisor's top 25 of nearly 6,000 Rio restaurants. Everything comes off two Josper charcoal ovens; reviewers rave about the grilled pirarucu (the Amazon's giant fish, for sharing), the shrimp moqueca risotto, and the picanha. Note: the terrace is closed for facade work this month — we dine inside, same ocean view. If flights run late, room service with a view.</p></div></div>
+      <div class="funfact"><b>🛬 FUN FACT</b> — Santos Dumont airport is named for Alberto Santos-Dumont, the dapper Brazilian aviator who made the first public airplane flight in Europe in 1906 — Brazilians will happily tell you the Wright brothers came second.</div>
+    </div>
+    <div class="photos two">
+      <figure class="ph"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aerial_view_of_Copacabana_beach.jpg?width=1400" onerror="this.onerror=null;this.src='assets/rio-coastline.jpg'" alt="Copacabana beach from above"><figcaption>Copacabana — our home beach for 3 nights</figcaption></figure>
+      <figure class="ph"><img src="assets/rio-coastline.jpg" alt="Rio's coastline"><figcaption>Rainforest, granite and sea</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="day p-rio flip">
+    <div class="datecol"><div class="dow">Monday</div><div class="num">20</div><div class="mon">July</div><div class="dayno">Day 11</div></div>
+    <div class="body">
+      <h4>Samba school &amp; Santa Teresa</h4>
+      <span class="area">Rio · full-day private tour + photographer</span>
+      <ul>
+        <li><span class="t">11:30 AM</span> — <b>Carnival Experience</b> at Cidade do Samba: inside Grande Rio's warehouse of floats and costumes, dress-up included, plus a <b>samba class</b> with a passista and a <b>percussion workshop</b> (welcome caipirinha provided)</li>
+        <li>Afternoon in <b>Santa Teresa &amp; Lapa</b> — Parque das Ruínas viewpoints, the Arcos da Lapa aqueduct, and the 215 tiled steps of the <b>Escadaria Selarón</b></li>
+        <li>A <b>private photographer</b> rides along all day — 80–200 edited photos plus short videos, delivered within a week (heads-up: photography is restricted in some costume areas)</li>
+        <li>Golden hour: <b>Sugarloaf Mountain</b> by cable car for sunset over Guanabara Bay</li>
+      </ul>
+      <div class="dinner"><div class="ic">🍤</div><div><b>Dinner · 7:30 PM</b><p><b>Zazá Bistrô Tropical</b>, Ipanema — 25 years of playful Brazilian-Asian cooking in a candlelit century-old mansion (ask for the cushion-floor tables upstairs). Reviewers' picks: the Amazonian gyoza with tucupi, squid-and-fish moqueca with passion-fruit farofa for Jane &amp; Zach, seared tuna in lemon-zest crust, and the organic chicken curry.</p></div></div>
+      <div class="funfact"><b>🎨 FUN FACT</b> — Selarón's 215 steps are tiled with pieces from more than 60 countries — the Chilean artist called it "my tribute to the Brazilian people" and kept adding tiles until his death. And the Sugarloaf cable car has been running since 1912 — it was the first in Brazil.</div>
+    </div>
+    <div class="photos trio">
+      <figure class="ph"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Carnaval_celebrations_at_Sambadrome%2C_Rio_2019_03.jpg?width=1400" onerror="this.onerror=null;this.src='assets/sugarloaf-cablecar.jpg'" alt="Carnival celebrations"><figcaption>Carnival — the magic starts at Cidade do Samba</figcaption></figure>
+      <figure class="ph"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Escadaria_Selaron_01_Rio_CH.jpg?width=1200" onerror="this.onerror=null;this.src='assets/street-food.jpg'" alt="Selarón Steps"><figcaption>Escadaria Selarón — 215 steps of tile</figcaption></figure>
+      <figure class="ph"><img src="assets/sugarloaf-cablecar.jpg" alt="Sugarloaf cable car"><figcaption>Sunset ride up Sugarloaf</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="day p-rio">
+    <div class="datecol"><div class="dow">Tuesday</div><div class="num">21</div><div class="mon">July</div><div class="dayno">Day 12</div></div>
+    <div class="body">
+      <h4>Christ the Redeemer &amp; the flavors of Rio</h4>
+      <span class="area">Rio · Corcovado + food tour</span>
+      <ul>
+        <li><span class="t">8:00 AM</span> — Beat the crowds up <b>Corcovado</b> to Christ the Redeemer: 710 m above the city, one of the New Seven Wonders, with all of Rio at our feet</li>
+        <li><span class="t">11:00 AM – 4:00 PM</span> — <b>Brazilian food tour</b>: pão de queijo hot from the oven, coxinha croquettes, açaí done the proper way, exotic fruit juices, boteco snacks, beers &amp; cocktails</li>
+        <li><span class="t">7:00 PM</span> — <b>Rio by Night</b> in Lapa: live samba with drinks &amp; tapas — dinner, Carioca-style</li>
+      </ul>
+      <div class="dinner"><div class="ic">🎶</div><div><b>Dinner</b><p>Grazing our way through Lapa's samba bars — tapas, petiscos and one more caipirinha.</p></div></div>
+      <div class="funfact"><b>🗿 FUN FACT</b> — Christ the Redeemer is 30 m tall (98 ft) on an 8 m pedestal, took nine years to build (finished 1931), and gets struck by lightning several times a year — a 2014 bolt famously chipped his right thumb.</div>
+    </div>
+    <div class="photos trio">
+      <figure class="ph"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Christ_the_Redeemer_-_Cristo_Redentor.jpg?width=1400" onerror="this.onerror=null;this.src='assets/rio-sugarloaf-bay.jpg'" style="object-position:50% 12%" alt="Christ the Redeemer"><figcaption>Christ the Redeemer, arms open over the city</figcaption></figure>
+      <figure class="ph"><img src="assets/street-food.jpg" alt="Brazilian street food"><figcaption>Acarajé &amp; friends — street-food royalty</figcaption></figure>
+      <figure class="ph"><img src="assets/acai-bowl.jpg" alt="Açaí bowl"><figcaption>Açaí, the Amazonian original</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="day p-rio flip">
+    <div class="datecol"><div class="dow">Wednesday</div><div class="num">22</div><div class="mon">July</div><div class="dayno">Day 13</div></div>
+    <div class="body">
+      <h4>Até logo, Brasil</h4>
+      <span class="area">Rio → onward</span>
+      <ul>
+        <li><span class="t">3:30 AM</span> — (Ouch.) Transfer to Galeão — twelve days, three biomes, thousands of photos</li>
+        <li>Next stop: a few days of doing absolutely nothing on a beach in <b>Cancún</b> 🏖️</li>
+      </ul>
+      <div class="flights">
+        <div class="fl"><span class="no">LATAM LA 2405</span><span class="rt">GIG 7:10 AM <i>→</i> LIM 10:45 AM</span><span class="seats">Premium Economy</span></div>
+        <div class="fl"><span class="no">LATAM LA 2456</span><span class="rt">LIM 12:10 PM <i>→</i> CUN 5:40 PM</span><span class="seats">Premium Economy · ~1h25m Lima connection</span></div>
+      </div>
+      <div class="dinner"><div class="ic">😴</div><div><b>Dinner</b><p>Airplane snacks. We regret nothing.</p></div></div>
+    </div>
+    <div class="photos two">
+      <figure class="ph"><img src="assets/rio-sugarloaf-bay.jpg" alt="Sugarloaf and Guanabara Bay"><figcaption>One last look at the Wonderful City</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="finale">
+  <img src="assets/amazon-canopy.jpg" alt="The Amazon canopy">
+  <div class="shade"></div>
+  <div class="inner">
+    <h3>Lew Family · Brazil 2026</h3>
+    <p>"Enjoy your time exploring the clear waters and rich biodiversity of the Rio Cristalino." — our travel designer</p>
+  </div>
+</div>
+
+<footer>
+  <div class="sig">Até logo, Brasil — see you in July! 🇧🇷</div>
+  <div class="credits">
+    Built with love for the Lew family · July 2026. Times shown are local and may shift — the group chat is the source of truth.<br>
+    Wildlife photography: Charles J. Sharp (CC BY-SA 4.0), Giles Laurent (CC BY-SA 4.0), dany13 (CC BY 2.0); landmark photos via
+    <a href="https://commons.wikimedia.org">Wikimedia Commons</a> (respective licenses). Destination photography from our Jacada travel guide.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ---------- scroll reveal + nav ---------- */
+(function(){
+  const io = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:0,rootMargin:'200px 0px 200px 0px'});
+  document.querySelectorAll('.day').forEach(el=>io.observe(el));
+  /* fallback: reveal anything near the viewport on scroll (covers throttled observers / anchor jumps) */
+  function sweep(){document.querySelectorAll('.day:not(.visible)').forEach(el=>{const r=el.getBoundingClientRect();
+    if(r.top<innerHeight+200&&r.bottom>-200)el.classList.add('visible');});}
+  addEventListener('scroll',sweep,{passive:true}); addEventListener('load',sweep);
+  const nav=document.getElementById('nav'), hero=document.querySelector('header');
+  new IntersectionObserver(es=>es.forEach(e=>nav.classList.toggle('show',!e.isIntersecting)),{threshold:.05}).observe(hero);
+})();
+
+/* ---------- 3D hero globe ---------- */
+(function(){
+  const canvas=document.getElementById('globe');
+  let renderer;
+  try{ renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true}); }
+  catch(e){ canvas.style.display='none'; return; }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+
+  const scene=new THREE.Scene();
+  const camera=new THREE.PerspectiveCamera(38,1,.1,100);
+  camera.position.set(0,0.4,7.2);
+
+  const R=2.15;
+  const world=new THREE.Group(); scene.add(world);
+
+  /* graticule sphere */
+  const wire=new THREE.Mesh(new THREE.SphereGeometry(R,40,28),
+    new THREE.MeshBasicMaterial({color:0x2e6b47,wireframe:true,transparent:true,opacity:.16}));
+  world.add(wire);
+  /* soft inner sphere to occlude back lines */
+  world.add(new THREE.Mesh(new THREE.SphereGeometry(R*.985,40,28),
+    new THREE.MeshBasicMaterial({color:0x0d2b1c,transparent:true,opacity:.9})));
+  /* dotted surface */
+  (function(){
+    const N=900, pos=new Float32Array(N*3);
+    for(let i=0;i<N;i++){
+      const y=1-(i/(N-1))*2, r=Math.sqrt(1-y*y), th=i*2.399963;
+      pos[i*3]=Math.cos(th)*r*R; pos[i*3+1]=y*R; pos[i*3+2]=Math.sin(th)*r*R;
+    }
+    const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.BufferAttribute(pos,3));
+    world.add(new THREE.Points(g,new THREE.PointsMaterial({color:0x4d8f68,size:.028,transparent:true,opacity:.55})));
+  })();
+
+  /* atmosphere glow */
+  const glowTex=(()=>{const c=document.createElement('canvas');c.width=c.height=256;const x=c.getContext('2d');
+    const gr=x.createRadialGradient(128,128,60,128,128,128);
+    gr.addColorStop(0,'rgba(120,200,150,0)');gr.addColorStop(.75,'rgba(120,210,160,.16)');gr.addColorStop(1,'rgba(120,210,160,0)');
+    x.fillStyle=gr;x.fillRect(0,0,256,256);return new THREE.CanvasTexture(c);})();
+  const glow=new THREE.Sprite(new THREE.SpriteMaterial({map:glowTex,transparent:true,depthWrite:false}));
+  glow.scale.set(R*3.4,R*3.4,1); scene.add(glow);
+
+  /* lat/lon helper */
+  function ll(lat,lon,r){
+    const phi=(90-lat)*Math.PI/180, th=(lon+180)*Math.PI/180;
+    return new THREE.Vector3(-r*Math.sin(phi)*Math.cos(th), r*Math.cos(phi), r*Math.sin(phi)*Math.sin(th));
+  }
+  const stops=[
+    {n:'Seattle',lat:47.61,lon:-122.33,c:0xd9c88f},
+    {n:'São Paulo',lat:-23.55,lon:-46.63,c:0xf59e0b},
+    {n:'Cristalino',lat:-9.60,lon:-55.93,c:0x6ee7a0},
+    {n:'Pantanal',lat:-19.96,lon:-56.30,c:0xf59e0b},
+    {n:'Rio',lat:-22.91,lon:-43.17,c:0x67e8f9}
+  ];
+  /* markers */
+  const rings=[];
+  stops.forEach(s=>{
+    const p=ll(s.lat,s.lon,R);
+    const m=new THREE.Mesh(new THREE.SphereGeometry(.045,12,12),new THREE.MeshBasicMaterial({color:s.c}));
+    m.position.copy(p); world.add(m);
+    const ring=new THREE.Mesh(new THREE.RingGeometry(.07,.085,32),
+      new THREE.MeshBasicMaterial({color:s.c,transparent:true,opacity:.8,side:THREE.DoubleSide}));
+    ring.position.copy(p); ring.lookAt(p.clone().multiplyScalar(2)); ring.userData.base=Math.random()*Math.PI*2;
+    world.add(ring); rings.push(ring);
+  });
+
+  /* arcs between consecutive stops */
+  const comets=[];
+  for(let i=0;i<stops.length-1;i++){
+    const a=ll(stops[i].lat,stops[i].lon,R), b=ll(stops[i+1].lat,stops[i+1].lon,R);
+    const mid=a.clone().add(b).multiplyScalar(.5).normalize().multiplyScalar(R+a.distanceTo(b)*.35);
+    const curve=new THREE.QuadraticBezierCurve3(a,mid,b);
+    const pts=curve.getPoints(64);
+    const line=new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),
+      new THREE.LineBasicMaterial({color:0xc9a227,transparent:true,opacity:.55}));
+    world.add(line);
+    const comet=new THREE.Mesh(new THREE.SphereGeometry(.035,10,10),new THREE.MeshBasicMaterial({color:0xffe9a8}));
+    world.add(comet); comets.push({comet,curve,off:i*.22});
+  }
+
+  /* starfield */
+  (function(){
+    const N=700,pos=new Float32Array(N*3);
+    for(let i=0;i<N;i++){const v=new THREE.Vector3(Math.random()*2-1,Math.random()*2-1,Math.random()*2-1).normalize().multiplyScalar(12+Math.random()*22);
+      pos[i*3]=v.x;pos[i*3+1]=v.y;pos[i*3+2]=v.z;}
+    const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(pos,3));
+    scene.add(new THREE.Points(g,new THREE.PointsMaterial({color:0xbfd8c4,size:.05,transparent:true,opacity:.7})));
+  })();
+
+  /* face Brazil toward camera */
+  world.rotation.y=-Math.PI*0.28;
+
+  /* mouse parallax */
+  let mx=0,my=0,tx=0,ty=0;
+  window.addEventListener('pointermove',e=>{
+    tx=(e.clientX/window.innerWidth-.5)*.5; ty=(e.clientY/window.innerHeight-.5)*.3;
+  },{passive:true});
+
+  function resize(){
+    const w=canvas.clientWidth||window.innerWidth, h=canvas.clientHeight||window.innerHeight;
+    renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize',resize); resize();
+
+  const clock=new THREE.Clock();
+  (function tick(){
+    const t=clock.getElapsedTime();
+    world.rotation.y+= .0012;
+    mx+=(tx-mx)*.04; my+=(ty-my)*.04;
+    world.rotation.x=my*.6+0.18; camera.position.x=mx*1.2; camera.lookAt(0,0,0);
+    rings.forEach(r=>{const s=1+Math.sin(t*2.2+r.userData.base)*.25; r.scale.set(s,s,s);
+      r.material.opacity=.45+Math.sin(t*2.2+r.userData.base)*.3;});
+    comets.forEach(c=>{const u=(t*.09+c.off)%1; c.comet.position.copy(c.curve.getPoint(u));});
+    renderer.render(scene,camera);
+    requestAnimationFrame(tick);
+  })();
+})();
+</script>
+</body>
+</html>
