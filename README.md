@@ -74,3 +74,41 @@ Then preview the site locally at `http://localhost:8000/index.html` (the review 
 - `star` maps to the `★ TRIP STANDOUT` chip.
 - `excluded` (set via the review tool's Exclude toggle) removes a photo from `trip.json` without deleting it from the catalog or overlay.
 - `species` is a free-text common name (e.g. "Jaguar"); not yet surfaced on the public site, but carried through the merge pipeline for future use.
+
+## Editorial checklist (read this before writing/reviewing captions)
+
+- **Always put the animal/plant/insect's exact common name in the visible text itself** — in `kicker`, `title`, or `body`. The `species` field is captured and stored, but `build_trip_content.py` currently never reads it when building a real photo's slide, so it is **not** rendered anywhere on the live site. Setting `species` alone is not enough — the name must appear in the prose a reader actually sees.
+- When given specific IDs/notes for individual photos (e.g. "1907 is a neotropical otter", "2014 is a yellow-spotted river turtle"), use the **exact** name given, not a generic stand-in ("the otter" / "a turtle"). Re-check every caption after a batch of notes — it's easy to update `species` but forget the prose still just says "the otter."
+- After a request like "review all the captions and use these notes," re-read the *entire* `photo-edits.json` file first to see the current order/excluded state (order and exclusions may have changed since the captions were originally written), so the narrative sequence still reads correctly (e.g. don't call a photo "the finale" if an earlier excluded photo means it's now the leg's opening shot).
+
+## After excluding a photo: check `data/legs.json` for orphaned sequence slots
+
+Each leg in `data/legs.json` has a `sequence` array of `narrative.json` `subjectId`s that `build_trip_content.py` **guarantees** gets a slide. If you `Exclude` the only real, non-excluded photo bound to one of those `subjectId`s (via that photo's `subjectId` field), the build script doesn't just skip the slot — it falls back to the raw narrative entry instead:
+- If that narrative subject has no `stockPhoto` (typical for `kind: "placeholder"` subjects like an arrival/city-hero shot), the live site shows a broken, literal empty "DROP IN — ..." placeholder box.
+- If it does have a `stockPhoto` (typical for `kind: "species"` subjects), a generic, non-personal stock image is silently substituted in place of the excluded personal photo — which can also look duplicated if another unlinked real photo of the same animal still exists.
+
+**Whenever you exclude (or re-include) a photo that has a `subjectId`**, check whether any other non-excluded photo is still bound to that same `subjectId`. If not, remove that `subjectId` from the relevant leg's `sequence` array in `legs.json` before rebuilding, so the slot is simply omitted instead of falling back to a placeholder/stock image.
+
+## Publishing to GitHub Pages
+
+Editing captions and rebuilding `data/trip.json` locally does **not** publish anything — GitHub Pages serves whatever is on `origin/main` of this repo (`evanmlew/brazil26`, the source for `https://evanmlew.github.io/brazil26/`). After any edit session:
+
+```powershell
+cd "C:\Users\evlew\OneDrive\Personal\1-Projects\Brazil 2026\Websites\Brazil 2026 Journal"
+git add data/legs.json data/photo-edits.json data/trip.json
+git commit -m "Update captions/ordering"
+git push origin main
+```
+
+**If `git push` fails with a 403 "Permission denied"**, the environment's default GitHub CLI/credential-manager identity may be a different account (e.g. a corporate `evlew_microsoft` account) that lacks write access to the personal `evanmlew/brazil26` repo, even though `gh auth status` may show `evanmlew` already logged in via keyring. Fix by explicitly switching and pushing with that account's token for one command:
+
+```powershell
+$env:GH_TOKEN=""; $env:GITHUB_TOKEN=""
+gh auth switch --user evanmlew
+$token = gh auth token
+git -c http.extraheader="AUTHORIZATION: basic $([Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("x-access-token:$token")))" push origin main
+```
+
+New shells default back to the corporate account automatically (it's set via a `GH_TOKEN` env var), so there's nothing to restore afterward.
+
+After pushing, GitHub Pages typically takes 1-2 minutes to rebuild before the live site reflects the change.

@@ -84,7 +84,7 @@
       "order": 5,
       "kicker": "Overhead",
       "title": "A wary eye",
-      "body": "One of the troop pausing mid-branch, keeping a wary eye on us below.",
+      "body": "One of the spider monkey troop pausing mid-branch, keeping a wary eye on us below.",
       "featured": false,
       "species": "Spider Monkey"
     },
@@ -93,7 +93,7 @@
       "order": 6,
       "kicker": "On the move",
       "title": "Through the high canopy",
-      "body": "The troop moved fast through the treetops, swinging branch to branch just ahead of us.",
+      "body": "The spider monkey troop moved fast through the treetops, swinging branch to branch just ahead of us.",
       "featured": false,
       "species": "Spider Monkey"
     },
@@ -171,7 +171,7 @@
       "order": 15,
       "kicker": "Clearwater river",
       "title": "The otter on the boulder",
-      "body": "Hauled out on a midstream boulder to eat, working the Cristalino's clearwater in low light.",
+      "body": "A neotropical otter hauled out on a midstream boulder to eat, working the Cristalino's clearwater in low light.",
       "featured": true,
       "subjectId": "otter",
       "species": "Neotropical Otter"
@@ -181,7 +181,7 @@
       "order": 16,
       "kicker": "Sun and salt",
       "title": "A turtle and its butterflies",
-      "body": "Basking on a river rock, attended by butterflies and bees drinking its tears -- a hunt for minerals scarce in the Amazon.",
+      "body": "A yellow-spotted river turtle basking on a river rock, attended by butterflies and bees drinking its tears -- a hunt for minerals scarce in the Amazon.",
       "featured": true,
       "subjectId": "turtle",
       "species": "Yellow-spotted River Turtle"
@@ -227,7 +227,7 @@
       "order": 0,
       "kicker": "After dark",
       "title": "The elegant one",
-      "body": "A night encounter with the Pantanal's most elegant small cat -- chain-like rosettes smearing into long streaks.",
+      "body": "A night encounter with an ocelot, the Pantanal's most elegant small cat -- chain-like rosettes smearing into long streaks.",
       "featured": true,
       "subjectId": "ocelot",
       "species": "Ocelot"
@@ -237,7 +237,7 @@
       "order": 1,
       "kicker": "A passenger",
       "title": "Deer, with bird",
-      "body": "A doe crossing open grassland with a passenger -- a cattle tyrant riding her back for flushed insects.",
+      "body": "A pampas deer doe crossing open grassland with a passenger -- a cattle tyrant riding her back for flushed insects.",
       "featured": false,
       "subjectId": "pampasdeer",
       "species": "Pampas Deer & Cattle Tyrant"
@@ -315,7 +315,7 @@
       "order": 9,
       "kicker": "Not a cardinal",
       "title": "Red, white and black",
-      "body": "A crisp red, white and black songbird atop a flowering shrub -- despite the name, it's actually a tanager.",
+      "body": "A yellow-billed cardinal atop a flowering shrub, crisp red, white and black -- despite the name, it's actually a tanager.",
       "featured": false,
       "subjectId": "cardinal",
       "species": "Yellow-billed Cardinal"
@@ -325,7 +325,7 @@
       "order": 10,
       "kicker": "Through the fronds",
       "title": "The largest kingfisher alive",
-      "body": "The largest kingfisher in the Americas, framed through palm fronds above the water.",
+      "body": "A ringed kingfisher, the largest kingfisher in the Americas, framed through palm fronds above the water.",
       "featured": false,
       "subjectId": "kingfisher",
       "species": "Ringed Kingfisher"
@@ -393,7 +393,7 @@
       "order": 17,
       "kicker": "Daylight owl",
       "title": "Standing on a fence post",
-      "body": "An owl that lives underground and hunts by day, standing tall on a fence post in warm light.",
+      "body": "A burrowing owl -- one that lives underground and hunts by day -- standing tall on a fence post in warm light.",
       "featured": false,
       "subjectId": "owl",
       "species": "Burrowing Owl"
@@ -403,7 +403,7 @@
       "order": 18,
       "kicker": "Full antler",
       "title": "The continent's largest deer",
-      "body": "A buck in full antler -- the continent's largest deer, and one of the Pantanal's Big Five alongside the jaguar, tapir and giant anteater.",
+      "body": "A marsh deer buck in full antler -- the continent's largest deer, and one of the Pantanal's Big Five alongside the jaguar, tapir and giant anteater.",
       "featured": false,
       "subjectId": "marshdeer",
       "species": "Marsh Deer"
