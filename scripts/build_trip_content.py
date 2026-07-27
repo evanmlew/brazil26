@@ -1,0 +1,294 @@
+"""Merge legs, narrative, and photo metadata into the Journal trip payload."""
+
+from __future__ import annotations
+
+import argparse
+import json
+from datetime import datetime
+from pathlib import Path
+from typing import Any
+
+
+DEFAULT_EMPTY_PHOTO_EDITS = {"schemaVersion": 1, "photos": {}}
+
+
+def read_json(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def write_json(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def as_list(value: Any) -> list[str]:
+    if value is None:
+        return []
+    if isinstance(value, list):
+        items = value
+    elif isinstance(value, str):
+        items = [part.strip() for part in value.split(",")]
+    else:
+        items = [str(value)]
+    return [str(item).strip() for item in items if str(item).strip()]
+
+
+def finite_number(value: Any) -> float | None:
+    if isinstance(value, (int, float)):
+        return float(value)
+    return None
+
+
+def merge_photo(photo: dict[str, Any], edits: dict[str, Any]) -> dict[str, Any]:
+    merged = {**photo, **edits}
+    merged["chips"] = as_list(merged.get("chips"))
+    merged["tags"] = as_list(merged.get("tags"))
+    merged["flags"] = as_list(photo.get("flags")) + [flag for flag in as_list(edits.get("flags")) if flag not in as_list(photo.get("flags"))]
+    merged["body"] = (merged.get("body") or merged.get("caption") or "").strip()
+    merged["kicker"] = (merged.get("kicker") or "").strip()
+    merged["title"] = (merged.get("title") or "").strip()
+    merged["subjectId"] = (merged.get("subjectId") or "").strip()
+    merged["locationName"] = (merged.get("locationName") or "").strip()
+    merged["species"] = (merged.get("species") or "").strip()
+    merged["confidence"] = (merged.get("confidence") or "").strip()
+    merged["legId"] = (merged.get("legId") or "").strip()
+    merged["featured"] = bool(merged.get("featured"))
+    merged["star"] = bool(merged.get("star"))
+    merged["order"] = merged.get("order") if isinstance(merged.get("order"), int) else None
+    return merged
+
+
+def display_chips(subject: dict[str, Any] | None, photo: dict[str, Any], leg: dict[str, Any]) -> list[str]:
+    if photo.get("chips"):
+        return as_list(photo.get("chips"))
+    if subject and subject.get("kind") == "species":
+        chips = []
+        if photo.get("star") or subject.get("star"):
+            chips.append("★ TRIP STANDOUT")
+        if subject.get("taxon"):
+            chips.append(str(subject["taxon"]).upper())
+        chips.extend(flag.upper() for flag in as_list(subject.get("flags")) if flag.lower() != "no-gps")
+        return chips
+    if subject and subject.get("chips"):
+        return as_list(subject.get("chips"))
+    chips = []
+    if photo.get("star"):
+        chips.append("★ TRIP STANDOUT")
+    chips.append(leg["name"].upper())
+    return chips
+
+
+def alt_text(subject: dict[str, Any] | None, photo: dict[str, Any]) -> str:
+    if subject and subject.get("kind") == "species":
+        sci = subject.get("sci")
+        return f"{subject.get('common', subject['title'])} — {sci}" if sci else str(subject.get("common") or subject["title"])
+    if photo.get("title"):
+        return photo["title"]
+    if subject:
+        return str(subject.get("title") or subject.get("common") or subject["id"])
+    if photo.get("locationName"):
+        return photo["locationName"]
+    return "Brazil 2026 photo"
+
+
+def pin_label(subject: dict[str, Any] | None, photo: dict[str, Any]) -> str:
+    if subject and subject.get("kind") == "species":
+        return str(subject.get("common") or subject["title"])
+    if photo.get("locationName"):
+        return photo["locationName"]
+    if photo.get("title"):
+        return photo["title"]
+    if subject:
+        return str(subject.get("title") or subject.get("common") or subject["id"])
+    return "Untitled"
+
+
+def subject_sort_key(photo: dict[str, Any]) -> tuple[Any, ...]:
+    order = photo.get("order")
+    return (
+        0 if order is not None else 1,
+        order if order is not None else 0,
+        photo.get("date") or photo.get("exportedAt") or "",
+        photo.get("filename") or photo.get("id") or "",
+    )
+
+
+def stock_slide(subject_id: str, subject: dict[str, Any], coords_lookup: dict[str, Any]) -> dict[str, Any]:
+    coords = coords_lookup.get(subject_id)
+    lat = coords[0] if isinstance(coords, list) and len(coords) == 2 else None
+    lng = coords[1] if isinstance(coords, list) and len(coords) == 2 else None
+    slide = {
+        "leg": subject["leg"],
+        "legId": subject["leg"],
+        "key": subject_id,
+        "subjectId": subject_id,
+        "kind": subject.get("kind", "placeholder"),
+        "src": subject.get("stockPhoto", "") or "",
+        "thumb": subject.get("stockPhoto", "") or "",
+        "alt": alt_text(subject, {}),
+        "pinLabel": pin_label(subject, {}),
+        "kicker": subject.get("kicker", ""),
+        "title": subject.get("title", ""),
+        "body": subject.get("body", ""),
+        "chips": display_chips(subject, {}, {"name": subject["leg"]}),
+        "flags": as_list(subject.get("flags")),
+        "star": bool(subject.get("star")),
+        "taxon": subject.get("taxon", ""),
+        "ph": subject.get("ph", "") or "",
+        "lat": lat,
+        "lng": lng,
+    }
+    if not slide["src"]:
+        slide.pop("src")
+        slide.pop("thumb")
+    if not slide["ph"]:
+        slide.pop("ph")
+    if lat is None or lng is None:
+        slide.pop("lat")
+        slide.pop("lng")
+    return slide
+
+
+def real_slide(photo: dict[str, Any], subject: dict[str, Any] | None, leg: dict[str, Any]) -> dict[str, Any]:
+    src = ((photo.get("assets") or {}).get("card") or (subject or {}).get("stockPhoto") or "").strip()
+    thumb = ((photo.get("assets") or {}).get("thumb") or (subject or {}).get("stockPhoto") or "").strip()
+    title = photo.get("title") or (subject or {}).get("title") or photo.get("locationName") or "Awaiting title"
+    body = photo.get("body") or (subject or {}).get("body") or "[Your caption here]"
+    kicker = photo.get("kicker") or (subject or {}).get("kicker") or "Awaiting caption"
+    slide = {
+        "leg": leg["id"],
+        "legId": leg["id"],
+        "key": photo["id"],
+        "photoId": photo["id"],
+        "subjectId": photo.get("subjectId") or (subject or {}).get("id") or "",
+        "kind": "photo",
+        "src": src,
+        "thumb": thumb,
+        "alt": alt_text(subject, {**photo, "title": title, "locationName": photo.get("locationName", "")}),
+        "pinLabel": pin_label(subject, {**photo, "title": title, "locationName": photo.get("locationName", "")}),
+        "kicker": kicker,
+        "title": title,
+        "body": body,
+        "chips": display_chips(subject, photo, leg),
+        "flags": as_list(photo.get("flags")),
+        "star": bool(photo.get("star") or (subject or {}).get("star")),
+        "featured": bool(photo.get("featured")),
+        "taxon": (subject or {}).get("taxon") or "",
+        "lat": finite_number(photo.get("latitude")),
+        "lng": finite_number(photo.get("longitude")),
+    }
+    if not slide["src"]:
+        slide.pop("src")
+        slide.pop("thumb")
+    if slide["lat"] is None or slide["lng"] is None:
+        slide.pop("lat")
+        slide.pop("lng")
+    if not slide["subjectId"]:
+        slide.pop("subjectId")
+    return slide
+
+
+def choose_stop_thumb(leg: dict[str, Any], slides: list[dict[str, Any]], stop_thumb_lookup: dict[str, Any], subjects: dict[str, Any]) -> str | None:
+    photo_slides = [slide for slide in slides if slide.get("kind") == "photo" and slide.get("thumb")]
+    featured = [slide for slide in photo_slides if slide.get("featured")]
+    if featured:
+        return featured[0]["thumb"]
+    if photo_slides:
+        return photo_slides[0]["thumb"]
+    fallback_subject = stop_thumb_lookup.get(leg["id"])
+    if fallback_subject and fallback_subject in subjects:
+        return subjects[fallback_subject].get("stockPhoto") or None
+    return None
+
+
+def build_trip(legs_doc: dict[str, Any], narrative_doc: dict[str, Any], catalog_doc: dict[str, Any], edits_doc: dict[str, Any]) -> dict[str, Any]:
+    subjects = narrative_doc["subjects"]
+    coords_lookup = narrative_doc.get("photoCoords", {})
+    edits = (edits_doc or DEFAULT_EMPTY_PHOTO_EDITS).get("photos", {})
+    merged_photos = [merge_photo(photo, edits.get(photo["id"], {})) for photo in catalog_doc.get("photos", [])]
+    photos_by_leg_assignment: dict[str, list[dict[str, Any]]] = {leg["id"]: [] for leg in legs_doc["legs"]}
+    for photo in merged_photos:
+        if photo.get("legId") in photos_by_leg_assignment:
+            photos_by_leg_assignment[photo["legId"]].append(photo)
+    for leg_id in photos_by_leg_assignment:
+        photos_by_leg_assignment[leg_id].sort(key=subject_sort_key)
+
+    trip_legs = []
+    photos_by_leg: dict[str, list[dict[str, Any]]] = {}
+    photo_coords: dict[str, list[float] | None] = {}
+    stop_thumb: dict[str, str | None] = {}
+
+    for leg in legs_doc["legs"]:
+        leg_copy = {key: value for key, value in leg.items() if key != "sequence"}
+        trip_legs.append(leg_copy)
+        sequence = leg.get("sequence", [])
+        assigned = list(photos_by_leg_assignment.get(leg["id"], []))
+        by_subject: dict[str, list[dict[str, Any]]] = {}
+        extras: list[dict[str, Any]] = []
+        for photo in assigned:
+            subject_id = photo.get("subjectId") or ""
+            if subject_id and subject_id in subjects:
+                by_subject.setdefault(subject_id, []).append(photo)
+            else:
+                extras.append(photo)
+
+        positioned: list[tuple[int, int, dict[str, Any]]] = []
+        for default_order, subject_id in enumerate(sequence):
+            subject = subjects[subject_id]
+            if by_subject.get(subject_id):
+                photo = by_subject[subject_id].pop(0)
+                final_order = photo.get("order") if photo.get("order") is not None else default_order
+                positioned.append((final_order, default_order, real_slide(photo, subject, leg)))
+            else:
+                positioned.append((default_order, default_order, stock_slide(subject_id, subject, coords_lookup)))
+
+        overflow = extras + [photo for bucket in by_subject.values() for photo in bucket]
+        overflow.sort(key=subject_sort_key)
+        for extra_index, photo in enumerate(overflow, start=len(sequence)):
+            subject = subjects.get(photo.get("subjectId") or "")
+            final_order = photo.get("order") if photo.get("order") is not None else extra_index
+            positioned.append((final_order, extra_index, real_slide(photo, subject, leg)))
+
+        positioned.sort(key=lambda item: (item[0], item[1], item[2].get("title", "")))
+        slides = [slide for _, _, slide in positioned]
+        photos_by_leg[leg["id"]] = slides
+        for slide in slides:
+            lat = slide.get("lat")
+            lng = slide.get("lng")
+            photo_coords[slide["key"]] = [lat, lng] if isinstance(lat, (int, float)) and isinstance(lng, (int, float)) else None
+        stop_thumb[leg["id"]] = choose_stop_thumb(leg, slides, legs_doc.get("stopThumb", {}), subjects)
+
+    return {
+        "schemaVersion": 1,
+        "generatedAt": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "taxonColors": legs_doc.get("taxonColors", {}),
+        "palettes": legs_doc.get("palettes", {}),
+        "stopThumb": stop_thumb,
+        "photoCoords": photo_coords,
+        "legs": trip_legs,
+        "photosByLeg": photos_by_leg,
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("legs", type=Path, help="Legs JSON")
+    parser.add_argument("narrative", type=Path, help="Narrative JSON")
+    parser.add_argument("catalog", type=Path, help="Photo catalog JSON")
+    parser.add_argument("edits", type=Path, help="Photo edits overlay JSON")
+    parser.add_argument("output", type=Path, help="Trip JSON output path")
+    args = parser.parse_args()
+
+    trip = build_trip(
+        read_json(args.legs),
+        read_json(args.narrative),
+        read_json(args.catalog),
+        read_json(args.edits) if args.edits.exists() else DEFAULT_EMPTY_PHOTO_EDITS,
+    )
+    write_json(args.output, trip)
+    total = sum(len(slides) for slides in trip["photosByLeg"].values())
+    print(f"Wrote {total} slides across {len(trip['legs'])} legs to {args.output}")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "taxonColors": {
+    "Mammal": "#C77D3A",
+    "Bird": "#3E7CB1",
+    "Reptile": "#6B8E4E",
+    "Amphibian": "#7DAE59"
+  },
+  "palettes": {
+    "saopaulo": [
+      "#2f3742",
+      "#3a444f"
+    ],
+    "amazon": [
+      "#2b3a2c",
+      "#33452f"
+    ],
+    "pantanal": [
+      "#40352a",
+      "#4b3f30"
+    ],
+    "rio": [
+      "#26384a",
+      "#2e4459"
+    ]
+  },
+  "stopThumb": {
+    "saopaulo": null,
+    "amazon": "kingfisher",
+    "pantanal": "macaw",
+    "rio": null
+  },
+  "legs": [
+    {
+      "id": "saopaulo",
+      "n": 1,
+      "name": "São Paulo",
+      "region": "Southeast Brazil",
+      "lat": -23.568,
+      "lng": -46.656,
+      "nights": 1,
+      "dates": "11–12 JUL",
+      "lodge": "Renaissance São Paulo",
+      "blurb": "Urban arrival — one night, one long afternoon walk, and the first jolt of Brazil before the wild.",
+      "sequence": [
+        "sp_01",
+        "sp_02"
+      ]
+    },
+    {
+      "id": "amazon",
+      "n": 2,
+      "name": "Amazon",
+      "region": "Cristalino · Mato Grosso",
+      "lat": -9.5936,
+      "lng": -55.9339,
+      "nights": 3,
+      "dates": "12–15 JUL",
+      "lodge": "Cristalino Jungle Lodge",
+      "blurb": "Three nights on a clearwater river deep in southern Amazonia — otters at dawn, canopy towers above the treeline, frogs after dark.",
+      "sequence": [
+        "otter",
+        "turtle",
+        "frog",
+        "kingfisher"
+      ]
+    },
+    {
+      "id": "pantanal",
+      "n": 3,
+      "name": "Pantanal",
+      "region": "Caiman · Mato Grosso do Sul",
+      "lat": -19.95,
+      "lng": -56.3,
+      "nights": 3,
+      "dates": "16–19 JUL",
+      "lodge": "Caiman Ecological Refuge",
+      "blurb": "The world's largest wetland in the dry season, when the water pulls back and everything comes to the open — jaguar included.",
+      "sequence": [
+        "jaguar",
+        "ocelot",
+        "tapir",
+        "marshdeer",
+        "pampasdeer",
+        "macaw",
+        "jabiru",
+        "caracara",
+        "vulture",
+        "owl",
+        "cardinal"
+      ]
+    },
+    {
+      "id": "rio",
+      "n": 4,
+      "name": "Rio de Janeiro",
+      "region": "Southeast coast",
+      "lat": -22.9711,
+      "lng": -43.1822,
+      "nights": 3,
+      "dates": "19–22 JUL",
+      "lodge": "Emiliano Rio",
+      "blurb": "Back to sea level for the finale — Copacabana, the granite mountains, and the slow wind-down home.",
+      "sequence": [
+        "rio_01",
+        "rio_02",
+        "closing"
+      ]
+    }
+  ]
+}

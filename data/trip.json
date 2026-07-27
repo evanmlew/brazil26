@@ -1,0 +1,520 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-26T22:40:18-07:00",
+  "taxonColors": {
+    "Mammal": "#C77D3A",
+    "Bird": "#3E7CB1",
+    "Reptile": "#6B8E4E",
+    "Amphibian": "#7DAE59"
+  },
+  "palettes": {
+    "saopaulo": [
+      "#2f3742",
+      "#3a444f"
+    ],
+    "amazon": [
+      "#2b3a2c",
+      "#33452f"
+    ],
+    "pantanal": [
+      "#40352a",
+      "#4b3f30"
+    ],
+    "rio": [
+      "#26384a",
+      "#2e4459"
+    ]
+  },
+  "stopThumb": {
+    "saopaulo": null,
+    "amazon": "assets/photos/kingfisher.jpg",
+    "pantanal": "assets/photos/macaw.jpg",
+    "rio": null
+  },
+  "photoCoords": {
+    "sp_01": null,
+    "sp_02": null,
+    "otter": null,
+    "turtle": null,
+    "frog": null,
+    "kingfisher": null,
+    "jaguar": null,
+    "ocelot": null,
+    "tapir": null,
+    "marshdeer": null,
+    "pampasdeer": null,
+    "macaw": null,
+    "jabiru": null,
+    "caracara": null,
+    "vulture": null,
+    "owl": null,
+    "cardinal": null,
+    "rio_01": null,
+    "rio_02": null,
+    "closing": null
+  },
+  "legs": [
+    {
+      "id": "saopaulo",
+      "n": 1,
+      "name": "São Paulo",
+      "region": "Southeast Brazil",
+      "lat": -23.568,
+      "lng": -46.656,
+      "nights": 1,
+      "dates": "11–12 JUL",
+      "lodge": "Renaissance São Paulo",
+      "blurb": "Urban arrival — one night, one long afternoon walk, and the first jolt of Brazil before the wild."
+    },
+    {
+      "id": "amazon",
+      "n": 2,
+      "name": "Amazon",
+      "region": "Cristalino · Mato Grosso",
+      "lat": -9.5936,
+      "lng": -55.9339,
+      "nights": 3,
+      "dates": "12–15 JUL",
+      "lodge": "Cristalino Jungle Lodge",
+      "blurb": "Three nights on a clearwater river deep in southern Amazonia — otters at dawn, canopy towers above the treeline, frogs after dark."
+    },
+    {
+      "id": "pantanal",
+      "n": 3,
+      "name": "Pantanal",
+      "region": "Caiman · Mato Grosso do Sul",
+      "lat": -19.95,
+      "lng": -56.3,
+      "nights": 3,
+      "dates": "16–19 JUL",
+      "lodge": "Caiman Ecological Refuge",
+      "blurb": "The world's largest wetland in the dry season, when the water pulls back and everything comes to the open — jaguar included."
+    },
+    {
+      "id": "rio",
+      "n": 4,
+      "name": "Rio de Janeiro",
+      "region": "Southeast coast",
+      "lat": -22.9711,
+      "lng": -43.1822,
+      "nights": 3,
+      "dates": "19–22 JUL",
+      "lodge": "Emiliano Rio",
+      "blurb": "Back to sea level for the finale — Copacabana, the granite mountains, and the slow wind-down home."
+    }
+  ],
+  "photosByLeg": {
+    "saopaulo": [
+      {
+        "leg": "saopaulo",
+        "legId": "saopaulo",
+        "key": "sp_01",
+        "subjectId": "sp_01",
+        "kind": "placeholder",
+        "alt": "Twelve million people, one horizon",
+        "pinLabel": "Twelve million people, one horizon",
+        "kicker": "Arrival",
+        "title": "Twelve million people, one horizon",
+        "body": "The concrete sea from the hotel window — Brazil starts loud.",
+        "chips": [
+          "SÃO PAULO"
+        ],
+        "flags": [],
+        "star": false,
+        "taxon": "",
+        "ph": "DROP IN — SP_HERO.JPG · CITY SKYLINE"
+      },
+      {
+        "leg": "saopaulo",
+        "legId": "saopaulo",
+        "key": "sp_02",
+        "subjectId": "sp_02",
+        "kind": "placeholder",
+        "alt": "Dinner, and a plan",
+        "pinLabel": "Dinner, and a plan",
+        "kicker": "First night",
+        "title": "Dinner, and a plan",
+        "body": "[Your caption here] — the meal that set the tone for two weeks.",
+        "chips": [
+          "SÃO PAULO"
+        ],
+        "flags": [],
+        "star": false,
+        "taxon": "",
+        "ph": "DROP IN — SP_02.JPG · STREET OR RESTAURANT"
+      }
+    ],
+    "amazon": [
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "otter",
+        "subjectId": "otter",
+        "kind": "species",
+        "src": "assets/photos/otter.jpg",
+        "thumb": "assets/photos/otter.jpg",
+        "alt": "Neotropical Otter — Lontra longicaudis",
+        "pinLabel": "Neotropical Otter",
+        "kicker": "Clearwater river",
+        "title": "The otter on the boulder",
+        "body": "Hauled out on a midstream boulder to eat, working the Cristalino's clearwater in low light.",
+        "chips": [
+          "MAMMAL"
+        ],
+        "flags": [],
+        "star": false,
+        "taxon": "Mammal"
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "turtle",
+        "subjectId": "turtle",
+        "kind": "species",
+        "src": "assets/photos/turtle.jpg",
+        "thumb": "assets/photos/turtle.jpg",
+        "alt": "Yellow-spotted River Turtle — Podocnemis unifilis",
+        "pinLabel": "Yellow-spotted River Turtle",
+        "kicker": "Sun and salt",
+        "title": "A turtle and its butterflies",
+        "body": "Basking on a river rock, attended by butterflies drinking its tears — a hunt for minerals scarce in the Amazon.",
+        "chips": [
+          "REPTILE"
+        ],
+        "flags": [],
+        "star": false,
+        "taxon": "Reptile"
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "frog",
+        "subjectId": "frog",
+        "kind": "species",
+        "src": "assets/photos/frog.jpg",
+        "thumb": "assets/photos/frog.jpg",
+        "alt": "Tree Frog — Boana sp.",
+        "pinLabel": "Tree Frog",
+        "kicker": "Night walk",
+        "title": "Small things, big eyes",
+        "body": "Found on low vegetation on a night walk, clinging by its adhesive toe pads. Logged at genus level.",
+        "chips": [
+          "AMPHIBIAN",
+          "GENUS-LEVEL ID"
+        ],
+        "flags": [
+          "Genus-level ID"
+        ],
+        "star": false,
+        "taxon": "Amphibian"
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "kingfisher",
+        "subjectId": "kingfisher",
+        "kind": "species",
+        "src": "assets/photos/kingfisher.jpg",
+        "thumb": "assets/photos/kingfisher.jpg",
+        "alt": "Ringed Kingfisher — Megaceryle torquata",
+        "pinLabel": "Ringed Kingfisher",
+        "kicker": "Through the fronds",
+        "title": "The largest kingfisher alive",
+        "body": "The largest kingfisher in the Americas, framed through palm fronds above the water.",
+        "chips": [
+          "BIRD",
+          "LEG TO CONFIRM"
+        ],
+        "flags": [
+          "Leg to confirm"
+        ],
+        "star": false,
+        "taxon": "Bird"
+      }
+    ],
+    "pantanal": [
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "jaguar",
+        "subjectId": "jaguar",
+        "kind": "species",
+        "src": "assets/photos/jaguar.jpg",
+        "thumb": "assets/photos/jaguar.jpg",
+        "alt": "Jaguar — Panthera onca",
+        "pinLabel": "Jaguar",
+        "kicker": "The headline",
+        "title": "A cub in daylight",
+        "body": "The headline of the trip: a cub, five to eight months old, walking a clearing in daylight.",
+        "chips": [
+          "★ TRIP STANDOUT",
+          "MAMMAL"
+        ],
+        "flags": [],
+        "star": true,
+        "taxon": "Mammal"
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "ocelot",
+        "subjectId": "ocelot",
+        "kind": "species",
+        "src": "assets/photos/ocelot.jpg",
+        "thumb": "assets/photos/ocelot.jpg",
+        "alt": "Ocelot — Leopardus pardalis",
+        "pinLabel": "Ocelot",
+        "kicker": "After dark",
+        "title": "The elegant one",
+        "body": "A night encounter with the Pantanal's most elegant small cat. Chain-like rosettes smear into long streaks.",
+        "chips": [
+          "MAMMAL"
+        ],
+        "flags": [],
+        "star": false,
+        "taxon": "Mammal"
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "tapir",
+        "subjectId": "tapir",
+        "kind": "species",
+        "src": "assets/photos/tapir.jpg",
+        "thumb": "assets/photos/tapir.jpg",
+        "alt": "South American Tapir — Tapirus terrestris",
+        "pinLabel": "South American Tapir",
+        "kicker": "Golden hour",
+        "title": "Gardener of the forest",
+        "body": "South America's largest land mammal, browsing in the open at golden hour. A gardener of the forest.",
+        "chips": [
+          "MAMMAL"
+        ],
+        "flags": [],
+        "star": false,
+        "taxon": "Mammal"
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "marshdeer",
+        "subjectId": "marshdeer",
+        "kind": "species",
+        "src": "assets/photos/marshdeer.jpg",
+        "thumb": "assets/photos/marshdeer.jpg",
+        "alt": "Marsh Deer — Blastocerus dichotomus",
+        "pinLabel": "Marsh Deer",
+        "kicker": "Full antler",
+        "title": "The continent's largest deer",
+        "body": "The continent's largest deer, a buck in full antler. A wetland specialist, now classed Vulnerable.",
+        "chips": [
+          "MAMMAL"
+        ],
+        "flags": [],
+        "star": false,
+        "taxon": "Mammal"
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "pampasdeer",
+        "subjectId": "pampasdeer",
+        "kind": "species",
+        "src": "assets/photos/pampas.jpg",
+        "thumb": "assets/photos/pampas.jpg",
+        "alt": "Pampas Deer & Cattle Tyrant — Ozotoceros bezoarticus",
+        "pinLabel": "Pampas Deer & Cattle Tyrant",
+        "kicker": "A passenger",
+        "title": "Deer, with bird",
+        "body": "A doe crossing open grassland with a passenger — a cattle tyrant riding her back for flushed insects.",
+        "chips": [
+          "MAMMAL"
+        ],
+        "flags": [],
+        "star": false,
+        "taxon": "Mammal"
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "macaw",
+        "subjectId": "macaw",
+        "kind": "species",
+        "src": "assets/photos/macaw.jpg",
+        "thumb": "assets/photos/macaw.jpg",
+        "alt": "Hyacinth Macaw — Anodorhynchus hyacinthinus",
+        "pinLabel": "Hyacinth Macaw",
+        "kicker": "Cobalt",
+        "title": "The largest parrot alive",
+        "body": "A bonded pair of the world's largest flying parrot, cobalt from crown to tail.",
+        "chips": [
+          "★ TRIP STANDOUT",
+          "BIRD"
+        ],
+        "flags": [],
+        "star": true,
+        "taxon": "Bird"
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "jabiru",
+        "subjectId": "jabiru",
+        "kind": "species",
+        "src": "assets/photos/jabiru.jpg",
+        "thumb": "assets/photos/jabiru.jpg",
+        "alt": "Jabiru — Jabiru mycteria",
+        "pinLabel": "Jabiru",
+        "kicker": "Emblem",
+        "title": "Tallest bird in the Americas",
+        "body": "The tallest flying bird in the Americas, stalking wet grassland with its great upturned bill.",
+        "chips": [
+          "BIRD"
+        ],
+        "flags": [],
+        "star": false,
+        "taxon": "Bird"
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "caracara",
+        "subjectId": "caracara",
+        "kind": "species",
+        "src": "assets/photos/caracara.jpg",
+        "thumb": "assets/photos/caracara.jpg",
+        "alt": "Southern Crested Caracara — Caracara plancus",
+        "pinLabel": "Southern Crested Caracara",
+        "kicker": "Tug of war",
+        "title": "Two falcons and a snake",
+        "body": "Two caracaras in a tug-of-war over a snake — falcons that behave like bold ground-striding opportunists.",
+        "chips": [
+          "BIRD"
+        ],
+        "flags": [],
+        "star": false,
+        "taxon": "Bird"
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "vulture",
+        "subjectId": "vulture",
+        "kind": "species",
+        "src": "assets/photos/vulture.jpg",
+        "thumb": "assets/photos/vulture.jpg",
+        "alt": "Lesser Yellow-headed Vulture — Cathartes burrovianus",
+        "pinLabel": "Lesser Yellow-headed Vulture",
+        "kicker": "Low over the marsh",
+        "title": "The yellow-headed one",
+        "body": "A marsh-and-grassland vulture that quarters low over open country, finding carrion by scent.",
+        "chips": [
+          "BIRD"
+        ],
+        "flags": [],
+        "star": false,
+        "taxon": "Bird"
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "owl",
+        "subjectId": "owl",
+        "kind": "species",
+        "src": "assets/photos/owl.jpg",
+        "thumb": "assets/photos/owl.jpg",
+        "alt": "Burrowing Owl — Athene cunicularia",
+        "pinLabel": "Burrowing Owl",
+        "kicker": "Daylight owl",
+        "title": "Standing on a fence post",
+        "body": "An owl that lives underground and hunts by day, standing tall on a fence post in warm light.",
+        "chips": [
+          "BIRD"
+        ],
+        "flags": [],
+        "star": false,
+        "taxon": "Bird"
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "cardinal",
+        "subjectId": "cardinal",
+        "kind": "species",
+        "src": "assets/photos/cardinal.jpg",
+        "thumb": "assets/photos/cardinal.jpg",
+        "alt": "Yellow-billed Cardinal — Paroaria capitata",
+        "pinLabel": "Yellow-billed Cardinal",
+        "kicker": "Not a cardinal",
+        "title": "Red, white and black",
+        "body": "A crisp red, white and black songbird atop a flowering shrub. Despite the name, it's a tanager.",
+        "chips": [
+          "BIRD"
+        ],
+        "flags": [],
+        "star": false,
+        "taxon": "Bird"
+      }
+    ],
+    "rio": [
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "rio_01",
+        "subjectId": "rio_01",
+        "kind": "placeholder",
+        "alt": "Copacabana, finally",
+        "pinLabel": "Copacabana, finally",
+        "kicker": "Sea level",
+        "title": "Copacabana, finally",
+        "body": "[Your caption here] — the mountains behind, the Atlantic in front.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "taxon": "",
+        "ph": "DROP IN — RIO_HERO.JPG · BEACH FROM ABOVE"
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "rio_02",
+        "subjectId": "rio_02",
+        "kind": "placeholder",
+        "alt": "Last light over the bay",
+        "pinLabel": "Last light over the bay",
+        "kicker": "The finale",
+        "title": "Last light over the bay",
+        "body": "[Your caption here] — one more climb, one more view, then home.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "taxon": "",
+        "ph": "DROP IN — RIO_02.JPG · SUGARLOAF AT DUSK"
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "closing",
+        "subjectId": "closing",
+        "kind": "placeholder",
+        "alt": "4 stops · 15 species · one trip",
+        "pinLabel": "4 stops · 15 species · one trip",
+        "kicker": "Brazil 2026",
+        "title": "4 stops · 15 species · one trip",
+        "body": "Thank you for coming along. Shot on an iPhone and a Sony A7CR — sixteen days, four thousand kilometres.",
+        "chips": [
+          "iPHONE",
+          "SONY A7CR"
+        ],
+        "flags": [],
+        "star": false,
+        "taxon": "",
+        "ph": "DROP IN — CLOSING.JPG · FAMILY PORTRAIT"
+      }
+    ]
+  }
+}

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -56,7 +57,7 @@
 </div>
 </div>
 
-<div style="position:absolute;inset:0;z-index:5;background:#0b131c;transition:transform .7s cubic-bezier(.32,.72,0,1),opacity .5s ease;{{ introLayer }}">
+<div style="position:absolute;inset:0;z-index:5;overflow:hidden;background:#0b131c;transition:transform .7s cubic-bezier(.32,.72,0,1),opacity .5s ease;{{ introLayer }}">
 <div class="kb" role="img" aria-label="Opening cover photo" style="position:absolute;inset:0;background-image:url('assets/photos/cover.jpg');background-size:cover;background-position:52% 46%;animation:kb 22s ease-out both"></div>
 <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(6,12,18,.9) 0%,rgba(6,12,18,.46) 34%,rgba(6,12,18,0) 64%)"></div>
 <div style="position:absolute;top:26px;left:0;right:0;display:grid;place-items:center"><span style="font:500 9px ui-monospace,Menlo,monospace;letter-spacing:.18em;color:rgba(255,255,255,.5)">BRAZIL 2026 · 10–22 JULY</span></div>
@@ -230,6 +231,34 @@ const PHOTOS = {
 const ALL = [];
 LEGS.forEach(l => PHOTOS[l.id].forEach((s, i) => ALL.push(Object.assign({ legId:l.id, pos:i }, s))));
 
+const normalizeTrip = source => {
+  const legs = ((source && source.legs && source.legs.length) ? source.legs : LEGS).map(leg => Object.assign({}, leg));
+  const photosByLeg = {};
+  const photoCoords = {};
+  const palettes = Object.assign({}, PALETTES, (source && source.palettes) || {});
+  const stopThumb = Object.assign({}, STOP_THUMB, (source && source.stopThumb) || {});
+  const all = [];
+  legs.forEach(leg => {
+    const raw = (source && source.photosByLeg && source.photosByLeg[leg.id]) || PHOTOS[leg.id] || [];
+    photosByLeg[leg.id] = raw.map((slide, pos) => {
+      const next = Object.assign({ leg:leg.id, legId:leg.id, key:slide.key || slide.id || (leg.id + '-' + pos) }, slide);
+      next.leg = leg.id;
+      next.legId = leg.id;
+      next.chips = Array.isArray(next.chips) ? next.chips.slice() : (next.chips ? [next.chips] : []);
+      if (!next.pinLabel) next.pinLabel = next.title || leg.name;
+      if (!next.alt) next.alt = next.title || leg.name;
+      const fixed = (source && source.photoCoords ? source.photoCoords[next.key] : PHOTO_COORDS[next.key]);
+      if (Array.isArray(fixed) && fixed.length === 2) photoCoords[next.key] = fixed;
+      else if (Number.isFinite(next.lat) && Number.isFinite(next.lng)) photoCoords[next.key] = [next.lat, next.lng];
+      else photoCoords[next.key] = null;
+      all.push(Object.assign({ legId:leg.id, pos }, next));
+      return next;
+    });
+  });
+  return { legs, photosByLeg, photoCoords, palettes, stopThumb, all };
+};
+const FALLBACK_TRIP = normalizeTrip({ legs:LEGS, photosByLeg:PHOTOS, photoCoords:PHOTO_COORDS, palettes:PALETTES, stopThumb:STOP_THUMB });
+
 class Component extends DCLogic {
   // mode: 'intro' | 'cover' | 'photos'
   state = { mode:'intro', legI:0, pos:0, full:false, wide: typeof window !== 'undefined' && window.innerWidth >= 900 };
@@ -242,23 +271,56 @@ class Component extends DCLogic {
     this.sightSets = [];
     this.dots = {};
     this.reduced = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.data = FALLBACK_TRIP;
     this.coords = {};
-    let j = 0;
-    LEGS.forEach(leg => PHOTOS[leg.id].forEach(s => {
-      const fixed = PHOTO_COORDS[s.key];
-      if (fixed) { this.coords[s.key] = { lat:fixed[0], lng:fixed[1] }; return; }
-      const a = (j * 2.399963) % 6.283, r = 0.13 + (j % 5) * 0.05; j++;
-      this.coords[s.key] = { lat:leg.lat + Math.sin(a) * r, lng:leg.lng + Math.cos(a) * r * 1.1 };
-    }));
+    this.applyTripData(FALLBACK_TRIP);
   }
 
   get dockPct(){ return this.props.mapWidth ?? 34; }
   get enterStyle(){ return this.props.enterStyle ?? 'slide'; }   // slide | parallax | fade
   get labelsOn(){ return this.props.mapLabels ?? true; }
   get cameraMove(){ return this.props.cameraMove ?? 'direct'; }   // direct | arc
-  get leg(){ return LEGS[this.state.legI]; }
-  get list(){ return PHOTOS[this.leg.id]; }
+  get legs(){ return (this.data && this.data.legs && this.data.legs.length) ? this.data.legs : FALLBACK_TRIP.legs; }
+  get photosByLeg(){ return (this.data && this.data.photosByLeg) ? this.data.photosByLeg : FALLBACK_TRIP.photosByLeg; }
+  get palettes(){ return (this.data && this.data.palettes) ? this.data.palettes : FALLBACK_TRIP.palettes; }
+  get stopThumb(){ return (this.data && this.data.stopThumb) ? this.data.stopThumb : FALLBACK_TRIP.stopThumb; }
+  get leg(){ return this.legs[this.state.legI] || this.legs[0]; }
+  get list(){ return (this.leg && this.photosByLeg[this.leg.id]) ? this.photosByLeg[this.leg.id] : []; }
   get docked(){ return this.state.mode === 'photos' && this.state.wide && !this.state.full; }
+
+  applyTripData(raw){
+    this.data = normalizeTrip(raw || FALLBACK_TRIP);
+    this.imgMeta = {};
+    this.rebuildCoords();
+  }
+
+  rebuildCoords(){
+    const LEGS = this.legs, PHOTOS = this.photosByLeg;
+    this.coords = {};
+    let j = 0;
+    LEGS.forEach(leg => (PHOTOS[leg.id] || []).forEach(s => {
+      const fixed = this.data.photoCoords[s.key];
+      if (Array.isArray(fixed) && fixed.length === 2 && Number.isFinite(fixed[0]) && Number.isFinite(fixed[1])) {
+        this.coords[s.key] = { lat:fixed[0], lng:fixed[1] };
+        return;
+      }
+      const a = (j * 2.399963) % 6.283, r = 0.13 + (j % 5) * 0.05; j++;
+      this.coords[s.key] = { lat:leg.lat + Math.sin(a) * r, lng:leg.lng + Math.cos(a) * r * 1.1 };
+    }));
+  }
+
+  async loadTripData(){
+    try {
+      const response = await fetch('data/trip.json', { cache:'no-store' });
+      if (!response.ok) throw new Error('Could not load trip data (' + response.status + ')');
+      const trip = await response.json();
+      if (this.disposed) return;
+      this.applyTripData(trip);
+      this.forceUpdate();
+    } catch (e) {
+      if (!this.disposed) console.warn('Using embedded trip data.', e);
+    }
+  }
 
   componentDidMount(){
     this.onResize = () => {
@@ -272,7 +334,6 @@ class Component extends DCLogic {
       if (e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); this.step(-1); }
     };
     window.addEventListener('keydown', this.onKey);
-    this.probeImages();
     const root = this.rootRef.current;
     if (root) {
       this.onWheel = e => {
@@ -292,10 +353,16 @@ class Component extends DCLogic {
       root.addEventListener('touchstart', this.onTS, { passive:true });
       root.addEventListener('touchend', this.onTE, { passive:true });
     }
-    this.ensureMap();
+    (async () => {
+      await this.loadTripData();
+      if (this.disposed) return;
+      this.probeImages();
+      this.ensureMap();
+    })();
   }
 
   componentWillUnmount(){
+    this.disposed = true;
     window.removeEventListener('resize', this.onResize);
     window.removeEventListener('keydown', this.onKey);
     const root = this.rootRef.current;
@@ -309,6 +376,7 @@ class Component extends DCLogic {
 
   // ---- navigation -------------------------------------------------------
   step = dir => {
+    const LEGS = this.legs, PHOTOS = this.photosByLeg;
     if (Date.now() < (this.cool || 0)) return;
     const st = this.state;
     if (st.mode === 'intro') { if (dir > 0) this.toCover(0); return; }
@@ -337,7 +405,7 @@ class Component extends DCLogic {
   toCover(i){ this.hold(760); this.setState({ mode:'cover', legI:i, pos:0, full:false }, () => this.afterGeometry(720)); }
   toPhotos(i, pos){ this.hold(760); this.setState({ mode:'photos', legI:i, pos }, () => this.afterGeometry(720)); }
   movePos(pos){ this.hold(430); this.setState({ pos }, () => { this.syncMarkers(); this.camera(); }); }
-  goLeg = id => { const i = LEGS.findIndex(l => l.id === id); if (i >= 0) this.toCover(i); };
+  goLeg = id => { const i = this.legs.findIndex(l => l.id === id); if (i >= 0) this.toCover(i); };
 
   // marker state updates immediately; camera waits for the CSS geometry change to finish
   afterGeometry(delay){
@@ -396,6 +464,7 @@ class Component extends DCLogic {
   }
 
   routeGeo(){
+    const LEGS = this.legs;
     const pts = [];
     for (let i = 0; i < LEGS.length - 1; i++) {
       const a = LEGS[i], b = LEGS[i+1];
@@ -410,6 +479,7 @@ class Component extends DCLogic {
   }
 
   buildMarkers(){
+    const LEGS = this.legs, PHOTOS = this.photosByLeg, PALETTES = this.palettes, ALL = this.data.all;
     if (this.markers.length) return;
     const mgl = window.maplibregl;
 
@@ -517,6 +587,7 @@ class Component extends DCLogic {
   // measures each photo's aspect ratio and samples its top/bottom edge colours,
   // so "smart bleed" can decide crop-vs-fit and tint the letterbox to the photo
   probeImages(){
+    const ALL = this.data.all;
     this.imgMeta = this.imgMeta || {};
     const flush = () => { clearTimeout(this.probeT); this.probeT = setTimeout(() => this.forceUpdate(), 140); };
     ALL.forEach(s => {
@@ -572,6 +643,7 @@ class Component extends DCLogic {
   }
 
   fitAll(){
+    const LEGS = this.legs;
     try {
       if (!this.map) return;
       const lngs = LEGS.map(l => l.lng), lats = LEGS.map(l => l.lat);
@@ -595,6 +667,7 @@ class Component extends DCLogic {
   }
 
   renderVals(){
+    const LEGS = this.legs, PALETTES = this.palettes, STOP_THUMB = this.stopThumb;
     const st = this.state, mode = st.mode, leg = this.leg, list = this.list;
     const dock = this.dockPct, wide = st.wide, docked = this.docked, enter = this.enterStyle;
     const stripShown = st.full || mode === 'cover';
