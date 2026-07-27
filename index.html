@@ -8,11 +8,11 @@
 </head>
 <body>
 <x-dc>
-<helmet><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet"><link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet"><script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script><style>html,body{margin:0;height:100%;background:#0b131c;overflow:hidden;overscroll-behavior:none}a{color:#F0504A}a:hover{color:#B23A48}*{-webkit-tap-highlight-color:transparent}.maplibregl-ctrl-attrib{font-size:9px;background:rgba(255,255,255,.55)!important}@keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.14)}}@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}@media (prefers-reduced-motion:reduce){.kb{animation:none!important}}</style></helmet>
+<helmet><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet"><link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet"><script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script><style>html,body{margin:0;height:100%;background:#0b131c;overflow:hidden;overscroll-behavior:none}a{color:#F0504A}a:hover{color:#B23A48}*{-webkit-tap-highlight-color:transparent}.maplibregl-ctrl-attrib{font-size:9px;background:rgba(255,255,255,.55)!important}@keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.14)}}@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}@media (prefers-reduced-motion:reduce){.kb{animation:none!important}}.hbar{scrollbar-width:none;-ms-overflow-style:none}.hbar::-webkit-scrollbar{display:none}.attr-off .maplibregl-ctrl-attrib,.attr-off .maplibregl-ctrl-attrib-button{display:none!important}</style></helmet>
 
 <div ref="{{ rootRef }}" style="position:fixed;inset:0;overflow:hidden;background:#0b131c;font-family:Poppins,system-ui,sans-serif">
 
-<div style="position:absolute;top:0;bottom:0;right:0;{{ mapLayer }}">
+<div class="{{ attrCls }}" style="position:absolute;top:0;bottom:0;right:0;{{ mapLayer }}">
 <div ref="{{ mapRef }}" style="position:absolute;inset:0"></div>
 <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(6,12,18,.45),rgba(6,12,18,0) 22%,rgba(6,12,18,0) 68%,rgba(6,12,18,.6))"></div>
 </div>
@@ -82,14 +82,14 @@
 <div onClick="{{ toggleFull }}" style="position:absolute;top:16px;right:16px;z-index:8;cursor:pointer;display:flex;align-items:center;gap:7px;background:rgba(11,19,28,.72);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 14px;font:600 9px Poppins,sans-serif;letter-spacing:.14em;color:#fff;transition:opacity .4s;{{ fullBtn }}">{{ fullBtnLabel }}</div>
 
 <div style="position:absolute;left:0;right:0;bottom:0;padding:0 18px 18px;z-index:6;transition:opacity .4s ease,transform .5s cubic-bezier(.32,.72,0,1);{{ stripLayer }}">
-<div style="background:rgba(11,19,28,.8);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:11px;display:grid;grid-template-columns:repeat(4,1fr);gap:9px">
+<div class="hbar" style="background:rgba(11,19,28,.8);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:11px;display:grid;grid-template-columns:repeat(4,1fr);gap:9px;{{ stripGrid }}">
 <sc-for list="{{ stops }}" as="p" hint-placeholder-count="4">
 <div onClick="{{ p.go }}" style="cursor:pointer;display:flex;gap:11px;align-items:center;padding:9px 11px;border-radius:14px;transition:background .25s;{{ p.wrap }}">
 <div role="img" aria-label="{{ p.name }}" style="width:42px;height:42px;border-radius:12px;flex:none;background-size:cover;background-position:center;{{ p.thumb }}"></div>
 <div style="min-width:0">
-<div style="font:600 8px Poppins,sans-serif;letter-spacing:.16em;{{ p.numFg }}">STOP 0{{ p.n }} · {{ p.dates }}</div>
+<div style="font:600 8px Poppins,sans-serif;letter-spacing:.16em;{{ p.numFg }}">{{ p.numLine }}</div>
 <div style="font:700 14px Poppins,sans-serif;color:#fff;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.name }}</div>
-<div style="font:400 9.5px Poppins,sans-serif;color:rgba(255,255,255,.5);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.meta }}</div>
+<div style="font:400 9.5px Poppins,sans-serif;color:rgba(255,255,255,.5);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;{{ p.metaStyle }}">{{ p.meta }}</div>
 </div>
 </div>
 </sc-for>
@@ -635,10 +635,15 @@ class Component extends DCLogic {
         return this.map.easeTo(Object.assign(t, { duration:dur, essential:true, easing:x => x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3) / 2 }));
       };
       const w = el && el.clientWidth > 0 ? el.clientWidth : 1200;
-      // push the region right of the title column so pin + sight circles never sit on the copy
-      if (st.mode === 'cover') { go({ center:[leg.lng, leg.lat], zoom:7.4, offset:[Math.round(w * 0.21), Math.round(h * -0.02)] }); return; }
+      // wide: push the region right of the title column. narrow: push it above the copy.
+      if (st.mode === 'cover') {
+        const off = st.wide ? [Math.round(w * 0.21), Math.round(h * -0.02)] : [0, Math.round(h * -0.17)];
+        go({ center:[leg.lng, leg.lat], zoom:st.wide ? 7.4 : 6.6, offset:off });
+        return;
+      }
       const c = this.coords[(this.list[st.pos] || {}).key];
-      go(c ? { center:[c.lng, c.lat], zoom:12.4 } : { center:[leg.lng, leg.lat], zoom:6.6 });
+      const z = st.wide || st.full ? 12.4 : 11.5;   // shallower zoom for the short top strip
+      go(c ? { center:[c.lng, c.lat], zoom:z } : { center:[leg.lng, leg.lat], zoom:6.6 });
     } catch (e) { console.warn('camera skipped:', (e && e.message) || e); }
   }
 
@@ -679,6 +684,10 @@ class Component extends DCLogic {
     // so nothing ever resizes mid-transition.
     const panelRight = wide ? dock : 0;
     const inPhotos = mode === 'photos';
+    // narrow screens dock the map to the TOP instead of the side; the photo card
+    // rides up over it with a rounded lip, Polarsteps-style.
+    const mDock = 30;
+    const mDocked = inPhotos && !wide && !st.full;
     const off = enter === 'fade' ? 'translateX(0) scale(1.04)' : enter === 'parallax' ? 'translateX(-46%)' : 'translateX(-101%)';
     const panelTrans = enter === 'parallax'
       ? 'transform .78s ' + ease + ', opacity .55s ease'
@@ -701,8 +710,12 @@ class Component extends DCLogic {
     return {
       rootRef:this.rootRef, mapRef:this.mapRef, prev:this.prev, next:this.next, toggleFull:this.toggleFull,
 
+      // credits are required by Esri/CARTO, so they stay — just parked on the full-map view
+      attrCls: st.full ? '' : 'attr-off',
+
       mapLayer:'left:' + (docked ? (100 - dock) : 0) + '%'
-        + ';transition:left .72s ' + ease + ' ' + mapDelay + ',opacity .5s ease'
+        + ';bottom:' + (mDocked ? (100 - mDock) + '%' : '0')
+        + ';transition:left .72s ' + ease + ' ' + mapDelay + ',bottom .72s ' + ease + ',opacity .5s ease'
         + ';opacity:' + (mode === 'intro' ? 0 : 1)
         + ';pointer-events:' + (mode === 'intro' ? 'none' : 'auto'),
 
@@ -710,12 +723,21 @@ class Component extends DCLogic {
         + ';transform:translateY(' + (mode === 'intro' ? '100%' : mode === 'cover' ? '0' : '18px') + ')'
         + ';right:' + (docked ? dock + '%' : '0'),
 
-      panelLayer:'right:' + panelRight + '%'
-        + ';transition:' + panelTrans
-        + ';transform:' + (inPhotos ? 'translateX(0) scale(1)' : off)
-        + ';opacity:' + (inPhotos ? 1 : (enter === 'fade' ? 0 : (enter === 'parallax' ? 0 : 1)))
-        + ';pointer-events:' + (inPhotos && !st.full ? 'auto' : 'none')
-        + (enter === 'slide' || enter === 'parallax' ? ';box-shadow:10px 0 40px rgba(0,0,0,.55)' : ''),
+      panelLayer: wide
+        ? 'right:' + panelRight + '%'
+          + ';transition:' + panelTrans
+          + ';transform:' + (inPhotos ? 'translateX(0) scale(1)' : off)
+          + ';opacity:' + (inPhotos ? 1 : (enter === 'fade' ? 0 : (enter === 'parallax' ? 0 : 1)))
+          + ';pointer-events:' + (inPhotos && !st.full ? 'auto' : 'none')
+          + (enter === 'slide' || enter === 'parallax' ? ';box-shadow:10px 0 40px rgba(0,0,0,.55)' : '')
+        // narrow: the card is a sheet that rises from the bottom and parks under the map strip
+        : 'right:0;top:' + (mDocked ? mDock + '%' : '0')
+          + ';border-radius:' + (mDocked ? '20px 20px 0 0' : '0')
+          + ';transition:top .72s ' + ease + ',transform .72s ' + ease + ',border-radius .4s ease,opacity .4s ease'
+          + ';transform:translateY(' + (inPhotos ? '0' : '101%') + ')'
+          + ';opacity:' + (st.full ? 0 : 1)
+          + ';pointer-events:' + (inPhotos && !st.full ? 'auto' : 'none')
+          + ';box-shadow:0 -12px 34px rgba(0,0,0,.6)',
 
       trackStyle:'transform:translateY(' + (-st.pos * 100) + '%);transition:transform .5s ' + ease,
 
@@ -732,11 +754,18 @@ class Component extends DCLogic {
         + ';pointer-events:' + (stripShown ? 'auto' : 'none')
         + ';transform:translateY(' + (stripShown ? '0' : '26px') + ')',
 
-      hudLayer:'right:' + (docked ? dock + '%' : '0') + ';opacity:' + (st.full || mode === 'intro' ? 0 : 1),
+      hudLayer:'right:' + (docked ? dock + '%' : '0')
+        + ';top:' + (mDocked ? mDock + '%' : '0')
+        + ';transition:right .7s ' + ease + ',top .72s ' + ease + ',opacity .4s ease'
+        + ';opacity:' + (st.full || mode === 'intro' ? 0 : 1),
+
+      // arrows are for pointer devices; on touch the swipe is the control
       navLayer:'right:' + (docked ? 'calc(' + dock + '% + 26px)' : '26px')
         + ';bottom:' + (stripShown ? '124px' : '30px')
-        + ';opacity:' + (st.full || mode === 'intro' ? 0 : 1)
-        + ';pointer-events:' + (st.full || mode === 'intro' ? 'none' : 'auto'),
+        + ';opacity:' + (st.full || mode === 'intro' || !wide ? 0 : 1)
+        + ';pointer-events:' + (st.full || mode === 'intro' || !wide ? 'none' : 'auto'),
+
+      stripGrid: wide ? '' : 'grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:44%;gap:7px;padding:8px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch',
 
       coverKicker:'Stop 0' + leg.n + ' · ' + leg.dates,
 
@@ -771,11 +800,16 @@ class Component extends DCLogic {
 
       stops: LEGS.map(l => {
         const on = l.id === leg.id && mode !== 'intro';
+        // narrow: number + name only, so the boxes can be half-width
         return { n:l.n, name:l.name, dates:l.dates, meta:l.nights + (l.nights === 1 ? ' night · ' : ' nights · ') + l.region,
+          numLine: wide ? 'STOP 0' + l.n + ' · ' + l.dates : 'STOP 0' + l.n,
+          metaStyle: wide ? '' : 'display:none',
           go:() => this.goLeg(l.id),
-          wrap:'background:' + (on ? 'rgba(240,80,74,.9)' : 'rgba(255,255,255,.05)'),
+          wrap:'scroll-snap-align:start;background:' + (on ? 'rgba(240,80,74,.9)' : 'rgba(255,255,255,.05)')
+            + (wide ? '' : ';gap:9px;padding:8px 10px'),
           numFg:'color:' + (on ? 'rgba(255,255,255,.9)' : 'rgba(255,255,255,.45)'),
-          thumb: STOP_THUMB[l.id] ? 'background-image:url(' + STOP_THUMB[l.id] + ')' : stripe(PALETTES[l.id][0], PALETTES[l.id][1], 7) };
+          thumb:(wide ? '' : 'width:32px;height:32px;border-radius:9px;')
+            + (STOP_THUMB[l.id] ? 'background-image:url(' + STOP_THUMB[l.id] + ')' : stripe(PALETTES[l.id][0], PALETTES[l.id][1], 7)) };
       })
     };
   }
