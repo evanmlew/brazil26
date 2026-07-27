@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet"><link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet"><script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script><style>html,body{margin:0;height:100%;background:#0b131c;overflow:hidden;overscroll-behavior:none}a{color:#F0504A}a:hover{color:#B23A48}*{-webkit-tap-highlight-color:transparent}.maplibregl-ctrl-attrib{font-size:9px;background:rgba(255,255,255,.55)!important}@keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.14)}}@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}@media (prefers-reduced-motion:reduce){.kb{animation:none!important}}</style></helmet>
+
+<div ref="{{ rootRef }}" style="position:fixed;inset:0;overflow:hidden;background:#0b131c;font-family:Poppins,system-ui,sans-serif">
+
+<div style="position:absolute;top:0;bottom:0;right:0;{{ mapLayer }}">
+<div ref="{{ mapRef }}" style="position:absolute;inset:0"></div>
+<div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(6,12,18,.45),rgba(6,12,18,0) 22%,rgba(6,12,18,0) 68%,rgba(6,12,18,.6))"></div>
+</div>
+
+<div style="position:absolute;inset:0;z-index:2;pointer-events:none;transition:opacity .45s ease,transform .7s cubic-bezier(.32,.72,0,1);{{ coverLayer }}">
+<div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(6,12,18,.94) 0%,rgba(6,12,18,.4) 34%,rgba(6,12,18,.06) 62%,rgba(6,12,18,.5) 100%)"></div>
+<div style="position:absolute;left:clamp(24px,5vw,72px);right:clamp(24px,5vw,72px);bottom:23vh;max-width:660px;display:flex;flex-direction:column">
+<div style="font:700 22px Caveat,cursive;color:#F0504A;letter-spacing:.04em;text-transform:uppercase">{{ coverKicker }}</div>
+<div style="font:800 clamp(44px,7vw,96px)/.96 Poppins,sans-serif;letter-spacing:-.02em;color:#fff;margin:8px 0 0;text-wrap:balance">{{ coverTitle }}</div>
+<div style="font:400 13px/1.7 Poppins,sans-serif;color:rgba(255,255,255,.85);margin-top:14px;max-width:52ch;text-wrap:pretty">{{ coverBody }}</div>
+<div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:18px">
+<sc-for list="{{ coverChips }}" as="c" hint-placeholder-count="2">
+<div style="background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.3);color:#fff;font:700 9px Poppins,sans-serif;letter-spacing:.1em;padding:6px 12px;border-radius:999px">{{ c.t }}</div>
+</sc-for>
+</div>
+</div>
+</div>
+
+<div style="position:absolute;top:0;bottom:0;left:0;z-index:3;overflow:hidden;background:#0b131c;will-change:transform;{{ panelLayer }}">
+<div style="position:absolute;inset:0;{{ trackStyle }}">
+<sc-for list="{{ photos }}" as="s" hint-placeholder-count="3">
+<div data-screen-label="{{ s.label }}" style="position:absolute;left:0;right:0;height:100%;overflow:hidden;{{ s.slot }}">
+<div style="position:absolute;inset:-8%;background-size:cover;background-position:center;filter:blur(38px) saturate(1.25);opacity:.45;{{ s.bgStyle }}"></div>
+<div role="img" aria-label="{{ s.alt }}" class="kb" style="position:absolute;left:-4%;top:-4%;width:108%;height:108%;background-size:cover;background-position:center;animation:kb 24s ease-out both alternate infinite;{{ s.imgStyle }}"></div>
+<sc-if value="{{ s.noPhoto }}" hint-placeholder-val="{{ true }}">
+<div style="position:absolute;inset:0;{{ s.stripe }}"></div>
+<div style="position:absolute;top:76px;left:0;right:0;display:grid;place-items:center"><span style="font:500 9px ui-monospace,Menlo,monospace;letter-spacing:.14em;color:rgba(255,255,255,.34);text-align:center;border:1px dashed rgba(255,255,255,.22);border-radius:8px;padding:7px 12px">{{ s.ph }}</span></div>
+</sc-if>
+<div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,12,18,.5) 0%,rgba(6,12,18,0) 26%,rgba(6,12,18,.06) 42%,rgba(6,12,18,.93) 100%)"></div>
+<div style="position:absolute;left:clamp(20px,4vw,56px);right:clamp(20px,4vw,56px);bottom:9vh;max-width:680px;display:flex;flex-direction:column">
+<div style="font:700 22px Caveat,cursive;color:#F0504A;letter-spacing:.04em;text-transform:uppercase">{{ s.kicker }}</div>
+<div style="font:800 clamp(26px,3vw,40px)/1.06 Poppins,sans-serif;color:#fff;margin:8px 0 0;text-wrap:balance">{{ s.title }}</div>
+<div style="font:400 13px/1.7 Poppins,sans-serif;color:rgba(255,255,255,.84);margin-top:12px;max-width:52ch;text-wrap:pretty">{{ s.body }}</div>
+<div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:16px">
+<sc-for list="{{ s.chips }}" as="c" hint-placeholder-count="2">
+<div style="background:{{ c.bg }};border:1px solid {{ c.br }};color:#fff;font:700 9px Poppins,sans-serif;letter-spacing:.1em;padding:6px 12px;border-radius:999px">{{ c.t }}</div>
+</sc-for>
+</div>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="position:absolute;inset:0;z-index:5;background:#0b131c;transition:transform .7s cubic-bezier(.32,.72,0,1),opacity .5s ease;{{ introLayer }}">
+<div class="kb" role="img" aria-label="Opening cover photo" style="position:absolute;inset:0;background-image:url('assets/photos/cover.jpg');background-size:cover;background-position:52% 46%;animation:kb 22s ease-out both"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(6,12,18,.9) 0%,rgba(6,12,18,.46) 34%,rgba(6,12,18,0) 64%)"></div>
+<div style="position:absolute;top:26px;left:0;right:0;display:grid;place-items:center"><span style="font:500 9px ui-monospace,Menlo,monospace;letter-spacing:.18em;color:rgba(255,255,255,.5)">BRAZIL 2026 · 10–22 JULY</span></div>
+<div style="position:absolute;left:clamp(24px,5vw,72px);right:clamp(24px,5vw,72px);bottom:clamp(46px,9vh,92px);max-width:780px;display:flex;flex-direction:column;animation:fadeUp 1s ease both">
+<div style="font:700 clamp(22px,2.4vw,32px) Caveat,cursive;color:#F0504A;letter-spacing:.03em;text-transform:uppercase;line-height:1">Thirteen days south</div>
+<div style="font:600 clamp(52px,8.4vw,116px)/.94 Poppins,sans-serif;letter-spacing:-.03em;color:#fff;margin:12px 0 0">Brazil 2026</div>
+<div style="display:flex;gap:clamp(16px,2.2vw,28px);align-items:center;margin-top:20px">
+<div style="font:500 11px Poppins,sans-serif;letter-spacing:.16em;color:rgba(255,255,255,.82)">13 DAYS</div>
+<div style="width:1px;height:13px;background:rgba(255,255,255,.28)"></div>
+<div style="font:500 11px Poppins,sans-serif;letter-spacing:.16em;color:rgba(255,255,255,.82)">4 STOPS</div>
+<div style="width:1px;height:13px;background:rgba(255,255,255,.28)"></div>
+<div style="font:500 11px Poppins,sans-serif;letter-spacing:.16em;color:rgba(255,255,255,.82)">15 SPECIES</div>
+</div>
+</div>
+<div style="position:absolute;right:clamp(24px,4vw,52px);bottom:clamp(30px,5vh,48px);display:flex;align-items:center;gap:10px;pointer-events:none;animation:fadeUp .9s ease both">
+<div style="font:400 10px Poppins,sans-serif;letter-spacing:.14em;color:rgba(255,255,255,.62)">BEGIN</div><div style="font:400 15px Poppins,sans-serif;color:rgba(255,255,255,.62)">↓</div>
+</div>
+</div>
+
+<div style="position:absolute;top:16px;left:16px;z-index:8;background:rgba(255,255,255,.95);border-radius:999px;padding:5px 14px 5px 5px;display:flex;align-items:center;gap:9px;box-shadow:0 4px 16px rgba(0,0,0,.35);transition:opacity .4s;{{ brandStyle }}"><div style="width:24px;height:24px;border-radius:50%;background:repeating-linear-gradient(45deg,#B23A48 0 5px,#c85260 5px 10px)"></div><div style="font:700 12px Poppins,sans-serif;color:#12263A">Brazil 2026</div></div>
+
+<div onClick="{{ toggleFull }}" style="position:absolute;top:16px;right:16px;z-index:8;cursor:pointer;display:flex;align-items:center;gap:7px;background:rgba(11,19,28,.72);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 14px;font:600 9px Poppins,sans-serif;letter-spacing:.14em;color:#fff;transition:opacity .4s;{{ fullBtn }}">{{ fullBtnLabel }}</div>
+
+<div style="position:absolute;left:0;right:0;bottom:0;padding:0 18px 18px;z-index:6;transition:opacity .4s ease,transform .5s cubic-bezier(.32,.72,0,1);{{ stripLayer }}">
+<div style="background:rgba(11,19,28,.8);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:11px;display:grid;grid-template-columns:repeat(4,1fr);gap:9px">
+<sc-for list="{{ stops }}" as="p" hint-placeholder-count="4">
+<div onClick="{{ p.go }}" style="cursor:pointer;display:flex;gap:11px;align-items:center;padding:9px 11px;border-radius:14px;transition:background .25s;{{ p.wrap }}">
+<div role="img" aria-label="{{ p.name }}" style="width:42px;height:42px;border-radius:12px;flex:none;background-size:cover;background-position:center;{{ p.thumb }}"></div>
+<div style="min-width:0">
+<div style="font:600 8px Poppins,sans-serif;letter-spacing:.16em;{{ p.numFg }}">STOP 0{{ p.n }} · {{ p.dates }}</div>
+<div style="font:700 14px Poppins,sans-serif;color:#fff;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.name }}</div>
+<div style="font:400 9.5px Poppins,sans-serif;color:rgba(255,255,255,.5);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.meta }}</div>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="position:absolute;top:0;left:0;z-index:7;padding:18px 20px 0;pointer-events:none;transition:right .7s cubic-bezier(.32,.72,0,1),opacity .4s ease;{{ hudLayer }}">
+<div style="display:flex;gap:4px">
+<sc-for list="{{ bars }}" as="b" hint-placeholder-count="4">
+<div style="flex:1;height:2.5px;border-radius:2px;transition:background .3s;background:{{ b.c }}"></div>
+</sc-for>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+<div style="font:600 9px Poppins,sans-serif;letter-spacing:.18em;color:rgba(255,255,255,.8);text-shadow:0 1px 6px rgba(0,0,0,.7)">{{ chapterLabel }}</div>
+<div style="font:600 9px Poppins,sans-serif;letter-spacing:.14em;color:rgba(255,255,255,.5);text-shadow:0 1px 6px rgba(0,0,0,.7)">{{ counter }}</div>
+</div>
+</div>
+
+<div style="position:absolute;z-index:7;display:flex;flex-direction:column;gap:10px;transition:right .7s cubic-bezier(.32,.72,0,1),bottom .4s ease,opacity .3s;{{ navLayer }}">
+<div onClick="{{ prev }}" style="cursor:pointer;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(8px);color:#fff;display:grid;place-items:center;font:600 15px Poppins,sans-serif">↑</div>
+<div onClick="{{ next }}" style="cursor:pointer;width:44px;height:44px;border-radius:50%;background:#fff;color:#12263A;display:grid;place-items:center;font:600 15px Poppins,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.35)">↓</div>
+</div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;enterStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;slide&quot;,&quot;parallax&quot;,&quot;fade&quot;],&quot;default&quot;:&quot;slide&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Title → photos transition&quot;},&quot;photoFit&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;smart&quot;,&quot;bleed&quot;,&quot;fit&quot;,&quot;crop&quot;],&quot;default&quot;:&quot;smart&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Photos&quot;},&quot;cameraMove&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;direct&quot;,&quot;arc&quot;],&quot;default&quot;:&quot;direct&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Map&quot;},&quot;mapLabels&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Map&quot;},&quot;mapWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:34,&quot;min&quot;:26,&quot;max&quot;:44,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+const NAVY = '#12263A', CORAL = '#F0504A';
+const stripe = (a,b,w) => `background:repeating-linear-gradient(135deg,${a} 0 ${w||13}px,${b} ${w||13}px ${(w||13)*2}px)`;
+const P = 'assets/photos/';
+
+const LEGS = [
+  { id:'saopaulo', n:1, name:'São Paulo', region:'Southeast Brazil', lat:-23.568, lng:-46.656, nights:1, dates:'11–12 JUL',
+    lodge:'Renaissance São Paulo',
+    blurb:'Urban arrival — one night, one long afternoon walk, and the first jolt of Brazil before the wild.' },
+  { id:'amazon', n:2, name:'Amazon', region:'Cristalino · Mato Grosso', lat:-9.5936, lng:-55.9339, nights:3, dates:'12–15 JUL',
+    lodge:'Cristalino Jungle Lodge',
+    blurb:'Three nights on a clearwater river deep in southern Amazonia — otters at dawn, canopy towers above the treeline, frogs after dark.' },
+  { id:'pantanal', n:3, name:'Pantanal', region:'Caiman · Mato Grosso do Sul', lat:-19.95, lng:-56.3, nights:3, dates:'16–19 JUL',
+    lodge:'Caiman Ecological Refuge',
+    blurb:"The world's largest wetland in the dry season, when the water pulls back and everything comes to the open — jaguar included." },
+  { id:'rio', n:4, name:'Rio de Janeiro', region:'Southeast coast', lat:-22.9711, lng:-43.1822, nights:3, dates:'19–22 JUL',
+    lodge:'Emiliano Rio',
+    blurb:'Back to sea level for the finale — Copacabana, the granite mountains, and the slow wind-down home.' }
+];
+
+const SPECIES = [
+  { id:'otter', leg:'amazon', taxon:'Mammal', common:'Neotropical Otter', sci:'Lontra longicaudis',
+    note:"Hauled out on a midstream boulder to eat, working the Cristalino's clearwater in low light." },
+  { id:'turtle', leg:'amazon', taxon:'Reptile', common:'Yellow-spotted River Turtle', sci:'Podocnemis unifilis',
+    note:'Basking on a river rock, attended by butterflies drinking its tears — a hunt for minerals scarce in the Amazon.' },
+  { id:'frog', leg:'amazon', taxon:'Amphibian', common:'Tree Frog', sci:'Boana sp.', flag:'Genus-level ID',
+    note:'Found on low vegetation on a night walk, clinging by its adhesive toe pads. Logged at genus level.' },
+  { id:'kingfisher', leg:'amazon', taxon:'Bird', common:'Ringed Kingfisher', sci:'Megaceryle torquata', flag:'Leg to confirm',
+    note:'The largest kingfisher in the Americas, framed through palm fronds above the water.' },
+  { id:'jaguar', leg:'pantanal', taxon:'Mammal', star:true, common:'Jaguar', sci:'Panthera onca',
+    note:'The headline of the trip: a cub, five to eight months old, walking a clearing in daylight.' },
+  { id:'ocelot', leg:'pantanal', taxon:'Mammal', common:'Ocelot', sci:'Leopardus pardalis',
+    note:"A night encounter with the Pantanal's most elegant small cat. Chain-like rosettes smear into long streaks." },
+  { id:'tapir', leg:'pantanal', taxon:'Mammal', common:'South American Tapir', sci:'Tapirus terrestris',
+    note:"South America's largest land mammal, browsing in the open at golden hour. A gardener of the forest." },
+  { id:'marshdeer', leg:'pantanal', taxon:'Mammal', common:'Marsh Deer', sci:'Blastocerus dichotomus',
+    note:"The continent's largest deer, a buck in full antler. A wetland specialist, now classed Vulnerable." },
+  { id:'pampasdeer', leg:'pantanal', taxon:'Mammal', common:'Pampas Deer & Cattle Tyrant', sci:'Ozotoceros bezoarticus',
+    note:'A doe crossing open grassland with a passenger — a cattle tyrant riding her back for flushed insects.' },
+  { id:'macaw', leg:'pantanal', taxon:'Bird', star:true, common:'Hyacinth Macaw', sci:'Anodorhynchus hyacinthinus',
+    note:"A bonded pair of the world's largest flying parrot, cobalt from crown to tail." },
+  { id:'jabiru', leg:'pantanal', taxon:'Bird', common:'Jabiru', sci:'Jabiru mycteria',
+    note:'The tallest flying bird in the Americas, stalking wet grassland with its great upturned bill.' },
+  { id:'caracara', leg:'pantanal', taxon:'Bird', common:'Southern Crested Caracara', sci:'Caracara plancus',
+    note:'Two caracaras in a tug-of-war over a snake — falcons that behave like bold ground-striding opportunists.' },
+  { id:'vulture', leg:'pantanal', taxon:'Bird', common:'Lesser Yellow-headed Vulture', sci:'Cathartes burrovianus',
+    note:'A marsh-and-grassland vulture that quarters low over open country, finding carrion by scent.' },
+  { id:'owl', leg:'pantanal', taxon:'Bird', common:'Burrowing Owl', sci:'Athene cunicularia',
+    note:'An owl that lives underground and hunts by day, standing tall on a fence post in warm light.' },
+  { id:'cardinal', leg:'pantanal', taxon:'Bird', common:'Yellow-billed Cardinal', sci:'Paroaria capitata',
+    note:"A crisp red, white and black songbird atop a flowering shrub. Despite the name, it's a tanager." }
+];
+SPECIES.forEach(s => { s.photo = (s.id === 'pampasdeer' ? 'pampas' : s.id) + '.jpg'; });
+
+// ---- Per-photo GPS. Replace null with [lat, lng]; null auto-jitters near the lodge.
+const PHOTO_COORDS = {
+  otter:null, turtle:null, frog:null, kingfisher:null,
+  jaguar:null, ocelot:null, tapir:null, marshdeer:null, pampasdeer:null,
+  macaw:null, jabiru:null, caracara:null, vulture:null, owl:null, cardinal:null,
+  sp_01:null, sp_02:null, rio_01:null, rio_02:null, closing:null
+};
+
+const STORY = {
+  otter:      { kicker:'Clearwater river',   title:'The otter on the boulder' },
+  turtle:     { kicker:'Sun and salt',       title:'A turtle and its butterflies' },
+  frog:       { kicker:'Night walk',         title:'Small things, big eyes' },
+  kingfisher: { kicker:'Through the fronds', title:'The largest kingfisher alive' },
+  jaguar:     { kicker:'The headline',       title:'A cub in daylight' },
+  ocelot:     { kicker:'After dark',         title:'The elegant one' },
+  tapir:      { kicker:'Golden hour',        title:'Gardener of the forest' },
+  marshdeer:  { kicker:'Full antler',        title:"The continent's largest deer" },
+  pampasdeer: { kicker:'A passenger',        title:'Deer, with bird' },
+  macaw:      { kicker:'Cobalt',             title:'The largest parrot alive' },
+  jabiru:     { kicker:'Emblem',             title:'Tallest bird in the Americas' },
+  caracara:   { kicker:'Tug of war',         title:'Two falcons and a snake' },
+  vulture:    { kicker:'Low over the marsh', title:'The yellow-headed one' },
+  owl:        { kicker:'Daylight owl',       title:'Standing on a fence post' },
+  cardinal:   { kicker:'Not a cardinal',     title:'Red, white and black' }
+};
+
+const PALETTES = { saopaulo:['#2f3742','#3a444f'], amazon:['#2b3a2c','#33452f'], pantanal:['#40352a','#4b3f30'], rio:['#26384a','#2e4459'] };
+
+const PLACEHOLDERS = {
+  sp_01: { leg:'saopaulo', kicker:'Arrival', title:'Twelve million people, one horizon', ph:'DROP IN — SP_HERO.JPG · CITY SKYLINE', chips:['SÃO PAULO'], body:'The concrete sea from the hotel window — Brazil starts loud.' },
+  sp_02: { leg:'saopaulo', kicker:'First night', title:'Dinner, and a plan', ph:'DROP IN — SP_02.JPG · STREET OR RESTAURANT', chips:['SÃO PAULO'], body:'[Your caption here] — the meal that set the tone for two weeks.' },
+  rio_01:{ leg:'rio', kicker:'Sea level', title:'Copacabana, finally', ph:'DROP IN — RIO_HERO.JPG · BEACH FROM ABOVE', chips:['RIO DE JANEIRO'], body:'[Your caption here] — the mountains behind, the Atlantic in front.' },
+  rio_02:{ leg:'rio', kicker:'The finale', title:'Last light over the bay', ph:'DROP IN — RIO_02.JPG · SUGARLOAF AT DUSK', chips:['RIO DE JANEIRO'], body:'[Your caption here] — one more climb, one more view, then home.' },
+  closing:{ leg:'rio', kicker:'Brazil 2026', title:'4 stops · 15 species · one trip', ph:'DROP IN — CLOSING.JPG · FAMILY PORTRAIT', chips:['iPHONE','SONY A7CR'], body:'Thank you for coming along. Shot on an iPhone and a Sony A7CR — sixteen days, four thousand kilometres.' }
+};
+
+const STOP_THUMB = { saopaulo:null, amazon:P + 'kingfisher.jpg', pantanal:P + 'macaw.jpg', rio:null };
+
+const photoSlide = id => {
+  const s = SPECIES.find(x => x.id === id), st = STORY[id];
+  const chips = [];
+  if (s.star) chips.push('★ TRIP STANDOUT');
+  chips.push(s.taxon.toUpperCase());
+  if (s.flag) chips.push(s.flag.toUpperCase());
+  return { leg:s.leg, key:id, src:P + s.photo, alt:s.common + ' — ' + s.sci, pinLabel:s.common,
+    kicker:st.kicker, title:st.title, body:s.note, chips };
+};
+const ph = key => {
+  const p = PLACEHOLDERS[key];
+  return { leg:p.leg, key, ph:p.ph, alt:p.title, pinLabel:p.title, kicker:p.kicker, title:p.title, body:p.body, chips:p.chips };
+};
+
+const PHOTOS = {
+  saopaulo:['sp_01','sp_02'].map(ph),
+  amazon:['otter','turtle','frog','kingfisher'].map(photoSlide),
+  pantanal:['jaguar','ocelot','tapir','marshdeer','pampasdeer','macaw','jabiru','caracara','vulture','owl','cardinal'].map(photoSlide),
+  rio:[ph('rio_01'), ph('rio_02'), ph('closing')]
+};
+const ALL = [];
+LEGS.forEach(l => PHOTOS[l.id].forEach((s, i) => ALL.push(Object.assign({ legId:l.id, pos:i }, s))));
+
+class Component extends DCLogic {
+  // mode: 'intro' | 'cover' | 'photos'
+  state = { mode:'intro', legI:0, pos:0, full:false, wide: typeof window !== 'undefined' && window.innerWidth >= 900 };
+
+  constructor(p){
+    super(p);
+    this.rootRef = React.createRef();
+    this.mapRef = React.createRef();
+    this.markers = [];
+    this.sightSets = [];
+    this.dots = {};
+    this.reduced = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.coords = {};
+    let j = 0;
+    LEGS.forEach(leg => PHOTOS[leg.id].forEach(s => {
+      const fixed = PHOTO_COORDS[s.key];
+      if (fixed) { this.coords[s.key] = { lat:fixed[0], lng:fixed[1] }; return; }
+      const a = (j * 2.399963) % 6.283, r = 0.13 + (j % 5) * 0.05; j++;
+      this.coords[s.key] = { lat:leg.lat + Math.sin(a) * r, lng:leg.lng + Math.cos(a) * r * 1.1 };
+    }));
+  }
+
+  get dockPct(){ return this.props.mapWidth ?? 34; }
+  get enterStyle(){ return this.props.enterStyle ?? 'slide'; }   // slide | parallax | fade
+  get labelsOn(){ return this.props.mapLabels ?? true; }
+  get cameraMove(){ return this.props.cameraMove ?? 'direct'; }   // direct | arc
+  get leg(){ return LEGS[this.state.legI]; }
+  get list(){ return PHOTOS[this.leg.id]; }
+  get docked(){ return this.state.mode === 'photos' && this.state.wide && !this.state.full; }
+
+  componentDidMount(){
+    this.onResize = () => {
+      const w = window.innerWidth >= 900;
+      if (w !== this.state.wide) this.setState({ wide:w });
+      if (this.map) this.map.resize();
+    };
+    window.addEventListener('resize', this.onResize);
+    this.onKey = e => {
+      if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); this.step(1); }
+      if (e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); this.step(-1); }
+    };
+    window.addEventListener('keydown', this.onKey);
+    this.probeImages();
+    const root = this.rootRef.current;
+    if (root) {
+      this.onWheel = e => {
+        if (this.state.full) return;
+        e.preventDefault();
+        if (Math.abs(e.deltaY) < 4) return;
+        this.step(e.deltaY > 0 ? 1 : -1);
+      };
+      root.addEventListener('wheel', this.onWheel, { passive:false });
+      this.onTS = e => { this.ty = e.touches[0].clientY; };
+      this.onTE = e => {
+        const y = this.ty; this.ty = null;
+        if (y == null || this.state.full) return;
+        const dy = y - ((e.changedTouches[0] || {}).clientY || y);
+        if (Math.abs(dy) > 44) this.step(dy > 0 ? 1 : -1);
+      };
+      root.addEventListener('touchstart', this.onTS, { passive:true });
+      root.addEventListener('touchend', this.onTE, { passive:true });
+    }
+    this.ensureMap();
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('keydown', this.onKey);
+    const root = this.rootRef.current;
+    if (root && this.onWheel) {
+      root.removeEventListener('wheel', this.onWheel);
+      root.removeEventListener('touchstart', this.onTS);
+      root.removeEventListener('touchend', this.onTE);
+    }
+    clearTimeout(this.camT);
+  }
+
+  // ---- navigation -------------------------------------------------------
+  step = dir => {
+    if (Date.now() < (this.cool || 0)) return;
+    const st = this.state;
+    if (st.mode === 'intro') { if (dir > 0) this.toCover(0); return; }
+    if (st.mode === 'cover') {
+      if (dir > 0) this.toPhotos(st.legI, 0);
+      else if (st.legI === 0) this.toIntro();
+      else this.toPhotos(st.legI - 1, PHOTOS[LEGS[st.legI - 1].id].length - 1);
+      return;
+    }
+    const n = this.list.length;
+    if (dir > 0) {
+      if (st.pos < n - 1) this.movePos(st.pos + 1);
+      else if (st.legI < LEGS.length - 1) this.toCover(st.legI + 1);
+    } else {
+      if (st.pos > 0) this.movePos(st.pos - 1);
+      else this.toCover(st.legI);
+    }
+  };
+
+  cool = 0;
+  hold(ms){ this.cool = Date.now() + ms; }
+  prev = () => this.step(-1);
+  next = () => this.step(1);
+
+  toIntro(){ this.hold(700); this.setState({ mode:'intro' }, () => this.afterGeometry(700)); }
+  toCover(i){ this.hold(760); this.setState({ mode:'cover', legI:i, pos:0, full:false }, () => this.afterGeometry(720)); }
+  toPhotos(i, pos){ this.hold(760); this.setState({ mode:'photos', legI:i, pos }, () => this.afterGeometry(720)); }
+  movePos(pos){ this.hold(430); this.setState({ pos }, () => { this.syncMarkers(); this.camera(); }); }
+  goLeg = id => { const i = LEGS.findIndex(l => l.id === id); if (i >= 0) this.toCover(i); };
+
+  // marker state updates immediately; camera waits for the CSS geometry change to finish
+  afterGeometry(delay){
+    clearTimeout(this.camT);
+    this.syncMarkers();
+    this.camT = setTimeout(() => {
+      if (!this.map) return;
+      try { this.map.stop(); } catch (e) {}
+      this.map.resize();
+      this.camera();
+    }, this.reduced ? 0 : delay);
+  }
+
+  // ---- map --------------------------------------------------------------
+  async ensureMap(){
+    if (this.map) { this.map.resize(); return; }
+    let tries = 0;
+    while ((!window.maplibregl || !this.mapRef.current) && tries++ < 120) await new Promise(r => setTimeout(r, 100));
+    if (!window.maplibregl || !this.mapRef.current) return;
+    const mgl = window.maplibregl;
+    const map = new mgl.Map({ container:this.mapRef.current,
+      style:{ version:8,
+        sources:{
+          esri:{ type:'raster', tileSize:256,
+            tiles:['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],
+            attribution:'Imagery © Esri' },
+          labels:{ type:'raster', tileSize:256, maxzoom:18,
+            tiles:['https://basemaps.cartocdn.com/rastertiles/dark_only_labels/{z}/{x}/{y}.png'],
+            attribution:'© OpenStreetMap, © CARTO' }
+        },
+        layers:[
+          { id:'esri', type:'raster', source:'esri' },
+          { id:'labels', type:'raster', source:'labels', paint:{ 'raster-opacity':0.72 } }
+        ] },
+      center:[-49.5,-18], zoom:3.2, attributionControl:{ compact:true } });
+    this.map = map;
+    const init = () => {
+      if (this.mapReady) return;
+      this.mapReady = true;
+      try {
+        if (!map.getSource('route')) {
+          map.addSource('route', { type:'geojson', data:this.routeGeo() });
+          map.addLayer({ id:'route-glow', type:'line', source:'route',
+            layout:{ 'line-cap':'round','line-join':'round' },
+            paint:{ 'line-color':'#000000','line-width':6,'line-opacity':.28,'line-blur':3 } });
+          map.addLayer({ id:'route-dots', type:'line', source:'route', layout:{ 'line-cap':'round','line-join':'round' },
+            paint:{ 'line-color':'#ffffff','line-width':3.2,'line-dasharray':[0,2.2] } });
+        }
+        this.buildMarkers();
+        this.syncMarkers();
+        this.camera();
+      } catch (e) { console.warn('map init skipped:', (e && e.message) || e); }
+    };
+    map.once('load', init);
+    setTimeout(() => { if (map.isStyleLoaded()) init(); }, 1200);
+  }
+
+  routeGeo(){
+    const pts = [];
+    for (let i = 0; i < LEGS.length - 1; i++) {
+      const a = LEGS[i], b = LEGS[i+1];
+      const mx = (a.lng + b.lng)/2, my = (a.lat + b.lat)/2, dx = b.lng - a.lng, dy = b.lat - a.lat;
+      const cx = mx - dy * 0.13, cy = my + dx * 0.13;
+      for (let t = 0; t <= 1.0001; t += 0.05) {
+        const u = 1 - t;
+        pts.push([u*u*a.lng + 2*u*t*cx + t*t*b.lng, u*u*a.lat + 2*u*t*cy + t*t*b.lat]);
+      }
+    }
+    return { type:'Feature', geometry:{ type:'LineString', coordinates:pts } };
+  }
+
+  buildMarkers(){
+    if (this.markers.length) return;
+    const mgl = window.maplibregl;
+
+    LEGS.forEach(leg => {
+      const wrap = document.createElement('div');
+      wrap.style.cssText = 'display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;transition:opacity .35s';
+      const pill = document.createElement('div');
+      pill.textContent = leg.name;
+      pill.style.cssText = 'background:#fff;color:'+NAVY+';font:700 10px Poppins,sans-serif;padding:3px 9px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.35);white-space:nowrap;transition:opacity .3s';
+      const pin = document.createElement('div');
+      pin.style.cssText = 'width:34px;height:34px;border-radius:50% 50% 50% 0;background:'+NAVY+';border:3.5px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.5);display:grid;place-items:center;transform:rotate(-45deg);transform-origin:center;margin-bottom:5px;transition:background .25s,transform .25s,box-shadow .25s';
+      const num = document.createElement('span');
+      num.textContent = leg.n;
+      num.style.cssText = 'transform:rotate(45deg);color:#fff;font:700 14px Poppins,sans-serif;line-height:1';
+      pin.appendChild(num);
+      wrap.appendChild(pill); wrap.appendChild(pin);
+      wrap.onclick = () => this.goLeg(leg.id);
+      this.markers.push({ id:leg.id, wrap, pin, pill,
+        marker:new mgl.Marker({ element:wrap }).setLngLat([leg.lng, leg.lat]).addTo(this.map) });
+
+      // sight circles for the destination title page
+      const shots = PHOTOS[leg.id].filter(s => s.src).slice(0, 3);
+      const chips = (shots.length ? shots : PHOTOS[leg.id].slice(0, 3)).map((s, i) => {
+        const holder = document.createElement('div');
+        holder.style.cssText = 'flex-direction:column;align-items:center;gap:5px;cursor:pointer;display:none';
+        const circle = document.createElement('div');
+        circle.style.cssText = 'width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.6);box-shadow:0 8px 18px rgba(0,0,0,.45);background-size:cover;background-position:center;transition:transform .25s,border-color .25s;' +
+          (s.src ? 'background-image:url(' + s.src + ')' : stripe(PALETTES[leg.id][0], PALETTES[leg.id][1], 6));
+        const cap = document.createElement('div');
+        cap.textContent = s.pinLabel;
+        cap.style.cssText = 'font:600 8px Poppins,sans-serif;letter-spacing:.06em;color:#fff;background:rgba(11,19,28,.72);padding:3px 7px;border-radius:999px;white-space:nowrap;max-width:130px;overflow:hidden;text-overflow:ellipsis;opacity:0;transition:opacity .25s';
+        holder.appendChild(circle); holder.appendChild(cap);
+        holder.onmouseenter = () => { cap.style.opacity = '1'; circle.style.transform = 'scale(1.08)'; circle.style.borderColor = 'rgba(255,255,255,.95)'; };
+        holder.onmouseleave = () => { cap.style.opacity = '0'; circle.style.transform = 'scale(1)'; circle.style.borderColor = 'rgba(255,255,255,.6)'; };
+        const idx = PHOTOS[leg.id].indexOf(s);
+        holder.onclick = () => this.toPhotos(LEGS.findIndex(l => l.id === leg.id), Math.max(0, idx));
+        const a = 2.1 + i * 2.15, r = 0.42;
+        return { holder, marker:new mgl.Marker({ element:holder })
+          .setLngLat([leg.lng + Math.cos(a) * r * 1.2, leg.lat + Math.sin(a) * r]).addTo(this.map) };
+      });
+      this.sightSets.push({ id:leg.id, chips });
+    });
+
+    // one dot per photo — the whole leg's locations stay visible, active one promoted
+    ALL.forEach(s => {
+      const c = this.coords[s.key];
+      const holder = document.createElement('div');
+      holder.style.cssText = 'flex-direction:column;align-items:center;gap:4px;cursor:pointer;display:none';
+      const dot = document.createElement('div');
+      dot.style.cssText = 'border-radius:50%;transition:width .3s,height .3s,background .3s,box-shadow .3s,border-width .3s;box-sizing:border-box';
+      const cap = document.createElement('div');
+      cap.textContent = s.pinLabel;
+      cap.style.cssText = 'font:600 8px Poppins,sans-serif;letter-spacing:.06em;color:#fff;background:rgba(11,19,28,.78);padding:3px 7px;border-radius:999px;white-space:nowrap;max-width:150px;overflow:hidden;text-overflow:ellipsis;transition:opacity .3s';
+      holder.appendChild(dot); holder.appendChild(cap);
+      holder.onclick = () => this.toPhotos(LEGS.findIndex(l => l.id === s.legId), s.pos);
+      this.dots[s.key] = { holder, dot, cap, legId:s.legId,
+        marker:new mgl.Marker({ element:holder }).setLngLat([c.lng, c.lat]).addTo(this.map) };
+    });
+  }
+
+  syncMarkers(){
+    try {
+      if (!this.map || !this.mapReady) return;
+      const st = this.state, mode = st.mode, active = this.leg.id;
+      if (this.map.getLayer('labels')) this.map.setPaintProperty('labels', 'raster-opacity', this.labelsOn ? 0.72 : 0);
+      const cur = mode === 'photos' ? this.list[st.pos] : null;
+
+      this.markers.forEach(m => {
+        const on = m.id === active && mode !== 'intro';
+        m.pin.style.background = on ? CORAL : NAVY;
+        m.pin.style.transform = 'rotate(-45deg) scale(' + (on ? 1.14 : 1) + ')';
+        m.pin.style.boxShadow = on ? '0 0 0 8px rgba(240,80,74,.2),0 4px 12px rgba(0,0,0,.5)' : '0 4px 12px rgba(0,0,0,.5)';
+        m.wrap.style.opacity = mode === 'photos' ? (on ? '1' : '.4') : '1';
+        m.pill.style.opacity = mode === 'photos' && !on ? '.6' : '1';
+      });
+
+      const showSights = mode === 'cover' && !st.full;
+      this.sightSets.forEach(set => set.chips.forEach(c => {
+        c.holder.style.display = (showSights && set.id === active) ? 'flex' : 'none';
+      }));
+
+      const showDots = mode === 'photos' && !st.full;
+      Object.keys(this.dots).forEach(k => {
+        const d = this.dots[k], mine = d.legId === active, on = cur && cur.key === k;
+        d.holder.style.display = (showDots && mine) ? 'flex' : 'none';
+        d.holder.style.zIndex = on ? 3 : 1;
+        if (on) {
+          d.dot.style.cssText += '';
+          d.dot.style.width = '18px'; d.dot.style.height = '18px';
+          d.dot.style.background = CORAL;
+          d.dot.style.border = '3px solid #fff';
+          d.dot.style.boxShadow = '0 0 0 7px rgba(240,80,74,.24),0 3px 10px rgba(0,0,0,.45)';
+          d.cap.style.opacity = '1';
+        } else {
+          d.dot.style.width = '11px'; d.dot.style.height = '11px';
+          d.dot.style.background = 'rgba(255,255,255,.55)';
+          d.dot.style.border = '2px solid rgba(255,255,255,.85)';
+          d.dot.style.boxShadow = '0 1px 5px rgba(0,0,0,.5)';
+          d.cap.style.opacity = '0';
+        }
+      });
+    } catch (e) { console.warn('marker sync skipped:', (e && e.message) || e); }
+  }
+
+  // measures each photo's aspect ratio and samples its top/bottom edge colours,
+  // so "smart bleed" can decide crop-vs-fit and tint the letterbox to the photo
+  probeImages(){
+    this.imgMeta = this.imgMeta || {};
+    const flush = () => { clearTimeout(this.probeT); this.probeT = setTimeout(() => this.forceUpdate(), 140); };
+    ALL.forEach(s => {
+      if (!s.src || this.imgMeta[s.key]) return;
+      const img = new Image();
+      img.onload = () => {
+        try {
+          const n = 24, cv = document.createElement('canvas');
+          cv.width = n; cv.height = n;
+          const ctx = cv.getContext('2d');
+          ctx.drawImage(img, 0, 0, n, n);
+          const band = (y0, y1) => {
+            const d = ctx.getImageData(0, y0, n, y1 - y0).data;
+            let r = 0, g = 0, b = 0, c = 0;
+            for (let i = 0; i < d.length; i += 4) { r += d[i]; g += d[i+1]; b += d[i+2]; c++; }
+            const m = 0.82;   // slightly deepened so the photo still reads as the brightest thing
+            return 'rgb(' + Math.round(r/c*m) + ',' + Math.round(g/c*m) + ',' + Math.round(b/c*m) + ')';
+          };
+          this.imgMeta[s.key] = { ar:img.naturalWidth / img.naturalHeight, top:band(0, 5), bot:band(n - 5, n) };
+        } catch (e) {
+          this.imgMeta[s.key] = { ar:img.naturalWidth / img.naturalHeight, top:'#101a24', bot:'#101a24' };
+        }
+        flush();
+      };
+      img.onerror = flush;
+      img.src = s.src;
+    });
+  }
+
+  camera(){
+    try {
+      if (!this.map || !this.mapReady) return;
+      const st = this.state;
+      if (st.full || st.mode === 'intro') { this.fitAll(); return; }
+      const leg = this.leg, el = this.map.getContainer();
+      const h = el && el.clientHeight > 0 ? el.clientHeight : 700;
+      // 'direct' pans and zooms in one continuous move (easeTo never pulls back out);
+      // 'arc' is flyTo's zoom-out-and-in flight.
+      const go = t => {
+        if (this.reduced) return this.map.jumpTo(t);
+        if (this.cameraMove === 'arc') return this.map.flyTo(Object.assign(t, { duration:1400, essential:true, curve:1.25 }));
+        const from = this.map.getCenter();
+        const d = Math.hypot(t.center[0] - from.lng, t.center[1] - from.lat);
+        const dur = Math.round(Math.max(1000, Math.min(2100, 950 + d * 55)));
+        return this.map.easeTo(Object.assign(t, { duration:dur, essential:true, easing:x => x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3) / 2 }));
+      };
+      const w = el && el.clientWidth > 0 ? el.clientWidth : 1200;
+      // push the region right of the title column so pin + sight circles never sit on the copy
+      if (st.mode === 'cover') { go({ center:[leg.lng, leg.lat], zoom:7.4, offset:[Math.round(w * 0.21), Math.round(h * -0.02)] }); return; }
+      const c = this.coords[(this.list[st.pos] || {}).key];
+      go(c ? { center:[c.lng, c.lat], zoom:9.6 } : { center:[leg.lng, leg.lat], zoom:6.6 });
+    } catch (e) { console.warn('camera skipped:', (e && e.message) || e); }
+  }
+
+  fitAll(){
+    try {
+      if (!this.map) return;
+      const lngs = LEGS.map(l => l.lng), lats = LEGS.map(l => l.lat);
+      const sw = [Math.min.apply(null, lngs), Math.min.apply(null, lats)];
+      const ne = [Math.max.apply(null, lngs), Math.max.apply(null, lats)];
+      if (![sw[0], sw[1], ne[0], ne[1]].every(Number.isFinite)) return;
+      const el = this.map.getContainer();
+      const w = el && el.clientWidth > 0 ? el.clientWidth : 400;
+      const h = el && el.clientHeight > 0 ? el.clientHeight : 700;
+      const k = (v, max) => Math.max(0, Math.min(Math.round(v), Math.floor(max * 0.28)));
+      const pad = { top:k(120,h), bottom:k(this.state.full ? 190 : 130, h), left:k(80,w), right:k(90,w) };
+      if (!Object.keys(pad).every(key => Number.isFinite(pad[key]))) return;
+      this.map.fitBounds([sw, ne], { duration:this.reduced ? 0 : 1400, padding:pad, essential:true });
+    } catch (e) { console.warn('fitBounds skipped:', (e && e.message) || e); }
+  }
+
+  toggleFull = () => this.setState({ full:!this.state.full }, () => this.afterGeometry(720));
+
+  componentDidUpdate(prevProps){
+    if (prevProps !== this.props) this.afterGeometry(120);
+  }
+
+  renderVals(){
+    const st = this.state, mode = st.mode, leg = this.leg, list = this.list;
+    const dock = this.dockPct, wide = st.wide, docked = this.docked, enter = this.enterStyle;
+    const stripShown = st.full || mode === 'cover';
+    const ease = 'cubic-bezier(.32,.72,0,1)';
+    const chip = t => ({ t, bg: t.indexOf('★') === 0 ? 'rgba(240,80,74,.92)' : 'rgba(255,255,255,.13)',
+      br: t.indexOf('★') === 0 ? 'rgba(240,80,74,.92)' : 'rgba(255,255,255,.3)' });
+
+    // Panel keeps its final docked width at all times and slides in from the left,
+    // so nothing ever resizes mid-transition.
+    const panelRight = wide ? dock : 0;
+    const inPhotos = mode === 'photos';
+    const off = enter === 'fade' ? 'translateX(0) scale(1.04)' : enter === 'parallax' ? 'translateX(-46%)' : 'translateX(-101%)';
+    const panelTrans = enter === 'parallax'
+      ? 'transform .78s ' + ease + ', opacity .55s ease'
+      : enter === 'fade' ? 'transform .7s ' + ease + ', opacity .5s ease'
+      : 'transform .72s ' + ease + ', opacity .4s ease';
+    const mapDelay = enter === 'parallax' ? '.1s' : '0s';
+    const pf = this.props.photoFit ?? 'smart';   // bleed = whole photo, edge to edge, no frame
+    const meta = this.imgMeta || {};
+    const panelW = (typeof window !== 'undefined' ? window.innerWidth : 1440) * (wide ? (100 - dock) / 100 : 1);
+    const panelH = typeof window !== 'undefined' ? window.innerHeight : 900;
+    const panelAR = panelH > 0 ? panelW / panelH : 1.2;
+    // smart bleed: crop to fill when cover would hide ≤20% of the frame, otherwise fit whole
+    const smart = key => {
+      const m = meta[key];
+      if (!m || !m.ar) return { crop:false, bg:null };
+      const kept = m.ar > panelAR ? panelAR / m.ar : m.ar / panelAR;
+      return { crop:kept >= 0.8, bg:'linear-gradient(' + m.top + ',' + m.bot + ')' };
+    };
+
+    return {
+      rootRef:this.rootRef, mapRef:this.mapRef, prev:this.prev, next:this.next, toggleFull:this.toggleFull,
+
+      mapLayer:'left:' + (docked ? (100 - dock) : 0) + '%'
+        + ';transition:left .72s ' + ease + ' ' + mapDelay + ',opacity .5s ease'
+        + ';opacity:' + (mode === 'intro' ? 0 : 1)
+        + ';pointer-events:' + (mode === 'intro' ? 'none' : 'auto'),
+
+      coverLayer:'opacity:' + ((mode === 'cover' || mode === 'intro') && !st.full ? 1 : 0)
+        + ';transform:translateY(' + (mode === 'intro' ? '100%' : mode === 'cover' ? '0' : '18px') + ')'
+        + ';right:' + (docked ? dock + '%' : '0'),
+
+      panelLayer:'right:' + panelRight + '%'
+        + ';transition:' + panelTrans
+        + ';transform:' + (inPhotos ? 'translateX(0) scale(1)' : off)
+        + ';opacity:' + (inPhotos ? 1 : (enter === 'fade' ? 0 : (enter === 'parallax' ? 0 : 1)))
+        + ';pointer-events:' + (inPhotos && !st.full ? 'auto' : 'none')
+        + (enter === 'slide' || enter === 'parallax' ? ';box-shadow:10px 0 40px rgba(0,0,0,.55)' : ''),
+
+      trackStyle:'transform:translateY(' + (-st.pos * 100) + '%);transition:transform .5s ' + ease,
+
+      introLayer:'opacity:1'
+        + ';transform:translateY(' + (mode === 'intro' ? '0' : '-100%') + ')'
+        + ';pointer-events:' + (mode === 'intro' ? 'auto' : 'none'),
+
+      brandStyle:'opacity:' + (mode === 'intro' || mode === 'cover' || docked ? 0 : 1)
+        + ';pointer-events:' + (mode === 'intro' || mode === 'cover' || docked ? 'none' : 'auto'),
+      fullBtn:'opacity:' + (mode === 'intro' ? 0 : 1) + ';pointer-events:' + (mode === 'intro' ? 'none' : 'auto'),
+      fullBtnLabel: st.full ? '↙ EXIT FULL MAP' : '⤢ FULL MAP',
+
+      stripLayer:'opacity:' + (stripShown ? 1 : 0)
+        + ';pointer-events:' + (stripShown ? 'auto' : 'none')
+        + ';transform:translateY(' + (stripShown ? '0' : '26px') + ')',
+
+      hudLayer:'right:' + (docked ? dock + '%' : '0') + ';opacity:' + (st.full || mode === 'intro' ? 0 : 1),
+      navLayer:'right:' + (docked ? 'calc(' + dock + '% + 26px)' : '26px')
+        + ';bottom:' + (stripShown ? '124px' : '30px')
+        + ';opacity:' + (st.full || mode === 'intro' ? 0 : 1)
+        + ';pointer-events:' + (st.full || mode === 'intro' ? 'none' : 'auto'),
+
+      coverKicker:'Stop 0' + leg.n + ' · ' + leg.dates,
+
+      coverTitle:leg.name,
+      coverBody:leg.blurb,
+      coverChips:[{ t:leg.nights + (leg.nights === 1 ? ' NIGHT' : ' NIGHTS') }, { t:leg.lodge.toUpperCase() }],
+
+      photos:list.map((x, i) => {
+      const sm = pf === 'smart' ? smart(x.key) : null;
+      return {
+        label:leg.name + ' · ' + x.title,
+        slot:'top:' + (i * 100) + '%',
+        noPhoto:!x.src, alt:x.alt, ph:x.ph || '',
+        imgStyle:x.src
+          ? 'background-image:url(' + x.src + ')'
+            + (pf === 'fit' ? ';left:4%;top:3%;width:92%;height:74%;background-size:contain;background-repeat:no-repeat;animation:none' : '')
+            + (pf === 'bleed' ? ';left:0;top:0;width:100%;height:100%;background-size:contain;background-repeat:no-repeat;animation:none' : '')
+            + (sm ? ';left:0;top:0;width:100%;height:100%;background-repeat:no-repeat;animation:none;background-size:'
+                + (sm.crop ? 'cover' : 'contain') : '')
+          : 'display:none',
+        bgStyle:x.src && pf === 'fit' ? 'background-image:url(' + x.src + ')'
+          : (sm && sm.bg && !sm.crop ? 'background-image:none;background:' + sm.bg + ';filter:none;opacity:1;inset:0' : 'display:none'),
+        stripe:stripe(PALETTES[leg.id][0], PALETTES[leg.id][1]),
+        kicker:x.kicker, title:x.title, body:x.body, chips:(x.chips || []).map(chip)
+      };
+      }),
+
+      bars: mode === 'intro' ? LEGS.map(() => ({ c:'rgba(255,255,255,.3)' }))
+        : list.map((_, i) => ({ c: (mode === 'photos' && i <= st.pos) ? '#fff' : 'rgba(255,255,255,.3)' })),
+      chapterLabel: mode === 'intro' ? 'BRAZIL 2026 · 10–22 JULY' : 'CHAPTER 0' + leg.n + ' · ' + leg.name.toUpperCase(),
+      counter: mode === 'intro' ? '13 DAYS' : mode === 'cover' ? 'STOP 0' + leg.n + ' OF 04' : (st.pos + 1) + ' / ' + list.length,
+
+      stops: LEGS.map(l => {
+        const on = l.id === leg.id && mode !== 'intro';
+        return { n:l.n, name:l.name, dates:l.dates, meta:l.nights + (l.nights === 1 ? ' night · ' : ' nights · ') + l.region,
+          go:() => this.goLeg(l.id),
+          wrap:'background:' + (on ? 'rgba(240,80,74,.9)' : 'rgba(255,255,255,.05)'),
+          numFg:'color:' + (on ? 'rgba(255,255,255,.9)' : 'rgba(255,255,255,.45)'),
+          thumb: STOP_THUMB[l.id] ? 'background-image:url(' + STOP_THUMB[l.id] + ')' : stripe(PALETTES[l.id][0], PALETTES[l.id][1], 7) };
+      })
+    };
+  }
+}
+
+</script>
+</body>
+</html>

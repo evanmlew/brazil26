@@ -1,0 +1,6 @@
+# Private raw Lightroom export folder — never publish these originals.
+/photos/
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db
