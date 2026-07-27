@@ -3,7 +3,7 @@
   "photos": {
     "img-2715-d77f6c8df1": {
       "legId": "saopaulo",
-      "order": 1,
+      "order": 2,
       "kicker": "First impressions",
       "title": "Golden arches, translated",
       "body": "A very different take on the arches -- this sleek São Paulo Méqui looked nothing like home.",
@@ -11,20 +11,21 @@
     },
     "img-2723-ea912f258f": {
       "legId": "saopaulo",
-      "order": 0,
+      "order": 1,
       "kicker": "Twelve million people",
       "title": "One horizon, endless city",
       "body": "Walking the skyline on foot, the concrete sea stretching in every direction -- Brazil starts loud.",
       "featured": false,
-      "subjectId": "sp_01"
+      "subjectId": "sp_01",
+      "excluded": true
     },
     "img-2725-6305f2bb1d": {
       "legId": "saopaulo",
-      "order": 2,
+      "order": 0,
       "kicker": "Street level",
       "title": "The city as canvas",
       "body": "Bold murals wrapped around a downtown building, São Paulo's street-art scene on full display.",
-      "featured": false
+      "featured": true
     },
     "img-2727-eb2812d5c2": {
       "legId": "saopaulo",
@@ -32,15 +33,14 @@
       "kicker": "First night",
       "title": "Dinner, and a plan",
       "body": "Churrasco at Figueira Rubaiyat under the giant fig tree -- the meal that set the tone for two weeks.",
-      "featured": true,
       "subjectId": "sp_02"
     },
     "img-2735-e03fed57a0": {
       "legId": "amazon",
       "order": 0,
-      "kicker": "Arrival",
+      "kicker": "Touching down",
       "title": "The only way in",
-      "body": "Aluminum lodge boats waiting at the dock -- the only way up the Cristalino as the light faded.",
+      "body": "Landed at Alta Floresta -- from here, the only way to Cristalino Lodge is by truck, then a transfer onto a boat for the final stretch up the river.",
       "featured": false
     },
     "img-0949-9e499cb8db": {
@@ -54,10 +54,11 @@
     "dsc00036-81dc553603": {
       "legId": "amazon",
       "order": 2,
-      "kicker": "On the hunt",
-      "title": "Eyes on the river",
-      "body": "A hawk perched over the water, scanning the current for anything worth diving for.",
-      "featured": false
+      "kicker": "First boat tour",
+      "title": "Fifteen minutes in",
+      "body": "A Harpy Eagle perched over the river -- one of the rarest raptors in the Amazon, spotted just fifteen minutes into our very first boat tour.",
+      "featured": false,
+      "species": "Harpy Eagle"
     },
     "dsc00108-68fa341139": {
       "legId": "amazon",
@@ -66,7 +67,8 @@
       "title": "White against green",
       "body": "A snowy egret working the shallows along the Cristalino's clear water.",
       "featured": false,
-      "species": "Snowy Egret"
+      "species": "Snowy Egret",
+      "excluded": true
     },
     "dsc00408-24fde0701c": {
       "legId": "amazon",
@@ -109,14 +111,15 @@
       "kicker": "Above the treeline",
       "title": "Into the canopy",
       "body": "Our guide leading the way across the canopy walkway, high above the forest floor.",
-      "featured": false
+      "featured": false,
+      "excluded": true
     },
     "img-2900-878a1ef840": {
       "legId": "amazon",
-      "order": 9,
+      "order": 19,
       "kicker": "First light",
       "title": "An unbroken sea of green",
-      "body": "Sunrise from the canopy tower -- an unbroken carpet of rainforest stretching to the horizon.",
+      "body": "Sunrise from the Cristalino Lodge observation deck -- an unbroken carpet of rainforest stretching to the horizon.",
       "featured": true
     },
     "dsc01309-84d5046951": {
@@ -149,7 +152,7 @@
       "order": 13,
       "kicker": "Night walk",
       "title": "Small things, big eyes",
-      "body": "Found on low vegetation on a night walk, clinging by its adhesive toe pads.",
+      "body": "A tree frog found on low vegetation during a night walk, clinging to a leaf by its adhesive toe pads.",
       "featured": false,
       "subjectId": "frog",
       "species": "Tree Frog"
@@ -158,9 +161,10 @@
       "legId": "amazon",
       "order": 14,
       "kicker": "Understory",
-      "title": "A bee, a bromeliad",
-      "body": "One of a thousand tiny scenes happening at knee height in the Cristalino's understory.",
-      "featured": false
+      "title": "A stingless bee, a bromeliad in bloom",
+      "body": "A stingless bee working a pink-coned aechmea in bloom -- one of a thousand tiny scenes at knee height in the Cristalino's understory.",
+      "featured": false,
+      "species": "Pink-coned Aechmea & Stingless Bee"
     },
     "dsc01907-9da0ea9960": {
       "legId": "amazon",
@@ -177,30 +181,32 @@
       "order": 16,
       "kicker": "Sun and salt",
       "title": "A turtle and its butterflies",
-      "body": "Basking on a river rock, attended by butterflies drinking its tears -- a hunt for minerals scarce in the Amazon.",
+      "body": "Basking on a river rock, attended by butterflies and bees drinking its tears -- a hunt for minerals scarce in the Amazon.",
       "featured": true,
       "subjectId": "turtle",
       "species": "Yellow-spotted River Turtle"
     },
     "dsc02088-d3bfbf1cf7": {
       "legId": "amazon",
-      "order": 17,
+      "order": 9,
       "kicker": "Dusk",
       "title": "Boats at rest",
       "body": "Lodge boats resting on the water as the forest went quiet for the night.",
-      "featured": false
+      "featured": false,
+      "excluded": true
     },
     "dsc02142-b9512dbadf": {
       "legId": "amazon",
-      "order": 18,
-      "kicker": "Last light",
-      "title": "The canopy fades to silhouette",
-      "body": "The forest canopy sinking into silhouette as the sun dropped behind the treeline.",
-      "featured": false
+      "order": 20,
+      "kicker": "Same view, minutes later",
+      "title": "The mist lifts",
+      "body": "Another look from the Cristalino Lodge observation deck, morning mist still clinging to the canopy.",
+      "featured": false,
+      "excluded": false
     },
     "img-2833-6183673d45": {
       "legId": "amazon",
-      "order": 19,
+      "order": 17,
       "kicker": "Uninvited guest",
       "title": "Right outside our door",
       "body": "Stepped outside at night and found a capybara grazing a few feet from our room.",
@@ -209,11 +215,12 @@
     },
     "img-2858-f8c29392c9": {
       "legId": "amazon",
-      "order": 20,
+      "order": 18,
       "kicker": "Barefoot",
       "title": "Sand and clear water",
       "body": "A quiet stretch of white-sand beach on the Cristalino -- shoes off, feet in the warm current.",
-      "featured": false
+      "featured": false,
+      "excluded": true
     },
     "dsc02187-8e320213a3": {
       "legId": "pantanal",
@@ -240,7 +247,7 @@
       "order": 2,
       "kicker": "Emblem",
       "title": "Tallest bird in the Americas",
-      "body": "The tallest flying bird in the Americas, stalking wet grassland with its great upturned bill.",
+      "body": "A Jabiru stork -- the tallest flying bird in the Americas -- stalking wet grassland with its great upturned bill.",
       "featured": true,
       "subjectId": "jabiru",
       "species": "Jabiru"
@@ -250,7 +257,7 @@
       "order": 3,
       "kicker": "The headline",
       "title": "A cub in daylight",
-      "body": "The headline of the trip: a cub, five to eight months old, walking a clearing in daylight.",
+      "body": "The headline of the trip: a six-month-old jaguar cub, walking a clearing in daylight.",
       "featured": true,
       "subjectId": "jaguar",
       "species": "Jaguar"
@@ -260,7 +267,7 @@
       "order": 4,
       "kicker": "Golden hour",
       "title": "Gardener of the forest",
-      "body": "South America's largest land mammal, browsing in the open at golden hour.",
+      "body": "South America's largest land mammal -- known locally as the Brazilian tapir -- browsing in the open at golden hour.",
       "featured": false,
       "subjectId": "tapir",
       "species": "South American Tapir"
@@ -281,13 +288,14 @@
       "title": "Silhouettes at sunset",
       "body": "A flock of storks cut black against a burning orange Pantanal sunset.",
       "featured": false,
-      "species": "Jabiru"
+      "species": "Jabiru",
+      "excluded": true
     },
     "dsc02811-bb805f4d09": {
       "legId": "pantanal",
       "order": 7,
       "kicker": "Tug of war",
-      "title": "Two falcons and a snake",
+      "title": "The early bird gets the snake",
       "body": "Two southern crested caracaras in a tug-of-war over a snake -- falcons that behave like bold, ground-striding opportunists.",
       "featured": false,
       "subjectId": "caracara",
@@ -329,7 +337,8 @@
       "title": "Jaws ajar",
       "body": "Another yacare caiman sunning in the wetland grass, jaws cracked open to cool down.",
       "featured": false,
-      "species": "Yacare Caiman"
+      "species": "Yacare Caiman",
+      "excluded": true
     },
     "dsc03020-4a88f82645": {
       "legId": "pantanal",
@@ -358,7 +367,8 @@
       "body": "A bonded pair of the world's largest flying parrot, cobalt from crown to tail, greeting each other at their nest box.",
       "featured": true,
       "subjectId": "macaw",
-      "species": "Hyacinth Macaw"
+      "species": "Hyacinth Macaw",
+      "excluded": true
     },
     "dsc03048-2c964dc19e": {
       "legId": "pantanal",
@@ -393,7 +403,7 @@
       "order": 18,
       "kicker": "Full antler",
       "title": "The continent's largest deer",
-      "body": "A buck in full antler -- the continent's largest deer, a wetland specialist now classed Vulnerable.",
+      "body": "A buck in full antler -- the continent's largest deer, and one of the Pantanal's Big Five alongside the jaguar, tapir and giant anteater.",
       "featured": false,
       "subjectId": "marshdeer",
       "species": "Marsh Deer"
@@ -402,8 +412,8 @@
       "legId": "pantanal",
       "order": 19,
       "kicker": "Second encounter",
-      "title": "Walking straight at us",
-      "body": "A second jaguar sighting -- this one stalking low through the grass, headed straight for the vehicle.",
+      "title": "Giving him room",
+      "body": "A second jaguar sighting -- this time a pair. The female picking her way carefully around a much larger male.",
       "featured": true,
       "species": "Jaguar"
     },
@@ -414,14 +424,15 @@
       "title": "A few strides closer",
       "body": "The same jaguar, unbothered by the safari jeep, closing the distance step by step.",
       "featured": false,
-      "species": "Jaguar"
+      "species": "Jaguar",
+      "excluded": true
     },
     "dsc03644-0c2df1f3b0": {
       "legId": "pantanal",
       "order": 21,
       "kicker": "At rest",
-      "title": "A calm portrait",
-      "body": "The jaguar settled into the grass after its approach -- a rare, close, calm portrait.",
+      "title": "The big male, at rest",
+      "body": "The large male settling into the grass -- a rare, close, calm portrait.",
       "featured": true,
       "species": "Jaguar"
     },
@@ -429,8 +440,8 @@
       "legId": "pantanal",
       "order": 22,
       "kicker": "Moving on",
-      "title": "Back into the grass",
-      "body": "The jaguar continuing its patrol, melting back into the tall grass.",
+      "title": "Following her",
+      "body": "The male trailing after the female, clearly intent on mating.",
       "featured": false,
       "species": "Jaguar"
     },
@@ -449,35 +460,36 @@
       "title": "Copacabana, finally",
       "body": "The mountains behind, the Atlantic in front -- our first view of Rio from the hotel balcony.",
       "featured": false,
-      "subjectId": "rio_01"
+      "subjectId": "rio_01",
+      "excluded": true
     },
     "img-3012-f3f2f77e30": {
       "legId": "rio",
-      "order": 1,
+      "order": 2,
       "kicker": "Golden hour",
       "title": "The city lit up gold",
-      "body": "Rio's bay and skyline lit gold from the top of Sugarloaf Mountain at sunset.",
-      "featured": true
+      "body": "Rio's bay and skyline lit gold from the top of Sugarloaf Mountain at sunset."
     },
     "img-3036-ff2e8b950a": {
       "legId": "rio",
-      "order": 2,
+      "order": 3,
       "kicker": "Arms wide",
       "title": "At the feet of Christ the Redeemer",
       "body": "The whole family at the base of Christ the Redeemer, high above the city on Corcovado.",
-      "featured": true
+      "featured": true,
+      "excluded": true
     },
     "img-3045-pano-324cd55f7e": {
       "legId": "rio",
-      "order": 3,
+      "order": 4,
       "kicker": "The wide view",
       "title": "Rio, spread out below",
       "body": "A sweeping panorama from Corcovado -- beaches, bay, and mountains laid out in one frame.",
-      "featured": false
+      "featured": true
     },
     "img-3048-f69c034177": {
       "legId": "rio",
-      "order": 4,
+      "order": 5,
       "kicker": "The summit",
       "title": "Together at the top",
       "body": "The family at the summit platform, Christ the Redeemer towering just behind us.",
@@ -485,7 +497,7 @@
     },
     "img-3055-e7ec0d3edb": {
       "legId": "rio",
-      "order": 5,
+      "order": 6,
       "kicker": "Looking up",
       "title": "Almost straight up",
       "body": "Standing right at the statue's base, looking up at its outstretched arms.",
@@ -493,10 +505,10 @@
     },
     "img-3099-588118d4f1": {
       "legId": "rio",
-      "order": 6,
-      "kicker": "The finale",
-      "title": "Last light over the bay",
-      "body": "One more Rio sunset over Copacabana Beach -- one more view, then home.",
+      "order": 1,
+      "kicker": "Sea level",
+      "title": "Copacabana at last light",
+      "body": "Sunset over Copacabana Beach -- our first look at Rio, mountains behind, the Atlantic stretched out in front.",
       "featured": true,
       "subjectId": "rio_02"
     }

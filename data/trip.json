@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-26T23:33:34-07:00",
+  "generatedAt": "2026-07-27T07:52:06-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",
@@ -26,23 +26,19 @@
     ]
   },
   "stopThumb": {
-    "saopaulo": "assets/photos/img-2727-eb2812d5c2-thumb.jpg",
+    "saopaulo": "assets/photos/img-2725-6305f2bb1d-thumb.jpg",
     "amazon": "assets/photos/img-0949-9e499cb8db-thumb.jpg",
     "pantanal": "assets/photos/dsc02187-8e320213a3-thumb.jpg",
-    "rio": "assets/photos/img-3012-f3f2f77e30-thumb.jpg"
+    "rio": "assets/photos/img-3099-588118d4f1-thumb.jpg"
   },
   "photoCoords": {
-    "img-2723-ea912f258f": [
-      -23.561275,
+    "img-2725-6305f2bb1d": [
+      -23.561278,
       -46.655708
     ],
     "img-2715-d77f6c8df1": [
       -23.560306,
       -46.657939
-    ],
-    "img-2725-6305f2bb1d": [
-      -23.561278,
-      -46.655708
     ],
     "img-2727-eb2812d5c2": [
       -23.565439,
@@ -57,10 +53,6 @@
       -55.902989
     ],
     "dsc00036-81dc553603": [
-      -9.636389,
-      -55.937778
-    ],
-    "dsc00108-68fa341139": [
       -9.636389,
       -55.937778
     ],
@@ -79,14 +71,6 @@
     "dsc00870-9aac893b45": [
       -9.6202,
       -55.94241
-    ],
-    "img-2842-0201275b37": [
-      -9.5831,
-      -55.918831
-    ],
-    "img-2900-878a1ef840": [
-      -9.600811,
-      -55.922775
     ],
     "dsc01309-84d5046951": [
       -9.636111,
@@ -116,21 +100,17 @@
       -9.561111,
       -55.912222
     ],
-    "dsc02088-d3bfbf1cf7": [
-      -9.600833,
-      -55.922778
-    ],
-    "dsc02142-b9512dbadf": [
-      -9.600833,
-      -55.922778
-    ],
     "img-2833-6183673d45": [
       -9.596642,
       -55.931794
     ],
-    "img-2858-f8c29392c9": [
-      -9.634114,
-      -55.937431
+    "img-2900-878a1ef840": [
+      -9.600811,
+      -55.922775
+    ],
+    "dsc02142-b9512dbadf": [
+      -9.600833,
+      -55.922778
     ],
     "dsc02187-8e320213a3": [
       -19.9549,
@@ -156,10 +136,6 @@
       -19.9106,
       -56.2977
     ],
-    "dsc02602-a26a0ffd49": [
-      -19.923889,
-      -56.301111
-    ],
     "dsc02811-bb805f4d09": [
       -19.924,
       -56.3011
@@ -176,10 +152,6 @@
       -19.9755,
       -56.3145
     ],
-    "dsc03009-9bdef2895f": [
-      -19.952222,
-      -56.304722
-    ],
     "dsc03020-4a88f82645": [
       -19.952222,
       -56.304722
@@ -187,10 +159,6 @@
     "dsc03028-ab3c086bd0": [
       -19.8836,
       -56.2947
-    ],
-    "dsc03044-db26f9d1c4": [
-      -19.9537,
-      -56.3052
     ],
     "dsc03048-2c964dc19e": [
       -19.953611,
@@ -212,10 +180,6 @@
       -19.89901,
       -56.22534
     ],
-    "dsc03604-4beb5186b0": [
-      -19.898889,
-      -56.225278
-    ],
     "dsc03644-0c2df1f3b0": [
       -19.898889,
       -56.225278
@@ -228,17 +192,13 @@
       -19.858461,
       -56.273975
     ],
-    "img-2987-667ad4dec1": [
-      -22.982433,
-      -43.189542
+    "img-3099-588118d4f1": [
+      -22.982231,
+      -43.190322
     ],
     "img-3012-f3f2f77e30": [
       -22.949572,
       -43.156475
-    ],
-    "img-3036-ff2e8b950a": [
-      -22.951869,
-      -43.210208
     ],
     "img-3045-pano-324cd55f7e": [
       -22.951847,
@@ -251,10 +211,6 @@
     "img-3055-e7ec0d3edb": [
       -22.951839,
       -43.210053
-    ],
-    "img-3099-588118d4f1": [
-      -22.982231,
-      -43.190322
     ],
     "closing": null
   },
@@ -313,25 +269,24 @@
       {
         "leg": "saopaulo",
         "legId": "saopaulo",
-        "key": "img-2723-ea912f258f",
-        "photoId": "img-2723-ea912f258f",
-        "subjectId": "sp_01",
+        "key": "img-2725-6305f2bb1d",
+        "photoId": "img-2725-6305f2bb1d",
         "kind": "photo",
-        "src": "assets/photos/img-2723-ea912f258f-card.jpg",
-        "thumb": "assets/photos/img-2723-ea912f258f-thumb.jpg",
-        "alt": "One horizon, endless city",
-        "pinLabel": "One horizon, endless city",
-        "kicker": "Twelve million people",
-        "title": "One horizon, endless city",
-        "body": "Walking the skyline on foot, the concrete sea stretching in every direction -- Brazil starts loud.",
+        "src": "assets/photos/img-2725-6305f2bb1d-card.jpg",
+        "thumb": "assets/photos/img-2725-6305f2bb1d-thumb.jpg",
+        "alt": "The city as canvas",
+        "pinLabel": "The city as canvas",
+        "kicker": "Street level",
+        "title": "The city as canvas",
+        "body": "Bold murals wrapped around a downtown building, São Paulo's street-art scene on full display.",
         "chips": [
           "SÃO PAULO"
         ],
         "flags": [],
         "star": false,
-        "featured": false,
+        "featured": true,
         "taxon": "",
-        "lat": -23.561275,
+        "lat": -23.561278,
         "lng": -46.655708
       },
       {
@@ -360,29 +315,6 @@
       {
         "leg": "saopaulo",
         "legId": "saopaulo",
-        "key": "img-2725-6305f2bb1d",
-        "photoId": "img-2725-6305f2bb1d",
-        "kind": "photo",
-        "src": "assets/photos/img-2725-6305f2bb1d-card.jpg",
-        "thumb": "assets/photos/img-2725-6305f2bb1d-thumb.jpg",
-        "alt": "The city as canvas",
-        "pinLabel": "The city as canvas",
-        "kicker": "Street level",
-        "title": "The city as canvas",
-        "body": "Bold murals wrapped around a downtown building, São Paulo's street-art scene on full display.",
-        "chips": [
-          "SÃO PAULO"
-        ],
-        "flags": [],
-        "star": false,
-        "featured": false,
-        "taxon": "",
-        "lat": -23.561278,
-        "lng": -46.655708
-      },
-      {
-        "leg": "saopaulo",
-        "legId": "saopaulo",
         "key": "img-2727-eb2812d5c2",
         "photoId": "img-2727-eb2812d5c2",
         "subjectId": "sp_02",
@@ -399,7 +331,7 @@
         ],
         "flags": [],
         "star": false,
-        "featured": true,
+        "featured": false,
         "taxon": "",
         "lat": -23.565439,
         "lng": -46.669736
@@ -416,9 +348,9 @@
         "thumb": "assets/photos/img-2735-e03fed57a0-thumb.jpg",
         "alt": "The only way in",
         "pinLabel": "The only way in",
-        "kicker": "Arrival",
+        "kicker": "Touching down",
         "title": "The only way in",
-        "body": "Aluminum lodge boats waiting at the dock -- the only way up the Cristalino as the light faded.",
+        "body": "Landed at Alta Floresta -- from here, the only way to Cristalino Lodge is by truck, then a transfer onto a boat for the final stretch up the river.",
         "chips": [
           "AMAZON"
         ],
@@ -460,34 +392,11 @@
         "kind": "photo",
         "src": "assets/photos/dsc00036-81dc553603-card.jpg",
         "thumb": "assets/photos/dsc00036-81dc553603-thumb.jpg",
-        "alt": "Eyes on the river",
-        "pinLabel": "Eyes on the river",
-        "kicker": "On the hunt",
-        "title": "Eyes on the river",
-        "body": "A hawk perched over the water, scanning the current for anything worth diving for.",
-        "chips": [
-          "AMAZON"
-        ],
-        "flags": [],
-        "star": false,
-        "featured": false,
-        "taxon": "",
-        "lat": -9.636389,
-        "lng": -55.937778
-      },
-      {
-        "leg": "amazon",
-        "legId": "amazon",
-        "key": "dsc00108-68fa341139",
-        "photoId": "dsc00108-68fa341139",
-        "kind": "photo",
-        "src": "assets/photos/dsc00108-68fa341139-card.jpg",
-        "thumb": "assets/photos/dsc00108-68fa341139-thumb.jpg",
-        "alt": "White against green",
-        "pinLabel": "White against green",
-        "kicker": "Along the bank",
-        "title": "White against green",
-        "body": "A snowy egret working the shallows along the Cristalino's clear water.",
+        "alt": "Fifteen minutes in",
+        "pinLabel": "Fifteen minutes in",
+        "kicker": "First boat tour",
+        "title": "Fifteen minutes in",
+        "body": "A Harpy Eagle perched over the river -- one of the rarest raptors in the Amazon, spotted just fifteen minutes into our very first boat tour.",
         "chips": [
           "AMAZON"
         ],
@@ -593,52 +502,6 @@
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "img-2842-0201275b37",
-        "photoId": "img-2842-0201275b37",
-        "kind": "photo",
-        "src": "assets/photos/img-2842-0201275b37-card.jpg",
-        "thumb": "assets/photos/img-2842-0201275b37-thumb.jpg",
-        "alt": "Into the canopy",
-        "pinLabel": "Into the canopy",
-        "kicker": "Above the treeline",
-        "title": "Into the canopy",
-        "body": "Our guide leading the way across the canopy walkway, high above the forest floor.",
-        "chips": [
-          "AMAZON"
-        ],
-        "flags": [],
-        "star": false,
-        "featured": false,
-        "taxon": "",
-        "lat": -9.5831,
-        "lng": -55.918831
-      },
-      {
-        "leg": "amazon",
-        "legId": "amazon",
-        "key": "img-2900-878a1ef840",
-        "photoId": "img-2900-878a1ef840",
-        "kind": "photo",
-        "src": "assets/photos/img-2900-878a1ef840-card.jpg",
-        "thumb": "assets/photos/img-2900-878a1ef840-thumb.jpg",
-        "alt": "An unbroken sea of green",
-        "pinLabel": "An unbroken sea of green",
-        "kicker": "First light",
-        "title": "An unbroken sea of green",
-        "body": "Sunrise from the canopy tower -- an unbroken carpet of rainforest stretching to the horizon.",
-        "chips": [
-          "AMAZON"
-        ],
-        "flags": [],
-        "star": false,
-        "featured": true,
-        "taxon": "",
-        "lat": -9.600811,
-        "lng": -55.922775
-      },
-      {
-        "leg": "amazon",
-        "legId": "amazon",
         "key": "dsc01309-84d5046951",
         "photoId": "dsc01309-84d5046951",
         "kind": "photo",
@@ -718,7 +581,7 @@
         "pinLabel": "Tree Frog",
         "kicker": "Night walk",
         "title": "Small things, big eyes",
-        "body": "Found on low vegetation on a night walk, clinging by its adhesive toe pads.",
+        "body": "A tree frog found on low vegetation during a night walk, clinging to a leaf by its adhesive toe pads.",
         "chips": [
           "AMPHIBIAN",
           "GENUS-LEVEL ID"
@@ -738,11 +601,11 @@
         "kind": "photo",
         "src": "assets/photos/dsc01461-4fba8cad48-card.jpg",
         "thumb": "assets/photos/dsc01461-4fba8cad48-thumb.jpg",
-        "alt": "A bee, a bromeliad",
-        "pinLabel": "A bee, a bromeliad",
+        "alt": "A stingless bee, a bromeliad in bloom",
+        "pinLabel": "A stingless bee, a bromeliad in bloom",
         "kicker": "Understory",
-        "title": "A bee, a bromeliad",
-        "body": "One of a thousand tiny scenes happening at knee height in the Cristalino's understory.",
+        "title": "A stingless bee, a bromeliad in bloom",
+        "body": "A stingless bee working a pink-coned aechmea in bloom -- one of a thousand tiny scenes at knee height in the Cristalino's understory.",
         "chips": [
           "AMAZON"
         ],
@@ -790,7 +653,7 @@
         "pinLabel": "Yellow-spotted River Turtle",
         "kicker": "Sun and salt",
         "title": "A turtle and its butterflies",
-        "body": "Basking on a river rock, attended by butterflies drinking its tears -- a hunt for minerals scarce in the Amazon.",
+        "body": "Basking on a river rock, attended by butterflies and bees drinking its tears -- a hunt for minerals scarce in the Amazon.",
         "chips": [
           "REPTILE"
         ],
@@ -800,52 +663,6 @@
         "taxon": "Reptile",
         "lat": -9.561111,
         "lng": -55.912222
-      },
-      {
-        "leg": "amazon",
-        "legId": "amazon",
-        "key": "dsc02088-d3bfbf1cf7",
-        "photoId": "dsc02088-d3bfbf1cf7",
-        "kind": "photo",
-        "src": "assets/photos/dsc02088-d3bfbf1cf7-card.jpg",
-        "thumb": "assets/photos/dsc02088-d3bfbf1cf7-thumb.jpg",
-        "alt": "Boats at rest",
-        "pinLabel": "Boats at rest",
-        "kicker": "Dusk",
-        "title": "Boats at rest",
-        "body": "Lodge boats resting on the water as the forest went quiet for the night.",
-        "chips": [
-          "AMAZON"
-        ],
-        "flags": [],
-        "star": false,
-        "featured": false,
-        "taxon": "",
-        "lat": -9.600833,
-        "lng": -55.922778
-      },
-      {
-        "leg": "amazon",
-        "legId": "amazon",
-        "key": "dsc02142-b9512dbadf",
-        "photoId": "dsc02142-b9512dbadf",
-        "kind": "photo",
-        "src": "assets/photos/dsc02142-b9512dbadf-card.jpg",
-        "thumb": "assets/photos/dsc02142-b9512dbadf-thumb.jpg",
-        "alt": "The canopy fades to silhouette",
-        "pinLabel": "The canopy fades to silhouette",
-        "kicker": "Last light",
-        "title": "The canopy fades to silhouette",
-        "body": "The forest canopy sinking into silhouette as the sun dropped behind the treeline.",
-        "chips": [
-          "AMAZON"
-        ],
-        "flags": [],
-        "star": false,
-        "featured": false,
-        "taxon": "",
-        "lat": -9.600833,
-        "lng": -55.922778
       },
       {
         "leg": "amazon",
@@ -873,16 +690,39 @@
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "img-2858-f8c29392c9",
-        "photoId": "img-2858-f8c29392c9",
+        "key": "img-2900-878a1ef840",
+        "photoId": "img-2900-878a1ef840",
         "kind": "photo",
-        "src": "assets/photos/img-2858-f8c29392c9-card.jpg",
-        "thumb": "assets/photos/img-2858-f8c29392c9-thumb.jpg",
-        "alt": "Sand and clear water",
-        "pinLabel": "Sand and clear water",
-        "kicker": "Barefoot",
-        "title": "Sand and clear water",
-        "body": "A quiet stretch of white-sand beach on the Cristalino -- shoes off, feet in the warm current.",
+        "src": "assets/photos/img-2900-878a1ef840-card.jpg",
+        "thumb": "assets/photos/img-2900-878a1ef840-thumb.jpg",
+        "alt": "An unbroken sea of green",
+        "pinLabel": "An unbroken sea of green",
+        "kicker": "First light",
+        "title": "An unbroken sea of green",
+        "body": "Sunrise from the Cristalino Lodge observation deck -- an unbroken carpet of rainforest stretching to the horizon.",
+        "chips": [
+          "AMAZON"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": true,
+        "taxon": "",
+        "lat": -9.600811,
+        "lng": -55.922775
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "dsc02142-b9512dbadf",
+        "photoId": "dsc02142-b9512dbadf",
+        "kind": "photo",
+        "src": "assets/photos/dsc02142-b9512dbadf-card.jpg",
+        "thumb": "assets/photos/dsc02142-b9512dbadf-thumb.jpg",
+        "alt": "The mist lifts",
+        "pinLabel": "The mist lifts",
+        "kicker": "Same view, minutes later",
+        "title": "The mist lifts",
+        "body": "Another look from the Cristalino Lodge observation deck, morning mist still clinging to the canopy.",
         "chips": [
           "AMAZON"
         ],
@@ -890,8 +730,8 @@
         "star": false,
         "featured": false,
         "taxon": "",
-        "lat": -9.634114,
-        "lng": -55.937431
+        "lat": -9.600833,
+        "lng": -55.922778
       }
     ],
     "pantanal": [
@@ -956,7 +796,7 @@
         "pinLabel": "Jabiru",
         "kicker": "Emblem",
         "title": "Tallest bird in the Americas",
-        "body": "The tallest flying bird in the Americas, stalking wet grassland with its great upturned bill.",
+        "body": "A Jabiru stork -- the tallest flying bird in the Americas -- stalking wet grassland with its great upturned bill.",
         "chips": [
           "BIRD"
         ],
@@ -980,7 +820,7 @@
         "pinLabel": "Jaguar",
         "kicker": "The headline",
         "title": "A cub in daylight",
-        "body": "The headline of the trip: a cub, five to eight months old, walking a clearing in daylight.",
+        "body": "The headline of the trip: a six-month-old jaguar cub, walking a clearing in daylight.",
         "chips": [
           "★ TRIP STANDOUT",
           "MAMMAL"
@@ -1005,7 +845,7 @@
         "pinLabel": "South American Tapir",
         "kicker": "Golden hour",
         "title": "Gardener of the forest",
-        "body": "South America's largest land mammal, browsing in the open at golden hour.",
+        "body": "South America's largest land mammal -- known locally as the Brazilian tapir -- browsing in the open at golden hour.",
         "chips": [
           "MAMMAL"
         ],
@@ -1042,29 +882,6 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc02602-a26a0ffd49",
-        "photoId": "dsc02602-a26a0ffd49",
-        "kind": "photo",
-        "src": "assets/photos/dsc02602-a26a0ffd49-card.jpg",
-        "thumb": "assets/photos/dsc02602-a26a0ffd49-thumb.jpg",
-        "alt": "Silhouettes at sunset",
-        "pinLabel": "Silhouettes at sunset",
-        "kicker": "Burning sky",
-        "title": "Silhouettes at sunset",
-        "body": "A flock of storks cut black against a burning orange Pantanal sunset.",
-        "chips": [
-          "PANTANAL"
-        ],
-        "flags": [],
-        "star": false,
-        "featured": false,
-        "taxon": "",
-        "lat": -19.923889,
-        "lng": -56.301111
-      },
-      {
-        "leg": "pantanal",
-        "legId": "pantanal",
         "key": "dsc02811-bb805f4d09",
         "photoId": "dsc02811-bb805f4d09",
         "subjectId": "caracara",
@@ -1074,7 +891,7 @@
         "alt": "Southern Crested Caracara — Caracara plancus",
         "pinLabel": "Southern Crested Caracara",
         "kicker": "Tug of war",
-        "title": "Two falcons and a snake",
+        "title": "The early bird gets the snake",
         "body": "Two southern crested caracaras in a tug-of-war over a snake -- falcons that behave like bold, ground-striding opportunists.",
         "chips": [
           "BIRD"
@@ -1160,29 +977,6 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc03009-9bdef2895f",
-        "photoId": "dsc03009-9bdef2895f",
-        "kind": "photo",
-        "src": "assets/photos/dsc03009-9bdef2895f-card.jpg",
-        "thumb": "assets/photos/dsc03009-9bdef2895f-thumb.jpg",
-        "alt": "Jaws ajar",
-        "pinLabel": "Jaws ajar",
-        "kicker": "Cooling off",
-        "title": "Jaws ajar",
-        "body": "Another yacare caiman sunning in the wetland grass, jaws cracked open to cool down.",
-        "chips": [
-          "PANTANAL"
-        ],
-        "flags": [],
-        "star": false,
-        "featured": false,
-        "taxon": "",
-        "lat": -19.952222,
-        "lng": -56.304722
-      },
-      {
-        "leg": "pantanal",
-        "legId": "pantanal",
         "key": "dsc03020-4a88f82645",
         "photoId": "dsc03020-4a88f82645",
         "kind": "photo",
@@ -1226,31 +1020,6 @@
         "taxon": "Bird",
         "lat": -19.8836,
         "lng": -56.2947
-      },
-      {
-        "leg": "pantanal",
-        "legId": "pantanal",
-        "key": "dsc03044-db26f9d1c4",
-        "photoId": "dsc03044-db26f9d1c4",
-        "subjectId": "macaw",
-        "kind": "photo",
-        "src": "assets/photos/dsc03044-db26f9d1c4-card.jpg",
-        "thumb": "assets/photos/dsc03044-db26f9d1c4-thumb.jpg",
-        "alt": "Hyacinth Macaw — Anodorhynchus hyacinthinus",
-        "pinLabel": "Hyacinth Macaw",
-        "kicker": "Cobalt",
-        "title": "The largest parrot alive",
-        "body": "A bonded pair of the world's largest flying parrot, cobalt from crown to tail, greeting each other at their nest box.",
-        "chips": [
-          "★ TRIP STANDOUT",
-          "BIRD"
-        ],
-        "flags": [],
-        "star": true,
-        "featured": true,
-        "taxon": "Bird",
-        "lat": -19.9537,
-        "lng": -56.3052
       },
       {
         "leg": "pantanal",
@@ -1335,7 +1104,7 @@
         "pinLabel": "Marsh Deer",
         "kicker": "Full antler",
         "title": "The continent's largest deer",
-        "body": "A buck in full antler -- the continent's largest deer, a wetland specialist now classed Vulnerable.",
+        "body": "A buck in full antler -- the continent's largest deer, and one of the Pantanal's Big Five alongside the jaguar, tapir and giant anteater.",
         "chips": [
           "MAMMAL"
         ],
@@ -1354,11 +1123,11 @@
         "kind": "photo",
         "src": "assets/photos/dsc03598-34f873b708-card.jpg",
         "thumb": "assets/photos/dsc03598-34f873b708-thumb.jpg",
-        "alt": "Walking straight at us",
-        "pinLabel": "Walking straight at us",
+        "alt": "Giving him room",
+        "pinLabel": "Giving him room",
         "kicker": "Second encounter",
-        "title": "Walking straight at us",
-        "body": "A second jaguar sighting -- this one stalking low through the grass, headed straight for the vehicle.",
+        "title": "Giving him room",
+        "body": "A second jaguar sighting -- this time a pair. The female picking her way carefully around a much larger male.",
         "chips": [
           "PANTANAL"
         ],
@@ -1372,39 +1141,16 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc03604-4beb5186b0",
-        "photoId": "dsc03604-4beb5186b0",
-        "kind": "photo",
-        "src": "assets/photos/dsc03604-4beb5186b0-card.jpg",
-        "thumb": "assets/photos/dsc03604-4beb5186b0-thumb.jpg",
-        "alt": "A few strides closer",
-        "pinLabel": "A few strides closer",
-        "kicker": "Closing in",
-        "title": "A few strides closer",
-        "body": "The same jaguar, unbothered by the safari jeep, closing the distance step by step.",
-        "chips": [
-          "PANTANAL"
-        ],
-        "flags": [],
-        "star": false,
-        "featured": false,
-        "taxon": "",
-        "lat": -19.898889,
-        "lng": -56.225278
-      },
-      {
-        "leg": "pantanal",
-        "legId": "pantanal",
         "key": "dsc03644-0c2df1f3b0",
         "photoId": "dsc03644-0c2df1f3b0",
         "kind": "photo",
         "src": "assets/photos/dsc03644-0c2df1f3b0-card.jpg",
         "thumb": "assets/photos/dsc03644-0c2df1f3b0-thumb.jpg",
-        "alt": "A calm portrait",
-        "pinLabel": "A calm portrait",
+        "alt": "The big male, at rest",
+        "pinLabel": "The big male, at rest",
         "kicker": "At rest",
-        "title": "A calm portrait",
-        "body": "The jaguar settled into the grass after its approach -- a rare, close, calm portrait.",
+        "title": "The big male, at rest",
+        "body": "The large male settling into the grass -- a rare, close, calm portrait.",
         "chips": [
           "PANTANAL"
         ],
@@ -1423,11 +1169,11 @@
         "kind": "photo",
         "src": "assets/photos/dsc03693-b9cefa2a24-card.jpg",
         "thumb": "assets/photos/dsc03693-b9cefa2a24-thumb.jpg",
-        "alt": "Back into the grass",
-        "pinLabel": "Back into the grass",
+        "alt": "Following her",
+        "pinLabel": "Following her",
         "kicker": "Moving on",
-        "title": "Back into the grass",
-        "body": "The jaguar continuing its patrol, melting back into the tall grass.",
+        "title": "Following her",
+        "body": "The male trailing after the female, clearly intent on mating.",
         "chips": [
           "PANTANAL"
         ],
@@ -1466,26 +1212,26 @@
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "img-2987-667ad4dec1",
-        "photoId": "img-2987-667ad4dec1",
-        "subjectId": "rio_01",
+        "key": "img-3099-588118d4f1",
+        "photoId": "img-3099-588118d4f1",
+        "subjectId": "rio_02",
         "kind": "photo",
-        "src": "assets/photos/img-2987-667ad4dec1-card.jpg",
-        "thumb": "assets/photos/img-2987-667ad4dec1-thumb.jpg",
-        "alt": "Copacabana, finally",
-        "pinLabel": "Copacabana, finally",
+        "src": "assets/photos/img-3099-588118d4f1-card.jpg",
+        "thumb": "assets/photos/img-3099-588118d4f1-thumb.jpg",
+        "alt": "Copacabana at last light",
+        "pinLabel": "Copacabana at last light",
         "kicker": "Sea level",
-        "title": "Copacabana, finally",
-        "body": "The mountains behind, the Atlantic in front -- our first view of Rio from the hotel balcony.",
+        "title": "Copacabana at last light",
+        "body": "Sunset over Copacabana Beach -- our first look at Rio, mountains behind, the Atlantic stretched out in front.",
         "chips": [
           "RIO DE JANEIRO"
         ],
         "flags": [],
         "star": false,
-        "featured": false,
+        "featured": true,
         "taxon": "",
-        "lat": -22.982433,
-        "lng": -43.189542
+        "lat": -22.982231,
+        "lng": -43.190322
       },
       {
         "leg": "rio",
@@ -1505,33 +1251,10 @@
         ],
         "flags": [],
         "star": false,
-        "featured": true,
+        "featured": false,
         "taxon": "",
         "lat": -22.949572,
         "lng": -43.156475
-      },
-      {
-        "leg": "rio",
-        "legId": "rio",
-        "key": "img-3036-ff2e8b950a",
-        "photoId": "img-3036-ff2e8b950a",
-        "kind": "photo",
-        "src": "assets/photos/img-3036-ff2e8b950a-card.jpg",
-        "thumb": "assets/photos/img-3036-ff2e8b950a-thumb.jpg",
-        "alt": "At the feet of Christ the Redeemer",
-        "pinLabel": "At the feet of Christ the Redeemer",
-        "kicker": "Arms wide",
-        "title": "At the feet of Christ the Redeemer",
-        "body": "The whole family at the base of Christ the Redeemer, high above the city on Corcovado.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
-        "flags": [],
-        "star": false,
-        "featured": true,
-        "taxon": "",
-        "lat": -22.951869,
-        "lng": -43.210208
       },
       {
         "leg": "rio",
@@ -1551,7 +1274,7 @@
         ],
         "flags": [],
         "star": false,
-        "featured": false,
+        "featured": true,
         "taxon": "",
         "lat": -22.951847,
         "lng": -43.209992
@@ -1601,30 +1324,6 @@
         "taxon": "",
         "lat": -22.951839,
         "lng": -43.210053
-      },
-      {
-        "leg": "rio",
-        "legId": "rio",
-        "key": "img-3099-588118d4f1",
-        "photoId": "img-3099-588118d4f1",
-        "subjectId": "rio_02",
-        "kind": "photo",
-        "src": "assets/photos/img-3099-588118d4f1-card.jpg",
-        "thumb": "assets/photos/img-3099-588118d4f1-thumb.jpg",
-        "alt": "Last light over the bay",
-        "pinLabel": "Last light over the bay",
-        "kicker": "The finale",
-        "title": "Last light over the bay",
-        "body": "One more Rio sunset over Copacabana Beach -- one more view, then home.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
-        "flags": [],
-        "star": false,
-        "featured": true,
-        "taxon": "",
-        "lat": -22.982231,
-        "lng": -43.190322
       },
       {
         "leg": "rio",

@@ -43,7 +43,6 @@
       "lodge": "Renaissance São Paulo",
       "blurb": "Urban arrival — one night, one long afternoon walk, and the first jolt of Brazil before the wild.",
       "sequence": [
-        "sp_01",
         "sp_02"
       ]
     },
@@ -81,7 +80,6 @@
         "tapir",
         "marshdeer",
         "pampasdeer",
-        "macaw",
         "jabiru",
         "caracara",
         "vulture",
@@ -102,7 +100,6 @@
       "lodge": "Emiliano Rio",
       "blurb": "Back to sea level for the finale — Copacabana, the granite mountains, and the slow wind-down home.",
       "sequence": [
-        "rio_01",
         "rio_02",
         "closing"
       ]
