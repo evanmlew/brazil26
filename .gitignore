@@ -1,6 +1,12 @@
 # Private raw Lightroom export folder — never publish these originals.
 /photos/
 
+# Local review-tool save backup (auto-created by review_server.py)
+/data/*.bak
+
+# Python bytecode cache
+__pycache__/
+
 # OS/editor cruft
 .DS_Store
 Thumbs.db

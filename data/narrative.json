@@ -78,9 +78,7 @@
       "title": "The largest kingfisher alive",
       "body": "The largest kingfisher in the Americas, framed through palm fronds above the water.",
       "star": false,
-      "flags": [
-        "Leg to confirm"
-      ],
+      "flags": [],
       "stockPhoto": "assets/photos/kingfisher.jpg"
     },
     "jaguar": {

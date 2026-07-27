@@ -1,4 +1,504 @@
 {
   "schemaVersion": 1,
-  "photos": {}
+  "photos": {
+    "img-2715-d77f6c8df1": {
+      "legId": "saopaulo",
+      "order": 1,
+      "kicker": "First impressions",
+      "title": "Golden arches, translated",
+      "body": "A very different take on the arches -- this sleek São Paulo Méqui looked nothing like home.",
+      "featured": false
+    },
+    "img-2723-ea912f258f": {
+      "legId": "saopaulo",
+      "order": 0,
+      "kicker": "Twelve million people",
+      "title": "One horizon, endless city",
+      "body": "Walking the skyline on foot, the concrete sea stretching in every direction -- Brazil starts loud.",
+      "featured": false,
+      "subjectId": "sp_01"
+    },
+    "img-2725-6305f2bb1d": {
+      "legId": "saopaulo",
+      "order": 2,
+      "kicker": "Street level",
+      "title": "The city as canvas",
+      "body": "Bold murals wrapped around a downtown building, São Paulo's street-art scene on full display.",
+      "featured": false
+    },
+    "img-2727-eb2812d5c2": {
+      "legId": "saopaulo",
+      "order": 3,
+      "kicker": "First night",
+      "title": "Dinner, and a plan",
+      "body": "Churrasco at Figueira Rubaiyat under the giant fig tree -- the meal that set the tone for two weeks.",
+      "featured": true,
+      "subjectId": "sp_02"
+    },
+    "img-2735-e03fed57a0": {
+      "legId": "amazon",
+      "order": 0,
+      "kicker": "Arrival",
+      "title": "The only way in",
+      "body": "Aluminum lodge boats waiting at the dock -- the only way up the Cristalino as the light faded.",
+      "featured": false
+    },
+    "img-0949-9e499cb8db": {
+      "legId": "amazon",
+      "order": 1,
+      "kicker": "Giants",
+      "title": "Dwarfed by a tree",
+      "body": "Four of us barely wrap around the base of a centuries-old Brazil nut tree, one of the giants of the Cristalino.",
+      "featured": true
+    },
+    "dsc00036-81dc553603": {
+      "legId": "amazon",
+      "order": 2,
+      "kicker": "On the hunt",
+      "title": "Eyes on the river",
+      "body": "A hawk perched over the water, scanning the current for anything worth diving for.",
+      "featured": false
+    },
+    "dsc00108-68fa341139": {
+      "legId": "amazon",
+      "order": 3,
+      "kicker": "Along the bank",
+      "title": "White against green",
+      "body": "A snowy egret working the shallows along the Cristalino's clear water.",
+      "featured": false,
+      "species": "Snowy Egret"
+    },
+    "dsc00408-24fde0701c": {
+      "legId": "amazon",
+      "order": 4,
+      "kicker": "Warning shots",
+      "title": "Standing their ground",
+      "body": "A troop of spider monkeys shook branches and barked warnings, trying to scare us off their patch of canopy.",
+      "featured": false,
+      "species": "Spider Monkey"
+    },
+    "dsc00455-78e14aa97f": {
+      "legId": "amazon",
+      "order": 5,
+      "kicker": "Overhead",
+      "title": "A wary eye",
+      "body": "One of the troop pausing mid-branch, keeping a wary eye on us below.",
+      "featured": false,
+      "species": "Spider Monkey"
+    },
+    "dsc00609-652830e408": {
+      "legId": "amazon",
+      "order": 6,
+      "kicker": "On the move",
+      "title": "Through the high canopy",
+      "body": "The troop moved fast through the treetops, swinging branch to branch just ahead of us.",
+      "featured": false,
+      "species": "Spider Monkey"
+    },
+    "dsc00870-9aac893b45": {
+      "legId": "amazon",
+      "order": 7,
+      "kicker": "Chasing light",
+      "title": "One more frame",
+      "body": "Out on the water at sunset, camera up, chasing the day's last good light.",
+      "featured": false
+    },
+    "img-2842-0201275b37": {
+      "legId": "amazon",
+      "order": 8,
+      "kicker": "Above the treeline",
+      "title": "Into the canopy",
+      "body": "Our guide leading the way across the canopy walkway, high above the forest floor.",
+      "featured": false
+    },
+    "img-2900-878a1ef840": {
+      "legId": "amazon",
+      "order": 9,
+      "kicker": "First light",
+      "title": "An unbroken sea of green",
+      "body": "Sunrise from the canopy tower -- an unbroken carpet of rainforest stretching to the horizon.",
+      "featured": true
+    },
+    "dsc01309-84d5046951": {
+      "legId": "amazon",
+      "order": 10,
+      "kicker": "Evening roost",
+      "title": "The tree fills up",
+      "body": "Neotropical cormorants and cattle egrets crowd a single tree at dusk, stacking up branch by branch.",
+      "featured": false,
+      "species": "Neotropical Cormorant"
+    },
+    "img-2788-47b960163a": {
+      "legId": "amazon",
+      "order": 11,
+      "kicker": "Golden hour",
+      "title": "The sky catches fire",
+      "body": "The sky went orange right as the roost tree filled with birds -- one of the best sunsets of the trip.",
+      "featured": true
+    },
+    "img-2797-77884f33fb": {
+      "legId": "amazon",
+      "order": 12,
+      "kicker": "Golden hour",
+      "title": "Riding it in",
+      "body": "Heading back to the lodge as the roost tree glowed behind us in the sunset.",
+      "featured": false
+    },
+    "dsc01370-c45906f0a8": {
+      "legId": "amazon",
+      "order": 13,
+      "kicker": "Night walk",
+      "title": "Small things, big eyes",
+      "body": "Found on low vegetation on a night walk, clinging by its adhesive toe pads.",
+      "featured": false,
+      "subjectId": "frog",
+      "species": "Tree Frog"
+    },
+    "dsc01461-4fba8cad48": {
+      "legId": "amazon",
+      "order": 14,
+      "kicker": "Understory",
+      "title": "A bee, a bromeliad",
+      "body": "One of a thousand tiny scenes happening at knee height in the Cristalino's understory.",
+      "featured": false
+    },
+    "dsc01907-9da0ea9960": {
+      "legId": "amazon",
+      "order": 15,
+      "kicker": "Clearwater river",
+      "title": "The otter on the boulder",
+      "body": "Hauled out on a midstream boulder to eat, working the Cristalino's clearwater in low light.",
+      "featured": true,
+      "subjectId": "otter",
+      "species": "Neotropical Otter"
+    },
+    "dsc02014-38d46678fe": {
+      "legId": "amazon",
+      "order": 16,
+      "kicker": "Sun and salt",
+      "title": "A turtle and its butterflies",
+      "body": "Basking on a river rock, attended by butterflies drinking its tears -- a hunt for minerals scarce in the Amazon.",
+      "featured": true,
+      "subjectId": "turtle",
+      "species": "Yellow-spotted River Turtle"
+    },
+    "dsc02088-d3bfbf1cf7": {
+      "legId": "amazon",
+      "order": 17,
+      "kicker": "Dusk",
+      "title": "Boats at rest",
+      "body": "Lodge boats resting on the water as the forest went quiet for the night.",
+      "featured": false
+    },
+    "dsc02142-b9512dbadf": {
+      "legId": "amazon",
+      "order": 18,
+      "kicker": "Last light",
+      "title": "The canopy fades to silhouette",
+      "body": "The forest canopy sinking into silhouette as the sun dropped behind the treeline.",
+      "featured": false
+    },
+    "img-2833-6183673d45": {
+      "legId": "amazon",
+      "order": 19,
+      "kicker": "Uninvited guest",
+      "title": "Right outside our door",
+      "body": "Stepped outside at night and found a capybara grazing a few feet from our room.",
+      "featured": true,
+      "species": "Capybara"
+    },
+    "img-2858-f8c29392c9": {
+      "legId": "amazon",
+      "order": 20,
+      "kicker": "Barefoot",
+      "title": "Sand and clear water",
+      "body": "A quiet stretch of white-sand beach on the Cristalino -- shoes off, feet in the warm current.",
+      "featured": false
+    },
+    "dsc02187-8e320213a3": {
+      "legId": "pantanal",
+      "order": 0,
+      "kicker": "After dark",
+      "title": "The elegant one",
+      "body": "A night encounter with the Pantanal's most elegant small cat -- chain-like rosettes smearing into long streaks.",
+      "featured": true,
+      "subjectId": "ocelot",
+      "species": "Ocelot"
+    },
+    "dsc02271-9b4e43b866": {
+      "legId": "pantanal",
+      "order": 1,
+      "kicker": "A passenger",
+      "title": "Deer, with bird",
+      "body": "A doe crossing open grassland with a passenger -- a cattle tyrant riding her back for flushed insects.",
+      "featured": false,
+      "subjectId": "pampasdeer",
+      "species": "Pampas Deer & Cattle Tyrant"
+    },
+    "dsc02339-7046609984": {
+      "legId": "pantanal",
+      "order": 2,
+      "kicker": "Emblem",
+      "title": "Tallest bird in the Americas",
+      "body": "The tallest flying bird in the Americas, stalking wet grassland with its great upturned bill.",
+      "featured": true,
+      "subjectId": "jabiru",
+      "species": "Jabiru"
+    },
+    "dsc02472-9377b7cd29": {
+      "legId": "pantanal",
+      "order": 3,
+      "kicker": "The headline",
+      "title": "A cub in daylight",
+      "body": "The headline of the trip: a cub, five to eight months old, walking a clearing in daylight.",
+      "featured": true,
+      "subjectId": "jaguar",
+      "species": "Jaguar"
+    },
+    "dsc02518-ce2a3afa3c": {
+      "legId": "pantanal",
+      "order": 4,
+      "kicker": "Golden hour",
+      "title": "Gardener of the forest",
+      "body": "South America's largest land mammal, browsing in the open at golden hour.",
+      "featured": false,
+      "subjectId": "tapir",
+      "species": "South American Tapir"
+    },
+    "dsc02568-35e7ef7c09": {
+      "legId": "pantanal",
+      "order": 5,
+      "kicker": "On the trail",
+      "title": "An eight-legged crossing",
+      "body": "A tarantula crossing the path during a walk around the lodge grounds.",
+      "featured": false,
+      "species": "Tarantula"
+    },
+    "dsc02602-a26a0ffd49": {
+      "legId": "pantanal",
+      "order": 6,
+      "kicker": "Burning sky",
+      "title": "Silhouettes at sunset",
+      "body": "A flock of storks cut black against a burning orange Pantanal sunset.",
+      "featured": false,
+      "species": "Jabiru"
+    },
+    "dsc02811-bb805f4d09": {
+      "legId": "pantanal",
+      "order": 7,
+      "kicker": "Tug of war",
+      "title": "Two falcons and a snake",
+      "body": "Two southern crested caracaras in a tug-of-war over a snake -- falcons that behave like bold, ground-striding opportunists.",
+      "featured": false,
+      "subjectId": "caracara",
+      "species": "Southern Crested Caracara"
+    },
+    "dsc02834-20b5f5556f": {
+      "legId": "pantanal",
+      "order": 8,
+      "kicker": "Eye level",
+      "title": "Ancient and unbothered",
+      "body": "A yacare caiman resting at the water's edge, close enough to count every scale.",
+      "featured": false,
+      "species": "Yacare Caiman"
+    },
+    "dsc02889-eea7e2bdd2": {
+      "legId": "pantanal",
+      "order": 9,
+      "kicker": "Not a cardinal",
+      "title": "Red, white and black",
+      "body": "A crisp red, white and black songbird atop a flowering shrub -- despite the name, it's actually a tanager.",
+      "featured": false,
+      "subjectId": "cardinal",
+      "species": "Yellow-billed Cardinal"
+    },
+    "dsc02921-8268c02429": {
+      "legId": "pantanal",
+      "order": 10,
+      "kicker": "Through the fronds",
+      "title": "The largest kingfisher alive",
+      "body": "The largest kingfisher in the Americas, framed through palm fronds above the water.",
+      "featured": false,
+      "subjectId": "kingfisher",
+      "species": "Ringed Kingfisher"
+    },
+    "dsc03009-9bdef2895f": {
+      "legId": "pantanal",
+      "order": 11,
+      "kicker": "Cooling off",
+      "title": "Jaws ajar",
+      "body": "Another yacare caiman sunning in the wetland grass, jaws cracked open to cool down.",
+      "featured": false,
+      "species": "Yacare Caiman"
+    },
+    "dsc03020-4a88f82645": {
+      "legId": "pantanal",
+      "order": 12,
+      "kicker": "Unbothered",
+      "title": "Napping in the open",
+      "body": "A capybara stretched out and dozing in the grass, completely unfazed by our jeep.",
+      "featured": false,
+      "species": "Capybara"
+    },
+    "dsc03028-ab3c086bd0": {
+      "legId": "pantanal",
+      "order": 13,
+      "kicker": "Low over the marsh",
+      "title": "The yellow-headed one",
+      "body": "A trio of lesser yellow-headed vultures, a species that quarters low over open country, finding carrion by scent.",
+      "featured": false,
+      "subjectId": "vulture",
+      "species": "Lesser Yellow-headed Vulture"
+    },
+    "dsc03044-db26f9d1c4": {
+      "legId": "pantanal",
+      "order": 14,
+      "kicker": "Cobalt",
+      "title": "The largest parrot alive",
+      "body": "A bonded pair of the world's largest flying parrot, cobalt from crown to tail, greeting each other at their nest box.",
+      "featured": true,
+      "subjectId": "macaw",
+      "species": "Hyacinth Macaw"
+    },
+    "dsc03048-2c964dc19e": {
+      "legId": "pantanal",
+      "order": 15,
+      "kicker": "Cobalt",
+      "title": "Two of a kind",
+      "body": "The same bonded pair of hyacinth macaws, perched together in a tree above the trail.",
+      "featured": false,
+      "species": "Hyacinth Macaw"
+    },
+    "dsc03126-88b5051d8f": {
+      "legId": "pantanal",
+      "order": 16,
+      "kicker": "Backlit",
+      "title": "An armored shuffle",
+      "body": "A six-banded armadillo shuffling through the evening grass, backlit by the low sun.",
+      "featured": false,
+      "species": "Six-banded Armadillo"
+    },
+    "dsc03163-3cc1154027": {
+      "legId": "pantanal",
+      "order": 17,
+      "kicker": "Daylight owl",
+      "title": "Standing on a fence post",
+      "body": "An owl that lives underground and hunts by day, standing tall on a fence post in warm light.",
+      "featured": false,
+      "subjectId": "owl",
+      "species": "Burrowing Owl"
+    },
+    "dsc03373-b333a464af": {
+      "legId": "pantanal",
+      "order": 18,
+      "kicker": "Full antler",
+      "title": "The continent's largest deer",
+      "body": "A buck in full antler -- the continent's largest deer, a wetland specialist now classed Vulnerable.",
+      "featured": false,
+      "subjectId": "marshdeer",
+      "species": "Marsh Deer"
+    },
+    "dsc03598-34f873b708": {
+      "legId": "pantanal",
+      "order": 19,
+      "kicker": "Second encounter",
+      "title": "Walking straight at us",
+      "body": "A second jaguar sighting -- this one stalking low through the grass, headed straight for the vehicle.",
+      "featured": true,
+      "species": "Jaguar"
+    },
+    "dsc03604-4beb5186b0": {
+      "legId": "pantanal",
+      "order": 20,
+      "kicker": "Closing in",
+      "title": "A few strides closer",
+      "body": "The same jaguar, unbothered by the safari jeep, closing the distance step by step.",
+      "featured": false,
+      "species": "Jaguar"
+    },
+    "dsc03644-0c2df1f3b0": {
+      "legId": "pantanal",
+      "order": 21,
+      "kicker": "At rest",
+      "title": "A calm portrait",
+      "body": "The jaguar settled into the grass after its approach -- a rare, close, calm portrait.",
+      "featured": true,
+      "species": "Jaguar"
+    },
+    "dsc03693-b9cefa2a24": {
+      "legId": "pantanal",
+      "order": 22,
+      "kicker": "Moving on",
+      "title": "Back into the grass",
+      "body": "The jaguar continuing its patrol, melting back into the tall grass.",
+      "featured": false,
+      "species": "Jaguar"
+    },
+    "img-2943-a44dcc0191": {
+      "legId": "pantanal",
+      "order": 23,
+      "kicker": "Day's end",
+      "title": "Wetland gold",
+      "body": "The Pantanal's wetland lagoon glowing gold at sunset -- a quiet close to a wildlife-packed day.",
+      "featured": false
+    },
+    "img-2987-667ad4dec1": {
+      "legId": "rio",
+      "order": 0,
+      "kicker": "Sea level",
+      "title": "Copacabana, finally",
+      "body": "The mountains behind, the Atlantic in front -- our first view of Rio from the hotel balcony.",
+      "featured": false,
+      "subjectId": "rio_01"
+    },
+    "img-3012-f3f2f77e30": {
+      "legId": "rio",
+      "order": 1,
+      "kicker": "Golden hour",
+      "title": "The city lit up gold",
+      "body": "Rio's bay and skyline lit gold from the top of Sugarloaf Mountain at sunset.",
+      "featured": true
+    },
+    "img-3036-ff2e8b950a": {
+      "legId": "rio",
+      "order": 2,
+      "kicker": "Arms wide",
+      "title": "At the feet of Christ the Redeemer",
+      "body": "The whole family at the base of Christ the Redeemer, high above the city on Corcovado.",
+      "featured": true
+    },
+    "img-3045-pano-324cd55f7e": {
+      "legId": "rio",
+      "order": 3,
+      "kicker": "The wide view",
+      "title": "Rio, spread out below",
+      "body": "A sweeping panorama from Corcovado -- beaches, bay, and mountains laid out in one frame.",
+      "featured": false
+    },
+    "img-3048-f69c034177": {
+      "legId": "rio",
+      "order": 4,
+      "kicker": "The summit",
+      "title": "Together at the top",
+      "body": "The family at the summit platform, Christ the Redeemer towering just behind us.",
+      "featured": false
+    },
+    "img-3055-e7ec0d3edb": {
+      "legId": "rio",
+      "order": 5,
+      "kicker": "Looking up",
+      "title": "Almost straight up",
+      "body": "Standing right at the statue's base, looking up at its outstretched arms.",
+      "featured": false
+    },
+    "img-3099-588118d4f1": {
+      "legId": "rio",
+      "order": 6,
+      "kicker": "The finale",
+      "title": "Last light over the bay",
+      "body": "One more Rio sunset over Copacabana Beach -- one more view, then home.",
+      "featured": true,
+      "subjectId": "rio_02"
+    }
+  }
 }

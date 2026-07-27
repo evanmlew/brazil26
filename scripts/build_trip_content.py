@@ -54,6 +54,7 @@ def merge_photo(photo: dict[str, Any], edits: dict[str, Any]) -> dict[str, Any]:
     merged["legId"] = (merged.get("legId") or "").strip()
     merged["featured"] = bool(merged.get("featured"))
     merged["star"] = bool(merged.get("star"))
+    merged["excluded"] = bool(merged.get("excluded"))
     merged["order"] = merged.get("order") if isinstance(merged.get("order"), int) else None
     return merged
 
@@ -208,6 +209,10 @@ def build_trip(legs_doc: dict[str, Any], narrative_doc: dict[str, Any], catalog_
     merged_photos = [merge_photo(photo, edits.get(photo["id"], {})) for photo in catalog_doc.get("photos", [])]
     photos_by_leg_assignment: dict[str, list[dict[str, Any]]] = {leg["id"]: [] for leg in legs_doc["legs"]}
     for photo in merged_photos:
+        # Photos marked excluded in the review tool are left out of the site
+        # entirely (kept in the catalog/overlay, just never rendered).
+        if photo.get("excluded"):
+            continue
         if photo.get("legId") in photos_by_leg_assignment:
             photos_by_leg_assignment[photo["legId"]].append(photo)
     for leg_id in photos_by_leg_assignment:
@@ -240,7 +245,11 @@ def build_trip(legs_doc: dict[str, Any], narrative_doc: dict[str, Any], catalog_
                 final_order = photo.get("order") if photo.get("order") is not None else default_order
                 positioned.append((final_order, default_order, real_slide(photo, subject, leg)))
             else:
-                positioned.append((default_order, default_order, stock_slide(subject_id, subject, coords_lookup)))
+                # An unfilled placeholder has no real chronological position yet;
+                # float it to the end of its leg instead of interleaving by raw
+                # sequence index, which can collide with real photos' order values.
+                placeholder_order = default_order + 1000
+                positioned.append((placeholder_order, placeholder_order, stock_slide(subject_id, subject, coords_lookup)))
 
         overflow = extras + [photo for bucket in by_subject.values() for photo in bucket]
         overflow.sort(key=subject_sort_key)

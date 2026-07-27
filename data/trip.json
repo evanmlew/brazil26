@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-26T22:40:18-07:00",
+  "generatedAt": "2026-07-26T23:33:34-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",
@@ -26,31 +26,236 @@
     ]
   },
   "stopThumb": {
-    "saopaulo": null,
-    "amazon": "assets/photos/kingfisher.jpg",
-    "pantanal": "assets/photos/macaw.jpg",
-    "rio": null
+    "saopaulo": "assets/photos/img-2727-eb2812d5c2-thumb.jpg",
+    "amazon": "assets/photos/img-0949-9e499cb8db-thumb.jpg",
+    "pantanal": "assets/photos/dsc02187-8e320213a3-thumb.jpg",
+    "rio": "assets/photos/img-3012-f3f2f77e30-thumb.jpg"
   },
   "photoCoords": {
-    "sp_01": null,
-    "sp_02": null,
-    "otter": null,
-    "turtle": null,
-    "frog": null,
-    "kingfisher": null,
-    "jaguar": null,
-    "ocelot": null,
-    "tapir": null,
-    "marshdeer": null,
-    "pampasdeer": null,
-    "macaw": null,
-    "jabiru": null,
-    "caracara": null,
-    "vulture": null,
-    "owl": null,
-    "cardinal": null,
-    "rio_01": null,
-    "rio_02": null,
+    "img-2723-ea912f258f": [
+      -23.561275,
+      -46.655708
+    ],
+    "img-2715-d77f6c8df1": [
+      -23.560306,
+      -46.657939
+    ],
+    "img-2725-6305f2bb1d": [
+      -23.561278,
+      -46.655708
+    ],
+    "img-2727-eb2812d5c2": [
+      -23.565439,
+      -46.669736
+    ],
+    "img-2735-e03fed57a0": [
+      -9.636581,
+      -55.937858
+    ],
+    "img-0949-9e499cb8db": [
+      -9.563831,
+      -55.902989
+    ],
+    "dsc00036-81dc553603": [
+      -9.636389,
+      -55.937778
+    ],
+    "dsc00108-68fa341139": [
+      -9.636389,
+      -55.937778
+    ],
+    "dsc00408-24fde0701c": [
+      -9.546667,
+      -55.909167
+    ],
+    "dsc00455-78e14aa97f": [
+      -9.546667,
+      -55.909167
+    ],
+    "dsc00609-652830e408": [
+      -9.546667,
+      -55.909167
+    ],
+    "dsc00870-9aac893b45": [
+      -9.6202,
+      -55.94241
+    ],
+    "img-2842-0201275b37": [
+      -9.5831,
+      -55.918831
+    ],
+    "img-2900-878a1ef840": [
+      -9.600811,
+      -55.922775
+    ],
+    "dsc01309-84d5046951": [
+      -9.636111,
+      -55.9775
+    ],
+    "img-2788-47b960163a": [
+      -9.636075,
+      -55.977467
+    ],
+    "img-2797-77884f33fb": [
+      -9.636175,
+      -55.977467
+    ],
+    "dsc01370-c45906f0a8": [
+      -9.58751,
+      -55.93056
+    ],
+    "dsc01461-4fba8cad48": [
+      -9.583056,
+      -55.918889
+    ],
+    "dsc01907-9da0ea9960": [
+      -9.5611,
+      -55.9121
+    ],
+    "dsc02014-38d46678fe": [
+      -9.561111,
+      -55.912222
+    ],
+    "dsc02088-d3bfbf1cf7": [
+      -9.600833,
+      -55.922778
+    ],
+    "dsc02142-b9512dbadf": [
+      -9.600833,
+      -55.922778
+    ],
+    "img-2833-6183673d45": [
+      -9.596642,
+      -55.931794
+    ],
+    "img-2858-f8c29392c9": [
+      -9.634114,
+      -55.937431
+    ],
+    "dsc02187-8e320213a3": [
+      -19.9549,
+      -56.3146
+    ],
+    "dsc02271-9b4e43b866": [
+      -19.97435,
+      -56.31445
+    ],
+    "dsc02339-7046609984": [
+      -19.8752,
+      -56.2922
+    ],
+    "dsc02472-9377b7cd29": [
+      -19.813611,
+      -56.3
+    ],
+    "dsc02518-ce2a3afa3c": [
+      -19.81354,
+      -56.299966
+    ],
+    "dsc02568-35e7ef7c09": [
+      -19.9106,
+      -56.2977
+    ],
+    "dsc02602-a26a0ffd49": [
+      -19.923889,
+      -56.301111
+    ],
+    "dsc02811-bb805f4d09": [
+      -19.924,
+      -56.3011
+    ],
+    "dsc02834-20b5f5556f": [
+      -19.95222,
+      -56.30462
+    ],
+    "dsc02889-eea7e2bdd2": [
+      -19.975556,
+      -56.314444
+    ],
+    "dsc02921-8268c02429": [
+      -19.9755,
+      -56.3145
+    ],
+    "dsc03009-9bdef2895f": [
+      -19.952222,
+      -56.304722
+    ],
+    "dsc03020-4a88f82645": [
+      -19.952222,
+      -56.304722
+    ],
+    "dsc03028-ab3c086bd0": [
+      -19.8836,
+      -56.2947
+    ],
+    "dsc03044-db26f9d1c4": [
+      -19.9537,
+      -56.3052
+    ],
+    "dsc03048-2c964dc19e": [
+      -19.953611,
+      -56.305278
+    ],
+    "dsc03126-88b5051d8f": [
+      -19.96178,
+      -56.30743
+    ],
+    "dsc03163-3cc1154027": [
+      -19.97261,
+      -56.31298
+    ],
+    "dsc03373-b333a464af": [
+      -19.8869,
+      -56.2553
+    ],
+    "dsc03598-34f873b708": [
+      -19.89901,
+      -56.22534
+    ],
+    "dsc03604-4beb5186b0": [
+      -19.898889,
+      -56.225278
+    ],
+    "dsc03644-0c2df1f3b0": [
+      -19.898889,
+      -56.225278
+    ],
+    "dsc03693-b9cefa2a24": [
+      -19.898889,
+      -56.225278
+    ],
+    "img-2943-a44dcc0191": [
+      -19.858461,
+      -56.273975
+    ],
+    "img-2987-667ad4dec1": [
+      -22.982433,
+      -43.189542
+    ],
+    "img-3012-f3f2f77e30": [
+      -22.949572,
+      -43.156475
+    ],
+    "img-3036-ff2e8b950a": [
+      -22.951869,
+      -43.210208
+    ],
+    "img-3045-pano-324cd55f7e": [
+      -22.951847,
+      -43.209992
+    ],
+    "img-3048-f69c034177": [
+      -22.951847,
+      -43.209997
+    ],
+    "img-3055-e7ec0d3edb": [
+      -22.951839,
+      -43.210053
+    ],
+    "img-3099-588118d4f1": [
+      -22.982231,
+      -43.190322
+    ],
     "closing": null
   },
   "legs": [
@@ -108,51 +313,455 @@
       {
         "leg": "saopaulo",
         "legId": "saopaulo",
-        "key": "sp_01",
+        "key": "img-2723-ea912f258f",
+        "photoId": "img-2723-ea912f258f",
         "subjectId": "sp_01",
-        "kind": "placeholder",
-        "alt": "Twelve million people, one horizon",
-        "pinLabel": "Twelve million people, one horizon",
-        "kicker": "Arrival",
-        "title": "Twelve million people, one horizon",
-        "body": "The concrete sea from the hotel window — Brazil starts loud.",
+        "kind": "photo",
+        "src": "assets/photos/img-2723-ea912f258f-card.jpg",
+        "thumb": "assets/photos/img-2723-ea912f258f-thumb.jpg",
+        "alt": "One horizon, endless city",
+        "pinLabel": "One horizon, endless city",
+        "kicker": "Twelve million people",
+        "title": "One horizon, endless city",
+        "body": "Walking the skyline on foot, the concrete sea stretching in every direction -- Brazil starts loud.",
         "chips": [
           "SÃO PAULO"
         ],
         "flags": [],
         "star": false,
+        "featured": false,
         "taxon": "",
-        "ph": "DROP IN — SP_HERO.JPG · CITY SKYLINE"
+        "lat": -23.561275,
+        "lng": -46.655708
       },
       {
         "leg": "saopaulo",
         "legId": "saopaulo",
-        "key": "sp_02",
-        "subjectId": "sp_02",
-        "kind": "placeholder",
-        "alt": "Dinner, and a plan",
-        "pinLabel": "Dinner, and a plan",
-        "kicker": "First night",
-        "title": "Dinner, and a plan",
-        "body": "[Your caption here] — the meal that set the tone for two weeks.",
+        "key": "img-2715-d77f6c8df1",
+        "photoId": "img-2715-d77f6c8df1",
+        "kind": "photo",
+        "src": "assets/photos/img-2715-d77f6c8df1-card.jpg",
+        "thumb": "assets/photos/img-2715-d77f6c8df1-thumb.jpg",
+        "alt": "Golden arches, translated",
+        "pinLabel": "Golden arches, translated",
+        "kicker": "First impressions",
+        "title": "Golden arches, translated",
+        "body": "A very different take on the arches -- this sleek São Paulo Méqui looked nothing like home.",
         "chips": [
           "SÃO PAULO"
         ],
         "flags": [],
         "star": false,
+        "featured": false,
         "taxon": "",
-        "ph": "DROP IN — SP_02.JPG · STREET OR RESTAURANT"
+        "lat": -23.560306,
+        "lng": -46.657939
+      },
+      {
+        "leg": "saopaulo",
+        "legId": "saopaulo",
+        "key": "img-2725-6305f2bb1d",
+        "photoId": "img-2725-6305f2bb1d",
+        "kind": "photo",
+        "src": "assets/photos/img-2725-6305f2bb1d-card.jpg",
+        "thumb": "assets/photos/img-2725-6305f2bb1d-thumb.jpg",
+        "alt": "The city as canvas",
+        "pinLabel": "The city as canvas",
+        "kicker": "Street level",
+        "title": "The city as canvas",
+        "body": "Bold murals wrapped around a downtown building, São Paulo's street-art scene on full display.",
+        "chips": [
+          "SÃO PAULO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -23.561278,
+        "lng": -46.655708
+      },
+      {
+        "leg": "saopaulo",
+        "legId": "saopaulo",
+        "key": "img-2727-eb2812d5c2",
+        "photoId": "img-2727-eb2812d5c2",
+        "subjectId": "sp_02",
+        "kind": "photo",
+        "src": "assets/photos/img-2727-eb2812d5c2-card.jpg",
+        "thumb": "assets/photos/img-2727-eb2812d5c2-thumb.jpg",
+        "alt": "Dinner, and a plan",
+        "pinLabel": "Dinner, and a plan",
+        "kicker": "First night",
+        "title": "Dinner, and a plan",
+        "body": "Churrasco at Figueira Rubaiyat under the giant fig tree -- the meal that set the tone for two weeks.",
+        "chips": [
+          "SÃO PAULO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": true,
+        "taxon": "",
+        "lat": -23.565439,
+        "lng": -46.669736
       }
     ],
     "amazon": [
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "otter",
+        "key": "img-2735-e03fed57a0",
+        "photoId": "img-2735-e03fed57a0",
+        "kind": "photo",
+        "src": "assets/photos/img-2735-e03fed57a0-card.jpg",
+        "thumb": "assets/photos/img-2735-e03fed57a0-thumb.jpg",
+        "alt": "The only way in",
+        "pinLabel": "The only way in",
+        "kicker": "Arrival",
+        "title": "The only way in",
+        "body": "Aluminum lodge boats waiting at the dock -- the only way up the Cristalino as the light faded.",
+        "chips": [
+          "AMAZON"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -9.636581,
+        "lng": -55.937858
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "img-0949-9e499cb8db",
+        "photoId": "img-0949-9e499cb8db",
+        "kind": "photo",
+        "src": "assets/photos/img-0949-9e499cb8db-card.jpg",
+        "thumb": "assets/photos/img-0949-9e499cb8db-thumb.jpg",
+        "alt": "Dwarfed by a tree",
+        "pinLabel": "Dwarfed by a tree",
+        "kicker": "Giants",
+        "title": "Dwarfed by a tree",
+        "body": "Four of us barely wrap around the base of a centuries-old Brazil nut tree, one of the giants of the Cristalino.",
+        "chips": [
+          "AMAZON"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": true,
+        "taxon": "",
+        "lat": -9.563831,
+        "lng": -55.902989
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "dsc00036-81dc553603",
+        "photoId": "dsc00036-81dc553603",
+        "kind": "photo",
+        "src": "assets/photos/dsc00036-81dc553603-card.jpg",
+        "thumb": "assets/photos/dsc00036-81dc553603-thumb.jpg",
+        "alt": "Eyes on the river",
+        "pinLabel": "Eyes on the river",
+        "kicker": "On the hunt",
+        "title": "Eyes on the river",
+        "body": "A hawk perched over the water, scanning the current for anything worth diving for.",
+        "chips": [
+          "AMAZON"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -9.636389,
+        "lng": -55.937778
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "dsc00108-68fa341139",
+        "photoId": "dsc00108-68fa341139",
+        "kind": "photo",
+        "src": "assets/photos/dsc00108-68fa341139-card.jpg",
+        "thumb": "assets/photos/dsc00108-68fa341139-thumb.jpg",
+        "alt": "White against green",
+        "pinLabel": "White against green",
+        "kicker": "Along the bank",
+        "title": "White against green",
+        "body": "A snowy egret working the shallows along the Cristalino's clear water.",
+        "chips": [
+          "AMAZON"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -9.636389,
+        "lng": -55.937778
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "dsc00408-24fde0701c",
+        "photoId": "dsc00408-24fde0701c",
+        "kind": "photo",
+        "src": "assets/photos/dsc00408-24fde0701c-card.jpg",
+        "thumb": "assets/photos/dsc00408-24fde0701c-thumb.jpg",
+        "alt": "Standing their ground",
+        "pinLabel": "Standing their ground",
+        "kicker": "Warning shots",
+        "title": "Standing their ground",
+        "body": "A troop of spider monkeys shook branches and barked warnings, trying to scare us off their patch of canopy.",
+        "chips": [
+          "AMAZON"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -9.546667,
+        "lng": -55.909167
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "dsc00455-78e14aa97f",
+        "photoId": "dsc00455-78e14aa97f",
+        "kind": "photo",
+        "src": "assets/photos/dsc00455-78e14aa97f-card.jpg",
+        "thumb": "assets/photos/dsc00455-78e14aa97f-thumb.jpg",
+        "alt": "A wary eye",
+        "pinLabel": "A wary eye",
+        "kicker": "Overhead",
+        "title": "A wary eye",
+        "body": "One of the troop pausing mid-branch, keeping a wary eye on us below.",
+        "chips": [
+          "AMAZON"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -9.546667,
+        "lng": -55.909167
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "dsc00609-652830e408",
+        "photoId": "dsc00609-652830e408",
+        "kind": "photo",
+        "src": "assets/photos/dsc00609-652830e408-card.jpg",
+        "thumb": "assets/photos/dsc00609-652830e408-thumb.jpg",
+        "alt": "Through the high canopy",
+        "pinLabel": "Through the high canopy",
+        "kicker": "On the move",
+        "title": "Through the high canopy",
+        "body": "The troop moved fast through the treetops, swinging branch to branch just ahead of us.",
+        "chips": [
+          "AMAZON"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -9.546667,
+        "lng": -55.909167
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "dsc00870-9aac893b45",
+        "photoId": "dsc00870-9aac893b45",
+        "kind": "photo",
+        "src": "assets/photos/dsc00870-9aac893b45-card.jpg",
+        "thumb": "assets/photos/dsc00870-9aac893b45-thumb.jpg",
+        "alt": "One more frame",
+        "pinLabel": "One more frame",
+        "kicker": "Chasing light",
+        "title": "One more frame",
+        "body": "Out on the water at sunset, camera up, chasing the day's last good light.",
+        "chips": [
+          "AMAZON"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -9.6202,
+        "lng": -55.94241
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "img-2842-0201275b37",
+        "photoId": "img-2842-0201275b37",
+        "kind": "photo",
+        "src": "assets/photos/img-2842-0201275b37-card.jpg",
+        "thumb": "assets/photos/img-2842-0201275b37-thumb.jpg",
+        "alt": "Into the canopy",
+        "pinLabel": "Into the canopy",
+        "kicker": "Above the treeline",
+        "title": "Into the canopy",
+        "body": "Our guide leading the way across the canopy walkway, high above the forest floor.",
+        "chips": [
+          "AMAZON"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -9.5831,
+        "lng": -55.918831
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "img-2900-878a1ef840",
+        "photoId": "img-2900-878a1ef840",
+        "kind": "photo",
+        "src": "assets/photos/img-2900-878a1ef840-card.jpg",
+        "thumb": "assets/photos/img-2900-878a1ef840-thumb.jpg",
+        "alt": "An unbroken sea of green",
+        "pinLabel": "An unbroken sea of green",
+        "kicker": "First light",
+        "title": "An unbroken sea of green",
+        "body": "Sunrise from the canopy tower -- an unbroken carpet of rainforest stretching to the horizon.",
+        "chips": [
+          "AMAZON"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": true,
+        "taxon": "",
+        "lat": -9.600811,
+        "lng": -55.922775
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "dsc01309-84d5046951",
+        "photoId": "dsc01309-84d5046951",
+        "kind": "photo",
+        "src": "assets/photos/dsc01309-84d5046951-card.jpg",
+        "thumb": "assets/photos/dsc01309-84d5046951-thumb.jpg",
+        "alt": "The tree fills up",
+        "pinLabel": "The tree fills up",
+        "kicker": "Evening roost",
+        "title": "The tree fills up",
+        "body": "Neotropical cormorants and cattle egrets crowd a single tree at dusk, stacking up branch by branch.",
+        "chips": [
+          "AMAZON"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -9.636111,
+        "lng": -55.9775
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "img-2788-47b960163a",
+        "photoId": "img-2788-47b960163a",
+        "kind": "photo",
+        "src": "assets/photos/img-2788-47b960163a-card.jpg",
+        "thumb": "assets/photos/img-2788-47b960163a-thumb.jpg",
+        "alt": "The sky catches fire",
+        "pinLabel": "The sky catches fire",
+        "kicker": "Golden hour",
+        "title": "The sky catches fire",
+        "body": "The sky went orange right as the roost tree filled with birds -- one of the best sunsets of the trip.",
+        "chips": [
+          "AMAZON"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": true,
+        "taxon": "",
+        "lat": -9.636075,
+        "lng": -55.977467
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "img-2797-77884f33fb",
+        "photoId": "img-2797-77884f33fb",
+        "kind": "photo",
+        "src": "assets/photos/img-2797-77884f33fb-card.jpg",
+        "thumb": "assets/photos/img-2797-77884f33fb-thumb.jpg",
+        "alt": "Riding it in",
+        "pinLabel": "Riding it in",
+        "kicker": "Golden hour",
+        "title": "Riding it in",
+        "body": "Heading back to the lodge as the roost tree glowed behind us in the sunset.",
+        "chips": [
+          "AMAZON"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -9.636175,
+        "lng": -55.977467
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "dsc01370-c45906f0a8",
+        "photoId": "dsc01370-c45906f0a8",
+        "subjectId": "frog",
+        "kind": "photo",
+        "src": "assets/photos/dsc01370-c45906f0a8-card.jpg",
+        "thumb": "assets/photos/dsc01370-c45906f0a8-thumb.jpg",
+        "alt": "Tree Frog — Boana sp.",
+        "pinLabel": "Tree Frog",
+        "kicker": "Night walk",
+        "title": "Small things, big eyes",
+        "body": "Found on low vegetation on a night walk, clinging by its adhesive toe pads.",
+        "chips": [
+          "AMPHIBIAN",
+          "GENUS-LEVEL ID"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "Amphibian",
+        "lat": -9.58751,
+        "lng": -55.93056
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "dsc01461-4fba8cad48",
+        "photoId": "dsc01461-4fba8cad48",
+        "kind": "photo",
+        "src": "assets/photos/dsc01461-4fba8cad48-card.jpg",
+        "thumb": "assets/photos/dsc01461-4fba8cad48-thumb.jpg",
+        "alt": "A bee, a bromeliad",
+        "pinLabel": "A bee, a bromeliad",
+        "kicker": "Understory",
+        "title": "A bee, a bromeliad",
+        "body": "One of a thousand tiny scenes happening at knee height in the Cristalino's understory.",
+        "chips": [
+          "AMAZON"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -9.583056,
+        "lng": -55.918889
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "dsc01907-9da0ea9960",
+        "photoId": "dsc01907-9da0ea9960",
         "subjectId": "otter",
-        "kind": "species",
-        "src": "assets/photos/otter.jpg",
-        "thumb": "assets/photos/otter.jpg",
+        "kind": "photo",
+        "src": "assets/photos/dsc01907-9da0ea9960-card.jpg",
+        "thumb": "assets/photos/dsc01907-9da0ea9960-thumb.jpg",
         "alt": "Neotropical Otter — Lontra longicaudis",
         "pinLabel": "Neotropical Otter",
         "kicker": "Clearwater river",
@@ -163,84 +772,210 @@
         ],
         "flags": [],
         "star": false,
-        "taxon": "Mammal"
+        "featured": true,
+        "taxon": "Mammal",
+        "lat": -9.5611,
+        "lng": -55.9121
       },
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "turtle",
+        "key": "dsc02014-38d46678fe",
+        "photoId": "dsc02014-38d46678fe",
         "subjectId": "turtle",
-        "kind": "species",
-        "src": "assets/photos/turtle.jpg",
-        "thumb": "assets/photos/turtle.jpg",
+        "kind": "photo",
+        "src": "assets/photos/dsc02014-38d46678fe-card.jpg",
+        "thumb": "assets/photos/dsc02014-38d46678fe-thumb.jpg",
         "alt": "Yellow-spotted River Turtle — Podocnemis unifilis",
         "pinLabel": "Yellow-spotted River Turtle",
         "kicker": "Sun and salt",
         "title": "A turtle and its butterflies",
-        "body": "Basking on a river rock, attended by butterflies drinking its tears — a hunt for minerals scarce in the Amazon.",
+        "body": "Basking on a river rock, attended by butterflies drinking its tears -- a hunt for minerals scarce in the Amazon.",
         "chips": [
           "REPTILE"
         ],
         "flags": [],
         "star": false,
-        "taxon": "Reptile"
+        "featured": true,
+        "taxon": "Reptile",
+        "lat": -9.561111,
+        "lng": -55.912222
       },
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "frog",
-        "subjectId": "frog",
-        "kind": "species",
-        "src": "assets/photos/frog.jpg",
-        "thumb": "assets/photos/frog.jpg",
-        "alt": "Tree Frog — Boana sp.",
-        "pinLabel": "Tree Frog",
-        "kicker": "Night walk",
-        "title": "Small things, big eyes",
-        "body": "Found on low vegetation on a night walk, clinging by its adhesive toe pads. Logged at genus level.",
+        "key": "dsc02088-d3bfbf1cf7",
+        "photoId": "dsc02088-d3bfbf1cf7",
+        "kind": "photo",
+        "src": "assets/photos/dsc02088-d3bfbf1cf7-card.jpg",
+        "thumb": "assets/photos/dsc02088-d3bfbf1cf7-thumb.jpg",
+        "alt": "Boats at rest",
+        "pinLabel": "Boats at rest",
+        "kicker": "Dusk",
+        "title": "Boats at rest",
+        "body": "Lodge boats resting on the water as the forest went quiet for the night.",
         "chips": [
-          "AMPHIBIAN",
-          "GENUS-LEVEL ID"
+          "AMAZON"
         ],
-        "flags": [
-          "Genus-level ID"
-        ],
+        "flags": [],
         "star": false,
-        "taxon": "Amphibian"
+        "featured": false,
+        "taxon": "",
+        "lat": -9.600833,
+        "lng": -55.922778
       },
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "kingfisher",
-        "subjectId": "kingfisher",
-        "kind": "species",
-        "src": "assets/photos/kingfisher.jpg",
-        "thumb": "assets/photos/kingfisher.jpg",
-        "alt": "Ringed Kingfisher — Megaceryle torquata",
-        "pinLabel": "Ringed Kingfisher",
-        "kicker": "Through the fronds",
-        "title": "The largest kingfisher alive",
-        "body": "The largest kingfisher in the Americas, framed through palm fronds above the water.",
+        "key": "dsc02142-b9512dbadf",
+        "photoId": "dsc02142-b9512dbadf",
+        "kind": "photo",
+        "src": "assets/photos/dsc02142-b9512dbadf-card.jpg",
+        "thumb": "assets/photos/dsc02142-b9512dbadf-thumb.jpg",
+        "alt": "The canopy fades to silhouette",
+        "pinLabel": "The canopy fades to silhouette",
+        "kicker": "Last light",
+        "title": "The canopy fades to silhouette",
+        "body": "The forest canopy sinking into silhouette as the sun dropped behind the treeline.",
         "chips": [
-          "BIRD",
-          "LEG TO CONFIRM"
+          "AMAZON"
         ],
-        "flags": [
-          "Leg to confirm"
-        ],
+        "flags": [],
         "star": false,
-        "taxon": "Bird"
+        "featured": false,
+        "taxon": "",
+        "lat": -9.600833,
+        "lng": -55.922778
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "img-2833-6183673d45",
+        "photoId": "img-2833-6183673d45",
+        "kind": "photo",
+        "src": "assets/photos/img-2833-6183673d45-card.jpg",
+        "thumb": "assets/photos/img-2833-6183673d45-thumb.jpg",
+        "alt": "Right outside our door",
+        "pinLabel": "Right outside our door",
+        "kicker": "Uninvited guest",
+        "title": "Right outside our door",
+        "body": "Stepped outside at night and found a capybara grazing a few feet from our room.",
+        "chips": [
+          "AMAZON"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": true,
+        "taxon": "",
+        "lat": -9.596642,
+        "lng": -55.931794
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "img-2858-f8c29392c9",
+        "photoId": "img-2858-f8c29392c9",
+        "kind": "photo",
+        "src": "assets/photos/img-2858-f8c29392c9-card.jpg",
+        "thumb": "assets/photos/img-2858-f8c29392c9-thumb.jpg",
+        "alt": "Sand and clear water",
+        "pinLabel": "Sand and clear water",
+        "kicker": "Barefoot",
+        "title": "Sand and clear water",
+        "body": "A quiet stretch of white-sand beach on the Cristalino -- shoes off, feet in the warm current.",
+        "chips": [
+          "AMAZON"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -9.634114,
+        "lng": -55.937431
       }
     ],
     "pantanal": [
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "jaguar",
+        "key": "dsc02187-8e320213a3",
+        "photoId": "dsc02187-8e320213a3",
+        "subjectId": "ocelot",
+        "kind": "photo",
+        "src": "assets/photos/dsc02187-8e320213a3-card.jpg",
+        "thumb": "assets/photos/dsc02187-8e320213a3-thumb.jpg",
+        "alt": "Ocelot — Leopardus pardalis",
+        "pinLabel": "Ocelot",
+        "kicker": "After dark",
+        "title": "The elegant one",
+        "body": "A night encounter with the Pantanal's most elegant small cat -- chain-like rosettes smearing into long streaks.",
+        "chips": [
+          "MAMMAL"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": true,
+        "taxon": "Mammal",
+        "lat": -19.9549,
+        "lng": -56.3146
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "dsc02271-9b4e43b866",
+        "photoId": "dsc02271-9b4e43b866",
+        "subjectId": "pampasdeer",
+        "kind": "photo",
+        "src": "assets/photos/dsc02271-9b4e43b866-card.jpg",
+        "thumb": "assets/photos/dsc02271-9b4e43b866-thumb.jpg",
+        "alt": "Pampas Deer & Cattle Tyrant — Ozotoceros bezoarticus",
+        "pinLabel": "Pampas Deer & Cattle Tyrant",
+        "kicker": "A passenger",
+        "title": "Deer, with bird",
+        "body": "A doe crossing open grassland with a passenger -- a cattle tyrant riding her back for flushed insects.",
+        "chips": [
+          "MAMMAL"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "Mammal",
+        "lat": -19.97435,
+        "lng": -56.31445
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "dsc02339-7046609984",
+        "photoId": "dsc02339-7046609984",
+        "subjectId": "jabiru",
+        "kind": "photo",
+        "src": "assets/photos/dsc02339-7046609984-card.jpg",
+        "thumb": "assets/photos/dsc02339-7046609984-thumb.jpg",
+        "alt": "Jabiru — Jabiru mycteria",
+        "pinLabel": "Jabiru",
+        "kicker": "Emblem",
+        "title": "Tallest bird in the Americas",
+        "body": "The tallest flying bird in the Americas, stalking wet grassland with its great upturned bill.",
+        "chips": [
+          "BIRD"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": true,
+        "taxon": "Bird",
+        "lat": -19.8752,
+        "lng": -56.2922
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "dsc02472-9377b7cd29",
+        "photoId": "dsc02472-9377b7cd29",
         "subjectId": "jaguar",
-        "kind": "species",
-        "src": "assets/photos/jaguar.jpg",
-        "thumb": "assets/photos/jaguar.jpg",
+        "kind": "photo",
+        "src": "assets/photos/dsc02472-9377b7cd29-card.jpg",
+        "thumb": "assets/photos/dsc02472-9377b7cd29-thumb.jpg",
         "alt": "Jaguar — Panthera onca",
         "pinLabel": "Jaguar",
         "kicker": "The headline",
@@ -252,177 +987,326 @@
         ],
         "flags": [],
         "star": true,
-        "taxon": "Mammal"
+        "featured": true,
+        "taxon": "Mammal",
+        "lat": -19.813611,
+        "lng": -56.3
       },
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "ocelot",
-        "subjectId": "ocelot",
-        "kind": "species",
-        "src": "assets/photos/ocelot.jpg",
-        "thumb": "assets/photos/ocelot.jpg",
-        "alt": "Ocelot — Leopardus pardalis",
-        "pinLabel": "Ocelot",
-        "kicker": "After dark",
-        "title": "The elegant one",
-        "body": "A night encounter with the Pantanal's most elegant small cat. Chain-like rosettes smear into long streaks.",
-        "chips": [
-          "MAMMAL"
-        ],
-        "flags": [],
-        "star": false,
-        "taxon": "Mammal"
-      },
-      {
-        "leg": "pantanal",
-        "legId": "pantanal",
-        "key": "tapir",
+        "key": "dsc02518-ce2a3afa3c",
+        "photoId": "dsc02518-ce2a3afa3c",
         "subjectId": "tapir",
-        "kind": "species",
-        "src": "assets/photos/tapir.jpg",
-        "thumb": "assets/photos/tapir.jpg",
+        "kind": "photo",
+        "src": "assets/photos/dsc02518-ce2a3afa3c-card.jpg",
+        "thumb": "assets/photos/dsc02518-ce2a3afa3c-thumb.jpg",
         "alt": "South American Tapir — Tapirus terrestris",
         "pinLabel": "South American Tapir",
         "kicker": "Golden hour",
         "title": "Gardener of the forest",
-        "body": "South America's largest land mammal, browsing in the open at golden hour. A gardener of the forest.",
+        "body": "South America's largest land mammal, browsing in the open at golden hour.",
         "chips": [
           "MAMMAL"
         ],
         "flags": [],
         "star": false,
-        "taxon": "Mammal"
+        "featured": false,
+        "taxon": "Mammal",
+        "lat": -19.81354,
+        "lng": -56.299966
       },
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "marshdeer",
-        "subjectId": "marshdeer",
-        "kind": "species",
-        "src": "assets/photos/marshdeer.jpg",
-        "thumb": "assets/photos/marshdeer.jpg",
-        "alt": "Marsh Deer — Blastocerus dichotomus",
-        "pinLabel": "Marsh Deer",
-        "kicker": "Full antler",
-        "title": "The continent's largest deer",
-        "body": "The continent's largest deer, a buck in full antler. A wetland specialist, now classed Vulnerable.",
+        "key": "dsc02568-35e7ef7c09",
+        "photoId": "dsc02568-35e7ef7c09",
+        "kind": "photo",
+        "src": "assets/photos/dsc02568-35e7ef7c09-card.jpg",
+        "thumb": "assets/photos/dsc02568-35e7ef7c09-thumb.jpg",
+        "alt": "An eight-legged crossing",
+        "pinLabel": "An eight-legged crossing",
+        "kicker": "On the trail",
+        "title": "An eight-legged crossing",
+        "body": "A tarantula crossing the path during a walk around the lodge grounds.",
         "chips": [
-          "MAMMAL"
+          "PANTANAL"
         ],
         "flags": [],
         "star": false,
-        "taxon": "Mammal"
+        "featured": false,
+        "taxon": "",
+        "lat": -19.9106,
+        "lng": -56.2977
       },
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "pampasdeer",
-        "subjectId": "pampasdeer",
-        "kind": "species",
-        "src": "assets/photos/pampas.jpg",
-        "thumb": "assets/photos/pampas.jpg",
-        "alt": "Pampas Deer & Cattle Tyrant — Ozotoceros bezoarticus",
-        "pinLabel": "Pampas Deer & Cattle Tyrant",
-        "kicker": "A passenger",
-        "title": "Deer, with bird",
-        "body": "A doe crossing open grassland with a passenger — a cattle tyrant riding her back for flushed insects.",
+        "key": "dsc02602-a26a0ffd49",
+        "photoId": "dsc02602-a26a0ffd49",
+        "kind": "photo",
+        "src": "assets/photos/dsc02602-a26a0ffd49-card.jpg",
+        "thumb": "assets/photos/dsc02602-a26a0ffd49-thumb.jpg",
+        "alt": "Silhouettes at sunset",
+        "pinLabel": "Silhouettes at sunset",
+        "kicker": "Burning sky",
+        "title": "Silhouettes at sunset",
+        "body": "A flock of storks cut black against a burning orange Pantanal sunset.",
         "chips": [
-          "MAMMAL"
+          "PANTANAL"
         ],
         "flags": [],
         "star": false,
-        "taxon": "Mammal"
+        "featured": false,
+        "taxon": "",
+        "lat": -19.923889,
+        "lng": -56.301111
       },
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "macaw",
+        "key": "dsc02811-bb805f4d09",
+        "photoId": "dsc02811-bb805f4d09",
+        "subjectId": "caracara",
+        "kind": "photo",
+        "src": "assets/photos/dsc02811-bb805f4d09-card.jpg",
+        "thumb": "assets/photos/dsc02811-bb805f4d09-thumb.jpg",
+        "alt": "Southern Crested Caracara — Caracara plancus",
+        "pinLabel": "Southern Crested Caracara",
+        "kicker": "Tug of war",
+        "title": "Two falcons and a snake",
+        "body": "Two southern crested caracaras in a tug-of-war over a snake -- falcons that behave like bold, ground-striding opportunists.",
+        "chips": [
+          "BIRD"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "Bird",
+        "lat": -19.924,
+        "lng": -56.3011
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "dsc02834-20b5f5556f",
+        "photoId": "dsc02834-20b5f5556f",
+        "kind": "photo",
+        "src": "assets/photos/dsc02834-20b5f5556f-card.jpg",
+        "thumb": "assets/photos/dsc02834-20b5f5556f-thumb.jpg",
+        "alt": "Ancient and unbothered",
+        "pinLabel": "Ancient and unbothered",
+        "kicker": "Eye level",
+        "title": "Ancient and unbothered",
+        "body": "A yacare caiman resting at the water's edge, close enough to count every scale.",
+        "chips": [
+          "PANTANAL"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -19.95222,
+        "lng": -56.30462
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "dsc02889-eea7e2bdd2",
+        "photoId": "dsc02889-eea7e2bdd2",
+        "subjectId": "cardinal",
+        "kind": "photo",
+        "src": "assets/photos/dsc02889-eea7e2bdd2-card.jpg",
+        "thumb": "assets/photos/dsc02889-eea7e2bdd2-thumb.jpg",
+        "alt": "Yellow-billed Cardinal — Paroaria capitata",
+        "pinLabel": "Yellow-billed Cardinal",
+        "kicker": "Not a cardinal",
+        "title": "Red, white and black",
+        "body": "A crisp red, white and black songbird atop a flowering shrub -- despite the name, it's actually a tanager.",
+        "chips": [
+          "BIRD"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "Bird",
+        "lat": -19.975556,
+        "lng": -56.314444
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "dsc02921-8268c02429",
+        "photoId": "dsc02921-8268c02429",
+        "subjectId": "kingfisher",
+        "kind": "photo",
+        "src": "assets/photos/dsc02921-8268c02429-card.jpg",
+        "thumb": "assets/photos/dsc02921-8268c02429-thumb.jpg",
+        "alt": "Ringed Kingfisher — Megaceryle torquata",
+        "pinLabel": "Ringed Kingfisher",
+        "kicker": "Through the fronds",
+        "title": "The largest kingfisher alive",
+        "body": "The largest kingfisher in the Americas, framed through palm fronds above the water.",
+        "chips": [
+          "BIRD"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "Bird",
+        "lat": -19.9755,
+        "lng": -56.3145
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "dsc03009-9bdef2895f",
+        "photoId": "dsc03009-9bdef2895f",
+        "kind": "photo",
+        "src": "assets/photos/dsc03009-9bdef2895f-card.jpg",
+        "thumb": "assets/photos/dsc03009-9bdef2895f-thumb.jpg",
+        "alt": "Jaws ajar",
+        "pinLabel": "Jaws ajar",
+        "kicker": "Cooling off",
+        "title": "Jaws ajar",
+        "body": "Another yacare caiman sunning in the wetland grass, jaws cracked open to cool down.",
+        "chips": [
+          "PANTANAL"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -19.952222,
+        "lng": -56.304722
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "dsc03020-4a88f82645",
+        "photoId": "dsc03020-4a88f82645",
+        "kind": "photo",
+        "src": "assets/photos/dsc03020-4a88f82645-card.jpg",
+        "thumb": "assets/photos/dsc03020-4a88f82645-thumb.jpg",
+        "alt": "Napping in the open",
+        "pinLabel": "Napping in the open",
+        "kicker": "Unbothered",
+        "title": "Napping in the open",
+        "body": "A capybara stretched out and dozing in the grass, completely unfazed by our jeep.",
+        "chips": [
+          "PANTANAL"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -19.952222,
+        "lng": -56.304722
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "dsc03028-ab3c086bd0",
+        "photoId": "dsc03028-ab3c086bd0",
+        "subjectId": "vulture",
+        "kind": "photo",
+        "src": "assets/photos/dsc03028-ab3c086bd0-card.jpg",
+        "thumb": "assets/photos/dsc03028-ab3c086bd0-thumb.jpg",
+        "alt": "Lesser Yellow-headed Vulture — Cathartes burrovianus",
+        "pinLabel": "Lesser Yellow-headed Vulture",
+        "kicker": "Low over the marsh",
+        "title": "The yellow-headed one",
+        "body": "A trio of lesser yellow-headed vultures, a species that quarters low over open country, finding carrion by scent.",
+        "chips": [
+          "BIRD"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "Bird",
+        "lat": -19.8836,
+        "lng": -56.2947
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "dsc03044-db26f9d1c4",
+        "photoId": "dsc03044-db26f9d1c4",
         "subjectId": "macaw",
-        "kind": "species",
-        "src": "assets/photos/macaw.jpg",
-        "thumb": "assets/photos/macaw.jpg",
+        "kind": "photo",
+        "src": "assets/photos/dsc03044-db26f9d1c4-card.jpg",
+        "thumb": "assets/photos/dsc03044-db26f9d1c4-thumb.jpg",
         "alt": "Hyacinth Macaw — Anodorhynchus hyacinthinus",
         "pinLabel": "Hyacinth Macaw",
         "kicker": "Cobalt",
         "title": "The largest parrot alive",
-        "body": "A bonded pair of the world's largest flying parrot, cobalt from crown to tail.",
+        "body": "A bonded pair of the world's largest flying parrot, cobalt from crown to tail, greeting each other at their nest box.",
         "chips": [
           "★ TRIP STANDOUT",
           "BIRD"
         ],
         "flags": [],
         "star": true,
-        "taxon": "Bird"
+        "featured": true,
+        "taxon": "Bird",
+        "lat": -19.9537,
+        "lng": -56.3052
       },
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "jabiru",
-        "subjectId": "jabiru",
-        "kind": "species",
-        "src": "assets/photos/jabiru.jpg",
-        "thumb": "assets/photos/jabiru.jpg",
-        "alt": "Jabiru — Jabiru mycteria",
-        "pinLabel": "Jabiru",
-        "kicker": "Emblem",
-        "title": "Tallest bird in the Americas",
-        "body": "The tallest flying bird in the Americas, stalking wet grassland with its great upturned bill.",
+        "key": "dsc03048-2c964dc19e",
+        "photoId": "dsc03048-2c964dc19e",
+        "kind": "photo",
+        "src": "assets/photos/dsc03048-2c964dc19e-card.jpg",
+        "thumb": "assets/photos/dsc03048-2c964dc19e-thumb.jpg",
+        "alt": "Two of a kind",
+        "pinLabel": "Two of a kind",
+        "kicker": "Cobalt",
+        "title": "Two of a kind",
+        "body": "The same bonded pair of hyacinth macaws, perched together in a tree above the trail.",
         "chips": [
-          "BIRD"
+          "PANTANAL"
         ],
         "flags": [],
         "star": false,
-        "taxon": "Bird"
+        "featured": false,
+        "taxon": "",
+        "lat": -19.953611,
+        "lng": -56.305278
       },
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "caracara",
-        "subjectId": "caracara",
-        "kind": "species",
-        "src": "assets/photos/caracara.jpg",
-        "thumb": "assets/photos/caracara.jpg",
-        "alt": "Southern Crested Caracara — Caracara plancus",
-        "pinLabel": "Southern Crested Caracara",
-        "kicker": "Tug of war",
-        "title": "Two falcons and a snake",
-        "body": "Two caracaras in a tug-of-war over a snake — falcons that behave like bold ground-striding opportunists.",
+        "key": "dsc03126-88b5051d8f",
+        "photoId": "dsc03126-88b5051d8f",
+        "kind": "photo",
+        "src": "assets/photos/dsc03126-88b5051d8f-card.jpg",
+        "thumb": "assets/photos/dsc03126-88b5051d8f-thumb.jpg",
+        "alt": "An armored shuffle",
+        "pinLabel": "An armored shuffle",
+        "kicker": "Backlit",
+        "title": "An armored shuffle",
+        "body": "A six-banded armadillo shuffling through the evening grass, backlit by the low sun.",
         "chips": [
-          "BIRD"
+          "PANTANAL"
         ],
         "flags": [],
         "star": false,
-        "taxon": "Bird"
+        "featured": false,
+        "taxon": "",
+        "lat": -19.96178,
+        "lng": -56.30743
       },
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "vulture",
-        "subjectId": "vulture",
-        "kind": "species",
-        "src": "assets/photos/vulture.jpg",
-        "thumb": "assets/photos/vulture.jpg",
-        "alt": "Lesser Yellow-headed Vulture — Cathartes burrovianus",
-        "pinLabel": "Lesser Yellow-headed Vulture",
-        "kicker": "Low over the marsh",
-        "title": "The yellow-headed one",
-        "body": "A marsh-and-grassland vulture that quarters low over open country, finding carrion by scent.",
-        "chips": [
-          "BIRD"
-        ],
-        "flags": [],
-        "star": false,
-        "taxon": "Bird"
-      },
-      {
-        "leg": "pantanal",
-        "legId": "pantanal",
-        "key": "owl",
+        "key": "dsc03163-3cc1154027",
+        "photoId": "dsc03163-3cc1154027",
         "subjectId": "owl",
-        "kind": "species",
-        "src": "assets/photos/owl.jpg",
-        "thumb": "assets/photos/owl.jpg",
+        "kind": "photo",
+        "src": "assets/photos/dsc03163-3cc1154027-card.jpg",
+        "thumb": "assets/photos/dsc03163-3cc1154027-thumb.jpg",
         "alt": "Burrowing Owl — Athene cunicularia",
         "pinLabel": "Burrowing Owl",
         "kicker": "Daylight owl",
@@ -433,67 +1317,314 @@
         ],
         "flags": [],
         "star": false,
-        "taxon": "Bird"
+        "featured": false,
+        "taxon": "Bird",
+        "lat": -19.97261,
+        "lng": -56.31298
       },
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "cardinal",
-        "subjectId": "cardinal",
-        "kind": "species",
-        "src": "assets/photos/cardinal.jpg",
-        "thumb": "assets/photos/cardinal.jpg",
-        "alt": "Yellow-billed Cardinal — Paroaria capitata",
-        "pinLabel": "Yellow-billed Cardinal",
-        "kicker": "Not a cardinal",
-        "title": "Red, white and black",
-        "body": "A crisp red, white and black songbird atop a flowering shrub. Despite the name, it's a tanager.",
+        "key": "dsc03373-b333a464af",
+        "photoId": "dsc03373-b333a464af",
+        "subjectId": "marshdeer",
+        "kind": "photo",
+        "src": "assets/photos/dsc03373-b333a464af-card.jpg",
+        "thumb": "assets/photos/dsc03373-b333a464af-thumb.jpg",
+        "alt": "Marsh Deer — Blastocerus dichotomus",
+        "pinLabel": "Marsh Deer",
+        "kicker": "Full antler",
+        "title": "The continent's largest deer",
+        "body": "A buck in full antler -- the continent's largest deer, a wetland specialist now classed Vulnerable.",
         "chips": [
-          "BIRD"
+          "MAMMAL"
         ],
         "flags": [],
         "star": false,
-        "taxon": "Bird"
+        "featured": false,
+        "taxon": "Mammal",
+        "lat": -19.8869,
+        "lng": -56.2553
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "dsc03598-34f873b708",
+        "photoId": "dsc03598-34f873b708",
+        "kind": "photo",
+        "src": "assets/photos/dsc03598-34f873b708-card.jpg",
+        "thumb": "assets/photos/dsc03598-34f873b708-thumb.jpg",
+        "alt": "Walking straight at us",
+        "pinLabel": "Walking straight at us",
+        "kicker": "Second encounter",
+        "title": "Walking straight at us",
+        "body": "A second jaguar sighting -- this one stalking low through the grass, headed straight for the vehicle.",
+        "chips": [
+          "PANTANAL"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": true,
+        "taxon": "",
+        "lat": -19.89901,
+        "lng": -56.22534
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "dsc03604-4beb5186b0",
+        "photoId": "dsc03604-4beb5186b0",
+        "kind": "photo",
+        "src": "assets/photos/dsc03604-4beb5186b0-card.jpg",
+        "thumb": "assets/photos/dsc03604-4beb5186b0-thumb.jpg",
+        "alt": "A few strides closer",
+        "pinLabel": "A few strides closer",
+        "kicker": "Closing in",
+        "title": "A few strides closer",
+        "body": "The same jaguar, unbothered by the safari jeep, closing the distance step by step.",
+        "chips": [
+          "PANTANAL"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -19.898889,
+        "lng": -56.225278
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "dsc03644-0c2df1f3b0",
+        "photoId": "dsc03644-0c2df1f3b0",
+        "kind": "photo",
+        "src": "assets/photos/dsc03644-0c2df1f3b0-card.jpg",
+        "thumb": "assets/photos/dsc03644-0c2df1f3b0-thumb.jpg",
+        "alt": "A calm portrait",
+        "pinLabel": "A calm portrait",
+        "kicker": "At rest",
+        "title": "A calm portrait",
+        "body": "The jaguar settled into the grass after its approach -- a rare, close, calm portrait.",
+        "chips": [
+          "PANTANAL"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": true,
+        "taxon": "",
+        "lat": -19.898889,
+        "lng": -56.225278
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "dsc03693-b9cefa2a24",
+        "photoId": "dsc03693-b9cefa2a24",
+        "kind": "photo",
+        "src": "assets/photos/dsc03693-b9cefa2a24-card.jpg",
+        "thumb": "assets/photos/dsc03693-b9cefa2a24-thumb.jpg",
+        "alt": "Back into the grass",
+        "pinLabel": "Back into the grass",
+        "kicker": "Moving on",
+        "title": "Back into the grass",
+        "body": "The jaguar continuing its patrol, melting back into the tall grass.",
+        "chips": [
+          "PANTANAL"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -19.898889,
+        "lng": -56.225278
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
+        "key": "img-2943-a44dcc0191",
+        "photoId": "img-2943-a44dcc0191",
+        "kind": "photo",
+        "src": "assets/photos/img-2943-a44dcc0191-card.jpg",
+        "thumb": "assets/photos/img-2943-a44dcc0191-thumb.jpg",
+        "alt": "Wetland gold",
+        "pinLabel": "Wetland gold",
+        "kicker": "Day's end",
+        "title": "Wetland gold",
+        "body": "The Pantanal's wetland lagoon glowing gold at sunset -- a quiet close to a wildlife-packed day.",
+        "chips": [
+          "PANTANAL"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -19.858461,
+        "lng": -56.273975
       }
     ],
     "rio": [
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "rio_01",
+        "key": "img-2987-667ad4dec1",
+        "photoId": "img-2987-667ad4dec1",
         "subjectId": "rio_01",
-        "kind": "placeholder",
+        "kind": "photo",
+        "src": "assets/photos/img-2987-667ad4dec1-card.jpg",
+        "thumb": "assets/photos/img-2987-667ad4dec1-thumb.jpg",
         "alt": "Copacabana, finally",
         "pinLabel": "Copacabana, finally",
         "kicker": "Sea level",
         "title": "Copacabana, finally",
-        "body": "[Your caption here] — the mountains behind, the Atlantic in front.",
+        "body": "The mountains behind, the Atlantic in front -- our first view of Rio from the hotel balcony.",
         "chips": [
           "RIO DE JANEIRO"
         ],
         "flags": [],
         "star": false,
+        "featured": false,
         "taxon": "",
-        "ph": "DROP IN — RIO_HERO.JPG · BEACH FROM ABOVE"
+        "lat": -22.982433,
+        "lng": -43.189542
       },
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "rio_02",
-        "subjectId": "rio_02",
-        "kind": "placeholder",
-        "alt": "Last light over the bay",
-        "pinLabel": "Last light over the bay",
-        "kicker": "The finale",
-        "title": "Last light over the bay",
-        "body": "[Your caption here] — one more climb, one more view, then home.",
+        "key": "img-3012-f3f2f77e30",
+        "photoId": "img-3012-f3f2f77e30",
+        "kind": "photo",
+        "src": "assets/photos/img-3012-f3f2f77e30-card.jpg",
+        "thumb": "assets/photos/img-3012-f3f2f77e30-thumb.jpg",
+        "alt": "The city lit up gold",
+        "pinLabel": "The city lit up gold",
+        "kicker": "Golden hour",
+        "title": "The city lit up gold",
+        "body": "Rio's bay and skyline lit gold from the top of Sugarloaf Mountain at sunset.",
         "chips": [
           "RIO DE JANEIRO"
         ],
         "flags": [],
         "star": false,
+        "featured": true,
         "taxon": "",
-        "ph": "DROP IN — RIO_02.JPG · SUGARLOAF AT DUSK"
+        "lat": -22.949572,
+        "lng": -43.156475
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "img-3036-ff2e8b950a",
+        "photoId": "img-3036-ff2e8b950a",
+        "kind": "photo",
+        "src": "assets/photos/img-3036-ff2e8b950a-card.jpg",
+        "thumb": "assets/photos/img-3036-ff2e8b950a-thumb.jpg",
+        "alt": "At the feet of Christ the Redeemer",
+        "pinLabel": "At the feet of Christ the Redeemer",
+        "kicker": "Arms wide",
+        "title": "At the feet of Christ the Redeemer",
+        "body": "The whole family at the base of Christ the Redeemer, high above the city on Corcovado.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": true,
+        "taxon": "",
+        "lat": -22.951869,
+        "lng": -43.210208
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "img-3045-pano-324cd55f7e",
+        "photoId": "img-3045-pano-324cd55f7e",
+        "kind": "photo",
+        "src": "assets/photos/img-3045-pano-324cd55f7e-card.jpg",
+        "thumb": "assets/photos/img-3045-pano-324cd55f7e-thumb.jpg",
+        "alt": "Rio, spread out below",
+        "pinLabel": "Rio, spread out below",
+        "kicker": "The wide view",
+        "title": "Rio, spread out below",
+        "body": "A sweeping panorama from Corcovado -- beaches, bay, and mountains laid out in one frame.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -22.951847,
+        "lng": -43.209992
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "img-3048-f69c034177",
+        "photoId": "img-3048-f69c034177",
+        "kind": "photo",
+        "src": "assets/photos/img-3048-f69c034177-card.jpg",
+        "thumb": "assets/photos/img-3048-f69c034177-thumb.jpg",
+        "alt": "Together at the top",
+        "pinLabel": "Together at the top",
+        "kicker": "The summit",
+        "title": "Together at the top",
+        "body": "The family at the summit platform, Christ the Redeemer towering just behind us.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -22.951847,
+        "lng": -43.209997
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "img-3055-e7ec0d3edb",
+        "photoId": "img-3055-e7ec0d3edb",
+        "kind": "photo",
+        "src": "assets/photos/img-3055-e7ec0d3edb-card.jpg",
+        "thumb": "assets/photos/img-3055-e7ec0d3edb-thumb.jpg",
+        "alt": "Almost straight up",
+        "pinLabel": "Almost straight up",
+        "kicker": "Looking up",
+        "title": "Almost straight up",
+        "body": "Standing right at the statue's base, looking up at its outstretched arms.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "lat": -22.951839,
+        "lng": -43.210053
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "img-3099-588118d4f1",
+        "photoId": "img-3099-588118d4f1",
+        "subjectId": "rio_02",
+        "kind": "photo",
+        "src": "assets/photos/img-3099-588118d4f1-card.jpg",
+        "thumb": "assets/photos/img-3099-588118d4f1-thumb.jpg",
+        "alt": "Last light over the bay",
+        "pinLabel": "Last light over the bay",
+        "kicker": "The finale",
+        "title": "Last light over the bay",
+        "body": "One more Rio sunset over Copacabana Beach -- one more view, then home.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": true,
+        "taxon": "",
+        "lat": -22.982231,
+        "lng": -43.190322
       },
       {
         "leg": "rio",

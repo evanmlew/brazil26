@@ -638,7 +638,7 @@ class Component extends DCLogic {
       // push the region right of the title column so pin + sight circles never sit on the copy
       if (st.mode === 'cover') { go({ center:[leg.lng, leg.lat], zoom:7.4, offset:[Math.round(w * 0.21), Math.round(h * -0.02)] }); return; }
       const c = this.coords[(this.list[st.pos] || {}).key];
-      go(c ? { center:[c.lng, c.lat], zoom:9.6 } : { center:[leg.lng, leg.lat], zoom:6.6 });
+      go(c ? { center:[c.lng, c.lat], zoom:12.4 } : { center:[leg.lng, leg.lat], zoom:6.6 });
     } catch (e) { console.warn('camera skipped:', (e && e.message) || e); }
   }
 
