@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brazil 2026 | Journal photo review</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="photo-review.css">
+</head>
+<body>
+  <header class="review-header">
+    <div>
+      <p class="eyebrow">Brazil ’26 · private workflow</p>
+      <h1>Journal photo review</h1>
+      <p>Choose the exported photo folder, tag each frame to a leg and optional subject, then download the durable overlay file.</p>
+    </div>
+    <div class="actions">
+      <label class="button">Choose photo folder<input id="folder-input" type="file" webkitdirectory multiple></label>
+      <label class="button secondary">Import edits<input id="edits-input" type="file" accept=".json,application/json"></label>
+      <button class="button" id="download-button" type="button">Download edits</button>
+    </div>
+  </header>
+  <main>
+    <p id="status" class="status">Loading catalog…</p>
+    <div id="group-list" class="group-list"></div>
+  </main>
+
+  <datalist id="subject-options"></datalist>
+
+  <template id="group-template">
+    <section class="photo-group">
+      <div class="group-heading">
+        <div>
+          <p class="group-kicker"></p>
+          <h2 class="group-title"></h2>
+        </div>
+        <span class="group-count"></span>
+      </div>
+      <div class="group-grid"></div>
+    </section>
+  </template>
+
+  <template id="photo-template">
+    <article class="photo-card">
+      <div class="preview"><span class="placeholder">Choose the export folder to preview</span><img alt="" loading="lazy"></div>
+      <div class="photo-copy">
+        <div class="card-heading">
+          <strong class="filename"></strong>
+          <span class="order-controls"><button type="button" data-move="-1" aria-label="Move photo up">↑</button><button type="button" data-move="1" aria-label="Move photo down">↓</button></span>
+        </div>
+        <div class="badge-row technical"></div>
+        <div class="badge-row flags"></div>
+        <div class="three-up">
+          <label>Trip leg<select data-field="legId"></select></label>
+          <label>Subject ID<input data-field="subjectId" type="text" list="subject-options" placeholder="jaguar, macaw, rio_01…"></label>
+          <label>Location<input data-field="locationName" type="text"></label>
+        </div>
+        <div class="two-up">
+          <label>Kicker<input data-field="kicker" type="text"></label>
+          <label>Species<input data-field="species" type="text"></label>
+        </div>
+        <label>Title<input data-field="title" type="text"></label>
+        <label>Body<textarea data-field="body" rows="3"></textarea></label>
+        <div class="three-up">
+          <label>Chips <small>(comma separated)</small><input data-field="chips" type="text"></label>
+          <label>Tags <small>(comma separated)</small><input data-field="tags" type="text"></label>
+          <label>Confidence<input data-field="confidence" type="text" placeholder="confirmed, probable…"></label>
+        </div>
+        <div class="checks">
+          <label class="check"><input data-field="featured" type="checkbox"> Featured stop thumb</label>
+          <label class="check"><input data-field="star" type="checkbox"> ★ Trip standout</label>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="photo-review.js?v=1"></script>
+</body>
+</html>
