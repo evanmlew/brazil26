@@ -34,23 +34,20 @@ main { max-width: 1600px; margin: auto; padding: 1.2rem clamp(1rem, 5vw, 5rem) 4
 .photo-card.excluded { opacity: .55; }
 .photo-card.excluded .preview { filter: grayscale(1); }
 
-.preview { aspect-ratio: 1.5; background: #d9d6cf; overflow: hidden; }
+.preview { position: relative; aspect-ratio: 1.5; background: #d9d6cf; overflow: hidden; }
 .preview img { display: block; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.filename-overlay { position: absolute; left: 0; right: 0; bottom: 0; padding: .3rem .5rem; background: linear-gradient(transparent, rgba(0, 0, 0, .65)); color: #fff; font-size: .72rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; pointer-events: none; }
 
 .photo-copy { display: grid; gap: .55rem; padding: .8rem; }
-.filename { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: .8rem; }
 .photo-copy label { display: grid; gap: .2rem; color: var(--muted); font-size: .72rem; font-weight: 700; }
 .photo-copy label small { font-weight: 400; text-transform: none; letter-spacing: 0; }
 .feedback-field { background: #fff8e1; border: 1px solid #f0d98c; border-radius: .3rem; padding: .5rem; color: #7a5d00; }
 .feedback-field textarea { background: #fffdf5; }
 .photo-copy input, .photo-copy textarea { width: 100%; border: 1px solid var(--border); border-radius: .25rem; padding: .45rem; background: #fff; color: var(--ink); font: inherit; font-size: .85rem; font-weight: 400; resize: vertical; }
-.photo-copy textarea[data-field="body"] { min-height: 6.5rem; }
+.photo-copy textarea[data-field="body"] { min-height: 4rem; }
 .two-up { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
 
-.card-heading { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
 .captured-at { color: var(--muted); font-size: .72rem; }
-.check { display: flex !important; flex-direction: row !important; align-items: center; gap: .3rem; white-space: nowrap; }
-.check input { width: auto; }
 
 .exclude-toggle { border: 1px solid var(--border); border-radius: .25rem; background: var(--paper); color: var(--ink); cursor: pointer; padding: .45rem; font-size: .75rem; font-weight: 700; }
 .excluded .exclude-toggle { background: var(--coral); color: #fff; border-color: var(--coral); }
