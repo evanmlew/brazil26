@@ -11,7 +11,7 @@ python -m http.server 8000
 
 - `index.html` — the journal experience. The design/runtime stays inline here; it now fetches `data/trip.json` first and falls back to the embedded mockup data if the JSON is missing.
 - `support.js` — the dc-runtime bundle from the handoff. Do not edit.
-- `photo-review.html` / `.css` / `.js` — local-only browser review tool for tagging real exports (auto-loads previews, drag-and-drop reorder/section-assignment, Save button).
+- `photo-review.html` / `.css` / `.js` — local-only browser review tool for tagging real exports (auto-loads previews, drag-and-drop reorder/section-assignment, Save button). The CSS/JS are loaded with a `?v=N` cache-busting query string in `photo-review.html` — **bump that number whenever you edit `.css`/`.js`**, or a browser tab left open from an earlier session can load a stale script against the new HTML and throw errors like "Cannot set properties of null".
 - `review_server.py` — local dev server (serves this folder + a `POST /api/save-edits` route the review tool's Save button calls, which also rebuilds `data/trip.json`). Local-only, never published.
 - `data/legs.json` — trip legs, palettes, stop-thumb defaults, and sequence order.
 - `data/narrative.json` — species + placeholder narrative entries keyed by `subjectId`.
@@ -44,12 +44,14 @@ python review_server.py
 ```
 
 The review page loads every photo automatically — no folder picker needed, since `photos\` is already right here. Each card shows the photo's real capture date, time, and timezone (e.g. "Jul 13, 2026 · 7:44 AM · UTC-03:00"), read from the catalog's `date`/`utcOffset` fields — this is read-only context, not an editable field. Photos are grouped into sections for each destination (São Paulo, Amazon, Pantanal, Rio). For each photo, fill in:
-- **Location** (`kicker`) — the place name, e.g. "Clearwater river"
 - **Subject** (`title`) — a short headline, e.g. "The otter on the boulder"
 - **Caption** (`body`) — a sentence or two of story/context
 - **Species** — the animal's common name where known, e.g. "Neotropical Otter"
 - **Narrative link** (`subjectId`, optional) — bind a frame to an entry in `data/narrative.json` (`jaguar`, `sp_01`, `closing`, etc.) to inherit its kicker/title/body
 - **Latitude / Longitude** — pre-filled from EXIF GPS; edit if the GPS was wrong or missing
+- **Feedback for next edit pass** — a private note-to-Copilot field, e.g. "wrong animal", "make this punchier". See "Feedback field workflow" below.
+
+There is no **Location** field in the review page anymore (the new design drops the kicker line from photo pages — see `reference/` handoff in the design mockups). The underlying `kicker` key still exists in the data model for backward compatibility, but nothing writes to it going forward.
 
 Drag a photo to reorder it within a section, or drag it into a different section to reassign its destination — a placeholder shows exactly where it will land. Use **Exclude from site** on any photo you don't want published; it stays in the catalog but `build_trip_content.py` leaves it out of `trip.json`. Click **Save** to write straight to `data\photo-edits.json` (a `.bak` backup of the previous version is kept automatically) **and immediately rebuild `data\trip.json`**, so reloading the journal at `http://localhost:8000/index.html` shows the change right away — no separate build step needed. **Download backup** / **Import edits** are the manual fallback if you're not running the server.
 
@@ -70,10 +72,20 @@ Then preview the site locally at `http://localhost:8000/index.html` (the review 
 
 - `subjectId` binds a real photo to an existing narrative slot from `data/narrative.json`, so a tagged frame can inherit the already-written kicker/title/body.
 - `body` is the canonical long-caption field in Journal. The review tool and merge script also accept legacy `caption` values if they ever appear in imported edits.
-- `featured` controls which real photo becomes a stop thumbnail when a leg has tagged real images.
+- `featured` controls which real photo becomes a stop thumbnail when a leg has tagged real images. There is no checkbox for this in the review UI (removed for a cleaner card); set it directly in `data/photo-edits.json` or ask Copilot to flip it for a specific photo.
 - `star` maps to the `★ TRIP STANDOUT` chip.
 - `excluded` (set via the review tool's Exclude toggle) removes a photo from `trip.json` without deleting it from the catalog or overlay.
 - `species` is a free-text common name (e.g. "Jaguar"); not yet surfaced on the public site, but carried through the merge pipeline for future use.
+- `feedback` is a private note field the reviewer uses to leave instructions for the next editing pass (e.g. "wrong animal", "make punchier"). It is **never** read by `build_trip_content.py` and never appears on the site — see "Feedback field workflow" below.
+
+## Feedback field workflow
+
+The **Feedback for next edit pass** box on each photo card is how the reviewer hands off notes without writing finished prose themselves. When asked to "process feedback" or "apply my notes":
+
+1. Read the full current `data/photo-edits.json` and find every photo with a non-empty `feedback` value.
+2. For each one, look at its current `title`/`body` (and `species`, `subjectId`, the image itself, and surrounding sequence context if relevant) and rewrite `title`/`body` to address the note — following the editorial checklist below (always name the animal/plant in the visible text, keep the sequence coherent).
+3. Clear the `feedback` value once it's been addressed (set it to `""`) so it doesn't get reprocessed or confused with a new note later.
+4. Rebuild `data/trip.json`, commit, and push per "Publishing to GitHub Pages" below.
 
 ## Editorial checklist (read this before writing/reviewing captions)
 

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Brazil 2026 | Journal photo review</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="photo-review.css">
+  <link rel="stylesheet" href="photo-review.css?v=3">
 </head>
 <body>
   <header class="review-header">
@@ -36,16 +36,14 @@
   </template>
   <template id="photo-template">
     <article class="photo-card" draggable="true">
-      <div class="preview"><img alt="" loading="lazy"></div>
+      <div class="preview">
+        <img alt="" loading="lazy">
+        <span class="filename-overlay"></span>
+      </div>
       <div class="photo-copy">
-        <div class="card-heading">
-          <strong class="filename"></strong>
-          <label class="check featured-check"><input data-field="featured" type="checkbox"> ★ Featured</label>
-        </div>
         <div class="captured-at"></div>
-        <label>Location<input data-field="kicker" type="text" placeholder="Where was this taken? e.g. “Downtown São Paulo”"></label>
         <label>Subject<input data-field="title" type="text" placeholder="Short headline, e.g. “The otter on the boulder”"></label>
-        <label>Caption<textarea data-field="body" rows="5" placeholder="A sentence or two of story or context"></textarea></label>
+        <label>Caption<textarea data-field="body" rows="3" placeholder="A sentence or two of story or context"></textarea></label>
         <div class="two-up">
           <label>Species<input data-field="species" type="text" placeholder="e.g. Neotropical Otter"></label>
           <label>Narrative link <small>(optional)</small><input data-field="subjectId" type="text" placeholder="e.g. otter, sp_01"></label>
@@ -54,10 +52,11 @@
           <label>Latitude<input data-field="latitude" type="number" step="any" placeholder="e.g. -9.5875"></label>
           <label>Longitude<input data-field="longitude" type="number" step="any" placeholder="e.g. -55.9306"></label>
         </div>
+        <label class="feedback-field">Feedback for next edit pass <small>(not published — tell Copilot what to change)</small><textarea data-field="feedback" rows="2" placeholder="e.g. “make this punchier”, “wrong animal”, “merge with the otter caption”"></textarea></label>
         <button type="button" class="exclude-toggle">Exclude from site</button>
       </div>
     </article>
   </template>
-  <script src="photo-review.js"></script>
+  <script src="photo-review.js?v=3"></script>
 </body>
 </html>

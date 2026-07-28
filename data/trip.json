@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-27T21:43:28-07:00",
+  "generatedAt": "2026-07-27T22:19:25-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",
@@ -274,11 +274,11 @@
         "kind": "photo",
         "src": "assets/photos/img-2725-6305f2bb1d-card.jpg",
         "thumb": "assets/photos/img-2725-6305f2bb1d-thumb.jpg",
-        "alt": "The city as canvas",
-        "pinLabel": "The city as canvas",
+        "alt": "The view from MASP",
+        "pinLabel": "The view from MASP",
         "kicker": "Street level",
-        "title": "The city as canvas",
-        "body": "Bold murals wrapped around a downtown building, São Paulo's street-art scene on full display.",
+        "title": "The view from MASP",
+        "body": "Looking out from MASP -- Sao Paulo's red museum on stilts -- toward a mural-wrapped building nearby, the city's street-art scene on full display.",
         "chips": [
           "SÃO PAULO"
         ],
@@ -325,7 +325,7 @@
         "pinLabel": "Dinner, and a plan",
         "kicker": "First night",
         "title": "Dinner, and a plan",
-        "body": "Churrasco at Figueira Rubaiyat under the giant fig tree -- the meal that set the tone for two weeks.",
+        "body": "A Brazilian steak dinner to remember at Figueira Rubaiyat -- picanha, ribeye, palm heart, and pitu shrimp piled high, the meal that set the tone for two weeks.",
         "chips": [
           "SÃO PAULO"
         ],
@@ -465,7 +465,7 @@
         "pinLabel": "Through the high canopy",
         "kicker": "On the move",
         "title": "Through the high canopy",
-        "body": "The spider monkey troop moved fast through the treetops, swinging branch to branch just ahead of us.",
+        "body": "The spider monkey troop moved fast through the treetops -- our guide said some of the younger ones had never seen humans before and were more curious than afraid, pausing to watch us as we watched them.",
         "chips": [
           "AMAZON"
         ],
@@ -629,7 +629,7 @@
         "pinLabel": "Neotropical Otter",
         "kicker": "Clearwater river",
         "title": "The otter on the boulder",
-        "body": "A neotropical otter hauled out on a midstream boulder to eat, working the Cristalino's clearwater in low light.",
+        "body": "A neotropical otter hauled out on a midstream boulder, grabbing fish with its paws -- we watched it catch seven in a row, working the Cristalino's clearwater in low light.",
         "chips": [
           "MAMMAL"
         ],
@@ -676,7 +676,7 @@
         "pinLabel": "Right outside our door",
         "kicker": "Uninvited guest",
         "title": "Right outside our door",
-        "body": "Stepped outside at night and found a capybara grazing a few feet from our room.",
+        "body": "Returning from a hike, we found a capybara grazing a few feet from our room -- close enough to touch.",
         "chips": [
           "AMAZON"
         ],
@@ -820,7 +820,7 @@
         "pinLabel": "Jaguar",
         "kicker": "The headline",
         "title": "A cub in daylight",
-        "body": "The headline of the trip: a six-month-old jaguar cub, walking a clearing in daylight.",
+        "body": "The headline of the trip: a six-month-old jaguar cub trailing close behind its mother, skittish of us in a way she wasn't.",
         "chips": [
           "★ TRIP STANDOUT",
           "MAMMAL"
@@ -843,9 +843,9 @@
         "thumb": "assets/photos/dsc02518-ce2a3afa3c-thumb.jpg",
         "alt": "South American Tapir — Tapirus terrestris",
         "pinLabel": "South American Tapir",
-        "kicker": "Golden hour",
+        "kicker": "Midday",
         "title": "Gardener of the forest",
-        "body": "South America's largest land mammal -- known locally as the Brazilian tapir -- browsing in the open at golden hour.",
+        "body": "South America's largest land mammal -- known locally as the Brazilian tapir -- out and browsing in the open at midday. Notoriously shy and difficult to track, this was a rare, clear look at one.",
         "chips": [
           "MAMMAL"
         ],
@@ -866,9 +866,9 @@
         "thumb": "assets/photos/dsc02568-35e7ef7c09-thumb.jpg",
         "alt": "An eight-legged crossing",
         "pinLabel": "An eight-legged crossing",
-        "kicker": "On the trail",
+        "kicker": "From the jeep",
         "title": "An eight-legged crossing",
-        "body": "A tarantula crossing the path during a walk around the lodge grounds.",
+        "body": "A tarantula crossing the track during a safari drive through the Pantanal grounds.",
         "chips": [
           "PANTANAL"
         ],
@@ -892,7 +892,7 @@
         "pinLabel": "Southern Crested Caracara",
         "kicker": "Tug of war",
         "title": "The early bird gets the snake",
-        "body": "Two southern crested caracaras in a tug-of-war over a snake -- falcons that behave like bold, ground-striding opportunists.",
+        "body": "Two southern crested caracaras in a tug-of-war over a snake -- technically part of the falcon family, but nothing like a typical falcon: bold, ground-striding opportunists that scavenge as much as they hunt.",
         "chips": [
           "BIRD"
         ],
@@ -939,7 +939,7 @@
         "pinLabel": "Yellow-billed Cardinal",
         "kicker": "Not a cardinal",
         "title": "Red, white and black",
-        "body": "A yellow-billed cardinal atop a flowering shrub, crisp red, white and black -- despite the name, it's actually a tanager.",
+        "body": "A yellow-billed cardinal atop a flowering shrub, crisp red, white and black -- despite the name, it's actually a tanager, not a true cardinal.",
         "chips": [
           "BIRD"
         ],
@@ -1009,8 +1009,8 @@
         "alt": "Lesser Yellow-headed Vulture — Cathartes burrovianus",
         "pinLabel": "Lesser Yellow-headed Vulture",
         "kicker": "Low over the marsh",
-        "title": "The yellow-headed one",
-        "body": "A trio of lesser yellow-headed vultures, a species that quarters low over open country, finding carrion by scent.",
+        "title": "Waiting for a meal",
+        "body": "A trio of lesser yellow-headed vultures waiting on carrion, patient scavengers that quarter low over open country, sniffing out their next meal.",
         "chips": [
           "BIRD"
         ],
@@ -1026,21 +1026,23 @@
         "legId": "pantanal",
         "key": "dsc03048-2c964dc19e",
         "photoId": "dsc03048-2c964dc19e",
+        "subjectId": "macaw",
         "kind": "photo",
         "src": "assets/photos/dsc03048-2c964dc19e-card.jpg",
         "thumb": "assets/photos/dsc03048-2c964dc19e-thumb.jpg",
-        "alt": "Two of a kind",
-        "pinLabel": "Two of a kind",
+        "alt": "Hyacinth Macaw — Anodorhynchus hyacinthinus",
+        "pinLabel": "Hyacinth Macaw",
         "kicker": "Cobalt",
         "title": "Two of a kind",
-        "body": "The same bonded pair of hyacinth macaws, perched together in a tree above the trail.",
+        "body": "A bonded pair of hyacinth macaws -- the world's largest flying parrot, cobalt from crown to tail -- perched together in a tree above the trail.",
         "chips": [
-          "PANTANAL"
+          "★ TRIP STANDOUT",
+          "BIRD"
         ],
         "flags": [],
-        "star": false,
+        "star": true,
         "featured": false,
-        "taxon": "",
+        "taxon": "Bird",
         "lat": -19.953611,
         "lng": -56.305278
       },
@@ -1123,11 +1125,11 @@
         "kind": "photo",
         "src": "assets/photos/dsc03598-34f873b708-card.jpg",
         "thumb": "assets/photos/dsc03598-34f873b708-thumb.jpg",
-        "alt": "Giving him room",
-        "pinLabel": "Giving him room",
+        "alt": "Sneaking closer",
+        "pinLabel": "Sneaking closer",
         "kicker": "Second encounter",
-        "title": "Giving him room",
-        "body": "A second jaguar sighting -- this time a pair. The female picking her way carefully around a much larger male.",
+        "title": "Sneaking closer",
+        "body": "A second jaguar sighting -- this time a pair. The female creeping quietly toward us through the grass, wary but drawing near, the much larger male trailing behind.",
         "chips": [
           "PANTANAL"
         ],
@@ -1173,7 +1175,7 @@
         "pinLabel": "Following her",
         "kicker": "Moving on",
         "title": "Following her",
-        "body": "The male trailing after the female, clearly intent on mating.",
+        "body": "The male trailing after the female, intent on mating.",
         "chips": [
           "PANTANAL"
         ],
@@ -1314,7 +1316,7 @@
         "pinLabel": "Almost straight up",
         "kicker": "Looking up",
         "title": "Almost straight up",
-        "body": "Standing right at the statue's base, looking up at its outstretched arms.",
+        "body": "Standing right at the base of Christ the Redeemer atop Corcovado, looking straight up at its outstretched arms.",
         "chips": [
           "RIO DE JANEIRO"
         ],

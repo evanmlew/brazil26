@@ -109,7 +109,7 @@ function buildCard(photo) {
   const card = $("#photo-template").content.cloneNode(true);
   const root = card.querySelector(".photo-card");
   root.dataset.id = photo.id;
-  root.querySelector(".filename").textContent = photo.filename;
+  root.querySelector(".filename-overlay").textContent = photo.filename;
   root.querySelector(".captured-at").textContent = formatCaptured(photo) || "No capture timestamp found";
   root.querySelector(".preview img").src = `photos/${encodeURIComponent(photo.filename)}`;
   root.querySelector(".preview img").alt = photo.filename;

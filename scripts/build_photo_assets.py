@@ -9,10 +9,10 @@ from pathlib import Path
 from PIL import Image, ImageOps
 
 
-def derivative(image: Image.Image, longest_edge: int, output: Path) -> None:
+def derivative(image: Image.Image, longest_edge: int, output: Path, quality: int = 88) -> None:
     normalized = ImageOps.exif_transpose(image).convert("RGB")
     normalized.thumbnail((longest_edge, longest_edge), Image.Resampling.LANCZOS)
-    normalized.save(output, "JPEG", quality=88, optimize=True, progressive=True)
+    normalized.save(output, "JPEG", quality=quality, optimize=True, progressive=True)
 
 
 def main() -> None:
@@ -32,7 +32,9 @@ def main() -> None:
         card_name = f"{photo['id']}-card.jpg"
         thumb_name = f"{photo['id']}-thumb.jpg"
         with Image.open(source) as image:
-            derivative(image, 1200, args.output / card_name)
+            # "card" is used full-bleed on the site, not just in a small grid card,
+            # so it needs headroom for retina displays (~2x a 1440px-wide pane).
+            derivative(image, 3000, args.output / card_name, quality=80)
             derivative(image, 360, args.output / thumb_name)
         photo["assets"] = {
             "original": "",
