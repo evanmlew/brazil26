@@ -8,7 +8,7 @@
 </head>
 <body>
 <x-dc>
-<helmet><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet"><link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet"><script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script><style>html,body{margin:0;height:100%;background:#0b131c;overflow:hidden;overscroll-behavior:none}a{color:#F0504A}a:hover{color:#B23A48}*{-webkit-tap-highlight-color:transparent}.maplibregl-ctrl-attrib{font-size:9px;background:rgba(255,255,255,.55)!important}@keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.14)}}@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}@media (prefers-reduced-motion:reduce){.kb{animation:none!important}}.hbar{scrollbar-width:none;-ms-overflow-style:none}.hbar::-webkit-scrollbar{display:none}.attr-off .maplibregl-ctrl-attrib,.attr-off .maplibregl-ctrl-attrib-button{display:none!important}
+<helmet><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet"><link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet"><script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script><style>html,body{margin:0;height:100%;background:#0b131c;overflow:hidden;overscroll-behavior:none}a{color:#F0504A}a:hover{color:#B23A48}*{-webkit-tap-highlight-color:transparent}.maplibregl-ctrl-attrib{font-size:9px;background:rgba(255,255,255,.55)!important}@keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.14)}}@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}@media (prefers-reduced-motion:reduce){.kb{animation:none!important}}.hbar{scrollbar-width:none;-ms-overflow-style:none}.hbar::-webkit-scrollbar{display:none}.attr-off .maplibregl-ctrl-attrib,.attr-off .maplibregl-ctrl-attrib-button{display:none!important}@media (max-width:700px){.cover-hero{background-position:20% 42%!important}}
 @keyframes pulseRing{0%{transform:scale(.55);opacity:.9}100%{transform:scale(2.7);opacity:0}}
 @media (prefers-reduced-motion:reduce){.pring{animation:none!important;opacity:0!important}}</style></helmet>
 
@@ -45,7 +45,7 @@
 </sc-if>
 <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,12,18,.46) 0%,rgba(6,12,18,0) 24%,rgba(6,12,18,.04) 58%,rgba(6,12,18,.95) 100%)"></div>
 <div style="position:absolute;left:clamp(20px,4vw,56px);right:clamp(20px,4vw,56px);bottom:clamp(22px,3.4vh,40px);max-width:680px;display:flex;flex-direction:column">
-<div style="font:800 clamp(26px,3vw,40px)/1.06 Poppins,sans-serif;color:#fff;text-wrap:balance">{{ s.title }}</div>
+<div style="font:800 clamp(24px,2.7vw,36px)/1.06 Poppins,sans-serif;color:#fff;text-wrap:balance">{{ s.title }}</div>
 <div style="font:400 13px/1.7 Poppins,sans-serif;color:rgba(255,255,255,.84);margin-top:12px;max-width:52ch;text-wrap:pretty">{{ s.body }}</div>
 <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:16px">
 <sc-for list="{{ s.chips }}" as="c" hint-placeholder-count="2">
@@ -70,7 +70,7 @@
 </div>
 
 <div style="position:absolute;inset:0;z-index:5;overflow:hidden;background:#0b131c;transition:transform .7s cubic-bezier(.32,.72,0,1),opacity .5s ease;{{ introLayer }}">
-<div class="kb" role="img" aria-label="Opening cover photo" style="position:absolute;inset:0;background-image:url('assets/photos/cover.jpg');background-size:cover;background-position:52% 46%;animation:kb 22s ease-out both"></div>
+<div class="kb cover-hero" role="img" aria-label="Opening cover photo" style="position:absolute;inset:0;background-image:url('assets/photos/cover.jpg');background-size:cover;background-position:52% 46%;animation:kb 22s ease-out both"></div>
 <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(6,12,18,.9) 0%,rgba(6,12,18,.46) 34%,rgba(6,12,18,0) 64%)"></div>
 <div style="position:absolute;top:26px;left:0;right:0;display:grid;place-items:center"><span style="font:500 9px ui-monospace,Menlo,monospace;letter-spacing:.18em;color:rgba(255,255,255,.5)">BRAZIL 2026 · {{ tripRange }}</span></div>
 <div style="position:absolute;left:clamp(24px,5vw,72px);right:clamp(24px,5vw,72px);bottom:clamp(46px,9vh,92px);max-width:780px;display:flex;flex-direction:column;animation:fadeUp 1s ease both">
