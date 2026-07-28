@@ -41,6 +41,8 @@ main { max-width: 1600px; margin: auto; padding: 1.2rem clamp(1rem, 5vw, 5rem) 4
 .filename { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: .8rem; }
 .photo-copy label { display: grid; gap: .2rem; color: var(--muted); font-size: .72rem; font-weight: 700; }
 .photo-copy label small { font-weight: 400; text-transform: none; letter-spacing: 0; }
+.feedback-field { background: #fff8e1; border: 1px solid #f0d98c; border-radius: .3rem; padding: .5rem; color: #7a5d00; }
+.feedback-field textarea { background: #fffdf5; }
 .photo-copy input, .photo-copy textarea { width: 100%; border: 1px solid var(--border); border-radius: .25rem; padding: .45rem; background: #fff; color: var(--ink); font: inherit; font-size: .85rem; font-weight: 400; resize: vertical; }
 .photo-copy textarea[data-field="body"] { min-height: 6.5rem; }
 .two-up { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
