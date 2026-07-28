@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-28T07:49:52-07:00",
+  "generatedAt": "2026-07-28T07:51:06-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",
@@ -322,11 +322,11 @@
         "kind": "photo",
         "src": "assets/photos/img-2727-eb2812d5c2-card.jpg",
         "thumb": "assets/photos/img-2727-eb2812d5c2-thumb.jpg",
-        "alt": "Dinner, and a plan",
-        "pinLabel": "Dinner, and a plan",
+        "alt": "Dinner under the fig tree",
+        "pinLabel": "Dinner under the fig tree",
         "kicker": "First night",
-        "title": "Dinner, and a plan",
-        "body": "A Brazilian steak dinner to remember at Figueira Rubaiyat -- picanha, ribeye, palm heart, and pitu shrimp piled high, the meal that set the tone for two weeks.",
+        "title": "Dinner under the fig tree",
+        "body": "A Brazilian steak dinner to remember at Figueira Rubaiyat -- built around a massive fig tree in the dining room -- picanha, ribeye, palm heart, and pitu shrimp piled high.",
         "chips": [
           "SÃO PAULO"
         ],
@@ -400,7 +400,7 @@
         "pinLabel": "Fifteen minutes in",
         "kicker": "First boat tour",
         "title": "Fifteen minutes in",
-        "body": "A Harpy Eagle perched over the river -- one of the rarest raptors in the Amazon, spotted just fifteen minutes into our very first boat tour.",
+        "body": "Fifteen minutes into our very first boat tour, and already a Harpy Eagle -- the most powerful raptor in the Americas -- watching us from a branch over the river.",
         "chips": [
           "AMAZON"
         ],
@@ -448,7 +448,7 @@
         "pinLabel": "A wary eye",
         "kicker": "Overhead",
         "title": "A wary eye",
-        "body": "One of the spider monkey troop pausing mid-branch, keeping a wary eye on us below.",
+        "body": "One of the spider monkey troop pausing mid-branch, keeping a wary eye on us below. Thumbless, they are built to swing by their tails instead.",
         "chips": [
           "AMAZON"
         ],
@@ -643,7 +643,7 @@
         "pinLabel": "Neotropical Otter",
         "kicker": "Clearwater river",
         "title": "The otter on the boulder",
-        "body": "A neotropical otter hauled out on a midstream boulder, grabbing fish with its paws -- we watched it catch seven in a row, working the Cristalino's clearwater in low light.",
+        "body": "A neotropical otter hauled out on a midstream boulder, grabbing fish with its paws -- we watched it catch seven in a row in the Cristalino river.",
         "chips": [
           "MAMMAL"
         ],
@@ -667,8 +667,8 @@
         "alt": "Yellow-spotted River Turtle — Podocnemis unifilis",
         "pinLabel": "Yellow-spotted River Turtle",
         "kicker": "Sun and salt",
-        "title": "A turtle and its butterflies",
-        "body": "A yellow-spotted river turtle basking on a river rock, attended by butterflies and bees drinking its tears -- a hunt for minerals scarce in the Amazon.",
+        "title": "The taricaya's tears",
+        "body": "Locals call it the taricaya: a yellow-spotted river turtle basking on a rock while butterflies and bees drink its tears, hunting minerals scarce in the Amazon.",
         "chips": [
           "REPTILE"
         ],
@@ -941,7 +941,7 @@
         "pinLabel": "Ancient and unbothered",
         "kicker": "Eye level",
         "title": "Ancient and unbothered",
-        "body": "A yacare caiman resting at the water's edge, close enough to count every scale.",
+        "body": "A yacare caiman resting at the water's edge, close enough to count every scale. Hunted hard for its hide in the 1980s, the species has since rebounded to some 10 million strong across the Pantanal.",
         "chips": [
           "PANTANAL"
         ],
@@ -1015,7 +1015,7 @@
         "pinLabel": "Napping in the open",
         "kicker": "Unbothered",
         "title": "Napping in the open",
-        "body": "A capybara stretched out and dozing in the grass, completely unfazed by our jeep.",
+        "body": "The world's largest rodent doesn't hurry for anyone — this one stayed stretched out and dozing in the grass, completely unfazed by our jeep.",
         "chips": [
           "PANTANAL"
         ],
