@@ -32,10 +32,10 @@
       "legId": "saopaulo",
       "order": 3,
       "kicker": "First night",
-      "title": "Dinner, and a plan",
-      "body": "A Brazilian steak dinner to remember at Figueira Rubaiyat -- picanha, ribeye, palm heart, and pitu shrimp piled high, the meal that set the tone for two weeks.",
+      "body": "A Brazilian steak dinner to remember at Figueira Rubaiyat -- built around a massive fig tree in the dining room -- picanha, ribeye, palm heart, and pitu shrimp piled high.",
       "subjectId": "sp_02",
-      "feedback": ""
+      "feedback": "",
+      "title": "Dinner under the fig tree"
     },
     "img-2735-e03fed57a0": {
       "legId": "amazon",
@@ -58,7 +58,7 @@
       "order": 2,
       "kicker": "First boat tour",
       "title": "Fifteen minutes in",
-      "body": "A Harpy Eagle perched over the river -- one of the rarest raptors in the Amazon, spotted just fifteen minutes into our very first boat tour.",
+      "body": "Fifteen minutes into our very first boat tour, and already a Harpy Eagle -- the most powerful raptor in the Americas -- watching us from a branch over the river.",
       "featured": false,
       "species": "Harpy Eagle"
     },
@@ -86,7 +86,7 @@
       "order": 5,
       "kicker": "Overhead",
       "title": "A wary eye",
-      "body": "One of the spider monkey troop pausing mid-branch, keeping a wary eye on us below.",
+      "body": "One of the spider monkey troop pausing mid-branch, keeping a wary eye on us below. Thumbless, they are built to swing by their tails instead.",
       "featured": false,
       "species": "Spider Monkey"
     },
@@ -174,7 +174,7 @@
       "order": 15,
       "kicker": "Clearwater river",
       "title": "The otter on the boulder",
-      "body": "A neotropical otter hauled out on a midstream boulder, grabbing fish with its paws -- we watched it catch seven in a row, working the Cristalino's clearwater in low light.",
+      "body": "A neotropical otter hauled out on a midstream boulder, grabbing fish with its paws -- we watched it catch seven in a row in the Cristalino river.",
       "featured": true,
       "subjectId": "otter",
       "species": "Neotropical Otter",
@@ -184,8 +184,8 @@
       "legId": "amazon",
       "order": 16,
       "kicker": "Sun and salt",
-      "title": "A turtle and its butterflies",
-      "body": "A yellow-spotted river turtle basking on a river rock, attended by butterflies and bees drinking its tears -- a hunt for minerals scarce in the Amazon.",
+      "title": "The taricaya's tears",
+      "body": "Locals call it the taricaya: a yellow-spotted river turtle basking on a rock while butterflies and bees drink its tears, hunting minerals scarce in the Amazon.",
       "featured": true,
       "subjectId": "turtle",
       "species": "Yellow-spotted River Turtle"
@@ -315,7 +315,7 @@
       "order": 8,
       "kicker": "Eye level",
       "title": "Ancient and unbothered",
-      "body": "A yacare caiman resting at the water's edge, close enough to count every scale.",
+      "body": "A yacare caiman resting at the water's edge, close enough to count every scale. Hunted hard for its hide in the 1980s, the species has since rebounded to some 10 million strong across the Pantanal.",
       "featured": false,
       "species": "Yacare Caiman"
     },
@@ -355,7 +355,7 @@
       "order": 12,
       "kicker": "Unbothered",
       "title": "Napping in the open",
-      "body": "A capybara stretched out and dozing in the grass, completely unfazed by our jeep.",
+      "body": "The world's largest rodent doesn't hurry for anyone — this one stayed stretched out and dozing in the grass, completely unfazed by our jeep.",
       "featured": false,
       "species": "Capybara"
     },
