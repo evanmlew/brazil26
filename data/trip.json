@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-27T23:03:29-07:00",
+  "generatedAt": "2026-07-28T07:57:26-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",
@@ -203,10 +203,6 @@
     "img-3045-pano-324cd55f7e": [
       -22.951847,
       -43.209992
-    ],
-    "img-3048-f69c034177": [
-      -22.951847,
-      -43.209997
     ],
     "img-3055-e7ec0d3edb": [
       -22.951839,
@@ -737,11 +733,11 @@
         "kind": "photo",
         "src": "assets/photos/dsc02142-b9512dbadf-card.jpg",
         "thumb": "assets/photos/dsc02142-b9512dbadf-thumb.jpg",
-        "alt": "The mist lifts",
-        "pinLabel": "The mist lifts",
+        "alt": "The forest exhales",
+        "pinLabel": "The forest exhales",
         "kicker": "Same view, minutes later",
-        "title": "The mist lifts",
-        "body": "Another look from the Cristalino Lodge observation deck, morning mist still clinging to the canopy.",
+        "title": "The forest exhales",
+        "body": "Another look from the Cristalino Lodge observation deck -- Amazon trees release so much water vapor through transpiration that scientists call the resulting moisture flow a 'flying river'; this is what it looks like at first light, still pooled in the canopy before the sun burns it off.",
         "chips": [
           "AMAZON"
         ],
@@ -816,9 +812,9 @@
         "thumb": "assets/photos/dsc02339-7046609984-thumb.jpg",
         "alt": "Jabiru — Jabiru mycteria",
         "pinLabel": "Jabiru",
-        "kicker": "Emblem",
-        "title": "Tallest bird in the Americas",
-        "body": "A Jabiru stork -- the tallest flying bird in the Americas -- stalking wet grassland with its great upturned bill.",
+        "kicker": "Catch of the day",
+        "title": "The Pantanal's emblem",
+        "body": "A Jabiru stork -- the tallest flying bird in the Americas, and widely considered the Pantanal's own emblem -- pulling a fresh crab from the grass with its great upturned bill.",
         "chips": [
           "BIRD"
         ],
@@ -917,7 +913,7 @@
         "alt": "Southern Crested Caracara — Caracara plancus",
         "pinLabel": "Southern Crested Caracara",
         "kicker": "Tug of war",
-        "title": "The early bird gets the snake",
+        "title": "Early bird gets the snake",
         "body": "Two southern crested caracaras in a tug-of-war over a snake -- technically part of the falcon family, but nothing like a typical falcon: bold, ground-striding opportunists that scavenge as much as they hunt.",
         "chips": [
           "BIRD"
@@ -967,7 +963,7 @@
         "pinLabel": "Yellow-billed Cardinal",
         "kicker": "Not a cardinal",
         "title": "Red, white and black",
-        "body": "A yellow-billed cardinal atop a flowering shrub, crisp red, white and black -- despite the name, it's actually a tanager, not a true cardinal.",
+        "body": "A yellow-billed cardinal atop a flowering shrub, crisp red, white and black. The name's a bit of a misnomer -- it's actually a tanager, not a true cardinal.",
         "chips": [
           "BIRD"
         ],
@@ -1327,39 +1323,15 @@
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "img-3048-f69c034177",
-        "photoId": "img-3048-f69c034177",
-        "kind": "photo",
-        "src": "assets/photos/img-3048-f69c034177-card.jpg",
-        "thumb": "assets/photos/img-3048-f69c034177-thumb.jpg",
-        "alt": "Together at the top",
-        "pinLabel": "Together at the top",
-        "kicker": "The summit",
-        "title": "Together at the top",
-        "body": "The family at the summit platform, Christ the Redeemer towering just behind us.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
-        "flags": [],
-        "star": false,
-        "featured": false,
-        "taxon": "",
-        "species": "",
-        "lat": -22.951847,
-        "lng": -43.209997
-      },
-      {
-        "leg": "rio",
-        "legId": "rio",
         "key": "img-3055-e7ec0d3edb",
         "photoId": "img-3055-e7ec0d3edb",
         "kind": "photo",
         "src": "assets/photos/img-3055-e7ec0d3edb-card.jpg",
         "thumb": "assets/photos/img-3055-e7ec0d3edb-thumb.jpg",
-        "alt": "Almost straight up",
-        "pinLabel": "Almost straight up",
+        "alt": "Under open arms",
+        "pinLabel": "Under open arms",
         "kicker": "Looking up",
-        "title": "Almost straight up",
+        "title": "Under open arms",
         "body": "Standing right at the base of Christ the Redeemer atop Corcovado, looking straight up at its outstretched arms.",
         "chips": [
           "RIO DE JANEIRO"

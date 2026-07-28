@@ -203,10 +203,11 @@
       "legId": "amazon",
       "order": 20,
       "kicker": "Same view, minutes later",
-      "title": "The mist lifts",
-      "body": "Another look from the Cristalino Lodge observation deck, morning mist still clinging to the canopy.",
+      "title": "The forest exhales",
+      "body": "Another look from the Cristalino Lodge observation deck -- Amazon trees release so much water vapor through transpiration that scientists call the resulting moisture flow a 'flying river'; this is what it looks like at first light, still pooled in the canopy before the sun burns it off.",
       "featured": false,
-      "excluded": false
+      "excluded": false,
+      "feedback": ""
     },
     "img-2833-6183673d45": {
       "legId": "amazon",
@@ -250,12 +251,13 @@
     "dsc02339-7046609984": {
       "legId": "pantanal",
       "order": 2,
-      "kicker": "Emblem",
-      "title": "Tallest bird in the Americas",
-      "body": "A Jabiru stork -- the tallest flying bird in the Americas -- stalking wet grassland with its great upturned bill.",
+      "kicker": "Catch of the day",
+      "title": "The Pantanal's emblem",
+      "body": "A Jabiru stork -- the tallest flying bird in the Americas, and widely considered the Pantanal's own emblem -- pulling a fresh crab from the grass with its great upturned bill.",
       "featured": true,
       "subjectId": "jabiru",
-      "species": "Jabiru"
+      "species": "Jabiru",
+      "feedback": ""
     },
     "dsc02472-9377b7cd29": {
       "legId": "pantanal",
@@ -303,7 +305,7 @@
       "legId": "pantanal",
       "order": 7,
       "kicker": "Tug of war",
-      "title": "The early bird gets the snake",
+      "title": "Early bird gets the snake",
       "body": "Two southern crested caracaras in a tug-of-war over a snake -- technically part of the falcon family, but nothing like a typical falcon: bold, ground-striding opportunists that scavenge as much as they hunt.",
       "featured": false,
       "subjectId": "caracara",
@@ -324,7 +326,7 @@
       "order": 9,
       "kicker": "Not a cardinal",
       "title": "Red, white and black",
-      "body": "A yellow-billed cardinal atop a flowering shrub, crisp red, white and black -- despite the name, it's actually a tanager, not a true cardinal.",
+      "body": "A yellow-billed cardinal atop a flowering shrub, crisp red, white and black. The name's a bit of a misnomer -- it's actually a tanager, not a true cardinal.",
       "featured": false,
       "subjectId": "cardinal",
       "species": "Yellow-billed Cardinal",
@@ -507,13 +509,14 @@
       "kicker": "The summit",
       "title": "Together at the top",
       "body": "The family at the summit platform, Christ the Redeemer towering just behind us.",
-      "featured": false
+      "featured": false,
+      "excluded": true
     },
     "img-3055-e7ec0d3edb": {
       "legId": "rio",
       "order": 6,
       "kicker": "Looking up",
-      "title": "Almost straight up",
+      "title": "Under open arms",
       "body": "Standing right at the base of Christ the Redeemer atop Corcovado, looking straight up at its outstretched arms.",
       "featured": false,
       "feedback": ""
