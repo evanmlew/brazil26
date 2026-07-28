@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-28T07:57:26-07:00",
+  "generatedAt": "2026-07-28T07:58:18-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",
@@ -207,8 +207,7 @@
     "img-3055-e7ec0d3edb": [
       -22.951839,
       -43.210053
-    ],
-    "closing": null
+    ]
   },
   "legs": [
     {
@@ -1343,27 +1342,6 @@
         "species": "",
         "lat": -22.951839,
         "lng": -43.210053
-      },
-      {
-        "leg": "rio",
-        "legId": "rio",
-        "key": "closing",
-        "subjectId": "closing",
-        "kind": "placeholder",
-        "alt": "4 stops · 15 species · one trip",
-        "pinLabel": "4 stops · 15 species · one trip",
-        "kicker": "Brazil 2026",
-        "title": "4 stops · 15 species · one trip",
-        "body": "Thank you for coming along. Shot on an iPhone and a Sony A7CR — sixteen days, four thousand kilometres.",
-        "chips": [
-          "iPHONE",
-          "SONY A7CR"
-        ],
-        "flags": [],
-        "star": false,
-        "taxon": "",
-        "species": "",
-        "ph": "DROP IN — CLOSING.JPG · FAMILY PORTRAIT"
       }
     ]
   }
