@@ -23,17 +23,19 @@
       "legId": "saopaulo",
       "order": 0,
       "kicker": "Street level",
-      "title": "The city as canvas",
-      "body": "Bold murals wrapped around a downtown building, São Paulo's street-art scene on full display.",
-      "featured": true
+      "title": "The view from MASP",
+      "body": "Looking out from MASP -- Sao Paulo's red museum on stilts -- toward a mural-wrapped building nearby, the city's street-art scene on full display.",
+      "featured": true,
+      "feedback": ""
     },
     "img-2727-eb2812d5c2": {
       "legId": "saopaulo",
       "order": 3,
       "kicker": "First night",
       "title": "Dinner, and a plan",
-      "body": "Churrasco at Figueira Rubaiyat under the giant fig tree -- the meal that set the tone for two weeks.",
-      "subjectId": "sp_02"
+      "body": "A Brazilian steak dinner to remember at Figueira Rubaiyat -- picanha, ribeye, palm heart, and pitu shrimp piled high, the meal that set the tone for two weeks.",
+      "subjectId": "sp_02",
+      "feedback": ""
     },
     "img-2735-e03fed57a0": {
       "legId": "amazon",
@@ -93,9 +95,10 @@
       "order": 6,
       "kicker": "On the move",
       "title": "Through the high canopy",
-      "body": "The spider monkey troop moved fast through the treetops, swinging branch to branch just ahead of us.",
+      "body": "The spider monkey troop moved fast through the treetops -- our guide said some of the younger ones had never seen humans before and were more curious than afraid, pausing to watch us as we watched them.",
       "featured": false,
-      "species": "Spider Monkey"
+      "species": "Spider Monkey",
+      "feedback": ""
     },
     "dsc00870-9aac893b45": {
       "legId": "amazon",
@@ -171,10 +174,11 @@
       "order": 15,
       "kicker": "Clearwater river",
       "title": "The otter on the boulder",
-      "body": "A neotropical otter hauled out on a midstream boulder to eat, working the Cristalino's clearwater in low light.",
+      "body": "A neotropical otter hauled out on a midstream boulder, grabbing fish with its paws -- we watched it catch seven in a row, working the Cristalino's clearwater in low light.",
       "featured": true,
       "subjectId": "otter",
-      "species": "Neotropical Otter"
+      "species": "Neotropical Otter",
+      "feedback": ""
     },
     "dsc02014-38d46678fe": {
       "legId": "amazon",
@@ -209,9 +213,10 @@
       "order": 17,
       "kicker": "Uninvited guest",
       "title": "Right outside our door",
-      "body": "Stepped outside at night and found a capybara grazing a few feet from our room.",
+      "body": "Returning from a hike, we found a capybara grazing a few feet from our room -- close enough to touch.",
       "featured": true,
-      "species": "Capybara"
+      "species": "Capybara",
+      "feedback": ""
     },
     "img-2858-f8c29392c9": {
       "legId": "amazon",
@@ -257,29 +262,32 @@
       "order": 3,
       "kicker": "The headline",
       "title": "A cub in daylight",
-      "body": "The headline of the trip: a six-month-old jaguar cub, walking a clearing in daylight.",
+      "body": "The headline of the trip: a six-month-old jaguar cub trailing close behind its mother, skittish of us in a way she wasn't.",
       "featured": true,
       "subjectId": "jaguar",
-      "species": "Jaguar"
+      "species": "Jaguar",
+      "feedback": ""
     },
     "dsc02518-ce2a3afa3c": {
       "legId": "pantanal",
       "order": 4,
-      "kicker": "Golden hour",
+      "kicker": "Midday",
       "title": "Gardener of the forest",
-      "body": "South America's largest land mammal -- known locally as the Brazilian tapir -- browsing in the open at golden hour.",
+      "body": "South America's largest land mammal -- known locally as the Brazilian tapir -- out and browsing in the open at midday. Notoriously shy and difficult to track, this was a rare, clear look at one.",
       "featured": false,
       "subjectId": "tapir",
-      "species": "South American Tapir"
+      "species": "South American Tapir",
+      "feedback": ""
     },
     "dsc02568-35e7ef7c09": {
       "legId": "pantanal",
       "order": 5,
-      "kicker": "On the trail",
+      "kicker": "From the jeep",
       "title": "An eight-legged crossing",
-      "body": "A tarantula crossing the path during a walk around the lodge grounds.",
+      "body": "A tarantula crossing the track during a safari drive through the Pantanal grounds.",
       "featured": false,
-      "species": "Tarantula"
+      "species": "Tarantula",
+      "feedback": ""
     },
     "dsc02602-a26a0ffd49": {
       "legId": "pantanal",
@@ -296,10 +304,11 @@
       "order": 7,
       "kicker": "Tug of war",
       "title": "The early bird gets the snake",
-      "body": "Two southern crested caracaras in a tug-of-war over a snake -- falcons that behave like bold, ground-striding opportunists.",
+      "body": "Two southern crested caracaras in a tug-of-war over a snake -- technically part of the falcon family, but nothing like a typical falcon: bold, ground-striding opportunists that scavenge as much as they hunt.",
       "featured": false,
       "subjectId": "caracara",
-      "species": "Southern Crested Caracara"
+      "species": "Southern Crested Caracara",
+      "feedback": ""
     },
     "dsc02834-20b5f5556f": {
       "legId": "pantanal",
@@ -315,10 +324,11 @@
       "order": 9,
       "kicker": "Not a cardinal",
       "title": "Red, white and black",
-      "body": "A yellow-billed cardinal atop a flowering shrub, crisp red, white and black -- despite the name, it's actually a tanager.",
+      "body": "A yellow-billed cardinal atop a flowering shrub, crisp red, white and black -- despite the name, it's actually a tanager, not a true cardinal.",
       "featured": false,
       "subjectId": "cardinal",
-      "species": "Yellow-billed Cardinal"
+      "species": "Yellow-billed Cardinal",
+      "feedback": ""
     },
     "dsc02921-8268c02429": {
       "legId": "pantanal",
@@ -353,11 +363,12 @@
       "legId": "pantanal",
       "order": 13,
       "kicker": "Low over the marsh",
-      "title": "The yellow-headed one",
-      "body": "A trio of lesser yellow-headed vultures, a species that quarters low over open country, finding carrion by scent.",
+      "title": "Waiting for a meal",
+      "body": "A trio of lesser yellow-headed vultures waiting on carrion, patient scavengers that quarter low over open country, sniffing out their next meal.",
       "featured": false,
       "subjectId": "vulture",
-      "species": "Lesser Yellow-headed Vulture"
+      "species": "Lesser Yellow-headed Vulture",
+      "feedback": ""
     },
     "dsc03044-db26f9d1c4": {
       "legId": "pantanal",
@@ -375,9 +386,11 @@
       "order": 15,
       "kicker": "Cobalt",
       "title": "Two of a kind",
-      "body": "The same bonded pair of hyacinth macaws, perched together in a tree above the trail.",
+      "body": "A bonded pair of hyacinth macaws -- the world's largest flying parrot, cobalt from crown to tail -- perched together in a tree above the trail.",
       "featured": false,
-      "species": "Hyacinth Macaw"
+      "species": "Hyacinth Macaw",
+      "feedback": "",
+      "subjectId": "macaw"
     },
     "dsc03126-88b5051d8f": {
       "legId": "pantanal",
@@ -412,10 +425,11 @@
       "legId": "pantanal",
       "order": 19,
       "kicker": "Second encounter",
-      "title": "Giving him room",
-      "body": "A second jaguar sighting -- this time a pair. The female picking her way carefully around a much larger male.",
+      "title": "Sneaking closer",
+      "body": "A second jaguar sighting -- this time a pair. The female creeping quietly toward us through the grass, wary but drawing near, the much larger male trailing behind.",
       "featured": true,
-      "species": "Jaguar"
+      "species": "Jaguar",
+      "feedback": ""
     },
     "dsc03604-4beb5186b0": {
       "legId": "pantanal",
@@ -441,7 +455,7 @@
       "order": 22,
       "kicker": "Moving on",
       "title": "Following her",
-      "body": "The male trailing after the female, clearly intent on mating.",
+      "body": "The male trailing after the female, intent on mating.",
       "featured": false,
       "species": "Jaguar"
     },
@@ -500,8 +514,9 @@
       "order": 6,
       "kicker": "Looking up",
       "title": "Almost straight up",
-      "body": "Standing right at the statue's base, looking up at its outstretched arms.",
-      "featured": false
+      "body": "Standing right at the base of Christ the Redeemer atop Corcovado, looking straight up at its outstretched arms.",
+      "featured": false,
+      "feedback": ""
     },
     "img-3099-588118d4f1": {
       "legId": "rio",
