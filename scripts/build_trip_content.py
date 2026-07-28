@@ -135,6 +135,7 @@ def stock_slide(subject_id: str, subject: dict[str, Any], coords_lookup: dict[st
         "flags": as_list(subject.get("flags")),
         "star": bool(subject.get("star")),
         "taxon": subject.get("taxon", ""),
+        "species": subject.get("common", "") if subject.get("kind") == "species" else "",
         "ph": subject.get("ph", "") or "",
         "lat": lat,
         "lng": lng,
@@ -151,11 +152,13 @@ def stock_slide(subject_id: str, subject: dict[str, Any], coords_lookup: dict[st
 
 
 def real_slide(photo: dict[str, Any], subject: dict[str, Any] | None, leg: dict[str, Any]) -> dict[str, Any]:
-    src = ((photo.get("assets") or {}).get("card") or (subject or {}).get("stockPhoto") or "").strip()
-    thumb = ((photo.get("assets") or {}).get("thumb") or (subject or {}).get("stockPhoto") or "").strip()
+    assets = photo.get("assets") or {}
+    src = (assets.get("card") or (subject or {}).get("stockPhoto") or "").strip()
+    thumb = (assets.get("thumb") or (subject or {}).get("stockPhoto") or "").strip()
     title = photo.get("title") or (subject or {}).get("title") or photo.get("locationName") or "Awaiting title"
     body = photo.get("body") or (subject or {}).get("body") or "[Your caption here]"
     kicker = photo.get("kicker") or (subject or {}).get("kicker") or "Awaiting caption"
+    species = photo.get("species") or ((subject or {}).get("common") if (subject or {}).get("kind") == "species" else "") or ""
     slide = {
         "leg": leg["id"],
         "legId": leg["id"],
@@ -175,6 +178,7 @@ def real_slide(photo: dict[str, Any], subject: dict[str, Any] | None, leg: dict[
         "star": bool(photo.get("star") or (subject or {}).get("star")),
         "featured": bool(photo.get("featured")),
         "taxon": (subject or {}).get("taxon") or "",
+        "species": species,
         "lat": finite_number(photo.get("latitude")),
         "lng": finite_number(photo.get("longitude")),
     }

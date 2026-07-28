@@ -8,7 +8,9 @@
 </head>
 <body>
 <x-dc>
-<helmet><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet"><link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet"><script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script><style>html,body{margin:0;height:100%;background:#0b131c;overflow:hidden;overscroll-behavior:none}a{color:#F0504A}a:hover{color:#B23A48}*{-webkit-tap-highlight-color:transparent}.maplibregl-ctrl-attrib{font-size:9px;background:rgba(255,255,255,.55)!important}@keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.14)}}@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}@media (prefers-reduced-motion:reduce){.kb{animation:none!important}}.hbar{scrollbar-width:none;-ms-overflow-style:none}.hbar::-webkit-scrollbar{display:none}.attr-off .maplibregl-ctrl-attrib,.attr-off .maplibregl-ctrl-attrib-button{display:none!important}</style></helmet>
+<helmet><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet"><link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet"><script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script><style>html,body{margin:0;height:100%;background:#0b131c;overflow:hidden;overscroll-behavior:none}a{color:#F0504A}a:hover{color:#B23A48}*{-webkit-tap-highlight-color:transparent}.maplibregl-ctrl-attrib{font-size:9px;background:rgba(255,255,255,.55)!important}@keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.14)}}@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}@media (prefers-reduced-motion:reduce){.kb{animation:none!important}}.hbar{scrollbar-width:none;-ms-overflow-style:none}.hbar::-webkit-scrollbar{display:none}.attr-off .maplibregl-ctrl-attrib,.attr-off .maplibregl-ctrl-attrib-button{display:none!important}
+@keyframes pulseRing{0%{transform:scale(.55);opacity:.9}100%{transform:scale(2.7);opacity:0}}
+@media (prefers-reduced-motion:reduce){.pring{animation:none!important;opacity:0!important}}</style></helmet>
 
 <div ref="{{ rootRef }}" style="position:fixed;inset:0;overflow:hidden;background:#0b131c;font-family:Poppins,system-ui,sans-serif">
 
@@ -41,10 +43,9 @@
 <div style="position:absolute;inset:0;{{ s.stripe }}"></div>
 <div style="position:absolute;top:76px;left:0;right:0;display:grid;place-items:center"><span style="font:500 9px ui-monospace,Menlo,monospace;letter-spacing:.14em;color:rgba(255,255,255,.34);text-align:center;border:1px dashed rgba(255,255,255,.22);border-radius:8px;padding:7px 12px">{{ s.ph }}</span></div>
 </sc-if>
-<div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,12,18,.5) 0%,rgba(6,12,18,0) 26%,rgba(6,12,18,.06) 42%,rgba(6,12,18,.93) 100%)"></div>
-<div style="position:absolute;left:clamp(20px,4vw,56px);right:clamp(20px,4vw,56px);bottom:9vh;max-width:680px;display:flex;flex-direction:column">
-<div style="font:700 22px Caveat,cursive;color:#F0504A;letter-spacing:.04em;text-transform:uppercase">{{ s.kicker }}</div>
-<div style="font:800 clamp(26px,3vw,40px)/1.06 Poppins,sans-serif;color:#fff;margin:8px 0 0;text-wrap:balance">{{ s.title }}</div>
+<div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,12,18,.46) 0%,rgba(6,12,18,0) 24%,rgba(6,12,18,.04) 58%,rgba(6,12,18,.95) 100%)"></div>
+<div style="position:absolute;left:clamp(20px,4vw,56px);right:clamp(20px,4vw,56px);bottom:clamp(22px,3.4vh,40px);max-width:680px;display:flex;flex-direction:column">
+<div style="font:800 clamp(26px,3vw,40px)/1.06 Poppins,sans-serif;color:#fff;text-wrap:balance">{{ s.title }}</div>
 <div style="font:400 13px/1.7 Poppins,sans-serif;color:rgba(255,255,255,.84);margin-top:12px;max-width:52ch;text-wrap:pretty">{{ s.body }}</div>
 <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:16px">
 <sc-for list="{{ s.chips }}" as="c" hint-placeholder-count="2">
@@ -55,21 +56,32 @@
 </div>
 </sc-for>
 </div>
+<div style="position:absolute;right:26px;top:50%;transform:translateY(-50%);z-index:4;display:flex;flex-direction:column;align-items:flex-end;gap:2px;transition:opacity .4s;{{ railStyle }}">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;margin-bottom:9px;{{ railHeadStyle }}">
+<div style="font:600 13px Poppins,sans-serif;letter-spacing:.02em;color:#F0504A;text-shadow:0 1px 6px rgba(0,0,0,.8);line-height:1">{{ railHead }}</div>
+<div style="width:11px;height:1px;background:rgba(255,255,255,.35)"></div>
+</div>
+<sc-for list="{{ ticks }}" as="t" hint-placeholder-count="5">
+<div onClick="{{ t.go }}" title="{{ t.name }}" style="cursor:pointer;padding:3px 7px;display:flex;justify-content:flex-end;align-items:center">
+<div style="width:2px;border-radius:1px;transition:height .3s ease,background .3s ease;{{ t.v }}"></div>
+</div>
+</sc-for>
+</div>
 </div>
 
 <div style="position:absolute;inset:0;z-index:5;overflow:hidden;background:#0b131c;transition:transform .7s cubic-bezier(.32,.72,0,1),opacity .5s ease;{{ introLayer }}">
 <div class="kb" role="img" aria-label="Opening cover photo" style="position:absolute;inset:0;background-image:url('assets/photos/cover.jpg');background-size:cover;background-position:52% 46%;animation:kb 22s ease-out both"></div>
 <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(6,12,18,.9) 0%,rgba(6,12,18,.46) 34%,rgba(6,12,18,0) 64%)"></div>
-<div style="position:absolute;top:26px;left:0;right:0;display:grid;place-items:center"><span style="font:500 9px ui-monospace,Menlo,monospace;letter-spacing:.18em;color:rgba(255,255,255,.5)">BRAZIL 2026 · 10–22 JULY</span></div>
+<div style="position:absolute;top:26px;left:0;right:0;display:grid;place-items:center"><span style="font:500 9px ui-monospace,Menlo,monospace;letter-spacing:.18em;color:rgba(255,255,255,.5)">BRAZIL 2026 · {{ tripRange }}</span></div>
 <div style="position:absolute;left:clamp(24px,5vw,72px);right:clamp(24px,5vw,72px);bottom:clamp(46px,9vh,92px);max-width:780px;display:flex;flex-direction:column;animation:fadeUp 1s ease both">
-<div style="font:700 clamp(22px,2.4vw,32px) Caveat,cursive;color:#F0504A;letter-spacing:.03em;text-transform:uppercase;line-height:1">Thirteen days south</div>
+<div style="font:700 clamp(22px,2.4vw,32px) Caveat,cursive;color:#F0504A;letter-spacing:.03em;text-transform:uppercase;line-height:1">{{ tripKicker }}</div>
 <div style="font:600 clamp(52px,8.4vw,116px)/.94 Poppins,sans-serif;letter-spacing:-.03em;color:#fff;margin:12px 0 0">Brazil 2026</div>
 <div style="display:flex;gap:clamp(16px,2.2vw,28px);align-items:center;margin-top:20px">
-<div style="font:500 11px Poppins,sans-serif;letter-spacing:.16em;color:rgba(255,255,255,.82)">13 DAYS</div>
+<div style="font:500 11px Poppins,sans-serif;letter-spacing:.16em;color:rgba(255,255,255,.82)">{{ tripDays }}</div>
 <div style="width:1px;height:13px;background:rgba(255,255,255,.28)"></div>
-<div style="font:500 11px Poppins,sans-serif;letter-spacing:.16em;color:rgba(255,255,255,.82)">4 STOPS</div>
+<div style="font:500 11px Poppins,sans-serif;letter-spacing:.16em;color:rgba(255,255,255,.82)">{{ tripStops }}</div>
 <div style="width:1px;height:13px;background:rgba(255,255,255,.28)"></div>
-<div style="font:500 11px Poppins,sans-serif;letter-spacing:.16em;color:rgba(255,255,255,.82)">15 SPECIES</div>
+<div style="font:500 11px Poppins,sans-serif;letter-spacing:.16em;color:rgba(255,255,255,.82)">{{ tripSpecies }}</div>
 </div>
 </div>
 <div style="position:absolute;right:clamp(24px,4vw,52px);bottom:clamp(30px,5vh,48px);display:flex;align-items:center;gap:10px;pointer-events:none;animation:fadeUp .9s ease both">
@@ -77,9 +89,7 @@
 </div>
 </div>
 
-<div style="position:absolute;top:16px;left:16px;z-index:8;background:rgba(255,255,255,.95);border-radius:999px;padding:5px 14px 5px 5px;display:flex;align-items:center;gap:9px;box-shadow:0 4px 16px rgba(0,0,0,.35);transition:opacity .4s;{{ brandStyle }}"><div style="width:24px;height:24px;border-radius:50%;background:repeating-linear-gradient(45deg,#B23A48 0 5px,#c85260 5px 10px)"></div><div style="font:700 12px Poppins,sans-serif;color:#12263A">Brazil 2026</div></div>
-
-<div onClick="{{ toggleFull }}" style="position:absolute;top:16px;right:16px;z-index:8;cursor:pointer;display:flex;align-items:center;gap:7px;background:rgba(11,19,28,.72);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 14px;font:600 9px Poppins,sans-serif;letter-spacing:.14em;color:#fff;transition:opacity .4s;{{ fullBtn }}">{{ fullBtnLabel }}</div>
+<div onClick="{{ toggleFull }}" title="{{ fullBtnTitle }}" style="position:absolute;z-index:8;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;background:rgba(11,19,28,.72);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22);color:#fff;transition:opacity .4s,right .7s cubic-bezier(.32,.72,0,1),background .25s;{{ fullBtn }}" style-hover="background:rgba(11,19,28,.92)">{{ fullBtnLabel }}</div>
 
 <div style="position:absolute;left:0;right:0;bottom:0;padding:0 18px 18px;z-index:6;transition:opacity .4s ease,transform .5s cubic-bezier(.32,.72,0,1);{{ stripLayer }}">
 <div class="hbar" style="background:rgba(11,19,28,.8);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:11px;display:grid;grid-template-columns:repeat(4,1fr);gap:9px;{{ stripGrid }}">
@@ -97,29 +107,44 @@
 </div>
 
 <div style="position:absolute;top:0;left:0;z-index:7;padding:18px 20px 0;pointer-events:none;transition:right .7s cubic-bezier(.32,.72,0,1),opacity .4s ease;{{ hudLayer }}">
-<div style="display:flex;gap:4px">
-<sc-for list="{{ bars }}" as="b" hint-placeholder-count="4">
-<div style="flex:1;height:2.5px;border-radius:2px;transition:background .3s;background:{{ b.c }}"></div>
-</sc-for>
-</div>
-<div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
-<div style="font:600 9px Poppins,sans-serif;letter-spacing:.18em;color:rgba(255,255,255,.8);text-shadow:0 1px 6px rgba(0,0,0,.7)">{{ chapterLabel }}</div>
-<div style="font:600 9px Poppins,sans-serif;letter-spacing:.14em;color:rgba(255,255,255,.5);text-shadow:0 1px 6px rgba(0,0,0,.7)">{{ counter }}</div>
-</div>
+<div style="font:600 9px Poppins,sans-serif;letter-spacing:.18em;color:rgba(255,255,255,.8);text-shadow:0 1px 6px rgba(0,0,0,.7);transition:opacity .3s;{{ chapterStyle }}">{{ chapterLabel }}</div>
 </div>
 
-<div style="position:absolute;z-index:7;display:flex;flex-direction:column;gap:10px;transition:right .7s cubic-bezier(.32,.72,0,1),bottom .4s ease,opacity .3s;{{ navLayer }}">
-<div onClick="{{ prev }}" style="cursor:pointer;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(8px);color:#fff;display:grid;place-items:center;font:600 15px Poppins,sans-serif">↑</div>
-<div onClick="{{ next }}" style="cursor:pointer;width:44px;height:44px;border-radius:50%;background:#fff;color:#12263A;display:grid;place-items:center;font:600 15px Poppins,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.35)">↓</div>
+<div style="position:absolute;z-index:7;display:flex;flex-direction:column;background:rgba(11,19,28,.5);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);border-radius:10px;overflow:hidden;transition:right .7s cubic-bezier(.32,.72,0,1),bottom .4s ease,opacity .3s;{{ zoomLayer }}" style-hover="opacity:1">
+<div onClick="{{ zoomIn }}" style="cursor:pointer;width:30px;height:30px;display:grid;place-items:center;font:300 17px Poppins,sans-serif;color:rgba(255,255,255,.8)" style-hover="background:rgba(255,255,255,.1)">+</div>
+<div style="height:1px;background:rgba(255,255,255,.12)"></div>
+<div onClick="{{ zoomOut }}" style="cursor:pointer;width:30px;height:30px;display:grid;place-items:center;font:300 17px Poppins,sans-serif;color:rgba(255,255,255,.8)" style-hover="background:rgba(255,255,255,.1)">−</div>
 </div>
 
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;enterStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;slide&quot;,&quot;parallax&quot;,&quot;fade&quot;],&quot;default&quot;:&quot;slide&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Title → photos transition&quot;},&quot;photoFit&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;smart&quot;,&quot;bleed&quot;,&quot;fit&quot;,&quot;crop&quot;],&quot;default&quot;:&quot;smart&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Photos&quot;},&quot;cameraMove&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;direct&quot;,&quot;arc&quot;],&quot;default&quot;:&quot;direct&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Map&quot;},&quot;mapLabels&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Map&quot;},&quot;mapWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:34,&quot;min&quot;:26,&quot;max&quot;:44,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;enterStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;slide&quot;,&quot;parallax&quot;,&quot;fade&quot;],&quot;default&quot;:&quot;slide&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Title → photos transition&quot;},&quot;photoFit&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;smart&quot;,&quot;bleed&quot;,&quot;fit&quot;,&quot;crop&quot;],&quot;default&quot;:&quot;smart&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Photos&quot;},&quot;chapterMark&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;rail&quot;,&quot;label&quot;,&quot;none&quot;],&quot;default&quot;:&quot;rail&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Photos&quot;},&quot;dotExpand&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;fan&quot;,&quot;stack&quot;],&quot;default&quot;:&quot;fan&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Map&quot;},&quot;cameraMove&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;direct&quot;,&quot;arc&quot;],&quot;default&quot;:&quot;direct&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Map&quot;},&quot;mapLabels&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Map&quot;},&quot;mapWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:25,&quot;min&quot;:20,&quot;max&quot;:44,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
 const NAVY = '#12263A', CORAL = '#F0504A';
 const stripe = (a,b,w) => `background:repeating-linear-gradient(135deg,${a} 0 ${w||13}px,${b} ${w||13}px ${(w||13)*2}px)`;
 const P = 'assets/photos/';
+
+// headline facts come from the data, not from memory
+const WORDS = ['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten',
+  'Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen','Twenty'];
+
+// per-stop focal point for the strip thumbnails, cropped hard to 220%
+const STOP_FOCUS = { saopaulo:'50% 46%', amazon:'52% 54%', pantanal:'55% 42%', rio:'50% 56%' };
+
+// hand-placed landmarks — the satellite basemap has nothing to label out here
+const LANDMARKS = [
+  { name:'Rio Pinheiros', lat:-23.601, lng:-46.702, z:9 },
+  { name:'Serra do Mar', lat:-23.78, lng:-46.10, z:8 },
+  { name:'Alta Floresta', lat:-9.876, lng:-56.086, z:7 },
+  { name:'Rio Cristalino', lat:-9.66, lng:-55.90, z:9 },
+  { name:'Rio Teles Pires', lat:-9.42, lng:-56.20, z:8 },
+  { name:'Miranda', lat:-20.242, lng:-56.377, z:8 },
+  { name:'Rio Miranda', lat:-20.05, lng:-56.36, z:9 },
+  { name:'Estrada Parque', lat:-19.74, lng:-56.45, z:9 },
+  { name:'Baía de Guanabara', lat:-22.83, lng:-43.16, z:9 },
+  { name:'Pão de Açúcar', lat:-22.949, lng:-43.157, z:11 },
+  { name:'Corcovado', lat:-22.952, lng:-43.211, z:11 }
+];
 
 const LEGS = [
   { id:'saopaulo', n:1, name:'São Paulo', region:'Southeast Brazil', lat:-23.568, lng:-46.656, nights:1, dates:'11–12 JUL',
@@ -276,10 +301,12 @@ class Component extends DCLogic {
     this.applyTripData(FALLBACK_TRIP);
   }
 
-  get dockPct(){ return this.props.mapWidth ?? 34; }
+  get dockPct(){ return this.props.mapWidth ?? 25; }
   get enterStyle(){ return this.props.enterStyle ?? 'slide'; }   // slide | parallax | fade
   get labelsOn(){ return this.props.mapLabels ?? true; }
   get cameraMove(){ return this.props.cameraMove ?? 'direct'; }   // direct | arc
+  get expandMode(){ return this.props.dotExpand ?? 'fan'; }      // fan | stack
+  get chapterMark(){ return this.props.chapterMark ?? 'rail'; }  // label | rail | none
   get legs(){ return (this.data && this.data.legs && this.data.legs.length) ? this.data.legs : FALLBACK_TRIP.legs; }
   get photosByLeg(){ return (this.data && this.data.photosByLeg) ? this.data.photosByLeg : FALLBACK_TRIP.photosByLeg; }
   get palettes(){ return (this.data && this.data.palettes) ? this.data.palettes : FALLBACK_TRIP.palettes; }
@@ -287,6 +314,23 @@ class Component extends DCLogic {
   get leg(){ return this.legs[this.state.legI] || this.legs[0]; }
   get list(){ return (this.leg && this.photosByLeg[this.leg.id]) ? this.photosByLeg[this.leg.id] : []; }
   get docked(){ return this.state.mode === 'photos' && this.state.wide && !this.state.full; }
+
+  // headline facts derived from the loaded trip: date range, day count, species count
+  get trip(){
+    const legs = this.legs;
+    const parse = s => { const m = String(s || '').match(/(\d+)\D+(\d+)/); return m ? [+m[1], +m[2]] : null; };
+    const a = parse(legs[0] && legs[0].dates), b = parse(legs[legs.length - 1] && legs[legs.length - 1].dates);
+    const n = (a && b) ? (b[1] - a[0] + 1) : 0;
+    const species = new Set();
+    legs.forEach(l => (this.photosByLeg[l.id] || []).forEach(p => { if (p.species) species.add(p.species); }));
+    return {
+      range: (a && b) ? (a[0] + '–' + b[1] + ' JULY') : '',
+      days: n,
+      kicker: (WORDS[n] || n) + ' days south',
+      species: species.size,
+      stops: legs.length
+    };
+  }
 
   applyTripData(raw){
     this.data = normalizeTrip(raw || FALLBACK_TRIP);
@@ -337,6 +381,12 @@ class Component extends DCLogic {
     const root = this.rootRef.current;
     if (root) {
       this.onWheel = e => {
+        // ctrl/⌘ + wheel zooms the map instead of advancing the story
+        if (e.ctrlKey || e.metaKey) {
+          e.preventDefault();
+          if (this.map) this.map.zoomTo(this.map.getZoom() - e.deltaY * 0.012, { duration:160 });
+          return;
+        }
         if (this.state.full) return;
         e.preventDefault();
         if (Math.abs(e.deltaY) < 4) return;
@@ -403,7 +453,7 @@ class Component extends DCLogic {
 
   toIntro(){ this.hold(700); this.setState({ mode:'intro' }, () => this.afterGeometry(700)); }
   toCover(i){ this.hold(760); this.setState({ mode:'cover', legI:i, pos:0, full:false }, () => this.afterGeometry(720)); }
-  toPhotos(i, pos){ this.hold(760); this.setState({ mode:'photos', legI:i, pos }, () => this.afterGeometry(720)); }
+  toPhotos(i, pos){ this.hold(760); this.setState({ mode:'photos', legI:i, pos, full:false }, () => this.afterGeometry(720)); }
   movePos(pos){ this.hold(430); this.setState({ pos }, () => { this.syncMarkers(); this.camera(); }); }
   goLeg = id => { const i = this.legs.findIndex(l => l.id === id); if (i >= 0) this.toCover(i); };
 
@@ -437,10 +487,12 @@ class Component extends DCLogic {
             attribution:'© OpenStreetMap, © CARTO' }
         },
         layers:[
-          { id:'esri', type:'raster', source:'esri' },
+          // never let an unloaded tile read as black — a muted forest tone reads as "resolving"
+          { id:'bg', type:'background', paint:{ 'background-color':'#1d2a20' } },
+          { id:'esri', type:'raster', source:'esri', paint:{ 'raster-fade-duration':180 } },
           { id:'labels', type:'raster', source:'labels', paint:{ 'raster-opacity':0.72 } }
         ] },
-      center:[-49.5,-18], zoom:3.2, attributionControl:{ compact:true } });
+      center:[-49.5,-18], zoom:3.2, maxZoom:15, attributionControl:{ compact:true } });
     this.map = map;
     const init = () => {
       if (this.mapReady) return;
@@ -455,12 +507,88 @@ class Component extends DCLogic {
             paint:{ 'line-color':'#ffffff','line-width':3.2,'line-dasharray':[0,2.2] } });
         }
         this.buildMarkers();
+        this.buildLandmarks();
         this.syncMarkers();
         this.camera();
       } catch (e) { console.warn('map init skipped:', (e && e.message) || e); }
     };
     map.once('load', init);
+    map.on('move', () => { this.syncLandmarks(); this.declutter(); });
+    // the cover previews are laid out against projected screen points, so re-measure once the camera lands
+    map.on('moveend', () => { if (this.state.mode === 'cover') this.syncMarkers(); });
+    // whenever the map settles, quietly fetch the tiles the next/previous stop will need
+    map.on('idle', () => {
+      if (this.warmT) return;
+      this.warmT = setTimeout(() => { this.warmT = null; this.prewarmNeighbours(); }, 400);
+    });
     setTimeout(() => { if (map.isStyleLoaded()) init(); }, 1200);
+  }
+
+  prewarmNeighbours(){
+    const LEGS = this.legs;
+    const i = this.state.legI;
+    [LEGS[i - 1], LEGS[i + 1]].forEach(l => { if (l) { this.prewarm(l, 7); this.prewarm(l, 9); } });
+  }
+
+  prewarm(leg, z){
+    this.warmed = this.warmed || {};
+    const n = Math.pow(2, z);
+    const la = leg.lat * Math.PI / 180;
+    const x0 = Math.floor((leg.lng + 180) / 360 * n);
+    const y0 = Math.floor((1 - Math.log(Math.tan(la) + 1 / Math.cos(la)) / Math.PI) / 2 * n);
+    for (let dx = -1; dx <= 1; dx++) for (let dy = -1; dy <= 1; dy++) {
+      const x = x0 + dx, y = y0 + dy;
+      if (x < 0 || y < 0 || x >= n || y >= n) continue;
+      const k = z + '/' + x + '/' + y;
+      if (this.warmed[k]) continue;
+      this.warmed[k] = 1;
+      new Image().src = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/' + z + '/' + y + '/' + x;
+      new Image().src = 'https://basemaps.cartocdn.com/rastertiles/dark_only_labels/' + z + '/' + x + '/' + y + '.png';
+    }
+  }
+
+  buildLandmarks(){
+    if (this.landmarks) return;
+    const mgl = window.maplibregl;
+    // maplibre's Marker owns the root element's opacity, so fade an inner span instead
+    this.landmarks = LANDMARKS.map(L => {
+      const el = document.createElement('div');
+      el.style.cssText = 'pointer-events:none';
+      const inner = document.createElement('span');
+      inner.textContent = L.name;
+      inner.style.cssText = 'display:block;font:500 10.5px Poppins,sans-serif;letter-spacing:.04em;color:rgba(255,255,255,.9);'
+        + 'text-shadow:0 1px 3px rgba(0,0,0,.95),0 0 8px rgba(0,0,0,.7);white-space:nowrap;'
+        + 'opacity:0;transition:opacity .4s ease';
+      el.appendChild(inner);
+      return { L, el, inner, w:L.name.length * 6 + 8,
+        marker:new mgl.Marker({ element:el }).setLngLat([L.lng, L.lat]).addTo(this.map) };
+    });
+    this.syncLandmarks();
+  }
+
+  // the numbered stop pin always wins — drop any landmark that lands on top of one
+  syncLandmarks(){
+    if (!this.landmarks || !this.map) return;
+    const LEGS = this.legs;
+    const z = this.map.getZoom(), on = this.labelsOn;
+    let pins;
+    try {
+      pins = LEGS.map(l => this.map.project([l.lng, l.lat]));
+    } catch (e) { this.landmarks.forEach(m => { m.inner.style.opacity = '0'; }); return; }
+
+    const placed = [];
+    this.landmarks.forEach(m => {
+      let show = on && z >= m.L.z;
+      if (show) {
+        const p = this.map.project([m.L.lng, m.L.lat]);
+        // the numbered stop pin always wins
+        if (pins.some(q => Math.abs(q.x - p.x) < 78 && Math.abs(q.y - p.y) < 54)) show = false;
+        // and no two labels may overlap each other
+        if (show && placed.some(q => Math.abs(q.x - p.x) < (q.w + m.w) / 2 && Math.abs(q.y - p.y) < 16)) show = false;
+        if (show) placed.push({ x:p.x, y:p.y, w:m.w });
+      }
+      m.inner.style.opacity = show ? '1' : '0';
+    });
   }
 
   routeGeo(){
@@ -495,14 +623,28 @@ class Component extends DCLogic {
       num.textContent = leg.n;
       num.style.cssText = 'transform:rotate(45deg);color:#fff;font:700 14px Poppins,sans-serif;line-height:1';
       pin.appendChild(num);
-      wrap.appendChild(pill); wrap.appendChild(pin);
+      // two rings, offset by half the cycle, so there is always one expanding
+      const rings = document.createElement('div');
+      rings.style.cssText = 'position:absolute;left:50%;top:50%;width:34px;height:34px;margin:-17px 0 0 -17px;pointer-events:none;display:none';
+      [0, 1.2].forEach(d => {
+        const r = document.createElement('div');
+        r.className = 'pring';
+        r.style.cssText = 'position:absolute;inset:0;border-radius:50%;border:2px solid rgba(240,80,74,.9);animation:pulseRing 2.4s ease-out infinite ' + d + 's';
+        rings.appendChild(r);
+      });
+      const pinBox = document.createElement('div');
+      pinBox.style.cssText = 'position:relative;display:grid;place-items:center';
+      pinBox.appendChild(rings); pinBox.appendChild(pin);
+      wrap.appendChild(pill); wrap.appendChild(pinBox);
       wrap.onclick = () => this.goLeg(leg.id);
-      this.markers.push({ id:leg.id, wrap, pin, pill,
+      pinBox.style.transition = 'opacity .35s';
+      this.markers.push({ id:leg.id, wrap, pin, pill, rings, pinBox,
         marker:new mgl.Marker({ element:wrap }).setLngLat([leg.lng, leg.lat]).addTo(this.map) });
 
-      // sight circles for the destination title page
-      const shots = PHOTOS[leg.id].filter(s => s.src).slice(0, 3);
-      const chips = (shots.length ? shots : PHOTOS[leg.id].slice(0, 3)).map((s, i) => {
+      // destination pages now preview the real photo locations (the group dots below),
+      // so the decorative ring of circles around the pin is gone
+      const shown = [], extra = 0;
+      const chips = shown.map((s, i) => {
         const holder = document.createElement('div');
         holder.style.cssText = 'flex-direction:column;align-items:center;gap:5px;cursor:pointer;display:none';
         const circle = document.createElement('div');
@@ -510,33 +652,241 @@ class Component extends DCLogic {
           (s.src ? 'background-image:url(' + s.src + ')' : stripe(PALETTES[leg.id][0], PALETTES[leg.id][1], 6));
         const cap = document.createElement('div');
         cap.textContent = s.pinLabel;
-        cap.style.cssText = 'font:600 8px Poppins,sans-serif;letter-spacing:.06em;color:#fff;background:rgba(11,19,28,.72);padding:3px 7px;border-radius:999px;white-space:nowrap;max-width:130px;overflow:hidden;text-overflow:ellipsis;opacity:0;transition:opacity .25s';
+        cap.style.cssText = 'font:600 11px Poppins,sans-serif;letter-spacing:.01em;color:#fff;background:rgba(11,19,28,.82);padding:3px 9px;border-radius:999px;white-space:nowrap;max-width:170px;overflow:hidden;text-overflow:ellipsis;opacity:0;transition:opacity .25s;box-shadow:0 2px 8px rgba(0,0,0,.4)';
         holder.appendChild(circle); holder.appendChild(cap);
         holder.onmouseenter = () => { cap.style.opacity = '1'; circle.style.transform = 'scale(1.08)'; circle.style.borderColor = 'rgba(255,255,255,.95)'; };
         holder.onmouseleave = () => { cap.style.opacity = '0'; circle.style.transform = 'scale(1)'; circle.style.borderColor = 'rgba(255,255,255,.6)'; };
         const idx = PHOTOS[leg.id].indexOf(s);
         holder.onclick = () => this.toPhotos(LEGS.findIndex(l => l.id === leg.id), Math.max(0, idx));
-        const a = 2.1 + i * 2.15, r = 0.42;
+        const a = 2.0 + (i / shown.length) * 6.283, r = 0.46;
         return { holder, marker:new mgl.Marker({ element:holder })
           .setLngLat([leg.lng + Math.cos(a) * r * 1.2, leg.lat + Math.sin(a) * r]).addTo(this.map) };
       });
       this.sightSets.push({ id:leg.id, chips });
     });
 
-    // one dot per photo — the whole leg's locations stay visible, active one promoted
+    // one dot per LOCATION — photos that share a spot cluster, and fan out on hover
+    const groups = [];
     ALL.forEach(s => {
       const c = this.coords[s.key];
+      if (!c) return;
+      const g = groups.find(g => g.legId === s.legId
+        && Math.abs(g.lat - c.lat) < 0.012 && Math.abs(g.lng - c.lng) < 0.012);
+      if (g) g.items.push(s);
+      else groups.push({ legId:s.legId, lat:c.lat, lng:c.lng, items:[s] });
+    });
+    this.groups = groups;
+
+    groups.forEach((g, gi) => {
       const holder = document.createElement('div');
-      holder.style.cssText = 'flex-direction:column;align-items:center;gap:4px;cursor:pointer;display:none';
+      // no `position` here — maplibre owns the marker root's positioning
+      holder.style.cssText = 'flex-direction:column;align-items:center;gap:5px;cursor:pointer;display:none';
+
+      const fan = document.createElement('div');
+      fan.style.cssText = 'position:absolute;left:50%;top:2px;width:0;height:0';
+
+      // permanent next-photo control for stacked decks; handler bound once so it can't go stale
+      const flip = document.createElement('div');
+      flip.style.cssText = 'position:absolute;left:0;top:0;width:30px;height:30px;margin:-15px 0 0 -15px;display:none;'
+        + 'align-items:center;justify-content:center;border-radius:50%;box-sizing:border-box;'
+        + 'font:500 15px Poppins,sans-serif;cursor:pointer;z-index:20;backdrop-filter:blur(6px);'
+        + 'transition:transform .34s cubic-bezier(.32,.72,0,1),background .22s ease,color .22s ease,'
+        + 'border-color .22s ease';
+      flip.textContent = '›';
+      flip.title = 'Next photo here';
+      // quiet until you reach for it
+      const flipState = hot => {
+        flip.style.background = hot ? 'rgba(255,255,255,.34)' : 'rgba(255,255,255,.12)';
+        flip.style.color = hot ? 'rgba(255,255,255,.98)' : 'rgba(255,255,255,.7)';
+        flip.style.border = '1px solid rgba(255,255,255,' + (hot ? '.5' : '.26') + ')';
+        flip.style.boxShadow = 'none';
+      };
+      flipState(false);
+      flip.onmouseenter = () => flipState(true);
+      flip.onmouseleave = () => flipState(false);
+      flip.onclick = e => {
+        e.stopPropagation();
+        stackI = (stackI + 1) % shown.length;
+        setFan(true);
+      };
+      fan.appendChild(flip);
+
+      // invisible bridge: keeps the pointer "inside" the marker while it travels
+      // from the dot out to a thumbnail, which is otherwise bare map
+      const hitPad = document.createElement('div');
+      hitPad.style.cssText = 'position:absolute;left:50%;top:2px;width:0;height:0;border-radius:50%;pointer-events:none';
+      holder.appendChild(hitPad);
+
+      const shown = g.items.slice(0, 4);
+      let stackI = 0;
+      const rotated = () => shown.slice(stackI).concat(shown.slice(0, stackI));
+      const thumbs = shown.map((s, idx) => {
+        const line = document.createElement('div');
+        line.style.cssText = 'position:absolute;left:0;top:0;height:1px;width:1px;background:rgba(255,255,255,.42);'
+          + 'transform-origin:0 50%;transform:scaleX(0);opacity:0;'
+          + 'transition:transform .3s cubic-bezier(.32,.72,0,1),opacity .25s ease;pointer-events:none';
+
+        const th = document.createElement('div');
+        th.style.cssText = 'position:absolute;left:0;top:0;border-radius:14px;overflow:hidden;'
+          + 'border:2px solid rgba(255,255,255,.92);box-shadow:0 10px 24px rgba(0,0,0,.55);background-size:cover;background-position:center;'
+          + 'opacity:0;transform:translate(0,0) scale(.2);pointer-events:none;'
+          + 'transition:transform .34s cubic-bezier(.32,.72,0,1),opacity .25s ease;'
+          + (s.src ? 'background-image:url(' + s.src + ')' : stripe(PALETTES[s.legId][0], PALETTES[s.legId][1], 6));
+        // bound once; resolves which photo it currently shows at click time
+        th.onclick = e => {
+          e.stopPropagation();
+          const it = (this.expandMode === 'stack' && shown.length > 1) ? rotated()[idx] : s;
+          if (it) this.toPhotos(LEGS.findIndex(l => l.id === it.legId), it.pos);
+        };
+
+        const badge = document.createElement('div');
+        badge.style.cssText = 'position:absolute;left:0;right:0;bottom:0;padding:16px 9px 7px;display:none;'
+          + 'background:linear-gradient(to top,rgba(6,12,18,.92),transparent);'
+          + 'font:600 9px Poppins,sans-serif;letter-spacing:.1em;color:rgba(255,255,255,.88);white-space:nowrap;overflow:hidden;text-overflow:ellipsis';
+        th.appendChild(badge);
+
+        fan.appendChild(line); fan.appendChild(th);
+        return { th, line, badge, s };
+      });
+
+      // Fan geometry is measured at hover time against the live dock, which can be
+      // as narrow as 20% of the viewport — direction, reach and thumb size all adapt,
+      // then every thumb is clamped inside the container so nothing can be clipped.
+      let forcedBase = null;   // declutter can ask for a specific fan direction
+      const layoutFan = () => {
+        const box = this.map.getContainer();
+        const W = box.clientWidth || 300, H = box.clientHeight || 600;
+        const p = this.map.project([g.lng, g.lat]);
+        const preview = this.state.mode === 'cover';
+        const n = shown.length;
+        const clamp = (dx, dy, hw, hh) => [
+          Math.max(-(p.x - hw - 6), Math.min(W - p.x - hw - 6, dx)),
+          Math.max(-(p.y - hh - 6), Math.min(H - p.y - hh - 6, dy))
+        ];
+
+        if (this.expandMode === 'stack') {
+          // one card, the rest peeking behind it — costs the same room however many photos share the spot
+          const cw = Math.min(preview ? 104 : 148, W - 26), ch = Math.round(cw * 0.7);
+          const dist = Math.max(38, Math.min(82, Math.min(W, H) / 2 - Math.max(cw, ch) / 2 - 8));
+          const a = (forcedBase != null ? forcedBase : (W < 200 ? -90 : (p.x > W * 0.55 ? -138 : -42))) * Math.PI / 180;
+          const [bx, by] = clamp(Math.cos(a) * dist, Math.sin(a) * dist, cw / 2 + 12, ch / 2 + 12);
+          // the deck rotates, so the front card is whichever photo you've flipped to
+          const order = shown.slice(stackI).concat(shown.slice(0, stackI));
+          return thumbs.map((t, i) => ({
+            t, item:order[i], img:order[i].src, dx:bx + i * 7, dy:by + i * 7, w:cw, h:ch, rot:i * 2.6,
+            z:10 - i, op:i === 0 ? 1 : (i === 1 ? .5 : .28), show:i < 3,
+            // a lone photo gets the identical card, just without the counter or advance button
+            badge:i === 0
+              ? (order[0].species || order[0].title || '') + (n > 1 ? '  ·  ' + (stackI + 1) + '/' + n : '')
+              : '',
+            flip:i === 0 && n > 1,
+            len:Math.hypot(bx, by), deg:Math.atan2(by, bx) * 180 / Math.PI, line:i === 0
+          }));
+        }
+
+        const size = preview ? (W < 260 ? 42 : 54) : (W < 260 ? 50 : 66), half = size / 2;
+        const dist = Math.max(44, Math.min(preview ? 74 : 92, Math.min(W, H) / 2 - half - 8));
+        const base = forcedBase != null ? forcedBase
+          : (W < 200 ? -90 : (p.x > W * 0.55 ? -108 : (p.x < W * 0.45 ? -72 : -90)));
+        const spread = Math.min(W < 260 ? 86 : 118, n * (W < 260 ? 30 : 40));
+        return thumbs.map((t, i) => {
+          const f = n === 1 ? 0 : (i / (n - 1)) - 0.5;
+          const a = (base + f * spread) * Math.PI / 180;
+          const [dx, dy] = clamp(Math.cos(a) * dist, Math.sin(a) * dist, half, half);
+          return { t, item:t.s, img:null, dx, dy, w:size, h:size, rot:0, z:1, op:1, show:true, badge:'', flip:false,
+            len:Math.hypot(dx, dy), deg:Math.atan2(dy, dx) * 180 / Math.PI, line:true };
+        });
+      };
+
       const dot = document.createElement('div');
-      dot.style.cssText = 'border-radius:50%;transition:width .3s,height .3s,background .3s,box-shadow .3s,border-width .3s;box-sizing:border-box';
+      dot.style.cssText = 'position:relative;border-radius:50%;transition:width .3s,height .3s,background .3s,box-shadow .3s,border-width .3s;box-sizing:border-box';
+      const rings = document.createElement('div');
+      rings.style.cssText = 'position:absolute;left:50%;top:50%;width:15px;height:15px;margin:-7.5px 0 0 -7.5px;pointer-events:none;display:none';
+      [0, 1.2].forEach(d => {
+        const r = document.createElement('div');
+        r.className = 'pring';
+        r.style.cssText = 'position:absolute;inset:0;border-radius:50%;border:2px solid rgba(240,80,74,.85);animation:pulseRing 2.4s ease-out infinite ' + d + 's';
+        rings.appendChild(r);
+      });
+      dot.appendChild(rings);
+
       const cap = document.createElement('div');
-      cap.textContent = s.pinLabel;
-      cap.style.cssText = 'font:600 8px Poppins,sans-serif;letter-spacing:.06em;color:#fff;background:rgba(11,19,28,.78);padding:3px 7px;border-radius:999px;white-space:nowrap;max-width:150px;overflow:hidden;text-overflow:ellipsis;transition:opacity .3s';
-      holder.appendChild(dot); holder.appendChild(cap);
-      holder.onclick = () => this.toPhotos(LEGS.findIndex(l => l.id === s.legId), s.pos);
-      this.dots[s.key] = { holder, dot, cap, legId:s.legId,
-        marker:new mgl.Marker({ element:holder }).setLngLat([c.lng, c.lat]).addTo(this.map) };
+      cap.textContent = g.items[0].pinLabel;
+      cap.style.cssText = 'font:600 12px Poppins,sans-serif;letter-spacing:.01em;color:#fff;background:rgba(11,19,28,.82);padding:4px 10px;border-radius:999px;white-space:nowrap;max-width:190px;overflow:hidden;text-overflow:ellipsis;transition:opacity .3s;box-shadow:0 2px 8px rgba(0,0,0,.4)';
+
+      holder.appendChild(fan); holder.appendChild(dot); holder.appendChild(cap);
+      holder.onclick = () => this.toPhotos(LEGS.findIndex(l => l.id === g.items[0].legId), g.items[0].pos);
+
+      const setFan = open => {
+        if (!open) {
+          hitPad.style.width = '0'; hitPad.style.height = '0';
+          hitPad.style.margin = '0'; hitPad.style.pointerEvents = 'none';
+          flip.style.display = 'none';
+          thumbs.forEach(t => {
+            t.th.style.opacity = '0'; t.th.style.pointerEvents = 'none';
+            t.th.style.transform = 'translate(0,0) scale(.2)'; t.th.style.transitionDelay = '0ms';
+            t.line.style.opacity = '0'; t.line.style.transform = 'scaleX(0)'; t.line.style.transitionDelay = '0ms';
+          });
+          holder.style.zIndex = '';
+          return;
+        }
+        const L = layoutFan();
+        flip.style.display = 'none';
+        // bridge only the ground the pointer actually has to cross: the union of the
+        // dot and the open thumbs, not a circle radiating in every direction
+        let x0 = -14, x1 = 14, y0 = -14, y1 = 14;
+        L.forEach(v => {
+          if (!v.show) return;
+          x0 = Math.min(x0, v.dx - v.w / 2); x1 = Math.max(x1, v.dx + v.w / 2);
+          y0 = Math.min(y0, v.dy - v.h / 2); y1 = Math.max(y1, v.dy + v.h / 2);
+        });
+        x0 -= 10; x1 += 10; y0 -= 10; y1 += 10;
+        hitPad.style.width = (x1 - x0) + 'px'; hitPad.style.height = (y1 - y0) + 'px';
+        hitPad.style.margin = y0 + 'px 0 0 ' + x0 + 'px';
+        hitPad.style.borderRadius = '16px';
+        hitPad.style.pointerEvents = 'auto';
+        L.forEach((v, i) => {
+          const th = v.t.th, line = v.t.line, badge = v.t.badge;
+          th.style.width = v.w + 'px'; th.style.height = v.h + 'px';
+          th.style.marginLeft = -(v.w / 2) + 'px'; th.style.marginTop = -(v.h / 2) + 'px';
+          th.style.opacity = v.show ? v.op : '0';
+          th.style.zIndex = v.z;
+          th.style.pointerEvents = (v.show && v.op === 1) ? 'auto' : 'none';
+          th.style.transform = 'translate(' + v.dx + 'px,' + v.dy + 'px) rotate(' + v.rot + 'deg) scale(1)';
+          th.style.transitionDelay = (i * 45) + 'ms';
+          if (v.img) th.style.backgroundImage = 'url(' + v.img + ')';
+          badge.style.display = v.badge ? 'block' : 'none';
+          badge.textContent = v.badge;
+          badge.style.paddingRight = v.flip ? '44px' : '9px';
+          if (v.flip) {
+            // tucked inside the card's bottom-right corner, sitting on the caption bar
+            flip.style.display = 'flex';
+            flip.style.transform = 'translate(' + (v.dx + v.w / 2 - 22) + 'px,' + (v.dy + v.h / 2 - 22) + 'px)';
+            flip.style.transitionDelay = '0ms';
+          }
+          line.style.width = v.len + 'px';
+          line.style.opacity = v.line ? '1' : '0';
+          line.style.transform = 'rotate(' + v.deg + 'deg) scaleX(' + (v.line ? 1 : 0) + ')';
+          line.style.transitionDelay = (i * 45) + 'ms';
+        });
+        holder.style.zIndex = 9;
+      };
+      // on the destination page every location is previewed at once; on photo pages it's hover.
+      // a short close delay tolerates the pointer clipping a corner on its way to a thumbnail.
+      let closeT = null;
+      holder.onmouseenter = () => {
+        clearTimeout(closeT);
+        if (this.state.mode === 'photos') setFan(true);
+      };
+      holder.onmouseleave = () => {
+        clearTimeout(closeT);
+        if (this.state.mode === 'photos') closeT = setTimeout(() => setFan(false), 110);
+      };
+
+      this.dots[gi] = { holder, dot, cap, rings, setFan, layout:layoutFan,
+        setBase:b => { forcedBase = b; },
+        group:g, legId:g.legId, keys:g.items.map(x => x.key),
+        marker:new mgl.Marker({ element:holder }).setLngLat([g.lng, g.lat]).addTo(this.map) };
     });
   }
 
@@ -545,6 +895,7 @@ class Component extends DCLogic {
       if (!this.map || !this.mapReady) return;
       const st = this.state, mode = st.mode, active = this.leg.id;
       if (this.map.getLayer('labels')) this.map.setPaintProperty('labels', 'raster-opacity', this.labelsOn ? 0.72 : 0);
+      this.syncLandmarks();
       const cur = mode === 'photos' ? this.list[st.pos] : null;
 
       this.markers.forEach(m => {
@@ -552,8 +903,12 @@ class Component extends DCLogic {
         m.pin.style.background = on ? CORAL : NAVY;
         m.pin.style.transform = 'rotate(-45deg) scale(' + (on ? 1.14 : 1) + ')';
         m.pin.style.boxShadow = on ? '0 0 0 8px rgba(240,80,74,.2),0 4px 12px rgba(0,0,0,.5)' : '0 4px 12px rgba(0,0,0,.5)';
-        m.wrap.style.opacity = mode === 'photos' ? (on ? '1' : '.4') : '1';
-        m.pill.style.opacity = mode === 'photos' && !on ? '.6' : '1';
+        // opacity goes on the children — maplibre owns the marker root's opacity
+        const dim = mode === 'photos' ? (on ? '1' : '.4') : '1';
+        m.pinBox.style.opacity = dim;
+        m.pill.style.opacity = mode === 'photos' && !on ? '.45' : dim;
+        // pulse only the active stop, and only where it's the subject
+        m.rings.style.display = (on && mode === 'cover' && !this.reduced) ? 'block' : 'none';
       });
 
       const showSights = mode === 'cover' && !st.full;
@@ -561,27 +916,136 @@ class Component extends DCLogic {
         c.holder.style.display = (showSights && set.id === active) ? 'flex' : 'none';
       }));
 
-      const showDots = mode === 'photos' && !st.full;
+      // with the photo collapsed the map IS the view, so the dots stay
+      const showDots = mode === 'photos' || (mode === 'cover' && !st.full);
       Object.keys(this.dots).forEach(k => {
-        const d = this.dots[k], mine = d.legId === active, on = cur && cur.key === k;
+        const d = this.dots[k], mine = d.legId === active;
+        const on = !!(cur && d.keys.indexOf(cur.key) >= 0);
         d.holder.style.display = (showDots && mine) ? 'flex' : 'none';
         d.holder.style.zIndex = on ? 3 : 1;
+        d.rings.style.display = (on && !this.reduced) ? 'block' : 'none';
+        // destination page: every location previews its photos at once
+        if (mode === 'cover') {
+          d.dot.style.width = '13px'; d.dot.style.height = '13px';
+          d.dot.style.background = 'rgba(255,255,255,.7)';
+          d.dot.style.border = '2px solid rgba(255,255,255,.95)';
+          d.dot.style.boxShadow = '0 1px 6px rgba(0,0,0,.55)';
+          d.cap.textContent = d.group.items[0].pinLabel + (d.keys.length > 1 ? '  +' + (d.keys.length - 1) : '');
+          if (!mine) d.setFan(false);   // which fans open is decided in declutter()
+          return;
+        }
+        d.setFan(false);
         if (on) {
-          d.dot.style.cssText += '';
-          d.dot.style.width = '18px'; d.dot.style.height = '18px';
+          d.dot.style.width = '22px'; d.dot.style.height = '22px';
           d.dot.style.background = CORAL;
           d.dot.style.border = '3px solid #fff';
           d.dot.style.boxShadow = '0 0 0 7px rgba(240,80,74,.24),0 3px 10px rgba(0,0,0,.45)';
+          d.cap.textContent = cur.pinLabel + (d.keys.length > 1 ? '  +' + (d.keys.length - 1) : '');
           d.cap.style.opacity = '1';
         } else {
-          d.dot.style.width = '11px'; d.dot.style.height = '11px';
+          d.dot.style.width = '13px'; d.dot.style.height = '13px';
           d.dot.style.background = 'rgba(255,255,255,.55)';
           d.dot.style.border = '2px solid rgba(255,255,255,.85)';
           d.dot.style.boxShadow = '0 1px 5px rgba(0,0,0,.5)';
+          d.cap.textContent = d.group.items[0].pinLabel + (d.keys.length > 1 ? '  +' + (d.keys.length - 1) : '');
           d.cap.style.opacity = '0';
         }
       });
+      this.declutter();
     } catch (e) { console.warn('marker sync skipped:', (e && e.message) || e); }
+  }
+
+  // Real EXIF GPS puts photos right on top of the lodge, so captions now have to
+  // negotiate space: the active caption wins, the stop pin yields, the rest drop out.
+  declutter(){
+    if (!this.map || !this.mapReady) return;
+    const st = this.state, mode = st.mode, active = this.leg.id;
+    const box = this.map.getContainer();
+    const W = box.clientWidth || 300;
+    const maxW = Math.max(120, W - 46);
+
+    const vis = Object.keys(this.dots)
+      .map(k => this.dots[k])
+      .filter(d => d.legId === active && d.holder.style.display !== 'none')
+      .map(d => {
+        const p = this.map.project([d.group.lng, d.group.lat]);
+        const on = !!(mode === 'photos' && this.list[st.pos] && d.keys.indexOf(this.list[st.pos].key) >= 0);
+        return { d, p, on };
+      });
+    if (!vis.length) return;
+
+    const H = box.clientHeight || 600;
+    const pin = this.markers.filter(m => m.id === active)[0];
+    const pinP = this.map.project([this.leg.lng, this.leg.lat]);
+    const act = vis.filter(v => v.on)[0];
+    const hit = (a, b) => !(a.x1 < b.x0 || a.x0 > b.x1 || a.y1 < b.y0 || a.y0 > b.y1);
+    const rect = (x, y, w, h) => ({ x0:x - w / 2, x1:x + w / 2, y0:y - h / 2, y1:y + h / 2 });
+
+    // the photo is the subject here — the lodge pin steps aside when they coincide,
+    // and on destination pages its name pill is redundant next to the 60px title
+    if (pin) {
+      const near = act && Math.abs(act.p.x - pinP.x) < 64 && Math.abs(act.p.y - pinP.y) < 64;
+      pin.pill.style.opacity = (mode === 'cover' || near) ? '0' : (mode === 'photos' ? '.45' : '1');
+      pin.pinBox.style.opacity = near ? '.2' : (mode === 'photos' ? '.4' : '1');
+    }
+
+    // areas nothing may cover: the copy column, the stop strip, and the stop pin itself
+    const blocked = [ { x0:pinP.x - 34, x1:pinP.x + 34, y0:pinP.y - 46, y1:pinP.y + 18 } ];
+    if (mode === 'cover') {
+      blocked.push(st.wide
+        ? { x0:0, x1:Math.round(W * 0.36), y0:Math.round(H * 0.40), y1:H }
+        : { x0:0, x1:W, y0:Math.round(H * 0.55), y1:H });
+      blocked.push({ x0:0, x1:W, y0:H - 116, y1:H });
+    }
+
+    const taken = [];
+    // destination pages: open as many previews as genuinely fit, densest locations first
+    if (mode === 'cover') {
+      // try several directions per location before giving up — neighbours that all
+      // fan the same way would otherwise knock each other out
+      const DIRS = [null, -42, -138, -90, -6, -174, 42, 138, 90];
+      vis.slice().sort((a, b) => b.d.keys.length - a.d.keys.length).forEach(v => {
+        let chosen = null, bb = null;
+        for (let i = 0; i < DIRS.length; i++) {
+          v.d.setBase(DIRS[i]);
+          let x0 = v.p.x, x1 = v.p.x, y0 = v.p.y, y1 = v.p.y;
+          (v.d.layout() || []).forEach(t => {
+            if (!t.show) return;
+            x0 = Math.min(x0, v.p.x + t.dx - t.w / 2); x1 = Math.max(x1, v.p.x + t.dx + t.w / 2);
+            y0 = Math.min(y0, v.p.y + t.dy - t.h / 2); y1 = Math.max(y1, v.p.y + t.dy + t.h / 2);
+          });
+          const box2 = { x0, x1, y0, y1 };
+          if (x0 > 12 && y0 > 12 && x1 < W - 12 && y1 < H - 12
+              && !blocked.some(b => hit(box2, b)) && !taken.some(b => hit(box2, b))) {
+            chosen = DIRS[i]; bb = box2; break;
+          }
+        }
+        v.d.setBase(chosen);
+        v.open = !!bb;
+        v.bb = bb;
+        v.d.setFan(!!bb);
+        if (bb) taken.push(bb);
+      });
+    }
+
+    const placed = taken.concat(blocked);
+    vis.forEach(v => { v.d.cap.style.maxWidth = maxW + 'px'; });
+
+    // the active caption is never suppressed — everything else yields to it
+    if (act) {
+      act.d.cap.style.opacity = '1';
+      placed.push(rect(act.p.x, act.p.y, Math.min(act.d.cap.offsetWidth || 120, maxW), 22));
+    }
+
+    vis.filter(v => !v.on).forEach(v => {
+      // an open preview names itself on its own caption bar — don't label it twice
+      let show = false;
+      if (mode === 'cover' && !v.open) {
+        const bx = rect(v.p.x, v.p.y, Math.min(v.d.cap.offsetWidth || 120, maxW), 22);
+        if (!placed.some(q => hit(bx, q))) { show = true; placed.push(bx); }
+      }
+      v.d.cap.style.opacity = show ? '1' : '0';
+    });
   }
 
   // measures each photo's aspect ratio and samples its top/bottom edge colours,
@@ -621,7 +1085,9 @@ class Component extends DCLogic {
     try {
       if (!this.map || !this.mapReady) return;
       const st = this.state;
-      if (st.full || st.mode === 'intro') { this.fitAll(); return; }
+      // collapsing the photo widens the map but must NOT throw away your place —
+      // only the intro and a full map opened from a title page reframe the whole route
+      if (st.mode === 'intro' || (st.full && st.mode !== 'photos')) { this.fitAll(); return; }
       const leg = this.leg, el = this.map.getContainer();
       const h = el && el.clientHeight > 0 ? el.clientHeight : 700;
       // 'direct' pans and zooms in one continuous move (easeTo never pulls back out);
@@ -637,12 +1103,26 @@ class Component extends DCLogic {
       const w = el && el.clientWidth > 0 ? el.clientWidth : 1200;
       // wide: push the region right of the title column. narrow: push it above the copy.
       if (st.mode === 'cover') {
+        // frame every real photo location for this stop, not just the lodge pin
+        const gs = (this.groups || []).filter(g => g.legId === leg.id);
+        if (gs.length > 1) {
+          const lats = gs.map(g => g.lat), lngs = gs.map(g => g.lng);
+          // as tight as the sights allow: padding only clears the copy and the fanned previews
+          const pad = st.wide
+            ? { top:96, bottom:96, left:Math.max(40, Math.round(w * 0.4)), right:104 }
+            : { top:88, bottom:Math.max(60, Math.round(h * 0.4)), left:52, right:52 };
+          this.map.fitBounds(
+            [[Math.min.apply(null, lngs), Math.min.apply(null, lats)],
+             [Math.max.apply(null, lngs), Math.max.apply(null, lats)]],
+            { padding:pad, maxZoom:15, duration:this.reduced ? 0 : 1400, essential:true });
+          return;
+        }
         const off = st.wide ? [Math.round(w * 0.21), Math.round(h * -0.02)] : [0, Math.round(h * -0.17)];
         go({ center:[leg.lng, leg.lat], zoom:st.wide ? 7.4 : 6.6, offset:off });
         return;
       }
       const c = this.coords[(this.list[st.pos] || {}).key];
-      const z = st.wide || st.full ? 12.4 : 11.5;   // shallower zoom for the short top strip
+      const z = st.wide || st.full ? 13.2 : 12.4;
       go(c ? { center:[c.lng, c.lat], zoom:z } : { center:[leg.lng, leg.lat], zoom:6.6 });
     } catch (e) { console.warn('camera skipped:', (e && e.message) || e); }
   }
@@ -665,20 +1145,30 @@ class Component extends DCLogic {
     } catch (e) { console.warn('fitBounds skipped:', (e && e.message) || e); }
   }
 
-  toggleFull = () => this.setState({ full:!this.state.full }, () => this.afterGeometry(720));
+  // collapse/expand gets its own, slower timing than the story transitions
+  toggleFull = () => {
+    this.fullAnim = true;
+    clearTimeout(this.fullT);
+    this.fullT = setTimeout(() => { this.fullAnim = false; this.forceUpdate(); }, 1500);
+    this.setState({ full:!this.state.full }, () => this.afterGeometry(1080));
+  };
+  zoomIn = () => { if (this.map) this.map.zoomIn({ duration:420 }); };
+  zoomOut = () => { if (this.map) this.map.zoomOut({ duration:420 }); };
 
   componentDidUpdate(prevProps){
     if (prevProps !== this.props) this.afterGeometry(120);
   }
 
   renderVals(){
-    const LEGS = this.legs, PALETTES = this.palettes, STOP_THUMB = this.stopThumb;
+    const LEGS = this.legs, PALETTES = this.palettes, STOP_THUMB = this.stopThumb, TRIP = this.trip;
     const st = this.state, mode = st.mode, leg = this.leg, list = this.list;
     const dock = this.dockPct, wide = st.wide, docked = this.docked, enter = this.enterStyle;
     const stripShown = st.full || mode === 'cover';
     const ease = 'cubic-bezier(.32,.72,0,1)';
-    const chip = t => ({ t, bg: t.indexOf('★') === 0 ? 'rgba(240,80,74,.92)' : 'rgba(255,255,255,.13)',
-      br: t.indexOf('★') === 0 ? 'rgba(240,80,74,.92)' : 'rgba(255,255,255,.3)' });
+    // the pill now means exactly one thing: species
+    const chip = t => ({ t, bg:'rgba(255,255,255,.13)', br:'rgba(255,255,255,.3)' });
+    // cards are exported at 3000px (retina-safe on their own), so no 2x/srcset needed
+    const bgImage = src => 'background-image:url(' + src + ')';
 
     // Panel keeps its final docked width at all times and slides in from the left,
     // so nothing ever resizes mid-transition.
@@ -686,7 +1176,7 @@ class Component extends DCLogic {
     const inPhotos = mode === 'photos';
     // narrow screens dock the map to the TOP instead of the side; the photo card
     // rides up over it with a rounded lip, Polarsteps-style.
-    const mDock = 30;
+    const mDock = dock;   // same tweak drives the map's share of width (wide) and height (narrow)
     const mDocked = inPhotos && !wide && !st.full;
     const off = enter === 'fade' ? 'translateX(0) scale(1.04)' : enter === 'parallax' ? 'translateX(-46%)' : 'translateX(-101%)';
     const panelTrans = enter === 'parallax'
@@ -694,6 +1184,9 @@ class Component extends DCLogic {
       : enter === 'fade' ? 'transform .7s ' + ease + ', opacity .5s ease'
       : 'transform .72s ' + ease + ', opacity .4s ease';
     const mapDelay = enter === 'parallax' ? '.1s' : '0s';
+    const slow = !!this.fullAnim;
+    const paneTrans = slow ? 'transform 1.15s ' + ease + ', opacity .85s ease' : panelTrans;
+    const mapDur = slow ? '1.15s' : '.72s';
     const pf = this.props.photoFit ?? 'smart';   // bleed = whole photo, edge to edge, no frame
     const meta = this.imgMeta || {};
     const panelW = (typeof window !== 'undefined' ? window.innerWidth : 1440) * (wide ? (100 - dock) / 100 : 1);
@@ -709,13 +1202,16 @@ class Component extends DCLogic {
 
     return {
       rootRef:this.rootRef, mapRef:this.mapRef, prev:this.prev, next:this.next, toggleFull:this.toggleFull,
+      zoomIn:this.zoomIn, zoomOut:this.zoomOut,
+      tripRange:TRIP.range, tripKicker:TRIP.kicker,
+      tripDays:TRIP.days + ' DAYS', tripStops:TRIP.stops + ' STOPS', tripSpecies:TRIP.species + ' SPECIES',
 
       // credits are required by Esri/CARTO, so they stay — just parked on the full-map view
       attrCls: st.full ? '' : 'attr-off',
 
       mapLayer:'left:' + (docked ? (100 - dock) : 0) + '%'
         + ';bottom:' + (mDocked ? (100 - mDock) + '%' : '0')
-        + ';transition:left .72s ' + ease + ' ' + mapDelay + ',bottom .72s ' + ease + ',opacity .5s ease'
+        + ';transition:left ' + mapDur + ' ' + ease + ' ' + mapDelay + ',bottom ' + mapDur + ' ' + ease + ',opacity .5s ease'
         + ';opacity:' + (mode === 'intro' ? 0 : 1)
         + ';pointer-events:' + (mode === 'intro' ? 'none' : 'auto'),
 
@@ -725,16 +1221,17 @@ class Component extends DCLogic {
 
       panelLayer: wide
         ? 'right:' + panelRight + '%'
-          + ';transition:' + panelTrans
-          + ';transform:' + (inPhotos ? 'translateX(0) scale(1)' : off)
-          + ';opacity:' + (inPhotos ? 1 : (enter === 'fade' ? 0 : (enter === 'parallax' ? 0 : 1)))
+          + ';transition:' + paneTrans
+          // collapsed: the pane slides off to the left so the map really is the whole view
+          + ';transform:' + (inPhotos && !st.full ? 'translateX(0) scale(1)' : (st.full ? 'translateX(-101%)' : off))
+          + ';opacity:' + (st.full ? 0 : (inPhotos ? 1 : (enter === 'fade' ? 0 : (enter === 'parallax' ? 0 : 1))))
           + ';pointer-events:' + (inPhotos && !st.full ? 'auto' : 'none')
           + (enter === 'slide' || enter === 'parallax' ? ';box-shadow:10px 0 40px rgba(0,0,0,.55)' : '')
         // narrow: the card is a sheet that rises from the bottom and parks under the map strip
         : 'right:0;top:' + (mDocked ? mDock + '%' : '0')
           + ';border-radius:' + (mDocked ? '20px 20px 0 0' : '0')
           + ';transition:top .72s ' + ease + ',transform .72s ' + ease + ',border-radius .4s ease,opacity .4s ease'
-          + ';transform:translateY(' + (inPhotos ? '0' : '101%') + ')'
+          + ';transform:translateY(' + (inPhotos && !st.full ? '0' : '101%') + ')'
           + ';opacity:' + (st.full ? 0 : 1)
           + ';pointer-events:' + (inPhotos && !st.full ? 'auto' : 'none')
           + ';box-shadow:0 -12px 34px rgba(0,0,0,.6)',
@@ -745,10 +1242,28 @@ class Component extends DCLogic {
         + ';transform:translateY(' + (mode === 'intro' ? '0' : '-100%') + ')'
         + ';pointer-events:' + (mode === 'intro' ? 'auto' : 'none'),
 
-      brandStyle:'opacity:' + (mode === 'intro' || mode === 'cover' || docked ? 0 : 1)
-        + ';pointer-events:' + (mode === 'intro' || mode === 'cover' || docked ? 'none' : 'auto'),
-      fullBtn:'opacity:' + (mode === 'intro' ? 0 : 1) + ';pointer-events:' + (mode === 'intro' ? 'none' : 'auto'),
-      fullBtnLabel: st.full ? '↙ EXIT FULL MAP' : '⤢ FULL MAP',
+      // on photo pages this is a "push the photo aside" handle on the pane's own edge,
+      // which reads as reversible in a way a FULL MAP button never did.
+      // parked low on the pane edge so it never crowds the vertically-centred tick rail
+      fullBtn:(!wide && inPhotos
+          // narrow: the sheet moves vertically, so the handle is a centred grab bar
+          ? 'left:50%;right:auto;transform:translateX(-50%);border-radius:12px;width:64px;height:22px;line-height:1;'
+            + 'font:400 11px Poppins,sans-serif;background:rgba(11,19,28,.92);box-shadow:0 6px 20px rgba(0,0,0,.45);'
+            + (st.full ? 'bottom:22px;top:auto' : 'top:calc(' + mDock + '% - 11px);bottom:auto')
+          : st.full
+            ? 'top:50%;bottom:auto;left:0;right:auto;transform:translateY(-50%);border-radius:0 12px 12px 0;width:22px;height:64px;'
+              + 'font:400 16px Poppins,sans-serif;border-left:none;background:rgba(11,19,28,.92);box-shadow:6px 0 18px rgba(0,0,0,.4)'
+            : docked
+              ? 'top:50%;bottom:auto;right:calc(' + dock + '% - 11px);left:auto;transform:translateY(-50%);border-radius:12px;width:22px;height:64px;'
+                + 'font:400 16px Poppins,sans-serif;background:rgba(11,19,28,.92);box-shadow:0 6px 20px rgba(0,0,0,.45)'
+              : 'top:16px;right:16px;left:auto;bottom:auto;transform:none;border-radius:999px;padding:8px 14px;font:600 9px Poppins,sans-serif;letter-spacing:.14em')
+        // a destination page is already the full map — nothing to expand
+        + ';opacity:' + (mode === 'intro' || mode === 'cover' ? 0 : 1)
+        + ';pointer-events:' + (mode === 'intro' || mode === 'cover' ? 'none' : 'auto'),
+      // the chevron points the way the photo is about to travel
+      // ⌄/⌃ sit high in their line box; the triangles centre on the em square
+      fullBtnLabel: (!wide && inPhotos) ? (st.full ? '▴' : '▾') : (st.full ? '›' : (docked ? '‹' : '⤢ FULL MAP')),
+      fullBtnTitle: st.full ? 'Bring the photo back' : (inPhotos ? 'Push the photo aside' : 'Full map'),
 
       stripLayer:'opacity:' + (stripShown ? 1 : 0)
         + ';pointer-events:' + (stripShown ? 'auto' : 'none')
@@ -759,11 +1274,32 @@ class Component extends DCLogic {
         + ';transition:right .7s ' + ease + ',top .72s ' + ease + ',opacity .4s ease'
         + ';opacity:' + (st.full || mode === 'intro' ? 0 : 1),
 
-      // arrows are for pointer devices; on touch the swipe is the control
-      navLayer:'right:' + (docked ? 'calc(' + dock + '% + 26px)' : '26px')
-        + ';bottom:' + (stripShown ? '124px' : '30px')
-        + ';opacity:' + (st.full || mode === 'intro' || !wide ? 0 : 1)
-        + ';pointer-events:' + (st.full || mode === 'intro' || !wide ? 'none' : 'auto'),
+      // zoom sits where the arrows used to be; hidden on the photo screens where the map isn't the subject
+      zoomLayer:'right:' + (mDocked ? '14px' : '20px')
+        + ';' + (mDocked ? 'top:14px' : 'bottom:' + (stripShown ? '124px' : '30px'))
+        + ';opacity:' + (mode === 'intro' ? 0 : .55)
+        + ';pointer-events:' + (mode === 'intro' ? 'none' : 'auto'),
+
+      // vertical scrubber on the photo's right edge — replaces the top bars and the arrows
+      // 3 photos and 20 photos both have to read: ticks grow when there are few
+      railStyle:'opacity:' + (inPhotos && !st.full && list.length > 1 ? 1 : 0)
+        + ';gap:' + (list.length > 12 ? 1 : list.length > 6 ? 3 : 6) + 'px'
+        + ';pointer-events:' + (inPhotos && !st.full ? 'auto' : 'none'),
+      // the rail can carry the chapter itself, which frees the top-left corner entirely
+      railHead: '0' + leg.n,
+      railHeadStyle:'display:' + (this.chapterMark === 'rail' ? 'flex' : 'none'),
+      chapterStyle:'opacity:' + (this.chapterMark === 'label' || (this.chapterMark === 'rail' && !inPhotos) ? 1 : 0),
+      ticks:(() => {
+        const n = Math.max(1, list.length);
+        const h = Math.max(9, Math.min(34, Math.round(300 / n)));
+        const w = n <= 6 ? 3 : 2;
+        return list.map((x, i) => ({
+          name:x.title,
+          go:() => this.movePos(i),
+          v:'width:' + w + 'px;height:' + (i === st.pos ? Math.round(h * 1.9) : h) + 'px;background:'
+            + (i === st.pos ? '#F0504A' : 'rgba(255,255,255,' + (i < st.pos ? '.62' : '.3') + ')')
+        }));
+      })(),
 
       stripGrid: wide ? '' : 'grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:44%;gap:7px;padding:8px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch',
 
@@ -780,7 +1316,7 @@ class Component extends DCLogic {
         slot:'top:' + (i * 100) + '%',
         noPhoto:!x.src, alt:x.alt, ph:x.ph || '',
         imgStyle:x.src
-          ? 'background-image:url(' + x.src + ')'
+          ? bgImage(x.src)
             + (pf === 'fit' ? ';left:4%;top:3%;width:92%;height:74%;background-size:contain;background-repeat:no-repeat;animation:none' : '')
             + (pf === 'bleed' ? ';left:0;top:0;width:100%;height:100%;background-size:contain;background-repeat:no-repeat;animation:none' : '')
             + (sm ? ';left:0;top:0;width:100%;height:100%;background-repeat:no-repeat;animation:none;background-size:'
@@ -789,14 +1325,12 @@ class Component extends DCLogic {
         bgStyle:x.src && pf === 'fit' ? 'background-image:url(' + x.src + ')'
           : (sm && sm.bg && !sm.crop ? 'background-image:none;background:' + sm.bg + ';filter:none;opacity:1;inset:0' : 'display:none'),
         stripe:stripe(PALETTES[leg.id][0], PALETTES[leg.id][1]),
-        kicker:x.kicker, title:x.title, body:x.body, chips:(x.chips || []).map(chip)
+        star:!!x.star, title:x.title, body:x.body,
+        chips:x.species ? [chip(String(x.species).toUpperCase())] : []
       };
       }),
 
-      bars: mode === 'intro' ? LEGS.map(() => ({ c:'rgba(255,255,255,.3)' }))
-        : list.map((_, i) => ({ c: (mode === 'photos' && i <= st.pos) ? '#fff' : 'rgba(255,255,255,.3)' })),
-      chapterLabel: mode === 'intro' ? 'BRAZIL 2026 · 10–22 JULY' : 'CHAPTER 0' + leg.n + ' · ' + leg.name.toUpperCase(),
-      counter: mode === 'intro' ? '13 DAYS' : mode === 'cover' ? 'STOP 0' + leg.n + ' OF 04' : (st.pos + 1) + ' / ' + list.length,
+      chapterLabel: mode === 'intro' ? 'BRAZIL 2026 · ' + TRIP.range : 'CHAPTER 0' + leg.n + ' · ' + leg.name.toUpperCase(),
 
       stops: LEGS.map(l => {
         const on = l.id === leg.id && mode !== 'intro';
@@ -808,8 +1342,12 @@ class Component extends DCLogic {
           wrap:'scroll-snap-align:start;background:' + (on ? 'rgba(240,80,74,.9)' : 'rgba(255,255,255,.05)')
             + (wide ? '' : ';gap:9px;padding:8px 10px'),
           numFg:'color:' + (on ? 'rgba(255,255,255,.9)' : 'rgba(255,255,255,.45)'),
+          // crop hard: 220% zoom on the one identifiable feature, punched up so it reads at 38px
           thumb:(wide ? '' : 'width:32px;height:32px;border-radius:9px;')
-            + (STOP_THUMB[l.id] ? 'background-image:url(' + STOP_THUMB[l.id] + ')' : stripe(PALETTES[l.id][0], PALETTES[l.id][1], 7)) };
+            + (STOP_THUMB[l.id]
+              ? 'background-image:url(' + STOP_THUMB[l.id] + ');background-size:220%;background-position:'
+                + (STOP_FOCUS[l.id] || '50% 50%') + ';filter:saturate(1.3) contrast(1.12)'
+              : stripe(PALETTES[l.id][0], PALETTES[l.id][1], 7)) };
       })
     };
   }

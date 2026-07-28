@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-27T22:22:55-07:00",
+  "generatedAt": "2026-07-27T22:25:11-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",
@@ -286,6 +286,7 @@
         "star": false,
         "featured": true,
         "taxon": "",
+        "species": "",
         "lat": -23.561278,
         "lng": -46.655708
       },
@@ -309,6 +310,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "",
         "lat": -23.560306,
         "lng": -46.657939
       },
@@ -333,6 +335,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "",
         "lat": -23.565439,
         "lng": -46.669736
       }
@@ -358,6 +361,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "",
         "lat": -9.636581,
         "lng": -55.937858
       },
@@ -381,6 +385,7 @@
         "star": false,
         "featured": true,
         "taxon": "",
+        "species": "",
         "lat": -9.563831,
         "lng": -55.902989
       },
@@ -404,6 +409,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "Harpy Eagle",
         "lat": -9.636389,
         "lng": -55.937778
       },
@@ -427,6 +433,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "Spider Monkey",
         "lat": -9.546667,
         "lng": -55.909167
       },
@@ -450,6 +457,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "Spider Monkey",
         "lat": -9.546667,
         "lng": -55.909167
       },
@@ -473,6 +481,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "Spider Monkey",
         "lat": -9.546667,
         "lng": -55.909167
       },
@@ -496,6 +505,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "",
         "lat": -9.6202,
         "lng": -55.94241
       },
@@ -519,6 +529,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "Neotropical Cormorant",
         "lat": -9.636111,
         "lng": -55.9775
       },
@@ -542,6 +553,7 @@
         "star": false,
         "featured": true,
         "taxon": "",
+        "species": "",
         "lat": -9.636075,
         "lng": -55.977467
       },
@@ -565,6 +577,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "",
         "lat": -9.636175,
         "lng": -55.977467
       },
@@ -590,6 +603,7 @@
         "star": false,
         "featured": false,
         "taxon": "Amphibian",
+        "species": "Tree Frog",
         "lat": -9.58751,
         "lng": -55.93056
       },
@@ -613,6 +627,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "Pink-coned Aechmea & Stingless Bee",
         "lat": -9.583056,
         "lng": -55.918889
       },
@@ -637,6 +652,7 @@
         "star": false,
         "featured": true,
         "taxon": "Mammal",
+        "species": "Neotropical Otter",
         "lat": -9.5611,
         "lng": -55.9121
       },
@@ -661,6 +677,7 @@
         "star": false,
         "featured": true,
         "taxon": "Reptile",
+        "species": "Yellow-spotted River Turtle",
         "lat": -9.561111,
         "lng": -55.912222
       },
@@ -684,6 +701,7 @@
         "star": false,
         "featured": true,
         "taxon": "",
+        "species": "Capybara",
         "lat": -9.596642,
         "lng": -55.931794
       },
@@ -707,6 +725,7 @@
         "star": false,
         "featured": true,
         "taxon": "",
+        "species": "",
         "lat": -9.600811,
         "lng": -55.922775
       },
@@ -730,6 +749,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "",
         "lat": -9.600833,
         "lng": -55.922778
       }
@@ -756,6 +776,7 @@
         "star": false,
         "featured": true,
         "taxon": "Mammal",
+        "species": "Ocelot",
         "lat": -19.9549,
         "lng": -56.3146
       },
@@ -780,6 +801,7 @@
         "star": false,
         "featured": false,
         "taxon": "Mammal",
+        "species": "Pampas Deer & Cattle Tyrant",
         "lat": -19.97435,
         "lng": -56.31445
       },
@@ -804,6 +826,7 @@
         "star": false,
         "featured": true,
         "taxon": "Bird",
+        "species": "Jabiru",
         "lat": -19.8752,
         "lng": -56.2922
       },
@@ -829,6 +852,7 @@
         "star": true,
         "featured": true,
         "taxon": "Mammal",
+        "species": "Jaguar",
         "lat": -19.813611,
         "lng": -56.3
       },
@@ -853,6 +877,7 @@
         "star": false,
         "featured": false,
         "taxon": "Mammal",
+        "species": "South American Tapir",
         "lat": -19.81354,
         "lng": -56.299966
       },
@@ -876,6 +901,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "Tarantula",
         "lat": -19.9106,
         "lng": -56.2977
       },
@@ -900,6 +926,7 @@
         "star": false,
         "featured": false,
         "taxon": "Bird",
+        "species": "Southern Crested Caracara",
         "lat": -19.924,
         "lng": -56.3011
       },
@@ -923,6 +950,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "Yacare Caiman",
         "lat": -19.95222,
         "lng": -56.30462
       },
@@ -947,6 +975,7 @@
         "star": false,
         "featured": false,
         "taxon": "Bird",
+        "species": "Yellow-billed Cardinal",
         "lat": -19.975556,
         "lng": -56.314444
       },
@@ -971,6 +1000,7 @@
         "star": false,
         "featured": false,
         "taxon": "Bird",
+        "species": "Ringed Kingfisher",
         "lat": -19.9755,
         "lng": -56.3145
       },
@@ -994,6 +1024,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "Capybara",
         "lat": -19.952222,
         "lng": -56.304722
       },
@@ -1018,6 +1049,7 @@
         "star": false,
         "featured": false,
         "taxon": "Bird",
+        "species": "Lesser Yellow-headed Vulture",
         "lat": -19.8836,
         "lng": -56.2947
       },
@@ -1043,6 +1075,7 @@
         "star": true,
         "featured": false,
         "taxon": "Bird",
+        "species": "Hyacinth Macaw",
         "lat": -19.953611,
         "lng": -56.305278
       },
@@ -1066,6 +1099,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "Six-banded Armadillo",
         "lat": -19.96178,
         "lng": -56.30743
       },
@@ -1090,6 +1124,7 @@
         "star": false,
         "featured": false,
         "taxon": "Bird",
+        "species": "Burrowing Owl",
         "lat": -19.97261,
         "lng": -56.31298
       },
@@ -1114,6 +1149,7 @@
         "star": false,
         "featured": false,
         "taxon": "Mammal",
+        "species": "Marsh Deer",
         "lat": -19.8869,
         "lng": -56.2553
       },
@@ -1137,6 +1173,7 @@
         "star": false,
         "featured": true,
         "taxon": "",
+        "species": "Jaguar",
         "lat": -19.89901,
         "lng": -56.22534
       },
@@ -1160,6 +1197,7 @@
         "star": false,
         "featured": true,
         "taxon": "",
+        "species": "Jaguar",
         "lat": -19.898889,
         "lng": -56.225278
       },
@@ -1183,6 +1221,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "Jaguar",
         "lat": -19.898889,
         "lng": -56.225278
       },
@@ -1206,6 +1245,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "",
         "lat": -19.858461,
         "lng": -56.273975
       }
@@ -1232,6 +1272,7 @@
         "star": false,
         "featured": true,
         "taxon": "",
+        "species": "",
         "lat": -22.982231,
         "lng": -43.190322
       },
@@ -1255,6 +1296,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "",
         "lat": -22.949572,
         "lng": -43.156475
       },
@@ -1278,6 +1320,7 @@
         "star": false,
         "featured": true,
         "taxon": "",
+        "species": "",
         "lat": -22.951847,
         "lng": -43.209992
       },
@@ -1301,6 +1344,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "",
         "lat": -22.951847,
         "lng": -43.209997
       },
@@ -1324,6 +1368,7 @@
         "star": false,
         "featured": false,
         "taxon": "",
+        "species": "",
         "lat": -22.951839,
         "lng": -43.210053
       },
@@ -1345,6 +1390,7 @@
         "flags": [],
         "star": false,
         "taxon": "",
+        "species": "",
         "ph": "DROP IN — CLOSING.JPG · FAMILY PORTRAIT"
       }
     ]
