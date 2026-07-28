@@ -6,7 +6,7 @@ import argparse
 import hashlib
 import json
 import re
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -15,6 +15,7 @@ from PIL import ExifTags, Image
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg"}
 EXIF_TAGS = {value: key for key, value in ExifTags.TAGS.items()}
+OFFSET_RE = re.compile(r"^([+-])(\d{2}):(\d{2})$")
 
 
 def slugify(value: str) -> str:
@@ -45,17 +46,61 @@ def parse_exif_datetime(value: Any) -> str | None:
         return None
 
 
+def parse_offset(value: Any) -> timezone | None:
+    """Parse an EXIF OffsetTime* string like '-03:00' into a timezone."""
+    if not isinstance(value, str):
+        return None
+    match = OFFSET_RE.match(value.strip())
+    if not match:
+        return None
+    sign, hours, minutes = match.groups()
+    delta = timedelta(hours=int(hours), minutes=int(minutes))
+    if sign == "-":
+        delta = -delta
+    return timezone(delta)
+
+
+def parse_capture_datetime(value: Any, offset_value: Any) -> tuple[str | None, str | None]:
+    """Combine an EXIF DateTimeOriginal string with its OffsetTime* string.
+
+    Returns (isoformat-with-offset-when-known, raw-offset-string-or-None).
+    """
+    if not isinstance(value, str):
+        return None, None
+    try:
+        naive = datetime.strptime(value, "%Y:%m:%d %H:%M:%S")
+    except ValueError:
+        return None, None
+    tz = parse_offset(offset_value)
+    if tz is None:
+        return naive.isoformat(), None
+    return naive.replace(tzinfo=tz).isoformat(), offset_value.strip()
+
+
 def extract_metadata(path: Path) -> dict[str, Any]:
     with Image.open(path) as image:
         exif = image.getexif()
+        # DateTimeOriginal/DateTimeDigitized and the OffsetTime* tags that
+        # carry the camera's UTC offset live in the Exif sub-IFD, not IFD0 —
+        # exif.get(...) alone always returns None for them.
+        exif_ifd = exif.get_ifd(ExifTags.IFD.Exif) if ExifTags.IFD.Exif in exif else {}
         gps = exif.get_ifd(EXIF_TAGS["GPSInfo"]) if EXIF_TAGS["GPSInfo"] in exif else {}
         gps = {ExifTags.GPSTAGS.get(key, key): value for key, value in gps.items()}
         capture_value = (
-            exif.get(EXIF_TAGS.get("DateTimeOriginal"))
-            or exif.get(EXIF_TAGS.get("DateTimeDigitized"))
+            exif_ifd.get(EXIF_TAGS.get("DateTimeOriginal"))
+            or exif_ifd.get(EXIF_TAGS.get("DateTimeDigitized"))
             or exif.get(EXIF_TAGS.get("DateTime"))
         )
+        offset_value = (
+            exif_ifd.get(EXIF_TAGS.get("OffsetTimeOriginal"))
+            or exif_ifd.get(EXIF_TAGS.get("OffsetTimeDigitized"))
+            or exif_ifd.get(EXIF_TAGS.get("OffsetTime"))
+        )
+        # IFD0 DateTime is the file's modify/export timestamp (e.g. when
+        # Lightroom wrote the export), which is unrelated to when the photo
+        # was actually taken.
         exported_value = exif.get(EXIF_TAGS.get("DateTime"))
+        capture_iso, capture_offset = parse_capture_datetime(capture_value, offset_value)
         latitude = coordinate(gps.get("GPSLatitude"), gps.get("GPSLatitudeRef", ""))
         longitude = coordinate(gps.get("GPSLongitude"), gps.get("GPSLongitudeRef", ""))
         sha1 = hashlib.sha1(path.read_bytes()).hexdigest()
@@ -70,7 +115,8 @@ def extract_metadata(path: Path) -> dict[str, Any]:
             "height": image.height,
             "bytes": path.stat().st_size,
             "sha1": sha1,
-            "date": parse_exif_datetime(capture_value),
+            "date": capture_iso,
+            "utcOffset": capture_offset,
             "exportedAt": parse_exif_datetime(exported_value),
             "latitude": latitude,
             "longitude": longitude,

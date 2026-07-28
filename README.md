@@ -15,7 +15,7 @@ python -m http.server 8000
 - `review_server.py` — local dev server (serves this folder + a `POST /api/save-edits` route the review tool's Save button calls, which also rebuilds `data/trip.json`). Local-only, never published.
 - `data/legs.json` — trip legs, palettes, stop-thumb defaults, and sequence order.
 - `data/narrative.json` — species + placeholder narrative entries keyed by `subjectId`.
-- `data/photo-catalog.json` — generated technical metadata for the private Lightroom export.
+- `data/photo-catalog.json` — generated technical metadata for the private Lightroom export, including each photo's real capture `date` (ISO 8601 with UTC offset, e.g. `2026-07-13T07:44:49-03:00`) and `utcOffset` (e.g. `-03:00`), pulled from the EXIF `DateTimeOriginal`/`OffsetTimeOriginal` tags — not the Lightroom export timestamp.
 - `data/photo-edits.json` — durable editorial overlay (the source of truth for captions/species/ordering/exclusions).
 - `data/trip.json` — generated merged payload consumed by the site.
 - `scripts/build_photo_catalog.py` — rebuilds `data/photo-catalog.json` from `photos\`.
@@ -43,7 +43,7 @@ Start the review server from this folder (not the plain `http.server` — this o
 python review_server.py
 ```
 
-The review page loads every photo automatically — no folder picker needed, since `photos\` is already right here. Photos are grouped into sections for each destination (São Paulo, Amazon, Pantanal, Rio). For each photo, fill in:
+The review page loads every photo automatically — no folder picker needed, since `photos\` is already right here. Each card shows the photo's real capture date, time, and timezone (e.g. "Jul 13, 2026 · 7:44 AM · UTC-03:00"), read from the catalog's `date`/`utcOffset` fields — this is read-only context, not an editable field. Photos are grouped into sections for each destination (São Paulo, Amazon, Pantanal, Rio). For each photo, fill in:
 - **Location** (`kicker`) — the place name, e.g. "Clearwater river"
 - **Subject** (`title`) — a short headline, e.g. "The otter on the boulder"
 - **Caption** (`body`) — a sentence or two of story/context

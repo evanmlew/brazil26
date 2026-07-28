@@ -46,6 +46,7 @@ main { max-width: 1600px; margin: auto; padding: 1.2rem clamp(1rem, 5vw, 5rem) 4
 .two-up { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
 
 .card-heading { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+.captured-at { color: var(--muted); font-size: .72rem; }
 .check { display: flex !important; flex-direction: row !important; align-items: center; gap: .3rem; white-space: nowrap; }
 .check input { width: auto; }
 

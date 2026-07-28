@@ -91,11 +91,26 @@ function updateLegCount(sectionRoot) {
   sectionRoot.querySelector(".leg-count").textContent = `${count} photo${count === 1 ? "" : "s"}`;
 }
 
+// Formats the EXIF capture timestamp (already the camera-local wall clock
+// time, e.g. "2026-07-13T07:44:49-03:00") without letting the browser
+// re-convert it into the viewer's own timezone.
+function formatCaptured(photo) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(photo.date || "");
+  if (!match) return "";
+  const [, y, mo, d, h, mi] = match.map(Number);
+  const asUtc = new Date(Date.UTC(y, mo - 1, d, h, mi));
+  const dateStr = asUtc.toLocaleDateString(undefined, { timeZone: "UTC", month: "short", day: "numeric", year: "numeric" });
+  const timeStr = asUtc.toLocaleTimeString(undefined, { timeZone: "UTC", hour: "numeric", minute: "2-digit" });
+  const tz = photo.utcOffset ? `UTC${photo.utcOffset}` : "";
+  return [dateStr, timeStr, tz].filter(Boolean).join(" · ");
+}
+
 function buildCard(photo) {
   const card = $("#photo-template").content.cloneNode(true);
   const root = card.querySelector(".photo-card");
   root.dataset.id = photo.id;
   root.querySelector(".filename").textContent = photo.filename;
+  root.querySelector(".captured-at").textContent = formatCaptured(photo) || "No capture timestamp found";
   root.querySelector(".preview img").src = `photos/${encodeURIComponent(photo.filename)}`;
   root.querySelector(".preview img").alt = photo.filename;
 
