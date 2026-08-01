@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-01T12:31:58-07:00",
+  "generatedAt": "2026-08-01T13:20:45-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",
@@ -26,185 +26,185 @@
     ]
   },
   "stopThumb": {
-    "saopaulo": "assets/photos/img-2725-b380768f8a-thumb.jpg",
-    "amazon": "assets/photos/img-0949-ba8db955e4-thumb.jpg",
-    "pantanal": "assets/photos/dsc02187-f4c40593ab-thumb.jpg",
-    "rio": "assets/photos/img-3099-e6ef5fd1cf-thumb.jpg"
+    "saopaulo": "assets/photos/img-2725-c11d751263-thumb.jpg",
+    "amazon": "assets/photos/img-0949-7cc238e17d-thumb.jpg",
+    "pantanal": "assets/photos/dsc02187-97ac82c963-thumb.jpg",
+    "rio": "assets/photos/img-3099-fbb79ec833-thumb.jpg"
   },
   "photoCoords": {
-    "img-2725-b380768f8a": [
+    "img-2725-c11d751263": [
       -23.561278,
       -46.655708
     ],
-    "img-2715-c09ff1f3f9": [
+    "img-2715-4760f8ea34": [
       -23.560306,
       -46.657939
     ],
-    "img-2727-58e5af7c75": [
+    "img-2727-a85b9fd07e": [
       -23.565439,
       -46.669736
     ],
-    "img-2735-88d7879db1": [
+    "img-2735-28ab2eca22": [
       -9.636581,
       -55.937858
     ],
-    "img-0949-ba8db955e4": [
+    "img-0949-7cc238e17d": [
       -9.563831,
       -55.902989
     ],
-    "dsc00036-2de88c5b10": [
+    "dsc00036-171df22a9e": [
       -9.636389,
       -55.937778
     ],
-    "dsc00408-1c22b819f2": [
+    "dsc00408-7339a02d29": [
       -9.546667,
       -55.909167
     ],
-    "dsc00455-4644cf7f68": [
+    "dsc00455-f19d422c73": [
       -9.546667,
       -55.909167
     ],
-    "dsc00609-11e3185a67": [
+    "dsc00609-6cf622cb46": [
       -9.546667,
       -55.909167
     ],
-    "dsc00870-b8dab853eb": [
+    "dsc00870-fe2707a496": [
       -9.6202,
       -55.94241
     ],
-    "dsc01309-0b7fcd3b8a": [
+    "dsc01309-90853e40f3": [
       -9.636111,
       -55.9775
     ],
-    "img-2788-9e6fae43b9": [
+    "img-2788-79afca8ad6": [
       -9.636075,
       -55.977467
     ],
-    "img-2797-4424b09154": [
+    "img-2797-43aa1fe11c": [
       -9.636175,
       -55.977467
     ],
-    "dsc01370-c631eb5832": [
+    "dsc01370-ddb01aff26": [
       -9.58751,
       -55.93056
     ],
-    "dsc01461-dbcb1b1c83": [
+    "dsc01461-1d7106395b": [
       -9.583056,
       -55.918889
     ],
-    "dsc01907-ef69c29f97": [
+    "dsc01907-eb96b3b619": [
       -9.5611,
       -55.9121
     ],
-    "dsc02014-f7a901b87b": [
+    "dsc02014-2c5f2431c2": [
       -9.561111,
       -55.912222
     ],
-    "img-2833-e8ca8b4d14": [
+    "img-2833-dd8abb0b33": [
       -9.596642,
       -55.931794
     ],
-    "img-2900-9a840c14f4": [
+    "img-2900-e0815cfa58": [
       -9.600811,
       -55.922775
     ],
-    "dsc02142-6c5b9fe953": [
+    "dsc02142-e5874bf98c": [
       -9.600833,
       -55.922778
     ],
-    "dsc02187-f4c40593ab": [
+    "dsc02187-97ac82c963": [
       -19.9549,
       -56.3146
     ],
-    "dsc02271-fba760fa16": [
+    "dsc02271-0ee304448c": [
       -19.97435,
       -56.31445
     ],
-    "dsc02339-4d5f113e91": [
+    "dsc02339-de547a705f": [
       -19.8752,
       -56.2922
     ],
-    "dsc02472-503fc8880c": [
+    "dsc02472-c6a4b24f7f": [
       -19.813611,
       -56.3
     ],
-    "dsc02518-637382fb6e": [
+    "dsc02518-931c84d465": [
       -19.81354,
       -56.299966
     ],
-    "dsc02568-d41efd4d63": [
+    "dsc02568-d2b05e28ed": [
       -19.9106,
       -56.2977
     ],
-    "dsc02811-0bf4e74747": [
+    "dsc02811-7dfb0b9308": [
       -19.924,
       -56.3011
     ],
-    "dsc02834-1614741810": [
+    "dsc02834-b0592de054": [
       -19.95222,
       -56.30462
     ],
-    "dsc02889-33c191a672": [
+    "dsc02889-8dc3b09536": [
       -19.975556,
       -56.314444
     ],
-    "dsc02921-80b9add082": [
+    "dsc02921-9e9dd104f6": [
       -19.9755,
       -56.3145
     ],
-    "dsc03020-7c53ce840e": [
+    "dsc03020-92020f4b1b": [
       -19.952222,
       -56.304722
     ],
-    "dsc03028-c50be9e1b5": [
+    "dsc03028-e5b4bf63ec": [
       -19.8836,
       -56.2947
     ],
-    "dsc03048-aedb6e5511": [
+    "dsc03048-ab8e831ffc": [
       -19.953611,
       -56.305278
     ],
-    "dsc03126-2d5ed5f9ea": [
+    "dsc03126-b2d1854960": [
       -19.96178,
       -56.30743
     ],
-    "dsc03163-51c8fe70b1": [
+    "dsc03163-be20f41989": [
       -19.97261,
       -56.31298
     ],
-    "dsc03373-5593e75167": [
+    "dsc03373-d8e19a4866": [
       -19.8869,
       -56.2553
     ],
-    "dsc03598-8f147af0f3": [
+    "dsc03598-28bfb8641d": [
       -19.89901,
       -56.22534
     ],
-    "dsc03644-799d65622e": [
+    "dsc03644-76be797401": [
       -19.898889,
       -56.225278
     ],
-    "dsc03693-7759bf3721": [
+    "dsc03693-aa0fe4ad17": [
       -19.898889,
       -56.225278
     ],
-    "img-2943-1b8991110f": [
+    "img-2943-daaeb5aadd": [
       -19.858461,
       -56.273975
     ],
-    "img-3099-e6ef5fd1cf": [
+    "img-3099-fbb79ec833": [
       -22.982231,
       -43.190322
     ],
-    "img-3012-2deaae7fc4": [
+    "img-3012-8e94da00d6": [
       -22.949572,
       -43.156475
     ],
-    "img-3045-pano-11dfcd5c40": [
+    "img-3045-pano-e8f1bf4365": [
       -22.951847,
       -43.209992
     ],
-    "img-3055-96fe4c534f": [
+    "img-3055-3e5a6402a5": [
       -22.951839,
       -43.210053
     ]
@@ -264,12 +264,12 @@
       {
         "leg": "saopaulo",
         "legId": "saopaulo",
-        "key": "img-2725-b380768f8a",
-        "photoId": "img-2725-b380768f8a",
+        "key": "img-2725-c11d751263",
+        "photoId": "img-2725-c11d751263",
         "kind": "photo",
-        "src": "assets/photos/img-2725-b380768f8a-card.jpg",
-        "srcAvif": "assets/photos/img-2725-b380768f8a-card.avif",
-        "thumb": "assets/photos/img-2725-b380768f8a-thumb.jpg",
+        "src": "assets/photos/img-2725-c11d751263-card.jpg",
+        "srcAvif": "assets/photos/img-2725-c11d751263-card.avif",
+        "thumb": "assets/photos/img-2725-c11d751263-thumb.jpg",
         "alt": "The city as canvas",
         "pinLabel": "The city as canvas",
         "kicker": "Street level",
@@ -289,12 +289,12 @@
       {
         "leg": "saopaulo",
         "legId": "saopaulo",
-        "key": "img-2715-c09ff1f3f9",
-        "photoId": "img-2715-c09ff1f3f9",
+        "key": "img-2715-4760f8ea34",
+        "photoId": "img-2715-4760f8ea34",
         "kind": "photo",
-        "src": "assets/photos/img-2715-c09ff1f3f9-card.jpg",
-        "srcAvif": "assets/photos/img-2715-c09ff1f3f9-card.avif",
-        "thumb": "assets/photos/img-2715-c09ff1f3f9-thumb.jpg",
+        "src": "assets/photos/img-2715-4760f8ea34-card.jpg",
+        "srcAvif": "assets/photos/img-2715-4760f8ea34-card.avif",
+        "thumb": "assets/photos/img-2715-4760f8ea34-thumb.jpg",
         "alt": "Golden arches, translated",
         "pinLabel": "Golden arches, translated",
         "kicker": "First impressions",
@@ -314,13 +314,13 @@
       {
         "leg": "saopaulo",
         "legId": "saopaulo",
-        "key": "img-2727-58e5af7c75",
-        "photoId": "img-2727-58e5af7c75",
+        "key": "img-2727-a85b9fd07e",
+        "photoId": "img-2727-a85b9fd07e",
         "subjectId": "sp_02",
         "kind": "photo",
-        "src": "assets/photos/img-2727-58e5af7c75-card.jpg",
-        "srcAvif": "assets/photos/img-2727-58e5af7c75-card.avif",
-        "thumb": "assets/photos/img-2727-58e5af7c75-thumb.jpg",
+        "src": "assets/photos/img-2727-a85b9fd07e-card.jpg",
+        "srcAvif": "assets/photos/img-2727-a85b9fd07e-card.avif",
+        "thumb": "assets/photos/img-2727-a85b9fd07e-thumb.jpg",
         "alt": "Dinner under the fig tree",
         "pinLabel": "Dinner under the fig tree",
         "kicker": "First night",
@@ -342,12 +342,12 @@
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "img-2735-88d7879db1",
-        "photoId": "img-2735-88d7879db1",
+        "key": "img-2735-28ab2eca22",
+        "photoId": "img-2735-28ab2eca22",
         "kind": "photo",
-        "src": "assets/photos/img-2735-88d7879db1-card.jpg",
-        "srcAvif": "assets/photos/img-2735-88d7879db1-card.avif",
-        "thumb": "assets/photos/img-2735-88d7879db1-thumb.jpg",
+        "src": "assets/photos/img-2735-28ab2eca22-card.jpg",
+        "srcAvif": "assets/photos/img-2735-28ab2eca22-card.avif",
+        "thumb": "assets/photos/img-2735-28ab2eca22-thumb.jpg",
         "alt": "The only way in",
         "pinLabel": "The only way in",
         "kicker": "Touching down",
@@ -367,12 +367,12 @@
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "img-0949-ba8db955e4",
-        "photoId": "img-0949-ba8db955e4",
+        "key": "img-0949-7cc238e17d",
+        "photoId": "img-0949-7cc238e17d",
         "kind": "photo",
-        "src": "assets/photos/img-0949-ba8db955e4-card.jpg",
-        "srcAvif": "assets/photos/img-0949-ba8db955e4-card.avif",
-        "thumb": "assets/photos/img-0949-ba8db955e4-thumb.jpg",
+        "src": "assets/photos/img-0949-7cc238e17d-card.jpg",
+        "srcAvif": "assets/photos/img-0949-7cc238e17d-card.avif",
+        "thumb": "assets/photos/img-0949-7cc238e17d-thumb.jpg",
         "alt": "Dwarfed by a tree",
         "pinLabel": "Dwarfed by a tree",
         "kicker": "Giants",
@@ -392,12 +392,12 @@
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "dsc00036-2de88c5b10",
-        "photoId": "dsc00036-2de88c5b10",
+        "key": "dsc00036-171df22a9e",
+        "photoId": "dsc00036-171df22a9e",
         "kind": "photo",
-        "src": "assets/photos/dsc00036-2de88c5b10-card.jpg",
-        "srcAvif": "assets/photos/dsc00036-2de88c5b10-card.avif",
-        "thumb": "assets/photos/dsc00036-2de88c5b10-thumb.jpg",
+        "src": "assets/photos/dsc00036-171df22a9e-card.jpg",
+        "srcAvif": "assets/photos/dsc00036-171df22a9e-card.avif",
+        "thumb": "assets/photos/dsc00036-171df22a9e-thumb.jpg",
         "alt": "Fifteen minutes in",
         "pinLabel": "Fifteen minutes in",
         "kicker": "First boat tour",
@@ -417,12 +417,12 @@
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "dsc00408-1c22b819f2",
-        "photoId": "dsc00408-1c22b819f2",
+        "key": "dsc00408-7339a02d29",
+        "photoId": "dsc00408-7339a02d29",
         "kind": "photo",
-        "src": "assets/photos/dsc00408-1c22b819f2-card.jpg",
-        "srcAvif": "assets/photos/dsc00408-1c22b819f2-card.avif",
-        "thumb": "assets/photos/dsc00408-1c22b819f2-thumb.jpg",
+        "src": "assets/photos/dsc00408-7339a02d29-card.jpg",
+        "srcAvif": "assets/photos/dsc00408-7339a02d29-card.avif",
+        "thumb": "assets/photos/dsc00408-7339a02d29-thumb.jpg",
         "alt": "Standing their ground",
         "pinLabel": "Standing their ground",
         "kicker": "Warning shots",
@@ -442,12 +442,12 @@
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "dsc00455-4644cf7f68",
-        "photoId": "dsc00455-4644cf7f68",
+        "key": "dsc00455-f19d422c73",
+        "photoId": "dsc00455-f19d422c73",
         "kind": "photo",
-        "src": "assets/photos/dsc00455-4644cf7f68-card.jpg",
-        "srcAvif": "assets/photos/dsc00455-4644cf7f68-card.avif",
-        "thumb": "assets/photos/dsc00455-4644cf7f68-thumb.jpg",
+        "src": "assets/photos/dsc00455-f19d422c73-card.jpg",
+        "srcAvif": "assets/photos/dsc00455-f19d422c73-card.avif",
+        "thumb": "assets/photos/dsc00455-f19d422c73-thumb.jpg",
         "alt": "A wary eye",
         "pinLabel": "A wary eye",
         "kicker": "Overhead",
@@ -467,12 +467,12 @@
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "dsc00609-11e3185a67",
-        "photoId": "dsc00609-11e3185a67",
+        "key": "dsc00609-6cf622cb46",
+        "photoId": "dsc00609-6cf622cb46",
         "kind": "photo",
-        "src": "assets/photos/dsc00609-11e3185a67-card.jpg",
-        "srcAvif": "assets/photos/dsc00609-11e3185a67-card.avif",
-        "thumb": "assets/photos/dsc00609-11e3185a67-thumb.jpg",
+        "src": "assets/photos/dsc00609-6cf622cb46-card.jpg",
+        "srcAvif": "assets/photos/dsc00609-6cf622cb46-card.avif",
+        "thumb": "assets/photos/dsc00609-6cf622cb46-thumb.jpg",
         "alt": "Through the high canopy",
         "pinLabel": "Through the high canopy",
         "kicker": "On the move",
@@ -492,12 +492,12 @@
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "dsc00870-b8dab853eb",
-        "photoId": "dsc00870-b8dab853eb",
+        "key": "dsc00870-fe2707a496",
+        "photoId": "dsc00870-fe2707a496",
         "kind": "photo",
-        "src": "assets/photos/dsc00870-b8dab853eb-card.jpg",
-        "srcAvif": "assets/photos/dsc00870-b8dab853eb-card.avif",
-        "thumb": "assets/photos/dsc00870-b8dab853eb-thumb.jpg",
+        "src": "assets/photos/dsc00870-fe2707a496-card.jpg",
+        "srcAvif": "assets/photos/dsc00870-fe2707a496-card.avif",
+        "thumb": "assets/photos/dsc00870-fe2707a496-thumb.jpg",
         "alt": "One more frame",
         "pinLabel": "One more frame",
         "kicker": "Chasing light",
@@ -517,12 +517,12 @@
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "dsc01309-0b7fcd3b8a",
-        "photoId": "dsc01309-0b7fcd3b8a",
+        "key": "dsc01309-90853e40f3",
+        "photoId": "dsc01309-90853e40f3",
         "kind": "photo",
-        "src": "assets/photos/dsc01309-0b7fcd3b8a-card.jpg",
-        "srcAvif": "assets/photos/dsc01309-0b7fcd3b8a-card.avif",
-        "thumb": "assets/photos/dsc01309-0b7fcd3b8a-thumb.jpg",
+        "src": "assets/photos/dsc01309-90853e40f3-card.jpg",
+        "srcAvif": "assets/photos/dsc01309-90853e40f3-card.avif",
+        "thumb": "assets/photos/dsc01309-90853e40f3-thumb.jpg",
         "alt": "The tree fills up",
         "pinLabel": "The tree fills up",
         "kicker": "Evening roost",
@@ -542,12 +542,12 @@
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "img-2788-9e6fae43b9",
-        "photoId": "img-2788-9e6fae43b9",
+        "key": "img-2788-79afca8ad6",
+        "photoId": "img-2788-79afca8ad6",
         "kind": "photo",
-        "src": "assets/photos/img-2788-9e6fae43b9-card.jpg",
-        "srcAvif": "assets/photos/img-2788-9e6fae43b9-card.avif",
-        "thumb": "assets/photos/img-2788-9e6fae43b9-thumb.jpg",
+        "src": "assets/photos/img-2788-79afca8ad6-card.jpg",
+        "srcAvif": "assets/photos/img-2788-79afca8ad6-card.avif",
+        "thumb": "assets/photos/img-2788-79afca8ad6-thumb.jpg",
         "alt": "The sky catches fire",
         "pinLabel": "The sky catches fire",
         "kicker": "Golden hour",
@@ -567,12 +567,12 @@
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "img-2797-4424b09154",
-        "photoId": "img-2797-4424b09154",
+        "key": "img-2797-43aa1fe11c",
+        "photoId": "img-2797-43aa1fe11c",
         "kind": "photo",
-        "src": "assets/photos/img-2797-4424b09154-card.jpg",
-        "srcAvif": "assets/photos/img-2797-4424b09154-card.avif",
-        "thumb": "assets/photos/img-2797-4424b09154-thumb.jpg",
+        "src": "assets/photos/img-2797-43aa1fe11c-card.jpg",
+        "srcAvif": "assets/photos/img-2797-43aa1fe11c-card.avif",
+        "thumb": "assets/photos/img-2797-43aa1fe11c-thumb.jpg",
         "alt": "Riding it in",
         "pinLabel": "Riding it in",
         "kicker": "Golden hour",
@@ -592,13 +592,13 @@
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "dsc01370-c631eb5832",
-        "photoId": "dsc01370-c631eb5832",
+        "key": "dsc01370-ddb01aff26",
+        "photoId": "dsc01370-ddb01aff26",
         "subjectId": "frog",
         "kind": "photo",
-        "src": "assets/photos/dsc01370-c631eb5832-card.jpg",
-        "srcAvif": "assets/photos/dsc01370-c631eb5832-card.avif",
-        "thumb": "assets/photos/dsc01370-c631eb5832-thumb.jpg",
+        "src": "assets/photos/dsc01370-ddb01aff26-card.jpg",
+        "srcAvif": "assets/photos/dsc01370-ddb01aff26-card.avif",
+        "thumb": "assets/photos/dsc01370-ddb01aff26-thumb.jpg",
         "alt": "Tree Frog — Boana sp.",
         "pinLabel": "Tree Frog",
         "kicker": "Night walk",
@@ -619,12 +619,12 @@
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "dsc01461-dbcb1b1c83",
-        "photoId": "dsc01461-dbcb1b1c83",
+        "key": "dsc01461-1d7106395b",
+        "photoId": "dsc01461-1d7106395b",
         "kind": "photo",
-        "src": "assets/photos/dsc01461-dbcb1b1c83-card.jpg",
-        "srcAvif": "assets/photos/dsc01461-dbcb1b1c83-card.avif",
-        "thumb": "assets/photos/dsc01461-dbcb1b1c83-thumb.jpg",
+        "src": "assets/photos/dsc01461-1d7106395b-card.jpg",
+        "srcAvif": "assets/photos/dsc01461-1d7106395b-card.avif",
+        "thumb": "assets/photos/dsc01461-1d7106395b-thumb.jpg",
         "alt": "A stingless bee, a bromeliad in bloom",
         "pinLabel": "A stingless bee, a bromeliad in bloom",
         "kicker": "Understory",
@@ -644,13 +644,13 @@
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "dsc01907-ef69c29f97",
-        "photoId": "dsc01907-ef69c29f97",
+        "key": "dsc01907-eb96b3b619",
+        "photoId": "dsc01907-eb96b3b619",
         "subjectId": "otter",
         "kind": "photo",
-        "src": "assets/photos/dsc01907-ef69c29f97-card.jpg",
-        "srcAvif": "assets/photos/dsc01907-ef69c29f97-card.avif",
-        "thumb": "assets/photos/dsc01907-ef69c29f97-thumb.jpg",
+        "src": "assets/photos/dsc01907-eb96b3b619-card.jpg",
+        "srcAvif": "assets/photos/dsc01907-eb96b3b619-card.avif",
+        "thumb": "assets/photos/dsc01907-eb96b3b619-thumb.jpg",
         "alt": "Neotropical Otter — Lontra longicaudis",
         "pinLabel": "Neotropical Otter",
         "kicker": "Clearwater river",
@@ -670,13 +670,13 @@
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "dsc02014-f7a901b87b",
-        "photoId": "dsc02014-f7a901b87b",
+        "key": "dsc02014-2c5f2431c2",
+        "photoId": "dsc02014-2c5f2431c2",
         "subjectId": "turtle",
         "kind": "photo",
-        "src": "assets/photos/dsc02014-f7a901b87b-card.jpg",
-        "srcAvif": "assets/photos/dsc02014-f7a901b87b-card.avif",
-        "thumb": "assets/photos/dsc02014-f7a901b87b-thumb.jpg",
+        "src": "assets/photos/dsc02014-2c5f2431c2-card.jpg",
+        "srcAvif": "assets/photos/dsc02014-2c5f2431c2-card.avif",
+        "thumb": "assets/photos/dsc02014-2c5f2431c2-thumb.jpg",
         "alt": "Yellow-spotted River Turtle — Podocnemis unifilis",
         "pinLabel": "Yellow-spotted River Turtle",
         "kicker": "Sun and salt",
@@ -696,12 +696,12 @@
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "img-2833-e8ca8b4d14",
-        "photoId": "img-2833-e8ca8b4d14",
+        "key": "img-2833-dd8abb0b33",
+        "photoId": "img-2833-dd8abb0b33",
         "kind": "photo",
-        "src": "assets/photos/img-2833-e8ca8b4d14-card.jpg",
-        "srcAvif": "assets/photos/img-2833-e8ca8b4d14-card.avif",
-        "thumb": "assets/photos/img-2833-e8ca8b4d14-thumb.jpg",
+        "src": "assets/photos/img-2833-dd8abb0b33-card.jpg",
+        "srcAvif": "assets/photos/img-2833-dd8abb0b33-card.avif",
+        "thumb": "assets/photos/img-2833-dd8abb0b33-thumb.jpg",
         "alt": "Right outside our door",
         "pinLabel": "Right outside our door",
         "kicker": "Uninvited guest",
@@ -721,12 +721,12 @@
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "img-2900-9a840c14f4",
-        "photoId": "img-2900-9a840c14f4",
+        "key": "img-2900-e0815cfa58",
+        "photoId": "img-2900-e0815cfa58",
         "kind": "photo",
-        "src": "assets/photos/img-2900-9a840c14f4-card.jpg",
-        "srcAvif": "assets/photos/img-2900-9a840c14f4-card.avif",
-        "thumb": "assets/photos/img-2900-9a840c14f4-thumb.jpg",
+        "src": "assets/photos/img-2900-e0815cfa58-card.jpg",
+        "srcAvif": "assets/photos/img-2900-e0815cfa58-card.avif",
+        "thumb": "assets/photos/img-2900-e0815cfa58-thumb.jpg",
         "alt": "An unbroken sea of green",
         "pinLabel": "An unbroken sea of green",
         "kicker": "First light",
@@ -746,12 +746,12 @@
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "dsc02142-6c5b9fe953",
-        "photoId": "dsc02142-6c5b9fe953",
+        "key": "dsc02142-e5874bf98c",
+        "photoId": "dsc02142-e5874bf98c",
         "kind": "photo",
-        "src": "assets/photos/dsc02142-6c5b9fe953-card.jpg",
-        "srcAvif": "assets/photos/dsc02142-6c5b9fe953-card.avif",
-        "thumb": "assets/photos/dsc02142-6c5b9fe953-thumb.jpg",
+        "src": "assets/photos/dsc02142-e5874bf98c-card.jpg",
+        "srcAvif": "assets/photos/dsc02142-e5874bf98c-card.avif",
+        "thumb": "assets/photos/dsc02142-e5874bf98c-thumb.jpg",
         "alt": "The forest exhales",
         "pinLabel": "The forest exhales",
         "kicker": "Same view, minutes later",
@@ -773,13 +773,13 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc02187-f4c40593ab",
-        "photoId": "dsc02187-f4c40593ab",
+        "key": "dsc02187-97ac82c963",
+        "photoId": "dsc02187-97ac82c963",
         "subjectId": "ocelot",
         "kind": "photo",
-        "src": "assets/photos/dsc02187-f4c40593ab-card.jpg",
-        "srcAvif": "assets/photos/dsc02187-f4c40593ab-card.avif",
-        "thumb": "assets/photos/dsc02187-f4c40593ab-thumb.jpg",
+        "src": "assets/photos/dsc02187-97ac82c963-card.jpg",
+        "srcAvif": "assets/photos/dsc02187-97ac82c963-card.avif",
+        "thumb": "assets/photos/dsc02187-97ac82c963-thumb.jpg",
         "alt": "Ocelot — Leopardus pardalis",
         "pinLabel": "Ocelot",
         "kicker": "After dark",
@@ -799,13 +799,13 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc02271-fba760fa16",
-        "photoId": "dsc02271-fba760fa16",
+        "key": "dsc02271-0ee304448c",
+        "photoId": "dsc02271-0ee304448c",
         "subjectId": "pampasdeer",
         "kind": "photo",
-        "src": "assets/photos/dsc02271-fba760fa16-card.jpg",
-        "srcAvif": "assets/photos/dsc02271-fba760fa16-card.avif",
-        "thumb": "assets/photos/dsc02271-fba760fa16-thumb.jpg",
+        "src": "assets/photos/dsc02271-0ee304448c-card.jpg",
+        "srcAvif": "assets/photos/dsc02271-0ee304448c-card.avif",
+        "thumb": "assets/photos/dsc02271-0ee304448c-thumb.jpg",
         "alt": "Pampas Deer & Cattle Tyrant — Ozotoceros bezoarticus",
         "pinLabel": "Pampas Deer & Cattle Tyrant",
         "kicker": "A passenger",
@@ -825,13 +825,13 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc02339-4d5f113e91",
-        "photoId": "dsc02339-4d5f113e91",
+        "key": "dsc02339-de547a705f",
+        "photoId": "dsc02339-de547a705f",
         "subjectId": "jabiru",
         "kind": "photo",
-        "src": "assets/photos/dsc02339-4d5f113e91-card.jpg",
-        "srcAvif": "assets/photos/dsc02339-4d5f113e91-card.avif",
-        "thumb": "assets/photos/dsc02339-4d5f113e91-thumb.jpg",
+        "src": "assets/photos/dsc02339-de547a705f-card.jpg",
+        "srcAvif": "assets/photos/dsc02339-de547a705f-card.avif",
+        "thumb": "assets/photos/dsc02339-de547a705f-thumb.jpg",
         "alt": "Jabiru — Jabiru mycteria",
         "pinLabel": "Jabiru",
         "kicker": "Catch of the day",
@@ -851,13 +851,13 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc02472-503fc8880c",
-        "photoId": "dsc02472-503fc8880c",
+        "key": "dsc02472-c6a4b24f7f",
+        "photoId": "dsc02472-c6a4b24f7f",
         "subjectId": "jaguar",
         "kind": "photo",
-        "src": "assets/photos/dsc02472-503fc8880c-card.jpg",
-        "srcAvif": "assets/photos/dsc02472-503fc8880c-card.avif",
-        "thumb": "assets/photos/dsc02472-503fc8880c-thumb.jpg",
+        "src": "assets/photos/dsc02472-c6a4b24f7f-card.jpg",
+        "srcAvif": "assets/photos/dsc02472-c6a4b24f7f-card.avif",
+        "thumb": "assets/photos/dsc02472-c6a4b24f7f-thumb.jpg",
         "alt": "Jaguar — Panthera onca",
         "pinLabel": "Jaguar",
         "kicker": "The headline",
@@ -878,13 +878,13 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc02518-637382fb6e",
-        "photoId": "dsc02518-637382fb6e",
+        "key": "dsc02518-931c84d465",
+        "photoId": "dsc02518-931c84d465",
         "subjectId": "tapir",
         "kind": "photo",
-        "src": "assets/photos/dsc02518-637382fb6e-card.jpg",
-        "srcAvif": "assets/photos/dsc02518-637382fb6e-card.avif",
-        "thumb": "assets/photos/dsc02518-637382fb6e-thumb.jpg",
+        "src": "assets/photos/dsc02518-931c84d465-card.jpg",
+        "srcAvif": "assets/photos/dsc02518-931c84d465-card.avif",
+        "thumb": "assets/photos/dsc02518-931c84d465-thumb.jpg",
         "alt": "South American Tapir — Tapirus terrestris",
         "pinLabel": "South American Tapir",
         "kicker": "Midday",
@@ -904,12 +904,12 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc02568-d41efd4d63",
-        "photoId": "dsc02568-d41efd4d63",
+        "key": "dsc02568-d2b05e28ed",
+        "photoId": "dsc02568-d2b05e28ed",
         "kind": "photo",
-        "src": "assets/photos/dsc02568-d41efd4d63-card.jpg",
-        "srcAvif": "assets/photos/dsc02568-d41efd4d63-card.avif",
-        "thumb": "assets/photos/dsc02568-d41efd4d63-thumb.jpg",
+        "src": "assets/photos/dsc02568-d2b05e28ed-card.jpg",
+        "srcAvif": "assets/photos/dsc02568-d2b05e28ed-card.avif",
+        "thumb": "assets/photos/dsc02568-d2b05e28ed-thumb.jpg",
         "alt": "An eight-legged crossing",
         "pinLabel": "An eight-legged crossing",
         "kicker": "From the jeep",
@@ -929,13 +929,13 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc02811-0bf4e74747",
-        "photoId": "dsc02811-0bf4e74747",
+        "key": "dsc02811-7dfb0b9308",
+        "photoId": "dsc02811-7dfb0b9308",
         "subjectId": "caracara",
         "kind": "photo",
-        "src": "assets/photos/dsc02811-0bf4e74747-card.jpg",
-        "srcAvif": "assets/photos/dsc02811-0bf4e74747-card.avif",
-        "thumb": "assets/photos/dsc02811-0bf4e74747-thumb.jpg",
+        "src": "assets/photos/dsc02811-7dfb0b9308-card.jpg",
+        "srcAvif": "assets/photos/dsc02811-7dfb0b9308-card.avif",
+        "thumb": "assets/photos/dsc02811-7dfb0b9308-thumb.jpg",
         "alt": "Southern Crested Caracara — Caracara plancus",
         "pinLabel": "Southern Crested Caracara",
         "kicker": "Tug of war",
@@ -955,12 +955,12 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc02834-1614741810",
-        "photoId": "dsc02834-1614741810",
+        "key": "dsc02834-b0592de054",
+        "photoId": "dsc02834-b0592de054",
         "kind": "photo",
-        "src": "assets/photos/dsc02834-1614741810-card.jpg",
-        "srcAvif": "assets/photos/dsc02834-1614741810-card.avif",
-        "thumb": "assets/photos/dsc02834-1614741810-thumb.jpg",
+        "src": "assets/photos/dsc02834-b0592de054-card.jpg",
+        "srcAvif": "assets/photos/dsc02834-b0592de054-card.avif",
+        "thumb": "assets/photos/dsc02834-b0592de054-thumb.jpg",
         "alt": "Ancient and unbothered",
         "pinLabel": "Ancient and unbothered",
         "kicker": "Eye level",
@@ -980,13 +980,13 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc02889-33c191a672",
-        "photoId": "dsc02889-33c191a672",
+        "key": "dsc02889-8dc3b09536",
+        "photoId": "dsc02889-8dc3b09536",
         "subjectId": "cardinal",
         "kind": "photo",
-        "src": "assets/photos/dsc02889-33c191a672-card.jpg",
-        "srcAvif": "assets/photos/dsc02889-33c191a672-card.avif",
-        "thumb": "assets/photos/dsc02889-33c191a672-thumb.jpg",
+        "src": "assets/photos/dsc02889-8dc3b09536-card.jpg",
+        "srcAvif": "assets/photos/dsc02889-8dc3b09536-card.avif",
+        "thumb": "assets/photos/dsc02889-8dc3b09536-thumb.jpg",
         "alt": "Yellow-billed Cardinal — Paroaria capitata",
         "pinLabel": "Yellow-billed Cardinal",
         "kicker": "Not a cardinal",
@@ -1006,13 +1006,13 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc02921-80b9add082",
-        "photoId": "dsc02921-80b9add082",
+        "key": "dsc02921-9e9dd104f6",
+        "photoId": "dsc02921-9e9dd104f6",
         "subjectId": "kingfisher",
         "kind": "photo",
-        "src": "assets/photos/dsc02921-80b9add082-card.jpg",
-        "srcAvif": "assets/photos/dsc02921-80b9add082-card.avif",
-        "thumb": "assets/photos/dsc02921-80b9add082-thumb.jpg",
+        "src": "assets/photos/dsc02921-9e9dd104f6-card.jpg",
+        "srcAvif": "assets/photos/dsc02921-9e9dd104f6-card.avif",
+        "thumb": "assets/photos/dsc02921-9e9dd104f6-thumb.jpg",
         "alt": "Ringed Kingfisher — Megaceryle torquata",
         "pinLabel": "Ringed Kingfisher",
         "kicker": "Through the fronds",
@@ -1032,12 +1032,12 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc03020-7c53ce840e",
-        "photoId": "dsc03020-7c53ce840e",
+        "key": "dsc03020-92020f4b1b",
+        "photoId": "dsc03020-92020f4b1b",
         "kind": "photo",
-        "src": "assets/photos/dsc03020-7c53ce840e-card.jpg",
-        "srcAvif": "assets/photos/dsc03020-7c53ce840e-card.avif",
-        "thumb": "assets/photos/dsc03020-7c53ce840e-thumb.jpg",
+        "src": "assets/photos/dsc03020-92020f4b1b-card.jpg",
+        "srcAvif": "assets/photos/dsc03020-92020f4b1b-card.avif",
+        "thumb": "assets/photos/dsc03020-92020f4b1b-thumb.jpg",
         "alt": "Napping in the open",
         "pinLabel": "Napping in the open",
         "kicker": "Unbothered",
@@ -1057,13 +1057,13 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc03028-c50be9e1b5",
-        "photoId": "dsc03028-c50be9e1b5",
+        "key": "dsc03028-e5b4bf63ec",
+        "photoId": "dsc03028-e5b4bf63ec",
         "subjectId": "vulture",
         "kind": "photo",
-        "src": "assets/photos/dsc03028-c50be9e1b5-card.jpg",
-        "srcAvif": "assets/photos/dsc03028-c50be9e1b5-card.avif",
-        "thumb": "assets/photos/dsc03028-c50be9e1b5-thumb.jpg",
+        "src": "assets/photos/dsc03028-e5b4bf63ec-card.jpg",
+        "srcAvif": "assets/photos/dsc03028-e5b4bf63ec-card.avif",
+        "thumb": "assets/photos/dsc03028-e5b4bf63ec-thumb.jpg",
         "alt": "Lesser Yellow-headed Vulture — Cathartes burrovianus",
         "pinLabel": "Lesser Yellow-headed Vulture",
         "kicker": "Low over the marsh",
@@ -1083,13 +1083,13 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc03048-aedb6e5511",
-        "photoId": "dsc03048-aedb6e5511",
+        "key": "dsc03048-ab8e831ffc",
+        "photoId": "dsc03048-ab8e831ffc",
         "subjectId": "macaw",
         "kind": "photo",
-        "src": "assets/photos/dsc03048-aedb6e5511-card.jpg",
-        "srcAvif": "assets/photos/dsc03048-aedb6e5511-card.avif",
-        "thumb": "assets/photos/dsc03048-aedb6e5511-thumb.jpg",
+        "src": "assets/photos/dsc03048-ab8e831ffc-card.jpg",
+        "srcAvif": "assets/photos/dsc03048-ab8e831ffc-card.avif",
+        "thumb": "assets/photos/dsc03048-ab8e831ffc-thumb.jpg",
         "alt": "Hyacinth Macaw — Anodorhynchus hyacinthinus",
         "pinLabel": "Hyacinth Macaw",
         "kicker": "Cobalt",
@@ -1110,12 +1110,12 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc03126-2d5ed5f9ea",
-        "photoId": "dsc03126-2d5ed5f9ea",
+        "key": "dsc03126-b2d1854960",
+        "photoId": "dsc03126-b2d1854960",
         "kind": "photo",
-        "src": "assets/photos/dsc03126-2d5ed5f9ea-card.jpg",
-        "srcAvif": "assets/photos/dsc03126-2d5ed5f9ea-card.avif",
-        "thumb": "assets/photos/dsc03126-2d5ed5f9ea-thumb.jpg",
+        "src": "assets/photos/dsc03126-b2d1854960-card.jpg",
+        "srcAvif": "assets/photos/dsc03126-b2d1854960-card.avif",
+        "thumb": "assets/photos/dsc03126-b2d1854960-thumb.jpg",
         "alt": "An armored shuffle",
         "pinLabel": "An armored shuffle",
         "kicker": "Backlit",
@@ -1135,13 +1135,13 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc03163-51c8fe70b1",
-        "photoId": "dsc03163-51c8fe70b1",
+        "key": "dsc03163-be20f41989",
+        "photoId": "dsc03163-be20f41989",
         "subjectId": "owl",
         "kind": "photo",
-        "src": "assets/photos/dsc03163-51c8fe70b1-card.jpg",
-        "srcAvif": "assets/photos/dsc03163-51c8fe70b1-card.avif",
-        "thumb": "assets/photos/dsc03163-51c8fe70b1-thumb.jpg",
+        "src": "assets/photos/dsc03163-be20f41989-card.jpg",
+        "srcAvif": "assets/photos/dsc03163-be20f41989-card.avif",
+        "thumb": "assets/photos/dsc03163-be20f41989-thumb.jpg",
         "alt": "Burrowing Owl — Athene cunicularia",
         "pinLabel": "Burrowing Owl",
         "kicker": "Daylight owl",
@@ -1161,13 +1161,13 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc03373-5593e75167",
-        "photoId": "dsc03373-5593e75167",
+        "key": "dsc03373-d8e19a4866",
+        "photoId": "dsc03373-d8e19a4866",
         "subjectId": "marshdeer",
         "kind": "photo",
-        "src": "assets/photos/dsc03373-5593e75167-card.jpg",
-        "srcAvif": "assets/photos/dsc03373-5593e75167-card.avif",
-        "thumb": "assets/photos/dsc03373-5593e75167-thumb.jpg",
+        "src": "assets/photos/dsc03373-d8e19a4866-card.jpg",
+        "srcAvif": "assets/photos/dsc03373-d8e19a4866-card.avif",
+        "thumb": "assets/photos/dsc03373-d8e19a4866-thumb.jpg",
         "alt": "Marsh Deer — Blastocerus dichotomus",
         "pinLabel": "Marsh Deer",
         "kicker": "Full antler",
@@ -1187,12 +1187,12 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc03598-8f147af0f3",
-        "photoId": "dsc03598-8f147af0f3",
+        "key": "dsc03598-28bfb8641d",
+        "photoId": "dsc03598-28bfb8641d",
         "kind": "photo",
-        "src": "assets/photos/dsc03598-8f147af0f3-card.jpg",
-        "srcAvif": "assets/photos/dsc03598-8f147af0f3-card.avif",
-        "thumb": "assets/photos/dsc03598-8f147af0f3-thumb.jpg",
+        "src": "assets/photos/dsc03598-28bfb8641d-card.jpg",
+        "srcAvif": "assets/photos/dsc03598-28bfb8641d-card.avif",
+        "thumb": "assets/photos/dsc03598-28bfb8641d-thumb.jpg",
         "alt": "Sneaking closer",
         "pinLabel": "Sneaking closer",
         "kicker": "Second encounter",
@@ -1212,12 +1212,12 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc03644-799d65622e",
-        "photoId": "dsc03644-799d65622e",
+        "key": "dsc03644-76be797401",
+        "photoId": "dsc03644-76be797401",
         "kind": "photo",
-        "src": "assets/photos/dsc03644-799d65622e-card.jpg",
-        "srcAvif": "assets/photos/dsc03644-799d65622e-card.avif",
-        "thumb": "assets/photos/dsc03644-799d65622e-thumb.jpg",
+        "src": "assets/photos/dsc03644-76be797401-card.jpg",
+        "srcAvif": "assets/photos/dsc03644-76be797401-card.avif",
+        "thumb": "assets/photos/dsc03644-76be797401-thumb.jpg",
         "alt": "The big male, at rest",
         "pinLabel": "The big male, at rest",
         "kicker": "At rest",
@@ -1237,12 +1237,12 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc03693-7759bf3721",
-        "photoId": "dsc03693-7759bf3721",
+        "key": "dsc03693-aa0fe4ad17",
+        "photoId": "dsc03693-aa0fe4ad17",
         "kind": "photo",
-        "src": "assets/photos/dsc03693-7759bf3721-card.jpg",
-        "srcAvif": "assets/photos/dsc03693-7759bf3721-card.avif",
-        "thumb": "assets/photos/dsc03693-7759bf3721-thumb.jpg",
+        "src": "assets/photos/dsc03693-aa0fe4ad17-card.jpg",
+        "srcAvif": "assets/photos/dsc03693-aa0fe4ad17-card.avif",
+        "thumb": "assets/photos/dsc03693-aa0fe4ad17-thumb.jpg",
         "alt": "Following her",
         "pinLabel": "Following her",
         "kicker": "Moving on",
@@ -1262,12 +1262,12 @@
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "img-2943-1b8991110f",
-        "photoId": "img-2943-1b8991110f",
+        "key": "img-2943-daaeb5aadd",
+        "photoId": "img-2943-daaeb5aadd",
         "kind": "photo",
-        "src": "assets/photos/img-2943-1b8991110f-card.jpg",
-        "srcAvif": "assets/photos/img-2943-1b8991110f-card.avif",
-        "thumb": "assets/photos/img-2943-1b8991110f-thumb.jpg",
+        "src": "assets/photos/img-2943-daaeb5aadd-card.jpg",
+        "srcAvif": "assets/photos/img-2943-daaeb5aadd-card.avif",
+        "thumb": "assets/photos/img-2943-daaeb5aadd-thumb.jpg",
         "alt": "Wetland gold",
         "pinLabel": "Wetland gold",
         "kicker": "Day's end",
@@ -1289,13 +1289,13 @@
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "img-3099-e6ef5fd1cf",
-        "photoId": "img-3099-e6ef5fd1cf",
+        "key": "img-3099-fbb79ec833",
+        "photoId": "img-3099-fbb79ec833",
         "subjectId": "rio_02",
         "kind": "photo",
-        "src": "assets/photos/img-3099-e6ef5fd1cf-card.jpg",
-        "srcAvif": "assets/photos/img-3099-e6ef5fd1cf-card.avif",
-        "thumb": "assets/photos/img-3099-e6ef5fd1cf-thumb.jpg",
+        "src": "assets/photos/img-3099-fbb79ec833-card.jpg",
+        "srcAvif": "assets/photos/img-3099-fbb79ec833-card.avif",
+        "thumb": "assets/photos/img-3099-fbb79ec833-thumb.jpg",
         "alt": "Copacabana at last light",
         "pinLabel": "Copacabana at last light",
         "kicker": "Sea level",
@@ -1315,12 +1315,12 @@
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "img-3012-2deaae7fc4",
-        "photoId": "img-3012-2deaae7fc4",
+        "key": "img-3012-8e94da00d6",
+        "photoId": "img-3012-8e94da00d6",
         "kind": "photo",
-        "src": "assets/photos/img-3012-2deaae7fc4-card.jpg",
-        "srcAvif": "assets/photos/img-3012-2deaae7fc4-card.avif",
-        "thumb": "assets/photos/img-3012-2deaae7fc4-thumb.jpg",
+        "src": "assets/photos/img-3012-8e94da00d6-card.jpg",
+        "srcAvif": "assets/photos/img-3012-8e94da00d6-card.avif",
+        "thumb": "assets/photos/img-3012-8e94da00d6-thumb.jpg",
         "alt": "The city lit up gold",
         "pinLabel": "The city lit up gold",
         "kicker": "Golden hour",
@@ -1340,12 +1340,12 @@
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "img-3045-pano-11dfcd5c40",
-        "photoId": "img-3045-pano-11dfcd5c40",
+        "key": "img-3045-pano-e8f1bf4365",
+        "photoId": "img-3045-pano-e8f1bf4365",
         "kind": "photo",
-        "src": "assets/photos/img-3045-pano-11dfcd5c40-card.jpg",
-        "srcAvif": "assets/photos/img-3045-pano-11dfcd5c40-card.avif",
-        "thumb": "assets/photos/img-3045-pano-11dfcd5c40-thumb.jpg",
+        "src": "assets/photos/img-3045-pano-e8f1bf4365-card.jpg",
+        "srcAvif": "assets/photos/img-3045-pano-e8f1bf4365-card.avif",
+        "thumb": "assets/photos/img-3045-pano-e8f1bf4365-thumb.jpg",
         "alt": "Rio, spread out below",
         "pinLabel": "Rio, spread out below",
         "kicker": "The wide view",
@@ -1365,12 +1365,12 @@
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "img-3055-96fe4c534f",
-        "photoId": "img-3055-96fe4c534f",
+        "key": "img-3055-3e5a6402a5",
+        "photoId": "img-3055-3e5a6402a5",
         "kind": "photo",
-        "src": "assets/photos/img-3055-96fe4c534f-card.jpg",
-        "srcAvif": "assets/photos/img-3055-96fe4c534f-card.avif",
-        "thumb": "assets/photos/img-3055-96fe4c534f-thumb.jpg",
+        "src": "assets/photos/img-3055-3e5a6402a5-card.jpg",
+        "srcAvif": "assets/photos/img-3055-3e5a6402a5-card.avif",
+        "thumb": "assets/photos/img-3055-3e5a6402a5-thumb.jpg",
         "alt": "Under open arms",
         "pinLabel": "Under open arms",
         "kicker": "Looking up",

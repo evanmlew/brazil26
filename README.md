@@ -32,9 +32,17 @@ Rebuild the technical catalog after a fresh Lightroom export:
 python scripts\build_photo_catalog.py photos data\photo-catalog.json
 ```
 
-Photo ids are content hashes (`<filename-slug>-<sha1[:10]>`), so **a fresh export changes every
-id** and orphans every caption in `data\photo-edits.json`. Re-key them by joining the old and new
-catalogs on filename — take the catalog snapshot *before* overwriting it:
+Photo ids are `<filename-slug>-<sha1(decoded pixels)[:10]>` — a hash of what the photo *looks
+like*, not of the bytes it is stored in. Lightroom stamps a fresh export timestamp into every
+file it writes, so hashing file bytes meant **a re-export changed every id even when nothing had
+changed**: every derivative got a new filename, git stored a second full copy (~125 MB), and the
+old ones stayed in history forever. Hashing decoded pixels means a re-export at unchanged settings
+mints the *same* ids and git stores nothing new, while any real edit (exposure, crop, size,
+quality) still moves the id so caches can't serve a stale image.
+
+So a re-export normally needs **no** migration. You only need to re-key when ids actually move —
+i.e. you changed a photo in Lightroom, or you changed the export size. Take the catalog snapshot
+*before* overwriting it and join the two catalogs on filename:
 
 ```powershell
 python scripts\migrate_photo_edits.py `
@@ -51,9 +59,11 @@ Generate the public card/thumb derivatives for the current export:
 python scripts\build_photo_assets.py photos data\photo-catalog.json assets\photos
 ```
 
-Old derivatives are **not** cleaned up automatically — after a re-export, delete any
-`assets\photos\*-card.*` / `*-thumb.jpg` that the new catalog no longer references. Files without
-an id-shaped name (`jaguar.jpg`, `cover.jpg`, …) are hand-placed stock and must be kept.
+Old derivatives are **not** cleaned up automatically — after an export that *did* move some ids,
+delete any `assets\photos\*-card.*` / `*-thumb.jpg` that the new catalog no longer references.
+Files without an id-shaped name (`jaguar.jpg`, `cover.jpg`, …) are hand-placed stock and must be
+kept. Pruning matters: anything committed stays in git history forever, and JPEG/AVIF are already
+compressed so git can't pack them down — every stale copy costs its full size in every clone.
 
 ### Photo quality
 

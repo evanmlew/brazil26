@@ -81,6 +81,32 @@ def parse_capture_datetime(value: Any, offset_value: Any) -> tuple[str | None, s
     return naive.replace(tzinfo=tz).isoformat(), offset_value.strip()
 
 
+def pixel_digest(image: Image.Image) -> str:
+    """Hash what the photo *looks like*, not the bytes it happens to be stored in.
+
+    Photo ids feed the published filenames, so they need two properties that pull
+    against each other: stable across a re-export that changed nothing, and different
+    the moment the image itself changes (otherwise browser and CDN caches keep serving
+    the old picture).
+
+    Hashing the exported file's bytes gets the second property but not the first.
+    Lightroom stamps a fresh export timestamp into every file it writes, so re-exporting
+    an untouched photo at identical settings still produced a different sha1 -> a
+    different id -> a different filename -> git stored a full second copy of all 168
+    derivatives (~125 MB) and kept the originals forever.
+
+    The decoded pixel buffer has both properties. Lightroom's render is deterministic,
+    so identical develop settings and export size decode to identical pixels no matter
+    how many times you export; any real edit (exposure, crop, size, quality) changes
+    them. Mode and size are folded in so two images can't collide through a raw buffer
+    that happens to match under a different interpretation.
+    """
+    digest = hashlib.sha1()
+    digest.update(f"{image.mode}:{image.width}x{image.height}:".encode())
+    digest.update(image.tobytes())
+    return digest.hexdigest()
+
+
 def extract_metadata(path: Path) -> dict[str, Any]:
     with Image.open(path) as image:
         exif = image.getexif()
@@ -108,17 +134,19 @@ def extract_metadata(path: Path) -> dict[str, Any]:
         latitude = coordinate(gps.get("GPSLatitude"), gps.get("GPSLatitudeRef", ""))
         longitude = coordinate(gps.get("GPSLongitude"), gps.get("GPSLongitudeRef", ""))
         sha1 = hashlib.sha1(path.read_bytes()).hexdigest()
+        pixels = pixel_digest(image)
         flags = []
         if latitude is None or longitude is None:
             flags.append("no-gps")
 
         return {
-            "id": f"{slugify(path.stem)}-{sha1[:10]}",
+            "id": f"{slugify(path.stem)}-{pixels[:10]}",
             "filename": path.name,
             "width": image.width,
             "height": image.height,
             "bytes": path.stat().st_size,
             "sha1": sha1,
+            "pixelSha1": pixels,
             "date": capture_iso,
             "utcOffset": capture_offset,
             "exportedAt": parse_exif_datetime(exported_value),

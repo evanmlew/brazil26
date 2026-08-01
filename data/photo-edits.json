@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "photos": {
-    "img-2715-c09ff1f3f9": {
+    "img-2715-4760f8ea34": {
       "legId": "saopaulo",
       "order": 2,
       "kicker": "First impressions",
@@ -9,7 +9,7 @@
       "body": "This Sao Paulo Mequi -- Brazil's affectionate nickname for McDonald's -- is reportedly the chain's 1,000th location in the country, tucked into a converted early-1900s mansion from Paulista Avenue's original mansion-row days.",
       "featured": false
     },
-    "img-2723-297b76a0fd": {
+    "img-2723-9b70c4fb57": {
       "legId": "saopaulo",
       "order": 1,
       "kicker": "Twelve million people",
@@ -19,7 +19,7 @@
       "subjectId": "sp_01",
       "excluded": true
     },
-    "img-2725-b380768f8a": {
+    "img-2725-c11d751263": {
       "legId": "saopaulo",
       "order": 0,
       "kicker": "Street level",
@@ -28,7 +28,7 @@
       "featured": true,
       "feedback": ""
     },
-    "img-2727-58e5af7c75": {
+    "img-2727-a85b9fd07e": {
       "legId": "saopaulo",
       "order": 3,
       "kicker": "First night",
@@ -37,7 +37,7 @@
       "feedback": "",
       "title": "Dinner under the fig tree"
     },
-    "img-2735-88d7879db1": {
+    "img-2735-28ab2eca22": {
       "legId": "amazon",
       "order": 0,
       "kicker": "Touching down",
@@ -45,7 +45,7 @@
       "body": "Landed at Alta Floresta -- from here, the only way to Cristalino Lodge is by truck, then a transfer onto a boat for the final stretch up the river.",
       "featured": false
     },
-    "img-0949-ba8db955e4": {
+    "img-0949-7cc238e17d": {
       "legId": "amazon",
       "order": 1,
       "kicker": "Giants",
@@ -53,7 +53,7 @@
       "body": "Four of us barely wrap around the base of a centuries-old Brazil nut tree, one of the giants of the Cristalino.",
       "featured": true
     },
-    "dsc00036-2de88c5b10": {
+    "dsc00036-171df22a9e": {
       "legId": "amazon",
       "order": 2,
       "kicker": "First boat tour",
@@ -62,7 +62,7 @@
       "featured": false,
       "species": "Harpy Eagle"
     },
-    "dsc00108-695f794e90": {
+    "dsc00108-bbffb10b02": {
       "legId": "amazon",
       "order": 3,
       "kicker": "Along the bank",
@@ -72,7 +72,7 @@
       "species": "Snowy Egret",
       "excluded": true
     },
-    "dsc00408-1c22b819f2": {
+    "dsc00408-7339a02d29": {
       "legId": "amazon",
       "order": 4,
       "kicker": "Warning shots",
@@ -81,7 +81,7 @@
       "featured": false,
       "species": "Spider Monkey"
     },
-    "dsc00455-4644cf7f68": {
+    "dsc00455-f19d422c73": {
       "legId": "amazon",
       "order": 5,
       "kicker": "Overhead",
@@ -90,7 +90,7 @@
       "featured": false,
       "species": "Spider Monkey"
     },
-    "dsc00609-11e3185a67": {
+    "dsc00609-6cf622cb46": {
       "legId": "amazon",
       "order": 6,
       "kicker": "On the move",
@@ -100,7 +100,7 @@
       "species": "Spider Monkey",
       "feedback": ""
     },
-    "dsc00870-b8dab853eb": {
+    "dsc00870-fe2707a496": {
       "legId": "amazon",
       "order": 7,
       "kicker": "Chasing light",
@@ -108,7 +108,7 @@
       "body": "Out on the water at sunset, camera up, chasing the day's last good light.",
       "featured": false
     },
-    "img-2842-55e70a64ef": {
+    "img-2842-dcb27a4d93": {
       "legId": "amazon",
       "order": 8,
       "kicker": "Above the treeline",
@@ -117,7 +117,7 @@
       "featured": false,
       "excluded": true
     },
-    "img-2900-9a840c14f4": {
+    "img-2900-e0815cfa58": {
       "legId": "amazon",
       "order": 19,
       "kicker": "First light",
@@ -125,7 +125,7 @@
       "body": "Sunrise from the Cristalino Lodge observation deck -- an unbroken carpet of rainforest stretching to the horizon.",
       "featured": true
     },
-    "dsc01309-0b7fcd3b8a": {
+    "dsc01309-90853e40f3": {
       "legId": "amazon",
       "order": 10,
       "kicker": "Evening roost",
@@ -134,7 +134,7 @@
       "featured": false,
       "species": "Neotropical Cormorant"
     },
-    "img-2788-9e6fae43b9": {
+    "img-2788-79afca8ad6": {
       "legId": "amazon",
       "order": 11,
       "kicker": "Golden hour",
@@ -142,7 +142,7 @@
       "body": "The sky went orange right as the roost tree filled with birds -- one of the best sunsets of the trip.",
       "featured": true
     },
-    "img-2797-4424b09154": {
+    "img-2797-43aa1fe11c": {
       "legId": "amazon",
       "order": 12,
       "kicker": "Golden hour",
@@ -150,7 +150,7 @@
       "body": "Heading back to the lodge as the roost tree glowed behind us in the sunset.",
       "featured": false
     },
-    "dsc01370-c631eb5832": {
+    "dsc01370-ddb01aff26": {
       "legId": "amazon",
       "order": 13,
       "kicker": "Night walk",
@@ -160,7 +160,7 @@
       "subjectId": "frog",
       "species": "Tree Frog"
     },
-    "dsc01461-dbcb1b1c83": {
+    "dsc01461-1d7106395b": {
       "legId": "amazon",
       "order": 14,
       "kicker": "Understory",
@@ -169,7 +169,7 @@
       "featured": false,
       "species": "Pink-coned Aechmea & Stingless Bee"
     },
-    "dsc01907-ef69c29f97": {
+    "dsc01907-eb96b3b619": {
       "legId": "amazon",
       "order": 15,
       "kicker": "Clearwater river",
@@ -180,7 +180,7 @@
       "species": "Neotropical Otter",
       "feedback": ""
     },
-    "dsc02014-f7a901b87b": {
+    "dsc02014-2c5f2431c2": {
       "legId": "amazon",
       "order": 16,
       "kicker": "Sun and salt",
@@ -190,7 +190,7 @@
       "subjectId": "turtle",
       "species": "Yellow-spotted River Turtle"
     },
-    "dsc02088-d9e9b969ac": {
+    "dsc02088-774e6f8bcd": {
       "legId": "amazon",
       "order": 9,
       "kicker": "Dusk",
@@ -199,7 +199,7 @@
       "featured": false,
       "excluded": true
     },
-    "dsc02142-6c5b9fe953": {
+    "dsc02142-e5874bf98c": {
       "legId": "amazon",
       "order": 20,
       "kicker": "Same view, minutes later",
@@ -209,7 +209,7 @@
       "excluded": false,
       "feedback": ""
     },
-    "img-2833-e8ca8b4d14": {
+    "img-2833-dd8abb0b33": {
       "legId": "amazon",
       "order": 17,
       "kicker": "Uninvited guest",
@@ -219,7 +219,7 @@
       "species": "Capybara",
       "feedback": ""
     },
-    "img-2858-c48cceb995": {
+    "img-2858-9f914f72cc": {
       "legId": "amazon",
       "order": 18,
       "kicker": "Barefoot",
@@ -228,7 +228,7 @@
       "featured": false,
       "excluded": true
     },
-    "dsc02187-f4c40593ab": {
+    "dsc02187-97ac82c963": {
       "legId": "pantanal",
       "order": 0,
       "kicker": "After dark",
@@ -238,7 +238,7 @@
       "subjectId": "ocelot",
       "species": "Ocelot"
     },
-    "dsc02271-fba760fa16": {
+    "dsc02271-0ee304448c": {
       "legId": "pantanal",
       "order": 1,
       "kicker": "A passenger",
@@ -248,7 +248,7 @@
       "subjectId": "pampasdeer",
       "species": "Pampas Deer & Cattle Tyrant"
     },
-    "dsc02339-4d5f113e91": {
+    "dsc02339-de547a705f": {
       "legId": "pantanal",
       "order": 2,
       "kicker": "Catch of the day",
@@ -259,7 +259,7 @@
       "species": "Jabiru",
       "feedback": ""
     },
-    "dsc02472-503fc8880c": {
+    "dsc02472-c6a4b24f7f": {
       "legId": "pantanal",
       "order": 3,
       "kicker": "The headline",
@@ -270,7 +270,7 @@
       "species": "Jaguar",
       "feedback": ""
     },
-    "dsc02518-637382fb6e": {
+    "dsc02518-931c84d465": {
       "legId": "pantanal",
       "order": 4,
       "kicker": "Midday",
@@ -281,7 +281,7 @@
       "species": "South American Tapir",
       "feedback": ""
     },
-    "dsc02568-d41efd4d63": {
+    "dsc02568-d2b05e28ed": {
       "legId": "pantanal",
       "order": 5,
       "kicker": "From the jeep",
@@ -291,7 +291,7 @@
       "species": "Tarantula",
       "feedback": ""
     },
-    "dsc02602-ccb327c74a": {
+    "dsc02602-28b6008dba": {
       "legId": "pantanal",
       "order": 6,
       "kicker": "Burning sky",
@@ -301,7 +301,7 @@
       "species": "Jabiru",
       "excluded": true
     },
-    "dsc02811-0bf4e74747": {
+    "dsc02811-7dfb0b9308": {
       "legId": "pantanal",
       "order": 7,
       "kicker": "Tug of war",
@@ -312,7 +312,7 @@
       "species": "Southern Crested Caracara",
       "feedback": ""
     },
-    "dsc02834-1614741810": {
+    "dsc02834-b0592de054": {
       "legId": "pantanal",
       "order": 8,
       "kicker": "Eye level",
@@ -321,7 +321,7 @@
       "featured": false,
       "species": "Yacare Caiman"
     },
-    "dsc02889-33c191a672": {
+    "dsc02889-8dc3b09536": {
       "legId": "pantanal",
       "order": 9,
       "kicker": "Not a cardinal",
@@ -332,7 +332,7 @@
       "species": "Yellow-billed Cardinal",
       "feedback": ""
     },
-    "dsc02921-80b9add082": {
+    "dsc02921-9e9dd104f6": {
       "legId": "pantanal",
       "order": 10,
       "kicker": "Through the fronds",
@@ -342,7 +342,7 @@
       "subjectId": "kingfisher",
       "species": "Ringed Kingfisher"
     },
-    "dsc03009-78eb4f53c9": {
+    "dsc03009-4851a7e6ee": {
       "legId": "pantanal",
       "order": 11,
       "kicker": "Cooling off",
@@ -352,7 +352,7 @@
       "species": "Yacare Caiman",
       "excluded": true
     },
-    "dsc03020-7c53ce840e": {
+    "dsc03020-92020f4b1b": {
       "legId": "pantanal",
       "order": 12,
       "kicker": "Unbothered",
@@ -361,7 +361,7 @@
       "featured": false,
       "species": "Capybara"
     },
-    "dsc03028-c50be9e1b5": {
+    "dsc03028-e5b4bf63ec": {
       "legId": "pantanal",
       "order": 13,
       "kicker": "Low over the marsh",
@@ -372,7 +372,7 @@
       "species": "Lesser Yellow-headed Vulture",
       "feedback": ""
     },
-    "dsc03044-a10ae2aad6": {
+    "dsc03044-342f12324e": {
       "legId": "pantanal",
       "order": 14,
       "kicker": "Cobalt",
@@ -383,7 +383,7 @@
       "species": "Hyacinth Macaw",
       "excluded": true
     },
-    "dsc03048-aedb6e5511": {
+    "dsc03048-ab8e831ffc": {
       "legId": "pantanal",
       "order": 15,
       "kicker": "Cobalt",
@@ -394,7 +394,7 @@
       "feedback": "",
       "subjectId": "macaw"
     },
-    "dsc03126-2d5ed5f9ea": {
+    "dsc03126-b2d1854960": {
       "legId": "pantanal",
       "order": 16,
       "kicker": "Backlit",
@@ -403,7 +403,7 @@
       "featured": false,
       "species": "Six-banded Armadillo"
     },
-    "dsc03163-51c8fe70b1": {
+    "dsc03163-be20f41989": {
       "legId": "pantanal",
       "order": 17,
       "kicker": "Daylight owl",
@@ -413,7 +413,7 @@
       "subjectId": "owl",
       "species": "Burrowing Owl"
     },
-    "dsc03373-5593e75167": {
+    "dsc03373-d8e19a4866": {
       "legId": "pantanal",
       "order": 18,
       "kicker": "Full antler",
@@ -423,7 +423,7 @@
       "subjectId": "marshdeer",
       "species": "Marsh Deer"
     },
-    "dsc03598-8f147af0f3": {
+    "dsc03598-28bfb8641d": {
       "legId": "pantanal",
       "order": 19,
       "kicker": "Second encounter",
@@ -433,7 +433,7 @@
       "species": "Jaguar",
       "feedback": ""
     },
-    "dsc03604-4f26050280": {
+    "dsc03604-75617a4a40": {
       "legId": "pantanal",
       "order": 20,
       "kicker": "Closing in",
@@ -443,7 +443,7 @@
       "species": "Jaguar",
       "excluded": true
     },
-    "dsc03644-799d65622e": {
+    "dsc03644-76be797401": {
       "legId": "pantanal",
       "order": 21,
       "kicker": "At rest",
@@ -452,7 +452,7 @@
       "featured": true,
       "species": "Jaguar"
     },
-    "dsc03693-7759bf3721": {
+    "dsc03693-aa0fe4ad17": {
       "legId": "pantanal",
       "order": 22,
       "kicker": "Moving on",
@@ -461,7 +461,7 @@
       "featured": false,
       "species": "Jaguar"
     },
-    "img-2943-1b8991110f": {
+    "img-2943-daaeb5aadd": {
       "legId": "pantanal",
       "order": 23,
       "kicker": "Day's end",
@@ -469,7 +469,7 @@
       "body": "The Pantanal's wetland lagoon glowing gold at sunset -- a quiet close to a wildlife-packed day.",
       "featured": false
     },
-    "img-2987-2fd23bf97a": {
+    "img-2987-03121b254a": {
       "legId": "rio",
       "order": 0,
       "kicker": "Sea level",
@@ -479,14 +479,14 @@
       "subjectId": "rio_01",
       "excluded": true
     },
-    "img-3012-2deaae7fc4": {
+    "img-3012-8e94da00d6": {
       "legId": "rio",
       "order": 2,
       "kicker": "Golden hour",
       "title": "The city lit up gold",
       "body": "Rio's bay and skyline lit gold from the top of Sugarloaf Mountain at sunset."
     },
-    "img-3036-4898f287c3": {
+    "img-3036-125f159bc3": {
       "legId": "rio",
       "order": 3,
       "kicker": "Arms wide",
@@ -495,7 +495,7 @@
       "featured": true,
       "excluded": true
     },
-    "img-3045-pano-11dfcd5c40": {
+    "img-3045-pano-e8f1bf4365": {
       "legId": "rio",
       "order": 4,
       "kicker": "The wide view",
@@ -503,7 +503,7 @@
       "body": "A sweeping panorama from Corcovado -- beaches, bay, and mountains laid out in one frame.",
       "featured": true
     },
-    "img-3048-20c9df6309": {
+    "img-3048-9ef580c62e": {
       "legId": "rio",
       "order": 5,
       "kicker": "The summit",
@@ -512,7 +512,7 @@
       "featured": false,
       "excluded": true
     },
-    "img-3055-96fe4c534f": {
+    "img-3055-3e5a6402a5": {
       "legId": "rio",
       "order": 6,
       "kicker": "Looking up",
@@ -521,7 +521,7 @@
       "featured": false,
       "feedback": ""
     },
-    "img-3099-e6ef5fd1cf": {
+    "img-3099-fbb79ec833": {
       "legId": "rio",
       "order": 1,
       "kicker": "Sea level",

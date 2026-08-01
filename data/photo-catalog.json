@@ -1,17 +1,18 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-01T11:56:12-07:00",
+  "generatedAt": "2026-08-01T13:19:03-07:00",
   "source": {
     "imageCount": 56
   },
   "photos": [
     {
-      "id": "dsc00036-2de88c5b10",
+      "id": "dsc00036-171df22a9e",
       "filename": "DSC00036.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 5248779,
       "sha1": "2de88c5b10311a0f37351419bb7a1c450fa1387a",
+      "pixelSha1": "171df22a9eac5446bda85c7db602899cf3a1ec48",
       "date": "2026-07-13T07:44:49-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:52:39",
@@ -37,18 +38,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc00036-2de88c5b10-card.jpg",
-        "cardAvif": "assets/photos/dsc00036-2de88c5b10-card.avif",
-        "thumb": "assets/photos/dsc00036-2de88c5b10-thumb.jpg"
+        "card": "assets/photos/dsc00036-171df22a9e-card.jpg",
+        "cardAvif": "assets/photos/dsc00036-171df22a9e-card.avif",
+        "thumb": "assets/photos/dsc00036-171df22a9e-thumb.jpg"
       }
     },
     {
-      "id": "dsc00108-695f794e90",
+      "id": "dsc00108-bbffb10b02",
       "filename": "DSC00108.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 8068321,
       "sha1": "695f794e9083f296dd5843fd4e183d9e598236e7",
+      "pixelSha1": "bbffb10b02b24379bf8431b034ac3b91cc6c3c0b",
       "date": "2026-07-13T08:03:04-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:52:41",
@@ -74,18 +76,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc00108-695f794e90-card.jpg",
-        "cardAvif": "assets/photos/dsc00108-695f794e90-card.avif",
-        "thumb": "assets/photos/dsc00108-695f794e90-thumb.jpg"
+        "card": "assets/photos/dsc00108-bbffb10b02-card.jpg",
+        "cardAvif": "assets/photos/dsc00108-bbffb10b02-card.avif",
+        "thumb": "assets/photos/dsc00108-bbffb10b02-thumb.jpg"
       }
     },
     {
-      "id": "dsc00408-1c22b819f2",
+      "id": "dsc00408-7339a02d29",
       "filename": "DSC00408.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 9356299,
       "sha1": "1c22b819f2541e988e3e7fa8c77c9ce0a3a8e820",
+      "pixelSha1": "7339a02d29ade2fa57d0c4e26ccc642276e55c4f",
       "date": "2026-07-13T11:36:29-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:52:48",
@@ -111,18 +114,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc00408-1c22b819f2-card.jpg",
-        "cardAvif": "assets/photos/dsc00408-1c22b819f2-card.avif",
-        "thumb": "assets/photos/dsc00408-1c22b819f2-thumb.jpg"
+        "card": "assets/photos/dsc00408-7339a02d29-card.jpg",
+        "cardAvif": "assets/photos/dsc00408-7339a02d29-card.avif",
+        "thumb": "assets/photos/dsc00408-7339a02d29-thumb.jpg"
       }
     },
     {
-      "id": "dsc00455-4644cf7f68",
+      "id": "dsc00455-f19d422c73",
       "filename": "DSC00455.jpg",
       "width": 3840,
       "height": 2770,
       "bytes": 7367918,
       "sha1": "4644cf7f68c044ff2d1959e527b56e6481551865",
+      "pixelSha1": "f19d422c73a7b4235841740f609a6f62bfbeea5e",
       "date": "2026-07-13T11:38:26-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:52:58",
@@ -148,18 +152,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc00455-4644cf7f68-card.jpg",
-        "cardAvif": "assets/photos/dsc00455-4644cf7f68-card.avif",
-        "thumb": "assets/photos/dsc00455-4644cf7f68-thumb.jpg"
+        "card": "assets/photos/dsc00455-f19d422c73-card.jpg",
+        "cardAvif": "assets/photos/dsc00455-f19d422c73-card.avif",
+        "thumb": "assets/photos/dsc00455-f19d422c73-thumb.jpg"
       }
     },
     {
-      "id": "dsc00609-11e3185a67",
+      "id": "dsc00609-6cf622cb46",
       "filename": "DSC00609.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 9259502,
       "sha1": "11e3185a6720f5349fcaf5d56848a3e86772ff81",
+      "pixelSha1": "6cf622cb46bf82ce22527ef297104d12fcc0f850",
       "date": "2026-07-13T11:50:54-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:53:04",
@@ -185,18 +190,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc00609-11e3185a67-card.jpg",
-        "cardAvif": "assets/photos/dsc00609-11e3185a67-card.avif",
-        "thumb": "assets/photos/dsc00609-11e3185a67-thumb.jpg"
+        "card": "assets/photos/dsc00609-6cf622cb46-card.jpg",
+        "cardAvif": "assets/photos/dsc00609-6cf622cb46-card.avif",
+        "thumb": "assets/photos/dsc00609-6cf622cb46-thumb.jpg"
       }
     },
     {
-      "id": "dsc00870-b8dab853eb",
+      "id": "dsc00870-fe2707a496",
       "filename": "DSC00870.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 4062562,
       "sha1": "b8dab853eb1b780f9afea54f1b34b1fb39a62569",
+      "pixelSha1": "fe2707a49622c6826743ac7af17dd0dcb4ce7d6f",
       "date": "2026-07-13T18:15:43-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:53:07",
@@ -222,18 +228,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc00870-b8dab853eb-card.jpg",
-        "cardAvif": "assets/photos/dsc00870-b8dab853eb-card.avif",
-        "thumb": "assets/photos/dsc00870-b8dab853eb-thumb.jpg"
+        "card": "assets/photos/dsc00870-fe2707a496-card.jpg",
+        "cardAvif": "assets/photos/dsc00870-fe2707a496-card.avif",
+        "thumb": "assets/photos/dsc00870-fe2707a496-thumb.jpg"
       }
     },
     {
-      "id": "dsc01309-0b7fcd3b8a",
+      "id": "dsc01309-90853e40f3",
       "filename": "DSC01309.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 9042756,
       "sha1": "0b7fcd3b8a2a4888841e182ee91262e9307b552b",
+      "pixelSha1": "90853e40f328088a6ad3477556cf94d914979eab",
       "date": "2026-07-13T18:41:26-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:53:15",
@@ -259,18 +266,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc01309-0b7fcd3b8a-card.jpg",
-        "cardAvif": "assets/photos/dsc01309-0b7fcd3b8a-card.avif",
-        "thumb": "assets/photos/dsc01309-0b7fcd3b8a-thumb.jpg"
+        "card": "assets/photos/dsc01309-90853e40f3-card.jpg",
+        "cardAvif": "assets/photos/dsc01309-90853e40f3-card.avif",
+        "thumb": "assets/photos/dsc01309-90853e40f3-thumb.jpg"
       }
     },
     {
-      "id": "dsc01370-c631eb5832",
+      "id": "dsc01370-ddb01aff26",
       "filename": "DSC01370.jpg",
       "width": 3840,
       "height": 2504,
       "bytes": 8074483,
       "sha1": "c631eb5832a70de14a1288df6151d43d87f7c10c",
+      "pixelSha1": "ddb01aff268fb1e8814c198232285696a9edf9e4",
       "date": "2026-07-13T19:26:39-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:53:20",
@@ -296,18 +304,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc01370-c631eb5832-card.jpg",
-        "cardAvif": "assets/photos/dsc01370-c631eb5832-card.avif",
-        "thumb": "assets/photos/dsc01370-c631eb5832-thumb.jpg"
+        "card": "assets/photos/dsc01370-ddb01aff26-card.jpg",
+        "cardAvif": "assets/photos/dsc01370-ddb01aff26-card.avif",
+        "thumb": "assets/photos/dsc01370-ddb01aff26-thumb.jpg"
       }
     },
     {
-      "id": "dsc01461-dbcb1b1c83",
+      "id": "dsc01461-1d7106395b",
       "filename": "DSC01461.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 6646880,
       "sha1": "dbcb1b1c83540445eedd09f55b0f7f943be111a7",
+      "pixelSha1": "1d7106395b5a7d79e3e28fe09986d91c7b4cfb7d",
       "date": "2026-07-14T08:38:45-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:53:21",
@@ -333,18 +342,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc01461-dbcb1b1c83-card.jpg",
-        "cardAvif": "assets/photos/dsc01461-dbcb1b1c83-card.avif",
-        "thumb": "assets/photos/dsc01461-dbcb1b1c83-thumb.jpg"
+        "card": "assets/photos/dsc01461-1d7106395b-card.jpg",
+        "cardAvif": "assets/photos/dsc01461-1d7106395b-card.avif",
+        "thumb": "assets/photos/dsc01461-1d7106395b-thumb.jpg"
       }
     },
     {
-      "id": "dsc01907-ef69c29f97",
+      "id": "dsc01907-eb96b3b619",
       "filename": "DSC01907.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 6895010,
       "sha1": "ef69c29f9781d0b60616c9bfc0074c75239a1c72",
+      "pixelSha1": "eb96b3b619006bc92a06f50e036db5926d7a3d2f",
       "date": "2026-07-14T10:53:54-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:53:26",
@@ -370,18 +380,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc01907-ef69c29f97-card.jpg",
-        "cardAvif": "assets/photos/dsc01907-ef69c29f97-card.avif",
-        "thumb": "assets/photos/dsc01907-ef69c29f97-thumb.jpg"
+        "card": "assets/photos/dsc01907-eb96b3b619-card.jpg",
+        "cardAvif": "assets/photos/dsc01907-eb96b3b619-card.avif",
+        "thumb": "assets/photos/dsc01907-eb96b3b619-thumb.jpg"
       }
     },
     {
-      "id": "dsc02014-f7a901b87b",
+      "id": "dsc02014-2c5f2431c2",
       "filename": "DSC02014.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 5900837,
       "sha1": "f7a901b87b92ab2850cd76079f7381910e8f85f7",
+      "pixelSha1": "2c5f2431c2a893bd4ab4bd3ed8fac52edb98f9d6",
       "date": "2026-07-14T11:38:40-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:53:29",
@@ -407,18 +418,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc02014-f7a901b87b-card.jpg",
-        "cardAvif": "assets/photos/dsc02014-f7a901b87b-card.avif",
-        "thumb": "assets/photos/dsc02014-f7a901b87b-thumb.jpg"
+        "card": "assets/photos/dsc02014-2c5f2431c2-card.jpg",
+        "cardAvif": "assets/photos/dsc02014-2c5f2431c2-card.avif",
+        "thumb": "assets/photos/dsc02014-2c5f2431c2-thumb.jpg"
       }
     },
     {
-      "id": "dsc02088-d9e9b969ac",
+      "id": "dsc02088-774e6f8bcd",
       "filename": "DSC02088.jpg",
       "width": 3840,
       "height": 2469,
       "bytes": 6991865,
       "sha1": "d9e9b969ac7e53c18f76f887c47406dea27bf744",
+      "pixelSha1": "774e6f8bcdededf03dfe9701cda54d2c4098af33",
       "date": "2026-07-15T06:40:31-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:53:34",
@@ -444,18 +456,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc02088-d9e9b969ac-card.jpg",
-        "cardAvif": "assets/photos/dsc02088-d9e9b969ac-card.avif",
-        "thumb": "assets/photos/dsc02088-d9e9b969ac-thumb.jpg"
+        "card": "assets/photos/dsc02088-774e6f8bcd-card.jpg",
+        "cardAvif": "assets/photos/dsc02088-774e6f8bcd-card.avif",
+        "thumb": "assets/photos/dsc02088-774e6f8bcd-thumb.jpg"
       }
     },
     {
-      "id": "dsc02142-6c5b9fe953",
+      "id": "dsc02142-e5874bf98c",
       "filename": "DSC02142.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 6279274,
       "sha1": "6c5b9fe9530db13a51204b761633c5b163853794",
+      "pixelSha1": "e5874bf98c4e4b5909f5127ce73082ae2cca1efb",
       "date": "2026-07-15T07:09:13-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:53:40",
@@ -481,18 +494,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc02142-6c5b9fe953-card.jpg",
-        "cardAvif": "assets/photos/dsc02142-6c5b9fe953-card.avif",
-        "thumb": "assets/photos/dsc02142-6c5b9fe953-thumb.jpg"
+        "card": "assets/photos/dsc02142-e5874bf98c-card.jpg",
+        "cardAvif": "assets/photos/dsc02142-e5874bf98c-card.avif",
+        "thumb": "assets/photos/dsc02142-e5874bf98c-thumb.jpg"
       }
     },
     {
-      "id": "dsc02187-f4c40593ab",
+      "id": "dsc02187-97ac82c963",
       "filename": "DSC02187.jpg",
       "width": 3840,
       "height": 2299,
       "bytes": 9056108,
       "sha1": "f4c40593ab720518fd882f88f61d8020dc8e966b",
+      "pixelSha1": "97ac82c9632309a9ac7ac0a6dd31b05ecfb5bb45",
       "date": "2026-07-16T20:05:40-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:53:44",
@@ -518,18 +532,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc02187-f4c40593ab-card.jpg",
-        "cardAvif": "assets/photos/dsc02187-f4c40593ab-card.avif",
-        "thumb": "assets/photos/dsc02187-f4c40593ab-thumb.jpg"
+        "card": "assets/photos/dsc02187-97ac82c963-card.jpg",
+        "cardAvif": "assets/photos/dsc02187-97ac82c963-card.avif",
+        "thumb": "assets/photos/dsc02187-97ac82c963-thumb.jpg"
       }
     },
     {
-      "id": "dsc02271-fba760fa16",
+      "id": "dsc02271-0ee304448c",
       "filename": "DSC02271.jpg",
       "width": 3840,
       "height": 2663,
       "bytes": 10529106,
       "sha1": "fba760fa1605f35af28df2451dbf035516b55bd7",
+      "pixelSha1": "0ee304448c6337399e2ff1bbd9c128f71d0b2188",
       "date": "2026-07-17T07:17:41-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:53:50",
@@ -555,18 +570,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc02271-fba760fa16-card.jpg",
-        "cardAvif": "assets/photos/dsc02271-fba760fa16-card.avif",
-        "thumb": "assets/photos/dsc02271-fba760fa16-thumb.jpg"
+        "card": "assets/photos/dsc02271-0ee304448c-card.jpg",
+        "cardAvif": "assets/photos/dsc02271-0ee304448c-card.avif",
+        "thumb": "assets/photos/dsc02271-0ee304448c-thumb.jpg"
       }
     },
     {
-      "id": "dsc02339-4d5f113e91",
+      "id": "dsc02339-de547a705f",
       "filename": "DSC02339.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 9064967,
       "sha1": "4d5f113e91b8f3af93c6d8a59a9a03469dbd5435",
+      "pixelSha1": "de547a705fd69cac5f338ed12e11459da96a5533",
       "date": "2026-07-17T07:28:22-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:53:53",
@@ -592,18 +608,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc02339-4d5f113e91-card.jpg",
-        "cardAvif": "assets/photos/dsc02339-4d5f113e91-card.avif",
-        "thumb": "assets/photos/dsc02339-4d5f113e91-thumb.jpg"
+        "card": "assets/photos/dsc02339-de547a705f-card.jpg",
+        "cardAvif": "assets/photos/dsc02339-de547a705f-card.avif",
+        "thumb": "assets/photos/dsc02339-de547a705f-thumb.jpg"
       }
     },
     {
-      "id": "dsc02472-503fc8880c",
+      "id": "dsc02472-c6a4b24f7f",
       "filename": "DSC02472.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 9150896,
       "sha1": "503fc8880c2639c39c83616efc56b12c8dfc1d0e",
+      "pixelSha1": "c6a4b24f7f193e51d526984632562490952c7efd",
       "date": "2026-07-17T09:05:43-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:53:56",
@@ -629,18 +646,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc02472-503fc8880c-card.jpg",
-        "cardAvif": "assets/photos/dsc02472-503fc8880c-card.avif",
-        "thumb": "assets/photos/dsc02472-503fc8880c-thumb.jpg"
+        "card": "assets/photos/dsc02472-c6a4b24f7f-card.jpg",
+        "cardAvif": "assets/photos/dsc02472-c6a4b24f7f-card.avif",
+        "thumb": "assets/photos/dsc02472-c6a4b24f7f-thumb.jpg"
       }
     },
     {
-      "id": "dsc02518-637382fb6e",
+      "id": "dsc02518-931c84d465",
       "filename": "DSC02518.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 7268116,
       "sha1": "637382fb6e83bded511fd5346b96a401edfede33",
+      "pixelSha1": "931c84d4653945491cc367a78b87a2894e35a3a7",
       "date": "2026-07-17T09:12:37-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:53:58",
@@ -666,18 +684,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc02518-637382fb6e-card.jpg",
-        "cardAvif": "assets/photos/dsc02518-637382fb6e-card.avif",
-        "thumb": "assets/photos/dsc02518-637382fb6e-thumb.jpg"
+        "card": "assets/photos/dsc02518-931c84d465-card.jpg",
+        "cardAvif": "assets/photos/dsc02518-931c84d465-card.avif",
+        "thumb": "assets/photos/dsc02518-931c84d465-thumb.jpg"
       }
     },
     {
-      "id": "dsc02568-d41efd4d63",
+      "id": "dsc02568-d2b05e28ed",
       "filename": "DSC02568.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 9929969,
       "sha1": "d41efd4d63d53d407fe4cec17540404516779294",
+      "pixelSha1": "d2b05e28ed6a380c1a4c13f8390a5bad5b6d2b40",
       "date": "2026-07-17T17:56:51-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:54:00",
@@ -703,18 +722,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc02568-d41efd4d63-card.jpg",
-        "cardAvif": "assets/photos/dsc02568-d41efd4d63-card.avif",
-        "thumb": "assets/photos/dsc02568-d41efd4d63-thumb.jpg"
+        "card": "assets/photos/dsc02568-d2b05e28ed-card.jpg",
+        "cardAvif": "assets/photos/dsc02568-d2b05e28ed-card.avif",
+        "thumb": "assets/photos/dsc02568-d2b05e28ed-thumb.jpg"
       }
     },
     {
-      "id": "dsc02602-ccb327c74a",
+      "id": "dsc02602-28b6008dba",
       "filename": "DSC02602.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 9040389,
       "sha1": "ccb327c74ab126f0e2edfe6f50711d2d5738ea74",
+      "pixelSha1": "28b6008dba8737dd7106ff68a3372d09a5e3460f",
       "date": "2026-07-17T18:08:48-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:54:03",
@@ -740,18 +760,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc02602-ccb327c74a-card.jpg",
-        "cardAvif": "assets/photos/dsc02602-ccb327c74a-card.avif",
-        "thumb": "assets/photos/dsc02602-ccb327c74a-thumb.jpg"
+        "card": "assets/photos/dsc02602-28b6008dba-card.jpg",
+        "cardAvif": "assets/photos/dsc02602-28b6008dba-card.avif",
+        "thumb": "assets/photos/dsc02602-28b6008dba-thumb.jpg"
       }
     },
     {
-      "id": "dsc02811-0bf4e74747",
+      "id": "dsc02811-7dfb0b9308",
       "filename": "DSC02811.jpg",
       "width": 3840,
       "height": 2160,
       "bytes": 10117044,
       "sha1": "0bf4e74747544f07a8a53de86b1e3628583529f5",
+      "pixelSha1": "7dfb0b930845a1da3ff13e6ed9e1b907bd8f17ba",
       "date": "2026-07-18T07:17:51-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:54:05",
@@ -777,18 +798,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc02811-0bf4e74747-card.jpg",
-        "cardAvif": "assets/photos/dsc02811-0bf4e74747-card.avif",
-        "thumb": "assets/photos/dsc02811-0bf4e74747-thumb.jpg"
+        "card": "assets/photos/dsc02811-7dfb0b9308-card.jpg",
+        "cardAvif": "assets/photos/dsc02811-7dfb0b9308-card.avif",
+        "thumb": "assets/photos/dsc02811-7dfb0b9308-thumb.jpg"
       }
     },
     {
-      "id": "dsc02834-1614741810",
+      "id": "dsc02834-b0592de054",
       "filename": "DSC02834.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 7729936,
       "sha1": "1614741810053b0659e79850ac0009c64679e19b",
+      "pixelSha1": "b0592de0547d219655f5d1229232314da5192734",
       "date": "2026-07-18T07:28:02-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:54:18",
@@ -814,18 +836,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc02834-1614741810-card.jpg",
-        "cardAvif": "assets/photos/dsc02834-1614741810-card.avif",
-        "thumb": "assets/photos/dsc02834-1614741810-thumb.jpg"
+        "card": "assets/photos/dsc02834-b0592de054-card.jpg",
+        "cardAvif": "assets/photos/dsc02834-b0592de054-card.avif",
+        "thumb": "assets/photos/dsc02834-b0592de054-thumb.jpg"
       }
     },
     {
-      "id": "dsc02889-33c191a672",
+      "id": "dsc02889-8dc3b09536",
       "filename": "DSC02889.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 9896129,
       "sha1": "33c191a67242f8bbe9acd393b619233b49dd40e9",
+      "pixelSha1": "8dc3b0953673943e2a69bbfbcc997d90fc50b888",
       "date": "2026-07-18T07:55:50-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:54:06",
@@ -851,18 +874,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc02889-33c191a672-card.jpg",
-        "cardAvif": "assets/photos/dsc02889-33c191a672-card.avif",
-        "thumb": "assets/photos/dsc02889-33c191a672-thumb.jpg"
+        "card": "assets/photos/dsc02889-8dc3b09536-card.jpg",
+        "cardAvif": "assets/photos/dsc02889-8dc3b09536-card.avif",
+        "thumb": "assets/photos/dsc02889-8dc3b09536-thumb.jpg"
       }
     },
     {
-      "id": "dsc02921-80b9add082",
+      "id": "dsc02921-9e9dd104f6",
       "filename": "DSC02921.jpg",
       "width": 2560,
       "height": 3840,
       "bytes": 7232215,
       "sha1": "80b9add082be9ebb9355e27a23056e36252a3f9c",
+      "pixelSha1": "9e9dd104f6dace9a8f6c8ece21945eeb85a34d32",
       "date": "2026-07-18T08:43:25-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:54:19",
@@ -888,18 +912,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc02921-80b9add082-card.jpg",
-        "cardAvif": "assets/photos/dsc02921-80b9add082-card.avif",
-        "thumb": "assets/photos/dsc02921-80b9add082-thumb.jpg"
+        "card": "assets/photos/dsc02921-9e9dd104f6-card.jpg",
+        "cardAvif": "assets/photos/dsc02921-9e9dd104f6-card.avif",
+        "thumb": "assets/photos/dsc02921-9e9dd104f6-thumb.jpg"
       }
     },
     {
-      "id": "dsc03009-78eb4f53c9",
+      "id": "dsc03009-4851a7e6ee",
       "filename": "DSC03009.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 9013272,
       "sha1": "78eb4f53c973a1ddcecd0338b7da2ba65ed458da",
+      "pixelSha1": "4851a7e6ee89fe032bd16907a9fb036062f815ea",
       "date": "2026-07-18T10:03:07-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:54:21",
@@ -925,18 +950,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc03009-78eb4f53c9-card.jpg",
-        "cardAvif": "assets/photos/dsc03009-78eb4f53c9-card.avif",
-        "thumb": "assets/photos/dsc03009-78eb4f53c9-thumb.jpg"
+        "card": "assets/photos/dsc03009-4851a7e6ee-card.jpg",
+        "cardAvif": "assets/photos/dsc03009-4851a7e6ee-card.avif",
+        "thumb": "assets/photos/dsc03009-4851a7e6ee-thumb.jpg"
       }
     },
     {
-      "id": "dsc03020-7c53ce840e",
+      "id": "dsc03020-92020f4b1b",
       "filename": "DSC03020.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 7593253,
       "sha1": "7c53ce840e31a1c300d99ad6c79350b92373deca",
+      "pixelSha1": "92020f4b1b9af2d1053cc333b4b18e87d4674acf",
       "date": "2026-07-18T10:04:10-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:54:23",
@@ -962,18 +988,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc03020-7c53ce840e-card.jpg",
-        "cardAvif": "assets/photos/dsc03020-7c53ce840e-card.avif",
-        "thumb": "assets/photos/dsc03020-7c53ce840e-thumb.jpg"
+        "card": "assets/photos/dsc03020-92020f4b1b-card.jpg",
+        "cardAvif": "assets/photos/dsc03020-92020f4b1b-card.avif",
+        "thumb": "assets/photos/dsc03020-92020f4b1b-thumb.jpg"
       }
     },
     {
-      "id": "dsc03028-c50be9e1b5",
+      "id": "dsc03028-e5b4bf63ec",
       "filename": "DSC03028.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 10394541,
       "sha1": "c50be9e1b5ce361c6192ad2c8a16d1c7ea06fc02",
+      "pixelSha1": "e5b4bf63ecbc382e763bd9c6a03edb155fba6b6e",
       "date": "2026-07-18T10:05:25-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:54:25",
@@ -999,18 +1026,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc03028-c50be9e1b5-card.jpg",
-        "cardAvif": "assets/photos/dsc03028-c50be9e1b5-card.avif",
-        "thumb": "assets/photos/dsc03028-c50be9e1b5-thumb.jpg"
+        "card": "assets/photos/dsc03028-e5b4bf63ec-card.jpg",
+        "cardAvif": "assets/photos/dsc03028-e5b4bf63ec-card.avif",
+        "thumb": "assets/photos/dsc03028-e5b4bf63ec-thumb.jpg"
       }
     },
     {
-      "id": "dsc03044-a10ae2aad6",
+      "id": "dsc03044-342f12324e",
       "filename": "DSC03044.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 8451391,
       "sha1": "a10ae2aad6c5e17aa4f6a42b363efbe9b1126b3d",
+      "pixelSha1": "342f12324eb2d07744127a8ff835dfa17d19d1c1",
       "date": "2026-07-18T15:20:50-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:54:44",
@@ -1036,18 +1064,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc03044-a10ae2aad6-card.jpg",
-        "cardAvif": "assets/photos/dsc03044-a10ae2aad6-card.avif",
-        "thumb": "assets/photos/dsc03044-a10ae2aad6-thumb.jpg"
+        "card": "assets/photos/dsc03044-342f12324e-card.jpg",
+        "cardAvif": "assets/photos/dsc03044-342f12324e-card.avif",
+        "thumb": "assets/photos/dsc03044-342f12324e-thumb.jpg"
       }
     },
     {
-      "id": "dsc03048-aedb6e5511",
+      "id": "dsc03048-ab8e831ffc",
       "filename": "DSC03048.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 9806405,
       "sha1": "aedb6e55117e4f1884a325f4bcf6f1a4d18af346",
+      "pixelSha1": "ab8e831ffcd3ad0a10bb1089fc5e172a495efdf7",
       "date": "2026-07-18T15:23:52-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:54:39",
@@ -1073,18 +1102,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc03048-aedb6e5511-card.jpg",
-        "cardAvif": "assets/photos/dsc03048-aedb6e5511-card.avif",
-        "thumb": "assets/photos/dsc03048-aedb6e5511-thumb.jpg"
+        "card": "assets/photos/dsc03048-ab8e831ffc-card.jpg",
+        "cardAvif": "assets/photos/dsc03048-ab8e831ffc-card.avif",
+        "thumb": "assets/photos/dsc03048-ab8e831ffc-thumb.jpg"
       }
     },
     {
-      "id": "dsc03126-2d5ed5f9ea",
+      "id": "dsc03126-b2d1854960",
       "filename": "DSC03126.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 9473780,
       "sha1": "2d5ed5f9eae15c67d1d5a11564949e999c322a99",
+      "pixelSha1": "b2d1854960c894aba76e5b6a75053daf6b7d13d0",
       "date": "2026-07-18T17:45:25-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:54:45",
@@ -1110,18 +1140,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc03126-2d5ed5f9ea-card.jpg",
-        "cardAvif": "assets/photos/dsc03126-2d5ed5f9ea-card.avif",
-        "thumb": "assets/photos/dsc03126-2d5ed5f9ea-thumb.jpg"
+        "card": "assets/photos/dsc03126-b2d1854960-card.jpg",
+        "cardAvif": "assets/photos/dsc03126-b2d1854960-card.avif",
+        "thumb": "assets/photos/dsc03126-b2d1854960-thumb.jpg"
       }
     },
     {
-      "id": "dsc03163-51c8fe70b1",
+      "id": "dsc03163-be20f41989",
       "filename": "DSC03163.jpg",
       "width": 2560,
       "height": 3840,
       "bytes": 8824303,
       "sha1": "51c8fe70b11352879f5580d4c7a6d843a435ac9f",
+      "pixelSha1": "be20f419891bcda521956b937692b7e68649e48d",
       "date": "2026-07-18T18:08:07-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:54:51",
@@ -1147,18 +1178,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc03163-51c8fe70b1-card.jpg",
-        "cardAvif": "assets/photos/dsc03163-51c8fe70b1-card.avif",
-        "thumb": "assets/photos/dsc03163-51c8fe70b1-thumb.jpg"
+        "card": "assets/photos/dsc03163-be20f41989-card.jpg",
+        "cardAvif": "assets/photos/dsc03163-be20f41989-card.avif",
+        "thumb": "assets/photos/dsc03163-be20f41989-thumb.jpg"
       }
     },
     {
-      "id": "dsc03373-5593e75167",
+      "id": "dsc03373-d8e19a4866",
       "filename": "DSC03373.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 10078855,
       "sha1": "5593e7516781add6170547676a051c8ac5725be5",
+      "pixelSha1": "d8e19a486670d1547fd6d66b6fb4ffe7ca8f830f",
       "date": "2026-07-19T08:13:37-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:54:56",
@@ -1184,18 +1216,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc03373-5593e75167-card.jpg",
-        "cardAvif": "assets/photos/dsc03373-5593e75167-card.avif",
-        "thumb": "assets/photos/dsc03373-5593e75167-thumb.jpg"
+        "card": "assets/photos/dsc03373-d8e19a4866-card.jpg",
+        "cardAvif": "assets/photos/dsc03373-d8e19a4866-card.avif",
+        "thumb": "assets/photos/dsc03373-d8e19a4866-thumb.jpg"
       }
     },
     {
-      "id": "dsc03598-8f147af0f3",
+      "id": "dsc03598-28bfb8641d",
       "filename": "DSC03598.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 9933306,
       "sha1": "8f147af0f3eb2bf6232421b2a5ae268e3d7d18a1",
+      "pixelSha1": "28bfb8641d06e7d6355104157e5b83deca84ee4c",
       "date": "2026-07-19T08:39:30-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:54:47",
@@ -1221,18 +1254,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc03598-8f147af0f3-card.jpg",
-        "cardAvif": "assets/photos/dsc03598-8f147af0f3-card.avif",
-        "thumb": "assets/photos/dsc03598-8f147af0f3-thumb.jpg"
+        "card": "assets/photos/dsc03598-28bfb8641d-card.jpg",
+        "cardAvif": "assets/photos/dsc03598-28bfb8641d-card.avif",
+        "thumb": "assets/photos/dsc03598-28bfb8641d-thumb.jpg"
       }
     },
     {
-      "id": "dsc03604-4f26050280",
+      "id": "dsc03604-75617a4a40",
       "filename": "DSC03604.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 9101010,
       "sha1": "4f26050280cd35ec41765ea27a4396e745f64fe3",
+      "pixelSha1": "75617a4a407c7aaab5e1176508b0001c80aa2d5f",
       "date": "2026-07-19T08:39:34-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:54:54",
@@ -1258,18 +1292,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc03604-4f26050280-card.jpg",
-        "cardAvif": "assets/photos/dsc03604-4f26050280-card.avif",
-        "thumb": "assets/photos/dsc03604-4f26050280-thumb.jpg"
+        "card": "assets/photos/dsc03604-75617a4a40-card.jpg",
+        "cardAvif": "assets/photos/dsc03604-75617a4a40-card.avif",
+        "thumb": "assets/photos/dsc03604-75617a4a40-thumb.jpg"
       }
     },
     {
-      "id": "dsc03644-799d65622e",
+      "id": "dsc03644-76be797401",
       "filename": "DSC03644.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 9977032,
       "sha1": "799d65622e64a8c957b9b27f58ee118bb75749f9",
+      "pixelSha1": "76be797401c3fbcbc4a486999144b7fd5cb5e7ad",
       "date": "2026-07-19T08:41:07-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:55:08",
@@ -1295,18 +1330,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc03644-799d65622e-card.jpg",
-        "cardAvif": "assets/photos/dsc03644-799d65622e-card.avif",
-        "thumb": "assets/photos/dsc03644-799d65622e-thumb.jpg"
+        "card": "assets/photos/dsc03644-76be797401-card.jpg",
+        "cardAvif": "assets/photos/dsc03644-76be797401-card.avif",
+        "thumb": "assets/photos/dsc03644-76be797401-thumb.jpg"
       }
     },
     {
-      "id": "dsc03693-7759bf3721",
+      "id": "dsc03693-aa0fe4ad17",
       "filename": "DSC03693.jpg",
       "width": 3840,
       "height": 2560,
       "bytes": 7939791,
       "sha1": "7759bf372128f68ffd7c27aef49d84d912f2b0c7",
+      "pixelSha1": "aa0fe4ad173183f3de5dd480f2223e18451d392b",
       "date": "2026-07-19T08:44:44-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:55:04",
@@ -1332,18 +1368,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/dsc03693-7759bf3721-card.jpg",
-        "cardAvif": "assets/photos/dsc03693-7759bf3721-card.avif",
-        "thumb": "assets/photos/dsc03693-7759bf3721-thumb.jpg"
+        "card": "assets/photos/dsc03693-aa0fe4ad17-card.jpg",
+        "cardAvif": "assets/photos/dsc03693-aa0fe4ad17-card.avif",
+        "thumb": "assets/photos/dsc03693-aa0fe4ad17-thumb.jpg"
       }
     },
     {
-      "id": "img-0949-ba8db955e4",
+      "id": "img-0949-7cc238e17d",
       "filename": "IMG_0949.jpg",
       "width": 2182,
       "height": 3840,
       "bytes": 10618373,
       "sha1": "ba8db955e4e7b20ed3931e5b850d96605a0ce4b7",
+      "pixelSha1": "7cc238e17d945fa990e3c30251dbbc3e9d99f78b",
       "date": "2026-07-13T09:27:05-04:00",
       "utcOffset": "-04:00",
       "exportedAt": "2026-08-01T11:53:08",
@@ -1369,18 +1406,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-0949-ba8db955e4-card.jpg",
-        "cardAvif": "assets/photos/img-0949-ba8db955e4-card.avif",
-        "thumb": "assets/photos/img-0949-ba8db955e4-thumb.jpg"
+        "card": "assets/photos/img-0949-7cc238e17d-card.jpg",
+        "cardAvif": "assets/photos/img-0949-7cc238e17d-card.avif",
+        "thumb": "assets/photos/img-0949-7cc238e17d-thumb.jpg"
       }
     },
     {
-      "id": "img-2715-c09ff1f3f9",
+      "id": "img-2715-4760f8ea34",
       "filename": "IMG_2715.jpg",
       "width": 2880,
       "height": 3840,
       "bytes": 8209103,
       "sha1": "c09ff1f3f96381ff682651234f48cf884c1803ec",
+      "pixelSha1": "4760f8ea34aa99e62873d5e8368579ac5df68ca0",
       "date": "2026-07-11T16:45:51-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:52:34",
@@ -1406,18 +1444,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-2715-c09ff1f3f9-card.jpg",
-        "cardAvif": "assets/photos/img-2715-c09ff1f3f9-card.avif",
-        "thumb": "assets/photos/img-2715-c09ff1f3f9-thumb.jpg"
+        "card": "assets/photos/img-2715-4760f8ea34-card.jpg",
+        "cardAvif": "assets/photos/img-2715-4760f8ea34-card.avif",
+        "thumb": "assets/photos/img-2715-4760f8ea34-thumb.jpg"
       }
     },
     {
-      "id": "img-2723-297b76a0fd",
+      "id": "img-2723-9b70c4fb57",
       "filename": "IMG_2723.jpg",
       "width": 3840,
       "height": 2880,
       "bytes": 6414339,
       "sha1": "297b76a0fdbd8f9dd134ff38c78102b5cc36885d",
+      "pixelSha1": "9b70c4fb575fb48b97154a792c61b3748cc05551",
       "date": "2026-07-11T16:52:58-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:52:33",
@@ -1443,18 +1482,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-2723-297b76a0fd-card.jpg",
-        "cardAvif": "assets/photos/img-2723-297b76a0fd-card.avif",
-        "thumb": "assets/photos/img-2723-297b76a0fd-thumb.jpg"
+        "card": "assets/photos/img-2723-9b70c4fb57-card.jpg",
+        "cardAvif": "assets/photos/img-2723-9b70c4fb57-card.avif",
+        "thumb": "assets/photos/img-2723-9b70c4fb57-thumb.jpg"
       }
     },
     {
-      "id": "img-2725-b380768f8a",
+      "id": "img-2725-c11d751263",
       "filename": "IMG_2725.jpg",
       "width": 3840,
       "height": 2880,
       "bytes": 5902058,
       "sha1": "b380768f8ac140fcc6a5b931cdf777db28edd35c",
+      "pixelSha1": "c11d751263172c921b6cd2525b13248169ce5d86",
       "date": "2026-07-11T16:54:27-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:53:05",
@@ -1480,18 +1520,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-2725-b380768f8a-card.jpg",
-        "cardAvif": "assets/photos/img-2725-b380768f8a-card.avif",
-        "thumb": "assets/photos/img-2725-b380768f8a-thumb.jpg"
+        "card": "assets/photos/img-2725-c11d751263-card.jpg",
+        "cardAvif": "assets/photos/img-2725-c11d751263-card.avif",
+        "thumb": "assets/photos/img-2725-c11d751263-thumb.jpg"
       }
     },
     {
-      "id": "img-2727-58e5af7c75",
+      "id": "img-2727-a85b9fd07e",
       "filename": "IMG_2727.jpg",
       "width": 3840,
       "height": 2880,
       "bytes": 8403710,
       "sha1": "58e5af7c75ccfdcef7d3464ca47608fb2a0f76dd",
+      "pixelSha1": "a85b9fd07e9367db40c0ed585fc340366a98c861",
       "date": "2026-07-11T19:43:21-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:53:07",
@@ -1517,18 +1558,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-2727-58e5af7c75-card.jpg",
-        "cardAvif": "assets/photos/img-2727-58e5af7c75-card.avif",
-        "thumb": "assets/photos/img-2727-58e5af7c75-thumb.jpg"
+        "card": "assets/photos/img-2727-a85b9fd07e-card.jpg",
+        "cardAvif": "assets/photos/img-2727-a85b9fd07e-card.avif",
+        "thumb": "assets/photos/img-2727-a85b9fd07e-thumb.jpg"
       }
     },
     {
-      "id": "img-2735-88d7879db1",
+      "id": "img-2735-28ab2eca22",
       "filename": "IMG_2735.jpg",
       "width": 3840,
       "height": 2880,
       "bytes": 8258348,
       "sha1": "88d7879db16b8fc573456731ed26cdd7159e9ef9",
+      "pixelSha1": "28ab2eca22842cb5faad41605b20925fa3dfc4e3",
       "date": "2026-07-12T17:20:25-04:00",
       "utcOffset": "-04:00",
       "exportedAt": "2026-08-01T11:53:44",
@@ -1554,18 +1596,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-2735-88d7879db1-card.jpg",
-        "cardAvif": "assets/photos/img-2735-88d7879db1-card.avif",
-        "thumb": "assets/photos/img-2735-88d7879db1-thumb.jpg"
+        "card": "assets/photos/img-2735-28ab2eca22-card.jpg",
+        "cardAvif": "assets/photos/img-2735-28ab2eca22-card.avif",
+        "thumb": "assets/photos/img-2735-28ab2eca22-thumb.jpg"
       }
     },
     {
-      "id": "img-2788-9e6fae43b9",
+      "id": "img-2788-79afca8ad6",
       "filename": "IMG_2788.jpg",
       "width": 3840,
       "height": 2850,
       "bytes": 7335808,
       "sha1": "9e6fae43b9580a4317c7a589eed9cb36a365ea36",
+      "pixelSha1": "79afca8ad6d3fd16d628a2ffdfb755801f243a49",
       "date": "2026-07-13T17:43:34-04:00",
       "utcOffset": "-04:00",
       "exportedAt": "2026-08-01T11:53:11",
@@ -1591,18 +1634,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-2788-9e6fae43b9-card.jpg",
-        "cardAvif": "assets/photos/img-2788-9e6fae43b9-card.avif",
-        "thumb": "assets/photos/img-2788-9e6fae43b9-thumb.jpg"
+        "card": "assets/photos/img-2788-79afca8ad6-card.jpg",
+        "cardAvif": "assets/photos/img-2788-79afca8ad6-card.avif",
+        "thumb": "assets/photos/img-2788-79afca8ad6-thumb.jpg"
       }
     },
     {
-      "id": "img-2797-4424b09154",
+      "id": "img-2797-43aa1fe11c",
       "filename": "IMG_2797.jpg",
       "width": 3840,
       "height": 2874,
       "bytes": 6888334,
       "sha1": "4424b09154b7fa5318a812c7dbd0ab890f0dda88",
+      "pixelSha1": "43aa1fe11c27eb44917fd8e776242dab4f5e5c07",
       "date": "2026-07-13T17:46:06-04:00",
       "utcOffset": "-04:00",
       "exportedAt": "2026-08-01T11:53:09",
@@ -1628,18 +1672,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-2797-4424b09154-card.jpg",
-        "cardAvif": "assets/photos/img-2797-4424b09154-card.avif",
-        "thumb": "assets/photos/img-2797-4424b09154-thumb.jpg"
+        "card": "assets/photos/img-2797-43aa1fe11c-card.jpg",
+        "cardAvif": "assets/photos/img-2797-43aa1fe11c-card.avif",
+        "thumb": "assets/photos/img-2797-43aa1fe11c-thumb.jpg"
       }
     },
     {
-      "id": "img-2833-e8ca8b4d14",
+      "id": "img-2833-dd8abb0b33",
       "filename": "IMG_2833.jpg",
       "width": 3840,
       "height": 2880,
       "bytes": 5974495,
       "sha1": "e8ca8b4d145241ab84ce957706d56df3bb9161ac",
+      "pixelSha1": "dd8abb0b33f0430c6ad67bbf50023ee4759d0245",
       "date": "2026-07-13T19:09:26-04:00",
       "utcOffset": "-04:00",
       "exportedAt": "2026-08-01T11:53:16",
@@ -1665,18 +1710,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-2833-e8ca8b4d14-card.jpg",
-        "cardAvif": "assets/photos/img-2833-e8ca8b4d14-card.avif",
-        "thumb": "assets/photos/img-2833-e8ca8b4d14-thumb.jpg"
+        "card": "assets/photos/img-2833-dd8abb0b33-card.jpg",
+        "cardAvif": "assets/photos/img-2833-dd8abb0b33-card.avif",
+        "thumb": "assets/photos/img-2833-dd8abb0b33-thumb.jpg"
       }
     },
     {
-      "id": "img-2842-55e70a64ef",
+      "id": "img-2842-dcb27a4d93",
       "filename": "IMG_2842.jpg",
       "width": 3840,
       "height": 2880,
       "bytes": 8819290,
       "sha1": "55e70a64ef0603f50f9e71a6ba65593ef4df6e34",
+      "pixelSha1": "dcb27a4d93ac9628c2b080832812e9754e4d98f1",
       "date": "2026-07-14T07:45:24-04:00",
       "utcOffset": "-04:00",
       "exportedAt": "2026-08-01T11:53:22",
@@ -1702,18 +1748,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-2842-55e70a64ef-card.jpg",
-        "cardAvif": "assets/photos/img-2842-55e70a64ef-card.avif",
-        "thumb": "assets/photos/img-2842-55e70a64ef-thumb.jpg"
+        "card": "assets/photos/img-2842-dcb27a4d93-card.jpg",
+        "cardAvif": "assets/photos/img-2842-dcb27a4d93-card.avif",
+        "thumb": "assets/photos/img-2842-dcb27a4d93-thumb.jpg"
       }
     },
     {
-      "id": "img-2858-c48cceb995",
+      "id": "img-2858-9f914f72cc",
       "filename": "IMG_2858.jpg",
       "width": 3840,
       "height": 2880,
       "bytes": 5352228,
       "sha1": "c48cceb99584ea66b7b500d34676dcfe1a9f0221",
+      "pixelSha1": "9f914f72cc80c1f95f80f2f380c5eab96a61bbc3",
       "date": "2026-07-14T17:44:09-04:00",
       "utcOffset": "-04:00",
       "exportedAt": "2026-08-01T11:53:46",
@@ -1739,18 +1786,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-2858-c48cceb995-card.jpg",
-        "cardAvif": "assets/photos/img-2858-c48cceb995-card.avif",
-        "thumb": "assets/photos/img-2858-c48cceb995-thumb.jpg"
+        "card": "assets/photos/img-2858-9f914f72cc-card.jpg",
+        "cardAvif": "assets/photos/img-2858-9f914f72cc-card.avif",
+        "thumb": "assets/photos/img-2858-9f914f72cc-thumb.jpg"
       }
     },
     {
-      "id": "img-2900-9a840c14f4",
+      "id": "img-2900-e0815cfa58",
       "filename": "IMG_2900.jpg",
       "width": 3840,
       "height": 2880,
       "bytes": 5508494,
       "sha1": "9a840c14f41e565a8700e7b033cd46cb3b651e71",
+      "pixelSha1": "e0815cfa58663e972bb39775e791a77d59b12088",
       "date": "2026-07-15T06:20:39-04:00",
       "utcOffset": "-04:00",
       "exportedAt": "2026-08-01T11:53:46",
@@ -1776,18 +1824,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-2900-9a840c14f4-card.jpg",
-        "cardAvif": "assets/photos/img-2900-9a840c14f4-card.avif",
-        "thumb": "assets/photos/img-2900-9a840c14f4-thumb.jpg"
+        "card": "assets/photos/img-2900-e0815cfa58-card.jpg",
+        "cardAvif": "assets/photos/img-2900-e0815cfa58-card.avif",
+        "thumb": "assets/photos/img-2900-e0815cfa58-thumb.jpg"
       }
     },
     {
-      "id": "img-2943-1b8991110f",
+      "id": "img-2943-daaeb5aadd",
       "filename": "IMG_2943.jpg",
       "width": 3840,
       "height": 2873,
       "bytes": 6344278,
       "sha1": "1b8991110f7d9b0b5b5bdb4667ec1326d0ab1077",
+      "pixelSha1": "daaeb5aaddde6a03a1b93a988cb6cca1838d54e1",
       "date": "2026-07-17T06:46:17-04:00",
       "utcOffset": "-04:00",
       "exportedAt": "2026-08-01T11:53:36",
@@ -1813,18 +1862,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-2943-1b8991110f-card.jpg",
-        "cardAvif": "assets/photos/img-2943-1b8991110f-card.avif",
-        "thumb": "assets/photos/img-2943-1b8991110f-thumb.jpg"
+        "card": "assets/photos/img-2943-daaeb5aadd-card.jpg",
+        "cardAvif": "assets/photos/img-2943-daaeb5aadd-card.avif",
+        "thumb": "assets/photos/img-2943-daaeb5aadd-thumb.jpg"
       }
     },
     {
-      "id": "img-2987-2fd23bf97a",
+      "id": "img-2987-03121b254a",
       "filename": "IMG_2987.jpg",
       "width": 3840,
       "height": 2880,
       "bytes": 5231338,
       "sha1": "2fd23bf97aa1da52bf7db47588cf6153afc3ce8e",
+      "pixelSha1": "03121b254ac0aad084207be3b0af858cba811f1e",
       "date": "2026-07-20T10:43:04-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:55:09",
@@ -1850,18 +1900,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-2987-2fd23bf97a-card.jpg",
-        "cardAvif": "assets/photos/img-2987-2fd23bf97a-card.avif",
-        "thumb": "assets/photos/img-2987-2fd23bf97a-thumb.jpg"
+        "card": "assets/photos/img-2987-03121b254a-card.jpg",
+        "cardAvif": "assets/photos/img-2987-03121b254a-card.avif",
+        "thumb": "assets/photos/img-2987-03121b254a-thumb.jpg"
       }
     },
     {
-      "id": "img-3012-2deaae7fc4",
+      "id": "img-3012-8e94da00d6",
       "filename": "IMG_3012.jpg",
       "width": 3840,
       "height": 2880,
       "bytes": 2913642,
       "sha1": "2deaae7fc4145a5ab3f7355adeb4271e81942d24",
+      "pixelSha1": "8e94da00d656ce1ba83d6522326d470d97da526b",
       "date": "2026-07-20T17:57:01-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:55:06",
@@ -1887,18 +1938,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-3012-2deaae7fc4-card.jpg",
-        "cardAvif": "assets/photos/img-3012-2deaae7fc4-card.avif",
-        "thumb": "assets/photos/img-3012-2deaae7fc4-thumb.jpg"
+        "card": "assets/photos/img-3012-8e94da00d6-card.jpg",
+        "cardAvif": "assets/photos/img-3012-8e94da00d6-card.avif",
+        "thumb": "assets/photos/img-3012-8e94da00d6-thumb.jpg"
       }
     },
     {
-      "id": "img-3036-4898f287c3",
+      "id": "img-3036-125f159bc3",
       "filename": "IMG_3036.jpg",
       "width": 3840,
       "height": 2949,
       "bytes": 5623255,
       "sha1": "4898f287c35b72c52f39a39edd73e67a633f814e",
+      "pixelSha1": "125f159bc3ecd97077a20b741b5a642a29afd3a3",
       "date": "2026-07-21T09:24:21-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:55:10",
@@ -1924,18 +1976,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-3036-4898f287c3-card.jpg",
-        "cardAvif": "assets/photos/img-3036-4898f287c3-card.avif",
-        "thumb": "assets/photos/img-3036-4898f287c3-thumb.jpg"
+        "card": "assets/photos/img-3036-125f159bc3-card.jpg",
+        "cardAvif": "assets/photos/img-3036-125f159bc3-card.avif",
+        "thumb": "assets/photos/img-3036-125f159bc3-thumb.jpg"
       }
     },
     {
-      "id": "img-3045-pano-11dfcd5c40",
+      "id": "img-3045-pano-e8f1bf4365",
       "filename": "IMG_3045-Pano.jpg",
       "width": 3840,
       "height": 2518,
       "bytes": 6045272,
       "sha1": "11dfcd5c405bb99a6997dcef6d76a40f0055e367",
+      "pixelSha1": "e8f1bf4365a45aeed412a5486a0f46f0647e59d7",
       "date": "2026-07-21T09:28:51-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:55:15",
@@ -1961,18 +2014,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-3045-pano-11dfcd5c40-card.jpg",
-        "cardAvif": "assets/photos/img-3045-pano-11dfcd5c40-card.avif",
-        "thumb": "assets/photos/img-3045-pano-11dfcd5c40-thumb.jpg"
+        "card": "assets/photos/img-3045-pano-e8f1bf4365-card.jpg",
+        "cardAvif": "assets/photos/img-3045-pano-e8f1bf4365-card.avif",
+        "thumb": "assets/photos/img-3045-pano-e8f1bf4365-thumb.jpg"
       }
     },
     {
-      "id": "img-3048-20c9df6309",
+      "id": "img-3048-9ef580c62e",
       "filename": "IMG_3048.jpg",
       "width": 3840,
       "height": 2881,
       "bytes": 4939316,
       "sha1": "20c9df6309a016e5e8b229b526489964f136b09c",
+      "pixelSha1": "9ef580c62ebba5d24c42d0821e971fa2f74d3cd5",
       "date": "2026-07-21T09:29:20-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:55:14",
@@ -1998,18 +2052,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-3048-20c9df6309-card.jpg",
-        "cardAvif": "assets/photos/img-3048-20c9df6309-card.avif",
-        "thumb": "assets/photos/img-3048-20c9df6309-thumb.jpg"
+        "card": "assets/photos/img-3048-9ef580c62e-card.jpg",
+        "cardAvif": "assets/photos/img-3048-9ef580c62e-card.avif",
+        "thumb": "assets/photos/img-3048-9ef580c62e-thumb.jpg"
       }
     },
     {
-      "id": "img-3055-96fe4c534f",
+      "id": "img-3055-3e5a6402a5",
       "filename": "IMG_3055.jpg",
       "width": 2879,
       "height": 3840,
       "bytes": 4720429,
       "sha1": "96fe4c534f37e43a339f652a20613db27f980baa",
+      "pixelSha1": "3e5a6402a548e70ad2ace346c90da5b088c1f457",
       "date": "2026-07-21T09:35:49-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:55:13",
@@ -2035,18 +2090,19 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-3055-96fe4c534f-card.jpg",
-        "cardAvif": "assets/photos/img-3055-96fe4c534f-card.avif",
-        "thumb": "assets/photos/img-3055-96fe4c534f-thumb.jpg"
+        "card": "assets/photos/img-3055-3e5a6402a5-card.jpg",
+        "cardAvif": "assets/photos/img-3055-3e5a6402a5-card.avif",
+        "thumb": "assets/photos/img-3055-3e5a6402a5-thumb.jpg"
       }
     },
     {
-      "id": "img-3099-e6ef5fd1cf",
+      "id": "img-3099-fbb79ec833",
       "filename": "IMG_3099.jpg",
       "width": 3840,
       "height": 2453,
       "bytes": 4774566,
       "sha1": "e6ef5fd1cfe979654354ca6c51636e839622e5e6",
+      "pixelSha1": "fbb79ec83320e71e1504efef3829641b39e9fdeb",
       "date": "2026-07-21T17:26:12-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-01T11:55:12",
@@ -2072,9 +2128,9 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-3099-e6ef5fd1cf-card.jpg",
-        "cardAvif": "assets/photos/img-3099-e6ef5fd1cf-card.avif",
-        "thumb": "assets/photos/img-3099-e6ef5fd1cf-thumb.jpg"
+        "card": "assets/photos/img-3099-fbb79ec833-card.jpg",
+        "cardAvif": "assets/photos/img-3099-fbb79ec833-card.avif",
+        "thumb": "assets/photos/img-3099-fbb79ec833-thumb.jpg"
       }
     }
   ]
