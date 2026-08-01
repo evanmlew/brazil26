@@ -9,7 +9,7 @@ python -m http.server 8000
 
 ## Files
 
-- `index.html` — the journal experience. The design/runtime stays inline here; it now fetches `data/trip.json` first and falls back to the embedded mockup data if the JSON is missing.
+- `index.html` — the journal experience. The design/runtime stays inline here; it reads the trip payload from `data/trip.js` (a blocking `<script>` in `<head>`) so the very first paint already has data.
 - `support.js` — the dc-runtime bundle from the handoff. Do not edit.
 - `photo-review.html` / `.css` / `.js` — local-only browser review tool for tagging real exports (auto-loads previews, drag-and-drop reorder/section-assignment, Save button). The CSS/JS are loaded with a `?v=N` cache-busting query string in `photo-review.html` — **bump that number whenever you edit `.css`/`.js`**, or a browser tab left open from an earlier session can load a stale script against the new HTML and throw errors like "Cannot set properties of null".
 - `review_server.py` — local dev server (serves this folder + a `POST /api/save-edits` route the review tool's Save button calls, which also rebuilds `data/trip.json`). Local-only, never published.
@@ -17,7 +17,8 @@ python -m http.server 8000
 - `data/narrative.json` — species + placeholder narrative entries keyed by `subjectId`.
 - `data/photo-catalog.json` — generated technical metadata for the private Lightroom export, including each photo's real capture `date` (ISO 8601 with UTC offset, e.g. `2026-07-13T07:44:49-03:00`) and `utcOffset` (e.g. `-03:00`), pulled from the EXIF `DateTimeOriginal`/`OffsetTimeOriginal` tags — not the Lightroom export timestamp.
 - `data/photo-edits.json` — durable editorial overlay (the source of truth for captions/species/ordering/exclusions).
-- `data/trip.json` — generated merged payload consumed by the site.
+- `data/trip.json` — generated merged payload. The readable, diffable copy of what the site shows.
+- `data/trip.js` — the same payload as `window.__TRIP__`, and the copy the site actually loads. Written by the same function in the same pass as `trip.json`, so the two can't drift; commit both.
 - `scripts/build_photo_catalog.py` — rebuilds `data/photo-catalog.json` from `photos\`.
 - `scripts/build_photo_assets.py` — creates public `assets\photos\*-card.avif`, `*-card.jpg` and `*-thumb.jpg` derivatives. See "Photo quality" below.
 - `scripts/build_trip_content.py` — merges legs, narrative, catalog, and edits into `data/trip.json` (skips any photo with `excluded: true`).
@@ -121,6 +122,8 @@ python scripts\build_trip_content.py `
   data\trip.json
 ```
 
+The final argument names the JSON output; `data\trip.js` is written alongside it automatically.
+
 Then preview the site locally at `http://localhost:8000/index.html` (the review server above already serves it, or use plain `python -m http.server 8000`).
 
 ## Schema notes
@@ -162,7 +165,7 @@ Editing captions and rebuilding `data/trip.json` locally does **not** publish an
 
 ```powershell
 cd "C:\Users\evlew\OneDrive\Personal\1-Projects\Brazil 2026\Websites\Brazil 2026 Journal"
-git add data/legs.json data/photo-edits.json data/trip.json
+git add data/legs.json data/photo-edits.json data/trip.json data/trip.js
 git commit -m "Update captions/ordering"
 git push origin main
 ```
