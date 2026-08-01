@@ -7,6 +7,9 @@
 # Python bytecode cache
 __pycache__/
 
+# Browser-automation artifacts (screenshots, console logs) from agent smoke tests
+.playwright-mcp/
+
 # OS/editor cruft
 .DS_Store
 Thumbs.db
