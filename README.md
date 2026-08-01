@@ -19,7 +19,7 @@ python -m http.server 8000
 - `data/photo-edits.json` — durable editorial overlay (the source of truth for captions/species/ordering/exclusions).
 - `data/trip.json` — generated merged payload consumed by the site.
 - `scripts/build_photo_catalog.py` — rebuilds `data/photo-catalog.json` from `photos\`.
-- `scripts/build_photo_assets.py` — creates public `assets\photos\*-card.jpg` and `*-thumb.jpg` derivatives.
+- `scripts/build_photo_assets.py` — creates public `assets\photos\*-card.avif`, `*-card.jpg` and `*-thumb.jpg` derivatives. See "Photo quality" below.
 - `scripts/build_trip_content.py` — merges legs, narrative, catalog, and edits into `data/trip.json` (skips any photo with `excluded: true`).
 - `photos\` — private raw export folder. Ignored by git; do not publish.
 
@@ -31,11 +31,66 @@ Rebuild the technical catalog after a fresh Lightroom export:
 python scripts\build_photo_catalog.py photos data\photo-catalog.json
 ```
 
+Photo ids are content hashes (`<filename-slug>-<sha1[:10]>`), so **a fresh export changes every
+id** and orphans every caption in `data\photo-edits.json`. Re-key them by joining the old and new
+catalogs on filename — take the catalog snapshot *before* overwriting it:
+
+```powershell
+python scripts\migrate_photo_edits.py `
+  data\photo-catalog.prev.json `
+  data\photo-catalog.json `
+  data\photo-edits.json
+```
+
+The script is idempotent, writes a `.bak`, and keeps (rather than drops) anything it can't match.
+
 Generate the public card/thumb derivatives for the current export:
 
 ```powershell
 python scripts\build_photo_assets.py photos data\photo-catalog.json assets\photos
 ```
+
+Old derivatives are **not** cleaned up automatically — after a re-export, delete any
+`assets\photos\*-card.*` / `*-thumb.jpg` that the new catalog no longer references. Files without
+an id-shaped name (`jaguar.jpg`, `cover.jpg`, …) are hand-placed stock and must be kept.
+
+### Photo quality
+
+The Lightroom export **is** the master — export at 3840px on the long edge, JPEG quality 100,
+sRGB, and the script publishes from those pixels. 3840px is deliberate: the photo pane is 75% of
+the viewport, so a maximised window on a 27" 4K monitor already wants ~2900px, and fullscreen with
+the map collapsed wants the full 3840px. An intermediate JPEG costs nothing measurable — encoding
+AVIF from the master versus from a q100 JPEG scores identically (42.29 dB PSNR either way).
+
+Three derivatives are published per photo:
+
+| File | Size | Encoding | Used for |
+| --- | --- | --- | --- |
+| `*-card.avif` | 3840px | AVIF q68, ICC preserved | the photo pane, on every browser that can decode AVIF |
+| `*-card.jpg` | 2048px | JPEG q85, **4:4:4**, ICC preserved | fallback only, for browsers without AVIF |
+| `*-thumb.jpg` | 360px | JPEG q88 | map dots, filmstrip, and the smart-fit colour probe |
+
+AVIF q68 was chosen by measurement: against the masters it beat WebP q82 on *both* axes
+(SSIM 0.9989 vs 0.9980, and fewer bytes), and beat JPEG q92 by ~2.5x on size at a difference
+you can't see.
+
+`index.html` picks the format at runtime by actually decoding a 1x1 AVIF data-URI — UA sniffing
+and `canvas.toDataURL` both lie. It can **not** use the usual two-declaration CSS fallback:
+`support.js`'s `cssToObj()` parses these style strings into an object, so a duplicate
+`background-image` property is silently collapsed to the last one.
+
+Rules for anyone touching `build_photo_assets.py`:
+
+- When a source is already at or below `--card`, the JPEG card path is a **verbatim copy** of the
+  export's compressed data. No re-encode, so no generation loss. Metadata (EXIF, GPS, XMP) is
+  stripped at the JPEG marker level, which is lossless and keeps the ICC profile.
+- When a source has to shrink, it is encoded with **4:4:4 chroma** and the ICC profile preserved,
+  plus a `--sharpen` unsharp mask to replace the output sharpening a plain LANCZOS downscale loses.
+- Never re-encode a card at the same pixel size "to save bytes" — that is pure quality loss with
+  nothing bought. Lower `--card` instead, so the resize is real and the sharpening pass can
+  compensate.
+- Never point the map dots or the colour probe at a card. They render at 44px and 24px
+  respectively; using the card pulls tens of MB for pixels nobody sees.
 
 Start the review server from this folder (not the plain `http.server` — this one also exposes the Save button's endpoint), then open `http://localhost:8000/photo-review.html`:
 

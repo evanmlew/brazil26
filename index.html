@@ -275,6 +275,24 @@ const PHOTOS = {
 const ALL = [];
 LEGS.forEach(l => PHOTOS[l.id].forEach((s, i) => ALL.push(Object.assign({ legId:l.id, pos:i }, s))));
 
+// AVIF cards are the primary asset; the JPEG cards exist only for browsers that
+// can't decode AVIF. Feature-detect by actually decoding a 1x1 AVIF — UA sniffing
+// and canvas.toDataURL both lie. The style strings this app builds are parsed by
+// support.js's cssToObj(), which collapses duplicate properties into one object,
+// so the usual `background-image` two-declaration CSS fallback would be dropped.
+let AVIF_OK = false;
+const AVIF_READY = (async () => {
+  try {
+    const probe = new Image();
+    probe.src = 'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADrbWV0YQAAAAAAAAAhaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAAAAAAAOcGl0bQAAAAAAAQAAAB5pbG9jAAAAAEQAAAEAAQAAAAEAAAETAAAAFAAAAChpaW5mAAAAAAABAAAAGmluZmUCAAAAAAEAAGF2MDFDb2xvcgAAAABqaXBycAAAAEtpcGNvAAAAFGlzcGUAAAAAAAAAAQAAAAEAAAAQcGl4aQAAAAADCAgIAAAADGF2MUOBAAwAAAAAE2NvbHJuY2x4AAEADQAGgAAAABdpcG1hAAAAAAAAAAEAAQQBAoMEAAAAHG1kYXQSAAoFGAAGBCAyCR+QP///xAAFSA==';
+    await probe.decode();
+    AVIF_OK = probe.naturalWidth > 0;
+  } catch (e) {
+    AVIF_OK = false;
+  }
+  return AVIF_OK;
+})();
+
 const normalizeTrip = source => {
   const legs = ((source && source.legs && source.legs.length) ? source.legs : LEGS).map(leg => Object.assign({}, leg));
   const photosByLeg = {};
@@ -377,7 +395,7 @@ class Component extends DCLogic {
 
   async loadTripData(){
     try {
-      const response = await fetch('data/trip.json', { cache:'no-store' });
+      const [response] = await Promise.all([fetch('data/trip.json', { cache:'no-store' }), AVIF_READY]);
       if (!response.ok) throw new Error('Could not load trip data (' + response.status + ')');
       const trip = await response.json();
       if (this.disposed) return;
@@ -683,7 +701,7 @@ class Component extends DCLogic {
         holder.style.cssText = 'flex-direction:column;align-items:center;gap:5px;cursor:pointer;display:none';
         const circle = document.createElement('div');
         circle.style.cssText = 'width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.6);box-shadow:0 8px 18px rgba(0,0,0,.45);background-size:cover;background-position:center;transition:transform .25s,border-color .25s;' +
-          (s.src ? 'background-image:url(' + s.src + ')' : stripe(PALETTES[leg.id][0], PALETTES[leg.id][1], 6));
+          (s.src ? 'background-image:url(' + (s.thumb || s.src) + ')' : stripe(PALETTES[leg.id][0], PALETTES[leg.id][1], 6));
         const cap = document.createElement('div');
         cap.textContent = s.pinLabel;
         cap.style.cssText = 'font:600 11px Poppins,sans-serif;letter-spacing:.01em;color:#fff;background:rgba(11,19,28,.82);padding:3px 9px;border-radius:999px;white-space:nowrap;max-width:170px;overflow:hidden;text-overflow:ellipsis;opacity:0;transition:opacity .25s;box-shadow:0 2px 8px rgba(0,0,0,.4)';
@@ -765,7 +783,7 @@ class Component extends DCLogic {
           + 'border:2px solid rgba(255,255,255,.92);box-shadow:0 10px 24px rgba(0,0,0,.55);background-size:cover;background-position:center;'
           + 'opacity:0;transform:translate(0,0) scale(.2);pointer-events:none;'
           + 'transition:transform .34s cubic-bezier(.32,.72,0,1),opacity .25s ease;'
-          + (s.src ? 'background-image:url(' + s.src + ')' : stripe(PALETTES[s.legId][0], PALETTES[s.legId][1], 6));
+          + (s.src ? 'background-image:url(' + (s.thumb || s.src) + ')' : stripe(PALETTES[s.legId][0], PALETTES[s.legId][1], 6));
         // bound once; resolves which photo it currently shows at click time
         th.onclick = e => {
           e.stopPropagation();
@@ -1111,7 +1129,9 @@ class Component extends DCLogic {
         flush();
       };
       img.onerror = flush;
-      img.src = s.src;
+      // the thumb is downsampled to 24x24 here anyway, so probing the full card
+      // would pull tens of MB for nothing
+      img.src = s.thumb || s.src;
     });
   }
 
@@ -1201,8 +1221,9 @@ class Component extends DCLogic {
     const ease = 'cubic-bezier(.32,.72,0,1)';
     // the pill now means exactly one thing: species
     const chip = t => ({ t, bg:'rgba(255,255,255,.13)', br:'rgba(255,255,255,.3)' });
-    // cards are exported at 3000px (retina-safe on their own), so no 2x/srcset needed
-    const bgImage = src => 'background-image:url(' + src + ')';
+    // cards are exported at 3840px (4K-safe on their own), so no 2x/srcset needed.
+    // AVIF is the primary; the JPEG card is the fallback for non-AVIF browsers.
+    const bgImage = (src, avif) => 'background-image:url(' + ((AVIF_OK && avif) ? avif : src) + ')';
 
     // Panel keeps its final docked width at all times and slides in from the left,
     // so nothing ever resizes mid-transition.
@@ -1374,7 +1395,7 @@ class Component extends DCLogic {
         slot:'top:' + (i * 100) + '%',
         noPhoto:!x.src, alt:x.alt, ph:x.ph || '',
         imgStyle:x.src
-          ? bgImage(x.src)
+          ? bgImage(x.src, x.srcAvif)
             + (pf === 'fit' ? ';left:4%;top:3%;width:92%;height:74%;background-size:contain;background-repeat:no-repeat;animation:none' : '')
             + (pf === 'bleed' ? ';left:0;top:0;width:100%;height:100%;background-size:contain;background-repeat:no-repeat;animation:none' : '')
             + (sm ? ';left:0;top:0;width:100%;height:100%;background-repeat:no-repeat;animation:none;background-size:'

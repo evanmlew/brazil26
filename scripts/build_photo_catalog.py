@@ -14,6 +14,10 @@ from PIL import ExifTags, Image
 
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg"}
+# OneDrive/Dropbox conflict copies land beside the real export as
+# "DSC00036-LAPTOP-73TG5O6M.jpg". They are stale duplicates at the wrong size,
+# and ingesting them mints phantom catalog entries.
+CONFLICT_RE = re.compile(r"-(?:LAPTOP|DESKTOP|PC|MACBOOK)-[A-Z0-9]{5,}$", re.IGNORECASE)
 EXIF_TAGS = {value: key for key, value in ExifTags.TAGS.items()}
 OFFSET_RE = re.compile(r"^([+-])(\d{2}):(\d{2})$")
 
@@ -152,11 +156,13 @@ def main() -> None:
     parser.add_argument("output", type=Path, help="Catalog JSON output path")
     args = parser.parse_args()
 
-    photos = [
-        extract_metadata(path)
+    candidates = [
+        path
         for path in sorted(args.input.iterdir(), key=lambda candidate: candidate.name.lower())
         if path.is_file() and path.suffix.lower() in IMAGE_EXTENSIONS
     ]
+    skipped = [path for path in candidates if CONFLICT_RE.search(path.stem)]
+    photos = [extract_metadata(path) for path in candidates if path not in skipped]
     catalog = {
         "schemaVersion": 1,
         "generatedAt": datetime.now().astimezone().isoformat(timespec="seconds"),
@@ -168,6 +174,13 @@ def main() -> None:
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(catalog, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Wrote {len(photos)} photos to {args.output}")
+    if skipped:
+        print(f"\nSkipped {len(skipped)} sync conflict copy/copies (not real exports):")
+        for path in skipped[:12]:
+            print(f"  {path.name}")
+        if len(skipped) > 12:
+            print(f"  ... and {len(skipped) - 12} more")
+        print("Delete them from the export folder to keep it tidy.")
 
 
 if __name__ == "__main__":

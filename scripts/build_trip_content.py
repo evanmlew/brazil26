@@ -154,6 +154,7 @@ def stock_slide(subject_id: str, subject: dict[str, Any], coords_lookup: dict[st
 def real_slide(photo: dict[str, Any], subject: dict[str, Any] | None, leg: dict[str, Any]) -> dict[str, Any]:
     assets = photo.get("assets") or {}
     src = (assets.get("card") or (subject or {}).get("stockPhoto") or "").strip()
+    src_avif = (assets.get("cardAvif") or "").strip()
     thumb = (assets.get("thumb") or (subject or {}).get("stockPhoto") or "").strip()
     title = photo.get("title") or (subject or {}).get("title") or photo.get("locationName") or "Awaiting title"
     body = photo.get("body") or (subject or {}).get("body") or "[Your caption here]"
@@ -167,6 +168,7 @@ def real_slide(photo: dict[str, Any], subject: dict[str, Any] | None, leg: dict[
         "subjectId": photo.get("subjectId") or (subject or {}).get("id") or "",
         "kind": "photo",
         "src": src,
+        "srcAvif": src_avif,
         "thumb": thumb,
         "alt": alt_text(subject, {**photo, "title": title, "locationName": photo.get("locationName", "")}),
         "pinLabel": pin_label(subject, {**photo, "title": title, "locationName": photo.get("locationName", "")}),
@@ -185,6 +187,8 @@ def real_slide(photo: dict[str, Any], subject: dict[str, Any] | None, leg: dict[
     if not slide["src"]:
         slide.pop("src")
         slide.pop("thumb")
+    if not slide.get("srcAvif"):
+        slide.pop("srcAvif", None)
     if slide["lat"] is None or slide["lng"] is None:
         slide.pop("lat")
         slide.pop("lng")
