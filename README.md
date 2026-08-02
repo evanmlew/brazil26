@@ -249,10 +249,21 @@ Editing captions and rebuilding `data/trip.json` locally does **not** publish an
 
 ```powershell
 cd "C:\Users\evlew\OneDrive\Personal\1-Projects\Brazil 2026\Websites\Brazil 2026 Journal"
-git add data/legs.json data/photo-edits.json data/trip.json data/trip.js
+git status --short          # read this before staging; see the warning below
+git add -A
 git commit -m "Update captions/ordering"
 git push origin main
 ```
+
+**Stage everything, not just `data\`.** A caption-only session really does touch nothing but
+`legs.json`, `photo-edits.json`, `trip.json` and `trip.js` — but a session that added photos also
+produces `data\photo-catalog.json`, the new `assets\photos\*` derivatives, and
+`assets\photos\build-settings.json`, and naming the four data files by hand silently leaves all of
+those behind. The result is a `trip.json` on Pages referencing images that 404, plus a missing
+settings file that makes the *next* asset build re-encode every derivative. `git status --short`
+first is the check: everything listed should be `data\`, `assets\photos\`, or files you knowingly
+edited — never `photos/` (gitignored) and never a modified (` M`) binary under `assets\photos\`,
+which would mean the encode-skip did not do its job.
 
 **If `git push` fails with a 403 "Permission denied"**, the environment's default GitHub CLI/credential-manager identity may be a different account (e.g. a corporate `evlew_microsoft` account) that lacks write access to the personal `evanmlew/brazil26` repo, even though `gh auth status` may show `evanmlew` already logged in via keyring. Fix by explicitly switching and pushing with that account's token for one command:
 

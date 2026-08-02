@@ -203,6 +203,10 @@ def resolve_sources(folder: Path) -> tuple[list[tuple[Path, str]], dict[str, lis
     report: dict[str, list] = {"skipped": [], "recovered": [], "empty": [], "lost": [], "ambiguous": []}
     claimed: dict[str, Path] = {}
     sources: list[tuple[Path, str]] = []
+    # Provisional: a conflict copy can still lose the stem to a larger one below,
+    # and reporting a loser as "recovered" would tell you to rename the wrong file
+    # over the base. Only the survivors make it into the report.
+    recovered: dict[Path, str] = {}
 
     for path in usable:
         match = CONFLICT_RE.match(path.stem)
@@ -213,7 +217,7 @@ def resolve_sources(folder: Path) -> tuple[list[tuple[Path, str]], dict[str, lis
             continue
         else:
             stem = match.group("base")
-            report["recovered"].append((path.name, f"{stem}{path.suffix}"))
+            recovered[path] = f"{stem}{path.suffix}"
 
         if stem in claimed:
             # Two files both claim one stem (e.g. several conflict copies, no base).
@@ -230,14 +234,18 @@ def resolve_sources(folder: Path) -> tuple[list[tuple[Path, str]], dict[str, lis
 
     for path in empty:
         # An empty file is never a real photo. It only matters whether some
-        # non-empty file covers the same shot.
-        rescued = any(
-            stem == path.stem or stem.startswith(f"{path.stem}-") or path.stem.startswith(f"{stem}-")
-            for stem in claimed
-        )
+        # non-empty file covers the same shot — and the only relationship that
+        # means that is the conflict-copy one. Matching on a bare name prefix
+        # instead would let an unrelated export "rescue" a genuinely lost photo
+        # (`IMG_1.jpg` empty, `IMG_1-2.jpg` real) and skip the hard-fail below,
+        # which is the silent loss this whole function exists to prevent.
+        match = CONFLICT_RE.match(path.stem)
+        base = match.group("base") if match else path.stem
+        rescued = path.stem in claimed or base in claimed
         (report["empty"] if rescued else report["lost"]).append(path.name)
 
     sources.sort(key=lambda item: item[1].lower())
+    report["recovered"] = [(path.name, recovered[path]) for path, _ in sources if path in recovered]
     return sources, report
 
 
