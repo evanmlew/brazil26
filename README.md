@@ -284,3 +284,13 @@ git -c http.extraheader="AUTHORIZATION: basic $([Convert]::ToBase64String([Text.
 New shells default back to the corporate account automatically (it's set via a `GH_TOKEN` env var), so there's nothing to restore afterward.
 
 After pushing, GitHub Pages typically takes 1-2 minutes to rebuild before the live site reflects the change.
+
+Pages is configured to serve the **root of `main`** directly. The empty `.nojekyll` file at the repo
+root turns Jekyll off for that build: this is a plain static site with nothing for Jekyll to compile,
+and leaving it on only adds build time and the risk that Jekyll silently drops any path beginning
+with `_`. Do not delete it.
+
+Because Pages serves the repo root, everything committed here is publicly reachable — including the
+local-only tooling (`review_server.py`, `photo-review.*`, `scripts\`, `data\photo-catalog.json`,
+`data\photo-edits.json`). None of it is secret and none of it runs server-side on Pages, but "local
+only" means "not part of the site", not "not downloadable".
