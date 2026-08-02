@@ -2,7 +2,7 @@
 // Same payload as trip.json, loaded synchronously so the first paint has data.
 window.__TRIP__ = {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-01T13:20:45-07:00",
+  "generatedAt": "2026-08-02T14:49:27-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",
@@ -198,9 +198,57 @@ window.__TRIP__ = {
       -22.982231,
       -43.190322
     ],
+    "por-maycon-nunes-photography-112-971c4c9622": [
+      -22.89536,
+      -43.1984
+    ],
+    "por-maycon-nunes-photography-27-479a658758": [
+      -22.89536,
+      -43.1984
+    ],
+    "por-maycon-nunes-photography-51-a52e69a1a8": [
+      -22.89536,
+      -43.1984
+    ],
+    "por-maycon-nunes-photography-148-eee1373978": [
+      -22.91523,
+      -43.17907
+    ],
+    "por-maycon-nunes-photography-158-5d1c81c84b": [
+      -22.91523,
+      -43.17907
+    ],
+    "por-maycon-nunes-photography-243-0ef6bb43d8": [
+      -22.945,
+      -43.196389
+    ],
+    "por-maycon-nunes-photography-260-bf98f6cc04": [
+      -22.94503,
+      -43.1964
+    ],
+    "por-maycon-nunes-photography-283-f34b185068": [
+      -22.94503,
+      -43.1964
+    ],
+    "por-maycon-nunes-photography-301-ca839d8c7e": [
+      -22.949444,
+      -43.156389
+    ],
+    "por-maycon-nunes-photography-313-f92bb24daa": [
+      -22.949444,
+      -43.156389
+    ],
+    "por-maycon-nunes-photography-335-1eb3f2b1f4": [
+      -22.949444,
+      -43.156389
+    ],
     "img-3012-8e94da00d6": [
       -22.949572,
       -43.156475
+    ],
+    "por-maycon-nunes-photography-340-f2f7b79e67": [
+      -22.949444,
+      -43.156389
     ],
     "img-3045-pano-e8f1bf4365": [
       -22.951847,
@@ -1302,7 +1350,7 @@ window.__TRIP__ = {
         "pinLabel": "Copacabana at last light",
         "kicker": "Sea level",
         "title": "Copacabana at last light",
-        "body": "Sunset over Copacabana Beach -- our first look at Rio, mountains behind, the Atlantic stretched out in front.",
+        "body": "Sunset from the rooftop bar at the Emiliano, our hotel on Copacabana -- the first thing we saw of Rio, with the mountains behind and the Atlantic stretched out in front.",
         "chips": [
           "RIO DE JANEIRO"
         ],
@@ -1313,6 +1361,281 @@ window.__TRIP__ = {
         "species": "",
         "lat": -22.982231,
         "lng": -43.190322
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "por-maycon-nunes-photography-112-971c4c9622",
+        "photoId": "por-maycon-nunes-photography-112-971c4c9622",
+        "kind": "photo",
+        "src": "assets/photos/por-maycon-nunes-photography-112-971c4c9622-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-112-971c4c9622-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-112-971c4c9622-thumb.jpg",
+        "alt": "A crash course in Carnaval",
+        "pinLabel": "A crash course in Carnaval",
+        "kicker": "",
+        "title": "A crash course in Carnaval",
+        "body": "Carnaval Experience, a working samba-school warehouse in Rio where the floats, the sets, and the fantasias are built. An afternoon learning how a parade gets made, ending with a turn each on the surdo and the caixa alongside the crew.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "species": "",
+        "lat": -22.89536,
+        "lng": -43.1984
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "por-maycon-nunes-photography-27-479a658758",
+        "photoId": "por-maycon-nunes-photography-27-479a658758",
+        "kind": "photo",
+        "src": "assets/photos/por-maycon-nunes-photography-27-479a658758-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-27-479a658758-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-27-479a658758-thumb.jpg",
+        "alt": "Ian, inside the machine",
+        "pinLabel": "Ian, inside the machine",
+        "kicker": "",
+        "title": "Ian, inside the machine",
+        "body": "Ian wearing one of the front-of-parade fantasias -- the entire thing rides on one person, all the way down the Sambadrome.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "species": "",
+        "lat": -22.89536,
+        "lng": -43.1984
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "por-maycon-nunes-photography-51-a52e69a1a8",
+        "photoId": "por-maycon-nunes-photography-51-a52e69a1a8",
+        "kind": "photo",
+        "src": "assets/photos/por-maycon-nunes-photography-51-a52e69a1a8-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-51-a52e69a1a8-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-51-a52e69a1a8-thumb.jpg",
+        "alt": "Zach in the wardrobe room",
+        "pinLabel": "Zach in the wardrobe room",
+        "kicker": "",
+        "title": "Zach in the wardrobe room",
+        "body": "Racks of real parade costumes and an open invitation to put one on. Zach's green-and-gold fantasia came with a matching crown and a lot more weight than it looks.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "species": "",
+        "lat": -22.89536,
+        "lng": -43.1984
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "por-maycon-nunes-photography-148-eee1373978",
+        "photoId": "por-maycon-nunes-photography-148-eee1373978",
+        "kind": "photo",
+        "src": "assets/photos/por-maycon-nunes-photography-148-eee1373978-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-148-eee1373978-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-148-eee1373978-thumb.jpg",
+        "alt": "All four of us, mid-staircase",
+        "pinLabel": "All four of us, mid-staircase",
+        "kicker": "",
+        "title": "All four of us, mid-staircase",
+        "body": "Escadaria Selaron, the Lapa steps -- 215 of them, tiled by hand by the Chilean artist Jorge Selaron from 1990 until his death in 2013, with tiles sent to him from more than 60 countries. The red, yellow and green running the whole length were his tribute to Brazil.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "species": "",
+        "lat": -22.91523,
+        "lng": -43.17907
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "por-maycon-nunes-photography-158-5d1c81c84b",
+        "photoId": "por-maycon-nunes-photography-158-5d1c81c84b",
+        "kind": "photo",
+        "src": "assets/photos/por-maycon-nunes-photography-158-5d1c81c84b-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-158-5d1c81c84b-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-158-5d1c81c84b-thumb.jpg",
+        "alt": "Ian and Zach on the mosaic",
+        "pinLabel": "Ian and Zach on the mosaic",
+        "kicker": "",
+        "title": "Ian and Zach on the mosaic",
+        "body": "The brothers stopped partway up. Every step is its own mosaic, pieced from more than 2,000 tiles, and no two of them quite match.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "species": "",
+        "lat": -22.91523,
+        "lng": -43.17907
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "por-maycon-nunes-photography-243-0ef6bb43d8",
+        "photoId": "por-maycon-nunes-photography-243-0ef6bb43d8",
+        "kind": "photo",
+        "src": "assets/photos/por-maycon-nunes-photography-243-0ef6bb43d8-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-243-0ef6bb43d8-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-243-0ef6bb43d8-thumb.jpg",
+        "alt": "Christ, from across the valley",
+        "pinLabel": "Christ, from across the valley",
+        "kicker": "",
+        "title": "Christ, from across the valley",
+        "body": "Mirante Dona Marta, high on the edge of Tijuca Forest -- the classic view of Christ the Redeemer without standing underneath it.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "species": "",
+        "lat": -22.945,
+        "lng": -43.196389
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "por-maycon-nunes-photography-260-bf98f6cc04",
+        "photoId": "por-maycon-nunes-photography-260-bf98f6cc04",
+        "kind": "photo",
+        "src": "assets/photos/por-maycon-nunes-photography-260-bf98f6cc04-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-260-bf98f6cc04-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-260-bf98f6cc04-thumb.jpg",
+        "alt": "Zach, Sugarloaf across the bay",
+        "pinLabel": "Zach, Sugarloaf across the bay",
+        "kicker": "",
+        "title": "Zach, Sugarloaf across the bay",
+        "body": "Zach on the wall at Dona Marta, where the whole of Botafogo Bay opens up -- Pao de Acucar, Sugarloaf Mountain, standing out of the water at the harbor mouth.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "species": "",
+        "lat": -22.94503,
+        "lng": -43.1964
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "por-maycon-nunes-photography-283-f34b185068",
+        "photoId": "por-maycon-nunes-photography-283-f34b185068",
+        "kind": "photo",
+        "src": "assets/photos/por-maycon-nunes-photography-283-f34b185068-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-283-f34b185068-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-283-f34b185068-thumb.jpg",
+        "alt": "Through the branches",
+        "pinLabel": "Through the branches",
+        "kicker": "",
+        "title": "Through the branches",
+        "body": "Christ the Redeemer -- 30 meters of soapstone on a 710-meter granite peak -- framed by the Atlantic forest that still covers Corcovado.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "species": "",
+        "lat": -22.94503,
+        "lng": -43.1964
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "por-maycon-nunes-photography-301-ca839d8c7e",
+        "photoId": "por-maycon-nunes-photography-301-ca839d8c7e",
+        "kind": "photo",
+        "src": "assets/photos/por-maycon-nunes-photography-301-ca839d8c7e-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-301-ca839d8c7e-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-301-ca839d8c7e-thumb.jpg",
+        "alt": "Sunset from the halfway stop",
+        "pinLabel": "Sunset from the halfway stop",
+        "kicker": "",
+        "title": "Sunset from the halfway stop",
+        "body": "Morro da Urca is the first of the cable car's two stages -- 220 meters up, with Flamengo, the Aterro, and the Rio-Niteroi bridge laid out behind.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "species": "",
+        "lat": -22.949444,
+        "lng": -43.156389
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "por-maycon-nunes-photography-313-f92bb24daa",
+        "photoId": "por-maycon-nunes-photography-313-f92bb24daa",
+        "kind": "photo",
+        "src": "assets/photos/por-maycon-nunes-photography-313-f92bb24daa-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-313-f92bb24daa-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-313-f92bb24daa-thumb.jpg",
+        "alt": "Under the second cable",
+        "pinLabel": "Under the second cable",
+        "kicker": "",
+        "title": "Under the second cable",
+        "body": "On Morro da Urca, with Sugarloaf mountain and the cable car behind.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "species": "",
+        "lat": -22.949444,
+        "lng": -43.156389
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "por-maycon-nunes-photography-335-1eb3f2b1f4",
+        "photoId": "por-maycon-nunes-photography-335-1eb3f2b1f4",
+        "kind": "photo",
+        "src": "assets/photos/por-maycon-nunes-photography-335-1eb3f2b1f4-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-335-1eb3f2b1f4-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-335-1eb3f2b1f4-thumb.jpg",
+        "alt": "The cable line down",
+        "pinLabel": "The cable line down",
+        "kicker": "",
+        "title": "The cable line down",
+        "body": "The run back to Urca strung across an orange sky, Botafogo's mooring field below and the Tijuca ridge cut flat against the light.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "species": "",
+        "lat": -22.949444,
+        "lng": -43.156389
       },
       {
         "leg": "rio",
@@ -1338,6 +1661,31 @@ window.__TRIP__ = {
         "species": "",
         "lat": -22.949572,
         "lng": -43.156475
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "por-maycon-nunes-photography-340-f2f7b79e67",
+        "photoId": "por-maycon-nunes-photography-340-f2f7b79e67",
+        "kind": "photo",
+        "src": "assets/photos/por-maycon-nunes-photography-340-f2f7b79e67-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-340-f2f7b79e67-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-340-f2f7b79e67-thumb.jpg",
+        "alt": "Everyone waits for the lights",
+        "pinLabel": "Everyone waits for the lights",
+        "kicker": "",
+        "title": "Everyone waits for the lights",
+        "body": "Blue hour on Morro da Urca -- Botafogo's curve, the Aterro do Flamengo, and the Serra dos Orgaos far off across Guanabara Bay.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "species": "",
+        "lat": -22.949444,
+        "lng": -43.156389
       },
       {
         "leg": "rio",
