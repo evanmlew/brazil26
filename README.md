@@ -19,10 +19,28 @@ python -m http.server 8000
 - `data/photo-edits.json` — durable editorial overlay (the source of truth for captions/species/ordering/exclusions).
 - `data/trip.json` — generated merged payload. The readable, diffable copy of what the site shows.
 - `data/trip.js` — the same payload as `window.__TRIP__`, and the copy the site actually loads. Written by the same function in the same pass as `trip.json`, so the two can't drift; commit both.
-- `scripts/build_photo_catalog.py` — rebuilds `data/photo-catalog.json` from `photos\`.
-- `scripts/build_photo_assets.py` — creates public `assets\photos\*-card.avif`, `*-card.jpg` and `*-thumb.jpg` derivatives. See "Photo quality" below.
+- `scripts/build_photo_catalog.py` — rebuilds `data/photo-catalog.json` from `photos\`, and prints what changed against the catalog already at the output path (added / removed / re-keyed).
+- `scripts/build_photo_assets.py` — creates public `assets\photos\*-card.avif`, `*-card.jpg` and `*-thumb.jpg` derivatives. Keeps existing files rather than re-encoding them. See "Photo quality" below.
 - `scripts/build_trip_content.py` — merges legs, narrative, catalog, and edits into `data/trip.json` (skips any photo with `excluded: true`).
+- `scripts/link_photos.py` — points a git worktree or fresh clone at the real `photos\` folder (see "Working from a worktree").
+- `scripts/make_previews.py` — throwaway ~900px previews into `previews\`, for reading a batch of photos while writing captions (see "Writing captions for a new batch").
+- `assets/photos/build-settings.json` — the encode settings the published derivatives were made with. Generated; commit it. Do not delete it — it is what stops the next build from re-encoding all of them.
 - `photos\` — private raw export folder. Ignored by git; do not publish.
+- `previews\` — scratch previews. Ignored by git; safe to delete any time.
+
+## Working from a worktree
+
+`photos\` is gitignored, so it exists only in the checkout it was put in (the OneDrive one).
+Every build script needs it, so from a `git worktree` or a fresh clone, link it first:
+
+```powershell
+python scripts\link_photos.py
+```
+
+That finds the main working tree via `git worktree list` and creates a directory junction —
+no disk cost, no administrator rights. `--source <path>` points somewhere else, `--copy` makes
+a real copy instead, and `--force` replaces whatever is already there. Run in the main checkout
+it just says there is nothing to do.
 
 ## Photo workflow
 
@@ -31,6 +49,26 @@ Rebuild the technical catalog after a fresh Lightroom export:
 ```powershell
 python scripts\build_photo_catalog.py photos data\photo-catalog.json
 ```
+
+It prints a diff against the catalog it is about to overwrite — added, removed, and re-keyed
+photos — so you can see at a glance whether a re-export actually moved anything.
+
+### Sync conflicts and empty files
+
+OneDrive drops conflict copies (`DSC00036-LAPTOP-73TG5O6M.jpg`) beside the real export. Normally
+those are stale duplicates at the wrong size and the script skips them. But the failure also
+arrives **inverted**: OneDrive can leave the *base* name as a 0-byte placeholder and put the real
+bytes in the conflict copy. So the rule is:
+
+- A conflict copy is skipped only when a **non-empty** base file exists.
+- Otherwise it is *recovered* — used as the real export, but keyed to the **base** stem, so the
+  photo id, the derivative filenames, and every `photo-edits.json` entry stay exactly where they
+  were. Fixing OneDrive later changes nothing downstream.
+- 0-byte files are never ingested. If one has no usable copy beside it the build **fails** rather
+  than writing a catalog that is quietly missing a photo.
+
+Both cases are reported. Renaming the recovered copies over their empty base files keeps the
+folder tidy, but is not required for a correct build.
 
 Photo ids are `<filename-slug>-<sha1(decoded pixels)[:10]>` — a hash of what the photo *looks
 like*, not of the bytes it is stored in. Lightroom stamps a fresh export timestamp into every
@@ -41,8 +79,10 @@ mints the *same* ids and git stores nothing new, while any real edit (exposure, 
 quality) still moves the id so caches can't serve a stale image.
 
 So a re-export normally needs **no** migration. You only need to re-key when ids actually move —
-i.e. you changed a photo in Lightroom, or you changed the export size. Take the catalog snapshot
-*before* overwriting it and join the two catalogs on filename:
+i.e. you changed a photo in Lightroom, or you changed the export size. The catalog build tells
+you which case you are in: it prints `Re-keyed N — ... run migrate_photo_edits.py` when any
+filename's id changed, and `No photos added, removed, or re-keyed.` when nothing did. Copy the
+catalog aside *before* overwriting it if you expect a re-key, then join the two on filename:
 
 ```powershell
 python scripts\migrate_photo_edits.py `
@@ -59,11 +99,22 @@ Generate the public card/thumb derivatives for the current export:
 python scripts\build_photo_assets.py photos data\photo-catalog.json assets\photos
 ```
 
-Old derivatives are **not** cleaned up automatically — after an export that *did* move some ids,
-delete any `assets\photos\*-card.*` / `*-thumb.jpg` that the new catalog no longer references.
-Files without an id-shaped name (`jaguar.jpg`, `cover.jpg`, …) are hand-placed stock and must be
-kept. Pruning matters: anything committed stays in git history forever, and JPEG/AVIF are already
-compressed so git can't pack them down — every stale copy costs its full size in every clone.
+**Derivatives that already exist are kept, never rebuilt.** A photo id is a hash of the decoded
+pixels, so an existing `<id>-card.avif` is by definition the right picture — but the AVIF encoder
+is not byte-reproducible, so re-encoding it produces a *different file with identical content*.
+Committing that churn once cost ~92 MB of duplicate binaries in git history. The skip is what
+makes a re-run of this script free, in both time and repo size.
+
+The encode settings live in `assets\photos\build-settings.json`. Change `--card`, `--quality`,
+`--fallback` or `--sharpen` and the script notices, says which knob moved, and rebuilds
+everything — because then the output genuinely is different. `--force` rebuilds regardless.
+
+Old derivatives are still **not** deleted automatically, but the script now lists any
+`*-card.*` / `*-thumb.jpg` in the output folder that the catalog no longer references. Delete
+those before committing. Files without an id-shaped name (`jaguar.jpg`, `cover.jpg`, …) are
+hand-placed stock and must be kept, as is `build-settings.json`. Pruning matters: anything
+committed stays in git history forever, and JPEG/AVIF are already compressed so git can't pack
+them down — every stale copy costs its full size in every clone.
 
 ### Photo quality
 
@@ -100,8 +151,31 @@ Rules for anyone touching `build_photo_assets.py`:
 - Never re-encode a card at the same pixel size "to save bytes" — that is pure quality loss with
   nothing bought. Lower `--card` instead, so the resize is real and the sharpening pass can
   compensate.
+- Never remove the existing-output skip, and never make it depend on anything but the encode
+  settings. The whole point is that an unchanged photo produces byte-identical output; the AVIF
+  encoder does not, so the only way to get that is to not run it.
 - Never point the map dots or the colour probe at a card. They render at 44px and 24px
   respectively; using the card pulls tens of MB for pixels nobody sees.
+
+## Writing captions for a new batch
+
+Judging subject, place and sequence across a batch means looking at every frame, and the
+published cards (2048–3840px) are far too heavy to page through. Generate scratch previews:
+
+```powershell
+python scripts\make_previews.py photos previews `
+  --catalog data\photo-catalog.json --uncaptioned data\photo-edits.json
+```
+
+`--uncaptioned` narrows it to photos with no `body` yet — i.e. exactly the new arrivals.
+`--filter "Por Maycon*"` narrows by filename instead. With `--catalog`, previews are named
+`<photo-id>.jpg`, so they map straight back to catalog and `photo-edits.json` entries. `previews\`
+is gitignored and safe to delete at any time.
+
+The catalog's `date`, `utcOffset`, `latitude`/`longitude` and `camera` fields do most of the
+placement work before you look at a single pixel: clustering a batch by GPS and capture time
+usually reconstructs the day's itinerary stop by stop, which is what `legId` and `order` should
+follow.
 
 Start the review server from this folder (not the plain `http.server` — this one also exposes the Save button's endpoint), then open `http://localhost:8000/photo-review.html`:
 
@@ -117,7 +191,7 @@ The review page loads every photo automatically — no folder picker needed, sin
 - **Latitude / Longitude** — pre-filled from EXIF GPS; edit if the GPS was wrong or missing
 - **Feedback for next edit pass** — a private note-to-Copilot field, e.g. "wrong animal", "make this punchier". See "Feedback field workflow" below.
 
-There is no **Location** field in the review page anymore (the new design drops the kicker line from photo pages — see `reference/` handoff in the design mockups). The underlying `kicker` key still exists in the data model for backward compatibility, but nothing writes to it going forward.
+There is no **Location** field in the review page anymore (the new design drops the kicker line from photo pages — see `reference/` handoff in the design mockups). The underlying `kicker` key still exists in the data model for backward compatibility, but nothing writes to it going forward, and `build_trip_content.py` no longer invents a value for it — an untagged photo gets `""`, not the old `"Awaiting caption"` placeholder, which read like an unfinished-work flag on finished photos.
 
 Drag a photo to reorder it within a section, or drag it into a different section to reassign its destination — a placeholder shows exactly where it will land. Use **Exclude from site** on any photo you don't want published; it stays in the catalog but `build_trip_content.py` leaves it out of `trip.json`. Click **Save** to write straight to `data\photo-edits.json` (a `.bak` backup of the previous version is kept automatically) **and immediately rebuild `data\trip.json`**, so reloading the journal at `http://localhost:8000/index.html` shows the change right away — no separate build step needed. **Download backup** / **Import edits** are the manual fallback if you're not running the server.
 

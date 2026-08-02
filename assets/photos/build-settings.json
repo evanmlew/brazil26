@@ -1,0 +1,12 @@
+{
+  "card": 3840,
+  "fallback": 2048,
+  "avifQuality": 68,
+  "avifSpeed": 6,
+  "fallbackQuality": 85,
+  "thumb": 360,
+  "thumbQuality": 88,
+  "sharpen": 60,
+  "sharpenRadius": 0.7,
+  "sharpenThreshold": 2
+}

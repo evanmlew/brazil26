@@ -1,5 +1,9 @@
 # Private raw Lightroom export folder — never publish these originals.
+# May be a directory junction into the main worktree; see scripts\link_photos.py.
 /photos/
+
+# Throwaway small previews used when writing captions (scripts\make_previews.py)
+/previews/
 
 # Local review-tool save backup (auto-created by review_server.py)
 /data/*.bak

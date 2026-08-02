@@ -15,9 +15,14 @@ from PIL import ExifTags, Image
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg"}
 # OneDrive/Dropbox conflict copies land beside the real export as
-# "DSC00036-LAPTOP-73TG5O6M.jpg". They are stale duplicates at the wrong size,
-# and ingesting them mints phantom catalog entries.
-CONFLICT_RE = re.compile(r"-(?:LAPTOP|DESKTOP|PC|MACBOOK)-[A-Z0-9]{5,}$", re.IGNORECASE)
+# "DSC00036-LAPTOP-73TG5O6M.jpg". Normally they are stale duplicates at the wrong
+# size and ingesting them mints phantom catalog entries — so they are skipped.
+#
+# But the failure can arrive inverted: OneDrive has been seen leaving the *base*
+# name as a 0-byte placeholder and putting the real bytes in the conflict copy. A
+# blind skip then drops the photo entirely (or crashes on the empty file), so a
+# conflict copy is only skipped when a non-empty base file actually exists.
+CONFLICT_RE = re.compile(r"^(?P<base>.+?)-(?:LAPTOP|DESKTOP|PC|MACBOOK)-[A-Z0-9]{5,}$", re.IGNORECASE)
 EXIF_TAGS = {value: key for key, value in ExifTags.TAGS.items()}
 OFFSET_RE = re.compile(r"^([+-])(\d{2}):(\d{2})$")
 
@@ -107,7 +112,9 @@ def pixel_digest(image: Image.Image) -> str:
     return digest.hexdigest()
 
 
-def extract_metadata(path: Path) -> dict[str, Any]:
+def extract_metadata(path: Path, stem: str | None = None) -> dict[str, Any]:
+    """Read one export. `stem` overrides the id source when `path` is a recovered
+    conflict copy, so `X-LAPTOP-1234.jpg` still mints the id `X` would have."""
     with Image.open(path) as image:
         exif = image.getexif()
         # DateTimeOriginal/DateTimeDigitized and the OffsetTime* tags that
@@ -140,7 +147,7 @@ def extract_metadata(path: Path) -> dict[str, Any]:
             flags.append("no-gps")
 
         return {
-            "id": f"{slugify(path.stem)}-{pixels[:10]}",
+            "id": f"{slugify(stem or path.stem)}-{pixels[:10]}",
             "filename": path.name,
             "width": image.width,
             "height": image.height,
@@ -178,19 +185,115 @@ def extract_metadata(path: Path) -> dict[str, Any]:
         }
 
 
+def resolve_sources(folder: Path) -> tuple[list[tuple[Path, str]], dict[str, list]]:
+    """Decide which files on disk are real exports, and what stem each one owns.
+
+    Returns `[(path, canonical_stem), ...]` plus a report of everything that was
+    skipped, recovered, or is broken.
+    """
+    candidates = [
+        path
+        for path in sorted(folder.iterdir(), key=lambda candidate: candidate.name.lower())
+        if path.is_file() and path.suffix.lower() in IMAGE_EXTENSIONS
+    ]
+    empty = [path for path in candidates if path.stat().st_size == 0]
+    usable = [path for path in candidates if path.stat().st_size > 0]
+    usable_stems = {path.stem for path in usable}
+
+    report: dict[str, list] = {"skipped": [], "recovered": [], "empty": [], "lost": [], "ambiguous": []}
+    claimed: dict[str, Path] = {}
+    sources: list[tuple[Path, str]] = []
+
+    for path in usable:
+        match = CONFLICT_RE.match(path.stem)
+        if match is None:
+            stem = path.stem
+        elif match.group("base") in usable_stems:
+            report["skipped"].append(path.name)  # the real export is right there
+            continue
+        else:
+            stem = match.group("base")
+            report["recovered"].append((path.name, f"{stem}{path.suffix}"))
+
+        if stem in claimed:
+            # Two files both claim one stem (e.g. several conflict copies, no base).
+            # Keep the largest and say so, rather than silently picking one.
+            winner, loser = sorted((claimed[stem], path), key=lambda p: p.stat().st_size, reverse=True)
+            report["ambiguous"].append((stem, winner.name, loser.name))
+            claimed[stem] = winner
+            sources = [(p, s) for p, s in sources if s != stem]
+            sources.append((winner, stem))
+            continue
+
+        claimed[stem] = path
+        sources.append((path, stem))
+
+    for path in empty:
+        # An empty file is never a real photo. It only matters whether some
+        # non-empty file covers the same shot.
+        rescued = any(
+            stem == path.stem or stem.startswith(f"{path.stem}-") or path.stem.startswith(f"{stem}-")
+            for stem in claimed
+        )
+        (report["empty"] if rescued else report["lost"]).append(path.name)
+
+    sources.sort(key=lambda item: item[1].lower())
+    return sources, report
+
+
+def diff_catalogs(previous: Path, photos: list[dict[str, Any]]) -> list[str]:
+    """Report what changed against the catalog already sitting at the output path."""
+    try:
+        old = json.loads(previous.read_text(encoding="utf-8"))["photos"]
+    except (OSError, KeyError, json.JSONDecodeError):
+        return []
+
+    old_by_id = {photo["id"]: photo for photo in old}
+    old_by_file = {photo["filename"]: photo for photo in old}
+    new_by_id = {photo["id"]: photo for photo in photos}
+
+    lines: list[str] = []
+    moved = [
+        (photo["filename"], old_by_file[photo["filename"]]["id"], photo["id"])
+        for photo in photos
+        if photo["filename"] in old_by_file and old_by_file[photo["filename"]]["id"] != photo["id"]
+    ]
+    added = [photo for photo in photos if photo["id"] not in old_by_id and photo["filename"] not in old_by_file]
+    removed = [photo for photo in old if photo["id"] not in new_by_id and photo["filename"] not in
+               {p["filename"] for p in photos}]
+
+    if added:
+        lines.append(f"Added {len(added)}:")
+        lines += [f"  + {photo['id']}  ({photo['filename']})" for photo in added]
+    if removed:
+        lines.append(f"Removed {len(removed)}:")
+        lines += [f"  - {photo['id']}  ({photo['filename']})" for photo in removed]
+    if moved:
+        lines.append(f"Re-keyed {len(moved)} — the image itself changed, so run migrate_photo_edits.py:")
+        lines += [f"  ~ {name}: {before} -> {after}" for name, before, after in moved]
+    if not lines:
+        lines.append("No photos added, removed, or re-keyed.")
+    return lines
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("input", type=Path, help="Private folder containing exported JPEGs")
     parser.add_argument("output", type=Path, help="Catalog JSON output path")
     args = parser.parse_args()
 
-    candidates = [
-        path
-        for path in sorted(args.input.iterdir(), key=lambda candidate: candidate.name.lower())
-        if path.is_file() and path.suffix.lower() in IMAGE_EXTENSIONS
-    ]
-    skipped = [path for path in candidates if CONFLICT_RE.search(path.stem)]
-    photos = [extract_metadata(path) for path in candidates if path not in skipped]
+    sources, report = resolve_sources(args.input)
+
+    if report["lost"]:
+        raise SystemExit(
+            f"\n{len(report['lost'])} file(s) in {args.input} are 0 bytes with no usable copy beside them.\n"
+            "These are almost always OneDrive placeholders that never finished syncing. Open the folder\n"
+            "in Explorer, right-click > 'Always keep on this device', let it download, and re-run:\n"
+            + "\n".join(f"  {name}" for name in report["lost"])
+        )
+
+    previous = args.output if args.output.exists() else None
+    photos = [extract_metadata(path, stem) for path, stem in sources]
     catalog = {
         "schemaVersion": 1,
         "generatedAt": datetime.now().astimezone().isoformat(timespec="seconds"),
@@ -199,15 +302,43 @@ def main() -> None:
         },
         "photos": photos,
     }
+    diff = diff_catalogs(previous, photos) if previous else []
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(catalog, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Wrote {len(photos)} photos to {args.output}")
-    if skipped:
-        print(f"\nSkipped {len(skipped)} sync conflict copy/copies (not real exports):")
-        for path in skipped[:12]:
-            print(f"  {path.name}")
-        if len(skipped) > 12:
-            print(f"  ... and {len(skipped) - 12} more")
+
+    if diff:
+        print()
+        for line in diff:
+            print(line)
+
+    if report["recovered"]:
+        print(
+            f"\nRecovered {len(report['recovered'])} sync conflict copy/copies whose base file was "
+            "missing or empty — the id is keyed to the base name, so nothing downstream moves:"
+        )
+        for name, base in report["recovered"]:
+            print(f"  {name}  (used as {base})")
+        print("Rename these over their empty base files in the export folder to keep it tidy.")
+
+    if report["ambiguous"]:
+        print(f"\n{len(report['ambiguous'])} stem(s) claimed by more than one file; kept the largest:")
+        for stem, winner, loser in report["ambiguous"]:
+            print(f"  {stem}: kept {winner}, ignored {loser}")
+
+    if report["empty"]:
+        print(f"\nIgnored {len(report['empty'])} empty (0-byte) file(s); a real copy exists for each:")
+        for name in report["empty"][:12]:
+            print(f"  {name}")
+        if len(report["empty"]) > 12:
+            print(f"  ... and {len(report['empty']) - 12} more")
+
+    if report["skipped"]:
+        print(f"\nSkipped {len(report['skipped'])} sync conflict copy/copies (not real exports):")
+        for name in report["skipped"][:12]:
+            print(f"  {name}")
+        if len(report["skipped"]) > 12:
+            print(f"  ... and {len(report['skipped']) - 12} more")
         print("Delete them from the export folder to keep it tidy.")
 
 

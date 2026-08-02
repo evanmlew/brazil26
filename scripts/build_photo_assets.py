@@ -16,6 +16,14 @@ Quality rules of the road:
   "Sharpen for Screen" on export and a bare LANCZOS resample does not.
 * Nothing published carries EXIF. The JPEG passthrough path strips metadata at
   the marker level (lossless, keeps ICC); re-encodes simply never write it.
+* Derivatives that already exist are kept, never rebuilt. A photo id is a hash of
+  the decoded pixels, so an existing `<id>-card.avif` is by definition the right
+  picture — but the AVIF encoder is *not* byte-reproducible, so re-encoding it
+  produces a different file with identical content. Committing that churn cost
+  ~92 MB of duplicate binaries in git history on one re-export. The encode
+  settings are recorded in `build-settings.json` beside the derivatives; if they
+  change, everything is rebuilt (because then the output really is different).
+  `--force` overrides.
 """
 
 from __future__ import annotations
@@ -25,6 +33,8 @@ import json
 from pathlib import Path
 
 from PIL import Image, ImageFilter, ImageOps
+
+SETTINGS_NAME = "build-settings.json"
 
 THUMB = 360
 CARD = 3840          # AVIF, full export size
@@ -133,6 +143,40 @@ def write_jpeg_card(source: Path, output: Path, longest_edge: int, quality: int,
     return edge, True
 
 
+def encode_settings(args: argparse.Namespace) -> dict[str, int | float]:
+    """Every knob that changes the produced bytes.
+
+    Photo ids cover the *source* pixels, not the encode, so they cannot tell us
+    that `--card 3000` now means something different from the 3840px files already
+    on disk. This does.
+    """
+    return {
+        "card": args.card,
+        "fallback": args.fallback,
+        "avifQuality": args.quality,
+        "avifSpeed": AVIF_SPEED,
+        "fallbackQuality": FALLBACK_QUALITY,
+        "thumb": THUMB,
+        "thumbQuality": THUMB_QUALITY,
+        "sharpen": args.sharpen,
+        "sharpenRadius": SHARPEN_RADIUS,
+        "sharpenThreshold": SHARPEN_THRESHOLD,
+    }
+
+
+def read_settings(path: Path) -> dict | None:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+
+
+def source_long_edge(source: Path) -> int:
+    """Long edge of the source, without decoding it (header read only)."""
+    with Image.open(source) as image:
+        return max(image.size)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("input", type=Path, help="Private folder containing exported JPEGs")
@@ -147,14 +191,32 @@ def main() -> None:
         default=SHARPEN_PERCENT,
         help=f"Unsharp-mask percent applied after downscaling, 0 to disable (default {SHARPEN_PERCENT})",
     )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Re-encode derivatives that already exist (normally they are kept, to avoid pointless git churn)",
+    )
     args = parser.parse_args()
 
     catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
     files = {path.name: path for path in args.input.iterdir() if path.is_file()}
     args.output.mkdir(parents=True, exist_ok=True)
 
+    settings = encode_settings(args)
+    settings_path = args.output / SETTINGS_NAME
+    previous = read_settings(settings_path)
+    reuse = not args.force and previous == settings
+    if args.force:
+        print("--force: re-encoding every derivative.\n")
+    elif previous is None:
+        print(f"No {SETTINGS_NAME} yet — building everything, then recording the encode settings.\n")
+    elif previous != settings:
+        changed = sorted(k for k in settings if previous.get(k) != settings[k])
+        print(f"Encode settings changed ({', '.join(changed)}) — rebuilding every derivative.\n")
+
     undersized: list[tuple[str, int]] = []
     avif_bytes = jpeg_bytes = thumb_bytes = 0
+    built = kept = 0
     total = len(catalog["photos"])
     for index, photo in enumerate(catalog["photos"], 1):
         source = files.get(photo["filename"])
@@ -163,12 +225,21 @@ def main() -> None:
         avif_name = f"{photo['id']}-card.avif"
         card_name = f"{photo['id']}-card.jpg"
         thumb_name = f"{photo['id']}-thumb.jpg"
+        outputs = [args.output / avif_name, args.output / card_name, args.output / thumb_name]
 
-        with Image.open(source) as image:
-            got = write_avif(image, args.card, args.output / avif_name, args.quality, args.sharpen)
-        write_jpeg_card(source, args.output / card_name, args.fallback, FALLBACK_QUALITY, args.sharpen)
-        with Image.open(source) as image:
-            write_jpeg(image, THUMB, args.output / thumb_name, THUMB_QUALITY, args.sharpen)
+        if reuse and all(path.is_file() and path.stat().st_size > 0 for path in outputs):
+            # thumbnail() only ever shrinks, so this is what an encode would have produced.
+            got = min(source_long_edge(source), args.card)
+            kept += 1
+            action = "kept"
+        else:
+            with Image.open(source) as image:
+                got = write_avif(image, args.card, args.output / avif_name, args.quality, args.sharpen)
+            write_jpeg_card(source, args.output / card_name, args.fallback, FALLBACK_QUALITY, args.sharpen)
+            with Image.open(source) as image:
+                write_jpeg(image, THUMB, args.output / thumb_name, THUMB_QUALITY, args.sharpen)
+            built += 1
+            action = "built"
 
         avif_bytes += (args.output / avif_name).stat().st_size
         jpeg_bytes += (args.output / card_name).stat().st_size
@@ -182,15 +253,37 @@ def main() -> None:
             "cardAvif": f"assets/photos/{avif_name}",
             "thumb": f"assets/photos/{thumb_name}",
         }
-        print(f"  [{index}/{total}] {photo['filename']} -> {got}px", flush=True)
+        print(f"  [{index}/{total}] {photo['filename']} -> {got}px ({action})", flush=True)
 
+    settings_path.write_text(json.dumps(settings, indent=2) + "\n", encoding="utf-8")
     args.catalog.write_text(json.dumps(catalog, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     mb = 1024 * 1024
-    print(f"\nWrote derivatives for {total} photos to {args.output}")
+    print(f"\nWrote derivatives for {total} photos to {args.output}  ({built} built, {kept} kept unchanged)")
     print(f"  AVIF cards  @{args.card}px q{args.quality}: {avif_bytes/mb:6.1f} MB  ({avif_bytes/total/1024:.0f} KB avg)")
     print(f"  JPEG cards  @{args.fallback}px q{FALLBACK_QUALITY}: {jpeg_bytes/mb:6.1f} MB  ({jpeg_bytes/total/1024:.0f} KB avg)")
     print(f"  JPEG thumbs @{THUMB}px:          {thumb_bytes/mb:6.1f} MB")
     print(f"  total published:              {(avif_bytes+jpeg_bytes+thumb_bytes)/mb:6.1f} MB")
+
+    referenced = {name for photo in catalog["photos"] for name in (
+        f"{photo['id']}-card.avif", f"{photo['id']}-card.jpg", f"{photo['id']}-thumb.jpg")}
+    orphans = sorted(
+        path.name
+        for path in args.output.iterdir()
+        if path.is_file()
+        and path.name not in referenced
+        and path.name != SETTINGS_NAME
+        and ("-card." in path.name or "-thumb." in path.name)
+    )
+    if orphans:
+        print(
+            f"\n{len(orphans)} derivative(s) in {args.output} are no longer referenced by the catalog. "
+            "Delete them before committing — anything committed stays in git history forever:"
+        )
+        for name in orphans[:12]:
+            print(f"  {name}")
+        if len(orphans) > 12:
+            print(f"  ... and {len(orphans) - 12} more")
+
     if undersized:
         print(
             f"\n{len(undersized)} source file(s) are smaller than --card ({args.card}px); "

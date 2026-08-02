@@ -170,7 +170,10 @@ def real_slide(photo: dict[str, Any], subject: dict[str, Any] | None, leg: dict[
     thumb = (assets.get("thumb") or (subject or {}).get("stockPhoto") or "").strip()
     title = photo.get("title") or (subject or {}).get("title") or photo.get("locationName") or "Awaiting title"
     body = photo.get("body") or (subject or {}).get("body") or "[Your caption here]"
-    kicker = photo.get("kicker") or (subject or {}).get("kicker") or "Awaiting caption"
+    # The current design has no kicker line on photo pages — index.html never reads
+    # this field. Keep the key for backward compatibility, but don't invent a value:
+    # "Awaiting caption" on a finished photo reads like an unfinished-work flag.
+    kicker = photo.get("kicker") or (subject or {}).get("kicker") or ""
     species = photo.get("species") or ((subject or {}).get("common") if (subject or {}).get("kind") == "species" else "") or ""
     slide = {
         "leg": leg["id"],
