@@ -53,6 +53,11 @@ python scripts\build_photo_catalog.py photos data\photo-catalog.json
 It prints a diff against the catalog it is about to overwrite — added, removed, and re-keyed
 photos — so you can see at a glance whether a re-export actually moved anything.
 
+**Always follow it with `build_photo_assets.py`.** The catalog build writes every photo's `assets`
+paths back as empty strings; it is `build_photo_assets.py` that fills them in. A catalog build on
+its own leaves the catalog pointing at nothing, and the next `build_trip_content.py` run will
+publish a payload with no images. The two are one step, not two.
+
 ### Sync conflicts and empty files
 
 OneDrive drops conflict copies (`DSC00036-LAPTOP-73TG5O6M.jpg`) beside the real export. Normally
