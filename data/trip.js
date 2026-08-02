@@ -2,7 +2,7 @@
 // Same payload as trip.json, loaded synchronously so the first paint has data.
 window.__TRIP__ = {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-02T14:49:27-07:00",
+  "generatedAt": "2026-08-02T15:15:35-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",
@@ -50,13 +50,13 @@ window.__TRIP__ = {
       -9.636581,
       -55.937858
     ],
-    "img-0949-7cc238e17d": [
-      -9.563831,
-      -55.902989
-    ],
     "dsc00036-171df22a9e": [
       -9.636389,
       -55.937778
+    ],
+    "img-0949-7cc238e17d": [
+      -9.563831,
+      -55.902989
     ],
     "dsc00408-7339a02d29": [
       -9.546667,
@@ -162,6 +162,10 @@ window.__TRIP__ = {
       -19.8836,
       -56.2947
     ],
+    "dsc03044-342f12324e": [
+      -19.9537,
+      -56.3052
+    ],
     "dsc03048-ab8e831ffc": [
       -19.953611,
       -56.305278
@@ -194,6 +198,10 @@ window.__TRIP__ = {
       -19.858461,
       -56.273975
     ],
+    "img-2987-03121b254a": [
+      -22.982433,
+      -43.189542
+    ],
     "img-3099-fbb79ec833": [
       -22.982231,
       -43.190322
@@ -209,6 +217,10 @@ window.__TRIP__ = {
     "por-maycon-nunes-photography-51-a52e69a1a8": [
       -22.89536,
       -43.1984
+    ],
+    "por-maycon-nunes-photography-144-aa3bc0dc4d": [
+      -22.915278,
+      -43.179167
     ],
     "por-maycon-nunes-photography-148-eee1373978": [
       -22.91523,
@@ -230,11 +242,19 @@ window.__TRIP__ = {
       -22.94503,
       -43.1964
     ],
+    "por-maycon-nunes-photography-293-a3cbf13aae": [
+      -22.949444,
+      -43.156389
+    ],
     "por-maycon-nunes-photography-301-ca839d8c7e": [
       -22.949444,
       -43.156389
     ],
     "por-maycon-nunes-photography-313-f92bb24daa": [
+      -22.949444,
+      -43.156389
+    ],
+    "por-maycon-nunes-photography-327-4bab5f06ef": [
       -22.949444,
       -43.156389
     ],
@@ -324,7 +344,7 @@ window.__TRIP__ = {
         "pinLabel": "The city as canvas",
         "kicker": "Street level",
         "title": "The city as canvas",
-        "body": "A mural-wrapped building near Paulista Avenue -- Sao Paulo's street-art scene exploded after the city banned outdoor billboards in 2006, clearing the way for muralists like Os Gemeos and Nina Pandolfo to turn the city into a canvas.",
+        "body": "A mural-wrapped building near Paulista Avenue -- São Paulo's street-art scene exploded after the city banned outdoor billboards in 2006, clearing the way for muralists like Os Gêmeos and Nina Pandolfo to turn the city into a canvas.",
         "chips": [
           "SÃO PAULO"
         ],
@@ -349,7 +369,7 @@ window.__TRIP__ = {
         "pinLabel": "Golden arches, translated",
         "kicker": "First impressions",
         "title": "Golden arches, translated",
-        "body": "This Sao Paulo Mequi -- Brazil's affectionate nickname for McDonald's -- is reportedly the chain's 1,000th location in the country, tucked into a converted early-1900s mansion from Paulista Avenue's original mansion-row days.",
+        "body": "This São Paulo Mequi -- Brazil's affectionate nickname for McDonald's -- is reportedly the chain's 1,000th location in the country, tucked into a converted early-1900s mansion from Paulista Avenue's original mansion-row days.",
         "chips": [
           "SÃO PAULO"
         ],
@@ -417,31 +437,6 @@ window.__TRIP__ = {
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "img-0949-7cc238e17d",
-        "photoId": "img-0949-7cc238e17d",
-        "kind": "photo",
-        "src": "assets/photos/img-0949-7cc238e17d-card.jpg",
-        "srcAvif": "assets/photos/img-0949-7cc238e17d-card.avif",
-        "thumb": "assets/photos/img-0949-7cc238e17d-thumb.jpg",
-        "alt": "Dwarfed by a tree",
-        "pinLabel": "Dwarfed by a tree",
-        "kicker": "Giants",
-        "title": "Dwarfed by a tree",
-        "body": "Four of us barely wrap around the base of a centuries-old Brazil nut tree, one of the giants of the Cristalino.",
-        "chips": [
-          "AMAZON"
-        ],
-        "flags": [],
-        "star": false,
-        "featured": true,
-        "taxon": "",
-        "species": "",
-        "lat": -9.563831,
-        "lng": -55.902989
-      },
-      {
-        "leg": "amazon",
-        "legId": "amazon",
         "key": "dsc00036-171df22a9e",
         "photoId": "dsc00036-171df22a9e",
         "kind": "photo",
@@ -463,6 +458,31 @@ window.__TRIP__ = {
         "species": "Harpy Eagle",
         "lat": -9.636389,
         "lng": -55.937778
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "img-0949-7cc238e17d",
+        "photoId": "img-0949-7cc238e17d",
+        "kind": "photo",
+        "src": "assets/photos/img-0949-7cc238e17d-card.jpg",
+        "srcAvif": "assets/photos/img-0949-7cc238e17d-card.avif",
+        "thumb": "assets/photos/img-0949-7cc238e17d-thumb.jpg",
+        "alt": "Dwarfed by a tree",
+        "pinLabel": "Dwarfed by a tree",
+        "kicker": "Giants",
+        "title": "Dwarfed by a tree",
+        "body": "Four of us barely wrap around the base of a centuries-old Brazil nut tree, one of the giants of the Cristalino.",
+        "chips": [
+          "AMAZON"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": true,
+        "taxon": "",
+        "species": "",
+        "lat": -9.563831,
+        "lng": -55.902989
       },
       {
         "leg": "amazon",
@@ -1133,6 +1153,33 @@ window.__TRIP__ = {
       {
         "leg": "pantanal",
         "legId": "pantanal",
+        "key": "dsc03044-342f12324e",
+        "photoId": "dsc03044-342f12324e",
+        "subjectId": "macaw",
+        "kind": "photo",
+        "src": "assets/photos/dsc03044-342f12324e-card.jpg",
+        "srcAvif": "assets/photos/dsc03044-342f12324e-card.avif",
+        "thumb": "assets/photos/dsc03044-342f12324e-thumb.jpg",
+        "alt": "Hyacinth Macaw — Anodorhynchus hyacinthinus",
+        "pinLabel": "Hyacinth Macaw",
+        "kicker": "Cobalt",
+        "title": "The largest parrot alive",
+        "body": "A bonded pair of the world's largest flying parrot, cobalt from crown to tail, greeting each other at their nest box.",
+        "chips": [
+          "★ TRIP STANDOUT",
+          "BIRD"
+        ],
+        "flags": [],
+        "star": true,
+        "featured": true,
+        "taxon": "Bird",
+        "species": "Hyacinth Macaw",
+        "lat": -19.9537,
+        "lng": -56.3052
+      },
+      {
+        "leg": "pantanal",
+        "legId": "pantanal",
         "key": "dsc03048-ab8e831ffc",
         "photoId": "dsc03048-ab8e831ffc",
         "subjectId": "macaw",
@@ -1339,6 +1386,32 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
+        "key": "img-2987-03121b254a",
+        "photoId": "img-2987-03121b254a",
+        "subjectId": "rio_01",
+        "kind": "photo",
+        "src": "assets/photos/img-2987-03121b254a-card.jpg",
+        "srcAvif": "assets/photos/img-2987-03121b254a-card.avif",
+        "thumb": "assets/photos/img-2987-03121b254a-thumb.jpg",
+        "alt": "Copacabana, finally",
+        "pinLabel": "Copacabana, finally",
+        "kicker": "Sea level",
+        "title": "Copacabana, finally",
+        "body": "The mountains behind, the Atlantic in front -- our first view of Rio from the hotel balcony.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "species": "",
+        "lat": -22.982433,
+        "lng": -43.189542
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
         "key": "img-3099-fbb79ec833",
         "photoId": "img-3099-fbb79ec833",
         "subjectId": "rio_02",
@@ -1440,6 +1513,31 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
+        "key": "por-maycon-nunes-photography-144-aa3bc0dc4d",
+        "photoId": "por-maycon-nunes-photography-144-aa3bc0dc4d",
+        "kind": "photo",
+        "src": "assets/photos/por-maycon-nunes-photography-144-aa3bc0dc4d-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-144-aa3bc0dc4d-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-144-aa3bc0dc4d-thumb.jpg",
+        "alt": "The steps that took twenty years",
+        "pinLabel": "The steps that took twenty years",
+        "kicker": "",
+        "title": "The steps that took twenty years",
+        "body": "Escadaria Selarón: 215 steps that the Chilean artist Jorge Selarón tiled by hand from 1990 until his death in 2013, using tiles sent to him from more than 60 countries.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "species": "",
+        "lat": -22.915278,
+        "lng": -43.179167
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
         "key": "por-maycon-nunes-photography-148-eee1373978",
         "photoId": "por-maycon-nunes-photography-148-eee1373978",
         "kind": "photo",
@@ -1450,7 +1548,7 @@ window.__TRIP__ = {
         "pinLabel": "All four of us, mid-staircase",
         "kicker": "",
         "title": "All four of us, mid-staircase",
-        "body": "Escadaria Selaron, the Lapa steps -- 215 of them, tiled by hand by the Chilean artist Jorge Selaron from 1990 until his death in 2013, with tiles sent to him from more than 60 countries. The red, yellow and green running the whole length were his tribute to Brazil.",
+        "body": "Escadaria Selarón, the Lapa steps -- 215 of them, tiled by hand by the Chilean artist Jorge Selarón from 1990 until his death in 2013, with tiles sent to him from more than 60 countries. The red, yellow and green running the whole length were his tribute to Brazil.",
         "chips": [
           "RIO DE JANEIRO"
         ],
@@ -1525,7 +1623,7 @@ window.__TRIP__ = {
         "pinLabel": "Zach, Sugarloaf across the bay",
         "kicker": "",
         "title": "Zach, Sugarloaf across the bay",
-        "body": "Zach on the wall at Dona Marta, where the whole of Botafogo Bay opens up -- Pao de Acucar, Sugarloaf Mountain, standing out of the water at the harbor mouth.",
+        "body": "Zach on the wall at Dona Marta, where the whole of Botafogo Bay opens up -- Pão de Açúcar, Sugarloaf Mountain, standing out of the water at the harbor mouth.",
         "chips": [
           "RIO DE JANEIRO"
         ],
@@ -1565,6 +1663,31 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
+        "key": "por-maycon-nunes-photography-293-a3cbf13aae",
+        "photoId": "por-maycon-nunes-photography-293-a3cbf13aae",
+        "kind": "photo",
+        "src": "assets/photos/por-maycon-nunes-photography-293-a3cbf13aae-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-293-a3cbf13aae-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-293-a3cbf13aae-thumb.jpg",
+        "alt": "Backlit at golden hour",
+        "pinLabel": "Backlit at golden hour",
+        "kicker": "",
+        "title": "Backlit at golden hour",
+        "body": "The same statue four hours and one mountain later, shot from Morro da Urca as the sun went down behind Corcovado.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "species": "",
+        "lat": -22.949444,
+        "lng": -43.156389
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
         "key": "por-maycon-nunes-photography-301-ca839d8c7e",
         "photoId": "por-maycon-nunes-photography-301-ca839d8c7e",
         "kind": "photo",
@@ -1575,7 +1698,7 @@ window.__TRIP__ = {
         "pinLabel": "Sunset from the halfway stop",
         "kicker": "",
         "title": "Sunset from the halfway stop",
-        "body": "Morro da Urca is the first of the cable car's two stages -- 220 meters up, with Flamengo, the Aterro, and the Rio-Niteroi bridge laid out behind.",
+        "body": "Morro da Urca is the first of the cable car's two stages -- 220 meters up, with Flamengo, the Aterro, and the Rio-Niterói bridge laid out behind.",
         "chips": [
           "RIO DE JANEIRO"
         ],
@@ -1601,6 +1724,31 @@ window.__TRIP__ = {
         "kicker": "",
         "title": "Under the second cable",
         "body": "On Morro da Urca, with Sugarloaf mountain and the cable car behind.",
+        "chips": [
+          "RIO DE JANEIRO"
+        ],
+        "flags": [],
+        "star": false,
+        "featured": false,
+        "taxon": "",
+        "species": "",
+        "lat": -22.949444,
+        "lng": -43.156389
+      },
+      {
+        "leg": "rio",
+        "legId": "rio",
+        "key": "por-maycon-nunes-photography-327-4bab5f06ef",
+        "photoId": "por-maycon-nunes-photography-327-4bab5f06ef",
+        "kind": "photo",
+        "src": "assets/photos/por-maycon-nunes-photography-327-4bab5f06ef-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-327-4bab5f06ef-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-327-4bab5f06ef-thumb.jpg",
+        "alt": "The four of us, and the loaf",
+        "pinLabel": "The four of us, and the loaf",
+        "kicker": "",
+        "title": "The four of us, and the loaf",
+        "body": "Portuguese traders called it Pão de Açúcar -- sugarloaf -- after the conical clay molds that refined sugar was shipped in.",
         "chips": [
           "RIO DE JANEIRO"
         ],
@@ -1675,7 +1823,7 @@ window.__TRIP__ = {
         "pinLabel": "Everyone waits for the lights",
         "kicker": "",
         "title": "Everyone waits for the lights",
-        "body": "Blue hour on Morro da Urca -- Botafogo's curve, the Aterro do Flamengo, and the Serra dos Orgaos far off across Guanabara Bay.",
+        "body": "Blue hour on Morro da Urca -- Botafogo's curve, the Aterro do Flamengo, and the Serra dos Órgãos far off across Guanabara Bay.",
         "chips": [
           "RIO DE JANEIRO"
         ],
