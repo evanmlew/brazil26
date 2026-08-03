@@ -2,7 +2,7 @@
 // Same payload as trip.json, loaded synchronously so the first paint has data.
 window.__TRIP__ = {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-02T19:59:03-07:00",
+  "generatedAt": "2026-08-02T20:32:46-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",
@@ -250,7 +250,7 @@ window.__TRIP__ = {
       -22.949444,
       -43.156389
     ],
-    "por-maycon-nunes-photography-313-f92bb24daa": [
+    "por-maycon-nunes-photography-315-395219b235": [
       -22.949444,
       -43.156389
     ],
@@ -1661,12 +1661,12 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "por-maycon-nunes-photography-313-f92bb24daa",
-        "photoId": "por-maycon-nunes-photography-313-f92bb24daa",
+        "key": "por-maycon-nunes-photography-315-395219b235",
+        "photoId": "por-maycon-nunes-photography-315-395219b235",
         "kind": "photo",
-        "src": "assets/photos/por-maycon-nunes-photography-313-f92bb24daa-card.jpg",
-        "srcAvif": "assets/photos/por-maycon-nunes-photography-313-f92bb24daa-card.avif",
-        "thumb": "assets/photos/por-maycon-nunes-photography-313-f92bb24daa-thumb.jpg",
+        "src": "assets/photos/por-maycon-nunes-photography-315-395219b235-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-315-395219b235-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-315-395219b235-thumb.jpg",
         "alt": "Under the second cable",
         "pinLabel": "Under the second cable",
         "kicker": "",
