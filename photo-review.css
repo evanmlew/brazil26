@@ -198,6 +198,7 @@ header.top > * { flex: none; }
 .row.dragging .grip, .expanded.dragging .grip { color: var(--cyan); }
 .row .num { width: 22px; flex: none; text-align: right; font: 11px/1 var(--mono); color: var(--text-4); }
 .thumb {
+  position: relative;
   width: 76px; height: 52px; flex: none; border-radius: 3px;
   background: var(--tile-empty) center/cover no-repeat;
 }
@@ -294,6 +295,8 @@ header.top > * { flex: none; }
 
 .meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font: 11px/1.6 var(--mono); color: var(--text-4); }
 .meta .file { color: var(--text-3); }
+/* Read-only, so it reads quieter than the fields around it. */
+.meta .gps { color: var(--text-5); }
 /* Coordinates are read-only in this tool, so a missing fix has to be visible. */
 .meta .warn {
   padding: 1px 6px; border-radius: 3px; letter-spacing: .08em;
@@ -339,6 +342,12 @@ header.top > * { flex: none; }
   background: rgba(0, 0, 0, .72); color: var(--text); font: 600 10px/16px var(--mono);
 }
 .tile:hover .x, .tile.excluded .x { visibility: visible; }
+/* "Differs from disk." Amber matches the unsaved-changes dot in the header, and
+   it sits bottom-left so it never collides with the hover-in exclude button. */
+.edited {
+  position: absolute; left: 3px; bottom: 3px; padding: 0 4px; border-radius: 2px;
+  background: rgba(0, 0, 0, .7); color: var(--amber); font: 10px/16px var(--mono);
+}
 .tile .rail { height: 2px; margin-top: 3px; border-radius: 1px; background: var(--border-input); }
 .tile .cap { margin-top: 5px; font: 600 12px/1.35 var(--ui); color: var(--text-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .tile.excluded .cap { color: var(--text-4); }
@@ -391,6 +400,9 @@ header.top > * { flex: none; }
 .pane input[data-f="title"] { font: 600 13px/1.2 var(--ui); color: var(--text); }
 .pane textarea[data-f="body"] { height: 104px; resize: vertical; font: 12.5px/1.5 var(--ui); color: #d9dde2; }
 .pane .reply-solo { border-radius: 4px; color: var(--amber-text); font: 12.5px/1.2 var(--ui); }
+/* .thread stretches to fill the list row it was written for; in the pane's
+   column it must stay the height of its notes. */
+.pane .thread { flex: none; }
 .pane .pending { display: flex; gap: 7px; }
 .pane .pending .sm.accept { flex: 1; text-align: center; }
 .pane .meta { gap: 10px; font-size: 10.5px; }

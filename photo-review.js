@@ -9,6 +9,11 @@
 const AMBER = "#f0a832";
 const CYAN = "#4fd0e0";
 const ZOOMS = [72, 96, 128, 172, 232];
+// Pane divider bounds. The slide preview is the point of the pane, so it opens
+// as wide as it goes; drag it narrower to give the contact sheet more room.
+const PANE_MIN = 260;
+const PANE_MAX = 780;
+const PANE_DEFAULT = PANE_MAX;
 const UNSORTED = { id: "", name: "Unsorted", dates: "", region: "", lodge: "", nights: 0 };
 
 // Keys this UI owns on an edit record. Everything else on the record (featured,
@@ -36,7 +41,7 @@ const state = {
   dragId: null,
   overId: null,
   zoom: ZOOMS.indexOf(232),
-  paneW: 352,
+  paneW: PANE_DEFAULT,
   err: "",
 };
 
@@ -95,6 +100,8 @@ async function load() {
       locationName: raw.locationName || p.locationName || "",
       excluded: Boolean(raw.excluded),
       notes: Array.isArray(raw.notes) ? raw.notes.map((n) => ({ ...n })) : [],
+      // Half-typed note, held here so a re-render can't eat it. Never persisted.
+      noteDraft: "",
       pending: raw.pending ? { ...raw.pending } : null,
       rest,
     };
@@ -104,6 +111,7 @@ async function load() {
   legOrder().forEach((leg) => legPhotos(leg.id).forEach((p, i) => { p.order = i; }));
 
   state.leg = (legOrder()[0] || UNSORTED).id;
+  markSaved();   // baseline for the pencil marker, after order is normalized
   render();
 }
 
@@ -224,6 +232,53 @@ function logIt(text) {
   state.log = [{ at: stamp(), text }].concat(state.log).slice(0, 60);
 }
 
+/* ---------------------------------------------------------- edit marker --
+   The pencil on a frame means "this photo differs from what is on disk". It is
+   a real comparison against a baseline taken at load and re-taken after every
+   successful save, not a flag set on keypress — so typing a character and
+   deleting it again leaves no marker behind.
+
+   `order` is deliberately excluded. Dragging one photo renumbers every frame
+   after it, and pencilling all of them would drown the signal; a reorder is
+   already legible from the position and the 01/02 badge that moved. Everything
+   else this tool writes back is included. */
+const EDIT_SIG = ["legId", "title", "body", "species", "subjectId", "locationName", "excluded", "notes", "pending", "noteDraft"];
+
+// Key order in the JSON on disk is not guaranteed, and notes/pending are
+// objects — sort keys so a reordered-but-identical record is not a false edit.
+const stableJson = (value) => JSON.stringify(value, (k, v) => (
+  v && typeof v === "object" && !Array.isArray(v)
+    ? Object.fromEntries(Object.keys(v).sort().map((key) => [key, v[key]]))
+    : v
+));
+
+const photoSignature = (p) => stableJson(EDIT_SIG.map((k) => (p[k] === undefined ? null : p[k])));
+
+function markSaved() {
+  state.photos.forEach((p) => { p.savedSig = photoSignature(p); });
+}
+
+const isEdited = (p) => p.savedSig !== undefined && photoSignature(p) !== p.savedSig;
+
+function editMarker() {
+  const pen = el("div", "edited", "✎");
+  pen.title = "edited — not saved yet";
+  return pen;
+}
+
+// Typing never rebuilds the row the caret is sitting in, so the marker has to
+// be added and removed in place, wherever this photo is currently drawn.
+function syncEditMarker(p) {
+  const edited = isEdited(p);
+  document.querySelectorAll(
+    `.tile[data-id="${p.id}"] .shot, .row[data-id="${p.id}"] .thumb, .expanded[data-id="${p.id}"] .thumb`,
+  ).forEach((host) => {
+    const pen = host.querySelector(".edited");
+    if (edited && !pen) host.append(editMarker());
+    if (!edited && pen) pen.remove();
+  });
+}
+
 function patch(id, fields) {
   const p = photoById(id);
   if (!p) return;
@@ -286,11 +341,36 @@ function reassignLeg(p, legId) {
   render();
 }
 
+/* A note is only committed to the thread on Enter, but the text lives in the
+   DOM until then — so any render() (a save, an exclude toggle, a leg change)
+   used to throw it away silently. Keep the half-typed note in state instead,
+   and flush it on save so "save & draft" never discards what you typed. */
+function noteInput(p, className, placeholder) {
+  const input = document.createElement("input");
+  input.type = "text";
+  if (className) input.className = className;
+  input.placeholder = placeholder;
+  input.value = p.noteDraft || "";
+  input.addEventListener("click", (e) => e.stopPropagation());
+  input.addEventListener("input", () => {
+    p.noteDraft = input.value;
+    state.dirty += 1;
+    renderChrome();
+    syncEditMarker(p);
+  });
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") { e.preventDefault(); sendNote(p); }
+  });
+  return input;
+}
+
+// Reads the draft out of state, not the DOM: with an expanded row open on one
+// photo and the pane on another, a document-wide query grabbed the wrong input.
 function sendNote(p) {
-  const input = document.querySelector(".reply input, .pane .reply-solo");
-  const text = input ? input.value.trim() : "";
+  const text = (p.noteDraft || "").trim();
   if (!text) return;
   p.notes = p.notes.concat([{ who: "YOU", text, at: new Date().toISOString() }]);
+  p.noteDraft = "";
   state.dirty += 1;
   logIt(`note queued · ${text.slice(0, 48)}`);
   render();
@@ -439,6 +519,7 @@ function buildRow(p, all, flagged) {
 
   const thumb = el("div", "thumb");
   if (p.thumb) thumb.style.backgroundImage = `url("${p.thumb}")`;
+  if (isEdited(p)) thumb.append(editMarker());
   row.append(thumb);
 
   const copy = el("div", "copy");
@@ -483,6 +564,7 @@ function buildExpanded(p, all) {
 
   const thumb = el("div", "thumb");
   if (p.thumb) thumb.style.backgroundImage = `url("${p.thumb}")`;
+  if (isEdited(p)) thumb.append(editMarker());
   inner.append(thumb);
 
   const fields = el("div", `fields${p.pending ? " pending-fields" : ""}`);
@@ -542,8 +624,7 @@ function buildExpanded(p, all) {
   const meta = el("div", "meta indent");
   meta.append(el("span", "file", p.filename));
   meta.append(el("span", null, `${p.date.slice(0, 10)} · ${p.date.slice(11, 16)}${p.utcOffset ? ` · UTC${p.utcOffset}` : ""}`));
-  const noFix = p.noGps || p.lat == null || p.lng == null;
-  meta.append(el("span", noFix ? "warn" : null, noFix ? "NO GPS" : `${p.lat.toFixed(4)}, ${p.lng.toFixed(4)}`));
+  meta.append(gpsSpan(p));
   meta.append(el("span", null, p.subjectId || "unbound"));
   meta.append(el("span", "spring"));
   meta.append(excludeCheck(p));
@@ -569,6 +650,7 @@ function textField(p, field, tag, placeholder) {
     renderChrome();
     renderBottom();
     syncTileTitle(p);
+    syncEditMarker(p);
     refreshPreview();
     if (field === "species") {
       const swatch = node.parentElement.querySelector(".swatch");
@@ -606,7 +688,8 @@ function pendingRow(p, extraClass) {
   return row;
 }
 
-function buildThread(p) {
+// The notes themselves, without a reply box — the pane supplies its own.
+function noteList(p) {
   const thread = el("div", "thread");
   p.notes.forEach((n) => {
     const who = n.who === "ASSISTANT" ? "assistant" : "you";
@@ -616,18 +699,15 @@ function buildThread(p) {
     note.append(el("span", "at", noteTime(n.at)));
     thread.append(note);
   });
+  return thread;
+}
 
+function buildThread(p) {
+  const thread = noteList(p);
   const reply = el("div", "reply");
   const unanswered = p.notes.length && p.notes[p.notes.length - 1].who !== "ASSISTANT";
   reply.append(el("span", "who", unanswered ? "QUEUED" : "REPLY"));
-  const input = document.createElement("input");
-  input.type = "text";
-  input.placeholder = "tell the assistant what to change — enter to queue it";
-  input.addEventListener("click", (e) => e.stopPropagation());
-  input.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") { e.preventDefault(); sendNote(p); }
-  });
-  reply.append(input);
+  reply.append(noteInput(p, null, "tell the assistant what to change — enter to queue it"));
   thread.append(reply);
   return thread;
 }
@@ -680,6 +760,7 @@ function buildTile(p, i, tw, flagged) {
   x.type = "button";
   x.addEventListener("click", (e) => { e.stopPropagation(); toggleExclude(p); });
   shot.append(x);
+  if (isEdited(p)) shot.append(editMarker());
   tile.append(shot, el("div", "rail"));
 
   if (tw >= 232) tile.append(el("div", "cap", p.title || "Untitled"));
@@ -879,12 +960,10 @@ function renderPane() {
 
   if (p.pending) pane.append(pendingRow(p));
 
-  const reply = document.createElement("input");
-  reply.type = "text";
-  reply.className = "reply-solo";
-  reply.placeholder = "note to the assistant — enter to queue it";
-  reply.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); sendNote(p); } });
-  pane.append(reply);
+  // Queued notes were invisible in sheet view — the pane had a reply box and
+  // nowhere for the reply to land, so a sent note looked like it vanished.
+  if (p.notes.length) pane.append(noteList(p));
+  pane.append(noteInput(p, "reply-solo", "note to the assistant — enter to queue it"));
 
   pane.append(textField(p, "species", "input", "species — none"));
   pane.append(textField(p, "locationName", "input", "place — optional"));
@@ -893,10 +972,22 @@ function renderPane() {
   const meta = el("div", "meta");
   meta.append(el("span", "file", p.filename));
   meta.append(el("span", null, `${p.date.slice(0, 10)} · ${p.date.slice(11, 16)}`));
-  if (p.noGps || p.lat == null || p.lng == null) meta.append(el("span", "warn", "NO GPS"));
+  meta.append(gpsSpan(p));
   meta.append(el("span", "spring"));
   meta.append(excludeCheck(p));
   pane.append(meta);
+}
+
+// The catalog owns coordinates — this tool never writes them — so the list row
+// and the sheet pane show the same read-only fix, or the same NO GPS badge.
+function gpsSpan(p) {
+  const noFix = p.noGps || p.lat == null || p.lng == null;
+  const node = el("span", noFix ? "warn" : "gps",
+    noFix ? "NO GPS" : `${p.lat.toFixed(4)}, ${p.lng.toFixed(4)}`);
+  node.title = noFix
+    ? "no GPS fix on this photo — the map pin falls back to the leg"
+    : "read-only — comes from the photo's EXIF";
+  return node;
 }
 
 function syncTileTitle(p) {
@@ -1134,6 +1225,15 @@ function editsPayload() {
 async function saveEdits() {
   const btn = $("#save");
   btn.disabled = true;
+  // A note typed but never sent with Enter is still something you asked for.
+  // Queue it rather than writing the file without it and then wiping the box.
+  state.photos.forEach((p) => {
+    const text = (p.noteDraft || "").trim();
+    if (!text) return;
+    p.notes = p.notes.concat([{ who: "YOU", text, at: new Date().toISOString() }]);
+    p.noteDraft = "";
+    logIt(`note queued on save · ${text.slice(0, 48)}`);
+  });
   try {
     const res = await fetch("/api/save-edits", {
       method: "POST",
@@ -1148,6 +1248,7 @@ async function saveEdits() {
     if (!res.ok || !result.ok) throw new Error(result.error || `Save failed (${res.status})`);
     state.rev = typeof result.rev === "number" ? result.rev : state.rev + 1;
     state.dirty = 0;
+    markSaved();   // what is on disk is now what is in memory — clear the pencils
     logIt(result.rebuildError ? `saved · trip.json rebuild failed: ${result.rebuildError}` : "saved · draft rebuilt");
   } catch (error) {
     logIt(`save failed · ${error.message} — use “download backup”`);
@@ -1232,7 +1333,7 @@ $("#import").addEventListener("change", async (event) => {
 
 window.addEventListener("resize", renderChrome);
 
-// Pane divider: drag to resize between 260 and 780px, double-click to reset.
+// Pane divider: drag to resize between PANE_MIN and PANE_MAX, double-click to reset.
 $("#divider").addEventListener("pointerdown", (e) => {
   e.preventDefault();
   const x0 = e.clientX;
@@ -1240,7 +1341,7 @@ $("#divider").addEventListener("pointerdown", (e) => {
   const divider = $("#divider");
   divider.classList.add("resizing");
   const onMove = (ev) => {
-    state.paneW = Math.max(260, Math.min(780, w0 - (ev.clientX - x0)));
+    state.paneW = Math.max(PANE_MIN, Math.min(PANE_MAX, w0 - (ev.clientX - x0)));
     $("#pane").style.width = `${state.paneW}px`;
     refreshPreview();
   };
@@ -1253,8 +1354,8 @@ $("#divider").addEventListener("pointerdown", (e) => {
   document.addEventListener("pointerup", onUp);
 });
 $("#divider").addEventListener("dblclick", () => {
-  state.paneW = 352;
-  $("#pane").style.width = "352px";
+  state.paneW = PANE_DEFAULT;
+  $("#pane").style.width = `${PANE_DEFAULT}px`;
   refreshPreview();
 });
 
