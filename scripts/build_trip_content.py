@@ -71,24 +71,16 @@ def merge_photo(photo: dict[str, Any], edits: dict[str, Any]) -> dict[str, Any]:
     return merged
 
 
-def display_chips(subject: dict[str, Any] | None, photo: dict[str, Any], leg: dict[str, Any]) -> list[str]:
-    if photo.get("chips"):
-        return as_list(photo.get("chips"))
-    if subject and subject.get("kind") == "species":
-        chips = []
-        if photo.get("star") or subject.get("star"):
-            chips.append("★ TRIP STANDOUT")
-        if subject.get("taxon"):
-            chips.append(str(subject["taxon"]).upper())
-        chips.extend(flag.upper() for flag in as_list(subject.get("flags")) if flag.lower() != "no-gps")
-        return chips
-    if subject and subject.get("chips"):
-        return as_list(subject.get("chips"))
-    chips = []
-    if photo.get("star"):
-        chips.append("★ TRIP STANDOUT")
-    chips.append(leg["name"].upper())
-    return chips
+def display_chips(species: str) -> list[str]:
+    """The caption pill means exactly one thing: the species in the frame.
+
+    It used to fall back to the leg name, so a São Paulo street-art photo wore a
+    "SÃO PAULO" pill that told the reader nothing the map wasn't already saying —
+    and species photos wore their taxon ("BIRD") instead of the animal's name.
+    A photo with no species gets no pill at all.
+    """
+    species = (species or "").strip()
+    return [species.upper()] if species else []
 
 
 def alt_text(subject: dict[str, Any] | None, photo: dict[str, Any]) -> str:
@@ -130,6 +122,7 @@ def stock_slide(subject_id: str, subject: dict[str, Any], coords_lookup: dict[st
     coords = coords_lookup.get(subject_id)
     lat = coords[0] if isinstance(coords, list) and len(coords) == 2 else None
     lng = coords[1] if isinstance(coords, list) and len(coords) == 2 else None
+    species = subject.get("common", "") if subject.get("kind") == "species" else ""
     slide = {
         "leg": subject["leg"],
         "legId": subject["leg"],
@@ -143,11 +136,11 @@ def stock_slide(subject_id: str, subject: dict[str, Any], coords_lookup: dict[st
         "kicker": subject.get("kicker", ""),
         "title": subject.get("title", ""),
         "body": subject.get("body", ""),
-        "chips": display_chips(subject, {}, {"name": subject["leg"]}),
+        "chips": display_chips(species),
         "flags": as_list(subject.get("flags")),
         "star": bool(subject.get("star")),
         "taxon": subject.get("taxon", ""),
-        "species": subject.get("common", "") if subject.get("kind") == "species" else "",
+        "species": species,
         "ph": subject.get("ph", "") or "",
         "lat": lat,
         "lng": lng,
@@ -190,7 +183,7 @@ def real_slide(photo: dict[str, Any], subject: dict[str, Any] | None, leg: dict[
         "kicker": kicker,
         "title": title,
         "body": body,
-        "chips": display_chips(subject, photo, leg),
+        "chips": display_chips(species),
         "flags": as_list(photo.get("flags")),
         "star": bool(photo.get("star") or (subject or {}).get("star")),
         "featured": bool(photo.get("featured")),

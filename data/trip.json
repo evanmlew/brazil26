@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-02T15:15:35-07:00",
+  "generatedAt": "2026-08-02T19:59:03-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",
@@ -343,9 +343,7 @@
         "kicker": "Street level",
         "title": "The city as canvas",
         "body": "A mural-wrapped building near Paulista Avenue -- São Paulo's street-art scene exploded after the city banned outdoor billboards in 2006, clearing the way for muralists like Os Gêmeos and Nina Pandolfo to turn the city into a canvas.",
-        "chips": [
-          "SÃO PAULO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": true,
@@ -368,9 +366,7 @@
         "kicker": "First impressions",
         "title": "Golden arches, translated",
         "body": "This São Paulo Mequi -- Brazil's affectionate nickname for McDonald's -- is reportedly the chain's 1,000th location in the country, tucked into a converted early-1900s mansion from Paulista Avenue's original mansion-row days.",
-        "chips": [
-          "SÃO PAULO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -394,9 +390,7 @@
         "kicker": "First night",
         "title": "Dinner under the fig tree",
         "body": "A Brazilian steak dinner to remember at Figueira Rubaiyat -- built around a massive fig tree in the dining room -- picanha, ribeye, palm heart, and pitu shrimp piled high.",
-        "chips": [
-          "SÃO PAULO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -421,9 +415,7 @@
         "kicker": "Touching down",
         "title": "The only way in",
         "body": "Landed at Alta Floresta -- from here, the only way to Cristalino Lodge is by truck, then a transfer onto a boat for the final stretch up the river.",
-        "chips": [
-          "AMAZON"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -447,7 +439,7 @@
         "title": "Fifteen minutes in",
         "body": "Fifteen minutes into our very first boat tour, and already a Harpy Eagle -- the most powerful raptor in the Americas -- watching us from a branch over the river.",
         "chips": [
-          "AMAZON"
+          "HARPY EAGLE"
         ],
         "flags": [],
         "star": false,
@@ -471,9 +463,7 @@
         "kicker": "Giants",
         "title": "Dwarfed by a tree",
         "body": "Four of us barely wrap around the base of a centuries-old Brazil nut tree, one of the giants of the Cristalino.",
-        "chips": [
-          "AMAZON"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": true,
@@ -497,7 +487,7 @@
         "title": "Standing their ground",
         "body": "A troop of spider monkeys shook branches and barked warnings, trying to scare us off their patch of canopy.",
         "chips": [
-          "AMAZON"
+          "SPIDER MONKEY"
         ],
         "flags": [],
         "star": false,
@@ -522,7 +512,7 @@
         "title": "A wary eye",
         "body": "One of the spider monkey troop pausing mid-branch, keeping a wary eye on us below. Thumbless, they are built to swing by their tails instead.",
         "chips": [
-          "AMAZON"
+          "SPIDER MONKEY"
         ],
         "flags": [],
         "star": false,
@@ -547,7 +537,7 @@
         "title": "Through the high canopy",
         "body": "The spider monkey troop moved fast through the treetops -- our guide said some of the younger ones had never seen humans before and were more curious than afraid, pausing to watch us as we watched them.",
         "chips": [
-          "AMAZON"
+          "SPIDER MONKEY"
         ],
         "flags": [],
         "star": false,
@@ -571,9 +561,7 @@
         "kicker": "Chasing light",
         "title": "One more frame",
         "body": "Out on the water at sunset, camera up, chasing the day's last good light.",
-        "chips": [
-          "AMAZON"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -597,7 +585,7 @@
         "title": "The tree fills up",
         "body": "Neotropical cormorants and cattle egrets crowd a single tree at dusk, stacking up branch by branch.",
         "chips": [
-          "AMAZON"
+          "NEOTROPICAL CORMORANT"
         ],
         "flags": [],
         "star": false,
@@ -621,9 +609,7 @@
         "kicker": "Golden hour",
         "title": "The sky catches fire",
         "body": "The sky went orange right as the roost tree filled with birds -- one of the best sunsets of the trip.",
-        "chips": [
-          "AMAZON"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": true,
@@ -646,9 +632,7 @@
         "kicker": "Golden hour",
         "title": "Riding it in",
         "body": "Heading back to the lodge as the roost tree glowed behind us in the sunset.",
-        "chips": [
-          "AMAZON"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -673,8 +657,7 @@
         "title": "Small things, big eyes",
         "body": "A tree frog found on low vegetation during a night walk, clinging to a leaf by its adhesive toe pads.",
         "chips": [
-          "AMPHIBIAN",
-          "GENUS-LEVEL ID"
+          "TREE FROG"
         ],
         "flags": [],
         "star": false,
@@ -699,7 +682,7 @@
         "title": "A stingless bee, a bromeliad in bloom",
         "body": "A stingless bee working a pink-coned aechmea in bloom -- one of a thousand tiny scenes at knee height in the Cristalino's understory.",
         "chips": [
-          "AMAZON"
+          "PINK-CONED AECHMEA & STINGLESS BEE"
         ],
         "flags": [],
         "star": false,
@@ -725,7 +708,7 @@
         "title": "The otter on the boulder",
         "body": "A neotropical otter hauled out on a midstream boulder, grabbing fish with its paws -- we watched it catch seven in a row in the Cristalino river.",
         "chips": [
-          "MAMMAL"
+          "NEOTROPICAL OTTER"
         ],
         "flags": [],
         "star": false,
@@ -751,7 +734,7 @@
         "title": "The taricaya's tears",
         "body": "Locals call it the taricaya: a yellow-spotted river turtle basking on a rock while butterflies and bees drink its tears, hunting minerals scarce in the Amazon.",
         "chips": [
-          "REPTILE"
+          "YELLOW-SPOTTED RIVER TURTLE"
         ],
         "flags": [],
         "star": false,
@@ -776,7 +759,7 @@
         "title": "Right outside our door",
         "body": "Returning from a hike, we found a capybara grazing a few feet from our room -- close enough to touch.",
         "chips": [
-          "AMAZON"
+          "CAPYBARA"
         ],
         "flags": [],
         "star": false,
@@ -800,9 +783,7 @@
         "kicker": "First light",
         "title": "An unbroken sea of green",
         "body": "Sunrise from the Cristalino Lodge observation deck -- an unbroken carpet of rainforest stretching to the horizon.",
-        "chips": [
-          "AMAZON"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": true,
@@ -825,9 +806,7 @@
         "kicker": "Same view, minutes later",
         "title": "The forest exhales",
         "body": "Another look from the Cristalino Lodge observation deck -- Amazon trees release so much water vapor through transpiration that scientists call the resulting moisture flow a 'flying river'; this is what it looks like at first light, still pooled in the canopy before the sun burns it off.",
-        "chips": [
-          "AMAZON"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -854,7 +833,7 @@
         "title": "The elegant one",
         "body": "A night encounter with an ocelot, the Pantanal's most elegant small cat -- chain-like rosettes smearing into long streaks.",
         "chips": [
-          "MAMMAL"
+          "OCELOT"
         ],
         "flags": [],
         "star": false,
@@ -880,7 +859,7 @@
         "title": "Deer, with bird",
         "body": "A pampas deer doe crossing open grassland with a passenger -- a cattle tyrant riding her back for flushed insects.",
         "chips": [
-          "MAMMAL"
+          "PAMPAS DEER & CATTLE TYRANT"
         ],
         "flags": [],
         "star": false,
@@ -906,7 +885,7 @@
         "title": "The Pantanal's emblem",
         "body": "A Jabiru stork -- the tallest flying bird in the Americas, and widely considered the Pantanal's own emblem -- pulling a fresh crab from the grass with its great upturned bill.",
         "chips": [
-          "BIRD"
+          "JABIRU"
         ],
         "flags": [],
         "star": false,
@@ -932,8 +911,7 @@
         "title": "A cub in daylight",
         "body": "The headline of the trip: a six-month-old jaguar cub trailing close behind its mother, skittish of us in a way she wasn't.",
         "chips": [
-          "★ TRIP STANDOUT",
-          "MAMMAL"
+          "JAGUAR"
         ],
         "flags": [],
         "star": true,
@@ -959,7 +937,7 @@
         "title": "Gardener of the forest",
         "body": "South America's largest land mammal -- known locally as the Brazilian tapir -- out and browsing in the open at midday. Notoriously shy and difficult to track, this was a rare, clear look at one.",
         "chips": [
-          "MAMMAL"
+          "SOUTH AMERICAN TAPIR"
         ],
         "flags": [],
         "star": false,
@@ -984,7 +962,7 @@
         "title": "An eight-legged crossing",
         "body": "A tarantula crossing the track during a safari drive through the Pantanal grounds.",
         "chips": [
-          "PANTANAL"
+          "TARANTULA"
         ],
         "flags": [],
         "star": false,
@@ -1010,7 +988,7 @@
         "title": "Early bird gets the snake",
         "body": "Two southern crested caracaras in a tug-of-war over a snake -- technically part of the falcon family, but nothing like a typical falcon: bold, ground-striding opportunists that scavenge as much as they hunt.",
         "chips": [
-          "BIRD"
+          "SOUTHERN CRESTED CARACARA"
         ],
         "flags": [],
         "star": false,
@@ -1035,7 +1013,7 @@
         "title": "Ancient and unbothered",
         "body": "A yacare caiman resting at the water's edge, close enough to count every scale. Hunted hard for its hide in the 1980s, the species has since rebounded to some 10 million strong across the Pantanal.",
         "chips": [
-          "PANTANAL"
+          "YACARE CAIMAN"
         ],
         "flags": [],
         "star": false,
@@ -1061,7 +1039,7 @@
         "title": "Red, white and black",
         "body": "A yellow-billed cardinal atop a flowering shrub, crisp red, white and black. The name's a bit of a misnomer -- it's actually a tanager, not a true cardinal.",
         "chips": [
-          "BIRD"
+          "YELLOW-BILLED CARDINAL"
         ],
         "flags": [],
         "star": false,
@@ -1087,7 +1065,7 @@
         "title": "The largest kingfisher alive",
         "body": "A ringed kingfisher, the largest kingfisher in the Americas, framed through palm fronds above the water.",
         "chips": [
-          "BIRD"
+          "RINGED KINGFISHER"
         ],
         "flags": [],
         "star": false,
@@ -1112,7 +1090,7 @@
         "title": "Napping in the open",
         "body": "The world's largest rodent doesn't hurry for anyone — this one stayed stretched out and dozing in the grass, completely unfazed by our jeep.",
         "chips": [
-          "PANTANAL"
+          "CAPYBARA"
         ],
         "flags": [],
         "star": false,
@@ -1138,7 +1116,7 @@
         "title": "Waiting for a meal",
         "body": "A trio of lesser yellow-headed vultures waiting on carrion, patient scavengers that quarter low over open country, sniffing out their next meal.",
         "chips": [
-          "BIRD"
+          "LESSER YELLOW-HEADED VULTURE"
         ],
         "flags": [],
         "star": false,
@@ -1164,8 +1142,7 @@
         "title": "The largest parrot alive",
         "body": "A bonded pair of the world's largest flying parrot, cobalt from crown to tail, greeting each other at their nest box.",
         "chips": [
-          "★ TRIP STANDOUT",
-          "BIRD"
+          "HYACINTH MACAW"
         ],
         "flags": [],
         "star": true,
@@ -1191,8 +1168,7 @@
         "title": "Two of a kind",
         "body": "A bonded pair of hyacinth macaws -- the world's largest flying parrot, cobalt from crown to tail -- perched together in a tree above the trail.",
         "chips": [
-          "★ TRIP STANDOUT",
-          "BIRD"
+          "HYACINTH MACAW"
         ],
         "flags": [],
         "star": true,
@@ -1217,7 +1193,7 @@
         "title": "An armored shuffle",
         "body": "A six-banded armadillo shuffling through the evening grass, backlit by the low sun.",
         "chips": [
-          "PANTANAL"
+          "SIX-BANDED ARMADILLO"
         ],
         "flags": [],
         "star": false,
@@ -1243,7 +1219,7 @@
         "title": "Standing on a fence post",
         "body": "A burrowing owl -- one that lives underground and hunts by day -- standing tall on a fence post in warm light.",
         "chips": [
-          "BIRD"
+          "BURROWING OWL"
         ],
         "flags": [],
         "star": false,
@@ -1269,7 +1245,7 @@
         "title": "The continent's largest deer",
         "body": "A marsh deer buck in full antler -- the continent's largest deer, and one of the Pantanal's Big Five alongside the jaguar, tapir and giant anteater.",
         "chips": [
-          "MAMMAL"
+          "MARSH DEER"
         ],
         "flags": [],
         "star": false,
@@ -1294,7 +1270,7 @@
         "title": "Sneaking closer",
         "body": "A second jaguar sighting -- this time a pair. The female creeping quietly toward us through the grass, wary but drawing near, the much larger male trailing behind.",
         "chips": [
-          "PANTANAL"
+          "JAGUAR"
         ],
         "flags": [],
         "star": false,
@@ -1319,7 +1295,7 @@
         "title": "The big male, at rest",
         "body": "The large male settling into the grass -- a rare, close, calm portrait.",
         "chips": [
-          "PANTANAL"
+          "JAGUAR"
         ],
         "flags": [],
         "star": false,
@@ -1344,7 +1320,7 @@
         "title": "Following her",
         "body": "The male trailing after the female, intent on mating.",
         "chips": [
-          "PANTANAL"
+          "JAGUAR"
         ],
         "flags": [],
         "star": false,
@@ -1368,9 +1344,7 @@
         "kicker": "Day's end",
         "title": "Wetland gold",
         "body": "The Pantanal's wetland lagoon glowing gold at sunset -- a quiet close to a wildlife-packed day.",
-        "chips": [
-          "PANTANAL"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -1396,9 +1370,7 @@
         "kicker": "Sea level",
         "title": "Copacabana, finally",
         "body": "The mountains behind, the Atlantic in front -- our first view of Rio from the hotel balcony.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -1422,9 +1394,7 @@
         "kicker": "Sea level",
         "title": "Copacabana at last light",
         "body": "Sunset from the rooftop bar at the Emiliano, our hotel on Copacabana -- the first thing we saw of Rio, with the mountains behind and the Atlantic stretched out in front.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": true,
@@ -1447,9 +1417,7 @@
         "kicker": "",
         "title": "A crash course in Carnaval",
         "body": "Carnaval Experience, a working samba-school warehouse in Rio where the floats, the sets, and the fantasias are built. An afternoon learning how a parade gets made, ending with a turn each on the surdo and the caixa alongside the crew.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -1472,9 +1440,7 @@
         "kicker": "",
         "title": "Ian, inside the machine",
         "body": "Ian wearing one of the front-of-parade fantasias -- the entire thing rides on one person, all the way down the Sambadrome.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -1497,9 +1463,7 @@
         "kicker": "",
         "title": "Zach in the wardrobe room",
         "body": "Racks of real parade costumes and an open invitation to put one on. Zach's green-and-gold fantasia came with a matching crown and a lot more weight than it looks.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -1522,9 +1486,7 @@
         "kicker": "",
         "title": "The steps that took twenty years",
         "body": "Escadaria Selarón: 215 steps that the Chilean artist Jorge Selarón tiled by hand from 1990 until his death in 2013, using tiles sent to him from more than 60 countries.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -1547,9 +1509,7 @@
         "kicker": "",
         "title": "All four of us, mid-staircase",
         "body": "Escadaria Selarón, the Lapa steps -- 215 of them, tiled by hand by the Chilean artist Jorge Selarón from 1990 until his death in 2013, with tiles sent to him from more than 60 countries. The red, yellow and green running the whole length were his tribute to Brazil.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -1572,9 +1532,7 @@
         "kicker": "",
         "title": "Ian and Zach on the mosaic",
         "body": "The brothers stopped partway up. Every step is its own mosaic, pieced from more than 2,000 tiles, and no two of them quite match.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -1597,9 +1555,7 @@
         "kicker": "",
         "title": "Christ, from across the valley",
         "body": "Mirante Dona Marta, high on the edge of Tijuca Forest -- the classic view of Christ the Redeemer without standing underneath it.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -1622,9 +1578,7 @@
         "kicker": "",
         "title": "Zach, Sugarloaf across the bay",
         "body": "Zach on the wall at Dona Marta, where the whole of Botafogo Bay opens up -- Pão de Açúcar, Sugarloaf Mountain, standing out of the water at the harbor mouth.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -1647,9 +1601,7 @@
         "kicker": "",
         "title": "Through the branches",
         "body": "Christ the Redeemer -- 30 meters of soapstone on a 710-meter granite peak -- framed by the Atlantic forest that still covers Corcovado.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -1672,9 +1624,7 @@
         "kicker": "",
         "title": "Backlit at golden hour",
         "body": "The same statue four hours and one mountain later, shot from Morro da Urca as the sun went down behind Corcovado.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -1697,9 +1647,7 @@
         "kicker": "",
         "title": "Sunset from the halfway stop",
         "body": "Morro da Urca is the first of the cable car's two stages -- 220 meters up, with Flamengo, the Aterro, and the Rio-Niterói bridge laid out behind.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -1722,9 +1670,7 @@
         "kicker": "",
         "title": "Under the second cable",
         "body": "On Morro da Urca, with Sugarloaf mountain and the cable car behind.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -1747,9 +1693,7 @@
         "kicker": "",
         "title": "The four of us, and the loaf",
         "body": "Portuguese traders called it Pão de Açúcar -- sugarloaf -- after the conical clay molds that refined sugar was shipped in.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -1772,9 +1716,7 @@
         "kicker": "",
         "title": "The cable line down",
         "body": "The run back to Urca strung across an orange sky, Botafogo's mooring field below and the Tijuca ridge cut flat against the light.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -1797,9 +1739,7 @@
         "kicker": "Golden hour",
         "title": "The city lit up gold",
         "body": "Rio's bay and skyline lit gold from the top of Sugarloaf Mountain at sunset.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -1822,9 +1762,7 @@
         "kicker": "",
         "title": "Everyone waits for the lights",
         "body": "Blue hour on Morro da Urca -- Botafogo's curve, the Aterro do Flamengo, and the Serra dos Órgãos far off across Guanabara Bay.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,
@@ -1847,9 +1785,7 @@
         "kicker": "The wide view",
         "title": "Rio, spread out below",
         "body": "A sweeping panorama from Corcovado -- beaches, bay, and mountains laid out in one frame.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": true,
@@ -1872,9 +1808,7 @@
         "kicker": "Looking up",
         "title": "Under open arms",
         "body": "Standing right at the base of Christ the Redeemer atop Corcovado, looking straight up at its outstretched arms.",
-        "chips": [
-          "RIO DE JANEIRO"
-        ],
+        "chips": [],
         "flags": [],
         "star": false,
         "featured": false,

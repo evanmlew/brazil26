@@ -510,7 +510,9 @@ const applyJournal = raw => {
       species:p.species || '',
       alt:p.alt || p.species || p.title,
       pinLabel:p.pinLabel || p.species || p.title,
-      chips:Array.isArray(p.chips) ? p.chips.slice() : (p.species ? [p.species.toUpperCase()] : [])
+      // one pill, species only — a photo with no species gets no pill. Derived here
+      // rather than read from the payload so a stale trip.js can't put a leg name back.
+      chips:p.species ? [p.species.toUpperCase()] : []
     }));
   });
 

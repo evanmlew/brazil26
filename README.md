@@ -220,9 +220,9 @@ Then preview the site locally at `http://localhost:8000/index.html` (the review 
 - `subjectId` binds a real photo to an existing narrative slot from `data/narrative.json`, so a tagged frame can inherit the already-written kicker/title/body.
 - `body` is the canonical long-caption field in Journal. The review tool and merge script also accept legacy `caption` values if they ever appear in imported edits.
 - `featured` controls which real photo becomes a stop thumbnail when a leg has tagged real images. There is no checkbox for this in the review UI (removed for a cleaner card); set it directly in `data/photo-edits.json` or ask Copilot to flip it for a specific photo.
-- `star` maps to the `★ TRIP STANDOUT` chip.
+- `star` is carried through the merge pipeline but has no visual treatment on the photo page — it used to render a `★ TRIP STANDOUT` chip, which the current design drops (the caption pill is species-only now).
 - `excluded` (set via the review tool's Exclude toggle) removes a photo from `trip.json` without deleting it from the catalog or overlay.
-- `species` is a free-text common name (e.g. "Jaguar"); not yet surfaced on the public site, but carried through the merge pipeline for future use.
+- `species` is a free-text common name (e.g. "Jaguar"). It is the **only** thing the caption pill renders: a photo with a species gets one pill showing that name uppercased, and a photo without one gets no pill at all. It also drives the wildlife gallery grouping and the map pin label.
 - `feedback` is a private note field the reviewer uses to leave instructions for the next editing pass (e.g. "wrong animal", "make punchier"). It is **never** read by `build_trip_content.py` and never appears on the site — see "Feedback field workflow" below.
 
 ## Feedback field workflow
@@ -236,7 +236,7 @@ The **Feedback for next edit pass** box on each photo card is how the reviewer h
 
 ## Editorial checklist (read this before writing/reviewing captions)
 
-- **Always put the animal/plant/insect's exact common name in the visible text itself** — in `kicker`, `title`, or `body`. The `species` field is captured and stored, but `build_trip_content.py` currently never reads it when building a real photo's slide, so it is **not** rendered anywhere on the live site. Setting `species` alone is not enough — the name must appear in the prose a reader actually sees.
+- **Always put the animal/plant/insect's exact common name in the visible text itself** — in `kicker`, `title`, or `body`. `species` now renders as the caption pill, but a pill is a label, not prose: it sits below the caption in 9px uppercase and a reader skimming the paragraph will miss it. Setting `species` alone is not enough — the name must also appear in the sentence a reader actually reads.
 - When given specific IDs/notes for individual photos (e.g. "1907 is a neotropical otter", "2014 is a yellow-spotted river turtle"), use the **exact** name given, not a generic stand-in ("the otter" / "a turtle"). Re-check every caption after a batch of notes — it's easy to update `species` but forget the prose still just says "the otter."
 - After a request like "review all the captions and use these notes," re-read the *entire* `photo-edits.json` file first to see the current order/excluded state (order and exclusions may have changed since the captions were originally written), so the narrative sequence still reads correctly (e.g. don't call a photo "the finale" if an earlier excluded photo means it's now the leg's opening shot).
 - **`order` is editorial, not chronological — don't "correct" it against capture dates.** The review page shows each photo's real capture time, which makes an out-of-sequence photo look like a mistake. It usually isn't. The Rio leg runs `IMG_2987` (the genuine Jul 20 morning arrival) and then `IMG_3099`, a Copacabana sunset shot on the **last** evening (Jul 21), ahead of the whole Jul 20 Maycon Nunes shoot — the pair reads as a scene-setting arrival even though the second frame is a day out of order. Before reordering anything by timestamp, assume the break is intentional and ask.
