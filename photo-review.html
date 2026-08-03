@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="photo-review.css?v=5">
+  <link rel="stylesheet" href="photo-review.css?v=6">
 </head>
 <body>
 
@@ -32,11 +32,11 @@
   </div>
 
   <div class="seg" role="group" aria-label="View">
-    <button type="button" data-view="list" aria-pressed="true">List</button>
-    <button type="button" data-view="sheet" aria-pressed="false">Sheet</button>
+    <button type="button" data-view="list" aria-pressed="false">List</button>
+    <button type="button" data-view="sheet" aria-pressed="true">Sheet</button>
   </div>
 
-  <div class="zoom hidden" id="zoom">
+  <div class="zoom" id="zoom">
     <button type="button" id="zoom-out" title="smaller">−</button>
     <output id="zoom-label">96px</output>
     <button type="button" id="zoom-in" title="bigger">+</button>
@@ -78,14 +78,14 @@
   </nav>
 
   <main class="main">
-    <div class="list-head" id="list-head">
+    <div class="list-head hidden" id="list-head">
       <h1 class="leg-name" id="leg-name"></h1>
       <div class="leg-meta" id="leg-meta"></div>
     </div>
 
-    <div class="list" id="list"></div>
+    <div class="list hidden" id="list"></div>
 
-    <div class="sheet hidden" id="sheet">
+    <div class="sheet" id="sheet">
       <div class="grid" id="grid"></div>
       <div class="divider" id="divider" title="drag to resize · double-click to reset"></div>
       <aside class="pane" id="pane" style="width:352px"></aside>
@@ -106,6 +106,6 @@
   <div class="panel log hidden" id="panel-log"></div>
 </footer>
 
-<script src="photo-review.js?v=5"></script>
+<script src="photo-review.js?v=6"></script>
 </body>
 </html>

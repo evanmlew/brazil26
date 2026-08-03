@@ -21,7 +21,10 @@ const state = {
   legs: [],
   taxonColors: {},
   speciesTaxon: {},   // lowercase common name -> taxon, from narrative.json
-  view: "list",
+  // Sheet is the working view: the grid plus the pane preview is where captions
+  // actually get written. 232 is the widest step, and the only one that shows
+  // each frame's title under it.
+  view: "sheet",
   leg: null,
   selId: null,
   filter: "all",
@@ -32,7 +35,7 @@ const state = {
   dismissed: [],
   dragId: null,
   overId: null,
-  zoom: 1,
+  zoom: ZOOMS.indexOf(232),
   paneW: 352,
   err: "",
 };
@@ -1261,6 +1264,9 @@ window.addEventListener("resize", refreshPreview);
 
 load().catch((error) => {
   state.err = error.message;
+  // The failure notice lives in the list header, which sheet view keeps hidden
+  // — and nothing has rendered yet, so reveal it or the error is invisible.
+  $("#list-head").classList.remove("hidden");
   $("#leg-name").textContent = "Data failed to load";
   $("#leg-meta").textContent = error.message;
 });
