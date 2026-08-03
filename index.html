@@ -3,6 +3,36 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Boot hints. Everything below is discovered far too late on its own:
+     support.js only asks for React once it has downloaded *and* executed, and the
+     <helmet> block (fonts, maplibre) is not injected into <head> until React has
+     booted and the first render has run — roughly 430ms in, by which point the
+     preconnects it carries have nothing left to save. Declaring them here lets the
+     preload scanner open the sockets and start the fetches while the HTML is still
+     parsing. Same URLs, same integrity/crossorigin as the loaders use, so these are
+     cache hits, not extra downloads. -->
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://server.arcgisonline.com">
+<link rel="preconnect" href="https://basemaps.cartocdn.com">
+
+<!-- support.js loads these two itself (see loadReactUmd), with these exact SRI hashes
+     and crossorigin=anonymous — they must match or the preload is fetched twice. -->
+<link rel="preload" as="script" href="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous">
+<link rel="preload" as="script" href="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous">
+<!-- the <helmet> copies of these carry no crossorigin, so neither may these -->
+<link rel="preload" as="script" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js">
+<link rel="preload" as="style" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;family=Caveat:wght@600;700&amp;display=swap">
+<!-- the intro hero, and so the LCP element. It is named in a style attribute inside
+     the component template, which no preload scanner reads, so it otherwise waits
+     for first render. (Do not write the template's own tag name literally anywhere
+     in this file: support.js re-fetches the page and slices the template with a
+     regex for that opening tag, so a mention in a comment silently wins.) -->
+<link rel="preload" as="image" href="assets/photos/cover.jpg">
+
 <script src="./data/trip.js"></script>
 <script src="./support.js"></script>
 </head>
@@ -162,13 +192,13 @@
 <div style="position:absolute;left:-2.5px;width:7px;height:7px;border-radius:999px;background:#F0504A;box-shadow:0 0 10px rgba(240,80,74,.9);animation:driftM 3.3s ease-in-out infinite"></div>
 </div>
 </div>
-<div onClick="{{ begin }}" title="Scroll" style="position:absolute;z-index:9;right:clamp(24px,3vw,44px);bottom:clamp(40px,7vh,74px);display:flex;flex-direction:column;align-items:center;width:76px;gap:6px;cursor:pointer;transition:opacity .45s ease,transform .25s ease;{{ introRailMark }}" style-hover="opacity:1">
+<div onClick="{{ begin }}" title="Scroll" style="position:absolute;z-index:9;right:clamp(10px,1.2vw,18px);bottom:clamp(40px,7vh,74px);display:flex;flex-direction:column;align-items:center;width:76px;gap:6px;cursor:pointer;transition:opacity .45s ease,transform .25s ease;{{ introRailMark }}" style-hover="opacity:1">
 <div style="width:26px;height:26px;display:grid;place-items:center;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(11,19,28,.42);transition:background .2s,border-color .2s,transform .2s" style-hover="background:rgba(240,80,74,.92);border-color:#F0504A;transform:scale(1.1)">
 <svg width="13" height="13" viewBox="0 0 24 24" style="display:block" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.9v14.2"></path><path d="M6 12.9 12 18.9l6-6"></path></svg>
 </div>
 <div style="font:600 8px Poppins,sans-serif;letter-spacing:.15em;margin-right:-.15em;color:rgba(255,255,255,.7);text-shadow:0 1px 6px rgba(0,0,0,.85);white-space:nowrap">SCROLL</div>
 </div>
-<div onClick="{{ begin }}" title="Scroll" style="position:absolute;z-index:9;right:clamp(24px,3vw,44px);bottom:clamp(40px,7vh,74px);display:flex;flex-direction:column;align-items:center;width:76px;gap:8px;cursor:pointer;transition:opacity .45s ease,transform .25s ease;{{ introRailLg }}" style-hover="opacity:1">
+<div onClick="{{ begin }}" title="Scroll" style="position:absolute;z-index:9;right:clamp(10px,1.2vw,18px);bottom:clamp(40px,7vh,74px);display:flex;flex-direction:column;align-items:center;width:76px;gap:8px;cursor:pointer;transition:opacity .45s ease,transform .25s ease;{{ introRailLg }}" style-hover="opacity:1">
 <div style="width:34px;height:34px;display:grid;place-items:center;border-radius:999px;border:1.5px solid rgba(255,255,255,.45);background:rgba(11,19,28,.5);transition:background .2s,border-color .2s,transform .2s" style-hover="background:rgba(240,80,74,.92);border-color:#F0504A;transform:scale(1.1)">
 <svg width="17" height="17" viewBox="0 0 24 24" style="display:block" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.9v14.2"></path><path d="M6 12.9 12 18.9l6-6"></path></svg>
 </div>
@@ -325,13 +355,13 @@
 <div style="position:absolute;left:-2.5px;width:7px;height:7px;border-radius:999px;background:#F0504A;box-shadow:0 0 10px rgba(240,80,74,.9);animation:driftM 3.3s ease-in-out infinite"></div>
 </div>
 </div>
-<div onClick="{{ openPhotos }}" title="Scroll" style="position:absolute;z-index:9;right:clamp(24px,3vw,44px);bottom:132px;display:flex;flex-direction:column;align-items:center;width:76px;gap:6px;cursor:pointer;transition:opacity .45s ease,transform .25s ease;{{ cueRailMarkStyle }}" style-hover="opacity:1">
+<div onClick="{{ openPhotos }}" title="Scroll" style="position:absolute;z-index:9;right:clamp(10px,1.2vw,18px);bottom:132px;display:flex;flex-direction:column;align-items:center;width:76px;gap:6px;cursor:pointer;transition:opacity .45s ease,transform .25s ease;{{ cueRailMarkStyle }}" style-hover="opacity:1">
 <div style="width:26px;height:26px;display:grid;place-items:center;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(11,19,28,.42);transition:background .2s,border-color .2s,transform .2s" style-hover="background:rgba(240,80,74,.92);border-color:#F0504A;transform:scale(1.1)">
 <svg width="13" height="13" viewBox="0 0 24 24" style="display:block" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.9v14.2"></path><path d="M6 12.9 12 18.9l6-6"></path></svg>
 </div>
 <div style="font:600 8px Poppins,sans-serif;letter-spacing:.15em;margin-right:-.15em;color:rgba(255,255,255,.7);text-shadow:0 1px 6px rgba(0,0,0,.85);white-space:nowrap">SCROLL</div>
 </div>
-<div onClick="{{ openPhotos }}" title="Scroll" style="position:absolute;z-index:9;right:clamp(24px,3vw,44px);bottom:132px;display:flex;flex-direction:column;align-items:center;width:76px;gap:8px;cursor:pointer;transition:opacity .45s ease,transform .25s ease;{{ cueRailLgStyle }}" style-hover="opacity:1">
+<div onClick="{{ openPhotos }}" title="Scroll" style="position:absolute;z-index:9;right:clamp(10px,1.2vw,18px);bottom:132px;display:flex;flex-direction:column;align-items:center;width:76px;gap:8px;cursor:pointer;transition:opacity .45s ease,transform .25s ease;{{ cueRailLgStyle }}" style-hover="opacity:1">
 <div style="width:34px;height:34px;display:grid;place-items:center;border-radius:999px;border:1.5px solid rgba(255,255,255,.45);background:rgba(11,19,28,.5);transition:background .2s,border-color .2s,transform .2s" style-hover="background:rgba(240,80,74,.92);border-color:#F0504A;transform:scale(1.1)">
 <svg width="17" height="17" viewBox="0 0 24 24" style="display:block" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.9v14.2"></path><path d="M6 12.9 12 18.9l6-6"></path></svg>
 </div>
@@ -1330,19 +1360,33 @@ class Component extends DCLogic {
   probeImages(){
     this.imgMeta = this.imgMeta || {};
     const flush = () => { clearTimeout(this.probeT); this.probeT = setTimeout(() => this.forceUpdate(), 140); };
+    // One canvas for every probe instead of one each, and one readback instead of two.
+    // The old shape cost ~700ms of main thread across the set (measured, 61 photos) and
+    // logged 122 Chrome "readback" warnings inside the LCP window: a fresh canvas is
+    // GPU-backed, so each getImageData stalls on a GPU->CPU copy. willReadFrequently
+    // keeps the surface in main memory instead — ~23ms for the same set, and it samples
+    // the same on every machine rather than following the local GPU's downscale filter.
+    // The CPU rasteriser lands within ~5/255 of the GPU one, which only ever moves the
+    // letterbox gradient in `smart()` by a fraction of a percent.
+    const n = 24;
+    const cv = this.probeCv || (this.probeCv = document.createElement('canvas'));
+    cv.width = n; cv.height = n;
+    const ctx = cv.getContext('2d', { willReadFrequently:true });
     ALL.forEach(s => {
       if (!s.src || this.imgMeta[s.key]) return;
       const img = new Image();
+      // these thumbs are metadata, not pixels anyone is waiting to see. At default
+      // priority all 61 queue ahead of the cover hero and the first cards on a cold load.
+      img.fetchPriority = 'low';
+      img.decoding = 'async';
       img.onload = () => {
         try {
-          const n = 24, cv = document.createElement('canvas');
-          cv.width = n; cv.height = n;
-          const ctx = cv.getContext('2d');
+          ctx.clearRect(0, 0, n, n);
           ctx.drawImage(img, 0, 0, n, n);
+          const d = ctx.getImageData(0, 0, n, n).data;
           const band = (y0, y1) => {
-            const d = ctx.getImageData(0, y0, n, y1 - y0).data;
             let r = 0, g = 0, b = 0, c = 0;
-            for (let i = 0; i < d.length; i += 4) { r += d[i]; g += d[i+1]; b += d[i+2]; c++; }
+            for (let i = y0 * n * 4, end = y1 * n * 4; i < end; i += 4) { r += d[i]; g += d[i+1]; b += d[i+2]; c++; }
             const m = 0.82;   // slightly deepened so the photo still reads as the brightest thing
             return 'rgb(' + Math.round(r/c*m) + ',' + Math.round(g/c*m) + ',' + Math.round(b/c*m) + ')';
           };
@@ -1468,6 +1512,10 @@ class Component extends DCLogic {
       : 'display:none;pointer-events:none';
     const pCue = k => st.wide && !st.wild && this.photoCueKind === k && mode === 'photos' && !st.full && st.rest && !atEnd;
     const dock = this.dockPct, wide = st.wide, docked = this.docked, enter = this.enterStyle;
+    // read once per render, not once per photo — the scrim closure below runs for every
+    // photo in the leg, and window.innerWidth/innerHeight cannot change mid-render
+    const vw = typeof window !== 'undefined' ? window.innerWidth : 1440;
+    const vh = typeof window !== 'undefined' ? window.innerHeight : 900;
     const stripShown = st.full || mode === 'cover';
     const ease = 'cubic-bezier(.32,.72,0,1)';
     // the pill now means exactly one thing: species
@@ -1595,8 +1643,8 @@ class Component extends DCLogic {
         const stack = mode === 'cover' && !mDocked
           ? { mouse:{ b:216, r:'calc(clamp(24px,4vw,54px) + 22px)' },
               'pill-br':{ b:181, r:'clamp(24px,4vw,54px)' },
-              'rail-mark':{ b:189, r:'calc(clamp(24px,3vw,44px) + 22px)' },
-              'rail-lg':{ b:202, r:'calc(clamp(24px,3vw,44px) + 22px)' } }[kind]
+              'rail-mark':{ b:189, r:'calc(clamp(10px,1.2vw,18px) + 22px)' },
+              'rail-lg':{ b:202, r:'calc(clamp(10px,1.2vw,18px) + 22px)' } }[kind]
           : null;
         const brSet = mode === 'photos'
           ? { mouse:74, 'pill-br':216, 'track-scrim':88 }
@@ -1643,6 +1691,9 @@ class Component extends DCLogic {
       // vertical scrubber on the photo's right edge — replaces the top bars and the arrows
       // 3 photos and 20 photos both have to read: ticks grow when there are few
       railStyle:(this.railScope === 'leg' ? '' : 'max-height:76vh;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 13%,#000 87%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 13%,#000 87%,transparent 100%);')
+        // narrow has no collapse control to make room for, so the rail hugs the edge
+        // (14px matches the docked zoom stack, giving one consistent right gutter)
+        + (st.wide ? '' : 'right:14px;')
         + 'opacity:' + (inPhotos && !st.full && !st.wild && list.length > 1 ? 1 : 0)
         + ';gap:' + (list.length > 12 ? 1 : list.length > 6 ? 3 : 6) + 'px'
         + ';pointer-events:' + (inPhotos && !st.full && !st.wild ? 'auto' : 'none'),
@@ -1798,8 +1849,6 @@ class Component extends DCLogic {
         // the scrim only reaches as high as this caption actually needs — a two-line
         // body keeps a quarter more of the frame visible than a four-line one
         scrim:(() => {
-          const vw = typeof window !== 'undefined' ? window.innerWidth : 1440;
-          const vh = typeof window !== 'undefined' ? window.innerHeight : 900;
           const boxW = Math.min(680, vw * (wide ? (100 - dock) / 100 : 1) - 2 * Math.min(56, Math.max(20, vw * .04)));
           const tPx = Math.min(40, Math.max(26, vw * .03));
           const lines = (str, chW) => Math.max(1, Math.ceil(String(str || '').length / Math.max(12, boxW / chW)));
