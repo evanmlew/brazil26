@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "rev": 11,
+  "rev": 12,
   "photos": {
     "dsc00036-171df22a9e": {
       "featured": false,
@@ -319,7 +319,7 @@
       "legId": "saopaulo",
       "order": 2,
       "title": "Golden arches, translated",
-      "body": "This São Paulo Mequi - Brazil's nickname for McDonald's - is reportedly the chain's 1,000th location in the country, in a converted early-1900s mansion."
+      "body": "This São Paulo Mequi - Brazil's nickname for McDonald's - in a converted early-1900s mansion."
     },
     "img-2723-9b70c4fb57": {
       "featured": false,
@@ -335,13 +335,13 @@
       "legId": "saopaulo",
       "order": 0,
       "title": "The city as canvas",
-      "body": "A view from the São Paulo Museum of Art. The city's street-art scene exploded after the city banned outdoor billboards in 2006, clearing the way for muralists."
+      "body": "São Paulo's street-art scene exploded after the city banned outdoor billboards in 2006."
     },
     "img-2727-a85b9fd07e": {
       "legId": "saopaulo",
       "order": 3,
       "title": "Brazilian steak dinner",
-      "body": "A dinner to remember at Figueira Rubaiyat -- built around a massive fig tree in the dining room -- with picanha, ribeye, palm heart, and pitu shrimp.",
+      "body": "Dinner at Figueira Rubaiyat -- built around a massive fig tree in the dining room -- with picanha, ribeye, palm heart, and pitu shrimp.",
       "subjectId": "sp_02"
     },
     "img-2735-28ab2eca22": {
@@ -432,7 +432,7 @@
       "legId": "rio",
       "order": 20,
       "title": "Rio, spread out below",
-      "body": "A sweeping panorama from Corcovado -- beaches, bay, and mountains laid out in one frame."
+      "body": "A sweeping panorama from Corcovado"
     },
     "img-3048-9ef580c62e": {
       "featured": false,
@@ -447,7 +447,7 @@
       "legId": "rio",
       "order": 22,
       "title": "Under open arms",
-      "body": "Standing right at the base of Christ the Redeemer atop Corcovado, looking straight up at its outstretched arms."
+      "body": "Standing at the base of Christ the Redeemer atop Corcovado"
     },
     "img-3099-fbb79ec833": {
       "featured": true,
@@ -520,7 +520,6 @@
       "legId": "rio",
       "order": 8,
       "title": "Corcovado from Dona Marta",
-      "body": "The mirante looks straight across at the peak: 710 meters of granite with the 30-meter statue standing on top of it.",
       "notes": [
         {
           "who": "YOU",
@@ -546,8 +545,7 @@
       "featured": false,
       "legId": "rio",
       "order": 10,
-      "title": "Sugarloaf Mountain",
-      "body": "The wall at Dona Marta, where the Botafogo Bay opens up, with Sugarloaf Mountain standing out of the water."
+      "title": "Sugarloaf Mountain"
     },
     "por-maycon-nunes-photography-27-479a658758": {
       "featured": false,
@@ -573,7 +571,7 @@
       "legId": "rio",
       "order": 11,
       "title": "Through the branches",
-      "body": "Christ the Redeemer, seen from the Dona Marta lookout",
+      "body": "Christ the Redeemer: 710 meters of granite with the 30-meter statue standing on top of it.",
       "notes": [
         {
           "who": "YOU",
@@ -599,8 +597,7 @@
       "featured": false,
       "legId": "rio",
       "order": 13,
-      "title": "Sunset from the halfway stop",
-      "body": "Morro da Urca is the first of the cable car's two stages -- 220 meters up, with Flamengo, the Aterro, and the Rio-Niterói bridge laid out behind."
+      "title": "Sunset from the halfway stop"
     },
     "por-maycon-nunes-photography-327-4bab5f06ef": {
       "featured": false,
@@ -614,22 +611,20 @@
       "featured": false,
       "legId": "rio",
       "order": 16,
-      "title": "The cable line down",
-      "body": "The cable car run back to Urca strung across an orange sky"
+      "title": "The cable line down"
     },
     "por-maycon-nunes-photography-340-f2f7b79e67": {
       "featured": false,
       "legId": "rio",
       "order": 18,
       "title": "Everyone waits for the lights",
-      "body": "Blue hour on Morro da Urca -- Botafogo's curve, the Aterro do Flamengo, and the Serra dos Órgãos far off across Guanabara Bay."
+      "body": "Blue hour on Morro da Urca"
     },
     "por-maycon-nunes-photography-51-a52e69a1a8": {
       "featured": false,
       "legId": "rio",
       "order": 4,
       "title": "The wardrobe room",
-      "body": "Putting on elaborate carnival costumes for fun",
       "notes": [
         {
           "who": "YOU",
@@ -647,8 +642,7 @@
       "featured": false,
       "legId": "rio",
       "order": 14,
-      "title": "Morro da Urca stop",
-      "body": "On Morro da Urca, with Sugarloaf mountain and the cable car behind."
+      "title": "Morro da Urca stop"
     }
   }
 }
