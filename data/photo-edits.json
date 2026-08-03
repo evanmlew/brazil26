@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "rev": 10,
+  "rev": 11,
   "photos": {
     "dsc00036-171df22a9e": {
       "featured": false,
@@ -602,13 +602,6 @@
       "title": "Sunset from the halfway stop",
       "body": "Morro da Urca is the first of the cable car's two stages -- 220 meters up, with Flamengo, the Aterro, and the Rio-Niterói bridge laid out behind."
     },
-    "por-maycon-nunes-photography-313-f92bb24daa": {
-      "featured": false,
-      "legId": "rio",
-      "order": 14,
-      "title": "Morro da Urca stop",
-      "body": "On Morro da Urca, with Sugarloaf mountain and the cable car behind."
-    },
     "por-maycon-nunes-photography-327-4bab5f06ef": {
       "featured": false,
       "legId": "rio",
@@ -649,6 +642,13 @@
           "at": "2026-08-03T05:42:58Z"
         }
       ]
+    },
+    "por-maycon-nunes-photography-315-395219b235": {
+      "featured": false,
+      "legId": "rio",
+      "order": 14,
+      "title": "Morro da Urca stop",
+      "body": "On Morro da Urca, with Sugarloaf mountain and the cable car behind."
     }
   }
 }
