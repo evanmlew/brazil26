@@ -347,12 +347,44 @@ header.top > * { flex: none; }
 .divider:hover, .divider.resizing { background: var(--cyan); }
 .pane {
   flex: none; overflow-y: auto; padding: 14px;
+  /* The preview's height decides whether this pane overflows, and an
+     appear-on-demand scrollbar would then change the width the preview scales
+     itself to — a loop that never settles. Reserving the gutter makes the
+     pane's content width constant, so the preview has a fixed target. */
+  scrollbar-gutter: stable;
   border-left: 1px solid var(--border); background: var(--chrome-alt);
   display: flex; flex-direction: column; gap: 9px;
 }
-.pane .hero {
-  width: 100%; aspect-ratio: 3 / 2; max-height: 42vh; flex: none; border-radius: 4px;
-  background: var(--tile-empty) center/contain no-repeat;
+/* -------------------------------------------------------------- preview --
+   A true-to-size miniature of the site's photo slide. The stage is built at
+   the real panel dimensions the site would use in this window, then scaled
+   down as a whole — so type, wrapping, the scrim ramp and the smart-bleed
+   crop decision all resolve exactly as they will on the site. Every rule
+   below mirrors an inline style in index.html; keep them in step. */
+.preview {
+  position: relative; width: 100%; flex: none; overflow: hidden;
+  border-radius: 4px; background: #0b131c;
+}
+.preview-stage { position: absolute; top: 0; left: 0; transform-origin: top left; overflow: hidden; }
+.pv-bg { position: absolute; inset: -8%; background-size: cover; background-position: center; filter: blur(38px) saturate(1.25); opacity: .45; }
+.pv-img { position: absolute; background-position: center top; background-repeat: no-repeat; }
+.pv-scrim { position: absolute; inset: 0; }
+.pv-copy {
+  position: absolute; left: clamp(20px, 4vw, 56px); right: clamp(20px, 4vw, 56px);
+  bottom: clamp(22px, 3.4vh, 40px); max-width: 680px; display: flex; flex-direction: column;
+}
+.pv-title { font: 800 clamp(26px, 3vw, 40px)/1.06 Poppins, sans-serif; color: #fff; text-wrap: balance; }
+.pv-body { font: 400 14px/1.65 Poppins, sans-serif; color: rgba(255, 255, 255, .84); margin-top: 12px; max-width: 64ch; text-wrap: pretty; }
+.pv-chips { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 16px; }
+.pv-chip {
+  background: rgba(255, 255, 255, .13); border: 1px solid rgba(255, 255, 255, .3); color: #fff;
+  font: 700 9px Poppins, sans-serif; letter-spacing: .1em; padding: 6px 12px; border-radius: 999px;
+}
+/* An excluded photo is never published, so say so rather than previewing a lie. */
+.preview .cut {
+  position: absolute; z-index: 2; left: 0; right: 0; top: 0; text-align: center;
+  padding: 3px 0; background: rgba(14, 16, 19, .82);
+  font: 600 9px/1.5 var(--mono); letter-spacing: .14em; color: var(--text-3);
 }
 .pane .where { font: 600 9.5px/1 var(--mono); letter-spacing: .12em; color: var(--text-4); }
 .pane > * { flex: none; }

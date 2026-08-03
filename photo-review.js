@@ -566,6 +566,7 @@ function textField(p, field, tag, placeholder) {
     renderChrome();
     renderBottom();
     syncTileTitle(p);
+    refreshPreview();
     if (field === "species") {
       const swatch = node.parentElement.querySelector(".swatch");
       if (swatch) swatch.style.background = taxonColorFor(node.value);
@@ -689,6 +690,172 @@ function buildTile(p, i, tw, flagged) {
   return tile;
 }
 
+/* -------------------------------------------------------------- preview --
+   The pane hero is a faithful miniature of the real photo slide, so a caption
+   can be judged against the frame it will actually sit on rather than against
+   a thumbnail. Everything here is a transcription of index.html — the 24x24
+   edge-band sampling from probeImages(), the smart-bleed crop/fit rule, the
+   scrim ramp, and the caption typography. Two invariants keep it honest:
+
+   - the stage is built at the site's TRUE panel pixel size for this window,
+     then scaled down as one unit, so every vw / vh / clamp() and every line
+     wrap resolves exactly as it will on the site;
+   - it renders in the same window as the tool, so those units are the site's
+     units. Changing the tool's window size changes the preview the same way
+     it would change the site.
+
+   If index.html's slide markup changes, this and the .pv-* CSS must follow. */
+
+const PREVIEW_DOCK = 25;        // index.html: dockPct = props.mapWidth ?? 25
+const PREVIEW_PAD = 28;         // .pane padding, both sides
+const bands = new Map();        // photo id -> { ar, top, bot }
+
+function panelBox() {
+  const wide = window.innerWidth >= 900;   // index.html: wide = innerWidth >= 900
+  return { w: window.innerWidth * (wide ? (100 - PREVIEW_DOCK) / 100 : 1), h: window.innerHeight, wide };
+}
+
+// index.html probeImages(): average the top and bottom 5 rows of a 24x24
+// downsample, deepened by 0.82 so the photo still reads as the brightest thing.
+function bandsFor(p) {
+  if (bands.has(p.id)) return bands.get(p.id);
+  const rec = { ar: 0, top: "#101a24", bot: "#101a24" };
+  bands.set(p.id, rec);
+  const src = p.thumb || p.card;
+  if (!src) return rec;
+  const img = new Image();
+  const done = () => { const cur = selected(); if (cur && cur.id === p.id) refreshPreview(); };
+  img.onload = () => {
+    rec.ar = img.naturalWidth / img.naturalHeight;
+    try {
+      const n = 24, cv = document.createElement("canvas");
+      cv.width = cv.height = n;
+      // No willReadFrequently: it switches Chromium to the software canvas
+      // backend, which rounds a couple of levels differently from the GPU path
+      // index.html uses — and the sampled colour has to match the site's.
+      const ctx = cv.getContext("2d");
+      ctx.drawImage(img, 0, 0, n, n);
+      // One readback for the whole 24x24, sliced in JS. index.html reads each
+      // band separately; the pixels are identical either way, and doing it once
+      // avoids Chromium's "multiple readback" warning for all 72 photos.
+      const d = ctx.getImageData(0, 0, n, n).data;
+      const band = (y0, y1) => {
+        let r = 0, g = 0, b = 0, c = 0;
+        for (let i = y0 * n * 4; i < y1 * n * 4; i += 4) { r += d[i]; g += d[i + 1]; b += d[i + 2]; c++; }
+        const m = 0.82;
+        return `rgb(${Math.round(r / c * m)},${Math.round(g / c * m)},${Math.round(b / c * m)})`;
+      };
+      rec.top = band(0, 5);
+      rec.bot = band(n - 5, n);
+    } catch { /* tainted canvas — the site falls back to #101a24 too */ }
+    done();
+  };
+  img.onerror = done;
+  img.src = src;   // thumb, not card: the card is 3840px and gets downsampled to 24px anyway
+  return rec;
+}
+
+// index.html smart(): crop to fill when cover would hide <= 20% of the frame.
+function smartFit(p, box) {
+  const m = bandsFor(p);
+  if (!m.ar) return { crop: false, bg: null };
+  const panelAR = box.h > 0 ? box.w / box.h : 1.2;
+  const kept = m.ar > panelAR ? panelAR / m.ar : m.ar / panelAR;
+  return { crop: kept >= 0.8, bg: `linear-gradient(${m.top},${m.bot})` };
+}
+
+// index.html scrim: the gradient only climbs as high as the caption needs.
+function scrimFor(p, box) {
+  const vw = window.innerWidth, vh = window.innerHeight;
+  const boxW = Math.min(680, box.w - 2 * Math.min(56, Math.max(20, vw * .04)));
+  const tPx = Math.min(40, Math.max(26, vw * .03));
+  const lines = (str, chW) => Math.max(1, Math.ceil(String(str || "").length / Math.max(12, boxW / chW)));
+  const h = 40
+    + lines(p.title, tPx * .5) * (tPx * 1.06)
+    + 12 + lines(p.body, 14 * .5) * 23
+    + (chipsFor(p).length ? 16 + 22 : 0);
+  const clear = Math.max(58, Math.min(86, 100 - (h / vh) * 100 - 5));
+  const mid = clear + (100 - clear) * .5;
+  return "linear-gradient(to bottom,rgba(6,12,18,.46) 0%,rgba(6,12,18,0) 24%,rgba(6,12,18,0) "
+    + clear.toFixed(1) + "%,rgba(6,12,18,.6) " + mid.toFixed(1) + "%,rgba(6,12,18,.95) 100%)";
+}
+
+// build_trip_content.display_chips(): the pill is the species, or nothing.
+function chipsFor(p) {
+  const s = (p.species || "").trim();
+  return s ? [s.toUpperCase()] : [];
+}
+
+function buildPreview(p) {
+  const wrap = el("div", "preview");
+  const stage = el("div", "preview-stage");
+  stage.append(el("div", "pv-bg"), el("div", "pv-img"), el("div", "pv-scrim"));
+  const copy = el("div", "pv-copy");
+  copy.append(el("div", "pv-title"), el("div", "pv-body"), el("div", "pv-chips"));
+  stage.append(copy);
+  wrap.append(stage);
+  paintPreview(wrap, p);
+  // The preview's own height decides whether the pane gets a scrollbar, which
+  // in turn changes the width available to the preview. Measuring the wrapper
+  // and reacting to width only (never height) settles that in one pass, and
+  // covers divider drags and window resizes for free.
+  new ResizeObserver(() => {
+    if (Math.abs(wrap.clientWidth - Number(wrap.dataset.w || 0)) > 0.5) refreshPreview();
+  }).observe(wrap);
+  return wrap;
+}
+
+// Rewrites an existing preview in place. Called on every keystroke, so it must
+// never touch the pane's inputs — re-rendering the pane would steal the caret.
+function paintPreview(wrap, p) {
+  const box = panelBox();
+  // clientWidth is 0 until the wrapper is in the DOM; the pane is the stand-in
+  // for that one frame, and the ResizeObserver corrects it immediately after.
+  const avail = wrap.clientWidth
+    || Math.max(120, (($("#pane") && $("#pane").clientWidth) || state.paneW) - PREVIEW_PAD);
+  const scale = avail / box.w;
+  wrap.dataset.w = avail;
+
+  const stage = wrap.querySelector(".preview-stage");
+  stage.style.width = box.w + "px";
+  stage.style.height = box.h + "px";
+  stage.style.transform = `scale(${scale})`;
+  wrap.style.height = Math.round(box.h * scale) + "px";
+
+  const sm = smartFit(p, box);
+  const src = p.card || p.thumb;
+
+  const bg = wrap.querySelector(".pv-bg");
+  // The blurred backdrop only shows behind a fitted photo; a cropped one fills.
+  if (src && sm.bg && !sm.crop) {
+    bg.style.cssText = `background:${sm.bg};filter:none;opacity:1;inset:0`;
+  } else {
+    bg.style.cssText = "display:none";
+  }
+
+  const img = wrap.querySelector(".pv-img");
+  img.style.cssText = src
+    ? `background-image:url("${src}");background-position:center top;left:0;top:0;width:100%;height:100%;`
+      + `background-repeat:no-repeat;background-size:${sm.crop ? "cover" : "contain"}`
+    : "display:none";
+
+  wrap.querySelector(".pv-scrim").style.background = scrimFor(p, box);
+  wrap.querySelector(".pv-title").textContent = p.title || "";
+  wrap.querySelector(".pv-body").textContent = p.body || "";
+  const chips = wrap.querySelector(".pv-chips");
+  chips.replaceChildren(...chipsFor(p).map((t) => el("div", "pv-chip", t)));
+
+  const cut = wrap.querySelector(".cut");
+  if (p.excluded && !cut) wrap.append(el("div", "cut", "EXCLUDED — NOT PUBLISHED"));
+  if (!p.excluded && cut) cut.remove();
+}
+
+function refreshPreview() {
+  const wrap = document.querySelector("#pane .preview");
+  const p = selected();
+  if (wrap && p) paintPreview(wrap, p);
+}
+
 function renderPane() {
   const pane = $("#pane");
   pane.replaceChildren();
@@ -700,9 +867,7 @@ function renderPane() {
   }
 
   const list = legPhotos(bucketOf(p));
-  const hero = el("div", "hero");
-  if (p.card || p.thumb) hero.style.backgroundImage = `url("${p.card || p.thumb}")`;
-  pane.append(hero);
+  pane.append(buildPreview(p));
   pane.append(el("div", "where", `${legDef(bucketOf(p)).name} · ${String(list.indexOf(p) + 1).padStart(2, "0")} OF ${list.length}`));
 
   if (p.pending) pane.classList.add("pending-fields");
@@ -1074,6 +1239,7 @@ $("#divider").addEventListener("pointerdown", (e) => {
   const onMove = (ev) => {
     state.paneW = Math.max(260, Math.min(780, w0 - (ev.clientX - x0)));
     $("#pane").style.width = `${state.paneW}px`;
+    refreshPreview();
   };
   const onUp = () => {
     divider.classList.remove("resizing");
@@ -1086,7 +1252,12 @@ $("#divider").addEventListener("pointerdown", (e) => {
 $("#divider").addEventListener("dblclick", () => {
   state.paneW = 352;
   $("#pane").style.width = "352px";
+  refreshPreview();
 });
+
+// The stage is sized in the window's own vw/vh, so a resize changes the site's
+// layout and the preview's in lockstep — but only if we repaint.
+window.addEventListener("resize", refreshPreview);
 
 load().catch((error) => {
   state.err = error.message;
