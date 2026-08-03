@@ -97,16 +97,17 @@
 <div style="font:400 13px Poppins,sans-serif;line-height:1;color:rgba(255,255,255,.82)">↓</div>
 </div>
 
-<div style="position:absolute;right:26px;top:50%;transform:translateY(-50%);z-index:4;display:flex;flex-direction:column;align-items:flex-end;gap:2px;transition:opacity .4s;{{ railStyle }}">
+<div onMouseEnter="{{ railEnter }}" onMouseLeave="{{ railLeave }}" style="position:absolute;right:26px;top:50%;transform:translateY(-50%);z-index:4;display:flex;flex-direction:column;align-items:flex-end;gap:2px;transition:opacity .4s;{{ railStyle }}">
+<div style="position:absolute;z-index:-1;pointer-events:none;transition:opacity .28s ease;{{ railHaloStyle }}"></div>
 <div style="flex-direction:column;align-items:center;width:16px;gap:9px;margin-bottom:11px;{{ railNameStyle }}">
 <div onClick="{{ goHome }}" title="Back to the start" style="display:grid;place-items:center;width:26px;height:26px;border-radius:999px;cursor:pointer;opacity:.75;transition:opacity .2s,background .2s,transform .2s" style-hover="opacity:1;background:rgba(240,80,74,.92);transform:scale(1.08)">
 <svg width="14" height="14" viewBox="0 0 24 24" style="display:block" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.1 12 4.6l8 6.5"></path><path d="M6.3 10.2V19.6h11.4V10.2"></path></svg>
 </div>
-<div style="width:11px;height:1px;background:rgba(255,255,255,.28)"></div>
+<div style="width:11px;height:1px;background:rgba(255,255,255,.28);{{ railStopStyle }}"></div>
 <div onClick="{{ openWild }}" title="Back to the species gallery" style="writing-mode:vertical-rl;font:500 9px Poppins,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.7);text-shadow:0 1px 8px rgba(0,0,0,.9);white-space:nowrap;cursor:pointer;transition:color .2s;{{ railWildStyle }}" style-hover="color:#F0504A">Wildlife</div>
 <div style="width:11px;height:1px;background:rgba(255,255,255,.28);{{ railWildStyle }}"></div>
-<div onClick="{{ goStop }}" title="Stop overview" style="writing-mode:vertical-rl;font:500 9px Poppins,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.9);white-space:nowrap;cursor:pointer;padding:4px 2px;transition:color .2s,letter-spacing .2s" style-hover="color:#F0504A;letter-spacing:.3em">{{ railName }}</div>
-<div style="width:11px;height:1px;background:rgba(255,255,255,.35)"></div>
+<div onClick="{{ goStop }}" title="Stop overview" style="writing-mode:vertical-rl;font:500 9px Poppins,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.9);white-space:nowrap;cursor:pointer;padding:4px 2px;transition:color .2s,letter-spacing .2s;{{ railStopStyle }}" style-hover="color:#F0504A;letter-spacing:.3em">{{ railName }}</div>
+<div style="width:11px;height:1px;background:rgba(255,255,255,.35);{{ railStopStyle }}"></div>
 </div>
 <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;margin-bottom:9px;{{ railHeadStyle }}">
 <div style="font:600 13px Poppins,sans-serif;letter-spacing:.02em;color:#F0504A;text-shadow:0 1px 6px rgba(0,0,0,.8);line-height:1">{{ railHead }}</div>
@@ -426,7 +427,7 @@
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;introCue&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;mouse&quot;,&quot;pill-br&quot;,&quot;track&quot;,&quot;track-mid&quot;,&quot;track-br&quot;,&quot;track-scrim&quot;,&quot;track-bold&quot;,&quot;track-block&quot;,&quot;rail-mark&quot;,&quot;rail-lg&quot;,&quot;rail-stops&quot;,&quot;chevrons&quot;,&quot;hairline&quot;,&quot;word&quot;,&quot;button&quot;],&quot;default&quot;:&quot;rail-lg&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Scroll cues&quot;},&quot;coverCue&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;mouse&quot;,&quot;pill-br&quot;,&quot;track&quot;,&quot;track-mid&quot;,&quot;track-br&quot;,&quot;track-scrim&quot;,&quot;track-bold&quot;,&quot;track-block&quot;,&quot;rail-mark&quot;,&quot;rail-lg&quot;,&quot;rail-stops&quot;,&quot;chevrons&quot;,&quot;button&quot;,&quot;peek&quot;],&quot;default&quot;:&quot;rail-lg&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Scroll cues&quot;},&quot;photoCue&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;mouse&quot;,&quot;pill-br&quot;,&quot;track&quot;,&quot;track-mid&quot;,&quot;track-bold&quot;,&quot;track-scrim&quot;,&quot;chevrons&quot;,&quot;rail&quot;,&quot;edge&quot;,&quot;count&quot;,&quot;none&quot;],&quot;default&quot;:&quot;rail&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Scroll cues&quot;},&quot;enterStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;slide&quot;,&quot;parallax&quot;,&quot;fade&quot;],&quot;default&quot;:&quot;slide&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Title → photos transition&quot;},&quot;photoFit&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;smart&quot;,&quot;bleed&quot;,&quot;fit&quot;,&quot;crop&quot;],&quot;default&quot;:&quot;smart&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Photos&quot;},&quot;speciesView&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;grid&quot;,&quot;dense&quot;,&quot;list&quot;],&quot;default&quot;:&quot;grid&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Wildlife&quot;},&quot;railScope&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;leg&quot;,&quot;peek&quot;,&quot;trip-fade&quot;,&quot;trip-groups&quot;],&quot;default&quot;:&quot;leg&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Photos&quot;},&quot;chapterMark&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;crumbs&quot;,&quot;rail&quot;,&quot;name&quot;,&quot;label&quot;,&quot;none&quot;],&quot;default&quot;:&quot;name&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Photos&quot;},&quot;dotExpand&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;fan&quot;,&quot;stack&quot;],&quot;default&quot;:&quot;stack&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Map&quot;},&quot;cameraMove&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;direct&quot;,&quot;arc&quot;],&quot;default&quot;:&quot;direct&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Map&quot;},&quot;mapLabels&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Map&quot;},&quot;mapWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:25,&quot;min&quot;:20,&quot;max&quot;:44,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;introCue&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;mouse&quot;,&quot;pill-br&quot;,&quot;track&quot;,&quot;track-mid&quot;,&quot;track-br&quot;,&quot;track-scrim&quot;,&quot;track-bold&quot;,&quot;track-block&quot;,&quot;rail-mark&quot;,&quot;rail-lg&quot;,&quot;rail-stops&quot;,&quot;chevrons&quot;,&quot;hairline&quot;,&quot;word&quot;,&quot;button&quot;],&quot;default&quot;:&quot;rail-lg&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Scroll cues&quot;},&quot;coverCue&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;mouse&quot;,&quot;pill-br&quot;,&quot;track&quot;,&quot;track-mid&quot;,&quot;track-br&quot;,&quot;track-scrim&quot;,&quot;track-bold&quot;,&quot;track-block&quot;,&quot;rail-mark&quot;,&quot;rail-lg&quot;,&quot;rail-stops&quot;,&quot;chevrons&quot;,&quot;button&quot;,&quot;peek&quot;],&quot;default&quot;:&quot;rail-lg&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Scroll cues&quot;},&quot;photoCue&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;mouse&quot;,&quot;pill-br&quot;,&quot;track&quot;,&quot;track-mid&quot;,&quot;track-bold&quot;,&quot;track-scrim&quot;,&quot;chevrons&quot;,&quot;rail&quot;,&quot;edge&quot;,&quot;count&quot;,&quot;none&quot;],&quot;default&quot;:&quot;rail&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Scroll cues&quot;},&quot;enterStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;slide&quot;,&quot;parallax&quot;,&quot;fade&quot;],&quot;default&quot;:&quot;slide&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Title → photos transition&quot;},&quot;photoFit&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;smart&quot;,&quot;bleed&quot;,&quot;fit&quot;,&quot;crop&quot;],&quot;default&quot;:&quot;smart&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Photos&quot;},&quot;railHalo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;veil&quot;,&quot;pill&quot;,&quot;glow&quot;,&quot;edge&quot;,&quot;none&quot;],&quot;default&quot;:&quot;pill&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Scroll cues&quot;},&quot;speciesView&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;grid&quot;,&quot;dense&quot;,&quot;list&quot;],&quot;default&quot;:&quot;grid&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Wildlife&quot;},&quot;railScope&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;leg&quot;,&quot;peek&quot;,&quot;trip-fade&quot;,&quot;trip-groups&quot;],&quot;default&quot;:&quot;leg&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Photos&quot;},&quot;chapterMark&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;crumbs&quot;,&quot;rail&quot;,&quot;name&quot;,&quot;label&quot;,&quot;none&quot;],&quot;default&quot;:&quot;name&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Photos&quot;},&quot;dotExpand&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;fan&quot;,&quot;stack&quot;],&quot;default&quot;:&quot;stack&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Map&quot;},&quot;cameraMove&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;direct&quot;,&quot;arc&quot;],&quot;default&quot;:&quot;direct&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Map&quot;},&quot;mapLabels&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Map&quot;},&quot;mapWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:25,&quot;min&quot;:20,&quot;max&quot;:44,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
 const NAVY = '#12263A', CORAL = '#F0504A';
 const stripe = (a,b,w) => `background:repeating-linear-gradient(135deg,${a} 0 ${w||13}px,${b} ${w||13}px ${(w||13)*2}px)`;
 const P = 'assets/photos/';
@@ -564,7 +565,7 @@ class Component extends DCLogic {
   // mode: 'intro' | 'cover' | 'photos'
   // panelLegI/panelPos lag legI/pos: the photo pane keeps showing the stop you just left
   // until it has finished sliding away, so the next stop's first photo never flashes
-  state = { mode:'intro', legI:0, pos:0, panelLegI:0, panelPos:0, full:false, rest:false, wild:false, sp:null, fromWild:false, lastSp:null, wide: typeof window !== 'undefined' && window.innerWidth >= 900 };
+  state = { mode:'intro', legI:0, pos:0, panelLegI:0, panelPos:0, full:false, railHov:false, rest:false, wild:false, sp:null, fromWild:false, lastSp:null, wide: typeof window !== 'undefined' && window.innerWidth >= 900 };
 
   constructor(p){
     super(p);
@@ -589,6 +590,7 @@ class Component extends DCLogic {
   get chapterMark(){ return this.props.chapterMark ?? 'name'; } // crumbs | label | rail | name | none
   get railScope(){ return this.props.railScope ?? 'leg'; }        // leg | peek | trip-fade | trip-groups
   get speciesView(){ return this.props.speciesView ?? 'grid'; }   // grid | dense | list
+  get railHalo(){ return this.props.railHalo ?? 'pill'; }         // pill | veil | glow | edge | none
   get leg(){ return LEGS[this.state.legI] || LEGS[0] || null; }
   get list(){ return (this.leg && PHOTOS[this.leg.id]) || []; }
   get docked(){ return this.state.mode === 'photos' && this.state.wide && !this.state.full; }
@@ -1608,6 +1610,36 @@ class Component extends DCLogic {
         + ';opacity:' + (mode === 'intro' ? 0 : .55)
         + ';pointer-events:' + (mode === 'intro' ? 'none' : 'auto'),
 
+      railEnter:() => { if (!this.state.railHov) this.setState({ railHov:true }); },
+      railLeave:() => { if (this.state.railHov) this.setState({ railHov:false }); },
+      // the rail sits on whatever the photo happens to be; hovering pulls a dark backdrop
+      // under it so the ticks and labels read against bright frames
+      railHaloStyle:(() => {
+        const k = this.railHalo;
+        // narrow is touch: there's no hover, so the halo would either never show or stick
+        if (k === 'none' || !st.wide) return 'display:none';
+        const on = st.railHov && inPhotos && !st.full && !st.wild;
+        // a horizontal-only gradient still ends in a hard top/bottom cut over bright skies
+        const fade = (a, b) => {
+          const g = 'linear-gradient(to bottom,transparent 0,#000 ' + a + ',#000 ' + b + ',transparent 100%)';
+          return '-webkit-mask-image:' + g + ';mask-image:' + g;
+        };
+        const geo = {
+          veil:'left:-104px;right:-30px;top:-56px;bottom:-56px;'
+            + 'background:linear-gradient(to left,rgba(6,12,18,.8) 0%,rgba(6,12,18,.52) 44%,rgba(6,12,18,0) 100%);'
+            + fade('16%', '84%'),
+          pill:'left:-15px;right:-14px;top:-16px;bottom:-16px;border-radius:999px;'
+            + 'background:rgba(9,16,24,.6);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);'
+            + 'box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)',
+          glow:'left:-130px;right:-76px;top:-76px;bottom:-76px;'
+            + 'background:radial-gradient(closest-side ellipse at 64% 50%,rgba(6,12,18,.82) 0%,rgba(6,12,18,.44) 56%,rgba(6,12,18,0) 100%)',
+          edge:'left:-78px;right:-26px;top:-60vh;bottom:-60vh;'
+            + 'background:linear-gradient(to left,rgba(6,12,18,.72) 0%,rgba(6,12,18,.38) 50%,rgba(6,12,18,0) 100%);'
+            + fade('12%', '88%')
+        }[k] || '';
+        return geo + ';opacity:' + (on ? 1 : 0);
+      })(),
+
       // vertical scrubber on the photo's right edge — replaces the top bars and the arrows
       // 3 photos and 20 photos both have to read: ticks grow when there are few
       railStyle:(this.railScope === 'leg' ? '' : 'max-height:76vh;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 13%,#000 87%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 13%,#000 87%,transparent 100%);')
@@ -1688,7 +1720,9 @@ class Component extends DCLogic {
       })(),
       goHome:() => this.toIntro(),
       goStop:() => this.toCover(st.legI),
-      railWildStyle:'display:' + (st.fromWild ? 'block' : 'none'),
+      // narrow: the rail is just home + ticks — the stop name and breadcrumb crowd the frame
+      railWildStyle:'display:' + (st.fromWild && st.wide ? 'block' : 'none'),
+      railStopStyle:'display:' + (st.wide ? 'block' : 'none'),
       crumbs:(() => {
         const out = [];
         if (st.fromWild) out.push({ label:'Wildlife', title:'Back to the species gallery', go:() => this.openWild() });
