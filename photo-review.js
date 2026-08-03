@@ -11,10 +11,10 @@ const CYAN = "#4fd0e0";
 const ZOOMS = [72, 96, 128, 172, 232];
 const UNSORTED = { id: "", name: "Unsorted", dates: "", region: "", lodge: "", nights: 0 };
 
-// Keys this UI owns on an edit record. Everything else on the record (kicker,
-// featured, star, chips, tags, flags, locationName, confidence, …) is carried
-// through untouched so the tool never silently drops a field the site consumes.
-const OWNED = ["legId", "order", "title", "body", "species", "subjectId", "excluded", "notes", "pending"];
+// Keys this UI owns on an edit record. Everything else on the record (featured,
+// star, chips, …) is carried through untouched so the tool never silently drops
+// a field the site consumes.
+const OWNED = ["legId", "order", "title", "body", "species", "subjectId", "locationName", "excluded", "notes", "pending"];
 
 const state = {
   photos: [],
@@ -78,6 +78,9 @@ async function load() {
       utcOffset: p.utcOffset || "",
       lat: numberOrNull(raw.latitude ?? p.latitude),
       lng: numberOrNull(raw.longitude ?? p.longitude),
+      // Build-time data-quality marker from build_photo_catalog.py. Coordinates
+      // are read-only here, so surface it rather than letting it pass silently.
+      noGps: (p.flags || []).includes("no-gps"),
       thumb: (p.assets && p.assets.thumb) || "",
       card: (p.assets && (p.assets.cardAvif || p.assets.card)) || "",
       legId: raw.legId || p.legId || "",
@@ -86,6 +89,7 @@ async function load() {
       body: raw.body || p.body || "",
       species: raw.species || p.species || "",
       subjectId: raw.subjectId || p.subjectId || "",
+      locationName: raw.locationName || p.locationName || "",
       excluded: Boolean(raw.excluded),
       notes: Array.isArray(raw.notes) ? raw.notes.map((n) => ({ ...n })) : [],
       pending: raw.pending ? { ...raw.pending } : null,
@@ -101,7 +105,9 @@ async function load() {
 }
 
 async function getJson(url, required) {
-  const res = await fetch(url);
+  // Local tool against files that change underneath it (an external edit, or the
+  // rebuild this server runs on save) — never serve these from the HTTP cache.
+  const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) {
     if (required) throw new Error(`Could not load ${url} (${res.status})`);
     return null;
@@ -514,6 +520,14 @@ function buildExpanded(p, all) {
   sp.append(el("span", "hint", `${set} of ${state.photos.length} set · drives the taxon colour on the site`));
   fields.append(sp);
 
+  // PLACE — feeds alt text and the map pin label on the site.
+  const place = el("div", "field");
+  place.append(el("div", "key", "PLACE"));
+  place.append(textField(p, "locationName", "input", "where this was taken"));
+  const named = state.photos.filter((x) => x.locationName).length;
+  place.append(el("span", "hint", `${named} of ${state.photos.length} set · used for alt text and the map pin`));
+  fields.append(place);
+
   // LEG — the only way to reassign a photo, since drag is leg-local.
   const legRow = el("div", "field");
   legRow.append(el("div", "key", "LEG"));
@@ -525,7 +539,8 @@ function buildExpanded(p, all) {
   const meta = el("div", "meta indent");
   meta.append(el("span", "file", p.filename));
   meta.append(el("span", null, `${p.date.slice(0, 10)} · ${p.date.slice(11, 16)}${p.utcOffset ? ` · UTC${p.utcOffset}` : ""}`));
-  meta.append(el("span", null, p.lat != null && p.lng != null ? `${p.lat.toFixed(4)}, ${p.lng.toFixed(4)}` : "no coords"));
+  const noFix = p.noGps || p.lat == null || p.lng == null;
+  meta.append(el("span", noFix ? "warn" : null, noFix ? "NO GPS" : `${p.lat.toFixed(4)}, ${p.lng.toFixed(4)}`));
   meta.append(el("span", null, p.subjectId || "unbound"));
   meta.append(el("span", "spring"));
   meta.append(excludeCheck(p));
@@ -704,11 +719,13 @@ function renderPane() {
   pane.append(reply);
 
   pane.append(textField(p, "species", "input", "species — none"));
+  pane.append(textField(p, "locationName", "input", "place — optional"));
   pane.append(legSelect(p));
 
   const meta = el("div", "meta");
   meta.append(el("span", "file", p.filename));
   meta.append(el("span", null, `${p.date.slice(0, 10)} · ${p.date.slice(11, 16)}`));
+  if (p.noGps || p.lat == null || p.lng == null) meta.append(el("span", "warn", "NO GPS"));
   meta.append(el("span", "spring"));
   meta.append(excludeCheck(p));
   pane.append(meta);
@@ -923,19 +940,26 @@ document.addEventListener("keydown", (e) => {
 
 function editsPayload() {
   const photos = {};
-  state.photos.forEach((p) => {
-    const record = { ...p.rest };
-    record.legId = p.legId;
-    record.order = p.order;
-    if (p.title) record.title = p.title; else delete record.title;
-    if (p.body) record.body = p.body; else delete record.body;
-    if (p.species) record.species = p.species; else delete record.species;
-    if (p.subjectId) record.subjectId = p.subjectId; else delete record.subjectId;
-    if (p.excluded) record.excluded = true; else delete record.excluded;
-    if (p.notes.length) record.notes = p.notes; else delete record.notes;
-    if (p.pending) record.pending = p.pending; else delete record.pending;
-    photos[p.id] = record;
-  });
+  // Emit records in stable id order. The in-memory array is in leg/sequence
+  // order, and writing that out would rewrite most of the file every time a
+  // photo moves — this keeps save diffs to the fields that actually changed.
+  state.photos
+    .slice()
+    .sort((a, b) => a.id.localeCompare(b.id))
+    .forEach((p) => {
+      const record = { ...p.rest };
+      record.legId = p.legId;
+      record.order = p.order;
+      if (p.title) record.title = p.title; else delete record.title;
+      if (p.body) record.body = p.body; else delete record.body;
+      if (p.species) record.species = p.species; else delete record.species;
+      if (p.subjectId) record.subjectId = p.subjectId; else delete record.subjectId;
+      if (p.locationName) record.locationName = p.locationName; else delete record.locationName;
+      if (p.excluded) record.excluded = true; else delete record.excluded;
+      if (p.notes.length) record.notes = p.notes; else delete record.notes;
+      if (p.pending) record.pending = p.pending; else delete record.pending;
+      photos[p.id] = record;
+    });
   return { schemaVersion: 1, rev: state.rev, photos };
 }
 
@@ -1026,6 +1050,7 @@ $("#import").addEventListener("change", async (event) => {
       body: raw.body || raw.caption || "",
       species: raw.species || "",
       subjectId: raw.subjectId || "",
+      locationName: raw.locationName || "",
       excluded: Boolean(raw.excluded),
       notes: Array.isArray(raw.notes) ? raw.notes : [],
       pending: raw.pending || null,

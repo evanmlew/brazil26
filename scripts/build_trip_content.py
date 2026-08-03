@@ -54,15 +54,14 @@ def finite_number(value: Any) -> float | None:
 def merge_photo(photo: dict[str, Any], edits: dict[str, Any]) -> dict[str, Any]:
     merged = {**photo, **edits}
     merged["chips"] = as_list(merged.get("chips"))
-    merged["tags"] = as_list(merged.get("tags"))
-    merged["flags"] = as_list(photo.get("flags")) + [flag for flag in as_list(edits.get("flags")) if flag not in as_list(photo.get("flags"))]
+    # flags are a build-time data-quality marker owned by build_photo_catalog.py.
+    # The review tool surfaces them but never writes them, so the catalog wins.
+    merged["flags"] = as_list(photo.get("flags"))
     merged["body"] = (merged.get("body") or merged.get("caption") or "").strip()
-    merged["kicker"] = (merged.get("kicker") or "").strip()
     merged["title"] = (merged.get("title") or "").strip()
     merged["subjectId"] = (merged.get("subjectId") or "").strip()
     merged["locationName"] = (merged.get("locationName") or "").strip()
     merged["species"] = (merged.get("species") or "").strip()
-    merged["confidence"] = (merged.get("confidence") or "").strip()
     merged["legId"] = (merged.get("legId") or "").strip()
     merged["featured"] = bool(merged.get("featured"))
     merged["star"] = bool(merged.get("star"))
@@ -133,11 +132,9 @@ def stock_slide(subject_id: str, subject: dict[str, Any], coords_lookup: dict[st
         "thumb": subject.get("stockPhoto", "") or "",
         "alt": alt_text(subject, {}),
         "pinLabel": pin_label(subject, {}),
-        "kicker": subject.get("kicker", ""),
         "title": subject.get("title", ""),
         "body": subject.get("body", ""),
         "chips": display_chips(species),
-        "flags": as_list(subject.get("flags")),
         "star": bool(subject.get("star")),
         "taxon": subject.get("taxon", ""),
         "species": species,
@@ -163,10 +160,6 @@ def real_slide(photo: dict[str, Any], subject: dict[str, Any] | None, leg: dict[
     thumb = (assets.get("thumb") or (subject or {}).get("stockPhoto") or "").strip()
     title = photo.get("title") or (subject or {}).get("title") or photo.get("locationName") or "Awaiting title"
     body = photo.get("body") or (subject or {}).get("body") or "[Your caption here]"
-    # The current design has no kicker line on photo pages — index.html never reads
-    # this field. Keep the key for backward compatibility, but don't invent a value:
-    # "Awaiting caption" on a finished photo reads like an unfinished-work flag.
-    kicker = photo.get("kicker") or (subject or {}).get("kicker") or ""
     species = photo.get("species") or ((subject or {}).get("common") if (subject or {}).get("kind") == "species" else "") or ""
     slide = {
         "leg": leg["id"],
@@ -180,11 +173,9 @@ def real_slide(photo: dict[str, Any], subject: dict[str, Any] | None, leg: dict[
         "thumb": thumb,
         "alt": alt_text(subject, {**photo, "title": title, "locationName": photo.get("locationName", "")}),
         "pinLabel": pin_label(subject, {**photo, "title": title, "locationName": photo.get("locationName", "")}),
-        "kicker": kicker,
         "title": title,
         "body": body,
         "chips": display_chips(species),
-        "flags": as_list(photo.get("flags")),
         "star": bool(photo.get("star") or (subject or {}).get("star")),
         "featured": bool(photo.get("featured")),
         "taxon": (subject or {}).get("taxon") or "",

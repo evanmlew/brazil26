@@ -165,17 +165,16 @@ def extract_metadata(path: Path, stem: str | None = None) -> dict[str, Any]:
             },
             "title": "",
             "body": "",
-            "kicker": "",
             "chips": [],
             "star": False,
             "subjectId": "",
             "locationName": "",
             "legId": "",
             "order": None,
-            "tags": [],
             "species": "",
-            "confidence": "",
             "featured": False,
+            # Build-time data-quality markers only ("no-gps"). The site never
+            # renders these; the review tool shows them as a warning badge.
             "flags": flags,
             "assets": {
                 "original": "",

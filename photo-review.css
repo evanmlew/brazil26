@@ -253,7 +253,8 @@ header.top > * { flex: none; }
 
 .expanded input[data-f="title"] { flex: 1; font: 600 13.5px/1.2 var(--ui); color: var(--text); }
 .expanded textarea[data-f="body"] { flex: 1; height: 64px; resize: vertical; font: 13px/1.5 var(--ui); color: #d9dde2; padding: 8px 10px; }
-.expanded input[data-f="species"] { width: 250px; font: 12.5px/1.2 var(--ui); }
+.expanded input[data-f="species"],
+.expanded input[data-f="locationName"] { width: 250px; font: 12.5px/1.2 var(--ui); }
 .expanded select[data-f="legId"] { width: 160px; font: 12.5px/1.2 var(--ui); color: var(--text-2); }
 
 .mini {
@@ -293,6 +294,13 @@ header.top > * { flex: none; }
 
 .meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font: 11px/1.6 var(--mono); color: var(--text-4); }
 .meta .file { color: var(--text-3); }
+/* Coordinates are read-only in this tool, so a missing fix has to be visible. */
+.meta .warn {
+  padding: 1px 6px; border-radius: 3px; letter-spacing: .08em;
+  border: 1px solid color-mix(in srgb, var(--amber) 42%, transparent);
+  background: color-mix(in srgb, var(--amber) 12%, transparent);
+  color: var(--amber-text);
+}
 .check {
   display: flex; gap: 6px; align-items: center; cursor: pointer;
   border: 0; background: none; color: var(--text-3); font: 11.5px/1 var(--ui);
