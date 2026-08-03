@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "rev": 0,
+  "rev": 2,
   "photos": {
     "dsc00036-171df22a9e": {
       "featured": false,
@@ -410,13 +410,15 @@
       "order": 0,
       "title": "Copacabana, finally",
       "body": "The mountains behind, the Atlantic in front -- our first view of Rio from the hotel balcony.",
-      "subjectId": "rio_01"
+      "subjectId": "rio_01",
+      "excluded": true
     },
     "img-3012-8e94da00d6": {
       "legId": "rio",
       "order": 17,
       "title": "The city lit up gold",
-      "body": "Rio's bay and skyline lit gold from the top of Sugarloaf Mountain at sunset."
+      "body": "Rio's bay and skyline lit gold from the top of Sugarloaf Mountain at sunset.",
+      "excluded": true
     },
     "img-3036-125f159bc3": {
       "featured": true,
@@ -452,8 +454,8 @@
       "featured": true,
       "legId": "rio",
       "order": 1,
-      "title": "Copacabana at last light",
-      "body": "Sunset from the rooftop bar at the Emiliano, our hotel on Copacabana -- the first thing we saw of Rio, with the mountains behind and the Atlantic stretched out in front.",
+      "title": "Copacabana Beach",
+      "body": "Sunset from the rooftop bar at the Emiliano, our hotel on Copacabana, looking out towards the Atlantic Ocean",
       "subjectId": "rio_02"
     },
     "por-maycon-nunes-photography-112-971c4c9622": {
@@ -461,14 +463,14 @@
       "legId": "rio",
       "order": 2,
       "title": "A crash course in Carnaval",
-      "body": "Carnaval Experience, a working samba-school warehouse in Rio where the floats, the sets, and the fantasias are built. An afternoon learning how a parade gets made, ending with a turn each on the surdo and the caixa alongside the crew."
+      "body": "Carnaval Experience, a working samba-school warehouse in Rio where the floats and sets are built."
     },
     "por-maycon-nunes-photography-144-aa3bc0dc4d": {
       "featured": false,
       "legId": "rio",
       "order": 5,
-      "title": "The steps that took twenty years",
-      "body": "Escadaria Selarón: 215 steps that the Chilean artist Jorge Selarón tiled by hand from 1990 until his death in 2013, using tiles sent to him from more than 60 countries."
+      "title": "The Lapa Steps",
+      "body": "215 steps that the Chilean artist Jorge Selarón tiled by hand from 1990 until his death in 2013, using tiles sent to him from more than 60 countries."
     },
     "por-maycon-nunes-photography-148-eee1373978": {
       "featured": false,
@@ -488,8 +490,8 @@
       "featured": false,
       "legId": "rio",
       "order": 8,
-      "title": "Christ, from across the valley",
-      "body": "Mirante Dona Marta, high on the edge of Tijuca Forest -- the classic view of Christ the Redeemer without standing underneath it."
+      "title": "Christ the Redeemer",
+      "body": "View from Mirante Dona Marta"
     },
     "por-maycon-nunes-photography-247-11de0d98ea": {
       "featured": false,
@@ -503,14 +505,14 @@
       "featured": false,
       "legId": "rio",
       "order": 10,
-      "title": "Zach, Sugarloaf across the bay",
-      "body": "Zach on the wall at Dona Marta, where the whole of Botafogo Bay opens up -- Pão de Açúcar, Sugarloaf Mountain, standing out of the water at the harbor mouth."
+      "title": "Sugarloaf Mountain",
+      "body": "The wall at Dona Marta, where the Botafogo Bay opens up, with Sugarloaf Mountain standing out of the water."
     },
     "por-maycon-nunes-photography-27-479a658758": {
       "featured": false,
       "legId": "rio",
       "order": 3,
-      "title": "Ian, inside the machine",
+      "title": "Trying on a front-of-parade head dress",
       "body": "Ian wearing one of the front-of-parade fantasias -- the entire thing rides on one person, all the way down the Sambadrome."
     },
     "por-maycon-nunes-photography-283-f34b185068": {
@@ -525,7 +527,8 @@
       "legId": "rio",
       "order": 12,
       "title": "Backlit at golden hour",
-      "body": "The same statue four hours and one mountain later, shot from Morro da Urca as the sun went down behind Corcovado."
+      "body": "The same statue four hours and one mountain later, shot from Morro da Urca as the sun went down behind Corcovado.",
+      "excluded": true
     },
     "por-maycon-nunes-photography-301-ca839d8c7e": {
       "featured": false,
@@ -538,7 +541,7 @@
       "featured": false,
       "legId": "rio",
       "order": 14,
-      "title": "Under the second cable",
+      "title": "Morro da Urca stop",
       "body": "On Morro da Urca, with Sugarloaf mountain and the cable car behind."
     },
     "por-maycon-nunes-photography-327-4bab5f06ef": {
@@ -546,14 +549,15 @@
       "legId": "rio",
       "order": 15,
       "title": "The four of us, and the loaf",
-      "body": "Portuguese traders called it Pão de Açúcar -- sugarloaf -- after the conical clay molds that refined sugar was shipped in."
+      "body": "Portuguese traders called it Pão de Açúcar -- sugarloaf -- after the conical clay molds that refined sugar was shipped in.",
+      "excluded": true
     },
     "por-maycon-nunes-photography-335-1eb3f2b1f4": {
       "featured": false,
       "legId": "rio",
       "order": 16,
       "title": "The cable line down",
-      "body": "The run back to Urca strung across an orange sky, Botafogo's mooring field below and the Tijuca ridge cut flat against the light."
+      "body": "The cable car run back to Urca strung across an orange sky"
     },
     "por-maycon-nunes-photography-340-f2f7b79e67": {
       "featured": false,
