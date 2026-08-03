@@ -3,60 +3,104 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Brazil 2026 | Journal photo review</title>
+  <title>brazil26 review</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="photo-review.css?v=3">
+  <link rel="stylesheet" href="photo-review.css?v=4">
 </head>
 <body>
-  <header class="review-header">
-    <div>
-      <p class="eyebrow">Brazil ’26 · private workflow</p>
-      <h1>Journal photo review</h1>
-      <p id="status" class="status">Loading photos…</p>
-    </div>
-    <div class="actions">
-      <label class="button secondary">Import edits<input id="edits-input" type="file" accept=".json,application/json"></label>
-      <button class="button secondary" id="download-button" type="button">Download backup</button>
-      <button class="button" id="save-button" type="button">Save</button>
-    </div>
-  </header>
-  <main>
-    <p class="hint">Drag a photo to reorder it, or drag it into a different destination section. Use <strong>Exclude</strong> to leave a photo out of the site without deleting the file.</p>
-    <div id="sections"></div>
-  </main>
-  <template id="section-template">
-    <section class="leg-section">
-      <header class="leg-header">
-        <h2 class="leg-name"></h2>
-        <span class="leg-dates"></span>
-        <span class="leg-count"></span>
-      </header>
-      <div class="leg-grid" data-dropzone></div>
+
+<header class="top">
+  <div class="brand">brazil<span>26</span> review</div>
+  <div class="rule"></div>
+
+  <div class="chips" id="chips">
+    <div class="chip"><b id="n-photos">0</b> photos</div>
+    <div class="chip"><b id="n-excluded">0</b> excluded</div>
+    <div class="chip amber"><b id="n-notes">0</b> notes</div>
+    <div class="chip cyan"><b id="n-changes">0</b> changes</div>
+  </div>
+  <div class="chips-compact hidden" id="chips-compact">
+    <span class="n" id="c-photos">0</span>
+    <span id="c-excluded">0 excl</span>
+    <span class="a" id="c-notes">0 notes</span>
+    <span class="c" id="c-changes">0 chg</span>
+  </div>
+
+  <div class="seg" role="group" aria-label="View">
+    <button type="button" data-view="list" aria-pressed="true">List</button>
+    <button type="button" data-view="sheet" aria-pressed="false">Sheet</button>
+  </div>
+
+  <div class="zoom hidden" id="zoom">
+    <button type="button" id="zoom-out" title="smaller">−</button>
+    <output id="zoom-label">96px</output>
+    <button type="button" id="zoom-in" title="bigger">+</button>
+  </div>
+
+  <div class="spring"></div>
+
+  <div class="sync" id="sync"><span class="dot" id="sync-dot"></span><span id="sync-text">rev 0 · in sync</span></div>
+  <button type="button" class="btn stack" id="save">Save &amp; draft<small id="save-sub">nothing to save</small></button>
+  <button type="button" class="btn ghost" id="publish">Publish</button>
+</header>
+
+<div class="body">
+  <nav class="side">
+    <h2>Legs</h2>
+    <div id="legs"></div>
+
+    <section class="legend">
+      <div><i class="a"></i>needs you</div>
+      <div><i class="c"></i>assistant draft</div>
     </section>
-  </template>
-  <template id="photo-template">
-    <article class="photo-card" draggable="true">
-      <div class="preview">
-        <img alt="" loading="lazy">
-        <span class="filename-overlay"></span>
+
+    <section>
+      <h2 style="padding-left:0">Filter</h2>
+      <div class="filters" id="filters">
+        <button type="button" data-filter="needs" aria-pressed="false">needs you</button>
+        <button type="button" data-filter="nospecies" aria-pressed="false">no species</button>
+        <button type="button" data-filter="excluded" aria-pressed="false">excluded 0</button>
       </div>
-      <div class="photo-copy">
-        <div class="captured-at"></div>
-        <label>Subject<input data-field="title" type="text" placeholder="Short headline, e.g. “The otter on the boulder”"></label>
-        <label>Caption<textarea data-field="body" rows="3" placeholder="A sentence or two of story or context"></textarea></label>
-        <div class="two-up">
-          <label>Species<input data-field="species" type="text" placeholder="e.g. Neotropical Otter"></label>
-          <label>Narrative link <small>(optional)</small><input data-field="subjectId" type="text" placeholder="e.g. otter, sp_01"></label>
-        </div>
-        <div class="two-up">
-          <label>Latitude<input data-field="latitude" type="number" step="any" placeholder="e.g. -9.5875"></label>
-          <label>Longitude<input data-field="longitude" type="number" step="any" placeholder="e.g. -55.9306"></label>
-        </div>
-        <label class="feedback-field">Feedback for next edit pass <small>(not published — tell Copilot what to change)</small><textarea data-field="feedback" rows="2" placeholder="e.g. “make this punchier”, “wrong animal”, “merge with the otter caption”"></textarea></label>
-        <button type="button" class="exclude-toggle">Exclude from site</button>
+    </section>
+
+    <section>
+      <h2 style="padding-left:0">File</h2>
+      <div class="side-actions">
+        <button type="button" class="linkish" id="download">download backup</button>
+        <label class="linkish">import edits…<input id="import" type="file" accept=".json,application/json"></label>
       </div>
-    </article>
-  </template>
-  <script src="photo-review.js?v=3"></script>
+    </section>
+  </nav>
+
+  <main class="main">
+    <div class="list-head" id="list-head">
+      <h1 class="leg-name" id="leg-name"></h1>
+      <div class="leg-meta" id="leg-meta"></div>
+    </div>
+
+    <div class="list" id="list"></div>
+
+    <div class="sheet hidden" id="sheet">
+      <div class="grid" id="grid"></div>
+      <div class="divider" id="divider" title="drag to resize · double-click to reset"></div>
+      <aside class="pane" id="pane" style="width:352px"></aside>
+    </div>
+  </main>
+</div>
+
+<footer class="bottom">
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="recos" aria-selected="true">Recommendations <span class="pill amber" id="n-recos">0</span></button>
+    <button type="button" role="tab" data-tab="changes" aria-selected="false">Changes <span class="pill cyan" id="n-changes-2">0</span></button>
+    <button type="button" role="tab" data-tab="log" aria-selected="false">Run log</button>
+    <div class="spring"></div>
+    <div class="stale"><span class="dot hidden" id="stale-dot"></span><span id="stale-text"></span></div>
+  </div>
+  <div class="panel recos" id="panel-recos"></div>
+  <div class="panel changes hidden" id="panel-changes"></div>
+  <div class="panel log hidden" id="panel-log"></div>
+</footer>
+
+<script src="photo-review.js?v=4"></script>
 </body>
 </html>

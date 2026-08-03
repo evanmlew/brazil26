@@ -9,6 +9,10 @@ before), then immediately rebuilds data/trip.json from the latest
 legs/narrative/catalog/edits so the site reflects the save on next
 reload -- no separate manual build step needed.
 
+The save route is revision-checked: the page posts the `rev` it loaded and
+the server refuses with 409 if the file on disk has moved on, so a second
+tab cannot silently clobber the first.
+
 This route is local-dev-only. It reads/writes files on THIS machine and
 is not part of any file that would ever be published -- the Journal
 folder itself is a private, local-only diary and is never deployed.
@@ -59,6 +63,16 @@ class ReviewHandler(http.server.SimpleHTTPRequestHandler):
             self._send_json(400, {"ok": False, "error": str(exc)})
             return
 
+        # Optimistic concurrency: the review page sends the rev it loaded. If the
+        # file has moved on since (a second tab saved first), refuse rather than
+        # silently overwriting that tab's work.
+        current_rev = self._current_rev()
+        posted_rev = payload.get("rev")
+        if isinstance(posted_rev, int) and posted_rev != current_rev:
+            self._send_json(409, {"ok": False, "rev": current_rev, "error": "stale rev"})
+            return
+        payload["rev"] = current_rev + 1
+
         os.makedirs(os.path.dirname(EDITS_PATH), exist_ok=True)
         # Keep a one-deep backup of whatever was there before overwriting,
         # so an in-tool mistake is always one file-copy away from undo.
@@ -75,10 +89,20 @@ class ReviewHandler(http.server.SimpleHTTPRequestHandler):
         os.replace(tmp_path, EDITS_PATH)  # atomic on both Windows and POSIX
 
         rebuild_error = self._rebuild_trip_json()
-        response = {"ok": True, "count": len(payload.get("photos", {}))}
+        response = {"ok": True, "rev": payload["rev"], "count": len(payload.get("photos", {}))}
         if rebuild_error:
             response["rebuildError"] = rebuild_error
         self._send_json(200, response)
+
+    @staticmethod
+    def _current_rev() -> int:
+        """Revision number of the edits file on disk (0 when absent or unversioned)."""
+        try:
+            with open(EDITS_PATH, encoding="utf-8") as f:
+                value = json.load(f).get("rev")
+        except (OSError, json.JSONDecodeError):
+            return 0
+        return value if isinstance(value, int) else 0
 
     @staticmethod
     def _rebuild_trip_json() -> str | None:
