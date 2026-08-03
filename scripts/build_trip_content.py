@@ -159,7 +159,12 @@ def real_slide(photo: dict[str, Any], subject: dict[str, Any] | None, leg: dict[
     src_avif = (assets.get("cardAvif") or "").strip()
     thumb = (assets.get("thumb") or (subject or {}).get("stockPhoto") or "").strip()
     title = photo.get("title") or (subject or {}).get("title") or photo.get("locationName") or "Awaiting title"
-    body = photo.get("body") or (subject or {}).get("body") or "[Your caption here]"
+    # An empty body is a deliberate editorial choice - some frames read better with the photo
+    # carrying them alone - so it must survive to the site as empty. It used to fall through to
+    # "[Your caption here]", which shipped literal placeholder text onto finished slides, the same
+    # unfinished-work flag that got `kicker`'s "Awaiting caption" default removed. A genuinely
+    # forgotten caption is caught by the review tool's empty check, which is the right place for it.
+    body = photo.get("body") or (subject or {}).get("body") or ""
     species = photo.get("species") or ((subject or {}).get("common") if (subject or {}).get("kind") == "species" else "") or ""
     slide = {
         "leg": leg["id"],

@@ -1260,7 +1260,11 @@ async function saveEdits() {
 }
 
 function publish() {
-  const open = legOrder().reduce((sum, leg) => sum + checksFor(legPhotos(leg.id)).length, 0);
+  // An empty body is a deliberate editorial choice now — "let the photo carry it" — so it
+  // stays listed under Recommendations but no longer gates Publish. A phrase repeated across
+  // two captions, or a species named in prose but not tagged, is still a mistake worth stopping for.
+  const blocks = (c) => c.kind !== "empty";
+  const open = legOrder().reduce((sum, leg) => sum + checksFor(legPhotos(leg.id)).filter(blocks).length, 0);
   if (open) {
     state.tab = "recos";
     logIt(`publish blocked · ${open} checks open across all legs`);

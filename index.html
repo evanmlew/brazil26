@@ -50,7 +50,11 @@
 @keyframes driftM{0%{top:-8px;opacity:0}20%{opacity:1}78%{opacity:1}100%{top:86px;opacity:0}}
 @keyframes cueRing{0%{transform:scale(1);opacity:.5}70%{transform:scale(1.85);opacity:0}100%{opacity:0}}
 @media (prefers-reduced-motion:reduce){.bob,.cring{animation:none!important}}
-@media (prefers-reduced-motion:reduce){.pring{animation:none!important;opacity:0!important}}</style></helmet>
+@media (prefers-reduced-motion:reduce){.pring{animation:none!important;opacity:0!important}}
+/* Some frames are published with no caption on purpose, to let the photo carry them. The
+   body div still exists but is empty, and its 12px top margin would leave a dead gap above
+   the chips. !important because the margin is set inline on the element. */
+.cap-body:empty{margin-top:0!important}</style></helmet>
 
 <div ref="{{ rootRef }}" style="position:fixed;inset:0;overflow:hidden;background:#0b131c;font-family:Poppins,system-ui,sans-serif">
 
@@ -94,7 +98,7 @@
 <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,12,18,.46) 0%,rgba(6,12,18,0) 24%,rgba(6,12,18,0) 76%,rgba(6,12,18,.6) 90%,rgba(6,12,18,.95) 100%);{{ s.scrim }}"></div>
 <div style="position:absolute;left:clamp(20px,4vw,56px);right:clamp(20px,4vw,56px);bottom:clamp(22px,3.4vh,40px);max-width:680px;display:flex;flex-direction:column">
 <div style="font:800 clamp(26px,3vw,40px)/1.06 Poppins,sans-serif;color:#fff;text-wrap:balance">{{ s.title }}</div>
-<div style="font:400 14px/1.65 Poppins,sans-serif;color:rgba(255,255,255,.84);margin-top:12px;max-width:64ch;text-wrap:pretty">{{ s.body }}</div>
+<div class="cap-body" style="font:400 14px/1.65 Poppins,sans-serif;color:rgba(255,255,255,.84);margin-top:12px;max-width:64ch;text-wrap:pretty">{{ s.body }}</div>
 <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:16px">
 <sc-for list="{{ s.chips }}" as="c" hint-placeholder-count="2">
 <div style="background:{{ c.bg }};border:1px solid {{ c.br }};color:#fff;font:700 9px Poppins,sans-serif;letter-spacing:.1em;padding:6px 12px;border-radius:999px">{{ c.t }}</div>
@@ -1854,7 +1858,7 @@ class Component extends DCLogic {
           const lines = (str, chW) => Math.max(1, Math.ceil(String(str || '').length / Math.max(12, boxW / chW)));
           const h = 40                                   // bottom offset
             + lines(x.title, tPx * .5) * (tPx * 1.06)    // headline
-            + 12 + lines(x.body, 14 * .5) * 23           // body
+            + (x.body ? 12 + lines(x.body, 14 * .5) * 23 : 0)  // body, skipped when captionless
             + ((x.chips || []).length ? 16 + 22 : 0);
           const clear = Math.max(58, Math.min(86, 100 - (h / vh) * 100 - 5));
           const mid = clear + (100 - clear) * .5;
