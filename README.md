@@ -42,6 +42,17 @@ no disk cost, no administrator rights. `--source <path>` points somewhere else, 
 a real copy instead, and `--force` replaces whatever is already there. Run in the main checkout
 it just says there is nothing to do.
 
+**A worktree is on its own branch, so nothing you do there is live.** The review tool saves to the
+worktree's `data\photo-edits.json` and rebuilds that worktree's `trip.json`/`trip.js`, which looks
+identical to editing in the main checkout — but Pages serves `main`, so the site keeps showing the
+old captions until the branch is merged and pushed. Assume a review session in a worktree is
+unpublished until you have run the merge in "Publishing from a worktree branch" below.
+
+Also: only ever have **one** review server running. `review_server.py` serves whatever folder it was
+started in, and two checkouts of this repo look the same in a browser. If the tool seems to be
+"losing" edits, check which path the running server was launched from before assuming a bug — the
+saves are probably landing correctly, just in the other checkout.
+
 ## Photo workflow
 
 Rebuild the technical catalog after a fresh Lightroom export:
@@ -192,11 +203,14 @@ The review page loads every photo automatically — no folder picker needed, sin
 - **Subject** (`title`) — a short headline, e.g. "The otter on the boulder"
 - **Caption** (`body`) — a sentence or two of story/context
 - **Species** — the animal's common name where known, e.g. "Neotropical Otter"
-- **Narrative link** (`subjectId`, optional) — bind a frame to an entry in `data/narrative.json` (`jaguar`, `sp_01`, `closing`, etc.) to inherit its kicker/title/body
-- **Latitude / Longitude** — pre-filled from EXIF GPS; edit if the GPS was wrong or missing
-- **Feedback for next edit pass** — a private note-to-Copilot field, e.g. "wrong animal", "make this punchier". See "Feedback field workflow" below.
+- **Narrative link** (`subjectId`, optional) — bind a frame to an entry in `data/narrative.json` (`jaguar`, `sp_01`, `closing`, etc.) to inherit its already-written title/body
+- **Note to the assistant** — a private note-to-Copilot field, e.g. "wrong animal", "make this punchier". Enter queues it; it is also flushed on save. See "Note thread workflow" below.
 
-There is no **Location** field in the review page anymore (the new design drops the kicker line from photo pages — see `reference/` handoff in the design mockups). The underlying `kicker` key still exists in the data model for backward compatibility, but nothing writes to it going forward, and `build_trip_content.py` no longer invents a value for it — an untagged photo gets `""`, not the old `"Awaiting caption"` placeholder, which read like an unfinished-work flag on finished photos.
+**Latitude / longitude are read-only.** Each photo shows its EXIF fix (or `NO GPS`) as context for writing the caption — there is no editable coordinate field and nothing writes coordinates back, so a wrong or missing fix has to be fixed in Lightroom and re-exported.
+
+A photo whose text differs from what was last saved is marked with a pencil on its thumbnail, so a half-finished pass is visible at a glance. **Reordering is deliberately not counted** — dragging one photo renumbers every frame after it, which would pencil the whole leg. So a pure reorder shows "unsaved edits" in the header with no pencils anywhere; that is correct, not a bug.
+
+There is no **Location** field in the review page, and the `kicker` line it fed is gone from the data model entirely — `build_trip_content.py` no longer emits one and no `kicker` key survives in `trip.json`. (Historically an untagged photo got `"Awaiting caption"`, which read like an unfinished-work flag on finished photos.)
 
 Drag a photo to reorder it within a section, or drag it into a different section to reassign its destination — a placeholder shows exactly where it will land. Use **Exclude from site** on any photo you don't want published; it stays in the catalog but `build_trip_content.py` leaves it out of `trip.json`. Click **Save** to write straight to `data\photo-edits.json` (a `.bak` backup of the previous version is kept automatically) **and immediately rebuild `data\trip.json`**, so reloading the journal at `http://localhost:8000/index.html` shows the change right away — no separate build step needed. **Download backup** / **Import edits** are the manual fallback if you're not running the server.
 
@@ -217,30 +231,53 @@ Then preview the site locally at `http://localhost:8000/index.html` (the review 
 
 ## Schema notes
 
-- `subjectId` binds a real photo to an existing narrative slot from `data/narrative.json`, so a tagged frame can inherit the already-written kicker/title/body.
+- `subjectId` binds a real photo to an existing narrative slot from `data/narrative.json`, so a tagged frame can inherit the already-written title/body.
 - `body` is the canonical long-caption field in Journal. The review tool and merge script also accept legacy `caption` values if they ever appear in imported edits.
 - `featured` controls which real photo becomes a stop thumbnail when a leg has tagged real images. There is no checkbox for this in the review UI (removed for a cleaner card); set it directly in `data/photo-edits.json` or ask Copilot to flip it for a specific photo.
 - `star` is carried through the merge pipeline but has no visual treatment on the photo page — it used to render a `★ TRIP STANDOUT` chip, which the current design drops (the caption pill is species-only now).
 - `excluded` (set via the review tool's Exclude toggle) removes a photo from `trip.json` without deleting it from the catalog or overlay.
 - `species` is a free-text common name (e.g. "Jaguar"). It is the **only** thing the caption pill renders: a photo with a species gets one pill showing that name uppercased, and a photo without one gets no pill at all. It also drives the wildlife gallery grouping and the map pin label.
-- `feedback` is a private note field the reviewer uses to leave instructions for the next editing pass (e.g. "wrong animal", "make punchier"). It is **never** read by `build_trip_content.py` and never appears on the site — see "Feedback field workflow" below.
+- `notes` is a private conversation thread the reviewer uses to leave instructions for the next editing pass (e.g. "wrong animal", "make punchier"). It is **never** read by `build_trip_content.py` and never appears on the site — see "Note thread workflow" below. It replaced an earlier single-string `feedback` field; nothing reads `feedback` any more.
+- `pending` marks a caption the assistant has rewritten but the reviewer hasn't accepted — see below.
 
-## Feedback field workflow
+## Note thread workflow
 
-The **Feedback for next edit pass** box on each photo card is how the reviewer hands off notes without writing finished prose themselves. When asked to "process feedback" or "apply my notes":
+The **note to the assistant** box on each photo is how the reviewer hands off instructions without writing finished prose themselves. Notes accumulate as a thread on the photo:
 
-1. Read the full current `data/photo-edits.json` and find every photo with a non-empty `feedback` value.
-2. For each one, look at its current `title`/`body` (and `species`, `subjectId`, the image itself, and surrounding sequence context if relevant) and rewrite `title`/`body` to address the note — following the editorial checklist below (always name the animal/plant in the visible text, keep the sequence coherent).
-3. Clear the `feedback` value once it's been addressed (set it to `""`) so it doesn't get reprocessed or confused with a new note later.
-4. Rebuild `data/trip.json`, commit, and push per "Publishing to GitHub Pages" below.
+```json
+"notes": [{ "who": "YOU", "text": "make the text shorter", "at": "2026-08-03T05:38:53.905Z" }]
+```
+
+`who` is `"YOU"` for the reviewer and `"ASSISTANT"` for a reply written back into the file. A thread whose last entry is `"YOU"` is unanswered, and the tool badges it as such — which is also the cheapest way to find the work: **every photo whose last note is from `YOU` is a photo waiting on you.**
+
+When asked to "process my notes" or "apply my feedback":
+
+1. Read the **whole** current `data/photo-edits.json`, not just the noted photos. Order and exclusions may have moved since the captions were written, and a note like "this repeats the last one" only makes sense in sequence context.
+2. For each unanswered thread, look at the photo's current `title`/`body`, its `species`/`subjectId`, the image itself, and its neighbours in `order`, then write new copy following the editorial checklist below.
+3. **Propose, don't overwrite.** Put the new copy straight into `title`/`body`, and record what it replaced so the reviewer can undo it:
+
+   ```json
+   "pending": { "was": "<old body>", "wasTitle": "<old title>", "why": "shortened per your note", "at": "<ISO>" }
+   ```
+
+   The tool then shows "Assistant rewrote this — … Not accepted yet" with Accept (clears `pending`) and Revert (restores `was`/`wasTitle`).
+4. Append your reply to the thread as a `"who": "ASSISTANT"` entry — the reasoning, and any alternatives you considered but didn't pick. That is what makes the next round quick.
+5. Rebuild `data/trip.json`, commit, and push per "Publishing to GitHub Pages" below.
+
+Two traps in this loop, both of which have already caused real cleanup:
+
+- **Bump `rev` whenever you edit `data/photo-edits.json` by hand.** `review_server.py` enforces optimistic concurrency: the page posts the `rev` it loaded, and a mismatch is rejected with a 409 so the reviewer reloads instead of silently clobbering. Edit the file without bumping `rev` and a browser tab still open at the same number will save straight over your work the next time the reviewer touches anything. Bumping it is what forces the reload. It also means **a `photo-edits.json` you read a while ago may be stale** — re-read before drawing conclusions about what the reviewer did or didn't save.
+- **Editing a caption by hand does not clear its `pending` flag.** If the reviewer rewrites your proposal themselves instead of clicking Accept, the photo keeps showing "Assistant rewrote this — not accepted yet" over their own text, forever. When processing a round of notes, check for `pending` records whose `title`/`body` no longer match anything you proposed and clear them.
 
 ## Editorial checklist (read this before writing/reviewing captions)
 
-- **Always put the animal/plant/insect's exact common name in the visible text itself** — in `kicker`, `title`, or `body`. `species` now renders as the caption pill, but a pill is a label, not prose: it sits below the caption in 9px uppercase and a reader skimming the paragraph will miss it. Setting `species` alone is not enough — the name must also appear in the sentence a reader actually reads.
+- **Always put the animal/plant/insect's exact common name in the visible text itself** — in `title` or `body`. `species` now renders as the caption pill, but a pill is a label, not prose: it sits below the caption in 9px uppercase and a reader skimming the paragraph will miss it. Setting `species` alone is not enough — the name must also appear in the sentence a reader actually reads.
 - When given specific IDs/notes for individual photos (e.g. "1907 is a neotropical otter", "2014 is a yellow-spotted river turtle"), use the **exact** name given, not a generic stand-in ("the otter" / "a turtle"). Re-check every caption after a batch of notes — it's easy to update `species` but forget the prose still just says "the otter."
 - After a request like "review all the captions and use these notes," re-read the *entire* `photo-edits.json` file first to see the current order/excluded state (order and exclusions may have changed since the captions were originally written), so the narrative sequence still reads correctly (e.g. don't call a photo "the finale" if an earlier excluded photo means it's now the leg's opening shot).
 - **`order` is editorial, not chronological — don't "correct" it against capture dates.** The review page shows each photo's real capture time, which makes an out-of-sequence photo look like a mistake. It usually isn't. The Rio leg runs `IMG_2987` (the genuine Jul 20 morning arrival) and then `IMG_3099`, a Copacabana sunset shot on the **last** evening (Jul 21), ahead of the whole Jul 20 Maycon Nunes shoot — the pair reads as a scene-setting arrival even though the second frame is a day out of order. Before reordering anything by timestamp, assume the break is intentional and ask.
 - **Keep Portuguese place and proper names properly accented** — São Paulo, Pão de Açúcar, Escadaria Selarón, Serra dos Órgãos, Rio-Niterói, Os Gêmeos. `legs.json` and `narrative.json` already carry the accents, so an unaccented caption reads as a typo right next to correctly-set chrome. Every file in `data\` is UTF-8 and both writers (`review_server.py` and `build_trip_content.py`) dump with `ensure_ascii=False`, so accented characters survive a save/rebuild round-trip intact — there is no encoding reason to strip them. English-language species names stay unaccented (`yacare caiman`, `jabiru`).
+- **Read consecutive captions as a run, not one at a time.** Rewriting frames individually reliably produces neighbours that state the same fact twice — two Selarón captions both explaining that the tiles came from donors worldwide. Whichever frame states a fact first owns it; the next one has to add something new or say less.
+- **Don't attribute a viewpoint or mechanism the EXIF contradicts.** A caption once read "through the branches from the cable car" for a frame the GPS puts at the Mirante Dona Marta lookout, an hour and 4 km from the actual cable-car frames — and Corcovado is reached by cog railway, not cable car, so the sentence was wrong twice over. Coordinates and capture time are right there on the card: check them before writing *how* a shot was taken, and don't name a landmark's access method unless you know it.
 
 ## After excluding a photo: check `data/legs.json` for orphaned sequence slots
 
@@ -272,6 +309,62 @@ first is the check: everything listed should be `data\`, `assets\photos\`, or fi
 edited — never `photos/` (gitignored) and never a modified (` M`) binary under `assets\photos\`,
 which would mean the encode-skip did not do its job.
 
+### Publishing from a worktree branch
+
+A review session run in a `git worktree` commits to that worktree's own branch, which Pages never
+serves. Getting it live means merging to `main` — and the one thing that will actually bite you is
+that **`main` moves independently while the branch is open.** A photo swap on `main` (say
+"Replace Rio photo 313 with 315", which deletes 313's derivatives and adds 315's) is, from the
+branch's point of view, just files it still has. Merge blind and git happily reinstates the retired
+photo and its assets, because the branch never deleted them. Nothing errors; the site just quietly
+regains a frame you removed weeks ago.
+
+So always look at what `main` gained before merging anything into it:
+
+```powershell
+git fetch origin main
+git --no-pager log --oneline HEAD..origin/main    # commits main has that you don't
+git --no-pager diff --stat HEAD...origin/main     # three dots: changes since the fork point
+```
+
+If `HEAD..origin/main` is empty the branch is current and the merge is a plain fast-forward. If it
+isn't, read those commits before going further, and treat **any** change to
+`data\photo-catalog.json` or `assets\photos\` on `main` as a photo add/removal/swap that a careless
+merge will undo. Then merge `main` into the branch (not the other way round) so conflicts are
+resolved in the worktree rather than in the live checkout:
+
+```powershell
+git merge origin/main
+```
+
+Two rules for the conflicts:
+
+- **`data\photo-edits.json` is resolved by hand.** It is keyed by photo id, so a photo swap on
+  `main` means your branch's edits sit under the *old* id. Move the record onto the new key — keep
+  your title/body/order/exclusion, drop the retired id — rather than accepting either side whole.
+- **`data\trip.json` and `data\trip.js` are never merged, they are rebuilt.** They are generated
+  output; a three-way merge of them produces a payload that matches neither side's sources. Take
+  either version to close the conflict, then regenerate from the resolved inputs:
+
+  ```powershell
+  python scripts\build_trip_content.py data\legs.json data\narrative.json data\photo-catalog.json data\photo-edits.json data\trip.json
+  ```
+
+Verify before publishing — the point of the exercise is the photo set, so check it directly: the
+expected number of published slides per leg, the new photo id present, the retired one gone from
+`trip.json` *and* from `assets\photos\`. Then commit the merge and push, confirming it is a
+fast-forward first so you can never rewrite anyone's `main`:
+
+```powershell
+git push origin HEAD                                  # the branch, as a backup
+git merge-base --is-ancestor origin/main HEAD; $?     # must print True
+git push origin HEAD:main
+```
+
+Pushing `HEAD:main` from the worktree is deliberate: it publishes without touching, or needing to
+switch branches in, the OneDrive checkout — which is also where the un-gitignored `photos\` folder
+lives and is the last place you want a surprise checkout happening.
+
 **If `git push` fails with a 403 "Permission denied"**, the environment's default GitHub CLI/credential-manager identity may be a different account (e.g. a corporate `evlew_microsoft` account) that lacks write access to the personal `evanmlew/brazil26` repo, even though `gh auth status` may show `evanmlew` already logged in via keyring. Fix by explicitly switching and pushing with that account's token for one command:
 
 ```powershell
@@ -281,9 +374,28 @@ $token = gh auth token
 git -c http.extraheader="AUTHORIZATION: basic $([Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("x-access-token:$token")))" push origin main
 ```
 
+`gh auth switch` **on its own is not enough**, and clearing the env vars on its own is not either.
+Git asks its configured credential helpers in order, and Git Credential Manager sits ahead of the
+`gh` helper, so it answers with the cached corporate identity before `gh` is ever consulted — the
+push still 403s from an account you just switched away from. The command above sidesteps helpers
+entirely by supplying the header itself. The alternative is to reset the helper list for one
+command so only `gh` can answer, which keeps the token off the command line:
+
+```powershell
+$env:GH_TOKEN=""; $env:GITHUB_TOKEN=""
+git -c credential.helper= -c "credential.helper=!'C:\Users\evlew\AppData\Local\copilot-desktop-gh-2.96.0\gh.exe' auth git-credential" push origin HEAD:main
+```
+
+The empty `-c credential.helper=` is the load-bearing part: it clears the inherited list, and the
+second `-c` then installs `gh` as the only helper. (Adjust the `gh.exe` path — `(Get-Command gh).Source` — if the CLI version in the path has moved on.)
+
 New shells default back to the corporate account automatically (it's set via a `GH_TOKEN` env var), so there's nothing to restore afterward.
 
-After pushing, GitHub Pages typically takes 1-2 minutes to rebuild before the live site reflects the change.
+After pushing, GitHub Pages typically takes 1-2 minutes to rebuild before the live site reflects the change. Don't verify by polling `gh api repos/evanmlew/brazil26/pages/builds/latest` alone — on this repo's legacy Pages source it can keep reporting the *previous* commit as the latest build well after the new one is live, which reads like a failed deploy. Check the payload the site actually serves instead, with a cache-buster:
+
+```powershell
+(Invoke-WebRequest "https://evanmlew.github.io/brazil26/data/trip.json?cb=$(Get-Random)" -UseBasicParsing).Content -match "some new caption text"
+```
 
 Pages is configured to serve the **root of `main`** directly. The empty `.nojekyll` file at the repo
 root turns Jekyll off for that build: this is a plain static site with nothing for Jekyll to compile,
