@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "rev": 2,
+  "rev": 10,
   "photos": {
     "dsc00036-171df22a9e": {
       "featured": false,
       "legId": "amazon",
       "order": 1,
       "title": "Fifteen minutes in",
-      "body": "Fifteen minutes into our very first boat tour, and already a Harpy Eagle -- the most powerful raptor in the Americas -- watching us from a branch over the river.",
+      "body": "Fifteen minutes into our first boat tour, and we saw a Harpy Eagle -- the most powerful raptor in the Americas",
       "species": "Harpy Eagle"
     },
     "dsc00108-bbffb10b02": {
@@ -40,7 +40,7 @@
       "legId": "amazon",
       "order": 6,
       "title": "Through the high canopy",
-      "body": "The spider monkey troop moved fast through the treetops -- our guide said some of the younger ones had never seen humans before and were more curious than afraid, pausing to watch us as we watched them.",
+      "body": "Some of the young spider monkeys had never seen humans before and were more curious than afraid, pausing to watch us as we watched them.",
       "species": "Spider Monkey"
     },
     "dsc00870-fe2707a496": {
@@ -79,7 +79,7 @@
       "featured": true,
       "legId": "amazon",
       "order": 15,
-      "title": "The otter on the boulder",
+      "title": "Catching fish",
       "body": "A neotropical otter hauled out on a midstream boulder, grabbing fish with its paws -- we watched it catch seven in a row in the Cristalino river.",
       "species": "Neotropical Otter",
       "subjectId": "otter"
@@ -106,7 +106,7 @@
       "legId": "amazon",
       "order": 20,
       "title": "The forest exhales",
-      "body": "Another look from the Cristalino Lodge observation deck -- Amazon trees release so much water vapor through transpiration that scientists call the resulting moisture flow a 'flying river'; this is what it looks like at first light, still pooled in the canopy before the sun burns it off."
+      "body": "Amazon trees release so much water vapor through transpiration that scientists call the resulting moisture flow a 'flying river'"
     },
     "dsc02187-97ac82c963": {
       "featured": true,
@@ -245,7 +245,6 @@
       "legId": "pantanal",
       "order": 15,
       "title": "Two of a kind",
-      "body": "A bonded pair of hyacinth macaws -- the world's largest flying parrot, cobalt from crown to tail -- perched together in a tree above the trail.",
       "species": "Hyacinth Macaw",
       "subjectId": "macaw"
     },
@@ -320,7 +319,7 @@
       "legId": "saopaulo",
       "order": 2,
       "title": "Golden arches, translated",
-      "body": "This São Paulo Mequi -- Brazil's affectionate nickname for McDonald's -- is reportedly the chain's 1,000th location in the country, tucked into a converted early-1900s mansion from Paulista Avenue's original mansion-row days."
+      "body": "This São Paulo Mequi - Brazil's nickname for McDonald's - is reportedly the chain's 1,000th location in the country, in a converted early-1900s mansion."
     },
     "img-2723-9b70c4fb57": {
       "featured": false,
@@ -336,13 +335,13 @@
       "legId": "saopaulo",
       "order": 0,
       "title": "The city as canvas",
-      "body": "A mural-wrapped building near Paulista Avenue -- São Paulo's street-art scene exploded after the city banned outdoor billboards in 2006, clearing the way for muralists like Os Gêmeos and Nina Pandolfo to turn the city into a canvas."
+      "body": "A view from the São Paulo Museum of Art. The city's street-art scene exploded after the city banned outdoor billboards in 2006, clearing the way for muralists."
     },
     "img-2727-a85b9fd07e": {
       "legId": "saopaulo",
       "order": 3,
-      "title": "Dinner under the fig tree",
-      "body": "A Brazilian steak dinner to remember at Figueira Rubaiyat -- built around a massive fig tree in the dining room -- picanha, ribeye, palm heart, and pitu shrimp piled high.",
+      "title": "Brazilian steak dinner",
+      "body": "A dinner to remember at Figueira Rubaiyat -- built around a massive fig tree in the dining room -- with picanha, ribeye, palm heart, and pitu shrimp.",
       "subjectId": "sp_02"
     },
     "img-2735-28ab2eca22": {
@@ -470,28 +469,70 @@
       "legId": "rio",
       "order": 5,
       "title": "The Lapa Steps",
-      "body": "215 steps that the Chilean artist Jorge Selarón tiled by hand from 1990 until his death in 2013, using tiles sent to him from more than 60 countries."
+      "body": "215 steps that the Chilean artist Jorge Selarón tiled by hand from 1990 until his death in 2013, using tiles sent to him from more than 60 countries.",
+      "excluded": true
     },
     "por-maycon-nunes-photography-148-eee1373978": {
       "featured": false,
       "legId": "rio",
       "order": 6,
-      "title": "All four of us, mid-staircase",
-      "body": "Escadaria Selarón, the Lapa steps -- 215 of them, tiled by hand by the Chilean artist Jorge Selarón from 1990 until his death in 2013, with tiles sent to him from more than 60 countries. The red, yellow and green running the whole length were his tribute to Brazil."
+      "title": "The Lapa Steps",
+      "body": "215 steps that the Chilean artist Jorge Selarón tiled by hand from 1990 until his death in 2013, using tiles sent to him from more than 60 countries.",
+      "notes": [
+        {
+          "who": "YOU",
+          "text": "this is very similar to the last set of text for the last photo. can you suggest alternatives?",
+          "at": "2026-08-03T05:37:53.050Z"
+        },
+        {
+          "who": "YOU",
+          "text": "also, make the text shorter",
+          "at": "2026-08-03T05:38:53.905Z"
+        },
+        {
+          "who": "ASSISTANT",
+          "text": "This was the duplicate. Frame 5 (“The Lapa Steps”) already carries Selarón, the 215 steps, 1990–2013 and the 60 countries — your body here repeated all four, so I've let frame 5 keep the history and given this one the moment instead. Also corrected “mid-staircase”: you're on the cobbles at the bottom. The tribute-colours line moved to frame 7, where the green and yellow is actually in shot. Alternatives: “The four of us, bottom of the steps” or “Before the climb”.",
+          "at": "2026-08-03T05:42:58Z"
+        }
+      ]
     },
     "por-maycon-nunes-photography-158-5d1c81c84b": {
       "featured": false,
       "legId": "rio",
       "order": 7,
-      "title": "Ian and Zach on the mosaic",
-      "body": "The brothers stopped partway up. Every step is its own mosaic, pieced from more than 2,000 tiles, and no two of them quite match."
+      "title": "Brothers",
+      "body": "The green and yellow tiles are Selarón's tribute to Brazil — the country he adopted, and dedicated the staircase to.",
+      "notes": [
+        {
+          "who": "YOU",
+          "text": "can you suggest alternatives text?",
+          "at": "2026-08-03T05:38:01.804Z"
+        },
+        {
+          "who": "ASSISTANT",
+          "text": "Kept your title. Moved the red/yellow/green tribute line here from frame 6 because this is the frame where you can actually see it — that flag-coloured wave fills the wall behind them. Alternatives: keep your “more than 2,000 tiles, no two quite match” (it's good, it just also fits frame 5) or “They sat down; everyone else kept climbing”.",
+          "at": "2026-08-03T05:42:58Z"
+        }
+      ]
     },
     "por-maycon-nunes-photography-243-0ef6bb43d8": {
       "featured": false,
       "legId": "rio",
       "order": 8,
-      "title": "Christ the Redeemer",
-      "body": "View from Mirante Dona Marta"
+      "title": "Corcovado from Dona Marta",
+      "body": "The mirante looks straight across at the peak: 710 meters of granite with the 30-meter statue standing on top of it.",
+      "notes": [
+        {
+          "who": "YOU",
+          "text": "Can you suggest more here?",
+          "at": "2026-08-03T05:38:07.975Z"
+        },
+        {
+          "who": "ASSISTANT",
+          "text": "Retitled — “Christ the Redeemer” promised a portrait of the statue, but here it's a speck and the real subject is the peak with the four of you under it. Gave this frame the 710m/30m numbers, which is why I took them off frame 11 (they were the only fact that frame had, and the two shots are close enough that repeating them would read as a copy-paste). Alternatives: “The whole mountain in one frame” or “The classic view, from the other side of the valley”.",
+          "at": "2026-08-03T05:42:58Z"
+        }
+      ]
     },
     "por-maycon-nunes-photography-247-11de0d98ea": {
       "featured": false,
@@ -512,15 +553,39 @@
       "featured": false,
       "legId": "rio",
       "order": 3,
-      "title": "Trying on a front-of-parade head dress",
-      "body": "Ian wearing one of the front-of-parade fantasias -- the entire thing rides on one person, all the way down the Sambadrome."
+      "title": "Front-of-parade fantasia",
+      "body": "Big opening costume built on a rattan frame so the whole thing rides on one person",
+      "notes": [
+        {
+          "who": "YOU",
+          "text": "can you suggest more changes here",
+          "at": "2026-08-03T05:37:12.408Z"
+        },
+        {
+          "who": "ASSISTANT",
+          "text": "Retitled because it isn't a head dress — that radial sunburst is the whole costume and he's inside it. Alternatives: “Ian, inside the whole thing” (warmer) or “One person carries all of this” (leads with the fact).",
+          "at": "2026-08-03T05:42:58Z"
+        }
+      ]
     },
     "por-maycon-nunes-photography-283-f34b185068": {
       "featured": false,
       "legId": "rio",
       "order": 11,
       "title": "Through the branches",
-      "body": "Christ the Redeemer -- 30 meters of soapstone on a 710-meter granite peak -- framed by the Atlantic forest that still covers Corcovado."
+      "body": "Christ the Redeemer, seen from the Dona Marta lookout",
+      "notes": [
+        {
+          "who": "YOU",
+          "text": "more options for through the branches?",
+          "at": "2026-08-03T05:38:23.419Z"
+        },
+        {
+          "who": "ASSISTANT",
+          "text": "Kept your title, it earns the shot. The 30m/710m measurements went to frame 8 (the wide view), so this one needed its own fact — the forest doing the framing is hand-planted, which is a better fit for a photo that is mostly leaves. Alternatives: “Corcovado, half hidden” or “The forest gets in the way, pleasantly”.",
+          "at": "2026-08-03T05:42:58Z"
+        }
+      ]
     },
     "por-maycon-nunes-photography-293-a3cbf13aae": {
       "featured": false,
@@ -570,8 +635,20 @@
       "featured": false,
       "legId": "rio",
       "order": 4,
-      "title": "Zach in the wardrobe room",
-      "body": "Racks of real parade costumes and an open invitation to put one on. Zach's green-and-gold fantasia came with a matching crown and a lot more weight than it looks."
+      "title": "The wardrobe room",
+      "body": "Putting on elaborate carnival costumes for fun",
+      "notes": [
+        {
+          "who": "YOU",
+          "text": "can you suggest more changes here too? don't really like this text",
+          "at": "2026-08-03T05:37:34.587Z"
+        },
+        {
+          "who": "ASSISTANT",
+          "text": "Kept your title. The old body ended on “a lot more weight than it looks”, which is a feeling rather than a thing — swapped it for the football-pitch print and banknote cuffs, which are visible and odd enough to earn the line. Alternatives: “A football pitch, and money at the wrists” or “Every one of these has paraded”.",
+          "at": "2026-08-03T05:42:58Z"
+        }
+      ]
     }
   }
 }
