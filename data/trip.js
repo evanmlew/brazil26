@@ -2,7 +2,7 @@
 // Same payload as trip.json, loaded synchronously so the first paint has data.
 window.__TRIP__ = {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-02T23:36:43-07:00",
+  "generatedAt": "2026-08-07T22:36:30-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",
@@ -28,35 +28,27 @@ window.__TRIP__ = {
     ]
   },
   "stopThumb": {
-    "saopaulo": "assets/photos/img-2725-c11d751263-thumb.jpg",
-    "amazon": "assets/photos/img-0949-7cc238e17d-thumb.jpg",
+    "saopaulo": "assets/photos/img-2725-58321d39c6-thumb.jpg",
+    "amazon": "assets/photos/img-0949-4f2df63e22-thumb.jpg",
     "pantanal": "assets/photos/dsc02187-97ac82c963-thumb.jpg",
     "rio": "assets/photos/img-3099-fbb79ec833-thumb.jpg"
   },
   "photoCoords": {
-    "img-2725-c11d751263": [
+    "img-2725-58321d39c6": [
       -23.561278,
       -46.655708
     ],
-    "img-2715-4760f8ea34": [
+    "img-2715-0c99014ed4": [
       -23.560306,
       -46.657939
     ],
-    "img-2727-a85b9fd07e": [
+    "img-2727-a51483c06a": [
       -23.565439,
       -46.669736
     ],
-    "img-2735-28ab2eca22": [
-      -9.636581,
-      -55.937858
-    ],
-    "dsc00036-171df22a9e": [
-      -9.636389,
-      -55.937778
-    ],
-    "img-0949-7cc238e17d": [
-      -9.563831,
-      -55.902989
+    "img-2737-66aac8ec38": [
+      -9.636506,
+      -55.937783
     ],
     "dsc00408-7339a02d29": [
       -9.546667,
@@ -69,6 +61,10 @@ window.__TRIP__ = {
     "dsc00609-6cf622cb46": [
       -9.546667,
       -55.909167
+    ],
+    "img-0949-4f2df63e22": [
+      -9.563831,
+      -55.902989
     ],
     "dsc00870-fe2707a496": [
       -9.6202,
@@ -102,7 +98,7 @@ window.__TRIP__ = {
       -9.561111,
       -55.912222
     ],
-    "img-2833-dd8abb0b33": [
+    "img-2833-528cf60982": [
       -9.596642,
       -55.931794
     ],
@@ -150,10 +146,6 @@ window.__TRIP__ = {
       -19.975556,
       -56.314444
     ],
-    "dsc02921-9e9dd104f6": [
-      -19.9755,
-      -56.3145
-    ],
     "dsc03020-92020f4b1b": [
       -19.952222,
       -56.304722
@@ -165,10 +157,6 @@ window.__TRIP__ = {
     "dsc03044-342f12324e": [
       -19.9537,
       -56.3052
-    ],
-    "dsc03048-ab8e831ffc": [
-      -19.953611,
-      -56.305278
     ],
     "dsc03126-b2d1854960": [
       -19.96178,
@@ -186,10 +174,6 @@ window.__TRIP__ = {
       -19.89901,
       -56.22534
     ],
-    "dsc03644-76be797401": [
-      -19.898889,
-      -56.225278
-    ],
     "dsc03693-aa0fe4ad17": [
       -19.898889,
       -56.225278
@@ -198,11 +182,12 @@ window.__TRIP__ = {
       -19.858461,
       -56.273975
     ],
+    "kingfisher": null,
     "img-3099-fbb79ec833": [
       -22.982231,
       -43.190322
     ],
-    "por-maycon-nunes-photography-112-971c4c9622": [
+    "por-maycon-nunes-photography-112-745736b769": [
       -22.89536,
       -43.1984
     ],
@@ -214,15 +199,15 @@ window.__TRIP__ = {
       -22.89536,
       -43.1984
     ],
-    "por-maycon-nunes-photography-148-eee1373978": [
+    "por-maycon-nunes-photography-148-a2fb0a3bee": [
       -22.91523,
       -43.17907
     ],
-    "por-maycon-nunes-photography-158-5d1c81c84b": [
+    "por-maycon-nunes-photography-158-b64d34c159": [
       -22.91523,
       -43.17907
     ],
-    "por-maycon-nunes-photography-243-0ef6bb43d8": [
+    "por-maycon-nunes-photography-243-eeab9f13fb": [
       -22.945,
       -43.196389
     ],
@@ -254,7 +239,7 @@ window.__TRIP__ = {
       -22.951847,
       -43.209992
     ],
-    "img-3055-3e5a6402a5": [
+    "img-3055-f06c36d678": [
       -22.951839,
       -43.210053
     ]
@@ -314,12 +299,12 @@ window.__TRIP__ = {
       {
         "leg": "saopaulo",
         "legId": "saopaulo",
-        "key": "img-2725-c11d751263",
-        "photoId": "img-2725-c11d751263",
+        "key": "img-2725-58321d39c6",
+        "photoId": "img-2725-58321d39c6",
         "kind": "photo",
-        "src": "assets/photos/img-2725-c11d751263-card.jpg",
-        "srcAvif": "assets/photos/img-2725-c11d751263-card.avif",
-        "thumb": "assets/photos/img-2725-c11d751263-thumb.jpg",
+        "src": "assets/photos/img-2725-58321d39c6-card.jpg",
+        "srcAvif": "assets/photos/img-2725-58321d39c6-card.avif",
+        "thumb": "assets/photos/img-2725-58321d39c6-thumb.jpg",
         "alt": "The city as canvas",
         "pinLabel": "The city as canvas",
         "title": "The city as canvas",
@@ -335,12 +320,12 @@ window.__TRIP__ = {
       {
         "leg": "saopaulo",
         "legId": "saopaulo",
-        "key": "img-2715-4760f8ea34",
-        "photoId": "img-2715-4760f8ea34",
+        "key": "img-2715-0c99014ed4",
+        "photoId": "img-2715-0c99014ed4",
         "kind": "photo",
-        "src": "assets/photos/img-2715-4760f8ea34-card.jpg",
-        "srcAvif": "assets/photos/img-2715-4760f8ea34-card.avif",
-        "thumb": "assets/photos/img-2715-4760f8ea34-thumb.jpg",
+        "src": "assets/photos/img-2715-0c99014ed4-card.jpg",
+        "srcAvif": "assets/photos/img-2715-0c99014ed4-card.avif",
+        "thumb": "assets/photos/img-2715-0c99014ed4-thumb.jpg",
         "alt": "Golden arches, translated",
         "pinLabel": "Golden arches, translated",
         "title": "Golden arches, translated",
@@ -356,16 +341,16 @@ window.__TRIP__ = {
       {
         "leg": "saopaulo",
         "legId": "saopaulo",
-        "key": "img-2727-a85b9fd07e",
-        "photoId": "img-2727-a85b9fd07e",
+        "key": "img-2727-a51483c06a",
+        "photoId": "img-2727-a51483c06a",
         "subjectId": "sp_02",
         "kind": "photo",
-        "src": "assets/photos/img-2727-a85b9fd07e-card.jpg",
-        "srcAvif": "assets/photos/img-2727-a85b9fd07e-card.avif",
-        "thumb": "assets/photos/img-2727-a85b9fd07e-thumb.jpg",
-        "alt": "Brazilian steak dinner",
-        "pinLabel": "Brazilian steak dinner",
-        "title": "Brazilian steak dinner",
+        "src": "assets/photos/img-2727-a51483c06a-card.jpg",
+        "srcAvif": "assets/photos/img-2727-a51483c06a-card.avif",
+        "thumb": "assets/photos/img-2727-a51483c06a-thumb.jpg",
+        "alt": "Churrasco & company",
+        "pinLabel": "Churrasco & company",
+        "title": "Churrasco & company",
         "body": "Dinner at Figueira Rubaiyat -- built around a massive fig tree in the dining room -- with picanha, ribeye, palm heart, and pitu shrimp.",
         "chips": [],
         "star": false,
@@ -380,12 +365,12 @@ window.__TRIP__ = {
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "img-2735-28ab2eca22",
-        "photoId": "img-2735-28ab2eca22",
+        "key": "img-2737-66aac8ec38",
+        "photoId": "img-2737-66aac8ec38",
         "kind": "photo",
-        "src": "assets/photos/img-2735-28ab2eca22-card.jpg",
-        "srcAvif": "assets/photos/img-2735-28ab2eca22-card.avif",
-        "thumb": "assets/photos/img-2735-28ab2eca22-thumb.jpg",
+        "src": "assets/photos/img-2737-66aac8ec38-card.jpg",
+        "srcAvif": "assets/photos/img-2737-66aac8ec38-card.avif",
+        "thumb": "assets/photos/img-2737-66aac8ec38-thumb.jpg",
         "alt": "The only way in",
         "pinLabel": "The only way in",
         "title": "The only way in",
@@ -395,52 +380,8 @@ window.__TRIP__ = {
         "featured": false,
         "taxon": "",
         "species": "",
-        "lat": -9.636581,
-        "lng": -55.937858
-      },
-      {
-        "leg": "amazon",
-        "legId": "amazon",
-        "key": "dsc00036-171df22a9e",
-        "photoId": "dsc00036-171df22a9e",
-        "kind": "photo",
-        "src": "assets/photos/dsc00036-171df22a9e-card.jpg",
-        "srcAvif": "assets/photos/dsc00036-171df22a9e-card.avif",
-        "thumb": "assets/photos/dsc00036-171df22a9e-thumb.jpg",
-        "alt": "Fifteen minutes in",
-        "pinLabel": "Fifteen minutes in",
-        "title": "Fifteen minutes in",
-        "body": "Fifteen minutes into our first boat tour, and we saw a Harpy Eagle -- the most powerful raptor in the Americas",
-        "chips": [
-          "HARPY EAGLE"
-        ],
-        "star": false,
-        "featured": false,
-        "taxon": "",
-        "species": "Harpy Eagle",
-        "lat": -9.636389,
-        "lng": -55.937778
-      },
-      {
-        "leg": "amazon",
-        "legId": "amazon",
-        "key": "img-0949-7cc238e17d",
-        "photoId": "img-0949-7cc238e17d",
-        "kind": "photo",
-        "src": "assets/photos/img-0949-7cc238e17d-card.jpg",
-        "srcAvif": "assets/photos/img-0949-7cc238e17d-card.avif",
-        "thumb": "assets/photos/img-0949-7cc238e17d-thumb.jpg",
-        "alt": "Dwarfed by a tree",
-        "pinLabel": "Dwarfed by a tree",
-        "title": "Dwarfed by a tree",
-        "body": "Four of us barely wrap around the base of a centuries-old Brazil nut tree, one of the giants of the Cristalino.",
-        "chips": [],
-        "star": false,
-        "featured": true,
-        "taxon": "",
-        "species": "",
-        "lat": -9.563831,
-        "lng": -55.902989
+        "lat": -9.636506,
+        "lng": -55.937783
       },
       {
         "leg": "amazon",
@@ -477,7 +418,7 @@ window.__TRIP__ = {
         "alt": "A wary eye",
         "pinLabel": "A wary eye",
         "title": "A wary eye",
-        "body": "One of the spider monkey troop pausing mid-branch, keeping a wary eye on us below. Thumbless, they are built to swing by their tails instead.",
+        "body": "Spider monkeys are thumbless and swing by their tails instead.",
         "chips": [
           "SPIDER MONKEY"
         ],
@@ -500,7 +441,7 @@ window.__TRIP__ = {
         "alt": "Through the high canopy",
         "pinLabel": "Through the high canopy",
         "title": "Through the high canopy",
-        "body": "Some of the young spider monkeys had never seen humans before and were more curious than afraid, pausing to watch us as we watched them.",
+        "body": "Some of the young spider monkeys had never seen humans before and were more curious than afraid.",
         "chips": [
           "SPIDER MONKEY"
         ],
@@ -514,16 +455,37 @@ window.__TRIP__ = {
       {
         "leg": "amazon",
         "legId": "amazon",
+        "key": "img-0949-4f2df63e22",
+        "photoId": "img-0949-4f2df63e22",
+        "kind": "photo",
+        "src": "assets/photos/img-0949-4f2df63e22-card.jpg",
+        "srcAvif": "assets/photos/img-0949-4f2df63e22-card.avif",
+        "thumb": "assets/photos/img-0949-4f2df63e22-thumb.jpg",
+        "alt": "Dwarfed by a tree",
+        "pinLabel": "Dwarfed by a tree",
+        "title": "Dwarfed by a tree",
+        "body": "A centuries-old Brazil nut tree, one of the giants of the Cristalino.",
+        "chips": [],
+        "star": false,
+        "featured": true,
+        "taxon": "",
+        "species": "",
+        "lat": -9.563831,
+        "lng": -55.902989
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
         "key": "dsc00870-fe2707a496",
         "photoId": "dsc00870-fe2707a496",
         "kind": "photo",
         "src": "assets/photos/dsc00870-fe2707a496-card.jpg",
         "srcAvif": "assets/photos/dsc00870-fe2707a496-card.avif",
         "thumb": "assets/photos/dsc00870-fe2707a496-thumb.jpg",
-        "alt": "One more frame",
-        "pinLabel": "One more frame",
-        "title": "One more frame",
-        "body": "Out on the water at sunset, camera up, chasing the day's last good light.",
+        "alt": "Awaiting title",
+        "pinLabel": "Awaiting title",
+        "title": "Awaiting title",
+        "body": "",
         "chips": [],
         "star": false,
         "featured": false,
@@ -567,7 +529,7 @@ window.__TRIP__ = {
         "alt": "The sky catches fire",
         "pinLabel": "The sky catches fire",
         "title": "The sky catches fire",
-        "body": "The sky went orange right as the roost tree filled with birds -- one of the best sunsets of the trip.",
+        "body": "Sunset on the Cristalino River",
         "chips": [],
         "star": false,
         "featured": true,
@@ -585,10 +547,10 @@ window.__TRIP__ = {
         "src": "assets/photos/img-2797-43aa1fe11c-card.jpg",
         "srcAvif": "assets/photos/img-2797-43aa1fe11c-card.avif",
         "thumb": "assets/photos/img-2797-43aa1fe11c-thumb.jpg",
-        "alt": "Riding it in",
-        "pinLabel": "Riding it in",
-        "title": "Riding it in",
-        "body": "Heading back to the lodge as the roost tree glowed behind us in the sunset.",
+        "alt": "Awaiting title",
+        "pinLabel": "Awaiting title",
+        "title": "Awaiting title",
+        "body": "",
         "chips": [],
         "star": false,
         "featured": false,
@@ -609,8 +571,8 @@ window.__TRIP__ = {
         "thumb": "assets/photos/dsc01370-ddb01aff26-thumb.jpg",
         "alt": "Tree Frog — Boana sp.",
         "pinLabel": "Tree Frog",
-        "title": "Small things, big eyes",
-        "body": "A tree frog found on low vegetation during a night walk, clinging to a leaf by its adhesive toe pads.",
+        "title": "Golden stare",
+        "body": "Spotting an Amazon milk frog during our night walk.",
         "chips": [
           "TREE FROG"
         ],
@@ -630,10 +592,10 @@ window.__TRIP__ = {
         "src": "assets/photos/dsc01461-1d7106395b-card.jpg",
         "srcAvif": "assets/photos/dsc01461-1d7106395b-card.avif",
         "thumb": "assets/photos/dsc01461-1d7106395b-thumb.jpg",
-        "alt": "A stingless bee, a bromeliad in bloom",
-        "pinLabel": "A stingless bee, a bromeliad in bloom",
-        "title": "A stingless bee, a bromeliad in bloom",
-        "body": "A stingless bee working a pink-coned aechmea in bloom -- one of a thousand tiny scenes at knee height in the Cristalino's understory.",
+        "alt": "Coming in for landing",
+        "pinLabel": "Coming in for landing",
+        "title": "Coming in for landing",
+        "body": "A bee closes in on an Amazon bromeliad - the pink bracts last for weeks, but the blue flowers open for only a day or two.",
         "chips": [
           "PINK-CONED AECHMEA & STINGLESS BEE"
         ],
@@ -695,16 +657,16 @@ window.__TRIP__ = {
       {
         "leg": "amazon",
         "legId": "amazon",
-        "key": "img-2833-dd8abb0b33",
-        "photoId": "img-2833-dd8abb0b33",
+        "key": "img-2833-528cf60982",
+        "photoId": "img-2833-528cf60982",
         "kind": "photo",
-        "src": "assets/photos/img-2833-dd8abb0b33-card.jpg",
-        "srcAvif": "assets/photos/img-2833-dd8abb0b33-card.avif",
-        "thumb": "assets/photos/img-2833-dd8abb0b33-thumb.jpg",
+        "src": "assets/photos/img-2833-528cf60982-card.jpg",
+        "srcAvif": "assets/photos/img-2833-528cf60982-card.avif",
+        "thumb": "assets/photos/img-2833-528cf60982-thumb.jpg",
         "alt": "Right outside our door",
         "pinLabel": "Right outside our door",
         "title": "Right outside our door",
-        "body": "Returning from a hike, we found a capybara grazing a few feet from our room -- close enough to touch.",
+        "body": "Returning from a hike, we found a capybara grazing a few feet from our room.",
         "chips": [
           "CAPYBARA"
         ],
@@ -727,7 +689,7 @@ window.__TRIP__ = {
         "alt": "An unbroken sea of green",
         "pinLabel": "An unbroken sea of green",
         "title": "An unbroken sea of green",
-        "body": "Sunrise from the Cristalino Lodge observation deck -- an unbroken carpet of rainforest stretching to the horizon.",
+        "body": "Sunrise from the Cristalino Lodge observation deck.",
         "chips": [],
         "star": false,
         "featured": true,
@@ -771,8 +733,8 @@ window.__TRIP__ = {
         "thumb": "assets/photos/dsc02187-97ac82c963-thumb.jpg",
         "alt": "Ocelot — Leopardus pardalis",
         "pinLabel": "Ocelot",
-        "title": "The elegant one",
-        "body": "A night encounter with an ocelot, the Pantanal's most elegant small cat -- chain-like rosettes smearing into long streaks.",
+        "title": "Camouflaged in copper",
+        "body": "A night encounter with a Pantanal ocelot, with its chain-like rosettes.",
         "chips": [
           "OCELOT"
         ],
@@ -795,7 +757,7 @@ window.__TRIP__ = {
         "thumb": "assets/photos/dsc02271-0ee304448c-thumb.jpg",
         "alt": "Pampas Deer & Cattle Tyrant — Ozotoceros bezoarticus",
         "pinLabel": "Pampas Deer & Cattle Tyrant",
-        "title": "Deer, with bird",
+        "title": "Free ride",
         "body": "A pampas deer doe crossing open grassland with a passenger -- a cattle tyrant riding her back for flushed insects.",
         "chips": [
           "PAMPAS DEER & CATTLE TYRANT"
@@ -820,7 +782,7 @@ window.__TRIP__ = {
         "alt": "Jabiru — Jabiru mycteria",
         "pinLabel": "Jabiru",
         "title": "The Pantanal's emblem",
-        "body": "A Jabiru stork -- the tallest flying bird in the Americas, and widely considered the Pantanal's own emblem -- pulling a fresh crab from the grass with its great upturned bill.",
+        "body": "A Jabiru stork -- the tallest flying bird in the Americas -- pulling a fresh crab from the grass with its great upturned bill.",
         "chips": [
           "JABIRU"
         ],
@@ -843,8 +805,8 @@ window.__TRIP__ = {
         "thumb": "assets/photos/dsc02472-c6a4b24f7f-thumb.jpg",
         "alt": "Jaguar — Panthera onca",
         "pinLabel": "Jaguar",
-        "title": "A cub in daylight",
-        "body": "The headline of the trip: a six-month-old jaguar cub trailing close behind its mother, skittish of us in a way she wasn't.",
+        "title": "Learning the trail",
+        "body": "A six-month-old jaguar cub trails close behind its mother - still cautious, still learning.",
         "chips": [
           "JAGUAR"
         ],
@@ -868,7 +830,7 @@ window.__TRIP__ = {
         "alt": "South American Tapir — Tapirus terrestris",
         "pinLabel": "South American Tapir",
         "title": "Gardener of the forest",
-        "body": "South America's largest land mammal -- known locally as the Brazilian tapir -- out and browsing in the open at midday. Notoriously shy and difficult to track, this was a rare, clear look at one.",
+        "body": "South America's largest land mammal - the tapir - browsing in the open at midday. Notoriously shy and difficult to track, this was a rare, clear look at one.",
         "chips": [
           "SOUTH AMERICAN TAPIR"
         ],
@@ -915,7 +877,7 @@ window.__TRIP__ = {
         "alt": "Southern Crested Caracara — Caracara plancus",
         "pinLabel": "Southern Crested Caracara",
         "title": "Early bird gets the snake",
-        "body": "Two southern crested caracaras in a tug-of-war over a snake -- technically part of the falcon family, but nothing like a typical falcon: bold, ground-striding opportunists that scavenge as much as they hunt.",
+        "body": "Two southern crested caracaras in a tug-of-war over a snake.",
         "chips": [
           "SOUTHERN CRESTED CARACARA"
         ],
@@ -938,7 +900,7 @@ window.__TRIP__ = {
         "alt": "Ancient and unbothered",
         "pinLabel": "Ancient and unbothered",
         "title": "Ancient and unbothered",
-        "body": "A yacare caiman resting at the water's edge, close enough to count every scale. Hunted hard for its hide in the 1980s, the species has since rebounded to some 10 million strong across the Pantanal.",
+        "body": "Hunted hard for its hide in the 1980s, the yacare caiman have since rebounded to some 10 million strong across the Pantanal.",
         "chips": [
           "YACARE CAIMAN"
         ],
@@ -961,41 +923,17 @@ window.__TRIP__ = {
         "thumb": "assets/photos/dsc02889-8dc3b09536-thumb.jpg",
         "alt": "Yellow-billed Cardinal — Paroaria capitata",
         "pinLabel": "Yellow-billed Cardinal",
-        "title": "Red, white and black",
-        "body": "A yellow-billed cardinal atop a flowering shrub, crisp red, white and black. The name's a bit of a misnomer -- it's actually a tanager, not a true cardinal.",
+        "title": "The cardinal's perch",
+        "body": "A red-crested cardinal atop a flowering tree in the Pantanal.",
         "chips": [
-          "YELLOW-BILLED CARDINAL"
+          "RED-CRESTED CARDINAL"
         ],
         "star": false,
         "featured": false,
         "taxon": "Bird",
-        "species": "Yellow-billed Cardinal",
+        "species": "Red-Crested Cardinal",
         "lat": -19.975556,
         "lng": -56.314444
-      },
-      {
-        "leg": "pantanal",
-        "legId": "pantanal",
-        "key": "dsc02921-9e9dd104f6",
-        "photoId": "dsc02921-9e9dd104f6",
-        "subjectId": "kingfisher",
-        "kind": "photo",
-        "src": "assets/photos/dsc02921-9e9dd104f6-card.jpg",
-        "srcAvif": "assets/photos/dsc02921-9e9dd104f6-card.avif",
-        "thumb": "assets/photos/dsc02921-9e9dd104f6-thumb.jpg",
-        "alt": "Ringed Kingfisher — Megaceryle torquata",
-        "pinLabel": "Ringed Kingfisher",
-        "title": "The largest kingfisher alive",
-        "body": "A ringed kingfisher, the largest kingfisher in the Americas, framed through palm fronds above the water.",
-        "chips": [
-          "RINGED KINGFISHER"
-        ],
-        "star": false,
-        "featured": false,
-        "taxon": "Bird",
-        "species": "Ringed Kingfisher",
-        "lat": -19.9755,
-        "lng": -56.3145
       },
       {
         "leg": "pantanal",
@@ -1009,7 +947,7 @@ window.__TRIP__ = {
         "alt": "Napping in the open",
         "pinLabel": "Napping in the open",
         "title": "Napping in the open",
-        "body": "The world's largest rodent doesn't hurry for anyone — this one stayed stretched out and dozing in the grass, completely unfazed by our jeep.",
+        "body": "",
         "chips": [
           "CAPYBARA"
         ],
@@ -1033,7 +971,7 @@ window.__TRIP__ = {
         "alt": "Lesser Yellow-headed Vulture — Cathartes burrovianus",
         "pinLabel": "Lesser Yellow-headed Vulture",
         "title": "Waiting for a meal",
-        "body": "A trio of lesser yellow-headed vultures waiting on carrion, patient scavengers that quarter low over open country, sniffing out their next meal.",
+        "body": "A trio of lesser yellow-headed vultures waiting on carrion.",
         "chips": [
           "LESSER YELLOW-HEADED VULTURE"
         ],
@@ -1056,8 +994,8 @@ window.__TRIP__ = {
         "thumb": "assets/photos/dsc03044-342f12324e-thumb.jpg",
         "alt": "Hyacinth Macaw — Anodorhynchus hyacinthinus",
         "pinLabel": "Hyacinth Macaw",
-        "title": "The largest parrot alive",
-        "body": "A bonded pair of the world's largest flying parrot, cobalt from crown to tail, greeting each other at their nest box.",
+        "title": "Beak to beak",
+        "body": "A bonded pair of the world's largest flying parrot, greeting each other at their nest box.",
         "chips": [
           "HYACINTH MACAW"
         ],
@@ -1071,30 +1009,6 @@ window.__TRIP__ = {
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc03048-ab8e831ffc",
-        "photoId": "dsc03048-ab8e831ffc",
-        "subjectId": "macaw",
-        "kind": "photo",
-        "src": "assets/photos/dsc03048-ab8e831ffc-card.jpg",
-        "srcAvif": "assets/photos/dsc03048-ab8e831ffc-card.avif",
-        "thumb": "assets/photos/dsc03048-ab8e831ffc-thumb.jpg",
-        "alt": "Hyacinth Macaw — Anodorhynchus hyacinthinus",
-        "pinLabel": "Hyacinth Macaw",
-        "title": "Two of a kind",
-        "body": "A bonded pair of the world's largest flying parrot, cobalt from crown to tail.",
-        "chips": [
-          "HYACINTH MACAW"
-        ],
-        "star": true,
-        "featured": false,
-        "taxon": "Bird",
-        "species": "Hyacinth Macaw",
-        "lat": -19.953611,
-        "lng": -56.305278
-      },
-      {
-        "leg": "pantanal",
-        "legId": "pantanal",
         "key": "dsc03126-b2d1854960",
         "photoId": "dsc03126-b2d1854960",
         "kind": "photo",
@@ -1104,7 +1018,7 @@ window.__TRIP__ = {
         "alt": "An armored shuffle",
         "pinLabel": "An armored shuffle",
         "title": "An armored shuffle",
-        "body": "A six-banded armadillo shuffling through the evening grass, backlit by the low sun.",
+        "body": "A six-banded armadillo shuffling through the evening grass.",
         "chips": [
           "SIX-BANDED ARMADILLO"
         ],
@@ -1127,8 +1041,8 @@ window.__TRIP__ = {
         "thumb": "assets/photos/dsc03163-be20f41989-thumb.jpg",
         "alt": "Burrowing Owl — Athene cunicularia",
         "pinLabel": "Burrowing Owl",
-        "title": "Standing on a fence post",
-        "body": "A burrowing owl -- one that lives underground and hunts by day -- standing tall on a fence post in warm light.",
+        "title": "Fence Post Sentinel",
+        "body": "Unlike most owls, burrowing owls hunt by day and nest underground rather than in trees.",
         "chips": [
           "BURROWING OWL"
         ],
@@ -1151,7 +1065,7 @@ window.__TRIP__ = {
         "thumb": "assets/photos/dsc03373-d8e19a4866-thumb.jpg",
         "alt": "Marsh Deer — Blastocerus dichotomus",
         "pinLabel": "Marsh Deer",
-        "title": "The continent's largest deer",
+        "title": "The marsh king",
         "body": "A marsh deer buck in full antler -- the continent's largest deer, and one of the Pantanal's Big Five alongside the jaguar, tapir and giant anteater.",
         "chips": [
           "MARSH DEER"
@@ -1175,7 +1089,7 @@ window.__TRIP__ = {
         "alt": "Sneaking closer",
         "pinLabel": "Sneaking closer",
         "title": "Sneaking closer",
-        "body": "A second jaguar sighting -- this time a pair. The female creeping quietly toward us through the grass, wary but drawing near, the much larger male trailing behind.",
+        "body": "A female jaguar approaches, ears back and alert, the male following at a distance.",
         "chips": [
           "JAGUAR"
         ],
@@ -1189,39 +1103,16 @@ window.__TRIP__ = {
       {
         "leg": "pantanal",
         "legId": "pantanal",
-        "key": "dsc03644-76be797401",
-        "photoId": "dsc03644-76be797401",
-        "kind": "photo",
-        "src": "assets/photos/dsc03644-76be797401-card.jpg",
-        "srcAvif": "assets/photos/dsc03644-76be797401-card.avif",
-        "thumb": "assets/photos/dsc03644-76be797401-thumb.jpg",
-        "alt": "The big male, at rest",
-        "pinLabel": "The big male, at rest",
-        "title": "The big male, at rest",
-        "body": "The large male settling into the grass -- a rare, close, calm portrait.",
-        "chips": [
-          "JAGUAR"
-        ],
-        "star": false,
-        "featured": true,
-        "taxon": "",
-        "species": "Jaguar",
-        "lat": -19.898889,
-        "lng": -56.225278
-      },
-      {
-        "leg": "pantanal",
-        "legId": "pantanal",
         "key": "dsc03693-aa0fe4ad17",
         "photoId": "dsc03693-aa0fe4ad17",
         "kind": "photo",
         "src": "assets/photos/dsc03693-aa0fe4ad17-card.jpg",
         "srcAvif": "assets/photos/dsc03693-aa0fe4ad17-card.avif",
         "thumb": "assets/photos/dsc03693-aa0fe4ad17-thumb.jpg",
-        "alt": "Following her",
-        "pinLabel": "Following her",
-        "title": "Following her",
-        "body": "The male trailing after the female, intent on mating.",
+        "alt": "Intent on Her",
+        "pinLabel": "Intent on Her",
+        "title": "Intent on Her",
+        "body": "A male jaguar, much larger than his mate, trails after her through the tall grass.",
         "chips": [
           "JAGUAR"
         ],
@@ -1252,6 +1143,25 @@ window.__TRIP__ = {
         "species": "",
         "lat": -19.858461,
         "lng": -56.273975
+      },
+      {
+        "leg": "amazon",
+        "legId": "amazon",
+        "key": "kingfisher",
+        "subjectId": "kingfisher",
+        "kind": "species",
+        "src": "assets/photos/kingfisher.jpg",
+        "thumb": "assets/photos/kingfisher.jpg",
+        "alt": "Ringed Kingfisher — Megaceryle torquata",
+        "pinLabel": "Ringed Kingfisher",
+        "title": "The largest kingfisher alive",
+        "body": "The largest kingfisher in the Americas, framed through palm fronds above the water.",
+        "chips": [
+          "RINGED KINGFISHER"
+        ],
+        "star": false,
+        "taxon": "Bird",
+        "species": "Ringed Kingfisher"
       }
     ],
     "rio": [
@@ -1268,7 +1178,7 @@ window.__TRIP__ = {
         "alt": "Copacabana Beach",
         "pinLabel": "Copacabana Beach",
         "title": "Copacabana Beach",
-        "body": "Sunset from the rooftop bar at the Emiliano, our hotel on Copacabana, looking out towards the Atlantic Ocean",
+        "body": "Sunset from the rooftop bar at the Emiliano, our hotel on Copacabana.",
         "chips": [],
         "star": false,
         "featured": true,
@@ -1280,16 +1190,16 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "por-maycon-nunes-photography-112-971c4c9622",
-        "photoId": "por-maycon-nunes-photography-112-971c4c9622",
+        "key": "por-maycon-nunes-photography-112-745736b769",
+        "photoId": "por-maycon-nunes-photography-112-745736b769",
         "kind": "photo",
-        "src": "assets/photos/por-maycon-nunes-photography-112-971c4c9622-card.jpg",
-        "srcAvif": "assets/photos/por-maycon-nunes-photography-112-971c4c9622-card.avif",
-        "thumb": "assets/photos/por-maycon-nunes-photography-112-971c4c9622-thumb.jpg",
+        "src": "assets/photos/por-maycon-nunes-photography-112-745736b769-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-112-745736b769-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-112-745736b769-thumb.jpg",
         "alt": "A crash course in Carnaval",
         "pinLabel": "A crash course in Carnaval",
         "title": "A crash course in Carnaval",
-        "body": "Carnaval Experience, a working samba-school warehouse in Rio where the floats and sets are built.",
+        "body": "Behind the scenes at the warehouse of Grande Rio, one of Rio's top samba schools - costumes, drums, and a quick samba lesson included.",
         "chips": [],
         "star": false,
         "featured": false,
@@ -1307,10 +1217,10 @@ window.__TRIP__ = {
         "src": "assets/photos/por-maycon-nunes-photography-27-479a658758-card.jpg",
         "srcAvif": "assets/photos/por-maycon-nunes-photography-27-479a658758-card.avif",
         "thumb": "assets/photos/por-maycon-nunes-photography-27-479a658758-thumb.jpg",
-        "alt": "Front-of-parade fantasia",
-        "pinLabel": "Front-of-parade fantasia",
-        "title": "Front-of-parade fantasia",
-        "body": "Big opening costume built on a rattan frame so the whole thing rides on one person",
+        "alt": "Sunburst Costume",
+        "pinLabel": "Sunburst Costume",
+        "title": "Sunburst Costume",
+        "body": "A \"fantasia\" opening costume — built on a rattan frame so the whole structure rides on one person's shoulders.",
         "chips": [],
         "star": false,
         "featured": false,
@@ -1343,12 +1253,12 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "por-maycon-nunes-photography-148-eee1373978",
-        "photoId": "por-maycon-nunes-photography-148-eee1373978",
+        "key": "por-maycon-nunes-photography-148-a2fb0a3bee",
+        "photoId": "por-maycon-nunes-photography-148-a2fb0a3bee",
         "kind": "photo",
-        "src": "assets/photos/por-maycon-nunes-photography-148-eee1373978-card.jpg",
-        "srcAvif": "assets/photos/por-maycon-nunes-photography-148-eee1373978-card.avif",
-        "thumb": "assets/photos/por-maycon-nunes-photography-148-eee1373978-thumb.jpg",
+        "src": "assets/photos/por-maycon-nunes-photography-148-a2fb0a3bee-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-148-a2fb0a3bee-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-148-a2fb0a3bee-thumb.jpg",
         "alt": "The Lapa Steps",
         "pinLabel": "The Lapa Steps",
         "title": "The Lapa Steps",
@@ -1364,15 +1274,15 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "por-maycon-nunes-photography-158-5d1c81c84b",
-        "photoId": "por-maycon-nunes-photography-158-5d1c81c84b",
+        "key": "por-maycon-nunes-photography-158-b64d34c159",
+        "photoId": "por-maycon-nunes-photography-158-b64d34c159",
         "kind": "photo",
-        "src": "assets/photos/por-maycon-nunes-photography-158-5d1c81c84b-card.jpg",
-        "srcAvif": "assets/photos/por-maycon-nunes-photography-158-5d1c81c84b-card.avif",
-        "thumb": "assets/photos/por-maycon-nunes-photography-158-5d1c81c84b-thumb.jpg",
-        "alt": "Brothers",
-        "pinLabel": "Brothers",
-        "title": "Brothers",
+        "src": "assets/photos/por-maycon-nunes-photography-158-b64d34c159-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-158-b64d34c159-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-158-b64d34c159-thumb.jpg",
+        "alt": "Sitting on a Landmark",
+        "pinLabel": "Sitting on a Landmark",
+        "title": "Sitting on a Landmark",
         "body": "The green and yellow tiles are Selarón's tribute to Brazil — the country he adopted, and dedicated the staircase to.",
         "chips": [],
         "star": false,
@@ -1385,15 +1295,15 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "por-maycon-nunes-photography-243-0ef6bb43d8",
-        "photoId": "por-maycon-nunes-photography-243-0ef6bb43d8",
+        "key": "por-maycon-nunes-photography-243-eeab9f13fb",
+        "photoId": "por-maycon-nunes-photography-243-eeab9f13fb",
         "kind": "photo",
-        "src": "assets/photos/por-maycon-nunes-photography-243-0ef6bb43d8-card.jpg",
-        "srcAvif": "assets/photos/por-maycon-nunes-photography-243-0ef6bb43d8-card.avif",
-        "thumb": "assets/photos/por-maycon-nunes-photography-243-0ef6bb43d8-thumb.jpg",
-        "alt": "Corcovado from Dona Marta",
-        "pinLabel": "Corcovado from Dona Marta",
-        "title": "Corcovado from Dona Marta",
+        "src": "assets/photos/por-maycon-nunes-photography-243-eeab9f13fb-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-243-eeab9f13fb-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-243-eeab9f13fb-thumb.jpg",
+        "alt": "Golden Hour at Dona Marta",
+        "pinLabel": "Golden Hour at Dona Marta",
+        "title": "Golden Hour at Dona Marta",
         "body": "",
         "chips": [],
         "star": false,
@@ -1499,7 +1409,7 @@ window.__TRIP__ = {
         "alt": "The cable line down",
         "pinLabel": "The cable line down",
         "title": "The cable line down",
-        "body": "",
+        "body": "The final descent from Sugarloaf, Rio's lights beginning to flicker on against the last orange glow over the mountains.",
         "chips": [],
         "star": false,
         "featured": false,
@@ -1517,10 +1427,10 @@ window.__TRIP__ = {
         "src": "assets/photos/por-maycon-nunes-photography-340-f2f7b79e67-card.jpg",
         "srcAvif": "assets/photos/por-maycon-nunes-photography-340-f2f7b79e67-card.avif",
         "thumb": "assets/photos/por-maycon-nunes-photography-340-f2f7b79e67-thumb.jpg",
-        "alt": "Everyone waits for the lights",
-        "pinLabel": "Everyone waits for the lights",
-        "title": "Everyone waits for the lights",
-        "body": "Blue hour on Morro da Urca",
+        "alt": "Blue hour crowd",
+        "pinLabel": "Blue hour crowd",
+        "title": "Blue hour crowd",
+        "body": "Everyone waiting for the last of the sunset to give way to the city lights.",
         "chips": [],
         "star": false,
         "featured": false,
@@ -1553,12 +1463,12 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "img-3055-3e5a6402a5",
-        "photoId": "img-3055-3e5a6402a5",
+        "key": "img-3055-f06c36d678",
+        "photoId": "img-3055-f06c36d678",
         "kind": "photo",
-        "src": "assets/photos/img-3055-3e5a6402a5-card.jpg",
-        "srcAvif": "assets/photos/img-3055-3e5a6402a5-card.avif",
-        "thumb": "assets/photos/img-3055-3e5a6402a5-thumb.jpg",
+        "src": "assets/photos/img-3055-f06c36d678-card.jpg",
+        "srcAvif": "assets/photos/img-3055-f06c36d678-card.avif",
+        "thumb": "assets/photos/img-3055-f06c36d678-thumb.jpg",
         "alt": "Under open arms",
         "pinLabel": "Under open arms",
         "title": "Under open arms",

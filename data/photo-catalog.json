@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-02T20:32:11-07:00",
+  "generatedAt": "2026-08-07T22:20:39-07:00",
   "source": {
     "imageCount": 72
   },
@@ -1266,16 +1266,16 @@
       }
     },
     {
-      "id": "img-0949-7cc238e17d",
+      "id": "img-0949-4f2df63e22",
       "filename": "IMG_0949.jpg",
       "width": 2182,
       "height": 3840,
-      "bytes": 10618373,
-      "sha1": "ba8db955e4e7b20ed3931e5b850d96605a0ce4b7",
-      "pixelSha1": "7cc238e17d945fa990e3c30251dbbc3e9d99f78b",
+      "bytes": 9234807,
+      "sha1": "baf862cebd1627e006d95c15ff9dcdc685e32593",
+      "pixelSha1": "4f2df63e222f321b64e49f90e0c6fadffd91dd57",
       "date": "2026-07-13T09:27:05-04:00",
       "utcOffset": "-04:00",
-      "exportedAt": "2026-08-01T11:53:08",
+      "exportedAt": "2026-08-07T21:58:45",
       "latitude": -9.563831,
       "longitude": -55.902989,
       "camera": {
@@ -1295,22 +1295,22 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-0949-7cc238e17d-card.jpg",
-        "cardAvif": "assets/photos/img-0949-7cc238e17d-card.avif",
-        "thumb": "assets/photos/img-0949-7cc238e17d-thumb.jpg"
+        "card": "assets/photos/img-0949-4f2df63e22-card.jpg",
+        "cardAvif": "assets/photos/img-0949-4f2df63e22-card.avif",
+        "thumb": "assets/photos/img-0949-4f2df63e22-thumb.jpg"
       }
     },
     {
-      "id": "img-2715-4760f8ea34",
+      "id": "img-2715-0c99014ed4",
       "filename": "IMG_2715.jpg",
       "width": 2880,
       "height": 3840,
-      "bytes": 8209103,
-      "sha1": "c09ff1f3f96381ff682651234f48cf884c1803ec",
-      "pixelSha1": "4760f8ea34aa99e62873d5e8368579ac5df68ca0",
+      "bytes": 7594143,
+      "sha1": "ee7c0d40d0203283343bd66347742c4833c89ffa",
+      "pixelSha1": "0c99014ed45ab4cfd6397a94ae5289b62a77c878",
       "date": "2026-07-11T16:45:51-03:00",
       "utcOffset": "-03:00",
-      "exportedAt": "2026-08-01T11:52:34",
+      "exportedAt": "2026-08-07T21:58:41",
       "latitude": -23.560306,
       "longitude": -46.657939,
       "camera": {
@@ -1330,9 +1330,9 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-2715-4760f8ea34-card.jpg",
-        "cardAvif": "assets/photos/img-2715-4760f8ea34-card.avif",
-        "thumb": "assets/photos/img-2715-4760f8ea34-thumb.jpg"
+        "card": "assets/photos/img-2715-0c99014ed4-card.jpg",
+        "cardAvif": "assets/photos/img-2715-0c99014ed4-card.avif",
+        "thumb": "assets/photos/img-2715-0c99014ed4-thumb.jpg"
       }
     },
     {
@@ -1340,12 +1340,12 @@
       "filename": "IMG_2723.jpg",
       "width": 3840,
       "height": 2880,
-      "bytes": 6414339,
-      "sha1": "297b76a0fdbd8f9dd134ff38c78102b5cc36885d",
+      "bytes": 6414333,
+      "sha1": "2682db5d72e5820459d2e122c308a0fe7e414ed2",
       "pixelSha1": "9b70c4fb575fb48b97154a792c61b3748cc05551",
       "date": "2026-07-11T16:52:58-03:00",
       "utcOffset": "-03:00",
-      "exportedAt": "2026-08-01T11:52:33",
+      "exportedAt": "2026-08-07T21:58:42",
       "latitude": -23.561275,
       "longitude": -46.655708,
       "camera": {
@@ -1371,16 +1371,16 @@
       }
     },
     {
-      "id": "img-2725-c11d751263",
+      "id": "img-2725-58321d39c6",
       "filename": "IMG_2725.jpg",
       "width": 3840,
       "height": 2880,
-      "bytes": 5902058,
-      "sha1": "b380768f8ac140fcc6a5b931cdf777db28edd35c",
-      "pixelSha1": "c11d751263172c921b6cd2525b13248169ce5d86",
+      "bytes": 6318789,
+      "sha1": "66cdf7998d437e4366c01dab7e6b0649598ffa6f",
+      "pixelSha1": "58321d39c6cbf47c1dcecc72d1dd15792726b1f3",
       "date": "2026-07-11T16:54:27-03:00",
       "utcOffset": "-03:00",
-      "exportedAt": "2026-08-01T11:53:05",
+      "exportedAt": "2026-08-07T21:58:45",
       "latitude": -23.561278,
       "longitude": -46.655708,
       "camera": {
@@ -1400,22 +1400,22 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-2725-c11d751263-card.jpg",
-        "cardAvif": "assets/photos/img-2725-c11d751263-card.avif",
-        "thumb": "assets/photos/img-2725-c11d751263-thumb.jpg"
+        "card": "assets/photos/img-2725-58321d39c6-card.jpg",
+        "cardAvif": "assets/photos/img-2725-58321d39c6-card.avif",
+        "thumb": "assets/photos/img-2725-58321d39c6-thumb.jpg"
       }
     },
     {
-      "id": "img-2727-a85b9fd07e",
+      "id": "img-2727-a51483c06a",
       "filename": "IMG_2727.jpg",
       "width": 3840,
-      "height": 2880,
-      "bytes": 8403710,
-      "sha1": "58e5af7c75ccfdcef7d3464ca47608fb2a0f76dd",
-      "pixelSha1": "a85b9fd07e9367db40c0ed585fc340366a98c861",
+      "height": 2457,
+      "bytes": 6343321,
+      "sha1": "764373fbc24e012fcf37bf0944a5600554cf3d85",
+      "pixelSha1": "a51483c06a94cdafa0b7c3cd28a9ef726bc6ca51",
       "date": "2026-07-11T19:43:21-03:00",
       "utcOffset": "-03:00",
-      "exportedAt": "2026-08-01T11:53:07",
+      "exportedAt": "2026-08-07T21:58:44",
       "latitude": -23.565439,
       "longitude": -46.669736,
       "camera": {
@@ -1435,22 +1435,22 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-2727-a85b9fd07e-card.jpg",
-        "cardAvif": "assets/photos/img-2727-a85b9fd07e-card.avif",
-        "thumb": "assets/photos/img-2727-a85b9fd07e-thumb.jpg"
+        "card": "assets/photos/img-2727-a51483c06a-card.jpg",
+        "cardAvif": "assets/photos/img-2727-a51483c06a-card.avif",
+        "thumb": "assets/photos/img-2727-a51483c06a-thumb.jpg"
       }
     },
     {
-      "id": "img-2735-28ab2eca22",
+      "id": "img-2735-8157762da8",
       "filename": "IMG_2735.jpg",
       "width": 3840,
       "height": 2880,
-      "bytes": 8258348,
-      "sha1": "88d7879db16b8fc573456731ed26cdd7159e9ef9",
-      "pixelSha1": "28ab2eca22842cb5faad41605b20925fa3dfc4e3",
+      "bytes": 17909518,
+      "sha1": "88510d1e7fcaa1bb6c4fe3fa1022eb94993253bd",
+      "pixelSha1": "8157762da847598530e0ffb0f7ef10b9a1830a89",
       "date": "2026-07-12T17:20:25-04:00",
       "utcOffset": "-04:00",
-      "exportedAt": "2026-08-01T11:53:44",
+      "exportedAt": "2026-08-07T21:58:43",
       "latitude": -9.636581,
       "longitude": -55.937858,
       "camera": {
@@ -1470,9 +1470,9 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-2735-28ab2eca22-card.jpg",
-        "cardAvif": "assets/photos/img-2735-28ab2eca22-card.avif",
-        "thumb": "assets/photos/img-2735-28ab2eca22-thumb.jpg"
+        "card": "assets/photos/img-2735-8157762da8-card.jpg",
+        "cardAvif": "assets/photos/img-2735-8157762da8-card.avif",
+        "thumb": "assets/photos/img-2735-8157762da8-thumb.jpg"
       }
     },
     {
@@ -1546,16 +1546,16 @@
       }
     },
     {
-      "id": "img-2833-dd8abb0b33",
+      "id": "img-2833-528cf60982",
       "filename": "IMG_2833.jpg",
       "width": 3840,
       "height": 2880,
-      "bytes": 5974495,
-      "sha1": "e8ca8b4d145241ab84ce957706d56df3bb9161ac",
-      "pixelSha1": "dd8abb0b33f0430c6ad67bbf50023ee4759d0245",
+      "bytes": 19764786,
+      "sha1": "b854e36fa33d635ed14793cbf0b8eefc028af319",
+      "pixelSha1": "528cf60982a5fc2d61f87d1d8e6644f61597c509",
       "date": "2026-07-13T19:09:26-04:00",
       "utcOffset": "-04:00",
-      "exportedAt": "2026-08-01T11:53:16",
+      "exportedAt": "2026-08-07T21:59:32",
       "latitude": -9.596642,
       "longitude": -55.931794,
       "camera": {
@@ -1575,9 +1575,9 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-2833-dd8abb0b33-card.jpg",
-        "cardAvif": "assets/photos/img-2833-dd8abb0b33-card.avif",
-        "thumb": "assets/photos/img-2833-dd8abb0b33-thumb.jpg"
+        "card": "assets/photos/img-2833-528cf60982-card.jpg",
+        "cardAvif": "assets/photos/img-2833-528cf60982-card.avif",
+        "thumb": "assets/photos/img-2833-528cf60982-thumb.jpg"
       }
     },
     {
@@ -1896,16 +1896,16 @@
       }
     },
     {
-      "id": "img-3055-3e5a6402a5",
+      "id": "img-3055-f06c36d678",
       "filename": "IMG_3055.jpg",
       "width": 2879,
       "height": 3840,
-      "bytes": 4720429,
-      "sha1": "96fe4c534f37e43a339f652a20613db27f980baa",
-      "pixelSha1": "3e5a6402a548e70ad2ace346c90da5b088c1f457",
+      "bytes": 4726985,
+      "sha1": "9bf82efd9bccc2caaab74cdaab1757bc5874da24",
+      "pixelSha1": "f06c36d678d188e4d818a6aaa79a98a98cd586db",
       "date": "2026-07-21T09:35:49-03:00",
       "utcOffset": "-03:00",
-      "exportedAt": "2026-08-01T11:55:13",
+      "exportedAt": "2026-08-07T22:15:26",
       "latitude": -22.951839,
       "longitude": -43.210053,
       "camera": {
@@ -1925,9 +1925,9 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/img-3055-3e5a6402a5-card.jpg",
-        "cardAvif": "assets/photos/img-3055-3e5a6402a5-card.avif",
-        "thumb": "assets/photos/img-3055-3e5a6402a5-thumb.jpg"
+        "card": "assets/photos/img-3055-f06c36d678-card.jpg",
+        "cardAvif": "assets/photos/img-3055-f06c36d678-card.avif",
+        "thumb": "assets/photos/img-3055-f06c36d678-thumb.jpg"
       }
     },
     {
@@ -1966,16 +1966,16 @@
       }
     },
     {
-      "id": "por-maycon-nunes-photography-112-971c4c9622",
+      "id": "por-maycon-nunes-photography-112-745736b769",
       "filename": "Por Maycon Nunes Photography-112.jpg",
       "width": 3840,
       "height": 2560,
-      "bytes": 8001216,
-      "sha1": "178f5fabd5551f40ece689ea4dca0c66aa191f0c",
-      "pixelSha1": "971c4c9622428fdcd809edc8e75f55b99f1d8b6c",
+      "bytes": 9086371,
+      "sha1": "17b47b539dc4f8a0a67a3aa2f225ade117f330ec",
+      "pixelSha1": "745736b7694755ecd59fcc594367f1c972a173d5",
       "date": "2026-07-20T13:35:58-03:00",
       "utcOffset": "-03:00",
-      "exportedAt": "2026-08-02T09:25:46",
+      "exportedAt": "2026-08-07T22:15:15",
       "latitude": -22.89536,
       "longitude": -43.1984,
       "camera": {
@@ -1995,22 +1995,22 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/por-maycon-nunes-photography-112-971c4c9622-card.jpg",
-        "cardAvif": "assets/photos/por-maycon-nunes-photography-112-971c4c9622-card.avif",
-        "thumb": "assets/photos/por-maycon-nunes-photography-112-971c4c9622-thumb.jpg"
+        "card": "assets/photos/por-maycon-nunes-photography-112-745736b769-card.jpg",
+        "cardAvif": "assets/photos/por-maycon-nunes-photography-112-745736b769-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-112-745736b769-thumb.jpg"
       }
     },
     {
-      "id": "por-maycon-nunes-photography-144-aa3bc0dc4d",
+      "id": "por-maycon-nunes-photography-144-745c51a10c",
       "filename": "Por Maycon Nunes Photography-144.jpg",
       "width": 2560,
       "height": 3840,
-      "bytes": 6029105,
-      "sha1": "23b292f561247a19a662d608785bbabe744e21bd",
-      "pixelSha1": "aa3bc0dc4de472a6d39ca01c86f756f2f5d9ca0f",
+      "bytes": 6757162,
+      "sha1": "5baedfad38607a835b2331dea1bf58ffb302346b",
+      "pixelSha1": "745c51a10c57860e11d9cc543590d8fc80718f0e",
       "date": "2026-07-20T14:23:23-03:00",
       "utcOffset": "-03:00",
-      "exportedAt": "2026-08-02T09:25:45",
+      "exportedAt": "2026-08-07T22:15:16",
       "latitude": -22.915278,
       "longitude": -43.179167,
       "camera": {
@@ -2030,22 +2030,22 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/por-maycon-nunes-photography-144-aa3bc0dc4d-card.jpg",
-        "cardAvif": "assets/photos/por-maycon-nunes-photography-144-aa3bc0dc4d-card.avif",
-        "thumb": "assets/photos/por-maycon-nunes-photography-144-aa3bc0dc4d-thumb.jpg"
+        "card": "assets/photos/por-maycon-nunes-photography-144-745c51a10c-card.jpg",
+        "cardAvif": "assets/photos/por-maycon-nunes-photography-144-745c51a10c-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-144-745c51a10c-thumb.jpg"
       }
     },
     {
-      "id": "por-maycon-nunes-photography-148-eee1373978",
+      "id": "por-maycon-nunes-photography-148-a2fb0a3bee",
       "filename": "Por Maycon Nunes Photography-148.jpg",
       "width": 3840,
       "height": 2560,
-      "bytes": 6336440,
-      "sha1": "f8fb9508d5051a9447e88736551db1fb0c766de0",
-      "pixelSha1": "eee137397861bfd09f2d1393f7a59c61aa28f13b",
+      "bytes": 7072526,
+      "sha1": "31a512c8a45c5532bdbe896f7f7285a2728d9834",
+      "pixelSha1": "a2fb0a3beed1b147e64ff70c29c6b1cee7acbb99",
       "date": "2026-07-20T14:24:15-03:00",
       "utcOffset": "-03:00",
-      "exportedAt": "2026-08-02T09:25:47",
+      "exportedAt": "2026-08-07T22:15:18",
       "latitude": -22.91523,
       "longitude": -43.17907,
       "camera": {
@@ -2065,22 +2065,22 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/por-maycon-nunes-photography-148-eee1373978-card.jpg",
-        "cardAvif": "assets/photos/por-maycon-nunes-photography-148-eee1373978-card.avif",
-        "thumb": "assets/photos/por-maycon-nunes-photography-148-eee1373978-thumb.jpg"
+        "card": "assets/photos/por-maycon-nunes-photography-148-a2fb0a3bee-card.jpg",
+        "cardAvif": "assets/photos/por-maycon-nunes-photography-148-a2fb0a3bee-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-148-a2fb0a3bee-thumb.jpg"
       }
     },
     {
-      "id": "por-maycon-nunes-photography-158-5d1c81c84b",
+      "id": "por-maycon-nunes-photography-158-b64d34c159",
       "filename": "Por Maycon Nunes Photography-158.jpg",
       "width": 2560,
       "height": 3840,
-      "bytes": 5573999,
-      "sha1": "f42d442218c34f454a62186366f6005bdf143e79",
-      "pixelSha1": "5d1c81c84b5a7adaacd45d0648110bd33e385852",
+      "bytes": 6182473,
+      "sha1": "7e7b28dca90e57c3f3f4438d48fd7b1bc1466048",
+      "pixelSha1": "b64d34c159bde5df309b455b46d6ec2865af3e16",
       "date": "2026-07-20T14:32:15-03:00",
       "utcOffset": "-03:00",
-      "exportedAt": "2026-08-02T09:25:33",
+      "exportedAt": "2026-08-07T22:15:18",
       "latitude": -22.91523,
       "longitude": -43.17907,
       "camera": {
@@ -2100,22 +2100,22 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/por-maycon-nunes-photography-158-5d1c81c84b-card.jpg",
-        "cardAvif": "assets/photos/por-maycon-nunes-photography-158-5d1c81c84b-card.avif",
-        "thumb": "assets/photos/por-maycon-nunes-photography-158-5d1c81c84b-thumb.jpg"
+        "card": "assets/photos/por-maycon-nunes-photography-158-b64d34c159-card.jpg",
+        "cardAvif": "assets/photos/por-maycon-nunes-photography-158-b64d34c159-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-158-b64d34c159-thumb.jpg"
       }
     },
     {
-      "id": "por-maycon-nunes-photography-243-0ef6bb43d8",
+      "id": "por-maycon-nunes-photography-243-eeab9f13fb",
       "filename": "Por Maycon Nunes Photography-243.jpg",
       "width": 2560,
       "height": 3840,
-      "bytes": 6028048,
-      "sha1": "0ff31e7298c809f440a871a63b4b265f087a7744",
-      "pixelSha1": "0ef6bb43d89b0074c394bb32dde4ef0f7cc6cd67",
+      "bytes": 6616363,
+      "sha1": "9373b8e4d02b4e9c26e2b0da73719624fb4735b2",
+      "pixelSha1": "eeab9f13fb4ca94b14fca4265c89e5d4cae7cb87",
       "date": "2026-07-20T16:19:09-03:00",
       "utcOffset": "-03:00",
-      "exportedAt": "2026-08-02T09:25:33",
+      "exportedAt": "2026-08-07T22:15:20",
       "latitude": -22.945,
       "longitude": -43.196389,
       "camera": {
@@ -2135,22 +2135,22 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/por-maycon-nunes-photography-243-0ef6bb43d8-card.jpg",
-        "cardAvif": "assets/photos/por-maycon-nunes-photography-243-0ef6bb43d8-card.avif",
-        "thumb": "assets/photos/por-maycon-nunes-photography-243-0ef6bb43d8-thumb.jpg"
+        "card": "assets/photos/por-maycon-nunes-photography-243-eeab9f13fb-card.jpg",
+        "cardAvif": "assets/photos/por-maycon-nunes-photography-243-eeab9f13fb-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-243-eeab9f13fb-thumb.jpg"
       }
     },
     {
-      "id": "por-maycon-nunes-photography-247-11de0d98ea",
+      "id": "por-maycon-nunes-photography-247-bccc70c998",
       "filename": "Por Maycon Nunes Photography-247.jpg",
       "width": 2560,
       "height": 3840,
-      "bytes": 7150102,
-      "sha1": "eb74e2f0c8ace6bc0362618570216feaa6b0c4f1",
-      "pixelSha1": "11de0d98ea5ac81ed4f6bb57b0e22e5943738e47",
+      "bytes": 7826130,
+      "sha1": "dec30cfb794780fead614e6ea3d39518befebf77",
+      "pixelSha1": "bccc70c998983a41fb393ff5f5cadec5bbd184bf",
       "date": "2026-07-20T16:19:32-03:00",
       "utcOffset": "-03:00",
-      "exportedAt": "2026-08-02T09:25:58",
+      "exportedAt": "2026-08-07T22:15:22",
       "latitude": -22.94503,
       "longitude": -43.1964,
       "camera": {
@@ -2170,9 +2170,9 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/por-maycon-nunes-photography-247-11de0d98ea-card.jpg",
-        "cardAvif": "assets/photos/por-maycon-nunes-photography-247-11de0d98ea-card.avif",
-        "thumb": "assets/photos/por-maycon-nunes-photography-247-11de0d98ea-thumb.jpg"
+        "card": "assets/photos/por-maycon-nunes-photography-247-bccc70c998-card.jpg",
+        "cardAvif": "assets/photos/por-maycon-nunes-photography-247-bccc70c998-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-247-bccc70c998-thumb.jpg"
       }
     },
     {
@@ -2386,16 +2386,16 @@
       }
     },
     {
-      "id": "por-maycon-nunes-photography-327-4bab5f06ef",
+      "id": "por-maycon-nunes-photography-327-67a2d2db38",
       "filename": "Por Maycon Nunes Photography-327.jpg",
       "width": 2560,
       "height": 3840,
-      "bytes": 5438461,
-      "sha1": "9d14d073b5ea96d031b938d972a51de066c9cbda",
-      "pixelSha1": "4bab5f06ef7a6e1359b3c2a0fcb9830285fac131",
+      "bytes": 5951856,
+      "sha1": "436ac06831a8c056ec49cd5a678611cf450c9b8c",
+      "pixelSha1": "67a2d2db389098e602aceaa93ff2a259e944a982",
       "date": "2026-07-20T17:35:16-03:00",
       "utcOffset": "-03:00",
-      "exportedAt": "2026-08-02T09:25:48",
+      "exportedAt": "2026-08-07T22:15:25",
       "latitude": -22.949444,
       "longitude": -43.156389,
       "camera": {
@@ -2415,9 +2415,9 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/por-maycon-nunes-photography-327-4bab5f06ef-card.jpg",
-        "cardAvif": "assets/photos/por-maycon-nunes-photography-327-4bab5f06ef-card.avif",
-        "thumb": "assets/photos/por-maycon-nunes-photography-327-4bab5f06ef-thumb.jpg"
+        "card": "assets/photos/por-maycon-nunes-photography-327-67a2d2db38-card.jpg",
+        "cardAvif": "assets/photos/por-maycon-nunes-photography-327-67a2d2db38-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-327-67a2d2db38-thumb.jpg"
       }
     },
     {
@@ -2523,6 +2523,111 @@
         "card": "assets/photos/por-maycon-nunes-photography-51-a52e69a1a8-card.jpg",
         "cardAvif": "assets/photos/por-maycon-nunes-photography-51-a52e69a1a8-card.avif",
         "thumb": "assets/photos/por-maycon-nunes-photography-51-a52e69a1a8-thumb.jpg"
+      }
+    },
+    {
+      "id": "img-0947-ec20639697",
+      "filename": "IMG_0947.jpg",
+      "width": 3840,
+      "height": 2880,
+      "bytes": 11404161,
+      "sha1": "e89b64daa3c98917f81e4bfd8355fb5ff50ea5cb",
+      "pixelSha1": "ec206396973ad08a4116d64bff2d1174b19f2461",
+      "date": "2026-07-13T09:26:25-04:00",
+      "utcOffset": "-04:00",
+      "exportedAt": "2026-08-07T21:58:42",
+      "latitude": -9.563817,
+      "longitude": -55.902969,
+      "camera": {
+        "make": "Apple",
+        "model": "iPhone 17"
+      },
+      "title": "",
+      "body": "",
+      "chips": [],
+      "star": false,
+      "subjectId": "",
+      "locationName": "",
+      "legId": "",
+      "order": null,
+      "species": "",
+      "featured": false,
+      "flags": [],
+      "assets": {
+        "original": "",
+        "card": "assets/photos/img-0947-ec20639697-card.jpg",
+        "cardAvif": "assets/photos/img-0947-ec20639697-card.avif",
+        "thumb": "assets/photos/img-0947-ec20639697-thumb.jpg"
+      }
+    },
+    {
+      "id": "img-2737-66aac8ec38",
+      "filename": "IMG_2737.jpg",
+      "width": 3840,
+      "height": 2883,
+      "bytes": 6760563,
+      "sha1": "b68034b6619ff29e345797c81104275be491fe6d",
+      "pixelSha1": "66aac8ec38f912dbe0f936e54553a159b444c825",
+      "date": "2026-07-12T17:22:34-04:00",
+      "utcOffset": "-04:00",
+      "exportedAt": "2026-08-07T21:58:44",
+      "latitude": -9.636506,
+      "longitude": -55.937783,
+      "camera": {
+        "make": "Apple",
+        "model": "iPhone 16 Pro"
+      },
+      "title": "",
+      "body": "",
+      "chips": [],
+      "star": false,
+      "subjectId": "",
+      "locationName": "",
+      "legId": "",
+      "order": null,
+      "species": "",
+      "featured": false,
+      "flags": [],
+      "assets": {
+        "original": "",
+        "card": "assets/photos/img-2737-66aac8ec38-card.jpg",
+        "cardAvif": "assets/photos/img-2737-66aac8ec38-card.avif",
+        "thumb": "assets/photos/img-2737-66aac8ec38-thumb.jpg"
+      }
+    },
+    {
+      "id": "por-maycon-nunes-photography-313-253eb9d6bd",
+      "filename": "Por Maycon Nunes Photography-313.jpg",
+      "width": 2560,
+      "height": 3840,
+      "bytes": 5548768,
+      "sha1": "246b37dcbf232e750891ff50d4624a3ed350bca6",
+      "pixelSha1": "253eb9d6bdffabe5491dd8eefa7b14ad25f5d30c",
+      "date": "2026-07-20T17:31:15-03:00",
+      "utcOffset": "-03:00",
+      "exportedAt": "2026-08-07T22:15:24",
+      "latitude": -22.949444,
+      "longitude": -43.156389,
+      "camera": {
+        "make": "FUJIFILM",
+        "model": "X-H2S"
+      },
+      "title": "",
+      "body": "",
+      "chips": [],
+      "star": false,
+      "subjectId": "",
+      "locationName": "",
+      "legId": "",
+      "order": null,
+      "species": "",
+      "featured": false,
+      "flags": [],
+      "assets": {
+        "original": "",
+        "card": "assets/photos/por-maycon-nunes-photography-313-253eb9d6bd-card.jpg",
+        "cardAvif": "assets/photos/por-maycon-nunes-photography-313-253eb9d6bd-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-313-253eb9d6bd-thumb.jpg"
       }
     }
   ]

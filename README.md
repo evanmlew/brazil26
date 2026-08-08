@@ -48,6 +48,23 @@ identical to editing in the main checkout — but Pages serves `main`, so the si
 old captions until the branch is merged and pushed. Assume a review session in a worktree is
 unpublished until you have run the merge in "Publishing from a worktree branch" below.
 
+**The reverse is also true: a worktree can itself be the stale side.** If it was created before a
+later review session pushed new captions/order/exclusions to `main`, its `data\photo-edits.json` is
+now behind — same class of bug, opposite direction. Before starting a re-export/migration pass in a
+worktree, check for this:
+
+```powershell
+git fetch origin
+git diff HEAD origin/main -- data\photo-edits.json
+```
+
+Any output means `main` has edits this worktree doesn't. Pull the current file before touching
+anything (`git show origin/main:data\photo-edits.json > data\photo-edits.json`), or just do the
+review-tag session in the main checkout instead. `scripts\migrate_photo_edits.py` also checks this
+automatically and refuses to run against a stale `rev` — see "Photo workflow" below — but that only
+covers a re-key migration; a plain caption-editing session in a stale worktree has no equivalent
+guard, so check by hand first.
+
 Also: only ever have **one** review server running. `review_server.py` serves whatever folder it was
 started in, and two checkouts of this repo look the same in a browser. If the tool seems to be
 "losing" edits, check which path the running server was launched from before assuming a bug — the
@@ -108,6 +125,26 @@ python scripts\migrate_photo_edits.py `
 ```
 
 The script is idempotent, writes a `.bak`, and keeps (rather than drops) anything it can't match.
+
+**In a worktree, sync `photo-edits.json` with `origin/main` before migrating.** A worktree freezes
+`data\photo-edits.json` at whatever `rev` was current when it branched. If you (or anyone) tagged
+photos in the review tool and pushed since then, `main`'s copy has moved ahead — captions, order,
+species, and `excluded` flags the worktree doesn't know about. Migrating from the stale copy
+re-keys those *old* values onto the new photo ids and quietly buries the newer ones, even though
+nothing was actually lost from `main`. `migrate_photo_edits.py` now checks this for you: it
+fetches `origin` and compares `rev` in the `edits` file you pass against `origin/<default-branch>`'s
+copy, and **refuses to run** if the remote is ahead, e.g.:
+
+```text
+STOP: origin/main's data/photo-edits.json is at rev 22, but the copy you're about to migrate is
+only rev 5. ... Fix: pull the current edits first, e.g.
+  git show origin/main:data/photo-edits.json > data\photo-edits.json
+then re-run this script.
+```
+
+Pull the current file as instructed, then re-run. Only pass `--skip-git-check` when you are certain
+the `edits` file you're migrating already reflects the latest published edits (e.g. you just pulled
+`main` into this exact worktree, or you're offline and have already confirmed there's nothing newer).
 
 Generate the public card/thumb derivatives for the current export:
 
