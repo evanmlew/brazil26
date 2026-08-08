@@ -2,7 +2,7 @@
 // Same payload as trip.json, loaded synchronously so the first paint has data.
 window.__TRIP__ = {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-08T09:21:08-07:00",
+  "generatedAt": "2026-08-08T09:34:42-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",
@@ -230,7 +230,7 @@ window.__TRIP__ = {
       -22.949444,
       -43.156389
     ],
-    "por-maycon-nunes-photography-340-f2f7b79e67": [
+    "por-maycon-nunes-photography-340-5f4ea8a1d1": [
       -22.949444,
       -43.156389
     ],
@@ -1401,12 +1401,12 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "por-maycon-nunes-photography-340-f2f7b79e67",
-        "photoId": "por-maycon-nunes-photography-340-f2f7b79e67",
+        "key": "por-maycon-nunes-photography-340-5f4ea8a1d1",
+        "photoId": "por-maycon-nunes-photography-340-5f4ea8a1d1",
         "kind": "photo",
-        "src": "assets/photos/por-maycon-nunes-photography-340-f2f7b79e67-card.jpg",
-        "srcAvif": "assets/photos/por-maycon-nunes-photography-340-f2f7b79e67-card.avif",
-        "thumb": "assets/photos/por-maycon-nunes-photography-340-f2f7b79e67-thumb.jpg",
+        "src": "assets/photos/por-maycon-nunes-photography-340-5f4ea8a1d1-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-340-5f4ea8a1d1-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-340-5f4ea8a1d1-thumb.jpg",
         "alt": "Blue hour crowd",
         "pinLabel": "Blue hour crowd",
         "title": "Blue hour crowd",
