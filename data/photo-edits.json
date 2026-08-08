@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "rev": 23,
+  "rev": 24,
   "photos": {
     "dsc00036-171df22a9e": {
       "featured": false,
@@ -47,7 +47,9 @@
     "dsc00870-fe2707a496": {
       "featured": false,
       "legId": "amazon",
-      "order": 8
+      "order": 8,
+      "title": "Chasing the light",
+      "body": "Working the last of the sunset before the river goes dark."
     },
     "dsc01309-90853e40f3": {
       "featured": false,
@@ -373,7 +375,9 @@
     "img-2797-43aa1fe11c": {
       "featured": false,
       "legId": "amazon",
-      "order": 13
+      "order": 13,
+      "title": "The ride back",
+      "body": "Heading back to the lodge for a night walk."
     },
     "img-2833-528cf60982": {
       "featured": true,
