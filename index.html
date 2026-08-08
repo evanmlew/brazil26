@@ -1841,7 +1841,7 @@ class Component extends DCLogic {
         slot:'top:' + (i * 100) + '%',
         noPhoto:!x.src, alt:x.alt, ph:x.ph || '',
         imgStyle:x.src
-          ? bgImage(x.src, x.srcAvif) + ';background-position:center top'
+          ? bgImage(x.src, x.srcAvif) + ';background-position:center bottom'
             + (pf === 'fit' ? ';left:4%;top:3%;width:92%;height:74%;background-size:contain;background-repeat:no-repeat;animation:none' : '')
             + (pf === 'bleed' ? ';left:0;top:0;width:100%;height:100%;background-size:contain;background-repeat:no-repeat;animation:none' : '')
             + (sm ? ';left:0;top:0;width:100%;height:100%;background-repeat:no-repeat;animation:none;background-size:'
