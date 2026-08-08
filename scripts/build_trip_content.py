@@ -104,7 +104,9 @@ def pin_label(subject: dict[str, Any] | None, photo: dict[str, Any]) -> str:
         return photo["title"]
     if subject:
         return str(subject.get("title") or subject.get("common") or subject["id"])
-    return "Untitled"
+    # No title/location to fall back to - an untitled photo's pin caption is blank rather
+    # than the literal placeholder "Untitled", same reasoning as the empty title/body above.
+    return ""
 
 
 def subject_sort_key(photo: dict[str, Any]) -> tuple[Any, ...]:
@@ -158,7 +160,10 @@ def real_slide(photo: dict[str, Any], subject: dict[str, Any] | None, leg: dict[
     src = (assets.get("card") or (subject or {}).get("stockPhoto") or "").strip()
     src_avif = (assets.get("cardAvif") or "").strip()
     thumb = (assets.get("thumb") or (subject or {}).get("stockPhoto") or "").strip()
-    title = photo.get("title") or (subject or {}).get("title") or photo.get("locationName") or "Awaiting title"
+    # A missing title is a deliberate "let the photo speak for itself" choice too - it must
+    # survive to the site as empty rather than the literal placeholder "Awaiting title", for the
+    # same reason as the empty-body handling below.
+    title = photo.get("title") or (subject or {}).get("title") or photo.get("locationName") or ""
     # An empty body is a deliberate editorial choice - some frames read better with the photo
     # carrying them alone - so it must survive to the site as empty. It used to fall through to
     # "[Your caption here]", which shipped literal placeholder text onto finished slides, the same
