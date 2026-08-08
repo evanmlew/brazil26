@@ -316,13 +316,15 @@ Two traps in this loop, both of which have already caused real cleanup:
 - **Read consecutive captions as a run, not one at a time.** Rewriting frames individually reliably produces neighbours that state the same fact twice — two Selarón captions both explaining that the tiles came from donors worldwide. Whichever frame states a fact first owns it; the next one has to add something new or say less.
 - **Don't attribute a viewpoint or mechanism the EXIF contradicts.** A caption once read "through the branches from the cable car" for a frame the GPS puts at the Mirante Dona Marta lookout, an hour and 4 km from the actual cable-car frames — and Corcovado is reached by cog railway, not cable car, so the sentence was wrong twice over. Coordinates and capture time are right there on the card: check them before writing *how* a shot was taken, and don't name a landmark's access method unless you know it.
 
-## After excluding a photo: check `data/legs.json` for orphaned sequence slots
+## Excluding a photo drops orphaned sequence slots automatically
 
-Each leg in `data/legs.json` has a `sequence` array of `narrative.json` `subjectId`s that `build_trip_content.py` **guarantees** gets a slide. If you `Exclude` the only real, non-excluded photo bound to one of those `subjectId`s (via that photo's `subjectId` field), the build script doesn't just skip the slot — it falls back to the raw narrative entry instead:
-- If that narrative subject has no `stockPhoto` (typical for `kind: "placeholder"` subjects like an arrival/city-hero shot), the live site shows a broken, literal empty "DROP IN — ..." placeholder box.
-- If it does have a `stockPhoto` (typical for `kind: "species"` subjects), a generic, non-personal stock image is silently substituted in place of the excluded personal photo — which can also look duplicated if another unlinked real photo of the same animal still exists.
+Each leg in `data/legs.json` has a `sequence` array of `narrative.json` `subjectId`s that `build_trip_content.py` tries to fill with a slide. This is driven entirely by the review-tool photo metadata, not by hand-editing `legs.json`:
 
-**Whenever you exclude (or re-include) a photo that has a `subjectId`**, check whether any other non-excluded photo is still bound to that same `subjectId`. If not, remove that `subjectId` from the relevant leg's `sequence` array in `legs.json` before rebuilding, so the slot is simply omitted instead of falling back to a placeholder/stock image.
+- If a non-excluded photo is bound to that `subjectId` (via the photo's `subjectId` field), it fills the slot as a real slide.
+- If **every** catalog photo ever tagged with that `subjectId` is `excluded` (i.e. you photographed it and then rejected all the takes), the build script drops the slot entirely — no slide, no stock placeholder. Nothing to do in `legs.json`.
+- If **no** catalog photo has ever been tagged with that `subjectId` (you haven't captured/reviewed it yet), the build script falls back to the raw `narrative.json` entry: a `stockPhoto` image for `kind: "species"` subjects, or a literal empty "DROP IN — ..." placeholder box for `kind: "placeholder"` subjects (typical for an arrival/city-hero shot still pending).
+
+So: excluding the only photo of a species (via the review tool's Exclude toggle) is enough by itself — just rebuild `trip.json` and the slot disappears. You never need to touch `legs.json`'s `sequence` array for this. `legs.json` should only be edited when the itinerary itself changes (adding/removing a species from the trip plan), not in response to excluding photos.
 
 ## Publishing to GitHub Pages
 

@@ -2,7 +2,7 @@
 // Same payload as trip.json, loaded synchronously so the first paint has data.
 window.__TRIP__ = {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-08T09:18:44-07:00",
+  "generatedAt": "2026-08-08T09:21:08-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",

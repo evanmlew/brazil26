@@ -224,6 +224,15 @@ def build_trip(legs_doc: dict[str, Any], narrative_doc: dict[str, Any], catalog_
     coords_lookup = narrative_doc.get("photoCoords", {})
     edits = (edits_doc or DEFAULT_EMPTY_PHOTO_EDITS).get("photos", {})
     merged_photos = [merge_photo(photo, edits.get(photo["id"], {})) for photo in catalog_doc.get("photos", [])]
+    # Every catalog photo tagged with a subject, excluded or not - used below to tell
+    # "this species has no photo yet" (show the stock placeholder) apart from "the
+    # only photo(s) of this species were excluded in the review tool" (drop the slot,
+    # since a stock placeholder for a species you *did* photograph is misleading).
+    all_photos_by_subject: dict[str, list[dict[str, Any]]] = {}
+    for photo in merged_photos:
+        subject_id = photo.get("subjectId") or ""
+        if subject_id:
+            all_photos_by_subject.setdefault(subject_id, []).append(photo)
     photos_by_leg_assignment: dict[str, list[dict[str, Any]]] = {leg["id"]: [] for leg in legs_doc["legs"]}
     for photo in merged_photos:
         # Photos marked excluded in the review tool are left out of the site
@@ -262,6 +271,13 @@ def build_trip(legs_doc: dict[str, Any], narrative_doc: dict[str, Any], catalog_
                 final_order = photo.get("order") if photo.get("order") is not None else default_order
                 positioned.append((final_order, default_order, real_slide(photo, subject, leg)))
             else:
+                candidates = all_photos_by_subject.get(subject_id, [])
+                if candidates and all(photo.get("excluded") for photo in candidates):
+                    # Every photo ever cataloged for this species has been excluded
+                    # in the review tool - drop the checklist slot rather than
+                    # showing a stock placeholder for a species that was actually
+                    # photographed and then rejected.
+                    continue
                 # An unfilled placeholder has no real chronological position yet;
                 # float it to the end of its leg instead of interleaving by raw
                 # sequence index, which can collide with real photos' order values.
