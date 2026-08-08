@@ -2,7 +2,7 @@
 // Same payload as trip.json, loaded synchronously so the first paint has data.
 window.__TRIP__ = {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-07T22:52:26-07:00",
+  "generatedAt": "2026-08-08T09:18:44-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",
@@ -182,7 +182,6 @@ window.__TRIP__ = {
       -19.858461,
       -56.273975
     ],
-    "kingfisher": null,
     "img-3099-fbb79ec833": [
       -22.982231,
       -43.190322
@@ -1143,25 +1142,6 @@ window.__TRIP__ = {
         "species": "",
         "lat": -19.858461,
         "lng": -56.273975
-      },
-      {
-        "leg": "amazon",
-        "legId": "amazon",
-        "key": "kingfisher",
-        "subjectId": "kingfisher",
-        "kind": "species",
-        "src": "assets/photos/kingfisher.jpg",
-        "thumb": "assets/photos/kingfisher.jpg",
-        "alt": "Ringed Kingfisher — Megaceryle torquata",
-        "pinLabel": "Ringed Kingfisher",
-        "title": "The largest kingfisher alive",
-        "body": "The largest kingfisher in the Americas, framed through palm fronds above the water.",
-        "chips": [
-          "RINGED KINGFISHER"
-        ],
-        "star": false,
-        "taxon": "Bird",
-        "species": "Ringed Kingfisher"
       }
     ],
     "rio": [
