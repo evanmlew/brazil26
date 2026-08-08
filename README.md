@@ -12,7 +12,7 @@ python -m http.server 8000
 - `index.html` — the journal experience. The design/runtime stays inline here; it reads the trip payload from `data/trip.js` (a blocking `<script>` in `<head>`) so the very first paint already has data.
 - `support.js` — the dc-runtime bundle from the handoff. Do not edit.
 - `photo-review.html` / `.css` / `.js` — local-only browser review tool for tagging real exports (auto-loads previews, drag-and-drop reorder/section-assignment, Save button). The CSS/JS are loaded with a `?v=N` cache-busting query string in `photo-review.html` — **bump that number whenever you edit `.css`/`.js`**, or a browser tab left open from an earlier session can load a stale script against the new HTML and throw errors like "Cannot set properties of null".
-- `review_server.py` — local dev server (serves this folder + a `POST /api/save-edits` route the review tool's Save button calls, which also rebuilds `data/trip.json`). Local-only, never published.
+- `review_server.py` — local dev server (serves this folder + a `POST /api/save-edits` route the review tool's Save button calls, which also rebuilds `data/trip.json`). Checks this worktree's git status against `origin/main` on every save (`GET /api/git-status`) and refuses stale saves by default. Local-only, never published.
 - `data/legs.json` — trip legs, palettes, stop-thumb defaults, and sequence order.
 - `data/narrative.json` — species + placeholder narrative entries keyed by `subjectId`.
 - `data/photo-catalog.json` — generated technical metadata for the private Lightroom export, including each photo's real capture `date` (ISO 8601 with UTC offset, e.g. `2026-07-13T07:44:49-03:00`) and `utcOffset` (e.g. `-03:00`), pulled from the EXIF `DateTimeOriginal`/`OffsetTimeOriginal` tags — not the Lightroom export timestamp.
@@ -61,14 +61,22 @@ git diff HEAD origin/main -- data\photo-edits.json
 Any output means `main` has edits this worktree doesn't. Pull the current file before touching
 anything (`git show origin/main:data\photo-edits.json > data\photo-edits.json`), or just do the
 review-tag session in the main checkout instead. `scripts\migrate_photo_edits.py` also checks this
-automatically and refuses to run against a stale `rev` — see "Photo workflow" below — but that only
-covers a re-key migration; a plain caption-editing session in a stale worktree has no equivalent
-guard, so check by hand first.
+automatically and refuses to run against a stale `rev` — see "Photo workflow" below. `review_server.py`
+carries the same guard now: every save checks this worktree's git status against `origin/main`
+(`GET /api/git-status`) and refuses with 409 by default when the worktree is behind, showing a red
+banner across the top of the review page rather than silently accepting the edit. The banner requires
+an explicit "save anyway" confirmation to push through — use that only if you are certain this really
+is the checkout you meant to edit.
 
-Also: only ever have **one** review server running. `review_server.py` serves whatever folder it was
-started in, and two checkouts of this repo look the same in a browser. If the tool seems to be
-"losing" edits, check which path the running server was launched from before assuming a bug — the
-saves are probably landing correctly, just in the other checkout.
+Also: only ever have **one** review server running. `review_server.py` refuses to start a second time
+on a port already in use (Windows silently lets two processes share a port with `SO_REUSEADDR`, so this
+is now disabled explicitly) and prints the likely cause. But a *different* worktree running its own
+server on a *different* port is not caught by that check — two checkouts of this repo look the same in
+a browser, and nothing stops you from having a tab open against each. If the tool seems to be "losing"
+edits, check which path the running server was launched from (and whether the git-staleness banner is
+showing) before assuming a bug. When a review-session worktree's PR has merged, close its server and
+archive/delete the worktree promptly — a forgotten worktree with a live server is exactly how edits
+have gone missing before.
 
 ## Photo workflow
 

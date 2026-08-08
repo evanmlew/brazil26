@@ -53,9 +53,47 @@ const el = (tag, cls, text) => {
   return node;
 };
 
+/* -------------------------------------------------------- git staleness -- */
+// Mirrors the check migrate_photo_edits.py has always done before re-keying
+// edits, now surfaced in the tool people actually type into. A worktree
+// running behind origin/main is exactly how published captions have been
+// silently reverted before -- this makes it visible instead of invisible.
+state.gitStatus = null;
+
+async function refreshGitStatus() {
+  try {
+    const res = await fetch("/api/git-status", { cache: "no-store" });
+    state.gitStatus = await res.json();
+  } catch {
+    state.gitStatus = { available: false };
+  }
+  renderGitBanner();
+}
+
+function renderGitBanner() {
+  const banner = $("#git-stale-banner");
+  const status = state.gitStatus;
+  if (!status || !status.available || !status.stale) {
+    banner.classList.add("hidden");
+    banner.textContent = "";
+    return;
+  }
+  banner.classList.remove("hidden");
+  banner.innerHTML = "";
+  const msg = el(
+    "span",
+    null,
+    `This worktree is ${status.behind} commit${status.behind === 1 ? "" : "s"} behind origin/main (branch ${status.branch}). ` +
+      `Edits here may revert already-published work — fetch/merge origin/main before continuing, ` +
+      `or close this server and use an up-to-date checkout instead.`
+  );
+  banner.appendChild(msg);
+}
+
 /* ------------------------------------------------------------------ load -- */
 
 async function load() {
+  refreshGitStatus();   // fire-and-forget; banner appears whenever it resolves
   const [catalog, edits, legs, narrative] = await Promise.all([
     getJson("data/photo-catalog.json", true),
     getJson("data/photo-edits.json", false),
@@ -1222,7 +1260,7 @@ function editsPayload() {
   return { schemaVersion: 1, rev: state.rev, photos };
 }
 
-async function saveEdits() {
+async function saveEdits(forceStaleSave) {
   const btn = $("#save");
   btn.disabled = true;
   // A note typed but never sent with Enter is still something you asked for.
@@ -1235,12 +1273,32 @@ async function saveEdits() {
     logIt(`note queued on save · ${text.slice(0, 48)}`);
   });
   try {
+    const payload = editsPayload();
+    if (forceStaleSave) payload.forceStaleSave = true;
     const res = await fetch("/api/save-edits", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(editsPayload()),
+      body: JSON.stringify(payload),
     });
     const result = await res.json().catch(() => ({}));
+    if (res.status === 409 && result.error === "worktree stale") {
+      const status = result.gitStatus || {};
+      state.gitStatus = status;
+      renderGitBanner();
+      const proceed = confirm(
+        `This worktree is ${status.behind} commit(s) behind origin/main.\n\n` +
+          "Saving anyway can silently revert already-published captions.\n" +
+          "Only continue if you're sure this is the right checkout.\n\n" +
+          "Save anyway?"
+      );
+      if (proceed) {
+        btn.disabled = false;
+        await saveEdits(true);
+      } else {
+        logIt("save cancelled · worktree is behind origin/main — fetch/merge first");
+      }
+      return;
+    }
     if (res.status === 409) {
       logIt(`save refused · file is at rev ${result.rev}, this tab is at rev ${state.rev} — reload before saving`);
       return;
@@ -1302,7 +1360,7 @@ document.querySelectorAll(".tabs button[data-tab]").forEach((b) => {
 });
 $("#zoom-out").addEventListener("click", () => { state.zoom = Math.max(0, state.zoom - 1); render(); });
 $("#zoom-in").addEventListener("click", () => { state.zoom = Math.min(ZOOMS.length - 1, state.zoom + 1); render(); });
-$("#save").addEventListener("click", saveEdits);
+$("#save").addEventListener("click", () => saveEdits());
 $("#publish").addEventListener("click", publish);
 $("#download").addEventListener("click", downloadEdits);
 $("#import").addEventListener("change", async (event) => {

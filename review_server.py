@@ -13,6 +13,13 @@ The save route is revision-checked: the page posts the `rev` it loaded and
 the server refuses with 409 if the file on disk has moved on, so a second
 tab cannot silently clobber the first.
 
+The save route also checks this worktree's git status against origin/main
+(GET /api/git-status exposes the same check) and refuses by default when
+the worktree is behind -- a stale worktree accepting edits is exactly how
+published captions have been silently reverted before. The review page
+shows a loud banner in this case and requires an explicit "save anyway"
+before resending with forceStaleSave: true.
+
 This route is local-dev-only. It reads/writes files on THIS machine and
 is not part of any file that would ever be published -- the Journal
 folder itself is a private, local-only diary and is never deployed.
@@ -23,6 +30,7 @@ Usage:
 import http.server
 import json
 import os
+import subprocess
 import sys
 import urllib.parse
 from pathlib import Path
@@ -41,11 +49,93 @@ CATALOG_PATH = DATA_DIR / "photo-catalog.json"
 EDITS_PATH = os.path.join(SITE_ROOT, "data", "photo-edits.json")
 TRIP_PATH = DATA_DIR / "trip.json"
 SAVE_ROUTE = "/api/save-edits"
+GIT_STATUS_ROUTE = "/api/git-status"
+
+
+def _run_git(*args, timeout=6):
+    try:
+        result = subprocess.run(
+            ["git", *args],
+            cwd=SITE_ROOT,
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        return None
+    if result.returncode != 0:
+        return None
+    return result.stdout.strip()
+
+
+def git_status():
+    """Best-effort check of whether this worktree/checkout is behind origin/main.
+
+    This is the exact staleness class of bug that has bitten this project before:
+    a review session runs in a worktree that's several commits behind, silently
+    accepts edits, and nobody notices until published data reverts prior work.
+    migrate_photo_edits.py already guards its own path with a similar check --
+    this gives the review UI (the thing people actually type into) the same
+    protection. Every check here is best-effort: if git isn't available, this
+    isn't a repo, or there's no network for the fetch, we report `available:
+    False` rather than failing the request.
+    """
+    branch = _run_git("rev-parse", "--abbrev-ref", "HEAD")
+    if branch is None:
+        return {"available": False}
+
+    # Best-effort refresh so "behind" reflects the remote's current state, not
+    # whatever was last fetched. Short timeout: never let this block a save.
+    _run_git("fetch", "origin", "main", "--quiet", timeout=8)
+
+    counts = _run_git("rev-list", "--left-right", "--count", "HEAD...origin/main")
+    if counts is None:
+        return {"available": False, "branch": branch}
+
+    try:
+        ahead_str, behind_str = counts.split()
+        ahead, behind = int(ahead_str), int(behind_str)
+    except ValueError:
+        return {"available": False, "branch": branch}
+
+    return {
+        "available": True,
+        "branch": branch,
+        "ahead": ahead,
+        "behind": behind,
+        "stale": behind > 0,
+        "worktree": SITE_ROOT,
+    }
+
+
+def _print_startup_git_warning():
+    status = git_status()
+    if not status.get("available"):
+        print("Note: could not determine git status (not a repo, git missing, or offline) -- staleness check skipped.")
+        return
+    if status.get("stale"):
+        print("!" * 72)
+        print(f"! WARNING: this worktree is {status['behind']} commit(s) behind origin/main.")
+        print(f"! Branch: {status.get('branch')}")
+        print(f"! Worktree: {status.get('worktree')}")
+        print("! Edits saved here may silently revert already-published work.")
+        print("! Run `git fetch origin main` and rebase/merge before editing,")
+        print("! or close this server and use an up-to-date worktree instead.")
+        print("!" * 72)
+    else:
+        print(f"Git check OK: branch {status.get('branch')} is up to date with origin/main.")
 
 
 class ReviewHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=SITE_ROOT, **kwargs)
+
+    def do_GET(self):
+        parsed = urllib.parse.urlsplit(self.path)
+        if parsed.path == GIT_STATUS_ROUTE:
+            self._send_json(200, git_status())
+            return
+        super().do_GET()
 
     def do_POST(self):
         parsed = urllib.parse.urlsplit(self.path)
@@ -61,6 +151,21 @@ class ReviewHandler(http.server.SimpleHTTPRequestHandler):
                 raise ValueError("Expected JSON object with a 'photos' key")
         except (json.JSONDecodeError, ValueError) as exc:
             self._send_json(400, {"ok": False, "error": str(exc)})
+            return
+
+        # Worktree staleness guard: this is the review UI's equivalent of the
+        # check migrate_photo_edits.py already does before re-keying edits.
+        # If this checkout is behind origin/main, refuse the save by default --
+        # a stale worktree silently accepting edits is exactly how prior published
+        # captions got reverted. The page can resend with forceStaleSave: true
+        # only after showing the user an explicit warning.
+        status = git_status()
+        if status.get("available") and status.get("stale") and not payload.get("forceStaleSave"):
+            self._send_json(409, {
+                "ok": False,
+                "error": "worktree stale",
+                "gitStatus": status,
+            })
             return
 
         # Optimistic concurrency: the review page sends the rev it loaded. If the
@@ -131,11 +236,31 @@ class ReviewHandler(http.server.SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
 
+class _NoReuseAddrServer(http.server.ThreadingHTTPServer):
+    # http.server sets SO_REUSEADDR by default. On POSIX that only shortens
+    # TIME_WAIT; on Windows it lets a *second* process bind the exact same
+    # port and silently start receiving some of the first process's requests
+    # -- no error, no warning, just two servers randomly splitting traffic.
+    # That is worse than refusing to start, so turn it off here.
+    allow_reuse_address = False
+
+
 def main():
     if not os.path.isdir(PHOTOS_DIR):
         print(f"Warning: photos folder not found at {PHOTOS_DIR}")
         print("Run scripts\\build_photo_catalog.py after exporting photos there.")
-    with http.server.ThreadingHTTPServer(("", PORT), ReviewHandler) as httpd:
+    _print_startup_git_warning()
+    try:
+        httpd = _NoReuseAddrServer(("", PORT), ReviewHandler)
+    except OSError as exc:
+        print(f"Could not start on port {PORT}: {exc}")
+        print(
+            "Another review_server.py is very likely already running on this port "
+            "(possibly in a different worktree). Check for it before starting a "
+            "second one -- see the README's 'One review server at a time' note."
+        )
+        sys.exit(1)
+    with httpd:
         print(f"Serving {SITE_ROOT}")
         print(f"Journal diary: http://localhost:{PORT}/")
         print(f"Photo review:  http://localhost:{PORT}/photo-review.html")
