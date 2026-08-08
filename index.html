@@ -1841,11 +1841,13 @@ class Component extends DCLogic {
         slot:'top:' + (i * 100) + '%',
         noPhoto:!x.src, alt:x.alt, ph:x.ph || '',
         imgStyle:x.src
-          ? bgImage(x.src, x.srcAvif) + ';background-position:center bottom'
+          ? bgImage(x.src, x.srcAvif) + ';background-position:center top'
             + (pf === 'fit' ? ';left:4%;top:3%;width:92%;height:74%;background-size:contain;background-repeat:no-repeat;animation:none' : '')
             + (pf === 'bleed' ? ';left:0;top:0;width:100%;height:100%;background-size:contain;background-repeat:no-repeat;animation:none' : '')
+            // smart cover-crop trims from the top of the photo, keeping the bottom of the
+            // frame; the non-cropped (contain/letterbox) case stays top-anchored above
             + (sm ? ';left:0;top:0;width:100%;height:100%;background-repeat:no-repeat;animation:none;background-size:'
-                + (sm.crop ? 'cover' : 'contain') : '')
+                + (sm.crop ? 'cover;background-position:center bottom' : 'contain') : '')
           : 'display:none',
         bgStyle:x.src && pf === 'fit' ? bgImage(x.src, x.srcAvif)
           : (sm && sm.bg && !sm.crop ? 'background-image:none;background:' + sm.bg + ';filter:none;opacity:1;inset:0' : 'display:none'),
