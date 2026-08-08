@@ -2351,16 +2351,16 @@
       }
     },
     {
-      "id": "por-maycon-nunes-photography-315-395219b235",
+      "id": "por-maycon-nunes-photography-315-9701d3d0f9",
       "filename": "Por Maycon Nunes Photography-315.jpg",
       "width": 2560,
       "height": 3840,
-      "bytes": 5266247,
-      "sha1": "e693772a754b579c7fd3a94026bc9d55782c637f",
-      "pixelSha1": "395219b235e498e618053c7e42af1cd46842d90d",
+      "bytes": 5558912,
+      "sha1": "f27b4462d7d0883e68afa4741a0b2e3ad9ee6fc5",
+      "pixelSha1": "9701d3d0f93220fa5cb7a007fe75884aed7063c0",
       "date": "2026-07-20T17:31:20-03:00",
       "utcOffset": "-03:00",
-      "exportedAt": "2026-08-02T20:29:07",
+      "exportedAt": "2026-08-07T22:49:52",
       "latitude": -22.949444,
       "longitude": -43.156389,
       "camera": {
@@ -2380,9 +2380,9 @@
       "flags": [],
       "assets": {
         "original": "",
-        "card": "assets/photos/por-maycon-nunes-photography-315-395219b235-card.jpg",
-        "cardAvif": "assets/photos/por-maycon-nunes-photography-315-395219b235-card.avif",
-        "thumb": "assets/photos/por-maycon-nunes-photography-315-395219b235-thumb.jpg"
+        "card": "assets/photos/por-maycon-nunes-photography-315-9701d3d0f9-card.jpg",
+        "cardAvif": "assets/photos/por-maycon-nunes-photography-315-9701d3d0f9-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-315-9701d3d0f9-thumb.jpg"
       }
     },
     {

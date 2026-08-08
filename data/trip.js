@@ -2,7 +2,7 @@
 // Same payload as trip.json, loaded synchronously so the first paint has data.
 window.__TRIP__ = {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-07T22:39:52-07:00",
+  "generatedAt": "2026-08-07T22:52:26-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",
@@ -223,7 +223,7 @@ window.__TRIP__ = {
       -22.949444,
       -43.156389
     ],
-    "por-maycon-nunes-photography-315-395219b235": [
+    "por-maycon-nunes-photography-315-9701d3d0f9": [
       -22.949444,
       -43.156389
     ],
@@ -1379,12 +1379,12 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "por-maycon-nunes-photography-315-395219b235",
-        "photoId": "por-maycon-nunes-photography-315-395219b235",
+        "key": "por-maycon-nunes-photography-315-9701d3d0f9",
+        "photoId": "por-maycon-nunes-photography-315-9701d3d0f9",
         "kind": "photo",
-        "src": "assets/photos/por-maycon-nunes-photography-315-395219b235-card.jpg",
-        "srcAvif": "assets/photos/por-maycon-nunes-photography-315-395219b235-card.avif",
-        "thumb": "assets/photos/por-maycon-nunes-photography-315-395219b235-thumb.jpg",
+        "src": "assets/photos/por-maycon-nunes-photography-315-9701d3d0f9-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-315-9701d3d0f9-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-315-9701d3d0f9-thumb.jpg",
         "alt": "Morro da Urca stop",
         "pinLabel": "Morro da Urca stop",
         "title": "Morro da Urca stop",
