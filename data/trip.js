@@ -2,7 +2,7 @@
 // Same payload as trip.json, loaded synchronously so the first paint has data.
 window.__TRIP__ = {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-09T08:32:20-07:00",
+  "generatedAt": "2026-08-09T08:35:58-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",
@@ -1369,9 +1369,9 @@ window.__TRIP__ = {
         "src": "assets/photos/por-maycon-nunes-photography-301-13eaa4e580-card.jpg",
         "srcAvif": "assets/photos/por-maycon-nunes-photography-301-13eaa4e580-card.avif",
         "thumb": "assets/photos/por-maycon-nunes-photography-301-13eaa4e580-thumb.jpg",
-        "alt": "The Morro da Urca Bay",
-        "pinLabel": "The Morro da Urca Bay",
-        "title": "The Morro da Urca Bay",
+        "alt": "Looking over Botafogo Bay",
+        "pinLabel": "Looking over Botafogo Bay",
+        "title": "Looking over Botafogo Bay",
         "body": "",
         "chips": [],
         "star": false,
