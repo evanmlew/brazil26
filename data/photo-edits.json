@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "rev": 25,
+  "rev": 26,
   "photos": {
     "dsc00036-171df22a9e": {
       "featured": false,
@@ -490,7 +490,7 @@
       "featured": false,
       "legId": "rio",
       "order": 6,
-      "title": "The Lapa Steps",
+      "title": "The Lapa steps",
       "body": "215 steps that the Chilean artist Jorge Selarón tiled by hand from 1990 until his death in 2013, using tiles sent to him from more than 60 countries.",
       "notes": [
         {
@@ -514,7 +514,7 @@
       "featured": false,
       "legId": "rio",
       "order": 7,
-      "title": "Sitting on a Landmark",
+      "title": "Sitting on a landmark",
       "body": "The green and yellow tiles are Selarón's tribute to Brazil — the country he adopted, and dedicated the staircase to.",
       "notes": [
         {
@@ -533,7 +533,7 @@
       "featured": false,
       "legId": "rio",
       "order": 8,
-      "title": "Golden Hour at Dona Marta",
+      "title": "Golden hour at Dona Marta",
       "notes": [
         {
           "who": "YOU",
@@ -559,13 +559,13 @@
       "featured": false,
       "legId": "rio",
       "order": 10,
-      "title": "Sugarloaf Mountain"
+      "title": "Sugarloaf across the bay"
     },
     "por-maycon-nunes-photography-27-c30cb9157f": {
       "featured": false,
       "legId": "rio",
       "order": 3,
-      "title": "Sunburst Costume",
+      "title": "Sunburst costume",
       "body": "A \"fantasia\" opening costume — built on a rattan frame so the whole structure rides on one person's shoulders.",
       "notes": [
         {
@@ -609,8 +609,8 @@
     },
     "por-maycon-nunes-photography-296-65ae66f733": {
       "legId": "rio",
-      "order": 14,
-      "excluded": true
+      "order": 13,
+      "title": "700 ft above Rio"
     },
     "por-maycon-nunes-photography-298-97465b7830": {
       "legId": "rio",
@@ -620,8 +620,8 @@
     "por-maycon-nunes-photography-301-13eaa4e580": {
       "featured": false,
       "legId": "rio",
-      "order": 13,
-      "title": "Sunset from the halfway stop"
+      "order": 14,
+      "title": "The Morro da Urca Bay"
     },
     "por-maycon-nunes-photography-302-4ce2bf39cf": {
       "legId": "rio",
@@ -637,7 +637,7 @@
       "featured": false,
       "legId": "rio",
       "order": 15,
-      "title": "Morro da Urca stop"
+      "title": "Halfway up Sugarloaf"
     },
     "por-maycon-nunes-photography-327-e04c8413c3": {
       "featured": false,
