@@ -607,11 +607,6 @@
       "body": "The same statue four hours and one mountain later, shot from Morro da Urca as the sun went down behind Corcovado.",
       "excluded": true
     },
-    "por-maycon-nunes-photography-296-65ae66f733": {
-      "legId": "rio",
-      "order": 13,
-      "title": "700 ft above Rio"
-    },
     "por-maycon-nunes-photography-298-97465b7830": {
       "legId": "rio",
       "order": 25,
@@ -678,6 +673,11 @@
           "at": "2026-08-03T05:42:58Z"
         }
       ]
+    },
+    "por-maycon-nunes-photography-296-4366d40430": {
+      "legId": "rio",
+      "order": 13,
+      "title": "700 ft above Rio"
     }
   }
 }
