@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "rev": 24,
+  "rev": 25,
   "photos": {
     "dsc00036-171df22a9e": {
       "featured": false,
@@ -428,7 +428,7 @@
     },
     "img-3012-15c84b695a": {
       "legId": "rio",
-      "order": 17,
+      "order": 18,
       "title": "The city lit up gold",
       "body": "Rio's bay and skyline lit gold from the top of Sugarloaf Mountain at sunset.",
       "excluded": true
@@ -436,7 +436,7 @@
     "img-3036-125f159bc3": {
       "featured": true,
       "legId": "rio",
-      "order": 19,
+      "order": 20,
       "title": "At the feet of Christ the Redeemer",
       "body": "The whole family at the base of Christ the Redeemer, high above the city on Corcovado.",
       "excluded": true
@@ -444,14 +444,14 @@
     "img-3045-pano-919a46ae72": {
       "featured": true,
       "legId": "rio",
-      "order": 20,
+      "order": 21,
       "title": "Rio, spread out below",
       "body": "A sweeping panorama from Corcovado"
     },
     "img-3048-9ef580c62e": {
       "featured": false,
       "legId": "rio",
-      "order": 21,
+      "order": 22,
       "title": "Together at the top",
       "body": "The family at the summit platform, Christ the Redeemer towering just behind us.",
       "excluded": true
@@ -459,7 +459,7 @@
     "img-3055-f06c36d678": {
       "featured": false,
       "legId": "rio",
-      "order": 22,
+      "order": 23,
       "title": "Under open arms",
       "body": "Standing at the base of Christ the Redeemer atop Corcovado"
     },
@@ -607,27 +607,42 @@
       "body": "The same statue four hours and one mountain later, shot from Morro da Urca as the sun went down behind Corcovado.",
       "excluded": true
     },
+    "por-maycon-nunes-photography-296-65ae66f733": {
+      "legId": "rio",
+      "order": 14,
+      "excluded": true
+    },
+    "por-maycon-nunes-photography-298-97465b7830": {
+      "legId": "rio",
+      "order": 25,
+      "excluded": true
+    },
     "por-maycon-nunes-photography-301-13eaa4e580": {
       "featured": false,
       "legId": "rio",
       "order": 13,
       "title": "Sunset from the halfway stop"
     },
+    "por-maycon-nunes-photography-302-4ce2bf39cf": {
+      "legId": "rio",
+      "order": 26,
+      "excluded": true
+    },
     "por-maycon-nunes-photography-313-253eb9d6bd": {
       "legId": "rio",
-      "order": 23,
+      "order": 24,
       "excluded": true
     },
     "por-maycon-nunes-photography-315-304d0e7b11": {
       "featured": false,
       "legId": "rio",
-      "order": 14,
+      "order": 15,
       "title": "Morro da Urca stop"
     },
     "por-maycon-nunes-photography-327-e04c8413c3": {
       "featured": false,
       "legId": "rio",
-      "order": 15,
+      "order": 16,
       "title": "The four of us, and the loaf",
       "body": "Portuguese traders called it Pão de Açúcar -- sugarloaf -- after the conical clay molds that refined sugar was shipped in.",
       "excluded": true
@@ -635,14 +650,14 @@
     "por-maycon-nunes-photography-335-9085184e79": {
       "featured": false,
       "legId": "rio",
-      "order": 16,
+      "order": 17,
       "title": "The cable line down",
       "body": "The final descent from Sugarloaf, Rio's lights beginning to flicker on against the last orange glow over the mountains."
     },
     "por-maycon-nunes-photography-340-5f4ea8a1d1": {
       "featured": false,
       "legId": "rio",
-      "order": 18,
+      "order": 19,
       "title": "Blue hour crowd",
       "body": "Everyone waiting for the last of the sunset to give way to the city lights."
     },
