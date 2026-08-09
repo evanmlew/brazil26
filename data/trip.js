@@ -2,7 +2,7 @@
 // Same payload as trip.json, loaded synchronously so the first paint has data.
 window.__TRIP__ = {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-09T08:53:55-07:00",
+  "generatedAt": "2026-08-09T08:59:46-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",
@@ -218,7 +218,7 @@ window.__TRIP__ = {
       -22.94503,
       -43.1964
     ],
-    "por-maycon-nunes-photography-296-4366d40430": [
+    "por-maycon-nunes-photography-296-fb008626fb": [
       -22.949444,
       -43.156389
     ],
@@ -1342,12 +1342,12 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "por-maycon-nunes-photography-296-4366d40430",
-        "photoId": "por-maycon-nunes-photography-296-4366d40430",
+        "key": "por-maycon-nunes-photography-296-fb008626fb",
+        "photoId": "por-maycon-nunes-photography-296-fb008626fb",
         "kind": "photo",
-        "src": "assets/photos/por-maycon-nunes-photography-296-4366d40430-card.jpg",
-        "srcAvif": "assets/photos/por-maycon-nunes-photography-296-4366d40430-card.avif",
-        "thumb": "assets/photos/por-maycon-nunes-photography-296-4366d40430-thumb.jpg",
+        "src": "assets/photos/por-maycon-nunes-photography-296-fb008626fb-card.jpg",
+        "srcAvif": "assets/photos/por-maycon-nunes-photography-296-fb008626fb-card.avif",
+        "thumb": "assets/photos/por-maycon-nunes-photography-296-fb008626fb-thumb.jpg",
         "alt": "700 ft above Rio",
         "pinLabel": "700 ft above Rio",
         "title": "700 ft above Rio",
