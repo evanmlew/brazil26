@@ -248,8 +248,15 @@ def resolve_sources(folder: Path) -> tuple[list[tuple[Path, str]], dict[str, lis
     return sources, report
 
 
-def diff_catalogs(previous: Path, photos: list[dict[str, Any]]) -> list[str]:
-    """Report what changed against the catalog already sitting at the output path."""
+def diff_catalogs(previous: Path, photos: list[dict[str, Any]], skip_removed: bool = False) -> list[str]:
+    """Report what changed against the catalog already sitting at the output path.
+
+    `photos` is compared against the catalog at `previous` by filename/id. Pass
+    `skip_removed=True` in `--merge` mode: there `photos` is deliberately only the
+    partial export's own files, so anything old missing from it is untouched
+    (kept via merge_photos), not actually removed — reporting it as "Removed"
+    would be a false positive.
+    """
     try:
         old = json.loads(previous.read_text(encoding="utf-8"))["photos"]
     except (OSError, KeyError, json.JSONDecodeError):
@@ -266,8 +273,10 @@ def diff_catalogs(previous: Path, photos: list[dict[str, Any]]) -> list[str]:
         if photo["filename"] in old_by_file and old_by_file[photo["filename"]]["id"] != photo["id"]
     ]
     added = [photo for photo in photos if photo["id"] not in old_by_id and photo["filename"] not in old_by_file]
-    removed = [photo for photo in old if photo["id"] not in new_by_id and photo["filename"] not in
-               {p["filename"] for p in photos}]
+    removed = [] if skip_removed else [
+        photo for photo in old if photo["id"] not in new_by_id and photo["filename"] not in
+        {p["filename"] for p in photos}
+    ]
 
     if added:
         lines.append(f"Added {len(added)}:")
@@ -283,10 +292,45 @@ def diff_catalogs(previous: Path, photos: list[dict[str, Any]]) -> list[str]:
     return lines
 
 
+def merge_photos(previous: Path, new_photos: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Fold a *partial* export's photos into the catalog already at `previous`.
+
+    Use this (`--merge`) whenever the export folder is not the full private
+    archive — e.g. Lightroom re-exported only the photos you touched. A plain
+    rebuild would treat the folder as the complete set and delete every photo
+    it doesn't contain.
+
+    Every filename in `new_photos` replaces its old entry outright (or is
+    appended if the filename is new); every old entry whose filename is *not*
+    in `new_photos` is kept byte-for-byte, editorial fields included. Because
+    each replacement comes straight from `extract_metadata()`, its `assets`
+    field is always reset to empty strings, same as a full rebuild — so a
+    re-keyed photo can never end up pointing at a stale, about-to-be-deleted
+    derivative file. Run `build_photo_assets.py` afterwards to fill `assets`
+    back in for exactly the entries that need it.
+    """
+    old = json.loads(previous.read_text(encoding="utf-8"))["photos"]
+    new_by_file = {photo["filename"]: photo for photo in new_photos}
+    merged = [new_by_file.pop(photo["filename"], photo) for photo in old]
+    merged.extend(new_by_file.values())  # filenames not previously in the catalog
+    return merged
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("input", type=Path, help="Private folder containing exported JPEGs")
     parser.add_argument("output", type=Path, help="Catalog JSON output path")
+    parser.add_argument(
+        "--merge",
+        action="store_true",
+        help=(
+            "Treat `input` as a PARTIAL export instead of the full archive: match its files "
+            "against the existing catalog at `output` by filename, replace only those entries "
+            "(assets reset to empty, same as a full rebuild), and leave every other photo in the "
+            "catalog untouched instead of deleting it. Use this whenever the export folder does "
+            "not contain every photo the site knows about."
+        ),
+    )
     args = parser.parse_args()
 
     sources, report = resolve_sources(args.input)
@@ -299,8 +343,12 @@ def main() -> None:
             + "\n".join(f"  {name}" for name in report["lost"])
         )
 
+    if args.merge and not args.output.exists():
+        raise SystemExit(f"--merge needs an existing catalog to merge into, but {args.output} doesn't exist.")
+
     previous = args.output if args.output.exists() else None
-    photos = [extract_metadata(path, stem) for path, stem in sources]
+    new_photos = [extract_metadata(path, stem) for path, stem in sources]
+    photos = merge_photos(previous, new_photos) if args.merge else new_photos
     catalog = {
         "schemaVersion": 1,
         "generatedAt": datetime.now().astimezone().isoformat(timespec="seconds"),
@@ -309,7 +357,7 @@ def main() -> None:
         },
         "photos": photos,
     }
-    diff = diff_catalogs(previous, photos) if previous else []
+    diff = diff_catalogs(previous, new_photos, skip_removed=args.merge) if previous else []
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(catalog, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Wrote {len(photos)} photos to {args.output}")

@@ -154,6 +154,38 @@ Pull the current file as instructed, then re-run. Only pass `--skip-git-check` w
 the `edits` file you're migrating already reflects the latest published edits (e.g. you just pulled
 `main` into this exact worktree, or you're offline and have already confirmed there's nothing newer).
 
+### Partial re-exports — only some photos changed
+
+`photos\` is not a permanent archive; it's whatever Lightroom most recently exported into it, via
+the junction `scripts\link_photos.py` creates. If you only re-exported a handful of re-edited
+photos (not the whole trip), that folder now contains a **partial** set — running the plain
+commands above would treat it as the complete archive and report every photo missing from it as
+`Removed`, deleting their catalog entries.
+
+Pass `--merge` to both build scripts instead. It matches the folder's files against the existing
+catalog **by filename**: matched entries are replaced (re-keyed if the pixels actually changed,
+untouched if not), new filenames are appended, and every other photo already in the catalog is left
+exactly as it was.
+
+```powershell
+python scripts\build_photo_catalog.py photos data\photo-catalog.json --merge
+python scripts\build_photo_assets.py photos data\photo-catalog.json assets\photos --merge
+```
+
+`build_photo_assets.py --merge` skips (and reports) any catalog photo whose file isn't in the
+partial folder, instead of failing — it fills in `assets` for exactly the photos present and
+leaves everyone else's `assets` untouched. **Always use it, even against the full catalog** — don't
+build a subset catalog by hand and copy its `assets` back manually. That manual-merge shortcut is
+exactly how a real bug shipped once: a hand-rolled script re-keyed 18 photos' `id` and pixel fields
+but forgot to also update their `assets` paths, leaving them pointing at derivative files that had
+just been deleted (blank thumbnails in the review tool). `extract_metadata()` always resets
+`assets` to empty strings for anything it (re)builds, so going through `--merge` on both scripts —
+rather than editing catalog JSON by hand — structurally can't reproduce that bug: an entry's
+`assets` is either freshly regenerated together with its `id`, or not touched at all.
+
+Still run `migrate_photo_edits.py` afterwards if the catalog diff says anything was re-keyed — a
+partial re-export changes ids exactly the same way a full one does.
+
 Generate the public card/thumb derivatives for the current export:
 
 ```powershell

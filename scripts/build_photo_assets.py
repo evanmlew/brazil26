@@ -196,6 +196,18 @@ def main() -> None:
         action="store_true",
         help="Re-encode derivatives that already exist (normally they are kept, to avoid pointless git churn)",
     )
+    parser.add_argument(
+        "--merge",
+        action="store_true",
+        help=(
+            "Skip catalog photos whose file isn't in `input` instead of failing. Use this when "
+            "`input` is a PARTIAL export (e.g. after `build_photo_catalog.py --merge`) so you can "
+            "run this script against the FULL catalog directly: it fills in `assets` for exactly "
+            "the photos present in the folder and leaves every other entry's `assets` untouched. "
+            "Without this, a subset catalog has to be built by hand and its assets merged back in "
+            "manually — miss that step and re-keyed photos are left pointing at deleted files."
+        ),
+    )
     args = parser.parse_args()
 
     catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
@@ -215,13 +227,24 @@ def main() -> None:
         print(f"Encode settings changed ({', '.join(changed)}) — rebuilding every derivative.\n")
 
     undersized: list[tuple[str, int]] = []
+    skipped_missing: list[str] = []
     avif_bytes = jpeg_bytes = thumb_bytes = 0
     built = kept = 0
-    total = len(catalog["photos"])
-    for index, photo in enumerate(catalog["photos"], 1):
-        source = files.get(photo["filename"])
-        if source is None:
-            raise FileNotFoundError(f"Catalog photo is missing from export folder: {photo['filename']}")
+    photos_to_process = catalog["photos"]
+    if args.merge:
+        skipped_missing = [p["filename"] for p in photos_to_process if p["filename"] not in files]
+        photos_to_process = [p for p in photos_to_process if p["filename"] in files]
+    else:
+        missing = [p["filename"] for p in photos_to_process if p["filename"] not in files]
+        if missing:
+            raise FileNotFoundError(
+                "Catalog photo(s) missing from export folder: " + ", ".join(missing[:5])
+                + (f" (+{len(missing) - 5} more)" if len(missing) > 5 else "")
+                + ". Pass --merge if the export folder is intentionally partial."
+            )
+    total = len(photos_to_process)
+    for index, photo in enumerate(photos_to_process, 1):
+        source = files[photo["filename"]]
         avif_name = f"{photo['id']}-card.avif"
         card_name = f"{photo['id']}-card.jpg"
         thumb_name = f"{photo['id']}-thumb.jpg"
@@ -259,10 +282,21 @@ def main() -> None:
     args.catalog.write_text(json.dumps(catalog, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     mb = 1024 * 1024
     print(f"\nWrote derivatives for {total} photos to {args.output}  ({built} built, {kept} kept unchanged)")
-    print(f"  AVIF cards  @{args.card}px q{args.quality}: {avif_bytes/mb:6.1f} MB  ({avif_bytes/total/1024:.0f} KB avg)")
-    print(f"  JPEG cards  @{args.fallback}px q{FALLBACK_QUALITY}: {jpeg_bytes/mb:6.1f} MB  ({jpeg_bytes/total/1024:.0f} KB avg)")
-    print(f"  JPEG thumbs @{THUMB}px:          {thumb_bytes/mb:6.1f} MB")
-    print(f"  total published:              {(avif_bytes+jpeg_bytes+thumb_bytes)/mb:6.1f} MB")
+    if total:
+        print(f"  AVIF cards  @{args.card}px q{args.quality}: {avif_bytes/mb:6.1f} MB  ({avif_bytes/total/1024:.0f} KB avg)")
+        print(f"  JPEG cards  @{args.fallback}px q{FALLBACK_QUALITY}: {jpeg_bytes/mb:6.1f} MB  ({jpeg_bytes/total/1024:.0f} KB avg)")
+        print(f"  JPEG thumbs @{THUMB}px:          {thumb_bytes/mb:6.1f} MB")
+        print(f"  total published:              {(avif_bytes+jpeg_bytes+thumb_bytes)/mb:6.1f} MB")
+
+    if skipped_missing:
+        print(
+            f"\n--merge: skipped {len(skipped_missing)} catalog photo(s) not in {args.input} "
+            "(kept their existing `assets` untouched):"
+        )
+        for name in skipped_missing[:12]:
+            print(f"  {name}")
+        if len(skipped_missing) > 12:
+            print(f"  ... and {len(skipped_missing) - 12} more")
 
     referenced = {name for photo in catalog["photos"] for name in (
         f"{photo['id']}-card.avif", f"{photo['id']}-card.jpg", f"{photo['id']}-thumb.jpg")}
