@@ -2629,6 +2629,114 @@
         "cardAvif": "assets/photos/por-maycon-nunes-photography-313-253eb9d6bd-card.avif",
         "thumb": "assets/photos/por-maycon-nunes-photography-313-253eb9d6bd-thumb.jpg"
       }
+    },
+    {
+      "id": "por-maycon-nunes-photography-296-65ae66f733",
+      "filename": "Por Maycon Nunes Photography-296.jpg",
+      "width": 2560,
+      "height": 3840,
+      "bytes": 4538124,
+      "sha1": "5334028a33161888fdacdd19ce2343fe8754b9f9",
+      "pixelSha1": "65ae66f7339dedf431ab986189070f35c0484811",
+      "date": "2026-07-20T17:24:20-03:00",
+      "utcOffset": "-03:00",
+      "exportedAt": "2026-08-08T22:07:44",
+      "latitude": null,
+      "longitude": null,
+      "camera": {
+        "make": "FUJIFILM",
+        "model": "X-H2S"
+      },
+      "title": "",
+      "body": "",
+      "chips": [],
+      "star": false,
+      "subjectId": "",
+      "locationName": "",
+      "legId": "",
+      "order": null,
+      "species": "",
+      "featured": false,
+      "flags": [
+        "no-gps"
+      ],
+      "assets": {
+        "original": "",
+        "card": "",
+        "thumb": ""
+      }
+    },
+    {
+      "id": "por-maycon-nunes-photography-298-97465b7830",
+      "filename": "Por Maycon Nunes Photography-298.jpg",
+      "width": 3840,
+      "height": 2560,
+      "bytes": 4897315,
+      "sha1": "67a8acdc3c5129def75c9a5cfd37f6b0bd1ba452",
+      "pixelSha1": "97465b7830fdbee64ce37e6324b9da3cb4adc125",
+      "date": "2026-07-20T17:24:41-03:00",
+      "utcOffset": "-03:00",
+      "exportedAt": "2026-08-08T22:07:46",
+      "latitude": null,
+      "longitude": null,
+      "camera": {
+        "make": "FUJIFILM",
+        "model": "X-H2S"
+      },
+      "title": "",
+      "body": "",
+      "chips": [],
+      "star": false,
+      "subjectId": "",
+      "locationName": "",
+      "legId": "",
+      "order": null,
+      "species": "",
+      "featured": false,
+      "flags": [
+        "no-gps"
+      ],
+      "assets": {
+        "original": "",
+        "card": "",
+        "thumb": ""
+      }
+    },
+    {
+      "id": "por-maycon-nunes-photography-302-4ce2bf39cf",
+      "filename": "Por Maycon Nunes Photography-302.jpg",
+      "width": 2560,
+      "height": 3840,
+      "bytes": 4169189,
+      "sha1": "5e69a88fe5300547e2d60dcea95d1af89b378c0a",
+      "pixelSha1": "4ce2bf39cf937ac89dedc3270e1cdb43e5650dc7",
+      "date": "2026-07-20T17:27:28-03:00",
+      "utcOffset": "-03:00",
+      "exportedAt": "2026-08-08T22:07:50",
+      "latitude": null,
+      "longitude": null,
+      "camera": {
+        "make": "FUJIFILM",
+        "model": "X-H2S"
+      },
+      "title": "",
+      "body": "",
+      "chips": [],
+      "star": false,
+      "subjectId": "",
+      "locationName": "",
+      "legId": "",
+      "order": null,
+      "species": "",
+      "featured": false,
+      "flags": [
+        "no-gps"
+      ],
+      "assets": {
+        "original": "",
+        "card": "",
+        "thumb": ""
+      }
     }
   ]
 }
