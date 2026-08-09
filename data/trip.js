@@ -2,7 +2,7 @@
 // Same payload as trip.json, loaded synchronously so the first paint has data.
 window.__TRIP__ = {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-08T09:50:17-07:00",
+  "generatedAt": "2026-08-08T22:15:41-07:00",
   "taxonColors": {
     "Mammal": "#C77D3A",
     "Bird": "#3E7CB1",
@@ -186,47 +186,47 @@ window.__TRIP__ = {
       -22.982231,
       -43.190322
     ],
-    "por-maycon-nunes-photography-112-745736b769": [
+    "por-maycon-nunes-photography-112-6e97cd06ea": [
       -22.89536,
       -43.1984
     ],
-    "por-maycon-nunes-photography-27-479a658758": [
+    "por-maycon-nunes-photography-27-c30cb9157f": [
       -22.89536,
       -43.1984
     ],
-    "por-maycon-nunes-photography-51-a52e69a1a8": [
+    "por-maycon-nunes-photography-51-07c873f1ca": [
       -22.89536,
       -43.1984
     ],
-    "por-maycon-nunes-photography-148-a2fb0a3bee": [
+    "por-maycon-nunes-photography-148-ef0780af1f": [
       -22.91523,
       -43.17907
     ],
-    "por-maycon-nunes-photography-158-b64d34c159": [
+    "por-maycon-nunes-photography-158-d32f1f60ac": [
       -22.91523,
       -43.17907
     ],
-    "por-maycon-nunes-photography-243-eeab9f13fb": [
+    "por-maycon-nunes-photography-243-5bf7ccaab8": [
       -22.945,
       -43.196389
     ],
-    "por-maycon-nunes-photography-260-bf98f6cc04": [
+    "por-maycon-nunes-photography-260-bc82f0cc46": [
       -22.94503,
       -43.1964
     ],
-    "por-maycon-nunes-photography-283-f34b185068": [
+    "por-maycon-nunes-photography-283-58e1a7d2a7": [
       -22.94503,
       -43.1964
     ],
-    "por-maycon-nunes-photography-301-ca839d8c7e": [
+    "por-maycon-nunes-photography-301-13eaa4e580": [
       -22.949444,
       -43.156389
     ],
-    "por-maycon-nunes-photography-315-9701d3d0f9": [
+    "por-maycon-nunes-photography-315-304d0e7b11": [
       -22.949444,
       -43.156389
     ],
-    "por-maycon-nunes-photography-335-1eb3f2b1f4": [
+    "por-maycon-nunes-photography-335-9085184e79": [
       -22.949444,
       -43.156389
     ],
@@ -234,7 +234,7 @@ window.__TRIP__ = {
       -22.949444,
       -43.156389
     ],
-    "img-3045-pano-e8f1bf4365": [
+    "img-3045-pano-919a46ae72": [
       -22.951847,
       -43.209992
     ],
@@ -1170,8 +1170,8 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "por-maycon-nunes-photography-112-745736b769",
-        "photoId": "por-maycon-nunes-photography-112-745736b769",
+        "key": "por-maycon-nunes-photography-112-6e97cd06ea",
+        "photoId": "por-maycon-nunes-photography-112-6e97cd06ea",
         "kind": "photo",
         "src": "assets/photos/por-maycon-nunes-photography-112-745736b769-card.jpg",
         "srcAvif": "assets/photos/por-maycon-nunes-photography-112-745736b769-card.avif",
@@ -1191,8 +1191,8 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "por-maycon-nunes-photography-27-479a658758",
-        "photoId": "por-maycon-nunes-photography-27-479a658758",
+        "key": "por-maycon-nunes-photography-27-c30cb9157f",
+        "photoId": "por-maycon-nunes-photography-27-c30cb9157f",
         "kind": "photo",
         "src": "assets/photos/por-maycon-nunes-photography-27-479a658758-card.jpg",
         "srcAvif": "assets/photos/por-maycon-nunes-photography-27-479a658758-card.avif",
@@ -1212,8 +1212,8 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "por-maycon-nunes-photography-51-a52e69a1a8",
-        "photoId": "por-maycon-nunes-photography-51-a52e69a1a8",
+        "key": "por-maycon-nunes-photography-51-07c873f1ca",
+        "photoId": "por-maycon-nunes-photography-51-07c873f1ca",
         "kind": "photo",
         "src": "assets/photos/por-maycon-nunes-photography-51-a52e69a1a8-card.jpg",
         "srcAvif": "assets/photos/por-maycon-nunes-photography-51-a52e69a1a8-card.avif",
@@ -1233,8 +1233,8 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "por-maycon-nunes-photography-148-a2fb0a3bee",
-        "photoId": "por-maycon-nunes-photography-148-a2fb0a3bee",
+        "key": "por-maycon-nunes-photography-148-ef0780af1f",
+        "photoId": "por-maycon-nunes-photography-148-ef0780af1f",
         "kind": "photo",
         "src": "assets/photos/por-maycon-nunes-photography-148-a2fb0a3bee-card.jpg",
         "srcAvif": "assets/photos/por-maycon-nunes-photography-148-a2fb0a3bee-card.avif",
@@ -1254,8 +1254,8 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "por-maycon-nunes-photography-158-b64d34c159",
-        "photoId": "por-maycon-nunes-photography-158-b64d34c159",
+        "key": "por-maycon-nunes-photography-158-d32f1f60ac",
+        "photoId": "por-maycon-nunes-photography-158-d32f1f60ac",
         "kind": "photo",
         "src": "assets/photos/por-maycon-nunes-photography-158-b64d34c159-card.jpg",
         "srcAvif": "assets/photos/por-maycon-nunes-photography-158-b64d34c159-card.avif",
@@ -1275,8 +1275,8 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "por-maycon-nunes-photography-243-eeab9f13fb",
-        "photoId": "por-maycon-nunes-photography-243-eeab9f13fb",
+        "key": "por-maycon-nunes-photography-243-5bf7ccaab8",
+        "photoId": "por-maycon-nunes-photography-243-5bf7ccaab8",
         "kind": "photo",
         "src": "assets/photos/por-maycon-nunes-photography-243-eeab9f13fb-card.jpg",
         "srcAvif": "assets/photos/por-maycon-nunes-photography-243-eeab9f13fb-card.avif",
@@ -1296,8 +1296,8 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "por-maycon-nunes-photography-260-bf98f6cc04",
-        "photoId": "por-maycon-nunes-photography-260-bf98f6cc04",
+        "key": "por-maycon-nunes-photography-260-bc82f0cc46",
+        "photoId": "por-maycon-nunes-photography-260-bc82f0cc46",
         "kind": "photo",
         "src": "assets/photos/por-maycon-nunes-photography-260-bf98f6cc04-card.jpg",
         "srcAvif": "assets/photos/por-maycon-nunes-photography-260-bf98f6cc04-card.avif",
@@ -1317,8 +1317,8 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "por-maycon-nunes-photography-283-f34b185068",
-        "photoId": "por-maycon-nunes-photography-283-f34b185068",
+        "key": "por-maycon-nunes-photography-283-58e1a7d2a7",
+        "photoId": "por-maycon-nunes-photography-283-58e1a7d2a7",
         "kind": "photo",
         "src": "assets/photos/por-maycon-nunes-photography-283-f34b185068-card.jpg",
         "srcAvif": "assets/photos/por-maycon-nunes-photography-283-f34b185068-card.avif",
@@ -1338,8 +1338,8 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "por-maycon-nunes-photography-301-ca839d8c7e",
-        "photoId": "por-maycon-nunes-photography-301-ca839d8c7e",
+        "key": "por-maycon-nunes-photography-301-13eaa4e580",
+        "photoId": "por-maycon-nunes-photography-301-13eaa4e580",
         "kind": "photo",
         "src": "assets/photos/por-maycon-nunes-photography-301-ca839d8c7e-card.jpg",
         "srcAvif": "assets/photos/por-maycon-nunes-photography-301-ca839d8c7e-card.avif",
@@ -1359,8 +1359,8 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "por-maycon-nunes-photography-315-9701d3d0f9",
-        "photoId": "por-maycon-nunes-photography-315-9701d3d0f9",
+        "key": "por-maycon-nunes-photography-315-304d0e7b11",
+        "photoId": "por-maycon-nunes-photography-315-304d0e7b11",
         "kind": "photo",
         "src": "assets/photos/por-maycon-nunes-photography-315-9701d3d0f9-card.jpg",
         "srcAvif": "assets/photos/por-maycon-nunes-photography-315-9701d3d0f9-card.avif",
@@ -1380,8 +1380,8 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "por-maycon-nunes-photography-335-1eb3f2b1f4",
-        "photoId": "por-maycon-nunes-photography-335-1eb3f2b1f4",
+        "key": "por-maycon-nunes-photography-335-9085184e79",
+        "photoId": "por-maycon-nunes-photography-335-9085184e79",
         "kind": "photo",
         "src": "assets/photos/por-maycon-nunes-photography-335-1eb3f2b1f4-card.jpg",
         "srcAvif": "assets/photos/por-maycon-nunes-photography-335-1eb3f2b1f4-card.avif",
@@ -1422,8 +1422,8 @@ window.__TRIP__ = {
       {
         "leg": "rio",
         "legId": "rio",
-        "key": "img-3045-pano-e8f1bf4365",
-        "photoId": "img-3045-pano-e8f1bf4365",
+        "key": "img-3045-pano-919a46ae72",
+        "photoId": "img-3045-pano-919a46ae72",
         "kind": "photo",
         "src": "assets/photos/img-3045-pano-e8f1bf4365-card.jpg",
         "srcAvif": "assets/photos/img-3045-pano-e8f1bf4365-card.avif",
