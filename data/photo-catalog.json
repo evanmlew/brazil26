@@ -2641,8 +2641,8 @@
       "date": "2026-07-20T17:24:20-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-08T22:07:44",
-      "latitude": null,
-      "longitude": null,
+      "latitude": -22.9494,
+      "longitude": -43.1564,
       "camera": {
         "make": "FUJIFILM",
         "model": "X-H2S"
@@ -2657,9 +2657,7 @@
       "order": null,
       "species": "",
       "featured": false,
-      "flags": [
-        "no-gps"
-      ],
+      "flags": [],
       "assets": {
         "original": "",
         "card": "assets/photos/por-maycon-nunes-photography-296-65ae66f733-card.jpg",
@@ -2678,8 +2676,8 @@
       "date": "2026-07-20T17:24:41-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-08T22:07:46",
-      "latitude": null,
-      "longitude": null,
+      "latitude": -22.9494,
+      "longitude": -43.1564,
       "camera": {
         "make": "FUJIFILM",
         "model": "X-H2S"
@@ -2694,9 +2692,7 @@
       "order": null,
       "species": "",
       "featured": false,
-      "flags": [
-        "no-gps"
-      ],
+      "flags": [],
       "assets": {
         "original": "",
         "card": "assets/photos/por-maycon-nunes-photography-298-97465b7830-card.jpg",
@@ -2715,8 +2711,8 @@
       "date": "2026-07-20T17:27:28-03:00",
       "utcOffset": "-03:00",
       "exportedAt": "2026-08-08T22:07:50",
-      "latitude": null,
-      "longitude": null,
+      "latitude": -22.9494,
+      "longitude": -43.1564,
       "camera": {
         "make": "FUJIFILM",
         "model": "X-H2S"
@@ -2731,9 +2727,7 @@
       "order": null,
       "species": "",
       "featured": false,
-      "flags": [
-        "no-gps"
-      ],
+      "flags": [],
       "assets": {
         "original": "",
         "card": "assets/photos/por-maycon-nunes-photography-302-4ce2bf39cf-card.jpg",
